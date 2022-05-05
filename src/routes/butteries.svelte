@@ -11,8 +11,14 @@
 	<input id="my-drawer" type="checkbox" class="drawer-toggle" />
 	<div class="drawer-content">
 		<!-- Page content here -->
-		<!-- Insert an iFrame element of yalebutterybook.com -->
-		<iframe title="Yale Buttery Book" src="https://yalebutterybook.com/" />
+		<!-- Insert an iFrame element of yalebutterybook.com that spans the entire page and has title "Yale Buttery Book"-->
+		<iframe
+			src="https://yalebutterybook.com"
+			title="Yale Buttery Book"
+			width="100%"
+			height="100%"
+			frameborder="0"
+		/>
 	</div>
 	<div class="drawer-side">
 		<label for="my-drawer" class="drawer-overlay" />
