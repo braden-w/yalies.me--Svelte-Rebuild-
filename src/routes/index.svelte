@@ -39,8 +39,10 @@
 		<label for="my-drawer" class="drawer-overlay" />
 		<ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
 			<!-- Sidebar content here -->
-			<li><a>Sidebar Item 1</a></li>
-			<li><a>Sidebar Item 2</a></li>
+			<li><a href="summer">Who's in New Haven</a></li>
+			<li><a href="map">Map (Place Yourself on a Map, find Yalies Near Me)</a></li>
+			<li><a href="rides">Ride Share</a></li>
+			<li><a href="meals">Track Meals</a></li>
 		</ul>
 	</div>
 </div>
