@@ -8,14 +8,11 @@
 	import Auth from '$lib/Auth.svelte';
 	import Profile from '$lib/Profile.svelte';
 
-	user.set(supabase.auth.user());
+	$user = supabase.auth.user();
 
 	supabase.auth.onAuthStateChange((_, session) => {
-		if (session) {
-			user.set(session);
-		} else {
-			user.set(null);
-		}
+		if (session) $user = session;
+		else $user = null;
 	});
 </script>
 
