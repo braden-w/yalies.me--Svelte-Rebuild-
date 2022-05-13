@@ -97,3 +97,5 @@
 		<button class="button block" on:click={signOut} disabled={loading}> Sign Out </button>
 	</div>
 </form>
+
+{user}
