@@ -8,7 +8,6 @@
 			loading = true;
 			const { user, session, error } = await supabase.auth.signIn({ provider: 'google' });
 			if (error) throw error;
-			alert('Check your email for the login link!');
 		} catch (error: any) {
 			alert(error.error_description || error.message);
 		} finally {
@@ -18,7 +17,7 @@
 </script>
 
 <svelte:head />
-<button class="btn darken-4 white">
+<button class="btn darken-4 white" on:click={handleLogin}>
 	<div class="left">
 		<img
 			width="20px"
