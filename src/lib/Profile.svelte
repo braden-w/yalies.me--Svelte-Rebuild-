@@ -1,5 +1,6 @@
-<script>
+<script lang="ts">
 	import { supabase } from '$lib/supabaseClient';
+	import type { definitions } from '../../types/supabase';
 	import { user } from '$lib/sessionStore';
 
 	let loading = true;
@@ -13,9 +14,11 @@
 			const user = supabase.auth.user();
 
 			let { data, error, status } = await supabase
-				.from('profiles')
-				.select(`username, website, avatar_url`)
-				.eq('id', user.id)
+				.from<definitions['user_data']>('user_data')
+				.select(
+					`email, interests, expression, location, university, full_name, photo,summer, instagram, linkedin, phone, major, year`
+				)
+				.eq('email', user.email)
 				.single();
 
 			if (error && status !== 406) throw error;
