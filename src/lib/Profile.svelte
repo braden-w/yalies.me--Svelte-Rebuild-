@@ -4,7 +4,7 @@
 	import { user } from '$lib/sessionStore';
 
 	let loading = true;
-	let formData = {};
+	let formData: definitions['user_data'] | null = null;
 
 	async function getProfile() {
 		try {
@@ -14,7 +14,7 @@
 			let { data, error, status } = await supabase
 				.from<definitions['user_data']>('user_data')
 				.select(
-					`email, interests, expression, location, university, full_name, photo,summer, instagram, linkedin, phone, major, year`
+					`email, interests, expression, location, university, full_name, photo, instagram, linkedin, phone, major, year`
 				)
 				.eq('email', user?.email)
 				.single();
@@ -67,17 +67,41 @@
 </script>
 
 <form use:getProfile class="form-widget" on:submit|preventDefault={updateProfile}>
+	<!-- Create an avatar based off formData.photo with formData.full_name as alt text-->
+	<div class="avatar">
+		<div class="w-24 rounded">
+			<img src={formData?.photo} alt={formData?.full_name} width="100%" height="100%" />
+		</div>
+	</div>
+
+	<!-- <v-avatar rounded size="128" class="mt-n4">
+          <v-img
+            :src="userProfileInformation.photo"
+            :alt="userProfileInformation.full_name"
+          />
+        </v-avatar>
+
+        <v-card-title class="mt-n4">
+          {{ userProfileInformation.full_name }}
+        </v-card-title>
+
+        <v-card-subtitle class="mt-n5">
+          {{ userProfileInformation.university }}
+        </v-card-subtitle>
+
+        <div class="text-caption font-weight-light my-n4">
+          {{ userProfileInformation.$state.college }}
+          |
+          {{ userProfileInformation.year }}
+        </div> -->
+
+	<!-- <div class="subtitle-3">
+          {{ userProfileInformation.email }}
+        </div> 
+      -->
 	<div>
 		<label for="email">Email</label>
 		<input id="email" type="text" value={$user.email} disabled />
-	</div>
-	<div>
-		<label for="username">Name</label>
-		<input id="username" type="text" bind:value={username} />
-	</div>
-	<div>
-		<label for="website">Website</label>
-		<input id="website" type="website" bind:value={website} />
 	</div>
 
 	<div>
