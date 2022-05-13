@@ -48,7 +48,6 @@
 			let { error } = await supabase.from('profiles').upsert(updates, {
 				returning: 'minimal' // Don't return the value after inserting
 			});
-
 			if (error) throw error;
 		} catch (error) {
 			alert(error.message);
