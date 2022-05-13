@@ -23,7 +23,7 @@
 				</label>
 			</div>
 			<div class="flex-1">
-				<a class="btn btn-ghost normal-case text-xl">Yalies Around Me</a>
+				<a href="/"" class="btn btn-ghost normal-case text-xl">Yalies Around Me</a>
 			</div>
 			<div class="flex-none">
 				<div class="dropdown dropdown-end">
