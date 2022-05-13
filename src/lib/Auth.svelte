@@ -18,7 +18,7 @@
 </script>
 
 <svelte:head />
-<button class="btn darken-4 white black-text" style="text-transform:none">
+<button class="btn darken-4 white">
 	<div class="left">
 		<img
 			width="20px"
