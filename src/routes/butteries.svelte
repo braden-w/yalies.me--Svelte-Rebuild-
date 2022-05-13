@@ -29,6 +29,8 @@
 			<li><a href="rides">Ride Share</a></li>
 			<li><a href="meals">Track Meals</a></li>
 			<li><a href="butteries">Track Meals</a></li>
+			<li><a href="quotes">Quote Wall</a></li>
+			<li><a href="gaming">Gaming (Valorant, League of Legends)</a></li>
 		</ul>
 	</div>
 </div>
