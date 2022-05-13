@@ -2,12 +2,12 @@
 </script>
 
 <div class="drawer">
-	<input id="my-drawer" type="checkbox" class="drawer-toggle" />
+	<input id="main-drawer" type="checkbox" class="drawer-toggle" />
 	<div class="drawer-content">
 		<!-- Page content here -->
 		<div class="navbar bg-base-100">
 			<div class="flex-none">
-				<label for="my-drawer" class="btn btn-square btn-ghost drawer-button">
+				<label for="main-drawer" class="btn btn-square btn-ghost drawer-button">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
@@ -18,16 +18,16 @@
 							stroke-linejoin="round"
 							stroke-width="2"
 							d="M4 6h16M4 12h16M4 18h16"
-						/></svg
-					>
+						/>
+					</svg>
 				</label>
 			</div>
 			<div class="flex-1">
-				<a class="btn btn-ghost normal-case text-xl">daisyUI</a>
+				<a class="btn btn-ghost normal-case text-xl">Yalies Around Me</a>
 			</div>
 			<div class="flex-none">
 				<div class="dropdown dropdown-end">
-					<label tabindex="0" class="btn btn-ghost btn-circle">
+					<label for="main-drawer " tabindex="0" class="btn btn-ghost btn-circle">
 						<div class="indicator">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +79,7 @@
 		</div>
 	</div>
 	<div class="drawer-side">
-		<label for="my-drawer" class="drawer-overlay" />
+		<label for="main-drawer" class="drawer-overlay" />
 		<ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
 			<!-- Sidebar content here -->
 			<li><a href="summer">Who's in New Haven</a></li>
