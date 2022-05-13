@@ -4,9 +4,7 @@
 	import { user } from '$lib/sessionStore';
 
 	let loading = true;
-	let username = null;
-	let website = null;
-	let avatar_url = null;
+	let formData = {};
 
 	async function getProfile() {
 		try {
@@ -18,17 +16,12 @@
 				.select(
 					`email, interests, expression, location, university, full_name, photo,summer, instagram, linkedin, phone, major, year`
 				)
-				.eq('email', user.email)
+				.eq('email', user?.email)
 				.single();
 
 			if (error && status !== 406) throw error;
-
-			if (data) {
-				username = data.username;
-				website = data.website;
-				avatar_url = data.avatar_url;
-			}
-		} catch (error) {
+			if (data) formData = data;
+		} catch (error: any) {
 			alert(error.message);
 		} finally {
 			loading = false;
