@@ -17,22 +17,15 @@
 	};
 </script>
 
-<svelte:head>
-	<script src="https://accounts.google.com/gsi/client" async defer></script>
-</svelte:head>
-
-<div
-	id="g_id_onload"
-	data-client_id="YOUR_GOOGLE_CLIENT_ID"
-	data-login_uri="https://your.domain/your_login_endpoint"
-	data-auto_prompt="false"
-/>
-<div
-	class="g_id_signin"
-	data-type="standard"
-	data-size="large"
-	data-theme="outline"
-	data-text="sign_in_with"
-	data-shape="rectangular"
-	data-logo_alignment="left"
-/>
+<svelte:head />
+<button class="btn darken-4 white black-text" style="text-transform:none">
+	<div class="left">
+		<img
+			width="20px"
+			style="margin-top:7px; margin-right:8px"
+			alt="Google sign-in"
+			src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
+		/>
+	</div>
+	Login with Google
+</button>
