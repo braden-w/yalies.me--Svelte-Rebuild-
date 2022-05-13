@@ -68,6 +68,7 @@
 			loading = false;
 		}
 	}
+	$: $user, console.log($user);
 </script>
 
 <form use:getProfile class="form-widget" on:submit|preventDefault={updateProfile}>
