@@ -37,6 +37,7 @@
 	"dependencies": {
 		"@fontsource/fira-mono": "^4.5.0",
 		"@lukeed/uuid": "^2.0.0",
+		"@supabase/supabase-js": "^1.35.3",
 		"cookie": "^0.4.1",
 		"daisyui": "^2.14.3"
 	}
