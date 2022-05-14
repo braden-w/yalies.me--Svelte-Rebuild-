@@ -17,7 +17,7 @@
 </script>
 
 <svelte:head />
-<button class:loading class="btn darken-4 white" on:click={handleLogin}>
+<button class:loading class="btn" on:click={handleLogin}>
 	<div class="left">
 		<img
 			width="20px"
