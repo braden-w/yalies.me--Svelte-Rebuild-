@@ -104,6 +104,11 @@
 		<input id="email" type="text" value={$user.email} disabled />
 	</div>
 
+	<!-- Create a card with inputs  for email, summer -->
+	<div class="mt-n4">
+		<label for="full_name">Full Name</label>
+		<input id="full_name" type="text" value={$user.full_name} />
+	</div>
 	<div>
 		<input
 			type="submit"
