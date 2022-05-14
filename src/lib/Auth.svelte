@@ -17,6 +17,14 @@
 </script>
 
 <div class="hero min-h-screen">
+	<!-- Insert video with url https://i.imgur.com/0uL1zb2.mp4 -->
+	<video
+		class="absolute top-0 left-0 w-full h-full object-cover"
+		src="https://i.imgur.com/0uL1zb2.mp4"
+		autoplay
+		loop
+		muted
+	/>
 	<div class="hero-overlay bg-opacity-60" />
 	<div class="hero-content text-center text-neutral-content">
 		<div class="max-w-md align-center">
