@@ -66,15 +66,106 @@
 	$: $user, console.log($user);
 </script>
 
-<form use:getProfile class="form-widget" on:submit|preventDefault={updateProfile}>
-	<!-- Create an avatar based off formData.photo with formData.full_name as alt text-->
-	<div class="avatar">
-		<div class="w-24 rounded">
-			<img src={formData?.photo} alt={formData?.full_name} width="100%" height="100%" />
+<!-- Put a centered card on the screen. Inside it, there are multiple labelled inputs that are binded to the corresponding properties of the user -->
+<div class="w-full max-w-md mx-auto">
+	<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+		<div class="mb-4">
+			<h1 class="text-2xl font-bold">Profile</h1>
+			<p class="text-lg">Edit your profile</p>
+		</div>
+		<div class="mb-4">
+			<label class="block text-gray-700 text-sm font-bold mb-2" for="username"> Username </label>
+			<input
+				class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+				id="username"
+				type="text"
+				placeholder="Username"
+				bind:value={$user.username}
+			/>
+		</div>
+		<div class="mb-4">
+			<label class="block text-gray-700 text-sm font-bold mb-2" for="website"> Website </label>
+			<input
+				class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+				id="website"
+				type="text"
+				placeholder="Website"
+				bind:value={$user.website}
+			/>
 		</div>
 	</div>
+</div>
 
-	<!-- <v-avatar rounded size="128" class="mt-n4">
+<!-- <div class="card"> -->
+<!-- 	<div class="card-title"> -->
+<!-- 		<h1>Profile</h1> -->
+<!-- 	</div> -->
+<!-- 	<div class="card-content"> -->
+<!-- 		<form on:submit={updateProfile}> -->
+<!-- 			<div class="field-row"> -->
+<!-- 				<label for="username">Username</label> -->
+<!-- 				<input -->
+<!-- 					type="text" -->
+<!-- 					name="username" -->
+<!-- 					value={formData?.username || user.username} -->
+<!-- 					on:input={(e: any) => (username = e.target.value)} -->
+<!-- 				/> -->
+<!-- 			</div> -->
+<!-- 			<div class="field-row"> -->
+<!-- 				<label for="website">Website</label> -->
+<!-- 				<input -->
+<!-- 					type="text" -->
+<!-- 					name="website" -->
+<!-- 					value={formData?.website || user.website} -->
+<!-- 					on:input={(e: any) => (website = e.target.value)} -->
+<!-- 				/> -->
+<!-- 			</div> -->
+<!-- 			<div class="field-row"> -->
+<!-- 				<label for="avatar_url">Avatar Url</label> -->
+<!-- 				<input -->
+<!-- 					type="text" -->
+<!-- 					name="avatar_url" -->
+<!-- 					value={formData?.avatar_url || user.avatar_url} -->
+<!-- 					on:
+
+=======
+
+<!-- <div class="card"> -->
+<!-- 	<div class="card-body"> -->
+<!-- 		<h5 class="card-title">User Profile</h5> -->
+<!-- 		<div class="form-group"> -->
+<!-- 			<label for="exampleInputEmail1">Email address</label> -->
+<!-- 			<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" v-model={formData?.email}> -->
+<!-- 			<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+<!-- 		</div> -->
+<!-- 		<div class="form-group"> -->
+<!-- 			<label for="exampleInputPassword1">Password</label> -->
+<!-- 			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" v-model={formData?.password}> -->
+<!-- 		</div> -->
+<!-- 		<div class="form-group"> -->
+<!-- 			<label for="exampleInputPassword1">Password</label> -->
+<!-- 			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" v-model={formData?.password}> -->
+<!-- 		</div> -->
+<!-- 		<div class="form-group"> -->
+<!-- 			<label for="exampleInputPassword1">Password</label> -->
+<!-- 			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" v-model={formData?.password}> -->
+<!-- 		</div> -->
+<!-- 		<div class="form-group"> -->
+<!-- 			<label for="exampleInputPassword1">Password</label> -->
+<!-- 			<input type="password" class="form-control
+
+
+
+
+<form use:getProfile class="form-widget" on:submit|preventDefault={updateProfile}>
+	<!-- Create an avatar based off formData.photo with formData.full_name as alt text-->
+<div class="avatar">
+	<div class="w-24 rounded">
+		<img src={formData?.photo} alt={formData?.full_name} width="100%" height="100%" />
+	</div>
+</div>
+
+<!-- <v-avatar rounded size="128" class="mt-n4">
           <v-img
             :src="userProfileInformation.photo"
             :alt="userProfileInformation.full_name"
@@ -95,32 +186,32 @@
           {{ userProfileInformation.year }}
         </div> -->
 
-	<!-- <div class="subtitle-3">
+<!-- <div class="subtitle-3">
           {{ userProfileInformation.email }}
         </div> 
       -->
-	<div>
-		<label for="email">Email</label>
-		<input id="email" type="text" value={$user.email} disabled />
-	</div>
+<div>
+	<label for="email">Email</label>
+	<input id="email" type="text" value={$user.email} disabled />
+</div>
 
-	<!-- Create a card with inputs  for email, summer -->
-	<div class="mt-n4">
-		<label for="full_name">Full Name</label>
-		<input id="full_name" type="text" value={$user.full_name} />
-	</div>
-	<div>
-		<input
-			type="submit"
-			class="button block primary"
-			value={loading ? 'Loading ...' : 'Update'}
-			disabled={loading}
-		/>
-	</div>
+<!-- Create a card with inputs  for email, summer -->
+<div class="mt-n4">
+	<label for="full_name">Full Name</label>
+	<input id="full_name" type="text" value={$user.full_name} />
+</div>
+<div>
+	<input
+		type="submit"
+		class="button block primary"
+		value={loading ? 'Loading ...' : 'Update'}
+		disabled={loading}
+	/>
+</div>
 
-	<div>
-		<button class="button block" on:click={signOut} disabled={loading}> Sign Out </button>
-	</div>
-</form>
+<div>
+	<button class="button block" on:click={signOut} disabled={loading}> Sign Out </button>
+</div>
+<!-- </form> -->
 
 {user}
