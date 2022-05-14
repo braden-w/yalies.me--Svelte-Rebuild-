@@ -8,10 +8,11 @@
 	import Auth from '$lib/Auth.svelte';
 	import Profile from '$lib/Profile.svelte';
 
+	// Get login state on page load
 	$user = supabase.auth.user();
 
 	supabase.auth.onAuthStateChange((_, session) => {
-		if (session) $user = session;
+		if (session) $user = supabase.auth.user();
 		else $user = null;
 	});
 </script>
@@ -26,5 +27,3 @@
 {:else}
 	<Auth />
 {/if}
-
-<style></style>
