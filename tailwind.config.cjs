@@ -1,6 +1,8 @@
 const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 
+	safelist: [{ pattern: /bg-.+-.+/ }],
+
 	theme: {
 		extend: {}
 	},
