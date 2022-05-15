@@ -1,9 +1,7 @@
 <script lang="ts">
-	import type { GooglePlacesRequest } from 'types/GooglePlacesRequest';
-
 	let query = '';
 	let loading = false;
-	let results: GooglePlacesRequest[] = [];
+	let results: google.maps.places.AutocompletePrediction[] | null = [];
 	let selected = null;
 
 	// When query changes value
@@ -33,9 +31,9 @@
 			if (status === google.maps.places.PlacesServiceStatus.OK) {
 				loading = false;
 				results = response;
-				console.log(results);
 				selected = null;
 			}
+			loading = false;
 		});
 	}
 </script>
@@ -53,8 +51,9 @@
 
 <input
 	type="text"
+	class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 	id="location"
-	placeholder="Location"
+	placeholder="Start typing your city here..."
 	bind:value={query}
 	on:input={handleQueryChange}
 />
