@@ -3,10 +3,11 @@
 </script>
 
 <script lang="ts">
-	import { sessionStore, type UserMetadata } from '$lib/sessionStore';
+	import { sessionStore } from '$lib/sessionStore';
 	import { supabase } from '$lib/supabaseClient';
 	import Auth from '$lib/Auth.svelte';
 	import Profile from '$lib/Profile.svelte';
+	import type { UserMetadata } from 'types/UserMetaData';
 
 	// Get login state on page load
 	$sessionStore = supabase.auth.user();
