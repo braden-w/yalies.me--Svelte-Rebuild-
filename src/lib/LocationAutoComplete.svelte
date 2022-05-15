@@ -1,16 +1,19 @@
 <script lang="ts">
+	import type { GooglePlacesRequest } from 'types/GooglePlacesRequest';
+
 	let query = '';
 	let loading = false;
-	let results = [];
+	let results: GooglePlacesRequest[] = [];
 	let selected = null;
 
 	// When query changes value
-	let timer;
+	let timer: NodeJS.Timeout | null;
 	function handleQueryChange() {
 		if (query.length < 2) {
 			results = [];
 			selected = null;
 		} else {
+			if (timer) clearTimeout(timer);
 			timer = setTimeout(() => {
 				fetchResults();
 			}, 300);
@@ -35,16 +38,16 @@
 			}
 		});
 	}
-
-	// Implement a debounce function
-	function debounce(callback: () => void, debounceAmount: number) {
-		let timeout: number | null = null;
-		return () => {
-			if (timeout) clearTimeout(timeout);
-			timeout = window.setTimeout(callback, debounceAmount);
-		};
-	}
 </script>
+
+<svelte:head>
+	<script
+		async
+		defer
+		type="text/javascript"
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZFzojqVe47aB3f_QwnU9IKaCZEbeuG0A&libraries=places">
+	</script>
+</svelte:head>
 
 <!-- A Location Autocomplete built with DaisyUI that uses the Google Map Places API to autocomplete the location as the user is typing -->
 
@@ -56,5 +59,16 @@
 	on:input={handleQueryChange}
 />
 <ul class="menu bg-base-100 w-56 p-2 rounded-box">
-	<!-- For each result  -->
+	<!-- For each result in results, display  -->
+	{#each results as result}
+		<li
+			class="menu-item bg-base-200 hover:bg-base-300 cursor-pointer"
+			on:click={() => {
+				query = result.description;
+				selected = result;
+			}}
+		>
+			{result.description}
+		</li>
+	{/each}
 </ul>
