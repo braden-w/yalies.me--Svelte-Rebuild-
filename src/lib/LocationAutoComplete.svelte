@@ -7,14 +7,15 @@
 	let selected = null;
 
 	// When query changes value
+	let timer;
 	function handleQueryChange() {
 		if (query.length < 2) {
 			results = [];
 			selected = null;
 		} else {
-			// Fetch results with debounce
-			// debounce(fetchResults, 500);
-			fetchResults();
+			timer = setTimeout(() => {
+				fetchResults();
+			}, 300);
 		}
 	}
 
