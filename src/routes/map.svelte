@@ -48,7 +48,7 @@
 		// create a HTML element for each feature
 
 		const latLng: [number, number][] = [
-			[2, 3],
+			[NewHaven.latitude, NewHaven.longitude],
 			[8, 3],
 			[11, 3],
 			[2, 3],
@@ -70,54 +70,35 @@
 
 			const el = document.createElement('div');
 			el.className = 'marker';
-			el.innerHTML = `<div class="stack">
-	<div class="avatar indicator">
+			el.innerHTML = `<button name="selected" class="stack">
+	<div class="avatar shadow-md indicator">
 		<span class="indicator-item badge badge-secondary">typing…</span>
-		<div class="w-20 h-20 rounded-lg">
+		<div class="w-16 h-16 rounded-lg">
 			<img src="https://api.lorem.space/image/face?w=160&h=160" />
 		</div>
 	</div>
-	<img
-		src="https://api.lorem.space/image/face?w=112&h=112&hash=8B7BCDC2"
-		alt="Image 1"
-		class="rounded"
-	/><img
-		src="https://api.lorem.space/image/face?w=112&h=112&hash=8B7BCDC2"
-		alt="Image 1"
-		class="rounded"
-	/><img
-		src="https://api.lorem.space/image/face?w=112&h=112&hash=8B7BCDC2"
-		alt="Image 1"
-		class="rounded"
-	/><img
-		src="https://api.lorem.space/image/face?w=112&h=112&hash=8B7BCDC2"
-		alt="Image 1"
-		class="rounded"
-	/><img
-		src="https://api.lorem.space/image/face?w=112&h=112&hash=8B7BCDC2"
-		alt="Image 1"
-		class="rounded"
-	/><img
-		src="https://api.lorem.space/image/face?w=112&h=112&hash=8B7BCDC2"
-		alt="Image 1"
-		class="rounded"
-	/>
-	<img
-		src="https://api.lorem.space/image/face?w=112&h=112&hash=8B7BCDC2"
-		alt="Image 1"
-		class="rounded"
-	/>
-	<img
-		src="https://api.lorem.space/image/face?w=112&h=112&hash=500B67FB"
-		alt="Image 2"
-		class="rounded"
-	/>
-	<img
-		src="https://api.lorem.space/image/face?w=112&h=112&hash=A89D0DE6"
-		alt="Image 3"
-		class="rounded"
-	/>
-</div>`;
+	<div class="avatar shadow-md">
+		<div class="w-16 h-16 rounded-lg">
+			<img src="https://api.lorem.space/image/face?w=160&h=160" />
+		</div>
+	</div>
+	<div class="avatar shadow-md">
+		<div class="w-16 h-16 rounded-lg">
+			<img src="https://api.lorem.space/image/face?w=160&h=160" />
+		</div>
+	</div>
+	<div class="avatar shadow-md">
+		<div class="w-16 h-16 rounded-lg">
+			<img src="https://api.lorem.space/image/face?w=160&h=160" />
+		</div>
+	</div>
+
+	<div class="avatar shadow-md">
+		<div class="w-16 h-16 rounded-lg">
+			<img src="https://api.lorem.space/image/face?w=160&h=160" />
+		</div>
+	</div>
+</button>`;
 			// Object.assign(el.style, {
 			// 	backgroundImage: `url('https://i.imgur.com/MK4NUzI.png')`,
 			// 	backgroundSize: 'cover',
@@ -127,13 +108,13 @@
 			// 	width: `${initPx}px`
 			// });
 			// On click, add a shadow around it
-			el.addEventListener('click', () => {
-				Object.assign(el.style, { 'box-shadow': '0 0 2px 4px' });
-			});
+			// el.addEventListener('click', () => {
+			// 	Object.assign(el.style, { 'box-shadow': '0 0 2px 4px' });
+			// });
 
-			document.getElementsByClassName('mapboxgl-canvas')[0].addEventListener('click', () => {
-				Object.assign(el.style, { 'box-shadow': '' });
-			});
+			// document.getElementsByClassName('mapboxgl-canvas')[0].addEventListener('click', () => {
+			// 	Object.assign(el.style, { 'box-shadow': '' });
+			// });
 			new mapboxgl.Marker(el).setLngLat([lng, lat]).addTo(map);
 		});
 	});
