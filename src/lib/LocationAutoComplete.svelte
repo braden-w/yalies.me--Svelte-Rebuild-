@@ -12,8 +12,8 @@
 			results = [];
 			selected = null;
 		} else {
-			// Fetch results
-			fetchResults();
+			// Fetch results with debounce
+			debounce(fetchResults, 500);
 		}
 	}
 
@@ -36,6 +36,15 @@
 				loading = false;
 				console.error(err);
 			});
+	}
+
+	// Implement a debounce function
+	function debounce(callback: () => void, debounceAmount: number) {
+		let timeout: number | null = null;
+		return () => {
+			if (timeout) clearTimeout(timeout);
+			timeout = window.setTimeout(callback, debounceAmount);
+		};
 	}
 </script>
 
