@@ -21,21 +21,17 @@
 	// Fetch results from the Google Places API
 	function fetchResults() {
 		loading = true;
-
-		// // Search for the city using the Google Places API
-		// const request: GooglePlacesRequest = {
-		// 	input: query,
-		// 	types: ['(cities)'],
-		// 	key: import.meta.env.VITE_GOOGLE_MAP_KEY
-		// };
-		// results = data.predictions;
-
+		const sessionToken = new google.maps.places.AutocompleteSessionToken();
 		const service = new google.maps.places.AutocompleteService();
-		service.getQueryPredictions({ input: query }, (response, status) => {
+		const request: google.maps.places.AutocompletionRequest = {
+			input: query,
+			sessionToken
+		};
+		service.getPlacePredictions(request, (response, status) => {
 			if (status === google.maps.places.PlacesServiceStatus.OK) {
 				loading = false;
 				results = response;
-				console.log(results)
+				console.log(results);
 				selected = null;
 			}
 		});
