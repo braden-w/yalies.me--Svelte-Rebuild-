@@ -10,6 +10,7 @@
 	// longitude = userProfileInformation.location?.longitude ?? NewHaven.longitude;
 	// latitude = userProfileInformation.location?.latitude ?? NewHaven.latitude;
 	// console.log('longitude, latitude:>> ', longitude, latitude)
+	const initPx = 32;
 	onMount(() => {
 		const map = new mapboxgl.Map({
 			container: 'map',
@@ -43,7 +44,43 @@
 			// loadFacebook(map!, queryYear)
 		});
 		// Create a marker on the map that the user can move around
-		// new mapboxgl.Marker().setLngLat([coords.value.longitude, coords.value.latitude]).addTo(map)
+		new mapboxgl.Marker().setLngLat([24, 42]).addTo(map);
+		// create a HTML element for each feature
+
+		const latLng: [number, number][] = [
+			[2, 3],
+			[8, 3],
+			[11, 3],
+			[2, 3],
+			[2, 3],
+			[2, 3],
+			[2, 3],
+			[2, 3],
+			[2, 3],
+			[2, 3],
+			[2, 3]
+		];
+		latLng.forEach(([lat, lng]) => {
+			const el = document.createElement('div');
+			el.className = 'marker';
+			Object.assign(el.style, {
+				backgroundImage: `url('https://i.imgur.com/MK4NUzI.png')`,
+				backgroundSize: 'cover',
+				'border-radius': '50%',
+				cursor: 'pointer',
+				height: `${initPx}px`,
+				width: `${initPx}px`
+			});
+			// On click, add a shadow around it
+			el.addEventListener('click', () => {
+				Object.assign(el.style, { 'box-shadow': '0 0 2px 4px' });
+			});
+
+			document.getElementsByClassName('mapboxgl-canvas')[0].addEventListener('click', () => {
+				Object.assign(el.style, { 'box-shadow': '' });
+			});
+			new mapboxgl.Marker(el).setLngLat([lng, lat]).addTo(map);
+		});
 	});
 </script>
 
