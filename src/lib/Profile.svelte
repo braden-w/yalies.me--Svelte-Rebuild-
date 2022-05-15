@@ -73,7 +73,7 @@
 		<div class="mb-4">
 			<div class="avatar mx-auto">
 				<div class="w-24 rounded">
-					<img src={userDataFromGoogleAuth.avatar_url} alt={Photo} width="100%" height="100%" />
+					<img src={userDataFromGoogleAuth.avatar_url} alt="Photo" width="100%" height="100%" />
 				</div>
 			</div>
 			<h1 class="text-2xl font-bold">Braden Wong</h1>
