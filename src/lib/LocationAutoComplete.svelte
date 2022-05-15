@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { supabase } from '$lib/supabaseClient';
+
 	let query = '';
 	let loading = false;
 	let results: google.maps.places.AutocompletePrediction[] = [];
@@ -31,10 +33,27 @@
 			if (status === google.maps.places.PlacesServiceStatus.OK) {
 				loading = false;
 				results = response ?? [];
+				console.log(results);
 				selected = null;
 			}
 			loading = false;
 		});
+	}
+
+	async function handleClick(clicked: google.maps.places.AutocompletePrediction) {
+		try {
+			query = clicked.description;
+			selected = clicked;
+			// Upload the place_id and description props to supabase
+			const { place_id, description } = clicked;
+			const payload = { place_id, description };
+			const { error } = await supabase.from('locations').upsert(payload, {
+				returning: 'minimal' // Don't return the value after inserting
+			});
+			if (error) throw error;
+		} catch (error: any) {
+			alert(error.message);
+		}
 	}
 </script>
 
@@ -62,13 +81,7 @@
 {#if results.length > 0}
 	<ul class="menu bg-base-100 w-full p-2 rounded-box">
 		{#each results as result}
-			<li
-				class="menu-item bg-base-200 w-full p-2 rounded-box"
-				on:click={() => {
-					query = result.description;
-					selected = result;
-				}}
-			>
+			<li class="menu-item bg-base-200 w-full p-2 rounded-box" on:click={handleClick(result)}>
 				{result.description}
 			</li>
 		{/each}
