@@ -1,7 +1,7 @@
-export const debounce = (callback: (arg0: any) => void, delay = 300) => {
+export const debounce = (callback, delay = 300): (() => void) => {
 	let timeout: NodeJS.Timeout | undefined;
-	return (...args) => {
+	return () => {
 		clearTimeout(timeout);
-		timeout = setTimeout(() => callback(...args), delay);
+		timeout = setTimeout(() => callback(), delay);
 	};
 };
