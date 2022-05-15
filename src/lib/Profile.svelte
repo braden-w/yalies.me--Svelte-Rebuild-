@@ -69,14 +69,14 @@
 
 <!-- Put a centered card on the screen. Inside it, there are multiple labelled inputs that are binded to the corresponding properties of the user -->
 <div class="w-full max-w-md mx-auto">
-	<div class="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4">
+	<div class="card bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4">
 		<div class="mb-4 text-center">
 			<div class="avatar mx-auto">
 				<div class="w-28 rounded">
 					<img src={userDataFromGoogleAuth.avatar_url} alt="Profile" width="100%" height="100%" />
 				</div>
 			</div>
-			<h1 class="text-2xl font-bold">Braden Wong</h1>
+			<h1 class="text-2xl  font-bold">Braden Wong</h1>
 			<p class="text-lg">Yale University</p>
 		</div>
 		<div class="mb-4">
@@ -90,6 +90,9 @@
 				type="text"
 				placeholder="Website"
 			/>
+		</div>
+		<div class="card-actions justify-end">
+			<button class="btn  text-white" on:click={signOut}> Sign Out </button>
 		</div>
 	</div>
 </div>
@@ -192,7 +195,5 @@
 	<label for="full_name">Full Name</label>
 	<input id="full_name" type="text" value={$sessionStore.full_name} />
 </div> -->
-
-<button class="btn" on:click={signOut}> Sign Out </button>
 
 <!-- </form> -->
