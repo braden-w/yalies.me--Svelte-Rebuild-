@@ -2,7 +2,6 @@
 	export const prerender = true;
 </script>
 
-
 <script lang="ts">
 	import { sessionStore, type UserMetadata } from '$lib/sessionStore';
 	import { supabase } from '$lib/supabaseClient';
@@ -13,16 +12,17 @@
 	$sessionStore = supabase.auth.user();
 
 	supabase.auth.onAuthStateChange(async (_, session) => {
-		if (session) {
+		if (!session) $sessionStore = null;
+		else {
 			$sessionStore = supabase.auth.user();
 			// Get the variables ""
 			const userMetaData = $sessionStore?.user_metadata as UserMetadata;
 
 			// Upload profile data from sessionStore todatabase
-			const { data, error } = await supabase.from('user_data_from_google_auth').upsert(userMetaData, {
-				// returning: 'minimal' // Don't return the value after inserting
+			supabase.from('user_data_from_google_auth').upsert(userMetaData, {
+				returning: 'minimal' // Don't return the value after inserting
 			});
-		} else $sessionStore = null;
+		}
 	});
 </script>
 
