@@ -5,7 +5,8 @@
 	import LocationAutoComplete from '$lib/LocationAutoComplete.svelte';
 
 	let loading = true;
-	let formData: definitions['user_data'] | null = null;
+	let userDataFromGoogleAuth =
+		$sessionStore?.user_metadata as definitions['user_data_from_google_auth'];
 
 	async function getProfile() {
 		try {
@@ -21,7 +22,7 @@
 				.single();
 
 			if (error && status !== 406) throw error;
-			if (data) formData = data;
+			if (data) userDataFromGoogleAuth = data;
 		} catch (error: any) {
 			alert(error.message);
 		} finally {
@@ -70,7 +71,12 @@
 <div class="w-full max-w-md mx-auto">
 	<div class="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4">
 		<div class="mb-4">
-			<h1 class="text-2xl font-bold">Profile</h1>
+			<div class="avatar mx-auto">
+				<div class="w-24 rounded">
+					<img src={userDataFromGoogleAuth.avatar_url} alt={Photo} width="100%" height="100%" />
+				</div>
+			</div>
+			<h1 class="text-2xl font-bold">Braden Wong</h1>
 			<p class="text-lg">Edit your profile</p>
 		</div>
 		<div class="mb-4">
@@ -151,11 +157,6 @@
 
 <form use:getProfile class="form-widget" on:submit|preventDefault={updateProfile}>
 	<!-- Create an avatar based off formData.photo with formData.full_name as alt text-->
-<div class="avatar">
-	<div class="w-24 rounded">
-		<img src={formData?.photo} alt={formData?.full_name} width="100%" height="100%" />
-	</div>
-</div>
 
 <!-- <v-avatar rounded size="128" class="mt-n4">
           <v-img
