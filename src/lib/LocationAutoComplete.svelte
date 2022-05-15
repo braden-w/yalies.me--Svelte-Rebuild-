@@ -1,7 +1,7 @@
 <script lang="ts">
 	let query = '';
 	let loading = false;
-	let results: google.maps.places.AutocompletePrediction[] | null = [];
+	let results: google.maps.places.AutocompletePrediction[] = [];
 	let selected = null;
 
 	// When query changes value
@@ -30,7 +30,7 @@
 		service.getPlacePredictions(request, (response, status) => {
 			if (status === google.maps.places.PlacesServiceStatus.OK) {
 				loading = false;
-				results = response;
+				results = response ?? [];
 				selected = null;
 			}
 			loading = false;
@@ -58,7 +58,7 @@
 	on:input={handleQueryChange}
 />
 <!-- For each result in results, display  -->
-{#if results}
+{#if results.length > 0}
 	<ul class="menu bg-base-100 w-full p-2 rounded-box">
 		{#each results as result}
 			<li
