@@ -63,7 +63,6 @@
 			loading = false;
 		}
 	}
-	$: $sessionStore, console.log($sessionStore);
 </script>
 
 <!-- Put a centered card on the screen. Inside it, there are multiple labelled inputs that are binded to the corresponding properties of the user -->
@@ -188,16 +187,15 @@
           {{ userProfileInformation.email }}
         </div> 
       -->
-<div>
+<!-- <div>
 	<label for="email">Email</label>
 	<input id="email" type="text" value={$sessionStore.email} disabled />
 </div>
 
-<!-- Create a card with inputs  for email, summer -->
 <div class="mt-n4">
 	<label for="full_name">Full Name</label>
 	<input id="full_name" type="text" value={$sessionStore.full_name} />
-</div>
+</div> -->
 <div>
 	<input
 		type="submit"
