@@ -14,7 +14,8 @@
 	onMount(() => {
 		const map = new mapboxgl.Map({
 			container: 'map',
-			style: 'mapbox://styles/mapbox/dark-v10',
+			// style: 'mapbox://styles/mapbox/dark-v10',
+			style: 'mapbox://styles/mapbox/streets-v11',
 			center: [NewHaven.longitude, NewHaven.latitude],
 			doubleClickZoom: false,
 			zoom: 8,
@@ -71,29 +72,29 @@
 			const el = document.createElement('div');
 			el.className = 'marker';
 			el.innerHTML = `<button name="selected" class="stack">
-	<div class="avatar shadow-md indicator">
+	<div class="avatar indicator">
 		<span class="indicator-item badge badge-secondary">typing…</span>
 		<div class="w-16 h-16 rounded-lg">
 			<img src="https://api.lorem.space/image/face?w=160&h=160" />
 		</div>
 	</div>
-	<div class="avatar shadow-md">
+	<div class="avatar">
 		<div class="w-16 h-16 rounded-lg">
 			<img src="https://api.lorem.space/image/face?w=160&h=160" />
 		</div>
 	</div>
-	<div class="avatar shadow-md">
+	<div class="avatar">
 		<div class="w-16 h-16 rounded-lg">
 			<img src="https://api.lorem.space/image/face?w=160&h=160" />
 		</div>
 	</div>
-	<div class="avatar shadow-md">
+	<div class="avatar">
 		<div class="w-16 h-16 rounded-lg">
 			<img src="https://api.lorem.space/image/face?w=160&h=160" />
 		</div>
 	</div>
 
-	<div class="avatar shadow-md">
+	<div class="avatar">
 		<div class="w-16 h-16 rounded-lg">
 			<img src="https://api.lorem.space/image/face?w=160&h=160" />
 		</div>
