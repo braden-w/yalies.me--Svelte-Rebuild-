@@ -53,6 +53,10 @@
 </svelte:head>
 
 <!-- Init mapbox -->
-<div id="map" class="w-full h-full" />
+<div id="map" class="w-full" />
 
-<style></style>
+<style>
+	#map {
+		height: calc(100vh - 4rem);
+	}
+</style>
