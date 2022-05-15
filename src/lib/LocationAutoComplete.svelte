@@ -62,7 +62,7 @@
 	<ul class="menu bg-base-100 w-full p-2 rounded-box">
 		{#each results as result}
 			<li
-				class="menu-item bg-base-200 hover:bg-base-300 cursor-pointer"
+				class="menu-item bg-base-200 w-full p-2 rounded-box"
 				on:click={() => {
 					query = result.description;
 					selected = result;
