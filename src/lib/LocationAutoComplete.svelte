@@ -13,29 +13,32 @@
 			selected = null;
 		} else {
 			// Fetch results with debounce
-			debounce(fetchResults, 500);
+			// debounce(fetchResults, 500);
+			fetchResults();
 		}
 	}
 
 	// Fetch results from the Google Places API
 	function fetchResults() {
 		loading = true;
-		fetch(
-			`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${query}&types=(cities)&key=${
-				import.meta.env.VITE_GOOGLE_MAP_KEY
-			}`
-		)
-			.then((res) => res.json())
-			.then((data: GooglePlacesRequest) => {
+
+		// // Search for the city using the Google Places API
+		// const request: GooglePlacesRequest = {
+		// 	input: query,
+		// 	types: ['(cities)'],
+		// 	key: import.meta.env.VITE_GOOGLE_MAP_KEY
+		// };
+		// results = data.predictions;
+
+		const service = new google.maps.places.AutocompleteService();
+		service.getQueryPredictions({ input: query }, (response, status) => {
+			if (status === google.maps.places.PlacesServiceStatus.OK) {
 				loading = false;
-				results = data.predictions;
-				console.log('🚀 ~ file: LocationAutoComplete.svelte ~ line 30 ~ .then ~ results', results);
+				results = response;
+				console.log(results)
 				selected = null;
-			})
-			.catch((err) => {
-				loading = false;
-				console.error(err);
-			});
+			}
+		});
 	}
 
 	// Implement a debounce function
