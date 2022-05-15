@@ -12,6 +12,324 @@ export interface paths {
       };
     };
   };
+  "/2022_facebook": {
+    get: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.2022_facebook.id"];
+          upi?: parameters["rowFilter.2022_facebook.upi"];
+          netid?: parameters["rowFilter.2022_facebook.netid"];
+          email?: parameters["rowFilter.2022_facebook.email"];
+          mailbox?: parameters["rowFilter.2022_facebook.mailbox"];
+          first_name?: parameters["rowFilter.2022_facebook.first_name"];
+          last_name?: parameters["rowFilter.2022_facebook.last_name"];
+          school_code?: parameters["rowFilter.2022_facebook.school_code"];
+          school?: parameters["rowFilter.2022_facebook.school"];
+          curriculum?: parameters["rowFilter.2022_facebook.curriculum"];
+          organization_code?: parameters["rowFilter.2022_facebook.organization_code"];
+          organization?: parameters["rowFilter.2022_facebook.organization"];
+          title?: parameters["rowFilter.2022_facebook.title"];
+          address?: parameters["rowFilter.2022_facebook.address"];
+          unit_class?: parameters["rowFilter.2022_facebook.unit_class"];
+          unit_code?: parameters["rowFilter.2022_facebook.unit_code"];
+          unit?: parameters["rowFilter.2022_facebook.unit"];
+          postal_address?: parameters["rowFilter.2022_facebook.postal_address"];
+          office_building?: parameters["rowFilter.2022_facebook.office_building"];
+          cv?: parameters["rowFilter.2022_facebook.cv"];
+          profile?: parameters["rowFilter.2022_facebook.profile"];
+          city?: parameters["rowFilter.2022_facebook.city"];
+          year?: parameters["rowFilter.2022_facebook.year"];
+          college?: parameters["rowFilter.2022_facebook.college"];
+          college_code?: parameters["rowFilter.2022_facebook.college_code"];
+          leave?: parameters["rowFilter.2022_facebook.leave"];
+          eli_whitney?: parameters["rowFilter.2022_facebook.eli_whitney"];
+          image?: parameters["rowFilter.2022_facebook.image"];
+          birthday?: parameters["rowFilter.2022_facebook.birthday"];
+          major?: parameters["rowFilter.2022_facebook.major"];
+          phone?: parameters["rowFilter.2022_facebook.phone"];
+          access_code?: parameters["rowFilter.2022_facebook.access_code"];
+          middle_name?: parameters["rowFilter.2022_facebook.middle_name"];
+          office_room?: parameters["rowFilter.2022_facebook.office_room"];
+          website?: parameters["rowFilter.2022_facebook.website"];
+          education?: parameters["rowFilter.2022_facebook.education"];
+          name_recording?: parameters["rowFilter.2022_facebook.name_recording"];
+          pronouns?: parameters["rowFilter.2022_facebook.pronouns"];
+          phonetic_name?: parameters["rowFilter.2022_facebook.phonetic_name"];
+          suffix?: parameters["rowFilter.2022_facebook.suffix"];
+          fax?: parameters["rowFilter.2022_facebook.fax"];
+          city_as_point?: parameters["rowFilter.2022_facebook.city_as_point"];
+          birth_day?: parameters["rowFilter.2022_facebook.birth_day"];
+          birth_month?: parameters["rowFilter.2022_facebook.birth_month"];
+          visitor?: parameters["rowFilter.2022_facebook.visitor"];
+          preferred_name?: parameters["rowFilter.2022_facebook.preferred_name"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["2022_facebook"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** 2022_facebook */
+          "2022_facebook"?: definitions["2022_facebook"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.2022_facebook.id"];
+          upi?: parameters["rowFilter.2022_facebook.upi"];
+          netid?: parameters["rowFilter.2022_facebook.netid"];
+          email?: parameters["rowFilter.2022_facebook.email"];
+          mailbox?: parameters["rowFilter.2022_facebook.mailbox"];
+          first_name?: parameters["rowFilter.2022_facebook.first_name"];
+          last_name?: parameters["rowFilter.2022_facebook.last_name"];
+          school_code?: parameters["rowFilter.2022_facebook.school_code"];
+          school?: parameters["rowFilter.2022_facebook.school"];
+          curriculum?: parameters["rowFilter.2022_facebook.curriculum"];
+          organization_code?: parameters["rowFilter.2022_facebook.organization_code"];
+          organization?: parameters["rowFilter.2022_facebook.organization"];
+          title?: parameters["rowFilter.2022_facebook.title"];
+          address?: parameters["rowFilter.2022_facebook.address"];
+          unit_class?: parameters["rowFilter.2022_facebook.unit_class"];
+          unit_code?: parameters["rowFilter.2022_facebook.unit_code"];
+          unit?: parameters["rowFilter.2022_facebook.unit"];
+          postal_address?: parameters["rowFilter.2022_facebook.postal_address"];
+          office_building?: parameters["rowFilter.2022_facebook.office_building"];
+          cv?: parameters["rowFilter.2022_facebook.cv"];
+          profile?: parameters["rowFilter.2022_facebook.profile"];
+          city?: parameters["rowFilter.2022_facebook.city"];
+          year?: parameters["rowFilter.2022_facebook.year"];
+          college?: parameters["rowFilter.2022_facebook.college"];
+          college_code?: parameters["rowFilter.2022_facebook.college_code"];
+          leave?: parameters["rowFilter.2022_facebook.leave"];
+          eli_whitney?: parameters["rowFilter.2022_facebook.eli_whitney"];
+          image?: parameters["rowFilter.2022_facebook.image"];
+          birthday?: parameters["rowFilter.2022_facebook.birthday"];
+          major?: parameters["rowFilter.2022_facebook.major"];
+          phone?: parameters["rowFilter.2022_facebook.phone"];
+          access_code?: parameters["rowFilter.2022_facebook.access_code"];
+          middle_name?: parameters["rowFilter.2022_facebook.middle_name"];
+          office_room?: parameters["rowFilter.2022_facebook.office_room"];
+          website?: parameters["rowFilter.2022_facebook.website"];
+          education?: parameters["rowFilter.2022_facebook.education"];
+          name_recording?: parameters["rowFilter.2022_facebook.name_recording"];
+          pronouns?: parameters["rowFilter.2022_facebook.pronouns"];
+          phonetic_name?: parameters["rowFilter.2022_facebook.phonetic_name"];
+          suffix?: parameters["rowFilter.2022_facebook.suffix"];
+          fax?: parameters["rowFilter.2022_facebook.fax"];
+          city_as_point?: parameters["rowFilter.2022_facebook.city_as_point"];
+          birth_day?: parameters["rowFilter.2022_facebook.birth_day"];
+          birth_month?: parameters["rowFilter.2022_facebook.birth_month"];
+          visitor?: parameters["rowFilter.2022_facebook.visitor"];
+          preferred_name?: parameters["rowFilter.2022_facebook.preferred_name"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.2022_facebook.id"];
+          upi?: parameters["rowFilter.2022_facebook.upi"];
+          netid?: parameters["rowFilter.2022_facebook.netid"];
+          email?: parameters["rowFilter.2022_facebook.email"];
+          mailbox?: parameters["rowFilter.2022_facebook.mailbox"];
+          first_name?: parameters["rowFilter.2022_facebook.first_name"];
+          last_name?: parameters["rowFilter.2022_facebook.last_name"];
+          school_code?: parameters["rowFilter.2022_facebook.school_code"];
+          school?: parameters["rowFilter.2022_facebook.school"];
+          curriculum?: parameters["rowFilter.2022_facebook.curriculum"];
+          organization_code?: parameters["rowFilter.2022_facebook.organization_code"];
+          organization?: parameters["rowFilter.2022_facebook.organization"];
+          title?: parameters["rowFilter.2022_facebook.title"];
+          address?: parameters["rowFilter.2022_facebook.address"];
+          unit_class?: parameters["rowFilter.2022_facebook.unit_class"];
+          unit_code?: parameters["rowFilter.2022_facebook.unit_code"];
+          unit?: parameters["rowFilter.2022_facebook.unit"];
+          postal_address?: parameters["rowFilter.2022_facebook.postal_address"];
+          office_building?: parameters["rowFilter.2022_facebook.office_building"];
+          cv?: parameters["rowFilter.2022_facebook.cv"];
+          profile?: parameters["rowFilter.2022_facebook.profile"];
+          city?: parameters["rowFilter.2022_facebook.city"];
+          year?: parameters["rowFilter.2022_facebook.year"];
+          college?: parameters["rowFilter.2022_facebook.college"];
+          college_code?: parameters["rowFilter.2022_facebook.college_code"];
+          leave?: parameters["rowFilter.2022_facebook.leave"];
+          eli_whitney?: parameters["rowFilter.2022_facebook.eli_whitney"];
+          image?: parameters["rowFilter.2022_facebook.image"];
+          birthday?: parameters["rowFilter.2022_facebook.birthday"];
+          major?: parameters["rowFilter.2022_facebook.major"];
+          phone?: parameters["rowFilter.2022_facebook.phone"];
+          access_code?: parameters["rowFilter.2022_facebook.access_code"];
+          middle_name?: parameters["rowFilter.2022_facebook.middle_name"];
+          office_room?: parameters["rowFilter.2022_facebook.office_room"];
+          website?: parameters["rowFilter.2022_facebook.website"];
+          education?: parameters["rowFilter.2022_facebook.education"];
+          name_recording?: parameters["rowFilter.2022_facebook.name_recording"];
+          pronouns?: parameters["rowFilter.2022_facebook.pronouns"];
+          phonetic_name?: parameters["rowFilter.2022_facebook.phonetic_name"];
+          suffix?: parameters["rowFilter.2022_facebook.suffix"];
+          fax?: parameters["rowFilter.2022_facebook.fax"];
+          city_as_point?: parameters["rowFilter.2022_facebook.city_as_point"];
+          birth_day?: parameters["rowFilter.2022_facebook.birth_day"];
+          birth_month?: parameters["rowFilter.2022_facebook.birth_month"];
+          visitor?: parameters["rowFilter.2022_facebook.visitor"];
+          preferred_name?: parameters["rowFilter.2022_facebook.preferred_name"];
+        };
+        body: {
+          /** 2022_facebook */
+          "2022_facebook"?: definitions["2022_facebook"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
+  "/auth_email_to_user_data": {
+    get: {
+      parameters: {
+        query: {
+          /** Refers to auth.users.email */
+          email?: parameters["rowFilter.auth_email_to_user_data.email"];
+          /** The corresponding ID Column from user_data */
+          user_id?: parameters["rowFilter.auth_email_to_user_data.user_id"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["auth_email_to_user_data"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** auth_email_to_user_data */
+          auth_email_to_user_data?: definitions["auth_email_to_user_data"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          /** Refers to auth.users.email */
+          email?: parameters["rowFilter.auth_email_to_user_data.email"];
+          /** The corresponding ID Column from user_data */
+          user_id?: parameters["rowFilter.auth_email_to_user_data.user_id"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          /** Refers to auth.users.email */
+          email?: parameters["rowFilter.auth_email_to_user_data.email"];
+          /** The corresponding ID Column from user_data */
+          user_id?: parameters["rowFilter.auth_email_to_user_data.user_id"];
+        };
+        body: {
+          /** auth_email_to_user_data */
+          auth_email_to_user_data?: definitions["auth_email_to_user_data"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
   "/errors": {
     get: {
       parameters: {
@@ -285,6 +603,138 @@ export interface paths {
       };
     };
   };
+  "/old_user_data": {
+    get: {
+      parameters: {
+        query: {
+          email?: parameters["rowFilter.old_user_data.email"];
+          interests?: parameters["rowFilter.old_user_data.interests"];
+          expression?: parameters["rowFilter.old_user_data.expression"];
+          location?: parameters["rowFilter.old_user_data.location"];
+          university?: parameters["rowFilter.old_user_data.university"];
+          city_formatted_address?: parameters["rowFilter.old_user_data.city_formatted_address"];
+          location_as_point?: parameters["rowFilter.old_user_data.location_as_point"];
+          full_name?: parameters["rowFilter.old_user_data.full_name"];
+          photo?: parameters["rowFilter.old_user_data.photo"];
+          summer_in_new_haven?: parameters["rowFilter.old_user_data.summer_in_new_haven"];
+          summer_in_new_haven_future?: parameters["rowFilter.old_user_data.summer_in_new_haven_future"];
+          instagram?: parameters["rowFilter.old_user_data.instagram"];
+          linkedin?: parameters["rowFilter.old_user_data.linkedin"];
+          phone?: parameters["rowFilter.old_user_data.phone"];
+          major?: parameters["rowFilter.old_user_data.major"];
+          year?: parameters["rowFilter.old_user_data.year"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["old_user_data"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** old_user_data */
+          old_user_data?: definitions["old_user_data"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          email?: parameters["rowFilter.old_user_data.email"];
+          interests?: parameters["rowFilter.old_user_data.interests"];
+          expression?: parameters["rowFilter.old_user_data.expression"];
+          location?: parameters["rowFilter.old_user_data.location"];
+          university?: parameters["rowFilter.old_user_data.university"];
+          city_formatted_address?: parameters["rowFilter.old_user_data.city_formatted_address"];
+          location_as_point?: parameters["rowFilter.old_user_data.location_as_point"];
+          full_name?: parameters["rowFilter.old_user_data.full_name"];
+          photo?: parameters["rowFilter.old_user_data.photo"];
+          summer_in_new_haven?: parameters["rowFilter.old_user_data.summer_in_new_haven"];
+          summer_in_new_haven_future?: parameters["rowFilter.old_user_data.summer_in_new_haven_future"];
+          instagram?: parameters["rowFilter.old_user_data.instagram"];
+          linkedin?: parameters["rowFilter.old_user_data.linkedin"];
+          phone?: parameters["rowFilter.old_user_data.phone"];
+          major?: parameters["rowFilter.old_user_data.major"];
+          year?: parameters["rowFilter.old_user_data.year"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          email?: parameters["rowFilter.old_user_data.email"];
+          interests?: parameters["rowFilter.old_user_data.interests"];
+          expression?: parameters["rowFilter.old_user_data.expression"];
+          location?: parameters["rowFilter.old_user_data.location"];
+          university?: parameters["rowFilter.old_user_data.university"];
+          city_formatted_address?: parameters["rowFilter.old_user_data.city_formatted_address"];
+          location_as_point?: parameters["rowFilter.old_user_data.location_as_point"];
+          full_name?: parameters["rowFilter.old_user_data.full_name"];
+          photo?: parameters["rowFilter.old_user_data.photo"];
+          summer_in_new_haven?: parameters["rowFilter.old_user_data.summer_in_new_haven"];
+          summer_in_new_haven_future?: parameters["rowFilter.old_user_data.summer_in_new_haven_future"];
+          instagram?: parameters["rowFilter.old_user_data.instagram"];
+          linkedin?: parameters["rowFilter.old_user_data.linkedin"];
+          phone?: parameters["rowFilter.old_user_data.phone"];
+          major?: parameters["rowFilter.old_user_data.major"];
+          year?: parameters["rowFilter.old_user_data.year"];
+        };
+        body: {
+          /** old_user_data */
+          old_user_data?: definitions["old_user_data"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
   "/relationships_between_users": {
     get: {
       parameters: {
@@ -505,15 +955,10 @@ export interface paths {
     get: {
       parameters: {
         query: {
-          email?: parameters["rowFilter.user_data.email"];
           interests?: parameters["rowFilter.user_data.interests"];
           expression?: parameters["rowFilter.user_data.expression"];
           location?: parameters["rowFilter.user_data.location"];
           university?: parameters["rowFilter.user_data.university"];
-          city_formatted_address?: parameters["rowFilter.user_data.city_formatted_address"];
-          location_as_point?: parameters["rowFilter.user_data.location_as_point"];
-          full_name?: parameters["rowFilter.user_data.full_name"];
-          photo?: parameters["rowFilter.user_data.photo"];
           summer_in_new_haven?: parameters["rowFilter.user_data.summer_in_new_haven"];
           summer_in_new_haven_future?: parameters["rowFilter.user_data.summer_in_new_haven_future"];
           instagram?: parameters["rowFilter.user_data.instagram"];
@@ -521,6 +966,7 @@ export interface paths {
           phone?: parameters["rowFilter.user_data.phone"];
           major?: parameters["rowFilter.user_data.major"];
           year?: parameters["rowFilter.user_data.year"];
+          user_id?: parameters["rowFilter.user_data.user_id"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -571,15 +1017,10 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          email?: parameters["rowFilter.user_data.email"];
           interests?: parameters["rowFilter.user_data.interests"];
           expression?: parameters["rowFilter.user_data.expression"];
           location?: parameters["rowFilter.user_data.location"];
           university?: parameters["rowFilter.user_data.university"];
-          city_formatted_address?: parameters["rowFilter.user_data.city_formatted_address"];
-          location_as_point?: parameters["rowFilter.user_data.location_as_point"];
-          full_name?: parameters["rowFilter.user_data.full_name"];
-          photo?: parameters["rowFilter.user_data.photo"];
           summer_in_new_haven?: parameters["rowFilter.user_data.summer_in_new_haven"];
           summer_in_new_haven_future?: parameters["rowFilter.user_data.summer_in_new_haven_future"];
           instagram?: parameters["rowFilter.user_data.instagram"];
@@ -587,6 +1028,7 @@ export interface paths {
           phone?: parameters["rowFilter.user_data.phone"];
           major?: parameters["rowFilter.user_data.major"];
           year?: parameters["rowFilter.user_data.year"];
+          user_id?: parameters["rowFilter.user_data.user_id"];
         };
         header: {
           /** Preference */
@@ -601,15 +1043,10 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          email?: parameters["rowFilter.user_data.email"];
           interests?: parameters["rowFilter.user_data.interests"];
           expression?: parameters["rowFilter.user_data.expression"];
           location?: parameters["rowFilter.user_data.location"];
           university?: parameters["rowFilter.user_data.university"];
-          city_formatted_address?: parameters["rowFilter.user_data.city_formatted_address"];
-          location_as_point?: parameters["rowFilter.user_data.location_as_point"];
-          full_name?: parameters["rowFilter.user_data.full_name"];
-          photo?: parameters["rowFilter.user_data.photo"];
           summer_in_new_haven?: parameters["rowFilter.user_data.summer_in_new_haven"];
           summer_in_new_haven_future?: parameters["rowFilter.user_data.summer_in_new_haven_future"];
           instagram?: parameters["rowFilter.user_data.instagram"];
@@ -617,6 +1054,7 @@ export interface paths {
           phone?: parameters["rowFilter.user_data.phone"];
           major?: parameters["rowFilter.user_data.major"];
           year?: parameters["rowFilter.user_data.year"];
+          user_id?: parameters["rowFilter.user_data.user_id"];
         };
         body: {
           /** user_data */
@@ -720,6 +1158,117 @@ export interface paths {
         body: {
           /** user_data_from_firebase */
           user_data_from_firebase?: definitions["user_data_from_firebase"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
+  "/user_data_from_google_auth": {
+    get: {
+      parameters: {
+        query: {
+          email?: parameters["rowFilter.user_data_from_google_auth.email"];
+          email_verified?: parameters["rowFilter.user_data_from_google_auth.email_verified"];
+          full_name?: parameters["rowFilter.user_data_from_google_auth.full_name"];
+          name?: parameters["rowFilter.user_data_from_google_auth.name"];
+          picture?: parameters["rowFilter.user_data_from_google_auth.picture"];
+          avatar_url?: parameters["rowFilter.user_data_from_google_auth.avatar_url"];
+          iss?: parameters["rowFilter.user_data_from_google_auth.iss"];
+          provider_id?: parameters["rowFilter.user_data_from_google_auth.provider_id"];
+          sub?: parameters["rowFilter.user_data_from_google_auth.sub"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["user_data_from_google_auth"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** user_data_from_google_auth */
+          user_data_from_google_auth?: definitions["user_data_from_google_auth"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          email?: parameters["rowFilter.user_data_from_google_auth.email"];
+          email_verified?: parameters["rowFilter.user_data_from_google_auth.email_verified"];
+          full_name?: parameters["rowFilter.user_data_from_google_auth.full_name"];
+          name?: parameters["rowFilter.user_data_from_google_auth.name"];
+          picture?: parameters["rowFilter.user_data_from_google_auth.picture"];
+          avatar_url?: parameters["rowFilter.user_data_from_google_auth.avatar_url"];
+          iss?: parameters["rowFilter.user_data_from_google_auth.iss"];
+          provider_id?: parameters["rowFilter.user_data_from_google_auth.provider_id"];
+          sub?: parameters["rowFilter.user_data_from_google_auth.sub"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          email?: parameters["rowFilter.user_data_from_google_auth.email"];
+          email_verified?: parameters["rowFilter.user_data_from_google_auth.email_verified"];
+          full_name?: parameters["rowFilter.user_data_from_google_auth.full_name"];
+          name?: parameters["rowFilter.user_data_from_google_auth.name"];
+          picture?: parameters["rowFilter.user_data_from_google_auth.picture"];
+          avatar_url?: parameters["rowFilter.user_data_from_google_auth.avatar_url"];
+          iss?: parameters["rowFilter.user_data_from_google_auth.iss"];
+          provider_id?: parameters["rowFilter.user_data_from_google_auth.provider_id"];
+          sub?: parameters["rowFilter.user_data_from_google_auth.sub"];
+        };
+        body: {
+          /** user_data_from_google_auth */
+          user_data_from_google_auth?: definitions["user_data_from_google_auth"];
         };
         header: {
           /** Preference */
@@ -1095,6 +1644,7 @@ export interface paths {
           city_as_point?: parameters["rowFilter.users_from_yale_facebook_new.city_as_point"];
           birth_day?: parameters["rowFilter.users_from_yale_facebook_new.birth_day"];
           birth_month?: parameters["rowFilter.users_from_yale_facebook_new.birth_month"];
+          visitor?: parameters["rowFilter.users_from_yale_facebook_new.visitor"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -1189,6 +1739,7 @@ export interface paths {
           city_as_point?: parameters["rowFilter.users_from_yale_facebook_new.city_as_point"];
           birth_day?: parameters["rowFilter.users_from_yale_facebook_new.birth_day"];
           birth_month?: parameters["rowFilter.users_from_yale_facebook_new.birth_month"];
+          visitor?: parameters["rowFilter.users_from_yale_facebook_new.visitor"];
         };
         header: {
           /** Preference */
@@ -1247,223 +1798,11 @@ export interface paths {
           city_as_point?: parameters["rowFilter.users_from_yale_facebook_new.city_as_point"];
           birth_day?: parameters["rowFilter.users_from_yale_facebook_new.birth_day"];
           birth_month?: parameters["rowFilter.users_from_yale_facebook_new.birth_month"];
+          visitor?: parameters["rowFilter.users_from_yale_facebook_new.visitor"];
         };
         body: {
           /** users_from_yale_facebook_new */
           users_from_yale_facebook_new?: definitions["users_from_yale_facebook_new"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** No Content */
-        204: never;
-      };
-    };
-  };
-  "/users_from_yale_facebook_with_null_email": {
-    get: {
-      parameters: {
-        query: {
-          id?: parameters["rowFilter.users_from_yale_facebook_with_null_email.id"];
-          upi?: parameters["rowFilter.users_from_yale_facebook_with_null_email.upi"];
-          netid?: parameters["rowFilter.users_from_yale_facebook_with_null_email.netid"];
-          email?: parameters["rowFilter.users_from_yale_facebook_with_null_email.email"];
-          mailbox?: parameters["rowFilter.users_from_yale_facebook_with_null_email.mailbox"];
-          first_name?: parameters["rowFilter.users_from_yale_facebook_with_null_email.first_name"];
-          last_name?: parameters["rowFilter.users_from_yale_facebook_with_null_email.last_name"];
-          school_code?: parameters["rowFilter.users_from_yale_facebook_with_null_email.school_code"];
-          school?: parameters["rowFilter.users_from_yale_facebook_with_null_email.school"];
-          curriculum?: parameters["rowFilter.users_from_yale_facebook_with_null_email.curriculum"];
-          organization_code?: parameters["rowFilter.users_from_yale_facebook_with_null_email.organization_code"];
-          organization?: parameters["rowFilter.users_from_yale_facebook_with_null_email.organization"];
-          title?: parameters["rowFilter.users_from_yale_facebook_with_null_email.title"];
-          address?: parameters["rowFilter.users_from_yale_facebook_with_null_email.address"];
-          unit_class?: parameters["rowFilter.users_from_yale_facebook_with_null_email.unit_class"];
-          unit_code?: parameters["rowFilter.users_from_yale_facebook_with_null_email.unit_code"];
-          unit?: parameters["rowFilter.users_from_yale_facebook_with_null_email.unit"];
-          postal_address?: parameters["rowFilter.users_from_yale_facebook_with_null_email.postal_address"];
-          office_building?: parameters["rowFilter.users_from_yale_facebook_with_null_email.office_building"];
-          cv?: parameters["rowFilter.users_from_yale_facebook_with_null_email.cv"];
-          profile?: parameters["rowFilter.users_from_yale_facebook_with_null_email.profile"];
-          city?: parameters["rowFilter.users_from_yale_facebook_with_null_email.city"];
-          year?: parameters["rowFilter.users_from_yale_facebook_with_null_email.year"];
-          college?: parameters["rowFilter.users_from_yale_facebook_with_null_email.college"];
-          college_code?: parameters["rowFilter.users_from_yale_facebook_with_null_email.college_code"];
-          leave?: parameters["rowFilter.users_from_yale_facebook_with_null_email.leave"];
-          eli_whitney?: parameters["rowFilter.users_from_yale_facebook_with_null_email.eli_whitney"];
-          image?: parameters["rowFilter.users_from_yale_facebook_with_null_email.image"];
-          birthday?: parameters["rowFilter.users_from_yale_facebook_with_null_email.birthday"];
-          major?: parameters["rowFilter.users_from_yale_facebook_with_null_email.major"];
-          phone?: parameters["rowFilter.users_from_yale_facebook_with_null_email.phone"];
-          access_code?: parameters["rowFilter.users_from_yale_facebook_with_null_email.access_code"];
-          middle_name?: parameters["rowFilter.users_from_yale_facebook_with_null_email.middle_name"];
-          office_room?: parameters["rowFilter.users_from_yale_facebook_with_null_email.office_room"];
-          website?: parameters["rowFilter.users_from_yale_facebook_with_null_email.website"];
-          education?: parameters["rowFilter.users_from_yale_facebook_with_null_email.education"];
-          name_recording?: parameters["rowFilter.users_from_yale_facebook_with_null_email.name_recording"];
-          pronouns?: parameters["rowFilter.users_from_yale_facebook_with_null_email.pronouns"];
-          phonetic_name?: parameters["rowFilter.users_from_yale_facebook_with_null_email.phonetic_name"];
-          suffix?: parameters["rowFilter.users_from_yale_facebook_with_null_email.suffix"];
-          fax?: parameters["rowFilter.users_from_yale_facebook_with_null_email.fax"];
-          city_as_point?: parameters["rowFilter.users_from_yale_facebook_with_null_email.city_as_point"];
-          full_name?: parameters["rowFilter.users_from_yale_facebook_with_null_email.full_name"];
-          /** Filtering Columns */
-          select?: parameters["select"];
-          /** Ordering */
-          order?: parameters["order"];
-          /** Limiting and Pagination */
-          offset?: parameters["offset"];
-          /** Limiting and Pagination */
-          limit?: parameters["limit"];
-        };
-        header: {
-          /** Limiting and Pagination */
-          Range?: parameters["range"];
-          /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
-          /** Preference */
-          Prefer?: parameters["preferCount"];
-        };
-      };
-      responses: {
-        /** OK */
-        200: {
-          schema: definitions["users_from_yale_facebook_with_null_email"][];
-        };
-        /** Partial Content */
-        206: unknown;
-      };
-    };
-    post: {
-      parameters: {
-        body: {
-          /** users_from_yale_facebook_with_null_email */
-          users_from_yale_facebook_with_null_email?: definitions["users_from_yale_facebook_with_null_email"];
-        };
-        query: {
-          /** Filtering Columns */
-          select?: parameters["select"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** Created */
-        201: unknown;
-      };
-    };
-    delete: {
-      parameters: {
-        query: {
-          id?: parameters["rowFilter.users_from_yale_facebook_with_null_email.id"];
-          upi?: parameters["rowFilter.users_from_yale_facebook_with_null_email.upi"];
-          netid?: parameters["rowFilter.users_from_yale_facebook_with_null_email.netid"];
-          email?: parameters["rowFilter.users_from_yale_facebook_with_null_email.email"];
-          mailbox?: parameters["rowFilter.users_from_yale_facebook_with_null_email.mailbox"];
-          first_name?: parameters["rowFilter.users_from_yale_facebook_with_null_email.first_name"];
-          last_name?: parameters["rowFilter.users_from_yale_facebook_with_null_email.last_name"];
-          school_code?: parameters["rowFilter.users_from_yale_facebook_with_null_email.school_code"];
-          school?: parameters["rowFilter.users_from_yale_facebook_with_null_email.school"];
-          curriculum?: parameters["rowFilter.users_from_yale_facebook_with_null_email.curriculum"];
-          organization_code?: parameters["rowFilter.users_from_yale_facebook_with_null_email.organization_code"];
-          organization?: parameters["rowFilter.users_from_yale_facebook_with_null_email.organization"];
-          title?: parameters["rowFilter.users_from_yale_facebook_with_null_email.title"];
-          address?: parameters["rowFilter.users_from_yale_facebook_with_null_email.address"];
-          unit_class?: parameters["rowFilter.users_from_yale_facebook_with_null_email.unit_class"];
-          unit_code?: parameters["rowFilter.users_from_yale_facebook_with_null_email.unit_code"];
-          unit?: parameters["rowFilter.users_from_yale_facebook_with_null_email.unit"];
-          postal_address?: parameters["rowFilter.users_from_yale_facebook_with_null_email.postal_address"];
-          office_building?: parameters["rowFilter.users_from_yale_facebook_with_null_email.office_building"];
-          cv?: parameters["rowFilter.users_from_yale_facebook_with_null_email.cv"];
-          profile?: parameters["rowFilter.users_from_yale_facebook_with_null_email.profile"];
-          city?: parameters["rowFilter.users_from_yale_facebook_with_null_email.city"];
-          year?: parameters["rowFilter.users_from_yale_facebook_with_null_email.year"];
-          college?: parameters["rowFilter.users_from_yale_facebook_with_null_email.college"];
-          college_code?: parameters["rowFilter.users_from_yale_facebook_with_null_email.college_code"];
-          leave?: parameters["rowFilter.users_from_yale_facebook_with_null_email.leave"];
-          eli_whitney?: parameters["rowFilter.users_from_yale_facebook_with_null_email.eli_whitney"];
-          image?: parameters["rowFilter.users_from_yale_facebook_with_null_email.image"];
-          birthday?: parameters["rowFilter.users_from_yale_facebook_with_null_email.birthday"];
-          major?: parameters["rowFilter.users_from_yale_facebook_with_null_email.major"];
-          phone?: parameters["rowFilter.users_from_yale_facebook_with_null_email.phone"];
-          access_code?: parameters["rowFilter.users_from_yale_facebook_with_null_email.access_code"];
-          middle_name?: parameters["rowFilter.users_from_yale_facebook_with_null_email.middle_name"];
-          office_room?: parameters["rowFilter.users_from_yale_facebook_with_null_email.office_room"];
-          website?: parameters["rowFilter.users_from_yale_facebook_with_null_email.website"];
-          education?: parameters["rowFilter.users_from_yale_facebook_with_null_email.education"];
-          name_recording?: parameters["rowFilter.users_from_yale_facebook_with_null_email.name_recording"];
-          pronouns?: parameters["rowFilter.users_from_yale_facebook_with_null_email.pronouns"];
-          phonetic_name?: parameters["rowFilter.users_from_yale_facebook_with_null_email.phonetic_name"];
-          suffix?: parameters["rowFilter.users_from_yale_facebook_with_null_email.suffix"];
-          fax?: parameters["rowFilter.users_from_yale_facebook_with_null_email.fax"];
-          city_as_point?: parameters["rowFilter.users_from_yale_facebook_with_null_email.city_as_point"];
-          full_name?: parameters["rowFilter.users_from_yale_facebook_with_null_email.full_name"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** No Content */
-        204: never;
-      };
-    };
-    patch: {
-      parameters: {
-        query: {
-          id?: parameters["rowFilter.users_from_yale_facebook_with_null_email.id"];
-          upi?: parameters["rowFilter.users_from_yale_facebook_with_null_email.upi"];
-          netid?: parameters["rowFilter.users_from_yale_facebook_with_null_email.netid"];
-          email?: parameters["rowFilter.users_from_yale_facebook_with_null_email.email"];
-          mailbox?: parameters["rowFilter.users_from_yale_facebook_with_null_email.mailbox"];
-          first_name?: parameters["rowFilter.users_from_yale_facebook_with_null_email.first_name"];
-          last_name?: parameters["rowFilter.users_from_yale_facebook_with_null_email.last_name"];
-          school_code?: parameters["rowFilter.users_from_yale_facebook_with_null_email.school_code"];
-          school?: parameters["rowFilter.users_from_yale_facebook_with_null_email.school"];
-          curriculum?: parameters["rowFilter.users_from_yale_facebook_with_null_email.curriculum"];
-          organization_code?: parameters["rowFilter.users_from_yale_facebook_with_null_email.organization_code"];
-          organization?: parameters["rowFilter.users_from_yale_facebook_with_null_email.organization"];
-          title?: parameters["rowFilter.users_from_yale_facebook_with_null_email.title"];
-          address?: parameters["rowFilter.users_from_yale_facebook_with_null_email.address"];
-          unit_class?: parameters["rowFilter.users_from_yale_facebook_with_null_email.unit_class"];
-          unit_code?: parameters["rowFilter.users_from_yale_facebook_with_null_email.unit_code"];
-          unit?: parameters["rowFilter.users_from_yale_facebook_with_null_email.unit"];
-          postal_address?: parameters["rowFilter.users_from_yale_facebook_with_null_email.postal_address"];
-          office_building?: parameters["rowFilter.users_from_yale_facebook_with_null_email.office_building"];
-          cv?: parameters["rowFilter.users_from_yale_facebook_with_null_email.cv"];
-          profile?: parameters["rowFilter.users_from_yale_facebook_with_null_email.profile"];
-          city?: parameters["rowFilter.users_from_yale_facebook_with_null_email.city"];
-          year?: parameters["rowFilter.users_from_yale_facebook_with_null_email.year"];
-          college?: parameters["rowFilter.users_from_yale_facebook_with_null_email.college"];
-          college_code?: parameters["rowFilter.users_from_yale_facebook_with_null_email.college_code"];
-          leave?: parameters["rowFilter.users_from_yale_facebook_with_null_email.leave"];
-          eli_whitney?: parameters["rowFilter.users_from_yale_facebook_with_null_email.eli_whitney"];
-          image?: parameters["rowFilter.users_from_yale_facebook_with_null_email.image"];
-          birthday?: parameters["rowFilter.users_from_yale_facebook_with_null_email.birthday"];
-          major?: parameters["rowFilter.users_from_yale_facebook_with_null_email.major"];
-          phone?: parameters["rowFilter.users_from_yale_facebook_with_null_email.phone"];
-          access_code?: parameters["rowFilter.users_from_yale_facebook_with_null_email.access_code"];
-          middle_name?: parameters["rowFilter.users_from_yale_facebook_with_null_email.middle_name"];
-          office_room?: parameters["rowFilter.users_from_yale_facebook_with_null_email.office_room"];
-          website?: parameters["rowFilter.users_from_yale_facebook_with_null_email.website"];
-          education?: parameters["rowFilter.users_from_yale_facebook_with_null_email.education"];
-          name_recording?: parameters["rowFilter.users_from_yale_facebook_with_null_email.name_recording"];
-          pronouns?: parameters["rowFilter.users_from_yale_facebook_with_null_email.pronouns"];
-          phonetic_name?: parameters["rowFilter.users_from_yale_facebook_with_null_email.phonetic_name"];
-          suffix?: parameters["rowFilter.users_from_yale_facebook_with_null_email.suffix"];
-          fax?: parameters["rowFilter.users_from_yale_facebook_with_null_email.fax"];
-          city_as_point?: parameters["rowFilter.users_from_yale_facebook_with_null_email.city_as_point"];
-          full_name?: parameters["rowFilter.users_from_yale_facebook_with_null_email.full_name"];
-        };
-        body: {
-          /** users_from_yale_facebook_with_null_email */
-          users_from_yale_facebook_with_null_email?: definitions["users_from_yale_facebook_with_null_email"];
         };
         header: {
           /** Preference */
@@ -1807,6 +2146,123 @@ export interface paths {
 }
 
 export interface definitions {
+  "2022_facebook": {
+    /** Format: integer */
+    id?: number;
+    /** Format: integer */
+    upi?: number;
+    /** Format: character varying */
+    netid?: string;
+    /**
+     * Format: character varying
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    email: string;
+    /** Format: character varying */
+    mailbox?: string;
+    /** Format: character varying */
+    first_name?: string;
+    /** Format: character varying */
+    last_name?: string;
+    /** Format: character varying */
+    school_code?: string;
+    /** Format: character varying */
+    school?: string;
+    /** Format: character varying */
+    curriculum?: string;
+    /** Format: character varying */
+    organization_code?: string;
+    /** Format: character varying */
+    organization?: string;
+    /** Format: character varying */
+    title?: string;
+    /** Format: character varying */
+    address?: string;
+    /** Format: character varying */
+    unit_class?: string;
+    /** Format: character varying */
+    unit_code?: string;
+    /** Format: character varying */
+    unit?: string;
+    /** Format: character varying */
+    postal_address?: string;
+    /** Format: character varying */
+    office_building?: string;
+    /** Format: character varying */
+    cv?: string;
+    /** Format: character varying */
+    profile?: string;
+    /** Format: json */
+    city?: string;
+    /** Format: integer */
+    year?: number;
+    /** Format: character varying */
+    college?: string;
+    /** Format: character varying */
+    college_code?: string;
+    /** Format: boolean */
+    leave?: boolean;
+    /** Format: boolean */
+    eli_whitney?: boolean;
+    /** Format: character varying */
+    image?: string;
+    /** Format: character varying */
+    birthday?: string;
+    /** Format: character varying */
+    major?: string;
+    /** Format: character varying */
+    phone?: string;
+    /** Format: character varying */
+    access_code?: string;
+    /** Format: character varying */
+    middle_name?: string;
+    /** Format: character varying */
+    office_room?: string;
+    /** Format: character varying */
+    website?: string;
+    /** Format: character varying */
+    education?: string;
+    /** Format: character varying */
+    name_recording?: string;
+    /** Format: character varying */
+    pronouns?: string;
+    /** Format: character varying */
+    phonetic_name?: string;
+    /** Format: character varying */
+    suffix?: string;
+    /** Format: bigint */
+    fax?: number;
+    /** Format: extensions.geometry(Point,4326) */
+    city_as_point?: string;
+    /** Format: character varying */
+    birth_day?: string;
+    /** Format: character varying */
+    birth_month?: string;
+    /** Format: boolean */
+    visitor?: boolean;
+    /** Format: character varying */
+    preferred_name?: string;
+  };
+  /** @description Junction table that, given a login email, links it to the id of the corresponding row in user_data */
+  auth_email_to_user_data: {
+    /**
+     * Format: character varying
+     * @description Refers to auth.users.email
+     *
+     * Note:
+     * This is a Primary Key.<pk/>
+     */
+    email: string;
+    /**
+     * Format: uuid
+     * @description The corresponding ID Column from user_data
+     *
+     * Note:
+     * This is a Foreign Key to `user_data.user_id`.<fk table='user_data' column='user_id'/>
+     */
+    user_id: string;
+  };
   errors: {
     /**
      * Format: character varying
@@ -1838,29 +2294,7 @@ export interface definitions {
     /** Format: json */
     geojson?: string;
   };
-  relationships_between_users: {
-    /** Format: character varying */
-    from_email: string;
-    /** Format: character varying */
-    to_email: string;
-  };
-  relationships_between_users_bidirectional: {
-    /** Format: character varying */
-    from_email?: string;
-    /** Format: character varying */
-    to_email?: string;
-    /** Format: character varying */
-    returning_from?: string;
-    /** Format: character varying */
-    returning_to?: string;
-  };
-  relationships_between_users_old: {
-    /** Format: character varying */
-    from_email?: string;
-    /** Format: character varying */
-    to_email?: string;
-  };
-  user_data: {
+  old_user_data: {
     /**
      * Format: character varying
      * @description Note:
@@ -1901,6 +2335,62 @@ export interface definitions {
     /** Format: integer */
     year?: number;
   };
+  relationships_between_users: {
+    /** Format: character varying */
+    from_email: string;
+    /** Format: character varying */
+    to_email: string;
+  };
+  relationships_between_users_bidirectional: {
+    /** Format: character varying */
+    from_email?: string;
+    /** Format: character varying */
+    to_email?: string;
+    /** Format: character varying */
+    returning_from?: string;
+    /** Format: character varying */
+    returning_to?: string;
+  };
+  relationships_between_users_old: {
+    /** Format: character varying */
+    from_email?: string;
+    /** Format: character varying */
+    to_email?: string;
+  };
+  user_data: {
+    /** Format: character varying */
+    interests?: string;
+    /** Format: character varying */
+    expression?: string;
+    /** Format: json */
+    location?: string;
+    /** Format: character varying */
+    university?: string;
+    /**
+     * Format: boolean
+     * @default true
+     */
+    summer_in_new_haven?: boolean;
+    /** Format: boolean */
+    summer_in_new_haven_future?: boolean;
+    /** Format: character varying */
+    instagram?: string;
+    /** Format: character varying */
+    linkedin?: string;
+    /** Format: character varying */
+    phone?: string;
+    /** Format: character varying */
+    major?: string;
+    /** Format: integer */
+    year?: number;
+    /**
+     * Format: uuid
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     * @default extensions.uuid_generate_v4()
+     */
+    user_id: string;
+  };
   user_data_from_firebase: {
     /**
      * Format: character varying
@@ -1917,6 +2407,31 @@ export interface definitions {
     email_verified?: boolean;
     /** Format: character varying */
     photo_url?: string;
+  };
+  user_data_from_google_auth: {
+    /**
+     * Format: character varying
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     * This is a Foreign Key to `auth_email_to_user_data.email`.<fk table='auth_email_to_user_data' column='email'/>
+     */
+    email: string;
+    /** Format: boolean */
+    email_verified?: boolean;
+    /** Format: character varying */
+    full_name?: string;
+    /** Format: character varying */
+    name?: string;
+    /** Format: character varying */
+    picture?: string;
+    /** Format: character varying */
+    avatar_url?: string;
+    /** Format: character varying */
+    iss?: string;
+    /** Format: character varying */
+    provider_id?: string;
+    /** Format: character varying */
+    sub?: string;
   };
   users: {
     /** Format: character varying */
@@ -2195,98 +2710,8 @@ export interface definitions {
     birth_day?: string;
     /** Format: character varying */
     birth_month?: string;
-  };
-  users_from_yale_facebook_with_null_email: {
-    /** Format: integer */
-    id?: number;
-    /**
-     * Format: integer
-     * @description Note:
-     * This is a Primary Key.<pk/>
-     */
-    upi: number;
-    /** Format: character varying */
-    netid?: string;
-    /** Format: character varying */
-    email?: string;
-    /** Format: character varying */
-    mailbox?: string;
-    /** Format: character varying */
-    first_name?: string;
-    /** Format: character varying */
-    last_name?: string;
-    /** Format: character varying */
-    school_code?: string;
-    /** Format: character varying */
-    school?: string;
-    /** Format: character varying */
-    curriculum?: string;
-    /** Format: character varying */
-    organization_code?: string;
-    /** Format: character varying */
-    organization?: string;
-    /** Format: character varying */
-    title?: string;
-    /** Format: character varying */
-    address?: string;
-    /** Format: character varying */
-    unit_class?: string;
-    /** Format: character varying */
-    unit_code?: string;
-    /** Format: character varying */
-    unit?: string;
-    /** Format: character varying */
-    postal_address?: string;
-    /** Format: character varying */
-    office_building?: string;
-    /** Format: character varying */
-    cv?: string;
-    /** Format: character varying */
-    profile?: string;
-    /** Format: json */
-    city?: string;
-    /** Format: integer */
-    year?: number;
-    /** Format: character varying */
-    college?: string;
-    /** Format: character varying */
-    college_code?: string;
     /** Format: boolean */
-    leave?: boolean;
-    /** Format: boolean */
-    eli_whitney?: boolean;
-    /** Format: character varying */
-    image?: string;
-    /** Format: character varying */
-    birthday?: string;
-    /** Format: character varying */
-    major?: string;
-    /** Format: character varying */
-    phone?: string;
-    /** Format: character varying */
-    access_code?: string;
-    /** Format: character varying */
-    middle_name?: string;
-    /** Format: character varying */
-    office_room?: string;
-    /** Format: character varying */
-    website?: string;
-    /** Format: character varying */
-    education?: string;
-    /** Format: character varying */
-    name_recording?: string;
-    /** Format: character varying */
-    pronouns?: string;
-    /** Format: character varying */
-    phonetic_name?: string;
-    /** Format: character varying */
-    suffix?: string;
-    /** Format: bigint */
-    fax?: number;
-    /** Format: extensions.geometry(Point,4326) */
-    city_as_point?: string;
-    /** Format: character varying */
-    full_name?: string;
+    visitor?: boolean;
   };
   /** @description Time ranges of availability of users */
   users_times_available: {
@@ -2391,6 +2816,112 @@ export interface parameters {
   offset: string;
   /** @description Limiting and Pagination */
   limit: string;
+  /** @description 2022_facebook */
+  "body.2022_facebook": definitions["2022_facebook"];
+  /** Format: integer */
+  "rowFilter.2022_facebook.id": string;
+  /** Format: integer */
+  "rowFilter.2022_facebook.upi": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.netid": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.email": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.mailbox": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.first_name": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.last_name": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.school_code": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.school": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.curriculum": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.organization_code": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.organization": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.title": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.address": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.unit_class": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.unit_code": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.unit": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.postal_address": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.office_building": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.cv": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.profile": string;
+  /** Format: json */
+  "rowFilter.2022_facebook.city": string;
+  /** Format: integer */
+  "rowFilter.2022_facebook.year": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.college": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.college_code": string;
+  /** Format: boolean */
+  "rowFilter.2022_facebook.leave": string;
+  /** Format: boolean */
+  "rowFilter.2022_facebook.eli_whitney": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.image": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.birthday": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.major": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.phone": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.access_code": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.middle_name": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.office_room": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.website": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.education": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.name_recording": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.pronouns": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.phonetic_name": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.suffix": string;
+  /** Format: bigint */
+  "rowFilter.2022_facebook.fax": string;
+  /** Format: extensions.geometry(Point,4326) */
+  "rowFilter.2022_facebook.city_as_point": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.birth_day": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.birth_month": string;
+  /** Format: boolean */
+  "rowFilter.2022_facebook.visitor": string;
+  /** Format: character varying */
+  "rowFilter.2022_facebook.preferred_name": string;
+  /** @description auth_email_to_user_data */
+  "body.auth_email_to_user_data": definitions["auth_email_to_user_data"];
+  /**
+   * Format: character varying
+   * @description Refers to auth.users.email
+   */
+  "rowFilter.auth_email_to_user_data.email": string;
+  /**
+   * Format: uuid
+   * @description The corresponding ID Column from user_data
+   */
+  "rowFilter.auth_email_to_user_data.user_id": string;
   /** @description errors */
   "body.errors": definitions["errors"];
   /** Format: character varying */
@@ -2411,6 +2942,40 @@ export interface parameters {
   "rowFilter.geojson.request": string;
   /** Format: json */
   "rowFilter.geojson.geojson": string;
+  /** @description old_user_data */
+  "body.old_user_data": definitions["old_user_data"];
+  /** Format: character varying */
+  "rowFilter.old_user_data.email": string;
+  /** Format: character varying */
+  "rowFilter.old_user_data.interests": string;
+  /** Format: character varying */
+  "rowFilter.old_user_data.expression": string;
+  /** Format: json */
+  "rowFilter.old_user_data.location": string;
+  /** Format: character varying */
+  "rowFilter.old_user_data.university": string;
+  /** Format: character varying */
+  "rowFilter.old_user_data.city_formatted_address": string;
+  /** Format: extensions.geometry */
+  "rowFilter.old_user_data.location_as_point": string;
+  /** Format: character varying */
+  "rowFilter.old_user_data.full_name": string;
+  /** Format: character varying */
+  "rowFilter.old_user_data.photo": string;
+  /** Format: boolean */
+  "rowFilter.old_user_data.summer_in_new_haven": string;
+  /** Format: boolean */
+  "rowFilter.old_user_data.summer_in_new_haven_future": string;
+  /** Format: character varying */
+  "rowFilter.old_user_data.instagram": string;
+  /** Format: character varying */
+  "rowFilter.old_user_data.linkedin": string;
+  /** Format: character varying */
+  "rowFilter.old_user_data.phone": string;
+  /** Format: character varying */
+  "rowFilter.old_user_data.major": string;
+  /** Format: integer */
+  "rowFilter.old_user_data.year": string;
   /** @description relationships_between_users */
   "body.relationships_between_users": definitions["relationships_between_users"];
   /** Format: character varying */
@@ -2436,8 +3001,6 @@ export interface parameters {
   /** @description user_data */
   "body.user_data": definitions["user_data"];
   /** Format: character varying */
-  "rowFilter.user_data.email": string;
-  /** Format: character varying */
   "rowFilter.user_data.interests": string;
   /** Format: character varying */
   "rowFilter.user_data.expression": string;
@@ -2445,14 +3008,6 @@ export interface parameters {
   "rowFilter.user_data.location": string;
   /** Format: character varying */
   "rowFilter.user_data.university": string;
-  /** Format: character varying */
-  "rowFilter.user_data.city_formatted_address": string;
-  /** Format: extensions.geometry */
-  "rowFilter.user_data.location_as_point": string;
-  /** Format: character varying */
-  "rowFilter.user_data.full_name": string;
-  /** Format: character varying */
-  "rowFilter.user_data.photo": string;
   /** Format: boolean */
   "rowFilter.user_data.summer_in_new_haven": string;
   /** Format: boolean */
@@ -2467,6 +3022,8 @@ export interface parameters {
   "rowFilter.user_data.major": string;
   /** Format: integer */
   "rowFilter.user_data.year": string;
+  /** Format: uuid */
+  "rowFilter.user_data.user_id": string;
   /** @description user_data_from_firebase */
   "body.user_data_from_firebase": definitions["user_data_from_firebase"];
   /** Format: character varying */
@@ -2479,6 +3036,26 @@ export interface parameters {
   "rowFilter.user_data_from_firebase.email_verified": string;
   /** Format: character varying */
   "rowFilter.user_data_from_firebase.photo_url": string;
+  /** @description user_data_from_google_auth */
+  "body.user_data_from_google_auth": definitions["user_data_from_google_auth"];
+  /** Format: character varying */
+  "rowFilter.user_data_from_google_auth.email": string;
+  /** Format: boolean */
+  "rowFilter.user_data_from_google_auth.email_verified": string;
+  /** Format: character varying */
+  "rowFilter.user_data_from_google_auth.full_name": string;
+  /** Format: character varying */
+  "rowFilter.user_data_from_google_auth.name": string;
+  /** Format: character varying */
+  "rowFilter.user_data_from_google_auth.picture": string;
+  /** Format: character varying */
+  "rowFilter.user_data_from_google_auth.avatar_url": string;
+  /** Format: character varying */
+  "rowFilter.user_data_from_google_auth.iss": string;
+  /** Format: character varying */
+  "rowFilter.user_data_from_google_auth.provider_id": string;
+  /** Format: character varying */
+  "rowFilter.user_data_from_google_auth.sub": string;
   /** @description users */
   "body.users": definitions["users"];
   /** Format: character varying */
@@ -2736,94 +3313,8 @@ export interface parameters {
   "rowFilter.users_from_yale_facebook_new.birth_day": string;
   /** Format: character varying */
   "rowFilter.users_from_yale_facebook_new.birth_month": string;
-  /** @description users_from_yale_facebook_with_null_email */
-  "body.users_from_yale_facebook_with_null_email": definitions["users_from_yale_facebook_with_null_email"];
-  /** Format: integer */
-  "rowFilter.users_from_yale_facebook_with_null_email.id": string;
-  /** Format: integer */
-  "rowFilter.users_from_yale_facebook_with_null_email.upi": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.netid": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.email": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.mailbox": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.first_name": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.last_name": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.school_code": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.school": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.curriculum": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.organization_code": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.organization": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.title": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.address": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.unit_class": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.unit_code": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.unit": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.postal_address": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.office_building": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.cv": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.profile": string;
-  /** Format: json */
-  "rowFilter.users_from_yale_facebook_with_null_email.city": string;
-  /** Format: integer */
-  "rowFilter.users_from_yale_facebook_with_null_email.year": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.college": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.college_code": string;
   /** Format: boolean */
-  "rowFilter.users_from_yale_facebook_with_null_email.leave": string;
-  /** Format: boolean */
-  "rowFilter.users_from_yale_facebook_with_null_email.eli_whitney": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.image": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.birthday": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.major": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.phone": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.access_code": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.middle_name": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.office_room": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.website": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.education": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.name_recording": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.pronouns": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.phonetic_name": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.suffix": string;
-  /** Format: bigint */
-  "rowFilter.users_from_yale_facebook_with_null_email.fax": string;
-  /** Format: extensions.geometry(Point,4326) */
-  "rowFilter.users_from_yale_facebook_with_null_email.city_as_point": string;
-  /** Format: character varying */
-  "rowFilter.users_from_yale_facebook_with_null_email.full_name": string;
+  "rowFilter.users_from_yale_facebook_new.visitor": string;
   /** @description users_times_available */
   "body.users_times_available": definitions["users_times_available"];
   /** Format: character varying */
