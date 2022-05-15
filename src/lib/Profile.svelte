@@ -2,6 +2,7 @@
 	import { supabase } from '$lib/supabaseClient';
 	import type { definitions } from '../../types/supabase';
 	import { sessionStore } from '$lib/sessionStore';
+	import LocationAutoComplete from '$lib/LocationAutoComplete.svelte';
 
 	let loading = true;
 	let formData: definitions['user_data'] | null = null;
@@ -67,6 +68,7 @@
 
 <!-- Put a centered card on the screen. Inside it, there are multiple labelled inputs that are binded to the corresponding properties of the user -->
 <div class="w-full max-w-md mx-auto">
+	<LocationAutoComplete />
 	<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
 		<div class="mb-4">
 			<h1 class="text-2xl font-bold">Profile</h1>
@@ -205,9 +207,8 @@
 	/>
 </div>
 
-<div>
-	<button class="button block" on:click={signOut} disabled={loading}> Sign Out </button>
-</div>
+<button class="btn" on:click={signOut}> Sign Out </button>
+
 <!-- </form> -->
 
 {sessionStore}
