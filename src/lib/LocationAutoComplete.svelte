@@ -52,7 +52,7 @@
 <label class="block text-sm font-bold mb-2" for="location">Location</label>
 <input
 	type="text"
-	class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+	class="input shadow border rounded w-full focus:outline-none focus:shadow-outline"
 	id="location"
 	placeholder="Start typing your city here..."
 	bind:value={query}

@@ -85,7 +85,7 @@
 		<div class="mb-4">
 			<label class="block text-sm font-bold mb-2" for="website"> Website </label>
 			<input
-				class="shadow appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+				class="input shadow border rounded w-full focus:outline-none focus:shadow-outline"
 				id="website"
 				type="text"
 				placeholder="Website"
