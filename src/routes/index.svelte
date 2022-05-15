@@ -18,7 +18,7 @@
 			// Get the variables ""
 			const userMetaData = $sessionStore?.user_metadata as UserMetadata;
 
-			// Upload profile data from sessionStore todatabase
+			// Upload profile data from sessionStore to 'user_data_from_google_auth' database
 			supabase.from('user_data_from_google_auth').upsert(userMetaData, {
 				returning: 'minimal' // Don't return the value after inserting
 			});
