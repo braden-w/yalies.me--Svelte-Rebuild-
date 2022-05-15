@@ -59,15 +59,17 @@
 />
 <ul class="menu bg-base-100 w-56 p-2 rounded-box">
 	<!-- For each result in results, display  -->
-	{#each results as result}
-		<li
-			class="menu-item bg-base-200 hover:bg-base-300 cursor-pointer"
-			on:click={() => {
-				query = result.description;
-				selected = result;
-			}}
-		>
-			{result.description}
-		</li>
-	{/each}
+	{#if results}
+		{#each results as result}
+			<li
+				class="menu-item bg-base-200 hover:bg-base-300 cursor-pointer"
+				on:click={() => {
+					query = result.description;
+					selected = result;
+				}}
+			>
+				{result.description}
+			</li>
+		{/each}
+	{/if}
 </ul>
