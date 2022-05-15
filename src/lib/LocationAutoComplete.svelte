@@ -59,7 +59,7 @@
 />
 <!-- For each result in results, display  -->
 {#if results}
-	<ul class="menu bg-base-100 w-56 p-2 rounded-box">
+	<ul class="menu bg-base-100 w-full p-2 rounded-box">
 		{#each results as result}
 			<li
 				class="menu-item bg-base-200 hover:bg-base-300 cursor-pointer"
