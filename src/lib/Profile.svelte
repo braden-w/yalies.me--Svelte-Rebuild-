@@ -69,23 +69,23 @@
 
 <!-- Put a centered card on the screen. Inside it, there are multiple labelled inputs that are binded to the corresponding properties of the user -->
 <div class="w-full max-w-md mx-auto">
-	<div class="card bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4">
+	<div class="card card-bordered bg-secondary shadow-md rounded-lg px-8 pt-6 pb-8 mb-4">
 		<div class="mb-4 text-center">
 			<div class="avatar mx-auto">
 				<div class="w-28 rounded">
 					<img src={userDataFromGoogleAuth.avatar_url} alt="Profile" width="100%" height="100%" />
 				</div>
 			</div>
-			<h1 class="text-2xl  font-bold">Braden Wong</h1>
+			<h1 class="text-2xl font-bold">{userDataFromGoogleAuth.full_name}</h1>
 			<p class="text-lg">Yale University</p>
 		</div>
 		<div class="mb-4">
 			<LocationAutoComplete />
 		</div>
 		<div class="mb-4">
-			<label class="block text-gray-700 text-sm font-bold mb-2" for="website"> Website </label>
+			<label class="block text-sm font-bold mb-2" for="website"> Website </label>
 			<input
-				class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+				class="shadow appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
 				id="website"
 				type="text"
 				placeholder="Website"
