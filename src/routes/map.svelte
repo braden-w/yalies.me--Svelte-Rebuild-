@@ -36,7 +36,7 @@
 
 		map.on('load', () => {
 			map.flyTo({
-				// center: [longitude!, latitude!],
+				center: [longitude!, latitude!],
 				speed: 2.5,
 				essential: true
 			});
@@ -48,11 +48,11 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Map</title>
+	<meta name="description" content="Find Yale Students in the area to meet up!" />
 </svelte:head>
 
 <!-- Init mapbox -->
-<div id="map" />
+<div id="map" class="w-full h-full" />
 
 <style></style>
