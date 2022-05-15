@@ -60,17 +60,72 @@
 			[2, 3],
 			[2, 3]
 		];
-		latLng.forEach(([lat, lng]) => {
+		latLng.slice(0, 1).forEach(([lat, lng]) => {
+			/* Create a div named 'el' with the class 'avatar', like the following html:
+			<div class="avatar">
+			  <div class="w-24 rounded">
+			    <img src="https://api.lorem.space/image/face?hash=92048" />
+			  </div>
+			</div> */
+
 			const el = document.createElement('div');
 			el.className = 'marker';
-			Object.assign(el.style, {
-				backgroundImage: `url('https://i.imgur.com/MK4NUzI.png')`,
-				backgroundSize: 'cover',
-				'border-radius': '50%',
-				cursor: 'pointer',
-				height: `${initPx}px`,
-				width: `${initPx}px`
-			});
+			el.innerHTML = `<div class="stack">
+	<div class="avatar indicator">
+		<span class="indicator-item badge badge-secondary">typing…</span>
+		<div class="w-20 h-20 rounded-lg">
+			<img src="https://api.lorem.space/image/face?w=160&h=160" />
+		</div>
+	</div>
+	<img
+		src="https://api.lorem.space/image/face?w=112&h=112&hash=8B7BCDC2"
+		alt="Image 1"
+		class="rounded"
+	/><img
+		src="https://api.lorem.space/image/face?w=112&h=112&hash=8B7BCDC2"
+		alt="Image 1"
+		class="rounded"
+	/><img
+		src="https://api.lorem.space/image/face?w=112&h=112&hash=8B7BCDC2"
+		alt="Image 1"
+		class="rounded"
+	/><img
+		src="https://api.lorem.space/image/face?w=112&h=112&hash=8B7BCDC2"
+		alt="Image 1"
+		class="rounded"
+	/><img
+		src="https://api.lorem.space/image/face?w=112&h=112&hash=8B7BCDC2"
+		alt="Image 1"
+		class="rounded"
+	/><img
+		src="https://api.lorem.space/image/face?w=112&h=112&hash=8B7BCDC2"
+		alt="Image 1"
+		class="rounded"
+	/>
+	<img
+		src="https://api.lorem.space/image/face?w=112&h=112&hash=8B7BCDC2"
+		alt="Image 1"
+		class="rounded"
+	/>
+	<img
+		src="https://api.lorem.space/image/face?w=112&h=112&hash=500B67FB"
+		alt="Image 2"
+		class="rounded"
+	/>
+	<img
+		src="https://api.lorem.space/image/face?w=112&h=112&hash=A89D0DE6"
+		alt="Image 3"
+		class="rounded"
+	/>
+</div>`;
+			// Object.assign(el.style, {
+			// 	backgroundImage: `url('https://i.imgur.com/MK4NUzI.png')`,
+			// 	backgroundSize: 'cover',
+			// 	'border-radius': '50%',
+			// 	cursor: 'pointer',
+			// 	height: `${initPx}px`,
+			// 	width: `${initPx}px`
+			// });
 			// On click, add a shadow around it
 			el.addEventListener('click', () => {
 				Object.assign(el.style, { 'box-shadow': '0 0 2px 4px' });
@@ -91,6 +146,55 @@
 
 <!-- Init mapbox -->
 <div id="map" class="w-full" />
+
+<div class="stack">
+	<div class="avatar indicator">
+		<span class="indicator-item badge badge-secondary">typing…</span>
+		<div class="w-20 h-20 rounded-lg">
+			<img src="https://api.lorem.space/image/face?w=160&h=160" />
+		</div>
+	</div>
+	<img
+		src="https://api.lorem.space/image/face?w=112&h=112&hash=8B7BCDC2"
+		alt="Image 1"
+		class="rounded"
+	/><img
+		src="https://api.lorem.space/image/face?w=112&h=112&hash=8B7BCDC2"
+		alt="Image 1"
+		class="rounded"
+	/><img
+		src="https://api.lorem.space/image/face?w=112&h=112&hash=8B7BCDC2"
+		alt="Image 1"
+		class="rounded"
+	/><img
+		src="https://api.lorem.space/image/face?w=112&h=112&hash=8B7BCDC2"
+		alt="Image 1"
+		class="rounded"
+	/><img
+		src="https://api.lorem.space/image/face?w=112&h=112&hash=8B7BCDC2"
+		alt="Image 1"
+		class="rounded"
+	/><img
+		src="https://api.lorem.space/image/face?w=112&h=112&hash=8B7BCDC2"
+		alt="Image 1"
+		class="rounded"
+	/>
+	<img
+		src="https://api.lorem.space/image/face?w=112&h=112&hash=8B7BCDC2"
+		alt="Image 1"
+		class="rounded"
+	/>
+	<img
+		src="https://api.lorem.space/image/face?w=112&h=112&hash=500B67FB"
+		alt="Image 2"
+		class="rounded"
+	/>
+	<img
+		src="https://api.lorem.space/image/face?w=112&h=112&hash=A89D0DE6"
+		alt="Image 3"
+		class="rounded"
+	/>
+</div>
 
 <style>
 	#map {
