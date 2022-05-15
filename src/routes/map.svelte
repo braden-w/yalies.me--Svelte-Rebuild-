@@ -60,7 +60,7 @@
 			[2, 3],
 			[2, 3]
 		];
-		latLng.slice(0, 1).forEach(([lat, lng]) => {
+		latLng.forEach(([lat, lng]) => {
 			/* Create a div named 'el' with the class 'avatar', like the following html:
 			<div class="avatar">
 			  <div class="w-24 rounded">
