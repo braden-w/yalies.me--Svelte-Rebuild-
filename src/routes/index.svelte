@@ -3,17 +3,17 @@
 </script>
 
 <script>
-	import { user } from '$lib/sessionStore';
+	import { user as sessionStore } from '$lib/sessionStore';
 	import { supabase } from '$lib/supabaseClient';
 	import Auth from '$lib/Auth.svelte';
 	import Profile from '$lib/Profile.svelte';
 
 	// Get login state on page load
-	$user = supabase.auth.user();
+	$sessionStore = supabase.auth.user();
 
 	supabase.auth.onAuthStateChange((_, session) => {
-		if (session) $user = supabase.auth.user();
-		else $user = null;
+		if (session) $sessionStore = supabase.auth.user();
+		else $sessionStore = null;
 	});
 </script>
 
@@ -22,7 +22,7 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-{#if $user}
+{#if $sessionStore}
 	<Profile />
 {:else}
 	<Auth />

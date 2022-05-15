@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { supabase } from '$lib/supabaseClient';
 	import type { definitions } from '../../types/supabase';
-	import { user } from '$lib/sessionStore';
+	import { sessionStore } from '$lib/sessionStore';
 
 	let loading = true;
 	let formData: definitions['user_data'] | null = null;
@@ -63,7 +63,7 @@
 			loading = false;
 		}
 	}
-	$: $user, console.log($user);
+	$: $sessionStore, console.log($sessionStore);
 </script>
 
 <!-- Put a centered card on the screen. Inside it, there are multiple labelled inputs that are binded to the corresponding properties of the user -->
@@ -80,7 +80,6 @@
 				id="username"
 				type="text"
 				placeholder="Username"
-				bind:value={$user}
 			/>
 		</div>
 		<div class="mb-4">
@@ -90,7 +89,6 @@
 				id="website"
 				type="text"
 				placeholder="Website"
-				bind:value={$user.website}
 			/>
 		</div>
 	</div>
@@ -192,13 +190,13 @@
       -->
 <div>
 	<label for="email">Email</label>
-	<input id="email" type="text" value={$user.email} disabled />
+	<input id="email" type="text" value={$sessionStore.email} disabled />
 </div>
 
 <!-- Create a card with inputs  for email, summer -->
 <div class="mt-n4">
 	<label for="full_name">Full Name</label>
-	<input id="full_name" type="text" value={$user.full_name} />
+	<input id="full_name" type="text" value={$sessionStore.full_name} />
 </div>
 <div>
 	<input
@@ -214,4 +212,4 @@
 </div>
 <!-- </form> -->
 
-{user}
+{sessionStore}
