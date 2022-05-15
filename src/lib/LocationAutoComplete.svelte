@@ -1,6 +1,4 @@
 <script lang="ts">
-	import type { GooglePlacesRequest } from 'types/GooglePlacesRequest';
-
 	let query = '';
 	let loading = false;
 	let results = [];
