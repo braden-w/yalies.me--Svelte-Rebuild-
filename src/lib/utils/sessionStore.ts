@@ -5,7 +5,7 @@ import type {SessionStore} from 'types/SessionStore';
 
 export const sessionStore: Writable<SessionStore | null> = writable(null);
 
-export let loading = true;
+export let loading = false;
 
 export const signIn = async () => {
 	try {
