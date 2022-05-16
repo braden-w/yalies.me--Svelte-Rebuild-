@@ -16,10 +16,13 @@
 <script lang="ts">
 	import mapboxgl from 'mapbox-gl';
 	import 'mapbox-gl/dist/mapbox-gl.css';
+
 	import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 	import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
+
 	import { onMount } from 'svelte';
 	import { supabase } from '$lib/supabaseClient';
+
 	mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_KEY;
 
 	const NewHaven = { longitude: -72.9, latitude: 41.3 };
@@ -28,7 +31,7 @@
 	// console.log('longitude, latitude:>> ', longitude, latitude)
 	const initPx = 32;
 
-	export let fetchedLocations;
+	export let fetchedLocations: FetchedLocation[];
 
 	onMount(() => {
 		const map = new mapboxgl.Map({
@@ -79,35 +82,37 @@
 			[2, 3],
 			[2, 3]
 		];
-		latLng.forEach(([lat, lng]) => {
-			/* Create a div named 'el' with the class 'avatar', like the following html:
-			<div class="avatar">
-			  <div class="w-24 rounded">
-			    <img src="https://api.lorem.space/image/face?hash=92048" />
-			  </div>
-			</div> */
+		function generateInnerHTML(fetchedLocation: FetchedLocation) {
+			// Get 3 random people from the 'people' property of fetchedLocation
+			const shuffledPeople = fetchedLocation.people.sort(() => 0.5 - Math.random());
 
+			// Three cases for the number of people in the fetchedLocation
+			if (shuffledPeople.length === 0) return '';
+			return `<button name="selected" class="stack">
+					<div class="avatar indicator">
+						<span class="indicator-item badge badge-secondary">${fetchedLocation.people.length}</span>
+						<div class="w-16 h-16 rounded-lg outline-on-click">
+							<img src="${fetchedLocation.people[0].avatar_url}" />
+						</div>
+					</div>
+					<div class="avatar">
+						<div class="w-16 h-16 rounded-lg" outline-on-click>
+							<img src="https://api.lorem.space/image/face?w=160&h=160" />
+						</div>
+					</div>
+					<div class="avatar">
+					<div class="w-16 h-16 rounded-lg" outline-on-click>
+						<img src="https://api.lorem.space/image/face?w=160&h=160" />
+					</div>
+					</div>
+				</button>
+				
+				`;
+		}
+		fetchedLocations.forEach((fetchedLocation) => {
 			const el = document.createElement('div');
 			el.className = 'marker';
-			el.innerHTML = `<button name="selected" class="stack">
-	<div class="avatar indicator">
-		<span class="indicator-item badge badge-secondary"></span>
-		<div class="w-16 h-16 rounded-lg outline-on-click">
-			<img src="https://api.lorem.space/image/face?w=160&h=160" />
-		</div>
-	</div>
-	<div class="avatar">
-		<div class="w-16 h-16 rounded-lg" outline-on-click>
-			<img src="https://api.lorem.space/image/face?w=160&h=160" />
-		</div>
-	</div>
-	<div class="avatar">
-		<div class="w-16 h-16 rounded-lg outline-on-click">
-			<img src="https://api.lorem.space/image/face?w=160&h=160" />
-		</div>
-	</div>
-	
-</button>`;
+			el.innerHTML = generateInnerHTML(fetchedLocation);
 			// Object.assign(el.style, {
 			// 	backgroundImage: `url('https://i.imgur.com/MK4NUzI.png')`,
 			// 	backgroundSize: 'cover',
