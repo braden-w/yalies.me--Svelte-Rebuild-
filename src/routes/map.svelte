@@ -1,7 +1,10 @@
 <script context="module">
 	export const prerender = false;
+	/** List all places from the database. Return it as a list of items that contains place description, place lat, place lng, and place people
+	 * Place people is a list of users that are associated with the place
+	 * Each user has a id, name, and avatar_url
+	 */
 	export async function load() {
-		// Fetch all places from the 'junction_user_id_to_place_id' table in supabase, then join them with some parts of user_data for display
 		const { data } = await supabase
 			.from('users')
 			.select('name, avatar_url, user_responses(places(lng, lat))');
