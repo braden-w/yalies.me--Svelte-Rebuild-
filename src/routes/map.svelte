@@ -125,20 +125,24 @@
 			// 	height: `${initPx}px`,
 			// 	width: `${initPx}px`
 			// });
+
 			// On click, add a shadow around it
 			el.addEventListener('click', () => {
-				// for every element in el with a class "outline-on-click", add the class "ring" to it
+				// For every element in el with a class "outline-on-click", add the class "ring" to it
 				el.querySelectorAll('.outline-on-click').forEach((el) => {
 					el.classList.add('ring');
 				});
 			});
 
+			// On click out, add a shadow around it
 			document.getElementsByClassName('mapboxgl-canvas')[0].addEventListener('click', () => {
-				// for every element in el with a class "outline-on-click", remove the class "ring" to it if it exists
+				// For every element in el with a class "outline-on-click", remove the class "ring" to it if it exists
 				el.querySelectorAll('.outline-on-click').forEach((el) => {
 					el.classList.remove('ring');
 				});
 			});
+
+			// Add the marker to the map
 			new mapboxgl.Marker(el).setLngLat([fetchedLocation.lng, fetchedLocation.lat]).addTo(map);
 		});
 	});
