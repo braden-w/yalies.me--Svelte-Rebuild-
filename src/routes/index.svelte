@@ -23,16 +23,16 @@
 				const userMetaData = $sessionStore?.user_metadata as UserMetadata;
 
 				// Get the email from userMetaData
-				const {email} = userMetaData
+				const { email } = userMetaData;
 				// Get everything before the @ and after the @ of the email
-				const [emailUser] = email.split('@')
-				const user_response_id = emailUser
+				const [emailUser] = email.split('@');
+				const user_response_id = emailUser;
 
 				// Create payload
-				const payload = {id, user_response_id, ...userMetaData}
+				const payload = { id, user_response_id, ...userMetaData };
 
 				// Upload profile data from sessionStore to 'user_data_new' database
-				const {error} = await supabase.from('users').upsert(payload, {
+				const { error } = await supabase.from('users').upsert(payload, {
 					returning: 'minimal' // Don't return the value after inserting
 				});
 				if (error) throw error;
@@ -53,4 +53,3 @@
 {:else}
 	<Auth />
 {/if}
-
