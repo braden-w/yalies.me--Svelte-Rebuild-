@@ -1,25 +1,11 @@
 <script lang="ts">
-	import { supabase } from '$lib/utils/supabaseClient';
-
-	let loading = false;
-
-	const handleLogin = async () => {
-		try {
-			loading = true;
-			const { user, session, error } = await supabase.auth.signIn({ provider: 'google' });
-			if (error) throw error;
-		} catch (error: any) {
-			alert(error.error_description || error.message);
-		} finally {
-			loading = false;
-		}
-	};
+	import { signIn, loading } from '$lib/utils/sessionStore';
 </script>
 
 <div class="hero min-h-screen">
 	<!-- Insert video with url https://i.imgur.com/0uL1zb2.mp4 -->
 	<video
-		class="absolute top-0 left-0 w-full h-full object-cover"
+		class="absolute top-0 left-0 w-full h-full "
 		src="https://i.imgur.com/0uL1zb2.mp4"
 		autoplay
 		loop
@@ -30,7 +16,7 @@
 		<div class="max-w-md align-center">
 			<h1 class="mb-5 text-5xl font-bold">Yalies Around Me</h1>
 			<p class="mb-5">An app that solves a single question: who is in my area?</p>
-			<button class:loading class="btn" on:click={handleLogin}>
+			<button class:loading class="btn" on:click={signIn}>
 				<div class="left">
 					<img
 						width="20px"
