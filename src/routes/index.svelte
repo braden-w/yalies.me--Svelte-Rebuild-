@@ -7,19 +7,20 @@
 	import { supabase } from '$lib/supabaseClient';
 	import Auth from '$lib/Auth.svelte';
 	import Profile from '$lib/Profile.svelte';
-	import type { UserMetadata } from 'types/UserMetaData';
 	import type { User } from '@supabase/supabase-js';
+	import type { UserMetadata } from 'types/UserMetaData';
+	import type { SessionStore } from 'types/SessionStore';
 
 	// Get login state on page load
-	$sessionStore = supabase.auth.user();
+	$sessionStore = processAuthState(supabase.auth.user());
 
 	/** Get everything before the @ of the email */
-	function getUserFromEmail(email: string) {
+	function getUserFromEmail(email: string): string {
 		const [emailUser] = email.split('@');
 		return emailUser;
 	}
 
-	function processAuthState(user: User | null) {
+	function processAuthState(user: User | null): SessionStore {
 		// Get the variables "id" from $sessionStore
 		const id = user?.id;
 
