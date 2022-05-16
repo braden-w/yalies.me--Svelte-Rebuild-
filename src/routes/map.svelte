@@ -59,7 +59,7 @@
 
 		map.on('load', () => {
 			map.flyTo({
-				center: [longitude!, latitude!],
+				center: [NewHaven.longitude, NewHaven.latitude],
 				speed: 2.5,
 				essential: true
 			});
@@ -96,20 +96,22 @@
 						</div>
 					</div>
 					${
-						shuffledPeople.length >= 2 &&
-						`<div class="avatar">
+						shuffledPeople.length >= 2
+							? `<div class="avatar">
 						<div class="w-16 h-16 rounded-lg" outline-on-click>
 							<img src="${fetchedLocation.people[1].avatar_url}" />
 						</div>
 					</div>`
+							: ''
 					}
 					${
-						shuffledPeople.length >= 3 &&
-						`<div class="avatar">
+						shuffledPeople.length >= 3
+							? `<div class="avatar">
 						<div class="w-16 h-16 rounded-lg" outline-on-click>
 							<img src="${fetchedLocation.people[2].avatar_url}" />
 						</div>
 					</div>`
+							: ''
 					}
 				</button>`;
 		}
