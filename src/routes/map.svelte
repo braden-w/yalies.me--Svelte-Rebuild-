@@ -134,15 +134,6 @@
 <!-- Init mapbox -->
 <div id="map" class="w-full" />
 
-<div class="stack">
-	<div class="avatar indicator">
-		<span class="indicator-item badge badge-secondary">typing…</span>
-		<div class="w-20 h-20 rounded-lg ring ring-offset-1">
-			<img src="https://api.lorem.space/image/face?w=160&h=160" />
-		</div>
-	</div>
-</div>
-
 <style>
 	#map {
 		height: calc(100vh - 4rem);
