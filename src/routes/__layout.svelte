@@ -4,12 +4,26 @@
 	// Initialize theme-change, taken from https://github.com/saadeghi/theme-change
 	import { onMount } from 'svelte';
 	import { themeChange } from 'theme-change';
+	import { supabase } from '$lib/supabaseClient';
 	onMount(() => {
 		themeChange(false);
 	});
+
+	let loading = true;
+	async function signOut() {
+		try {
+			loading = true;
+			const { error } = await supabase.auth.signOut();
+			if (error) throw error;
+		} catch (error: any) {
+			alert(error.message);
+		} finally {
+			loading = false;
+		}
+	}
 </script>
 
-<div class="drawer">
+<div class="bg-base-100 drawer">
 	<input id="main-drawer" type="checkbox" class="drawer-toggle" />
 	<div class="drawer-content">
 		<!-- Page content here -->
@@ -755,7 +769,7 @@
 								</a>
 							</li>
 							<li><a>Settings</a></li>
-							<li><a>Logout</a></li>
+							<li><button on:click={signOut}>Logout</button></li>
 						</ul>
 					</div>
 				</div>
@@ -767,7 +781,7 @@
 	</div>
 	<div class="drawer-side">
 		<label for="main-drawer" class="drawer-overlay" />
-		<ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+		<ul class="menu p-4 overflow-y-auto w-80 bg-base-200 text-base-content">
 			<!-- Sidebar content here -->
 			<li><a href="summer">Who's in New Haven</a></li>
 			<li><a href="map">Map (Place Yourself on a Map, find Yalies Near Me)</a></li>
@@ -778,8 +792,7 @@
 	</div>
 </div>
 
-<footer>
+<!-- <footer>
 	<p>Made with love and <span>❤️</span> by Braden</p>
-</footer>
-
+</footer> -->
 <style></style>
