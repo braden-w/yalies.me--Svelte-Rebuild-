@@ -74,17 +74,17 @@
 			el.innerHTML = `<button name="selected" class="stack">
 	<div class="avatar indicator">
 		<span class="indicator-item badge badge-secondary"></span>
-		<div class="w-16 h-16 rounded-lg ring">
+		<div class="w-16 h-16 rounded-lg outline-on-click">
 			<img src="https://api.lorem.space/image/face?w=160&h=160" />
 		</div>
 	</div>
 	<div class="avatar">
-		<div class="w-16 h-16 rounded-lg ring">
+		<div class="w-16 h-16 rounded-lg" outline-on-click>
 			<img src="https://api.lorem.space/image/face?w=160&h=160" />
 		</div>
 	</div>
 	<div class="avatar">
-		<div class="w-16 h-16 rounded-lg ring">
+		<div class="w-16 h-16 rounded-lg outline-on-click">
 			<img src="https://api.lorem.space/image/face?w=160&h=160" />
 		</div>
 	</div>
@@ -100,7 +100,10 @@
 			// });
 			// On click, add a shadow around it
 			el.addEventListener('click', () => {
-				// Object.assign(el.style, { 'box-shadow': '0 0 2px 4px' });
+				// for every element in el with a class "outline-on-click", add the class "ring" to it"
+				el.querySelectorAll('.outline-on-click').forEach((el) => {
+					el.classList.toggle('ring');
+				});
 			});
 
 			// document.getElementsByClassName('mapboxgl-canvas')[0].addEventListener('click', () => {
