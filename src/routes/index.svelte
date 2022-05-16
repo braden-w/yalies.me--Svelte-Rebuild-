@@ -17,7 +17,7 @@
 		return emailUser;
 	}
 
-	function processAuthState(user: User | null): SessionStore {
+	function processAuthState(user: User): SessionStore {
 		// Get the variables "id" from $sessionStore
 		const id = user?.id;
 
@@ -33,7 +33,10 @@
 	}
 
 	// Get login state on page load
-	$sessionStore = processAuthState(supabase.auth.user());
+	const user = supabase.auth.user();
+	if (user !== null) {
+		$sessionStore = processAuthState(user);
+	}
 
 	supabase.auth.onAuthStateChange(async (_, session) => {
 		if (!session) $sessionStore = null;
