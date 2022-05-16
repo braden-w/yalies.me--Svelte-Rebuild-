@@ -73,24 +73,13 @@
 			});
 			if (errorPlaces) throw errorPlaces;
 
-			// Upload relationship of user to place in the user_responses table
-			const user_metadata = $sessionStore?.user_metadata as UserMetadata;
-			const email = user_metadata?.email;
-			const {
-				data: { user_id }
-			} = await supabase
-				.from('junction_auth_email_to_user_data')
-				.select('user_id')
-				.eq('email', email)
-				.single();
-			const { error: errorUserIDtoPlaceID } = await supabase
-				.from('junction_user_id_to_place_id')
-				.upsert(
-					{ place_id, user_id },
-					{
-						returning: 'minimal' // Don't return the value after inserting
-					}
-				);
+			const user_response_id = $sessionStore?.user_response_id;
+			const { error: errorUserIDtoPlaceID } = await supabase.from('user_responses').upsert(
+				{ place_id, user_response_id },
+				{
+					returning: 'minimal' // Don't return the value after inserting
+				}
+			);
 
 			if (errorUserIDtoPlaceID) throw errorUserIDtoPlaceID;
 		} catch (error: any) {
