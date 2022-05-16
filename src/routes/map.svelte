@@ -100,15 +100,18 @@
 			// });
 			// On click, add a shadow around it
 			el.addEventListener('click', () => {
-				// for every element in el with a class "outline-on-click", add the class "ring" to it"
+				// for every element in el with a class "outline-on-click", add the class "ring" to it
 				el.querySelectorAll('.outline-on-click').forEach((el) => {
 					el.classList.toggle('ring');
 				});
 			});
 
-			// document.getElementsByClassName('mapboxgl-canvas')[0].addEventListener('click', () => {
-			// 	Object.assign(el.style, { 'box-shadow': '' });
-			// });
+			document.getElementsByClassName('mapboxgl-canvas')[0].addEventListener('click', () => {
+				// for every element in el with a class "outline-on-click", remove the class "ring" to it if it exists
+				el.querySelectorAll('.outline-on-click').forEach((el) => {
+					el.classList.remove('ring');
+				});
+			});
 			new mapboxgl.Marker(el).setLngLat([lng, lat]).addTo(map);
 		});
 	});
