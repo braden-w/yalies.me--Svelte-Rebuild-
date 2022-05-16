@@ -31,7 +31,7 @@
 			const payload = {id, user_response_id, ...userMetaData}
 
 			// Upload profile data from sessionStore to 'user_data_new' database
-			supabase.from('user_data_new').upsert(payload, {
+			const {error} = await supabase.from('users').upsert(payload, {
 				returning: 'minimal' // Don't return the value after inserting
 			});
 
