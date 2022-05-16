@@ -15,26 +15,30 @@
 	supabase.auth.onAuthStateChange(async (_, session) => {
 		if (!session) $sessionStore = null;
 		else {
-			$sessionStore = supabase.auth.user();
+			try {
+				$sessionStore = supabase.auth.user();
 
-			// Get the variables "id" from $sessionStore
-			const id = $sessionStore?.id;
-			const userMetaData = $sessionStore?.user_metadata as UserMetadata;
+				// Get the variables "id" from $sessionStore
+				const id = $sessionStore?.id;
+				const userMetaData = $sessionStore?.user_metadata as UserMetadata;
 
-			// Get the email from userMetaData
-			const {email} = userMetaData
-			// Get everything before the @ and after the @ of the email
-			const [emailUser] = email.split('@')
-			const user_response_id = emailUser
-                        console.log("🚀 ~ file: index.svelte ~ line 29 ~ supabase.auth.onAuthStateChange ~ user_response_id", user_response_id)
+				// Get the email from userMetaData
+				const {email} = userMetaData
+				// Get everything before the @ and after the @ of the email
+				const [emailUser] = email.split('@')
+				const user_response_id = emailUser
 
-			const payload = {id, user_response_id, ...userMetaData}
+				// Create payload
+				const payload = {id, user_response_id, ...userMetaData}
 
-			// Upload profile data from sessionStore to 'user_data_new' database
-			const {error} = await supabase.from('users').upsert(payload, {
-				returning: 'minimal' // Don't return the value after inserting
-			});
-
+				// Upload profile data from sessionStore to 'user_data_new' database
+				const {error} = await supabase.from('users').upsert(payload, {
+					returning: 'minimal' // Don't return the value after inserting
+				});
+				if (error) throw error;
+			} catch (error: any) {
+				alert(error.message);
+			}
 		}
 	});
 </script>
