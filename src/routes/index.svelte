@@ -22,18 +22,21 @@
 		if (!session) $sessionStore = null;
 		else {
 			try {
-				$sessionStore = supabase.auth.user();
+				const session = supabase.auth.user();
 
 				// Get the variables "id" from $sessionStore
-				const id = $sessionStore?.id;
-				const userMetaData = $sessionStore?.user_metadata as UserMetadata;
+				const id = session?.id;
 
-				// Get the email from userMetaData
+				// Get the user_response_id from userMetaData
+				const userMetaData = session?.user_metadata as UserMetadata;
 				const { email } = userMetaData;
 				const user_response_id = getUserFromEmail(email);
 
-				// Create payload
+				// Create payload for auth information
 				const payload = { id, user_response_id, ...userMetaData };
+
+				// Save profile data to session store
+				$sessionStore = payload;
 
 				// Upload profile data from sessionStore to 'user_data_new' database
 				const { error } = await supabase.from('users').upsert(payload, {
