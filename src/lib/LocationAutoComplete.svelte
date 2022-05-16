@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { supabase } from '$lib/supabaseClient';
+	import { sessionStore } from '$lib/sessionStore';
+	import type { UserMetadata } from 'types/UserMetaData';
 
 	let query = '';
 	let loading = false;
@@ -66,10 +68,30 @@
 			};
 			console.log(payload);
 
-			const { error } = await supabase.from('locations').upsert(payload, {
+			const { error: errorLocations } = await supabase.from('locations').upsert(payload, {
 				returning: 'minimal' // Don't return the value after inserting
 			});
-			if (error) throw error;
+			if (errorLocations) throw errorLocations;
+
+			const user_metadata = $sessionStore?.user_metadata as UserMetadata;
+			const email = user_metadata?.email;
+			const {
+				data: { user_id }
+			} = await supabase
+				.from('auth_email_to_user_data')
+				.select('user_id')
+				.eq('email', email)
+				.single();
+			const { error: errorUserIDtoPlaceID } = await supabase
+				.from('junction_user_id_to_place_id')
+				.upsert(
+					{ place_id, user_id },
+					{
+						returning: 'minimal' // Don't return the value after inserting
+					}
+				);
+
+			if (errorUserIDtoPlaceID) throw errorUserIDtoPlaceID;
 		} catch (error: any) {
 			alert(error.message);
 		}
