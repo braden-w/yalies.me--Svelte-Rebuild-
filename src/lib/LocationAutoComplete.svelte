@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { supabase } from '$lib/supabaseClient';
-	import { sessionStore } from '$lib/sessionStore';
+	import { supabase } from '$lib/utils/supabaseClient';
+	import { sessionStore } from '$lib/utils/sessionStore';
 	import type { UserMetadata } from 'types/UserMetaData';
 
 	let query = '';

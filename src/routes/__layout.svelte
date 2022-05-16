@@ -4,7 +4,8 @@
 	// Initialize theme-change, taken from https://github.com/saadeghi/theme-change
 	import { onMount } from 'svelte';
 	import { themeChange } from 'theme-change';
-	import { supabase } from '$lib/supabaseClient';
+	import { supabase } from '$lib/utils/supabaseClient';
+	import { sessionStore } from '$lib/utils/sessionStore';
 	onMount(() => {
 		themeChange(false);
 	});
@@ -752,7 +753,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="dropdown dropdown-end">
+					<div class="dropdown dropdown-end dropdown-open">
 						<label tabindex="0" class="btn btn-ghost btn-circle avatar">
 							<div class="w-10 rounded-full">
 								<img src="https://api.lorem.space/image/face?hash=33791" />
@@ -768,8 +769,12 @@
 									<span class="badge">New</span>
 								</a>
 							</li>
-							<li><a>Settings</a></li>
-							<li><button on:click={signOut}>Logout</button></li>
+							<li><button>Settings</button></li>
+							{#if $sessionStore !== null}
+								<li><button on:click={signOut}>Logout</button></li>
+							{:else}
+								<li><button on:click={signOut}>Login</button></li>
+							{/if}
 						</ul>
 					</div>
 				</div>

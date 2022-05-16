@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { supabase } from '$lib/supabaseClient';
+	import { supabase } from '$lib/utils/supabaseClient';
 	import type { definitions } from '../../types/supabase';
-	import { sessionStore } from '$lib/sessionStore';
+	import { sessionStore } from '$lib/utils/sessionStore';
 	import LocationAutoComplete from '$lib/LocationAutoComplete.svelte';
 
 	const user = supabase.auth.user();

@@ -3,8 +3,8 @@
 </script>
 
 <script lang="ts">
-	import { sessionStore } from '$lib/sessionStore';
-	import { supabase } from '$lib/supabaseClient';
+	import { sessionStore } from '$lib/utils/sessionStore';
+	import { supabase } from '$lib/utils/supabaseClient';
 	import Auth from '$lib/Auth.svelte';
 	import Profile from '$lib/Profile.svelte';
 	import type { User } from '@supabase/supabase-js';

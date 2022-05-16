@@ -21,7 +21,7 @@
 	import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 	import { onMount } from 'svelte';
-	import { supabase } from '$lib/supabaseClient';
+	import { supabase } from '$lib/utils/supabaseClient';
 
 	mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_KEY;
 
