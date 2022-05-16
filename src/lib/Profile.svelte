@@ -69,7 +69,9 @@
 
 <!-- Put a centered card on the screen. Inside it, there are multiple labelled inputs that are binded to the corresponding properties of the user -->
 <div class="w-full max-w-md mx-auto">
-	<div class="card card-bordered bg-secondary shadow-md rounded-lg px-8 pt-6 pb-8 mb-4">
+	<div
+		class="card card-bordered bg-secondary text-secondary-content shadow-md rounded-lg px-8 pt-6 pb-8 mb-4"
+	>
 		<div class="mb-4 text-center">
 			<div class="avatar mx-auto">
 				<div class="w-28 rounded">
