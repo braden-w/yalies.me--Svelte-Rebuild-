@@ -11,9 +11,6 @@
 	import type { UserMetadata } from 'types/UserMetaData';
 	import type { SessionStore } from 'types/SessionStore';
 
-	// Get login state on page load
-	$sessionStore = processAuthState(supabase.auth.user());
-
 	/** Get everything before the @ of the email */
 	function getUserFromEmail(email: string): string {
 		const [emailUser] = email.split('@');
@@ -34,6 +31,9 @@
 
 		return payload;
 	}
+
+	// Get login state on page load
+	$sessionStore = processAuthState(supabase.auth.user());
 
 	supabase.auth.onAuthStateChange(async (_, session) => {
 		if (!session) $sessionStore = null;
