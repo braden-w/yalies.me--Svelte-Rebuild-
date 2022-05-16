@@ -46,7 +46,26 @@
 			selected = clicked;
 			// Upload the place_id and description props to supabase
 			const { place_id, description } = clicked;
-			const payload = { place_id, description };
+
+			// Get the latitude and longitude from place_id using the Google Places API
+			const geocoder = new google.maps.Geocoder();
+
+			const { results } = await geocoder.geocode({ placeId: place_id });
+
+			// Get lat and lng from results
+			const { geometry } = results[0];
+			const { location } = geometry;
+			const { lat: latFunction, lng: lngFunction } = location;
+			const lat = latFunction();
+			const lng = lngFunction();
+
+			const payload = {
+				place_id,
+				description,
+				lng_lat: `SRID=4326;POINT(${lng} ${lat})`
+			};
+			console.log(payload);
+
 			const { error } = await supabase.from('locations').upsert(payload, {
 				returning: 'minimal' // Don't return the value after inserting
 			});
@@ -68,7 +87,7 @@
 
 <!-- A Location Autocomplete built with DaisyUI that uses the Google Map Places API to autocomplete the location as the user is typing -->
 
-<label class="block text-sm font-bold mb-2" for="location">Location</label>
+<label class="block text-sm font-bold mb-2" for="location">City</label>
 <input
 	type="text"
 	class="input shadow border rounded w-full focus:outline-none focus:shadow-outline"
