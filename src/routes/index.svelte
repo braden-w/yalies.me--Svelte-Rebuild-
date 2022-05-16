@@ -17,12 +17,15 @@
 		else {
 			$sessionStore = supabase.auth.user();
 			// Get the variables ""
+			const id = $sessionStore?.id;
 			const userMetaData = $sessionStore?.user_metadata as UserMetadata;
+			const payload = {id, ...userMetaData}
 
-			// Upload profile data from sessionStore to 'user_data_from_google_auth' database
-			supabase.from('user_data_from_google_auth').upsert(userMetaData, {
+			// Upload profile data from sessionStore to 'user_data_new' database
+			supabase.from('user_data_new').upsert(payload, {
 				returning: 'minimal' // Don't return the value after inserting
 			});
+
 		}
 	});
 </script>
@@ -37,3 +40,4 @@
 {:else}
 	<Auth />
 {/if}
+
