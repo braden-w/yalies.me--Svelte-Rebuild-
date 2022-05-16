@@ -1,4 +1,4 @@
-export interface FetchLocations {
+export interface FetchedLocation {
 	description: string;
 	lat: number;
 	lng: number;
