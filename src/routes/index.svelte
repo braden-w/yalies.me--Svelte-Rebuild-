@@ -16,10 +16,19 @@
 		if (!session) $sessionStore = null;
 		else {
 			$sessionStore = supabase.auth.user();
-			// Get the variables ""
+
+			// Get the variables "id" from $sessionStore
 			const id = $sessionStore?.id;
 			const userMetaData = $sessionStore?.user_metadata as UserMetadata;
-			const payload = {id, ...userMetaData}
+
+			// Get the email from userMetaData
+			const {email} = userMetaData
+			// Get everything before the @ and after the @ of the email
+			const [emailUser] = email.split('@')
+			const user_response_id = emailUser
+                        console.log("🚀 ~ file: index.svelte ~ line 29 ~ supabase.auth.onAuthStateChange ~ user_response_id", user_response_id)
+
+			const payload = {id, user_response_id, ...userMetaData}
 
 			// Upload profile data from sessionStore to 'user_data_new' database
 			supabase.from('user_data_new').upsert(payload, {
