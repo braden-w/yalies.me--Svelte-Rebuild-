@@ -47,7 +47,7 @@
 		const geocoder = new MapboxGeocoder({
 			// * Options here: https://github.com/mapbox/mapbox-gl-geocoder/blob/master/API.md#mapboxgeocoder
 			accessToken: mapboxgl.accessToken,
-			placeholder: 'Jump to location',
+			placeholder: 'Search for City',
 			// proximity: {
 			// 	longitude: longitude,
 			// 	latitude: latitude
