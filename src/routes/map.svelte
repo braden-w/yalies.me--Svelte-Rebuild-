@@ -1,4 +1,4 @@
-<script context="module">
+<script context="module" lang="ts">
 	import type { FetchedLocation } from 'types/FetchedLocation';
 	export const prerender = false;
 	/** List all places from the database. Return it as a list of items that contains place description, place lat, place lng, and place people
