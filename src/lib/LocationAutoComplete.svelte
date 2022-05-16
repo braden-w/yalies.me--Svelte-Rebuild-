@@ -61,24 +61,25 @@
 			const lat = latFunction();
 			const lng = lngFunction();
 
+			// Upload place to places in Supabase
 			const payload = {
 				place_id,
 				description,
 				lng_lat: `SRID=4326;POINT(${lng} ${lat})`
 			};
 			console.log(payload);
-
-			const { error: errorLocations } = await supabase.from('locations').upsert(payload, {
+			const { error: errorPlaces } = await supabase.from('places').upsert(payload, {
 				returning: 'minimal' // Don't return the value after inserting
 			});
-			if (errorLocations) throw errorLocations;
+			if (errorPlaces) throw errorPlaces;
 
+			// Upload relationship of user to place in the user_responses table
 			const user_metadata = $sessionStore?.user_metadata as UserMetadata;
 			const email = user_metadata?.email;
 			const {
 				data: { user_id }
 			} = await supabase
-				.from('auth_email_to_user_data')
+				.from('junction_auth_email_to_user_data')
 				.select('user_id')
 				.eq('email', email)
 				.single();
