@@ -1,10 +1,12 @@
 <script context="module">
 	export const prerender = false;
-	export async function load({ fetch }) {
+	export async function load() {
 		// Fetch all places from the 'junction_user_id_to_place_id' table in supabase, then join them with some parts of user_data for display
-		const { data } = await supabase.from('junction_user_id_to_place_id').select('places(lng, lat)');
-		console.log('🚀 ~ file: map.svelte ~ line 7 ~ load ~ data', data);
-		return {status: 200}
+		const { data } = await supabase
+			.from('users')
+			.select('name, avatar_url, user_responses(places(lng, lat))');
+		console.log('🚀 ~ file: map.svelte ~ line 8 ~ load ~ data', data);
+		return { status: 200 };
 	}
 </script>
 
