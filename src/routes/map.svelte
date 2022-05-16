@@ -102,7 +102,7 @@
 			el.addEventListener('click', () => {
 				// for every element in el with a class "outline-on-click", add the class "ring" to it
 				el.querySelectorAll('.outline-on-click').forEach((el) => {
-					el.classList.toggle('ring');
+					el.classList.add('ring');
 				});
 			});
 
