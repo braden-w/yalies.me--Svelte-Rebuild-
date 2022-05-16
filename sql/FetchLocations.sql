@@ -3,3 +3,11 @@
 -- Each user has a id, name, and avatar_url
 
 select description, lat, lng, (select json_agg(json_build_object('id', users.id, 'name', users.name, 'avatar_url', users.avatar_url)) from users) from places 
+
+
+CREATE OR REPLACE FUNCTION fetch_locations() RETURNS TABLE(description varchar, lat double precision, lng double precision, people json)
+  AS $$ 
+  BEGIN
+  RETURN QUERY SELECT description, lat, lng, (select json_agg(json_build_object('id', users.id, 'name', users.name, 'avatar_url', users.avatar_url)) from users) from places;
+  END;
+  $$ LANGUAGE plpgsql;
