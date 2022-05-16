@@ -4,65 +4,7 @@
 	import { sessionStore } from '$lib/sessionStore';
 	import LocationAutoComplete from '$lib/LocationAutoComplete.svelte';
 
-	let loading = true;
-
-	async function getProfile() {
-		try {
-			loading = true;
-			const user = supabase.auth.user();
-
-			let { data, error, status } = await supabase
-				.from<definitions['user_data']>('user_data')
-				.select(
-					`email, interests, expression, location, university, full_name, photo, instagram, linkedin, phone, major, year`
-				)
-				.eq('email', user?.email)
-				.single();
-
-			if (error && status !== 406) throw error;
-			if (data) userDataFromGoogleAuth = data;
-		} catch (error: any) {
-			alert(error.message);
-		} finally {
-			loading = false;
-		}
-	}
-
-	async function updateProfile() {
-		try {
-			loading = true;
-			const user = supabase.auth.user();
-
-			const updates = {
-				id: user.id,
-				username,
-				website,
-				avatar_url,
-				updated_at: new Date()
-			};
-
-			let { error } = await supabase.from('profiles').upsert(updates, {
-				returning: 'minimal' // Don't return the value after inserting
-			});
-			if (error) throw error;
-		} catch (error: any) {
-			alert(error.message);
-		} finally {
-			loading = false;
-		}
-	}
-
-	async function signOut() {
-		try {
-			loading = true;
-			let { error } = await supabase.auth.signOut();
-			if (error) throw error;
-		} catch (error: any) {
-			alert(error.message);
-		} finally {
-			loading = false;
-		}
-	}
+	const user = supabase.auth.user();
 </script>
 
 <!-- Put a centered card on the screen. Inside it, there are multiple labelled inputs that are binded to the corresponding properties of the user -->
@@ -98,7 +40,7 @@
 			/>
 		</div>
 		<div class="card-actions justify-end">
-			<button class="btn  text-white" on:click={signOut}> Sign Out </button>
+			<button class="btn  text-white">Change</button>
 		</div>
 	</div>
 </div>
