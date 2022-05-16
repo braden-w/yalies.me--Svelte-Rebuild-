@@ -65,7 +65,7 @@
 			const payload = {
 				place_id,
 				description,
-				lng_lat: `SRID=4326;POINT(${lng} ${lat})`
+				geog: `SRID=4326;POINT(${lng} ${lat})`
 			};
 			console.log(payload);
 			const { error: errorPlaces } = await supabase.from('places').upsert(payload, {
