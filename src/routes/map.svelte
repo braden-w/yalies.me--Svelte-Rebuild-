@@ -98,7 +98,7 @@
 					${
 						shuffledPeople.length >= 2
 							? `<div class="avatar">
-						<div class="w-16 h-16 rounded-lg" outline-on-click>
+						<div class="w-16 h-16 rounded-lg outline-on-click">
 							<img src="${fetchedLocation.people[1].avatar_url}" referrerpolicy="no-referrer"/>
 						</div>
 					</div>`
@@ -107,7 +107,7 @@
 					${
 						shuffledPeople.length >= 3
 							? `<div class="avatar">
-						<div class="w-16 h-16 rounded-lg" outline-on-click>
+						<div class="w-16 h-16 rounded-lg outline-on-click">
 							<img src="${fetchedLocation.people[2].avatar_url}" referrerpolicy="no-referrer"/>
 						</div>
 					</div>`
