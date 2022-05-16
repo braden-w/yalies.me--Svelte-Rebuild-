@@ -100,11 +100,11 @@
 <!-- A Location Autocomplete built with DaisyUI that uses the Google Map Places API to autocomplete the location as the user is typing -->
 
 <label class="block text-sm font-bold mb-2" for="location">City</label>
-<div class="dropdown">
+<div class="dropdown w-full">
 	<input
 		tabindex="0"
 		type="text"
-		class="input shadow border rounded  focus:outline-none focus:shadow-outline"
+		class="input shadow border rounded w-full focus:outline-none focus:shadow-outline"
 		id="location"
 		placeholder="Start typing your city here..."
 		bind:value={query}
