@@ -99,28 +99,29 @@
 
 <!-- A Location Autocomplete built with DaisyUI that uses the Google Map Places API to autocomplete the location as the user is typing -->
 
+<label class="block text-sm font-bold mb-2" for="location">City</label>
 <div class="dropdown">
-	<div tabindex="0">
-		<label class="block text-sm font-bold mb-2" for="location">City</label>
-		<input
-			type="text"
-			class="input shadow border rounded  focus:outline-none focus:shadow-outline"
-			id="location"
-			placeholder="Start typing your city here..."
-			bind:value={query}
-			on:input={handleQueryChange}
-		/>
-	</div>
-	<div class="dropdown-content py-2" tabindex="0">
-		<!-- For each result in results, display  -->
-		{#if results.length > 0}
-			<ul class="menu bg-base-100 w-full p-2 rounded-box">
-				{#each results as result}
-					<li class="menu-item bg-base-200 w-full p-2 rounded-box" on:click={handleClick(result)}>
+	<input
+		tabindex="0"
+		type="text"
+		class="input shadow border rounded  focus:outline-none focus:shadow-outline"
+		id="location"
+		placeholder="Start typing your city here..."
+		bind:value={query}
+		on:input={handleQueryChange}
+	/>
+
+	<!-- For each result in results, display  -->
+	<!-- class=" bg-base-100 w-full p-2 rounded-box" -->
+	{#if results.length > 0}
+		<ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box" tabindex="0">
+			{#each results as result}
+				<li class="menu-item bg-base-200 w-full p-2 rounded-box" on:click={handleClick(result)}>
+					<a>
 						{result.description}
-					</li>
-				{/each}
-			</ul>
-		{/if}
-	</div>
+					</a>
+				</li>
+			{/each}
+		</ul>
+	{/if}
 </div>
