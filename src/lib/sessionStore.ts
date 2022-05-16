@@ -1,4 +1,4 @@
-import type { User } from '@supabase/supabase-js';
-import { writable, type Writable } from 'svelte/store';
+import {writable, type Writable} from 'svelte/store';
+import type {SessionStore} from 'types/SessionStore';
 
-export const sessionStore: Writable<User | null> = writable(null);
+export const sessionStore: Writable<SessionStore | null> = writable(null);
