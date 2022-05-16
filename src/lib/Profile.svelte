@@ -73,7 +73,13 @@
 		<div class="mb-4 text-center">
 			<div class="avatar mx-auto">
 				<div class="w-28 rounded">
-					<img src={$sessionStore?.avatar_url} alt="Profile" width="100%" height="100%" />
+					<img
+						src={$sessionStore?.avatar_url}
+						alt="Profile"
+						width="100%"
+						height="100%"
+						referrerpolicy="no-referrer"
+					/>
 				</div>
 			</div>
 			<h1 class="text-2xl font-bold">{$sessionStore?.name}</h1>
