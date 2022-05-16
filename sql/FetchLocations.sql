@@ -51,6 +51,9 @@ SELECT
       )
     from
       users
+      inner join user_responses on users.user_response_id = user_responses.user_response_id
+    where
+      user_responses.place_id = places.place_id
   ) as people
 from
   places;
