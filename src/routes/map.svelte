@@ -65,23 +65,7 @@
 			});
 			// loadFacebook(map!, queryYear)
 		});
-		// Create a marker on the map that the user can move around
-		new mapboxgl.Marker().setLngLat([24, 42]).addTo(map);
-		// create a HTML element for each feature
 
-		const latLng: [number, number][] = [
-			[NewHaven.latitude, NewHaven.longitude],
-			[8, 3],
-			[11, 3],
-			[2, 3],
-			[2, 3],
-			[2, 3],
-			[2, 3],
-			[2, 3],
-			[2, 3],
-			[2, 3],
-			[2, 3]
-		];
 		function generateInnerHTML(fetchedLocation: FetchedLocation) {
 			// Get 3 random people from the 'people' property of fetchedLocation
 			const shuffledPeople = fetchedLocation.people.sort(() => 0.5 - Math.random());
@@ -119,14 +103,6 @@
 			const el = document.createElement('div');
 			el.className = 'marker';
 			el.innerHTML = generateInnerHTML(fetchedLocation);
-			// Object.assign(el.style, {
-			// 	backgroundImage: `url('https://i.imgur.com/MK4NUzI.png')`,
-			// 	backgroundSize: 'cover',
-			// 	'border-radius': '50%',
-			// 	cursor: 'pointer',
-			// 	height: `${initPx}px`,
-			// 	width: `${initPx}px`
-			// });
 
 			// On click, add a shadow around it
 			el.addEventListener('click', () => {
