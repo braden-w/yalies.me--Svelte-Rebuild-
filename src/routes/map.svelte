@@ -5,9 +5,9 @@
 	 * Each user has a id, name, and avatar_url
 	 */
 	export async function load() {
-		const { data } = await supabase.rpc('fetch_data');
-		console.log('🚀 ~ file: map.svelte ~ line 8 ~ load ~ data', data);
-		return { status: 200 };
+		const { data, error } = await supabase.rpc('fetch_locations').not('people', 'is', null);
+		console.log('🚀 ~ file: map.svelte ~ line 8 ~ load ~ data', data, error);
+		return { status: 200, props: { data } };
 	}
 </script>
 
@@ -25,6 +25,8 @@
 	// latitude = userProfileInformation.location?.latitude ?? NewHaven.latitude;
 	// console.log('longitude, latitude:>> ', longitude, latitude)
 	const initPx = 32;
+
+	export let data;
 
 	onMount(() => {
 		const map = new mapboxgl.Map({
