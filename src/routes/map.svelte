@@ -95,19 +95,23 @@
 							<img src="${fetchedLocation.people[0].avatar_url}" />
 						</div>
 					</div>
-					<div class="avatar">
+					${
+						shuffledPeople.length >= 2 &&
+						`<div class="avatar">
 						<div class="w-16 h-16 rounded-lg" outline-on-click>
-							<img src="https://api.lorem.space/image/face?w=160&h=160" />
+							<img src="${fetchedLocation.people[1].avatar_url}" />
 						</div>
-					</div>
-					<div class="avatar">
-					<div class="w-16 h-16 rounded-lg" outline-on-click>
-						<img src="https://api.lorem.space/image/face?w=160&h=160" />
-					</div>
-					</div>
-				</button>
-				
-				`;
+					</div>`
+					}
+					${
+						shuffledPeople.length >= 3 &&
+						`<div class="avatar">
+						<div class="w-16 h-16 rounded-lg" outline-on-click>
+							<img src="${fetchedLocation.people[2].avatar_url}" />
+						</div>
+					</div>`
+					}
+				</button>`;
 		}
 		fetchedLocations.forEach((fetchedLocation) => {
 			const el = document.createElement('div');
@@ -135,7 +139,7 @@
 					el.classList.remove('ring');
 				});
 			});
-			new mapboxgl.Marker(el).setLngLat([lng, lat]).addTo(map);
+			new mapboxgl.Marker(el).setLngLat([fetchedLocation.lng, fetchedLocation.lat]).addTo(map);
 		});
 	});
 </script>
