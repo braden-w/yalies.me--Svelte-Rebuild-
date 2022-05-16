@@ -5,9 +5,7 @@
 	 * Each user has a id, name, and avatar_url
 	 */
 	export async function load() {
-		const { data } = await supabase
-			.from('users')
-			.select('name, avatar_url, user_responses(places(lng, lat))');
+		const { data } = await supabase.rpc('fetch_data');
 		console.log('🚀 ~ file: map.svelte ~ line 8 ~ load ~ data', data);
 		return { status: 200 };
 	}
