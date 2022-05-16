@@ -12,6 +12,12 @@
 	// Get login state on page load
 	$sessionStore = supabase.auth.user();
 
+	/** Get everything before the @ of the email */
+	function getUserFromEmail(email: string) {
+		const [emailUser] = email.split('@');
+		return emailUser;
+	}
+
 	supabase.auth.onAuthStateChange(async (_, session) => {
 		if (!session) $sessionStore = null;
 		else {
@@ -24,9 +30,7 @@
 
 				// Get the email from userMetaData
 				const { email } = userMetaData;
-				// Get everything before the @ and after the @ of the email
-				const [emailUser] = email.split('@');
-				const user_response_id = emailUser;
+				const user_response_id = getUserFromEmail(email);
 
 				// Create payload
 				const payload = { id, user_response_id, ...userMetaData };
