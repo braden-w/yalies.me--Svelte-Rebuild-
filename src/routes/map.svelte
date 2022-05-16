@@ -1,9 +1,20 @@
+<script context="module">
+	export const prerender = false;
+	export async function load({ fetch }) {
+		// Fetch all places from the 'junction_user_id_to_place_id' table in supabase, then join them with some parts of user_data for display
+		const { data } = await supabase.from('junction_user_id_to_place_id').select('places(lng, lat)');
+		console.log('🚀 ~ file: map.svelte ~ line 7 ~ load ~ data', data);
+		return {status: 200}
+	}
+</script>
+
 <script lang="ts">
 	import mapboxgl from 'mapbox-gl';
 	import 'mapbox-gl/dist/mapbox-gl.css';
 	import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 	import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 	import { onMount } from 'svelte';
+	import { supabase } from '$lib/supabaseClient';
 	mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_KEY;
 
 	const NewHaven = { longitude: -72.9, latitude: 41.3 };
@@ -11,6 +22,7 @@
 	// latitude = userProfileInformation.location?.latitude ?? NewHaven.latitude;
 	// console.log('longitude, latitude:>> ', longitude, latitude)
 	const initPx = 32;
+
 	onMount(() => {
 		const map = new mapboxgl.Map({
 			container: 'map',
