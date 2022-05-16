@@ -1,4 +1,5 @@
 <script context="module">
+	import type { FetchedLocation } from 'types/FetchedLocation';
 	export const prerender = false;
 	/** List all places from the database. Return it as a list of items that contains place description, place lat, place lng, and place people
 	 * Place people is a list of users that are associated with the place
@@ -7,7 +8,8 @@
 	export async function load() {
 		const { data, error } = await supabase.rpc('fetch_locations').not('people', 'is', null);
 		console.log('🚀 ~ file: map.svelte ~ line 8 ~ load ~ data', data, error);
-		return { status: 200, props: { data } };
+		const fetchedLocations = data as FetchedLocation[];
+		return { status: 200, props: { fetchedLocations } };
 	}
 </script>
 
@@ -26,7 +28,7 @@
 	// console.log('longitude, latitude:>> ', longitude, latitude)
 	const initPx = 32;
 
-	export let data;
+	export let fetchedLocations;
 
 	onMount(() => {
 		const map = new mapboxgl.Map({
