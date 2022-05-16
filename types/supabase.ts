@@ -234,102 +234,6 @@ export interface paths {
       };
     };
   };
-  "/auth_email_to_user_data": {
-    get: {
-      parameters: {
-        query: {
-          /** Refers to auth.users.email */
-          email?: parameters["rowFilter.auth_email_to_user_data.email"];
-          /** The corresponding ID Column from user_data */
-          user_id?: parameters["rowFilter.auth_email_to_user_data.user_id"];
-          /** Filtering Columns */
-          select?: parameters["select"];
-          /** Ordering */
-          order?: parameters["order"];
-          /** Limiting and Pagination */
-          offset?: parameters["offset"];
-          /** Limiting and Pagination */
-          limit?: parameters["limit"];
-        };
-        header: {
-          /** Limiting and Pagination */
-          Range?: parameters["range"];
-          /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
-          /** Preference */
-          Prefer?: parameters["preferCount"];
-        };
-      };
-      responses: {
-        /** OK */
-        200: {
-          schema: definitions["auth_email_to_user_data"][];
-        };
-        /** Partial Content */
-        206: unknown;
-      };
-    };
-    post: {
-      parameters: {
-        body: {
-          /** auth_email_to_user_data */
-          auth_email_to_user_data?: definitions["auth_email_to_user_data"];
-        };
-        query: {
-          /** Filtering Columns */
-          select?: parameters["select"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** Created */
-        201: unknown;
-      };
-    };
-    delete: {
-      parameters: {
-        query: {
-          /** Refers to auth.users.email */
-          email?: parameters["rowFilter.auth_email_to_user_data.email"];
-          /** The corresponding ID Column from user_data */
-          user_id?: parameters["rowFilter.auth_email_to_user_data.user_id"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** No Content */
-        204: never;
-      };
-    };
-    patch: {
-      parameters: {
-        query: {
-          /** Refers to auth.users.email */
-          email?: parameters["rowFilter.auth_email_to_user_data.email"];
-          /** The corresponding ID Column from user_data */
-          user_id?: parameters["rowFilter.auth_email_to_user_data.user_id"];
-        };
-        body: {
-          /** auth_email_to_user_data */
-          auth_email_to_user_data?: definitions["auth_email_to_user_data"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** No Content */
-        204: never;
-      };
-    };
-  };
   "/errors": {
     get: {
       parameters: {
@@ -603,6 +507,102 @@ export interface paths {
       };
     };
   };
+  "/junction_auth_email_to_user_data": {
+    get: {
+      parameters: {
+        query: {
+          /** Refers to user_data_from_google_auth */
+          email?: parameters["rowFilter.junction_auth_email_to_user_data.email"];
+          /** The corresponding ID Column from user_data */
+          user_id?: parameters["rowFilter.junction_auth_email_to_user_data.user_id"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["junction_auth_email_to_user_data"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** junction_auth_email_to_user_data */
+          junction_auth_email_to_user_data?: definitions["junction_auth_email_to_user_data"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          /** Refers to user_data_from_google_auth */
+          email?: parameters["rowFilter.junction_auth_email_to_user_data.email"];
+          /** The corresponding ID Column from user_data */
+          user_id?: parameters["rowFilter.junction_auth_email_to_user_data.user_id"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          /** Refers to user_data_from_google_auth */
+          email?: parameters["rowFilter.junction_auth_email_to_user_data.email"];
+          /** The corresponding ID Column from user_data */
+          user_id?: parameters["rowFilter.junction_auth_email_to_user_data.user_id"];
+        };
+        body: {
+          /** junction_auth_email_to_user_data */
+          junction_auth_email_to_user_data?: definitions["junction_auth_email_to_user_data"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
   "/old_user_data": {
     get: {
       parameters: {
@@ -723,6 +723,108 @@ export interface paths {
         body: {
           /** old_user_data */
           old_user_data?: definitions["old_user_data"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
+  "/places": {
+    get: {
+      parameters: {
+        query: {
+          place_id?: parameters["rowFilter.places.place_id"];
+          description?: parameters["rowFilter.places.description"];
+          created_at?: parameters["rowFilter.places.created_at"];
+          geog?: parameters["rowFilter.places.geog"];
+          lng?: parameters["rowFilter.places.lng"];
+          lat?: parameters["rowFilter.places.lat"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["places"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** places */
+          places?: definitions["places"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          place_id?: parameters["rowFilter.places.place_id"];
+          description?: parameters["rowFilter.places.description"];
+          created_at?: parameters["rowFilter.places.created_at"];
+          geog?: parameters["rowFilter.places.geog"];
+          lng?: parameters["rowFilter.places.lng"];
+          lat?: parameters["rowFilter.places.lat"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          place_id?: parameters["rowFilter.places.place_id"];
+          description?: parameters["rowFilter.places.description"];
+          created_at?: parameters["rowFilter.places.created_at"];
+          geog?: parameters["rowFilter.places.geog"];
+          lng?: parameters["rowFilter.places.lng"];
+          lat?: parameters["rowFilter.places.lat"];
+        };
+        body: {
+          /** places */
+          places?: definitions["places"];
         };
         header: {
           /** Preference */
@@ -951,22 +1053,23 @@ export interface paths {
       };
     };
   };
-  "/user_data": {
+  "/user_data_1": {
     get: {
       parameters: {
         query: {
-          interests?: parameters["rowFilter.user_data.interests"];
-          expression?: parameters["rowFilter.user_data.expression"];
-          location?: parameters["rowFilter.user_data.location"];
-          university?: parameters["rowFilter.user_data.university"];
-          summer_in_new_haven?: parameters["rowFilter.user_data.summer_in_new_haven"];
-          summer_in_new_haven_future?: parameters["rowFilter.user_data.summer_in_new_haven_future"];
-          instagram?: parameters["rowFilter.user_data.instagram"];
-          linkedin?: parameters["rowFilter.user_data.linkedin"];
-          phone?: parameters["rowFilter.user_data.phone"];
-          major?: parameters["rowFilter.user_data.major"];
-          year?: parameters["rowFilter.user_data.year"];
-          user_id?: parameters["rowFilter.user_data.user_id"];
+          /** Links to user_data_google */
+          user_data_google_id?: parameters["rowFilter.user_data_1.user_data_google_id"];
+          interests?: parameters["rowFilter.user_data_1.interests"];
+          expression?: parameters["rowFilter.user_data_1.expression"];
+          university?: parameters["rowFilter.user_data_1.university"];
+          instagram?: parameters["rowFilter.user_data_1.instagram"];
+          linkedin?: parameters["rowFilter.user_data_1.linkedin"];
+          phone?: parameters["rowFilter.user_data_1.phone"];
+          major?: parameters["rowFilter.user_data_1.major"];
+          year?: parameters["rowFilter.user_data_1.year"];
+          user_id?: parameters["rowFilter.user_data_1.user_id"];
+          /** Links to places */
+          place_id?: parameters["rowFilter.user_data_1.place_id"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -988,7 +1091,7 @@ export interface paths {
       responses: {
         /** OK */
         200: {
-          schema: definitions["user_data"][];
+          schema: definitions["user_data_1"][];
         };
         /** Partial Content */
         206: unknown;
@@ -997,8 +1100,8 @@ export interface paths {
     post: {
       parameters: {
         body: {
-          /** user_data */
-          user_data?: definitions["user_data"];
+          /** user_data_1 */
+          user_data_1?: definitions["user_data_1"];
         };
         query: {
           /** Filtering Columns */
@@ -1017,18 +1120,19 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          interests?: parameters["rowFilter.user_data.interests"];
-          expression?: parameters["rowFilter.user_data.expression"];
-          location?: parameters["rowFilter.user_data.location"];
-          university?: parameters["rowFilter.user_data.university"];
-          summer_in_new_haven?: parameters["rowFilter.user_data.summer_in_new_haven"];
-          summer_in_new_haven_future?: parameters["rowFilter.user_data.summer_in_new_haven_future"];
-          instagram?: parameters["rowFilter.user_data.instagram"];
-          linkedin?: parameters["rowFilter.user_data.linkedin"];
-          phone?: parameters["rowFilter.user_data.phone"];
-          major?: parameters["rowFilter.user_data.major"];
-          year?: parameters["rowFilter.user_data.year"];
-          user_id?: parameters["rowFilter.user_data.user_id"];
+          /** Links to user_data_google */
+          user_data_google_id?: parameters["rowFilter.user_data_1.user_data_google_id"];
+          interests?: parameters["rowFilter.user_data_1.interests"];
+          expression?: parameters["rowFilter.user_data_1.expression"];
+          university?: parameters["rowFilter.user_data_1.university"];
+          instagram?: parameters["rowFilter.user_data_1.instagram"];
+          linkedin?: parameters["rowFilter.user_data_1.linkedin"];
+          phone?: parameters["rowFilter.user_data_1.phone"];
+          major?: parameters["rowFilter.user_data_1.major"];
+          year?: parameters["rowFilter.user_data_1.year"];
+          user_id?: parameters["rowFilter.user_data_1.user_id"];
+          /** Links to places */
+          place_id?: parameters["rowFilter.user_data_1.place_id"];
         };
         header: {
           /** Preference */
@@ -1043,22 +1147,23 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          interests?: parameters["rowFilter.user_data.interests"];
-          expression?: parameters["rowFilter.user_data.expression"];
-          location?: parameters["rowFilter.user_data.location"];
-          university?: parameters["rowFilter.user_data.university"];
-          summer_in_new_haven?: parameters["rowFilter.user_data.summer_in_new_haven"];
-          summer_in_new_haven_future?: parameters["rowFilter.user_data.summer_in_new_haven_future"];
-          instagram?: parameters["rowFilter.user_data.instagram"];
-          linkedin?: parameters["rowFilter.user_data.linkedin"];
-          phone?: parameters["rowFilter.user_data.phone"];
-          major?: parameters["rowFilter.user_data.major"];
-          year?: parameters["rowFilter.user_data.year"];
-          user_id?: parameters["rowFilter.user_data.user_id"];
+          /** Links to user_data_google */
+          user_data_google_id?: parameters["rowFilter.user_data_1.user_data_google_id"];
+          interests?: parameters["rowFilter.user_data_1.interests"];
+          expression?: parameters["rowFilter.user_data_1.expression"];
+          university?: parameters["rowFilter.user_data_1.university"];
+          instagram?: parameters["rowFilter.user_data_1.instagram"];
+          linkedin?: parameters["rowFilter.user_data_1.linkedin"];
+          phone?: parameters["rowFilter.user_data_1.phone"];
+          major?: parameters["rowFilter.user_data_1.major"];
+          year?: parameters["rowFilter.user_data_1.year"];
+          user_id?: parameters["rowFilter.user_data_1.user_id"];
+          /** Links to places */
+          place_id?: parameters["rowFilter.user_data_1.place_id"];
         };
         body: {
-          /** user_data */
-          user_data?: definitions["user_data"];
+          /** user_data_1 */
+          user_data_1?: definitions["user_data_1"];
         };
         header: {
           /** Preference */
@@ -1170,19 +1275,21 @@ export interface paths {
       };
     };
   };
-  "/user_data_from_google_auth": {
+  "/user_responses": {
     get: {
       parameters: {
         query: {
-          email?: parameters["rowFilter.user_data_from_google_auth.email"];
-          email_verified?: parameters["rowFilter.user_data_from_google_auth.email_verified"];
-          full_name?: parameters["rowFilter.user_data_from_google_auth.full_name"];
-          name?: parameters["rowFilter.user_data_from_google_auth.name"];
-          picture?: parameters["rowFilter.user_data_from_google_auth.picture"];
-          avatar_url?: parameters["rowFilter.user_data_from_google_auth.avatar_url"];
-          iss?: parameters["rowFilter.user_data_from_google_auth.iss"];
-          provider_id?: parameters["rowFilter.user_data_from_google_auth.provider_id"];
-          sub?: parameters["rowFilter.user_data_from_google_auth.sub"];
+          interests?: parameters["rowFilter.user_responses.interests"];
+          expression?: parameters["rowFilter.user_responses.expression"];
+          university?: parameters["rowFilter.user_responses.university"];
+          instagram?: parameters["rowFilter.user_responses.instagram"];
+          linkedin?: parameters["rowFilter.user_responses.linkedin"];
+          phone?: parameters["rowFilter.user_responses.phone"];
+          major?: parameters["rowFilter.user_responses.major"];
+          year?: parameters["rowFilter.user_responses.year"];
+          /** Links to places */
+          place_id?: parameters["rowFilter.user_responses.place_id"];
+          user_response_id?: parameters["rowFilter.user_responses.user_response_id"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -1204,7 +1311,7 @@ export interface paths {
       responses: {
         /** OK */
         200: {
-          schema: definitions["user_data_from_google_auth"][];
+          schema: definitions["user_responses"][];
         };
         /** Partial Content */
         206: unknown;
@@ -1213,8 +1320,8 @@ export interface paths {
     post: {
       parameters: {
         body: {
-          /** user_data_from_google_auth */
-          user_data_from_google_auth?: definitions["user_data_from_google_auth"];
+          /** user_responses */
+          user_responses?: definitions["user_responses"];
         };
         query: {
           /** Filtering Columns */
@@ -1233,15 +1340,17 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          email?: parameters["rowFilter.user_data_from_google_auth.email"];
-          email_verified?: parameters["rowFilter.user_data_from_google_auth.email_verified"];
-          full_name?: parameters["rowFilter.user_data_from_google_auth.full_name"];
-          name?: parameters["rowFilter.user_data_from_google_auth.name"];
-          picture?: parameters["rowFilter.user_data_from_google_auth.picture"];
-          avatar_url?: parameters["rowFilter.user_data_from_google_auth.avatar_url"];
-          iss?: parameters["rowFilter.user_data_from_google_auth.iss"];
-          provider_id?: parameters["rowFilter.user_data_from_google_auth.provider_id"];
-          sub?: parameters["rowFilter.user_data_from_google_auth.sub"];
+          interests?: parameters["rowFilter.user_responses.interests"];
+          expression?: parameters["rowFilter.user_responses.expression"];
+          university?: parameters["rowFilter.user_responses.university"];
+          instagram?: parameters["rowFilter.user_responses.instagram"];
+          linkedin?: parameters["rowFilter.user_responses.linkedin"];
+          phone?: parameters["rowFilter.user_responses.phone"];
+          major?: parameters["rowFilter.user_responses.major"];
+          year?: parameters["rowFilter.user_responses.year"];
+          /** Links to places */
+          place_id?: parameters["rowFilter.user_responses.place_id"];
+          user_response_id?: parameters["rowFilter.user_responses.user_response_id"];
         };
         header: {
           /** Preference */
@@ -1256,19 +1365,21 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          email?: parameters["rowFilter.user_data_from_google_auth.email"];
-          email_verified?: parameters["rowFilter.user_data_from_google_auth.email_verified"];
-          full_name?: parameters["rowFilter.user_data_from_google_auth.full_name"];
-          name?: parameters["rowFilter.user_data_from_google_auth.name"];
-          picture?: parameters["rowFilter.user_data_from_google_auth.picture"];
-          avatar_url?: parameters["rowFilter.user_data_from_google_auth.avatar_url"];
-          iss?: parameters["rowFilter.user_data_from_google_auth.iss"];
-          provider_id?: parameters["rowFilter.user_data_from_google_auth.provider_id"];
-          sub?: parameters["rowFilter.user_data_from_google_auth.sub"];
+          interests?: parameters["rowFilter.user_responses.interests"];
+          expression?: parameters["rowFilter.user_responses.expression"];
+          university?: parameters["rowFilter.user_responses.university"];
+          instagram?: parameters["rowFilter.user_responses.instagram"];
+          linkedin?: parameters["rowFilter.user_responses.linkedin"];
+          phone?: parameters["rowFilter.user_responses.phone"];
+          major?: parameters["rowFilter.user_responses.major"];
+          year?: parameters["rowFilter.user_responses.year"];
+          /** Links to places */
+          place_id?: parameters["rowFilter.user_responses.place_id"];
+          user_response_id?: parameters["rowFilter.user_responses.user_response_id"];
         };
         body: {
-          /** user_data_from_google_auth */
-          user_data_from_google_auth?: definitions["user_data_from_google_auth"];
+          /** user_responses */
+          user_responses?: definitions["user_responses"];
         };
         header: {
           /** Preference */
@@ -1285,28 +1396,18 @@ export interface paths {
     get: {
       parameters: {
         query: {
-          netid?: parameters["rowFilter.users.netid"];
-          full_name?: parameters["rowFilter.users.full_name"];
-          uid?: parameters["rowFilter.users.uid"];
-          photo?: parameters["rowFilter.users.photo"];
           email?: parameters["rowFilter.users.email"];
-          school?: parameters["rowFilter.users.school"];
-          address?: parameters["rowFilter.users.address"];
-          year?: parameters["rowFilter.users.year"];
-          college?: parameters["rowFilter.users.college"];
-          college_code?: parameters["rowFilter.users.college_code"];
-          birthday?: parameters["rowFilter.users.birthday"];
-          major?: parameters["rowFilter.users.major"];
-          phone?: parameters["rowFilter.users.phone"];
-          location?: parameters["rowFilter.users.location"];
-          location_as_point?: parameters["rowFilter.users.location_as_point"];
-          interests?: parameters["rowFilter.users.interests"];
-          expression?: parameters["rowFilter.users.expression"];
-          university?: parameters["rowFilter.users.university"];
-          summer_in_new_haven?: parameters["rowFilter.users.summer_in_new_haven"];
-          summer_in_new_haven_future?: parameters["rowFilter.users.summer_in_new_haven_future"];
-          instagram?: parameters["rowFilter.users.instagram"];
-          linkedin?: parameters["rowFilter.users.linkedin"];
+          email_verified?: parameters["rowFilter.users.email_verified"];
+          full_name?: parameters["rowFilter.users.full_name"];
+          name?: parameters["rowFilter.users.name"];
+          picture?: parameters["rowFilter.users.picture"];
+          avatar_url?: parameters["rowFilter.users.avatar_url"];
+          iss?: parameters["rowFilter.users.iss"];
+          provider_id?: parameters["rowFilter.users.provider_id"];
+          sub?: parameters["rowFilter.users.sub"];
+          /** Unique key from Google Account */
+          id?: parameters["rowFilter.users.id"];
+          user_response_id?: parameters["rowFilter.users.user_response_id"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -1332,6 +1433,82 @@ export interface paths {
         };
         /** Partial Content */
         206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** users */
+          users?: definitions["users"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          email?: parameters["rowFilter.users.email"];
+          email_verified?: parameters["rowFilter.users.email_verified"];
+          full_name?: parameters["rowFilter.users.full_name"];
+          name?: parameters["rowFilter.users.name"];
+          picture?: parameters["rowFilter.users.picture"];
+          avatar_url?: parameters["rowFilter.users.avatar_url"];
+          iss?: parameters["rowFilter.users.iss"];
+          provider_id?: parameters["rowFilter.users.provider_id"];
+          sub?: parameters["rowFilter.users.sub"];
+          /** Unique key from Google Account */
+          id?: parameters["rowFilter.users.id"];
+          user_response_id?: parameters["rowFilter.users.user_response_id"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          email?: parameters["rowFilter.users.email"];
+          email_verified?: parameters["rowFilter.users.email_verified"];
+          full_name?: parameters["rowFilter.users.full_name"];
+          name?: parameters["rowFilter.users.name"];
+          picture?: parameters["rowFilter.users.picture"];
+          avatar_url?: parameters["rowFilter.users.avatar_url"];
+          iss?: parameters["rowFilter.users.iss"];
+          provider_id?: parameters["rowFilter.users.provider_id"];
+          sub?: parameters["rowFilter.users.sub"];
+          /** Unique key from Google Account */
+          id?: parameters["rowFilter.users.id"];
+          user_response_id?: parameters["rowFilter.users.user_response_id"];
+        };
+        body: {
+          /** users */
+          users?: definitions["users"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
       };
     };
   };
@@ -1971,6 +2148,60 @@ export interface paths {
       };
     };
   };
+  "/users_view": {
+    get: {
+      parameters: {
+        query: {
+          netid?: parameters["rowFilter.users_view.netid"];
+          full_name?: parameters["rowFilter.users_view.full_name"];
+          uid?: parameters["rowFilter.users_view.uid"];
+          photo?: parameters["rowFilter.users_view.photo"];
+          email?: parameters["rowFilter.users_view.email"];
+          school?: parameters["rowFilter.users_view.school"];
+          address?: parameters["rowFilter.users_view.address"];
+          year?: parameters["rowFilter.users_view.year"];
+          college?: parameters["rowFilter.users_view.college"];
+          college_code?: parameters["rowFilter.users_view.college_code"];
+          birthday?: parameters["rowFilter.users_view.birthday"];
+          major?: parameters["rowFilter.users_view.major"];
+          phone?: parameters["rowFilter.users_view.phone"];
+          location?: parameters["rowFilter.users_view.location"];
+          location_as_point?: parameters["rowFilter.users_view.location_as_point"];
+          interests?: parameters["rowFilter.users_view.interests"];
+          expression?: parameters["rowFilter.users_view.expression"];
+          university?: parameters["rowFilter.users_view.university"];
+          summer_in_new_haven?: parameters["rowFilter.users_view.summer_in_new_haven"];
+          summer_in_new_haven_future?: parameters["rowFilter.users_view.summer_in_new_haven_future"];
+          instagram?: parameters["rowFilter.users_view.instagram"];
+          linkedin?: parameters["rowFilter.users_view.linkedin"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["users_view"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+  };
   "/rpc/processtogeojson": {
     post: {
       parameters: {
@@ -2001,6 +2232,23 @@ export interface paths {
             /** Format: character varying */
             query_email: string;
           };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/fetch_locations": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
         };
         header: {
           /** Preference */
@@ -2244,25 +2492,6 @@ export interface definitions {
     /** Format: character varying */
     preferred_name?: string;
   };
-  /** @description Junction table that, given a login email, links it to the id of the corresponding row in user_data */
-  auth_email_to_user_data: {
-    /**
-     * Format: character varying
-     * @description Refers to auth.users.email
-     *
-     * Note:
-     * This is a Primary Key.<pk/>
-     */
-    email: string;
-    /**
-     * Format: uuid
-     * @description The corresponding ID Column from user_data
-     *
-     * Note:
-     * This is a Foreign Key to `user_data.user_id`.<fk table='user_data' column='user_id'/>
-     */
-    user_id: string;
-  };
   errors: {
     /**
      * Format: character varying
@@ -2293,6 +2522,22 @@ export interface definitions {
     request: string;
     /** Format: json */
     geojson?: string;
+  };
+  /** @description Junction table that, given a login email, links it to the id of the corresponding row in user_data */
+  junction_auth_email_to_user_data: {
+    /**
+     * Format: character varying
+     * @description Refers to user_data_from_google_auth
+     *
+     * Note:
+     * This is a Primary Key.<pk/>
+     */
+    email: string;
+    /**
+     * Format: uuid
+     * @description The corresponding ID Column from user_data
+     */
+    user_id: string;
   };
   old_user_data: {
     /**
@@ -2335,6 +2580,27 @@ export interface definitions {
     /** Format: integer */
     year?: number;
   };
+  places: {
+    /**
+     * Format: character varying
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    place_id: string;
+    /** Format: character varying */
+    description: string;
+    /**
+     * Format: timestamp with time zone
+     * @default now()
+     */
+    created_at?: string;
+    /** Format: extensions.geography */
+    geog?: string;
+    /** Format: double precision */
+    lng?: number;
+    /** Format: double precision */
+    lat?: number;
+  };
   relationships_between_users: {
     /** Format: character varying */
     from_email: string;
@@ -2357,22 +2623,18 @@ export interface definitions {
     /** Format: character varying */
     to_email?: string;
   };
-  user_data: {
+  user_data_1: {
+    /**
+     * Format: character varying
+     * @description Links to user_data_google
+     */
+    user_data_google_id: string;
     /** Format: character varying */
     interests?: string;
     /** Format: character varying */
     expression?: string;
-    /** Format: json */
-    location?: string;
     /** Format: character varying */
     university?: string;
-    /**
-     * Format: boolean
-     * @default true
-     */
-    summer_in_new_haven?: boolean;
-    /** Format: boolean */
-    summer_in_new_haven_future?: boolean;
     /** Format: character varying */
     instagram?: string;
     /** Format: character varying */
@@ -2390,6 +2652,14 @@ export interface definitions {
      * @default extensions.uuid_generate_v4()
      */
     user_id: string;
+    /**
+     * Format: character varying
+     * @description Links to places
+     *
+     * Note:
+     * This is a Foreign Key to `places.place_id`.<fk table='places' column='place_id'/>
+     */
+    place_id?: string;
   };
   user_data_from_firebase: {
     /**
@@ -2408,13 +2678,40 @@ export interface definitions {
     /** Format: character varying */
     photo_url?: string;
   };
-  user_data_from_google_auth: {
+  user_responses: {
+    /** Format: character varying */
+    interests?: string;
+    /** Format: character varying */
+    expression?: string;
+    /** Format: character varying */
+    university?: string;
+    /** Format: character varying */
+    instagram?: string;
+    /** Format: character varying */
+    linkedin?: string;
+    /** Format: character varying */
+    phone?: string;
+    /** Format: character varying */
+    major?: string;
+    /** Format: integer */
+    year?: number;
+    /**
+     * Format: character varying
+     * @description Links to places
+     *
+     * Note:
+     * This is a Foreign Key to `places.place_id`.<fk table='places' column='place_id'/>
+     */
+    place_id?: string;
     /**
      * Format: character varying
      * @description Note:
      * This is a Primary Key.<pk/>
-     * This is a Foreign Key to `auth_email_to_user_data.email`.<fk table='auth_email_to_user_data' column='email'/>
      */
+    user_response_id: string;
+  };
+  users: {
+    /** Format: character varying */
     email: string;
     /** Format: boolean */
     email_verified?: boolean;
@@ -2432,56 +2729,20 @@ export interface definitions {
     provider_id?: string;
     /** Format: character varying */
     sub?: string;
-  };
-  users: {
-    /** Format: character varying */
-    netid?: string;
-    /** Format: character varying */
-    full_name?: string;
-    /** Format: character varying */
-    uid?: string;
-    /** Format: character varying */
-    photo?: string;
+    /**
+     * Format: uuid
+     * @description Unique key from Google Account
+     *
+     * Note:
+     * This is a Primary Key.<pk/>
+     */
+    id: string;
     /**
      * Format: character varying
      * @description Note:
-     * This is a Primary Key.<pk/>
+     * This is a Foreign Key to `user_responses.user_response_id`.<fk table='user_responses' column='user_response_id'/>
      */
-    email?: string;
-    /** Format: character varying */
-    school?: string;
-    /** Format: character varying */
-    address?: string;
-    /** Format: integer */
-    year?: number;
-    /** Format: character varying */
-    college?: string;
-    /** Format: character varying */
-    college_code?: string;
-    /** Format: character varying */
-    birthday?: string;
-    /** Format: character varying */
-    major?: string;
-    /** Format: character varying */
-    phone?: string;
-    /** Format: json */
-    location?: string;
-    /** Format: extensions.geometry */
-    location_as_point?: string;
-    /** Format: character varying */
-    interests?: string;
-    /** Format: character varying */
-    expression?: string;
-    /** Format: character varying */
-    university?: string;
-    /** Format: boolean */
-    summer_in_new_haven?: boolean;
-    /** Format: boolean */
-    summer_in_new_haven_future?: boolean;
-    /** Format: character varying */
-    instagram?: string;
-    /** Format: character varying */
-    linkedin?: string;
+    user_response_id: string;
   };
   users3: {
     /** Format: integer */
@@ -2790,6 +3051,56 @@ export interface definitions {
     /** Format: character varying */
     linkedin?: string;
   };
+  users_view: {
+    /** Format: character varying */
+    netid?: string;
+    /** Format: character varying */
+    full_name?: string;
+    /** Format: character varying */
+    uid?: string;
+    /** Format: character varying */
+    photo?: string;
+    /**
+     * Format: character varying
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    email?: string;
+    /** Format: character varying */
+    school?: string;
+    /** Format: character varying */
+    address?: string;
+    /** Format: integer */
+    year?: number;
+    /** Format: character varying */
+    college?: string;
+    /** Format: character varying */
+    college_code?: string;
+    /** Format: character varying */
+    birthday?: string;
+    /** Format: character varying */
+    major?: string;
+    /** Format: character varying */
+    phone?: string;
+    /** Format: json */
+    location?: string;
+    /** Format: extensions.geometry */
+    location_as_point?: string;
+    /** Format: character varying */
+    interests?: string;
+    /** Format: character varying */
+    expression?: string;
+    /** Format: character varying */
+    university?: string;
+    /** Format: boolean */
+    summer_in_new_haven?: boolean;
+    /** Format: boolean */
+    summer_in_new_haven_future?: boolean;
+    /** Format: character varying */
+    instagram?: string;
+    /** Format: character varying */
+    linkedin?: string;
+  };
 }
 
 export interface parameters {
@@ -2910,18 +3221,6 @@ export interface parameters {
   "rowFilter.2022_facebook.visitor": string;
   /** Format: character varying */
   "rowFilter.2022_facebook.preferred_name": string;
-  /** @description auth_email_to_user_data */
-  "body.auth_email_to_user_data": definitions["auth_email_to_user_data"];
-  /**
-   * Format: character varying
-   * @description Refers to auth.users.email
-   */
-  "rowFilter.auth_email_to_user_data.email": string;
-  /**
-   * Format: uuid
-   * @description The corresponding ID Column from user_data
-   */
-  "rowFilter.auth_email_to_user_data.user_id": string;
   /** @description errors */
   "body.errors": definitions["errors"];
   /** Format: character varying */
@@ -2942,6 +3241,18 @@ export interface parameters {
   "rowFilter.geojson.request": string;
   /** Format: json */
   "rowFilter.geojson.geojson": string;
+  /** @description junction_auth_email_to_user_data */
+  "body.junction_auth_email_to_user_data": definitions["junction_auth_email_to_user_data"];
+  /**
+   * Format: character varying
+   * @description Refers to user_data_from_google_auth
+   */
+  "rowFilter.junction_auth_email_to_user_data.email": string;
+  /**
+   * Format: uuid
+   * @description The corresponding ID Column from user_data
+   */
+  "rowFilter.junction_auth_email_to_user_data.user_id": string;
   /** @description old_user_data */
   "body.old_user_data": definitions["old_user_data"];
   /** Format: character varying */
@@ -2976,6 +3287,20 @@ export interface parameters {
   "rowFilter.old_user_data.major": string;
   /** Format: integer */
   "rowFilter.old_user_data.year": string;
+  /** @description places */
+  "body.places": definitions["places"];
+  /** Format: character varying */
+  "rowFilter.places.place_id": string;
+  /** Format: character varying */
+  "rowFilter.places.description": string;
+  /** Format: timestamp with time zone */
+  "rowFilter.places.created_at": string;
+  /** Format: extensions.geography */
+  "rowFilter.places.geog": string;
+  /** Format: double precision */
+  "rowFilter.places.lng": string;
+  /** Format: double precision */
+  "rowFilter.places.lat": string;
   /** @description relationships_between_users */
   "body.relationships_between_users": definitions["relationships_between_users"];
   /** Format: character varying */
@@ -2998,32 +3323,36 @@ export interface parameters {
   "rowFilter.relationships_between_users_old.from_email": string;
   /** Format: character varying */
   "rowFilter.relationships_between_users_old.to_email": string;
-  /** @description user_data */
-  "body.user_data": definitions["user_data"];
+  /** @description user_data_1 */
+  "body.user_data_1": definitions["user_data_1"];
+  /**
+   * Format: character varying
+   * @description Links to user_data_google
+   */
+  "rowFilter.user_data_1.user_data_google_id": string;
   /** Format: character varying */
-  "rowFilter.user_data.interests": string;
+  "rowFilter.user_data_1.interests": string;
   /** Format: character varying */
-  "rowFilter.user_data.expression": string;
-  /** Format: json */
-  "rowFilter.user_data.location": string;
+  "rowFilter.user_data_1.expression": string;
   /** Format: character varying */
-  "rowFilter.user_data.university": string;
-  /** Format: boolean */
-  "rowFilter.user_data.summer_in_new_haven": string;
-  /** Format: boolean */
-  "rowFilter.user_data.summer_in_new_haven_future": string;
+  "rowFilter.user_data_1.university": string;
   /** Format: character varying */
-  "rowFilter.user_data.instagram": string;
+  "rowFilter.user_data_1.instagram": string;
   /** Format: character varying */
-  "rowFilter.user_data.linkedin": string;
+  "rowFilter.user_data_1.linkedin": string;
   /** Format: character varying */
-  "rowFilter.user_data.phone": string;
+  "rowFilter.user_data_1.phone": string;
   /** Format: character varying */
-  "rowFilter.user_data.major": string;
+  "rowFilter.user_data_1.major": string;
   /** Format: integer */
-  "rowFilter.user_data.year": string;
+  "rowFilter.user_data_1.year": string;
   /** Format: uuid */
-  "rowFilter.user_data.user_id": string;
+  "rowFilter.user_data_1.user_id": string;
+  /**
+   * Format: character varying
+   * @description Links to places
+   */
+  "rowFilter.user_data_1.place_id": string;
   /** @description user_data_from_firebase */
   "body.user_data_from_firebase": definitions["user_data_from_firebase"];
   /** Format: character varying */
@@ -3036,72 +3365,58 @@ export interface parameters {
   "rowFilter.user_data_from_firebase.email_verified": string;
   /** Format: character varying */
   "rowFilter.user_data_from_firebase.photo_url": string;
-  /** @description user_data_from_google_auth */
-  "body.user_data_from_google_auth": definitions["user_data_from_google_auth"];
+  /** @description user_responses */
+  "body.user_responses": definitions["user_responses"];
   /** Format: character varying */
-  "rowFilter.user_data_from_google_auth.email": string;
-  /** Format: boolean */
-  "rowFilter.user_data_from_google_auth.email_verified": string;
+  "rowFilter.user_responses.interests": string;
   /** Format: character varying */
-  "rowFilter.user_data_from_google_auth.full_name": string;
+  "rowFilter.user_responses.expression": string;
   /** Format: character varying */
-  "rowFilter.user_data_from_google_auth.name": string;
+  "rowFilter.user_responses.university": string;
   /** Format: character varying */
-  "rowFilter.user_data_from_google_auth.picture": string;
+  "rowFilter.user_responses.instagram": string;
   /** Format: character varying */
-  "rowFilter.user_data_from_google_auth.avatar_url": string;
+  "rowFilter.user_responses.linkedin": string;
   /** Format: character varying */
-  "rowFilter.user_data_from_google_auth.iss": string;
+  "rowFilter.user_responses.phone": string;
   /** Format: character varying */
-  "rowFilter.user_data_from_google_auth.provider_id": string;
+  "rowFilter.user_responses.major": string;
+  /** Format: integer */
+  "rowFilter.user_responses.year": string;
+  /**
+   * Format: character varying
+   * @description Links to places
+   */
+  "rowFilter.user_responses.place_id": string;
   /** Format: character varying */
-  "rowFilter.user_data_from_google_auth.sub": string;
+  "rowFilter.user_responses.user_response_id": string;
   /** @description users */
   "body.users": definitions["users"];
   /** Format: character varying */
-  "rowFilter.users.netid": string;
+  "rowFilter.users.email": string;
+  /** Format: boolean */
+  "rowFilter.users.email_verified": string;
   /** Format: character varying */
   "rowFilter.users.full_name": string;
   /** Format: character varying */
-  "rowFilter.users.uid": string;
+  "rowFilter.users.name": string;
   /** Format: character varying */
-  "rowFilter.users.photo": string;
+  "rowFilter.users.picture": string;
   /** Format: character varying */
-  "rowFilter.users.email": string;
+  "rowFilter.users.avatar_url": string;
   /** Format: character varying */
-  "rowFilter.users.school": string;
+  "rowFilter.users.iss": string;
   /** Format: character varying */
-  "rowFilter.users.address": string;
-  /** Format: integer */
-  "rowFilter.users.year": string;
+  "rowFilter.users.provider_id": string;
   /** Format: character varying */
-  "rowFilter.users.college": string;
+  "rowFilter.users.sub": string;
+  /**
+   * Format: uuid
+   * @description Unique key from Google Account
+   */
+  "rowFilter.users.id": string;
   /** Format: character varying */
-  "rowFilter.users.college_code": string;
-  /** Format: character varying */
-  "rowFilter.users.birthday": string;
-  /** Format: character varying */
-  "rowFilter.users.major": string;
-  /** Format: character varying */
-  "rowFilter.users.phone": string;
-  /** Format: json */
-  "rowFilter.users.location": string;
-  /** Format: extensions.geometry */
-  "rowFilter.users.location_as_point": string;
-  /** Format: character varying */
-  "rowFilter.users.interests": string;
-  /** Format: character varying */
-  "rowFilter.users.expression": string;
-  /** Format: character varying */
-  "rowFilter.users.university": string;
-  /** Format: boolean */
-  "rowFilter.users.summer_in_new_haven": string;
-  /** Format: boolean */
-  "rowFilter.users.summer_in_new_haven_future": string;
-  /** Format: character varying */
-  "rowFilter.users.instagram": string;
-  /** Format: character varying */
-  "rowFilter.users.linkedin": string;
+  "rowFilter.users.user_response_id": string;
   /** @description users3 */
   "body.users3": definitions["users3"];
   /** Format: integer */
@@ -3380,6 +3695,52 @@ export interface parameters {
   "rowFilter.users_times_available_joined_with_users.instagram": string;
   /** Format: character varying */
   "rowFilter.users_times_available_joined_with_users.linkedin": string;
+  /** @description users_view */
+  "body.users_view": definitions["users_view"];
+  /** Format: character varying */
+  "rowFilter.users_view.netid": string;
+  /** Format: character varying */
+  "rowFilter.users_view.full_name": string;
+  /** Format: character varying */
+  "rowFilter.users_view.uid": string;
+  /** Format: character varying */
+  "rowFilter.users_view.photo": string;
+  /** Format: character varying */
+  "rowFilter.users_view.email": string;
+  /** Format: character varying */
+  "rowFilter.users_view.school": string;
+  /** Format: character varying */
+  "rowFilter.users_view.address": string;
+  /** Format: integer */
+  "rowFilter.users_view.year": string;
+  /** Format: character varying */
+  "rowFilter.users_view.college": string;
+  /** Format: character varying */
+  "rowFilter.users_view.college_code": string;
+  /** Format: character varying */
+  "rowFilter.users_view.birthday": string;
+  /** Format: character varying */
+  "rowFilter.users_view.major": string;
+  /** Format: character varying */
+  "rowFilter.users_view.phone": string;
+  /** Format: json */
+  "rowFilter.users_view.location": string;
+  /** Format: extensions.geometry */
+  "rowFilter.users_view.location_as_point": string;
+  /** Format: character varying */
+  "rowFilter.users_view.interests": string;
+  /** Format: character varying */
+  "rowFilter.users_view.expression": string;
+  /** Format: character varying */
+  "rowFilter.users_view.university": string;
+  /** Format: boolean */
+  "rowFilter.users_view.summer_in_new_haven": string;
+  /** Format: boolean */
+  "rowFilter.users_view.summer_in_new_haven_future": string;
+  /** Format: character varying */
+  "rowFilter.users_view.instagram": string;
+  /** Format: character varying */
+  "rowFilter.users_view.linkedin": string;
 }
 
 export interface operations {}
