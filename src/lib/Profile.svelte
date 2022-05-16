@@ -5,8 +5,6 @@
 	import LocationAutoComplete from '$lib/LocationAutoComplete.svelte';
 
 	let loading = true;
-	let userDataFromGoogleAuth =
-		$sessionStore?.user_metadata as definitions['user_data_from_google_auth'];
 
 	async function getProfile() {
 		try {
@@ -75,10 +73,10 @@
 		<div class="mb-4 text-center">
 			<div class="avatar mx-auto">
 				<div class="w-28 rounded">
-					<img src={userDataFromGoogleAuth.avatar_url} alt="Profile" width="100%" height="100%" />
+					<img src={$sessionStore?.avatar_url} alt="Profile" width="100%" height="100%" />
 				</div>
 			</div>
-			<h1 class="text-2xl font-bold">{userDataFromGoogleAuth.full_name}</h1>
+			<h1 class="text-2xl font-bold">{$sessionStore?.name}</h1>
 			<p class="text-lg">Yale University</p>
 		</div>
 		<div class="mb-4">
