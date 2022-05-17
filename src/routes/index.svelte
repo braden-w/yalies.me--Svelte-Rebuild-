@@ -101,7 +101,9 @@
 				</label>
 				<ul
 					tabindex="0"
-					class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+					class="menu menu-compact dropdown-content mt-${
+						shuffledPeople.length > 3 ? '3' : shuffledPeople.length
+					} p-2 shadow bg-base-100 rounded-box w-52"
 				>
 					<li>
 						<a class="justify-between" href="/profile">${fetchedLocation.description}</a>
