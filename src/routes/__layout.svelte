@@ -33,18 +33,17 @@
 			goto('/');
 		} else {
 			// If login
+			goto('/map');
+			const user = supabase.auth.user();
+
+			// Save profile data to session store
+			$sessionStore = processAuthState(user!);
 			try {
-				const user = supabase.auth.user();
-
-				// Save profile data to session store
-				$sessionStore = processAuthState(user!);
-
 				// Upload profile data from sessionStore to 'user_data_new' database
 				const { error } = await supabase.from('users').upsert($sessionStore!, {
 					returning: 'minimal' // Don't return the value after inserting
 				});
 				if (error) throw error;
-				goto('/map');
 			} catch (error: any) {
 				alert(error.message);
 			}
