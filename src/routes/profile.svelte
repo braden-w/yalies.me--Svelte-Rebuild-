@@ -30,7 +30,9 @@
 		</div>
 	</div>
 </div> -->
-<div class="hero min-h-screen-nav bg-base-200">
+<div
+  class="hero min-h-screen-nav from-primary to-secondary bg-gradient-to-br text-primary-content grid"
+>
   <div class="hero-content flex-col lg:flex-row-reverse">
     <div class="text-center lg:text-left">
       <h1 class="text-5xl font-bold">Where are you now?</h1>
