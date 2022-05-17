@@ -13,7 +13,6 @@
 	>
 		
 		<div class="mb-4">
-			<LocationAutoComplete />
 		</div>
 		<div class="mb-4">
 			<label class="block text-sm font-bold mb-2" for="website"> Website </label>
@@ -55,23 +54,10 @@
 					<h1 class="text-2xl font-bold">{$sessionStore?.name}</h1>
 					<p class="text-lg">Yale University</p>
 				</div>
-				<div class="form-control">
-					<label class="label">
-						<span class="label-text">City</span>
-					</label>
-					<input type="text" placeholder="email" class="input input-bordered" />
-				</div>
-				<div class="form-control">
-					<label class="label">
-						<span class="label-text">Password</span>
-					</label>
-					<input type="text" placeholder="password" class="input input-bordered" />
-					<label class="label">
-						<a href="#" class="label-text-alt link link-hover">Forgot password?</a>
-					</label>
-				</div>
+				<LocationAutoComplete />
+
 				<div class="form-control mt-6">
-					<button class="btn btn-primary">Login</button>
+					<a href="/" class="btn btn-primary">Go To Map</a>
 				</div>
 			</div>
 		</div>
