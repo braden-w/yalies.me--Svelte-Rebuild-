@@ -76,7 +76,7 @@
           </div>
 
           <div class="form-control mt-6">
-            <a href={user_in_place.id} class="btn btn-primary">Go To Map</a>
+            <a href={user_in_place.id} class="btn btn-primary">Go to Profile</a>
           </div>
         </div>
       </div>
