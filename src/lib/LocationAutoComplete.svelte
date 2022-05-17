@@ -1,11 +1,15 @@
 <script lang="ts">
   import { supabase } from '$lib/utils/supabaseClient';
   import { sessionStore } from '$lib/utils/sessionStore';
-  import { defaultResults, uploadPlaceToSupabase, uploadUserPlaceSelectionToSupabase, type Payload } from '$lib/LocationAutoComplete';
+  import {
+    defaultResults,
+    uploadPlaceToSupabase,
+    uploadUserPlaceSelectionToSupabase,
+    type Payload
+  } from '$lib/LocationAutoComplete';
   import { getUserLocation } from '$lib/utils/getUserLocation';
 
   let query = '';
-  $: isQueryLongEnough = query.length > 2;
 
   let results: google.maps.places.AutocompletePrediction[] = defaultResults;
 
@@ -26,8 +30,8 @@
       .from('user_responses')
       .upsert({ place_id: null, user_response_id }, { returning: 'minimal' });
   }
-  $: if (!isQueryLongEnough) resetResults();
-  $: if (isQueryLongEnough) {
+  $: if (query.length < 2) resetResults();
+  $: if (query.length >= 2) {
     if (timer) clearTimeout(timer);
     timer = setTimeout(() => {
       fetchResults();
