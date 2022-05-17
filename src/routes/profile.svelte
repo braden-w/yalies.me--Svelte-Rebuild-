@@ -31,7 +31,7 @@
 	</div>
 </div> -->
 <!-- <div class="hero min-h-screen-nav from-primary via-secondary to-base-200 bg-gradient-to-b text-primary-content grid" > -->
-<div class="hero min-h-screen-nav bg-base-200 text-base-200-content grid">
+<div class="hero min-h-screen-nav bg-base-200 text-base-content grid">
   <div class="hero-content flex-col lg:flex-row-reverse">
     <div class="text-center lg:text-left">
       <h1 class="text-5xl font-bold">Where are you now?</h1>

@@ -41,7 +41,7 @@
   />
 </svelte:head>
 
-<div class="hero min-h-screen-nav bg-base-200">
+<div class="hero min-h-screen-nav bg-base-200 text-base-content">
   <div class="hero-content flex-col">
     <div class="text-center">
       <h1 class="text-5xl font-bold">{placeInformation.description}</h1>
