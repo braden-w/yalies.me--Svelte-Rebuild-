@@ -55,7 +55,7 @@
   </div>
 </div>
 <div class="hero min-h-screen-nav bg-base-200">
-  <div class="hero-content flex-row">
+  <div class="hero-content flex-wrap">
     {#each placeInformation.users_in_place as user_in_place}
       <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
         <div class="card-body">
