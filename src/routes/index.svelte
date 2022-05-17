@@ -72,7 +72,8 @@
 
 			// Three cases for the number of people in the fetchedLocation
 			if (shuffledPeople.length === 0) return '';
-			return `<button name="selected" class="stack">
+			return `<div class="dropdown dropdown-hover">
+				<label tabindex="0" name="selected" class="stack">
 					<div class="avatar indicator">
 						<span class="indicator-item badge badge-secondary">${fetchedLocation.people.length}</span>
 						<div class="w-16 h-16 rounded-lg outline-on-click">
@@ -97,7 +98,19 @@
 					</div>`
 							: ''
 					}
-				</button>`;
+				</label>
+				<ul
+					tabindex="0"
+					class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+				>
+					<li>
+						<a class="justify-between" href="/profile">
+							Profile
+							<span class="badge">New</span>
+						</a>
+					</li>
+				</ul>
+				</div>`;
 		}
 		fetchedLocations.forEach((fetchedLocation) => {
 			const el = document.createElement('div');
@@ -154,25 +167,6 @@
 
 <!-- Init mapbox -->
 <div id="map" class="w-full" />
-
-<div class="dropdown dropdown-hover">
-	<label tabindex="0" class="btn btn-ghost btn-circle avatar">
-		<div class="w-10 rounded-full">
-			<img src="https://api.lorem.space/image/face?hash=33791" alt="User Profile" />
-		</div>
-	</label>
-	<ul
-		tabindex="0"
-		class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-	>
-		<li>
-			<a class="justify-between" href="/profile">
-				Profile
-				<span class="badge">New</span>
-			</a>
-		</li>
-	</ul>
-</div>
 
 <style>
 	#map {
