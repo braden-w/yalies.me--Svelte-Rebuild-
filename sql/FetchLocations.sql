@@ -2,6 +2,7 @@
 -- Place people is a list of users that are associated with the place
 -- Each user has a id, name, and avatar_url
 select
+  places.id,
   places.description,
   places.lat,
   places.lng,
@@ -34,6 +35,7 @@ OR REPLACE FUNCTION fetch_locations() RETURNS TABLE(
   people json
 ) AS $ $ BEGIN RETURN QUERY
 SELECT
+  places.id,
   places.description,
   places.lat,
   places.lng,
