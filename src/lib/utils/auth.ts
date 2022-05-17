@@ -10,7 +10,7 @@ export const signIn = async () => {
     const redirectURL = window.location.origin;
     const { error } = await supabase.auth.signIn(
       { provider: 'google' },
-      { redirectTo: redirectURL}
+      { redirectTo: redirectURL }
     );
     if (error) throw error;
   } catch (error) {
