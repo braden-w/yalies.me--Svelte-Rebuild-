@@ -54,8 +54,7 @@
     <div class="text-center lg:text-left">
       <h1 class="text-5xl font-bold">{placeInformation.description}</h1>
       <p class="py-6">
-        Enter your current city. For privacy, feel free to use a city that is in
-        proximity rather than exact location.
+        Users currently in {placeInformation.description}
       </p>
     </div>
     {#each placeInformation.users_in_place as user_in_place}
