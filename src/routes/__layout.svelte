@@ -4,11 +4,73 @@
 	// Initialize theme-change, taken from https://github.com/saadeghi/theme-change
 	import { onMount } from 'svelte';
 	import { themeChange } from 'theme-change';
+	import { supabase } from '$lib/utils/supabaseClient';
 	import { sessionStore } from '$lib/utils/sessionStore';
 	import { signOut } from '$lib/utils/auth';
+	import type { User } from '@supabase/supabase-js';
+	import type { SessionStore } from 'types/SessionStore';
+	import type { UserMetadata } from 'types/UserMetaData';
+	import { goto } from '$app/navigation';
+	import { browser } from '$app/env';
 	onMount(() => {
 		themeChange(false);
 	});
+
+	if (browser) {
+		// Get login state on page load
+		const user = supabase.auth.user();
+		$sessionStore = processAuthState(user);
+		$sessionStore ? goto('/') : goto('/login');
+	}
+
+	supabase.auth.onAuthStateChange(async (_, session) => {
+		if (!session) $sessionStore = null;
+		else {
+			try {
+				const user = supabase.auth.user();
+				// Create payload for auth information
+				const payload = processAuthState(user);
+
+				// Save profile data to session store
+				$sessionStore = payload;
+
+				if (payload) {
+					// Upload profile data from sessionStore to 'user_data_new' database
+					const { error } = await supabase.from('users').upsert(payload, {
+						returning: 'minimal' // Don't return the value after inserting
+					});
+					if (error) throw error;
+				}
+				else {
+					goto('/')
+				}
+			} catch (error: any) {
+				alert(error.message);
+			}
+		}
+	});
+
+	/** Get everything before the @ of the email */
+	function getUserFromEmail(email: string): string {
+		const [emailUser] = email.split('@');
+		return emailUser;
+	}
+
+	function processAuthState(user: User | null): SessionStore | null {
+		if (!user) return null;
+		// Get the variables "id" from $sessionStore
+		const id = user?.id;
+
+		// Get the user_response_id from userMetaData
+		const userMetaData = user?.user_metadata as UserMetadata;
+		const { email } = userMetaData;
+		const user_response_id = getUserFromEmail(email);
+
+		// Create payload for auth information
+		const payload = { id, user_response_id, ...userMetaData };
+
+		return payload;
+	}
 </script>
 
 <div class="bg-base-100 drawer">
