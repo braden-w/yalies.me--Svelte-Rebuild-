@@ -5,7 +5,6 @@
   import { defaultResults } from '$lib/LocationAutoComplete';
 
   let query = '';
-  $: handleQueryChange(query);
   let focused = false;
   let loading = false;
   let results: google.maps.places.AutocompletePrediction[] = defaultResults;
@@ -13,7 +12,6 @@
     results = defaultResults;
   }
 
-  $: isQueryLongEnough = query.length > 2;
   supabase
     .from<definitions['users']>('users')
     .select('user_responses(places(place_id, description))')
@@ -34,23 +32,22 @@
 
   // When query changes value
   let timer: NodeJS.Timeout | null;
-  function handleQueryChange(query: string) {
-    if (query.length == 0) {
-      const user_response_id = $sessionStore?.user_response_id;
-      supabase.from('user_responses').upsert(
-        { place_id: null, user_response_id },
-        {
-          returning: 'minimal' // Don't return the value after inserting
-        }
-      );
-    }
-    if (!isQueryLongEnough) return resetResults();
-    else {
-      if (timer) clearTimeout(timer);
-      timer = setTimeout(() => {
-        fetchResults();
-      }, 300);
-    }
+  $: if (query.length == 0) {
+    const user_response_id = $sessionStore?.user_response_id;
+    supabase.from('user_responses').upsert(
+      { place_id: null, user_response_id },
+      {
+        returning: 'minimal' // Don't return the value after inserting
+      }
+    );
+  }
+  $: isQueryLongEnough = query.length > 2;
+  $: if (!isQueryLongEnough) resetResults();
+  $: if (isQueryLongEnough) {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => {
+      fetchResults();
+    }, 300);
   }
 
   // Fetch results from the Google Places API
