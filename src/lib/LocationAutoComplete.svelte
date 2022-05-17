@@ -131,7 +131,7 @@
 	<!-- For each result in results, display  -->
 	{#if results.length > 0}
 		<ul
-			class="menu menu-compact dropdown-content  p-2 shadow bg-base-100 rounded-box text-sm overflow-y-auto"
+			class="menu menu-compact dropdown-content p-2 shadow bg-base-100 rounded-box text-md w-full"
 			tabindex="0"
 		>
 			{#each results as result}
