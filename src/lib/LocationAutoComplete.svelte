@@ -7,7 +7,6 @@
   let query = '';
   $: isQueryLongEnough = query.length > 2;
 
-  let focused = false;
   let results: google.maps.places.AutocompletePrediction[] = defaultResults;
 
   const resetResults = () => (results = defaultResults);
