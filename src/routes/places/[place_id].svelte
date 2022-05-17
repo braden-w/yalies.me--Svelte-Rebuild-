@@ -5,15 +5,10 @@
   export async function load({ params }: { params: { place_id: string } }) {
     const { data, error } = await supabase
       .from<definitions['users_to_places']>('users_to_places')
-      .select('name, avatar_url, place_id, description')
+      .select('id, name, avatar_url, place_id, description')
       .eq('place_id', params.place_id);
     if (error) return { status: error.code, props: { error } };
-    const users_in_place = data as {
-      name: string;
-      avatar_url: string;
-      place_id: string;
-      description: string;
-    }[];
+    const users_in_place = data;
     const description = users_in_place.length
       ? users_in_place[0].description
       : '';
@@ -34,12 +29,7 @@
   export let placeInformation: {
     place_id: string;
     description: string;
-    users_in_place: {
-      name: string;
-      avatar_url: string;
-      place_id: string;
-      description: string;
-    }[];
+    users_in_place: definitions['users_to_places'][];
   };
 </script>
 
@@ -58,6 +48,9 @@
       <p class="py-6">
         Users currently in {placeInformation.description}
       </p>
+      <div class="form-control">
+        <a href="/" class="btn btn-primary">Go Back To Map</a>
+      </div>
     </div>
   </div>
 </div>
@@ -83,7 +76,7 @@
           </div>
 
           <div class="form-control mt-6">
-            <a href="/" class="btn btn-primary">Go To Map</a>
+            <a href={user_in_place.id} class="btn btn-primary">Go To Map</a>
           </div>
         </div>
       </div>
