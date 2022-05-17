@@ -20,13 +20,6 @@
 
 <div class="hero min-h-screen-nav bg-base-200">
 	<div class="hero-content flex-col lg:flex-row-reverse">
-		<div class="text-center lg:text-left">
-			<h1 class="text-5xl font-bold">Where are you now?</h1>
-			<p class="py-6">
-				Enter your current city. For privacy, feel free to use a city that is in proximity rather
-				than exact location.
-			</p>
-		</div>
 		<div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
 			<div class="card-body">
 				<div class="text-center">
