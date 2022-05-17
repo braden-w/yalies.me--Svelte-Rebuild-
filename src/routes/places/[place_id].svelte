@@ -2,20 +2,25 @@
   import { supabase } from '$lib/utils/supabaseClient';
   export async function load({ params }: { params: { place_id: string } }) {
     const { data, error } = await supabase
-      .from('users')
-      .select('name, avatar_url, user_responses(places(place_id, description))')
-      .eq('user_responses(places(place_id))', params.place_id);
+      .from('users_to_places')
+      .select('name, avatar_url, place_id, description')
+      .eq('place_id', params.place_id);
+    console.log(
+      '🚀 ~ file: [place_id].svelte ~ line 8 ~ load ~ data',
+      data,
+      error
+    );
     if (error) return { status: error.code, props: { error } };
     return {
       status: 200,
-      props: { userProfileInformation: { place_id: params.place_id, ...data } }
+      props: { placeInformation: { place_id: params.place_id, ...data } }
     };
   }
 </script>
 
 <script lang="ts">
   import { sessionStore } from '$lib/utils/sessionStore';
-  import LocationAutoComplete from '$lib/LocationAutoComplete.svelte';
+  import type { definitions } from '$lib/types/supabase';
 </script>
 
 <svelte:head>
@@ -49,7 +54,6 @@
           <h1 class="text-2xl font-bold">{$sessionStore?.name}</h1>
           <p class="text-lg">Yale University</p>
         </div>
-        <LocationAutoComplete />
 
         <div class="form-control mt-6">
           <a href="/" class="btn btn-primary">Go To Map</a>
