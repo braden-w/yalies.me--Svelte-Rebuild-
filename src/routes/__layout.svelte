@@ -21,8 +21,8 @@
     const user = supabase.auth.user();
     if (!user) goto('/landing');
     else {
-      goto('/profile');
       $sessionStore = processAuthState(user);
+      goto('/profile');
     }
   }
 
@@ -47,6 +47,8 @@
         if ((error as ApiError).message) {
           alert((error as ApiError).message);
         }
+      } finally {
+        goto('/profile');
       }
     }
   });
