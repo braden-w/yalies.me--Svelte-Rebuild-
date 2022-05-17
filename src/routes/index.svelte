@@ -1,60 +1,5 @@
 <script lang="ts">
-	import { sessionStore } from '$lib/utils/sessionStore';
-	import { supabase } from '$lib/utils/supabaseClient';
-	import Auth from '$lib/Auth.svelte';
-	import Profile from '$lib/Profile.svelte';
-	import type { User } from '@supabase/supabase-js';
-	import type { UserMetadata } from 'types/UserMetaData';
-	import type { SessionStore } from 'types/SessionStore';
-
-	/** Get everything before the @ of the email */
-	function getUserFromEmail(email: string): string {
-		const [emailUser] = email.split('@');
-		return emailUser;
-	}
-
-	function processAuthState(user: User): SessionStore {
-		// Get the variables "id" from $sessionStore
-		const id = user?.id;
-
-		// Get the user_response_id from userMetaData
-		const userMetaData = user?.user_metadata as UserMetadata;
-		const { email } = userMetaData;
-		const user_response_id = getUserFromEmail(email);
-
-		// Create payload for auth information
-		const payload = { id, user_response_id, ...userMetaData };
-
-		return payload;
-	}
-
-	// Get login state on page load
-	const user = supabase.auth.user();
-	if (user !== null) {
-		$sessionStore = processAuthState(user);
-	}
-
-	supabase.auth.onAuthStateChange(async (_, session) => {
-		if (!session) $sessionStore = null;
-		else {
-			try {
-				const session = supabase.auth.user();
-				// Create payload for auth information
-				const payload = processAuthState(session);
-
-				// Save profile data to session store
-				$sessionStore = payload;
-
-				// Upload profile data from sessionStore to 'user_data_new' database
-				const { error } = await supabase.from('users').upsert(payload, {
-					returning: 'minimal' // Don't return the value after inserting
-				});
-				if (error) throw error;
-			} catch (error: any) {
-				alert(error.message);
-			}
-		}
-	});
+	import { signIn, loading } from '$lib/utils/auth';
 </script>
 
 <svelte:head>
@@ -62,8 +7,31 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-{#if $sessionStore}
-	<Profile />
-{:else}
-	<Auth />
-{/if}
+<div class="hero min-h-screen">
+	<!-- Insert video with url https://i.imgur.com/0uL1zb2.mp4 -->
+	<video
+		class="absolute top-0 left-0 w-full h-full "
+		src="https://i.imgur.com/0uL1zb2.mp4"
+		autoplay
+		loop
+		muted
+	/>
+	<div class="hero-overlay bg-opacity-60" />
+	<div class="hero-content text-center text-neutral-content">
+		<div class="max-w-md align-center">
+			<h1 class="mb-5 text-5xl font-bold">Yalies Around Me</h1>
+			<p class="mb-5">An app that solves a single question: who is in my area?</p>
+			<button class:$loading class="btn" on:click={signIn}>
+				<div class="left">
+					<img
+						width="20px"
+						style="margin-top:7px; margin-right:8px"
+						alt="Google sign-in"
+						src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
+					/>
+				</div>
+				Login with Google
+			</button>
+		</div>
+	</div>
+</div>
