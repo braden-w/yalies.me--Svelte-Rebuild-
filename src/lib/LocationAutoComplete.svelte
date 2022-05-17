@@ -276,7 +276,7 @@
     service.getPlacePredictions(request, (response, status) => {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
         loading = false;
-        results = response ?? [];
+        if (query.length < 2) results = response ?? [];
         console.log(results);
       }
       loading = false;
