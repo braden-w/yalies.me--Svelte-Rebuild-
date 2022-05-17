@@ -8,9 +8,7 @@
   let focused = false;
   let loading = false;
   let results: google.maps.places.AutocompletePrediction[] = defaultResults;
-  function resetResults() {
-    results = defaultResults;
-  }
+  const resetResults = () => (results = defaultResults);
 
   supabase
     .from<definitions['users']>('users')
