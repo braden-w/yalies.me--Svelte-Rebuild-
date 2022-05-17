@@ -21,7 +21,7 @@
 		const user = supabase.auth.user();
 		if (!user) goto('/landing');
 		else {
-			// goto('/');
+			goto('/profile');
 			$sessionStore = processAuthState(user);
 		}
 	}
