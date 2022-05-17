@@ -9,6 +9,7 @@ const config = {
 
   daisyui: {
     themes: [
+      'garden',
       'light',
       'dark',
       'cupcake',
@@ -20,7 +21,6 @@ const config = {
       'cyberpunk',
       'valentine',
       'halloween',
-      'garden',
       'forest',
       'aqua',
       'lofi',
