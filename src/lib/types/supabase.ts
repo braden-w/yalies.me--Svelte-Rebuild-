@@ -1053,129 +1053,6 @@ export interface paths {
       };
     };
   };
-  "/user_data_1": {
-    get: {
-      parameters: {
-        query: {
-          /** Links to user_data_google */
-          user_data_google_id?: parameters["rowFilter.user_data_1.user_data_google_id"];
-          interests?: parameters["rowFilter.user_data_1.interests"];
-          expression?: parameters["rowFilter.user_data_1.expression"];
-          university?: parameters["rowFilter.user_data_1.university"];
-          instagram?: parameters["rowFilter.user_data_1.instagram"];
-          linkedin?: parameters["rowFilter.user_data_1.linkedin"];
-          phone?: parameters["rowFilter.user_data_1.phone"];
-          major?: parameters["rowFilter.user_data_1.major"];
-          year?: parameters["rowFilter.user_data_1.year"];
-          user_id?: parameters["rowFilter.user_data_1.user_id"];
-          /** Links to places */
-          place_id?: parameters["rowFilter.user_data_1.place_id"];
-          /** Filtering Columns */
-          select?: parameters["select"];
-          /** Ordering */
-          order?: parameters["order"];
-          /** Limiting and Pagination */
-          offset?: parameters["offset"];
-          /** Limiting and Pagination */
-          limit?: parameters["limit"];
-        };
-        header: {
-          /** Limiting and Pagination */
-          Range?: parameters["range"];
-          /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
-          /** Preference */
-          Prefer?: parameters["preferCount"];
-        };
-      };
-      responses: {
-        /** OK */
-        200: {
-          schema: definitions["user_data_1"][];
-        };
-        /** Partial Content */
-        206: unknown;
-      };
-    };
-    post: {
-      parameters: {
-        body: {
-          /** user_data_1 */
-          user_data_1?: definitions["user_data_1"];
-        };
-        query: {
-          /** Filtering Columns */
-          select?: parameters["select"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** Created */
-        201: unknown;
-      };
-    };
-    delete: {
-      parameters: {
-        query: {
-          /** Links to user_data_google */
-          user_data_google_id?: parameters["rowFilter.user_data_1.user_data_google_id"];
-          interests?: parameters["rowFilter.user_data_1.interests"];
-          expression?: parameters["rowFilter.user_data_1.expression"];
-          university?: parameters["rowFilter.user_data_1.university"];
-          instagram?: parameters["rowFilter.user_data_1.instagram"];
-          linkedin?: parameters["rowFilter.user_data_1.linkedin"];
-          phone?: parameters["rowFilter.user_data_1.phone"];
-          major?: parameters["rowFilter.user_data_1.major"];
-          year?: parameters["rowFilter.user_data_1.year"];
-          user_id?: parameters["rowFilter.user_data_1.user_id"];
-          /** Links to places */
-          place_id?: parameters["rowFilter.user_data_1.place_id"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** No Content */
-        204: never;
-      };
-    };
-    patch: {
-      parameters: {
-        query: {
-          /** Links to user_data_google */
-          user_data_google_id?: parameters["rowFilter.user_data_1.user_data_google_id"];
-          interests?: parameters["rowFilter.user_data_1.interests"];
-          expression?: parameters["rowFilter.user_data_1.expression"];
-          university?: parameters["rowFilter.user_data_1.university"];
-          instagram?: parameters["rowFilter.user_data_1.instagram"];
-          linkedin?: parameters["rowFilter.user_data_1.linkedin"];
-          phone?: parameters["rowFilter.user_data_1.phone"];
-          major?: parameters["rowFilter.user_data_1.major"];
-          year?: parameters["rowFilter.user_data_1.year"];
-          user_id?: parameters["rowFilter.user_data_1.user_id"];
-          /** Links to places */
-          place_id?: parameters["rowFilter.user_data_1.place_id"];
-        };
-        body: {
-          /** user_data_1 */
-          user_data_1?: definitions["user_data_1"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** No Content */
-        204: never;
-      };
-    };
-  };
   "/user_data_from_firebase": {
     get: {
       parameters: {
@@ -2623,44 +2500,6 @@ export interface definitions {
     /** Format: character varying */
     to_email?: string;
   };
-  user_data_1: {
-    /**
-     * Format: character varying
-     * @description Links to user_data_google
-     */
-    user_data_google_id: string;
-    /** Format: character varying */
-    interests?: string;
-    /** Format: character varying */
-    expression?: string;
-    /** Format: character varying */
-    university?: string;
-    /** Format: character varying */
-    instagram?: string;
-    /** Format: character varying */
-    linkedin?: string;
-    /** Format: character varying */
-    phone?: string;
-    /** Format: character varying */
-    major?: string;
-    /** Format: integer */
-    year?: number;
-    /**
-     * Format: uuid
-     * @description Note:
-     * This is a Primary Key.<pk/>
-     * @default extensions.uuid_generate_v4()
-     */
-    user_id: string;
-    /**
-     * Format: character varying
-     * @description Links to places
-     *
-     * Note:
-     * This is a Foreign Key to `places.place_id`.<fk table='places' column='place_id'/>
-     */
-    place_id?: string;
-  };
   user_data_from_firebase: {
     /**
      * Format: character varying
@@ -2711,7 +2550,11 @@ export interface definitions {
     user_response_id: string;
   };
   users: {
-    /** Format: character varying */
+    /**
+     * Format: character varying
+     * @description Note:
+     * This is a Foreign Key to `2022_facebook.email`.<fk table='2022_facebook' column='email'/>
+     */
     email: string;
     /** Format: boolean */
     email_verified?: boolean;
@@ -3323,36 +3166,6 @@ export interface parameters {
   "rowFilter.relationships_between_users_old.from_email": string;
   /** Format: character varying */
   "rowFilter.relationships_between_users_old.to_email": string;
-  /** @description user_data_1 */
-  "body.user_data_1": definitions["user_data_1"];
-  /**
-   * Format: character varying
-   * @description Links to user_data_google
-   */
-  "rowFilter.user_data_1.user_data_google_id": string;
-  /** Format: character varying */
-  "rowFilter.user_data_1.interests": string;
-  /** Format: character varying */
-  "rowFilter.user_data_1.expression": string;
-  /** Format: character varying */
-  "rowFilter.user_data_1.university": string;
-  /** Format: character varying */
-  "rowFilter.user_data_1.instagram": string;
-  /** Format: character varying */
-  "rowFilter.user_data_1.linkedin": string;
-  /** Format: character varying */
-  "rowFilter.user_data_1.phone": string;
-  /** Format: character varying */
-  "rowFilter.user_data_1.major": string;
-  /** Format: integer */
-  "rowFilter.user_data_1.year": string;
-  /** Format: uuid */
-  "rowFilter.user_data_1.user_id": string;
-  /**
-   * Format: character varying
-   * @description Links to places
-   */
-  "rowFilter.user_data_1.place_id": string;
   /** @description user_data_from_firebase */
   "body.user_data_from_firebase": definitions["user_data_from_firebase"];
   /** Format: character varying */
