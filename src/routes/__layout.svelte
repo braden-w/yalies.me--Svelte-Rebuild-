@@ -907,12 +907,12 @@
     <label for="main-drawer" class="drawer-overlay" />
     <ul class="menu p-4 overflow-y-auto w-80 bg-base-200 text-base-content">
       <!-- Sidebar content here -->
-      <li><a href="summer">Who's in New Haven</a></li>
+      <li><a href="">Who's in New Haven</a></li>
       <li>
         <a href="map">Map (Place Yourself on a Map, find Yalies Near Me)</a>
       </li>
-      <li><a href="rides">Ride Share</a></li>
-      <li><a href="meals">Track Meals</a></li>
+      <li><a href="">Ride Share</a></li>
+      <li><a href="">Track Meals</a></li>
       <li><a href="butteries">Butteries</a></li>
     </ul>
   </div>
