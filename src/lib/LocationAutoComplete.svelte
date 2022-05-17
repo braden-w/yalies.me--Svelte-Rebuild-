@@ -5,8 +5,9 @@
   import { getUserLocation } from '$lib/utils/getUserLocation';
 
   let query = '';
+  $: isQueryLongEnough = query.length > 2;
+
   let focused = false;
-  let loading = false;
   let results: google.maps.places.AutocompletePrediction[] = defaultResults;
 
   const resetResults = () => (results = defaultResults);
@@ -17,18 +18,15 @@
     if (query !== '') results = [];
   }
   fetchLocations();
-  // When query changes value
+
+  // Functions for when query changes value
   let timer: NodeJS.Timeout | null;
   $: if (query.length == 0) {
     const user_response_id = $sessionStore?.user_response_id;
-    supabase.from('user_responses').upsert(
-      { place_id: null, user_response_id },
-      {
-        returning: 'minimal' // Don't return the value after inserting
-      }
-    );
+    supabase
+      .from('user_responses')
+      .upsert({ place_id: null, user_response_id }, { returning: 'minimal' });
   }
-  $: isQueryLongEnough = query.length > 2;
   $: if (!isQueryLongEnough) resetResults();
   $: if (isQueryLongEnough) {
     if (timer) clearTimeout(timer);
@@ -39,7 +37,6 @@
 
   // Fetch results from the Google Places API
   function fetchResults() {
-    loading = true;
     const sessionToken = new google.maps.places.AutocompleteSessionToken();
     const service = new google.maps.places.AutocompleteService();
     const request: google.maps.places.AutocompletionRequest = {
@@ -49,13 +46,11 @@
     };
     service.getPlacePredictions(request, (response, status) => {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
-        loading = false;
         isQueryLongEnough
           ? (results = response ?? defaultResults)
           : resetResults();
         console.log(results);
       }
-      loading = false;
     });
   }
 
@@ -121,7 +116,7 @@
 
 <!-- A Location Autocomplete built with DaisyUI that uses the Google Map Places API to autocomplete the location as the user is typing -->
 
-<div class="dropdown dropdown-top w-full" class:dropdown-open={focused}>
+<div class="dropdown dropdown-top w-full">
   <div class="form-control">
     <label class="label" for="location">
       <span class="label-text">I'm currently in...</span>
