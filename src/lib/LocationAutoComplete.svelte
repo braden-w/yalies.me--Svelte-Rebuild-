@@ -184,70 +184,36 @@
 				types: ['locality', 'political', 'geocode']
 			},
 			{
-				description: 'Seattle, WA, USA',
+				description: 'Washington D.C., DC, USA',
 				matched_substrings: [
 					{
-						length: 7,
+						length: 10,
 						offset: 0
 					}
 				],
-				place_id: 'ChIJVTPokywQkFQRmtVEaUZlJRA',
+				place_id: 'ChIJW-T2Wt7Gt4kRKl2I1CJFUsI',
+				reference: 'ChIJW-T2Wt7Gt4kRKl2I1CJFUsI',
 				structured_formatting: {
-					main_text: 'Seattle',
+					main_text: 'Washington D.C.',
 					main_text_matched_substrings: [
 						{
-							length: 7,
+							length: 10,
 							offset: 0
 						}
 					],
-					secondary_text: 'WA, USA'
+					secondary_text: 'DC, USA'
 				},
 				terms: [
 					{
 						offset: 0,
-						value: 'Seattle'
+						value: 'Washington D.C.'
 					},
 					{
-						offset: 9,
-						value: 'WA'
+						offset: 17,
+						value: 'DC'
 					},
 					{
-						offset: 13,
-						value: 'USA'
-					}
-				],
-				types: ['locality', 'political', 'geocode']
-			},
-			{
-				description: 'Chicago, IL, USA',
-				matched_substrings: [
-					{
-						length: 7,
-						offset: 0
-					}
-				],
-				place_id: 'ChIJ7cv00DwsDogRAMDACa2m4K8',
-				structured_formatting: {
-					main_text: 'Chicago',
-					main_text_matched_substrings: [
-						{
-							length: 7,
-							offset: 0
-						}
-					],
-					secondary_text: 'IL, USA'
-				},
-				terms: [
-					{
-						offset: 0,
-						value: 'Chicago'
-					},
-					{
-						offset: 9,
-						value: 'IL'
-					},
-					{
-						offset: 13,
+						offset: 21,
 						value: 'USA'
 					}
 				],
@@ -380,7 +346,7 @@
 	<!-- For each result in results, display  -->
 	{#if results.length > 0}
 		<ul
-			class="menu menu-compact dropdown-content p-2 shadow bg-base-100 rounded-box text-md w-full"
+			class="menu menu-compact dropdown-content  shadow bg-base-100 rounded-box text-md w-full"
 			tabindex="0"
 		>
 			{#each results as result}
