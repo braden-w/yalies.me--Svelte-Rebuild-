@@ -15,7 +15,7 @@ export const signIn = async () => {
 		}
 	} finally {
 		loading.set(false);
-		goto('/map');
+		goto('/');
 	}
 };
 

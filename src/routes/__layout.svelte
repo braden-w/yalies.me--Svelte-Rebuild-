@@ -19,9 +19,9 @@
 	if (browser) {
 		// Get login state on page load
 		const user = supabase.auth.user();
-		if (!user) goto('/');
+		if (!user) goto('/landing');
 		else {
-			goto('/map');
+			goto('/');
 			$sessionStore = processAuthState(user);
 		}
 	}
@@ -30,7 +30,7 @@
 		// If logout
 		if (!session) {
 			$sessionStore = null;
-			goto('/');
+			goto('/landing');
 		} else {
 			// If login
 			const user = supabase.auth.user();
@@ -803,7 +803,10 @@
 					<div class="dropdown dropdown-end">
 						<label tabindex="0" class="btn btn-ghost btn-circle avatar">
 							<div class="w-10 rounded-full">
-								<img src={$sessionStore?.avatar_url} />
+								<img
+									src={$sessionStore?.avatar_url ?? 'https://api.lorem.space/image/face?hash=33791'}
+									alt="User Profile"
+								/>
 							</div>
 						</label>
 						<ul
