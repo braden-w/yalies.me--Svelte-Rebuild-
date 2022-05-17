@@ -3,7 +3,7 @@
   export async function load({ params }: { params: { place_id: string } }) {
     const { data, error } = await supabase
       .from('users')
-      .select('name, avatar_url, user_responses(places(description))')
+      .select('name, avatar_url, user_responses(places(place_id, description))')
       .eq('user_responses(places(place_id))', params.place_id);
     if (error) return { status: error.code, props: { error } };
     return {
