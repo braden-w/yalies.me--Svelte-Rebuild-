@@ -105,8 +105,14 @@
 				>
 					<li>
 						<a class="justify-between" href="/profile">
-							Profile
-							<span class="badge">New</span>
+							${fetchedLocation.people
+								.map(
+									(person) => `<div class="avatar">
+								<div class="w-8 h-8 rounded-lg outline-on-click">
+									<img src="${person.avatar_url}" referrerpolicy="no-referrer"/>
+								</div>`
+								)
+								.join('')}
 						</a>
 					</li>
 				</ul>
