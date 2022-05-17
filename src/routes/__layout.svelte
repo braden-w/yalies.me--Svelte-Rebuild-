@@ -28,16 +28,15 @@
 		else {
 			try {
 				const user = supabase.auth.user();
-				// Create payload for auth information
-				const payload = processAuthState(user);
 
 				// Save profile data to session store
-				$sessionStore = payload;
+				$sessionStore = processAuthState(user);
 
-				if (!payload) goto('/');
+				// If log out, go back to home
+				if (!$sessionStore) goto('/');
 				else {
 					// Upload profile data from sessionStore to 'user_data_new' database
-					const { error } = await supabase.from('users').upsert(payload, {
+					const { error } = await supabase.from('users').upsert($sessionStore, {
 						returning: 'minimal' // Don't return the value after inserting
 					});
 					if (error) throw error;
