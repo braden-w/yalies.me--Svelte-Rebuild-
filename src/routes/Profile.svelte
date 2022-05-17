@@ -39,71 +39,7 @@
 			/>
 		</div>
 		<div class="card-actions justify-end">
-			<button class="btn  text-white">Change</button>
+			<button class="btn text-white">Change</button>
 		</div>
 	</div>
 </div>
-
-<ul
-	role="listbox"
-	aria-labelledby="typeahead-0.y481t91gkcn-label"
-	id="typeahead-0.y481t91gkcn-listbox"
-	class="svelte-6c74g2 svelte-typeahead-list"
->
-	<li
-		role="option"
-		id="typeahead-0.y481t91gkcn-result-0"
-		aria-selected="true"
-		class="svelte-6c74g2 selected"
-	>
-		<div class="py-1 text-sm">Carousel</div>
-	</li>
-	<li
-		role="option"
-		id="typeahead-0.y481t91gkcn-result-1"
-		aria-selected="false"
-		class="svelte-6c74g2"
-	>
-		<div class="py-1 text-sm">Collapse</div>
-	</li>
-	<li
-		role="option"
-		id="typeahead-0.y481t91gkcn-result-2"
-		aria-selected="false"
-		class="svelte-6c74g2"
-	>
-		<div class="py-1 text-sm">Progress</div>
-	</li>
-	<li
-		role="option"
-		id="typeahead-0.y481t91gkcn-result-3"
-		aria-selected="false"
-		class="svelte-6c74g2"
-	>
-		<div class="py-1 text-sm">Radial progress</div>
-	</li>
-	<li
-		role="option"
-		id="typeahead-0.y481t91gkcn-result-4"
-		aria-selected="false"
-		class="svelte-6c74g2"
-	>
-		<div class="py-1 text-sm">Stat</div>
-	</li>
-	<li
-		role="option"
-		id="typeahead-0.y481t91gkcn-result-5"
-		aria-selected="false"
-		class="svelte-6c74g2"
-	>
-		<div class="py-1 text-sm">Range</div>
-	</li>
-	<li
-		role="option"
-		id="typeahead-0.y481t91gkcn-result-6"
-		aria-selected="false"
-		class="svelte-6c74g2"
-	>
-		<div class="py-1 text-sm">Drawer</div>
-	</li>
-</ul>
