@@ -1,10 +1,10 @@
 <script context="module">
 	import { supabase } from '$lib/utils/supabaseClient';
-	export async function load({ page }) {
+	export async function load({ params }) {
 		const { data, error } = await supabase
 			.from('users')
 			.select('name, avatar_url')
-			.eq('id', page.params.id)
+			.eq('id', params.id)
 			.maybeSingle();
 
 		if (error) return { status: error.code, props: { error } };
@@ -13,10 +13,9 @@
 </script>
 
 <script lang="ts">
-	import { sessionStore } from '$lib/utils/sessionStore';
 	import LocationAutoComplete from '$lib/LocationAutoComplete.svelte';
 
-	const user = supabase.auth.user();
+	export let userProfileInformation;
 </script>
 
 <div class="hero min-h-screen-nav bg-base-200">
@@ -34,7 +33,7 @@
 					<div class="avatar mx-auto">
 						<div class="w-28 rounded">
 							<img
-								src={$sessionStore?.avatar_url}
+								src={userProfileInformation?.avatar_url}
 								alt="Profile"
 								width="100%"
 								height="100%"
@@ -42,7 +41,7 @@
 							/>
 						</div>
 					</div>
-					<h1 class="text-2xl font-bold">{$sessionStore?.name}</h1>
+					<h1 class="text-2xl font-bold">{userProfileInformation?.name}</h1>
 					<p class="text-lg">Yale University</p>
 				</div>
 				<LocationAutoComplete />
