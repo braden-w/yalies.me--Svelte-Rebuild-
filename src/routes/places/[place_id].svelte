@@ -5,17 +5,22 @@
       .from('users_to_places')
       .select('name, avatar_url, place_id, description')
       .eq('place_id', params.place_id);
+    const users_in_place = data as {
+      name: string;
+      avatar_url: string;
+      place_id: string;
+      description: string;
+    }[];
     if (error) return { status: error.code, props: { error } };
     return {
       status: 200,
-      props: { placeInformation: { place_id: params.place_id, ...data } }
+      props: { placeInformation: { place_id: params.place_id, users_in_place } }
     };
   }
 </script>
 
 <script lang="ts">
   import { sessionStore } from '$lib/utils/sessionStore';
-  import type { definitions } from '$lib/types/supabase';
 </script>
 
 <svelte:head>
@@ -32,6 +37,7 @@
         proximity rather than exact location.
       </p>
     </div>
+    {#each }
     <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <div class="card-body">
         <div class="text-center">
