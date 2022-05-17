@@ -4,24 +4,11 @@
 	// Initialize theme-change, taken from https://github.com/saadeghi/theme-change
 	import { onMount } from 'svelte';
 	import { themeChange } from 'theme-change';
-	import { supabase } from '$lib/utils/supabaseClient';
 	import { sessionStore } from '$lib/utils/sessionStore';
+	import { signOut } from '$lib/utils/auth';
 	onMount(() => {
 		themeChange(false);
 	});
-
-	let loading = true;
-	async function signOut() {
-		try {
-			loading = true;
-			const { error } = await supabase.auth.signOut();
-			if (error) throw error;
-		} catch (error: any) {
-			alert(error.message);
-		} finally {
-			loading = false;
-		}
-	}
 </script>
 
 <div class="bg-base-100 drawer">

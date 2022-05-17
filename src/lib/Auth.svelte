@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { signIn, loading } from '$lib/utils/sessionStore';
+	import { signIn, loading } from '$lib/utils/auth';
 </script>
 
 <div class="hero min-h-screen">
