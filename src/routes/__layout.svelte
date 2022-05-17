@@ -19,8 +19,11 @@
 	if (browser) {
 		// Get login state on page load
 		const user = supabase.auth.user();
-		$sessionStore = processAuthState(user);
-		$sessionStore ? goto('/map') : goto('/');
+		if (!user) goto('/');
+		else {
+			$sessionStore = processAuthState(user);
+			goto('/map');
+		}
 	}
 
 	supabase.auth.onAuthStateChange(async (_, session) => {
