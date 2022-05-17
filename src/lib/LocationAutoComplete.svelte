@@ -5,7 +5,253 @@
 
 	let query = '';
 	let loading = false;
-	let results: google.maps.places.AutocompletePrediction[] = [];
+	let results: google.maps.places.AutocompletePrediction[] = [
+		{
+			description: 'New Haven, CT, USA',
+			matched_substrings: [
+				{
+					length: 9,
+					offset: 0
+				}
+			],
+			place_id: 'ChIJ5XCAOkTY54kR7WSyWcZUo_Y',
+			structured_formatting: {
+				main_text: 'New Haven',
+				main_text_matched_substrings: [
+					{
+						length: 9,
+						offset: 0
+					}
+				],
+				secondary_text: 'CT, USA'
+			},
+			terms: [
+				{
+					offset: 0,
+					value: 'New Haven'
+				},
+				{
+					offset: 11,
+					value: 'CT'
+				},
+				{
+					offset: 15,
+					value: 'USA'
+				}
+			],
+			types: ['locality', 'political', 'geocode']
+		},
+		{
+			description: 'New York, NY, USA',
+			matched_substrings: [
+				{
+					length: 8,
+					offset: 0
+				}
+			],
+			place_id: 'ChIJOwg_06VPwokRYv534QaPC8g',
+			structured_formatting: {
+				main_text: 'New York',
+				main_text_matched_substrings: [
+					{
+						length: 8,
+						offset: 0
+					}
+				],
+				secondary_text: 'NY, USA'
+			},
+			terms: [
+				{
+					offset: 0,
+					value: 'New York'
+				},
+				{
+					offset: 10,
+					value: 'NY'
+				},
+				{
+					offset: 14,
+					value: 'USA'
+				}
+			],
+			types: ['locality', 'political', 'geocode']
+		},
+		{
+			description: 'Los Angeles, CA, USA',
+			matched_substrings: [
+				{
+					length: 8,
+					offset: 0
+				}
+			],
+			place_id: 'ChIJE9on3F3HwoAR9AhGJW_fL-I',
+			structured_formatting: {
+				main_text: 'Los Angeles',
+				main_text_matched_substrings: [
+					{
+						length: 8,
+						offset: 0
+					}
+				],
+				secondary_text: 'CA, USA'
+			},
+			terms: [
+				{
+					offset: 0,
+					value: 'Los Angeles'
+				},
+				{
+					offset: 13,
+					value: 'CA'
+				},
+				{
+					offset: 17,
+					value: 'USA'
+				}
+			],
+			types: ['locality', 'political', 'geocode']
+		},
+		{
+			description: 'San Francisco, CA, USA',
+			matched_substrings: [
+				{
+					length: 8,
+					offset: 0
+				}
+			],
+			place_id: 'ChIJIQBpAG2ahYAR_6128GcTUEo',
+			structured_formatting: {
+				main_text: 'San Francisco',
+				main_text_matched_substrings: [
+					{
+						length: 8,
+						offset: 0
+					}
+				],
+				secondary_text: 'CA, USA'
+			},
+			terms: [
+				{
+					offset: 0,
+					value: 'San Francisco'
+				},
+				{
+					offset: 15,
+					value: 'CA'
+				},
+				{
+					offset: 19,
+					value: 'USA'
+				}
+			],
+			types: ['locality', 'political', 'geocode']
+		},
+		{
+			description: 'Boston, MA, USA',
+			matched_substrings: [
+				{
+					length: 6,
+					offset: 0
+				}
+			],
+			place_id: 'ChIJGzE9DS1l44kRoOhiASS_fHg',
+			structured_formatting: {
+				main_text: 'Boston',
+				main_text_matched_substrings: [
+					{
+						length: 6,
+						offset: 0
+					}
+				],
+				secondary_text: 'MA, USA'
+			},
+			terms: [
+				{
+					offset: 0,
+					value: 'Boston'
+				},
+				{
+					offset: 8,
+					value: 'MA'
+				},
+				{
+					offset: 12,
+					value: 'USA'
+				}
+			],
+			types: ['locality', 'political', 'geocode']
+		},
+		{
+			description: 'Seattle, WA, USA',
+			matched_substrings: [
+				{
+					length: 7,
+					offset: 0
+				}
+			],
+			place_id: 'ChIJVTPokywQkFQRmtVEaUZlJRA',
+			structured_formatting: {
+				main_text: 'Seattle',
+				main_text_matched_substrings: [
+					{
+						length: 7,
+						offset: 0
+					}
+				],
+				secondary_text: 'WA, USA'
+			},
+			terms: [
+				{
+					offset: 0,
+					value: 'Seattle'
+				},
+				{
+					offset: 9,
+					value: 'WA'
+				},
+				{
+					offset: 13,
+					value: 'USA'
+				}
+			],
+			types: ['locality', 'political', 'geocode']
+		},
+		{
+			description: 'Chicago, IL, USA',
+			matched_substrings: [
+				{
+					length: 7,
+					offset: 0
+				}
+			],
+			place_id: 'ChIJ7cv00DwsDogRAMDACa2m4K8',
+			structured_formatting: {
+				main_text: 'Chicago',
+				main_text_matched_substrings: [
+					{
+						length: 7,
+						offset: 0
+					}
+				],
+				secondary_text: 'IL, USA'
+			},
+			terms: [
+				{
+					offset: 0,
+					value: 'Chicago'
+				},
+				{
+					offset: 9,
+					value: 'IL'
+				},
+				{
+					offset: 13,
+					value: 'USA'
+				}
+			],
+			types: ['locality', 'political', 'geocode']
+		}
+	];
 	supabase
 		.from<definitions['users']>('users')
 		.select('user_responses(places(place_id, description))')
