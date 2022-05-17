@@ -1,4 +1,5 @@
-CREATE VIEW users_to_places AS
+CREATE
+OR REPLACE VIEW users_to_places AS
 SELECT
   users.name,
   users.avatar_url,
