@@ -909,7 +909,7 @@
       <!-- Sidebar content here -->
       <li><a href="">Who's in New Haven</a></li>
       <li>
-        <a href="map">Map (Place Yourself on a Map, find Yalies Near Me)</a>
+        <a href="/">Map (Place Yourself on a Map, find Yalies Near Me)</a>
       </li>
       <li><a href="">Ride Share</a></li>
       <li><a href="">Track Meals</a></li>
