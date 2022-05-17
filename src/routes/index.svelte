@@ -10,7 +10,7 @@
 <div class="hero min-h-screen">
 	<!-- Insert video with url https://i.imgur.com/0uL1zb2.mp4 -->
 	<video
-		class="absolute top-0 left-0 w-full h-full "
+		class="top-0 left-0 w-full h-full "
 		src="https://i.imgur.com/0uL1zb2.mp4"
 		autoplay
 		loop
