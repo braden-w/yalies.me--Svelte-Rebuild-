@@ -5,11 +5,6 @@
       .from('users_to_places')
       .select('name, avatar_url, place_id, description')
       .eq('place_id', params.place_id);
-    console.log(
-      '🚀 ~ file: [place_id].svelte ~ line 8 ~ load ~ data',
-      data,
-      error
-    );
     if (error) return { status: error.code, props: { error } };
     return {
       status: 200,
