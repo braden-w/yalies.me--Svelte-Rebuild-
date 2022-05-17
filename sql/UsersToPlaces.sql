@@ -1,6 +1,7 @@
 CREATE
 OR REPLACE VIEW users_to_places AS
 SELECT
+  users.id,
   users.name,
   users.avatar_url,
   places.place_id,
