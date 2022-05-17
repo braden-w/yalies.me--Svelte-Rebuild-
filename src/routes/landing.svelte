@@ -7,7 +7,7 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<div class="hero min-h-screen">
+<div class="hero min-h-screen-nav">
 	<!-- Insert video with url https://i.imgur.com/0uL1zb2.mp4 -->
 	<video
 		class="top-0 left-0 w-full h-full "
