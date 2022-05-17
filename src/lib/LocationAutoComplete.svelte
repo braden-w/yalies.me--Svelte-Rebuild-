@@ -113,9 +113,12 @@
 
 	<!-- For each result in results, display  -->
 	{#if results.length > 0}
-		<ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box" tabindex="0">
+		<ul
+			class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box text-sm overflow-y-auto"
+			tabindex="0"
+		>
 			{#each results as result}
-				<li class="menu-item bg-base-200 w-full p-2 rounded-box" on:click={handleClick(result)}>
+				<li on:click={handleClick(result)}>
 					<button>
 						{result.description}
 					</button>
