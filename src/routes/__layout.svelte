@@ -6,7 +6,7 @@
 	import { themeChange } from 'theme-change';
 	import { supabase } from '$lib/utils/supabaseClient';
 	import { sessionStore } from '$lib/utils/sessionStore';
-	import { signOut } from '$lib/utils/auth';
+	import { signIn, signOut } from '$lib/utils/auth';
 	import type { User } from '@supabase/supabase-js';
 	import type { SessionStore } from '$lib/types/SessionStore';
 	import type { UserMetadata } from '$lib/types/UserMetaData';
@@ -823,7 +823,7 @@
 							{#if $sessionStore !== null}
 								<li><button on:click={signOut}>Logout</button></li>
 							{:else}
-								<li><button on:click={signOut}>Login</button></li>
+								<li><button on:click={signIn}>Login</button></li>
 							{/if}
 						</ul>
 					</div>
