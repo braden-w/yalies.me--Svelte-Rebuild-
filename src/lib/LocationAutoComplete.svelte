@@ -1,7 +1,7 @@
 <script lang="ts">
   import { supabase } from '$lib/utils/supabaseClient';
   import { sessionStore } from '$lib/utils/sessionStore';
-  import type { definitions } from '$lib/types/supabase';
+  import type { definitions } from '$lib/supabase';
 
   let query = '';
   let loading = false;

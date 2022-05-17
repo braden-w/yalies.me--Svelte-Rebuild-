@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-  import type { definitions } from '$lib/types/supabase';
+  import type { definitions } from '$lib/supabase';
 
   import { supabase } from '$lib/utils/supabaseClient';
   export async function load({ params }: { params: { place_id: string } }) {
