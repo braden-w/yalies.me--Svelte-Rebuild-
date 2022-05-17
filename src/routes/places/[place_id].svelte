@@ -21,6 +21,15 @@
 
 <script lang="ts">
   import { sessionStore } from '$lib/utils/sessionStore';
+  export let placeInformation: {
+    place_id: string;
+    users_in_place: {
+      name: string;
+      avatar_url: string;
+      place_id: string;
+      description: string;
+    }[];
+  };
 </script>
 
 <svelte:head>
