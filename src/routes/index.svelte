@@ -104,6 +104,9 @@
 					class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
 				>
 					<li>
+						<a class="justify-between" href="/profile">${fetchedLocation.description}</a>
+					</li>
+					<li>
 						<a class="justify-between" href="/profile">
 							${fetchedLocation.people
 								.map(
