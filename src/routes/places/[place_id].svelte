@@ -48,11 +48,14 @@
       <p class="py-6">
         Users currently in {placeInformation.description}
       </p>
-      <!-- <div class="form-control">
+      <div class="form-control">
         <a href="/" class="btn btn-primary">Go Back To Map</a>
-      </div> -->
+      </div>
     </div>
-
+  </div>
+</div>
+<div class="hero min-h-screen-nav bg-base-200">
+  <div class="hero-content flex-row">
     {#each placeInformation.users_in_place as user_in_place}
       <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
         <div class="card-body">
@@ -81,7 +84,4 @@
       </div>
     {/each}
   </div>
-</div>
-<div class="hero min-h-screen-nav bg-base-200">
-  <div class="hero-content flex-row" />
 </div>
