@@ -1,7 +1,7 @@
 <script lang="ts">
   import { supabase } from '$lib/utils/supabaseClient';
   import { sessionStore } from '$lib/utils/sessionStore';
-  import { defaultResults } from '$lib/LocationAutoComplete';
+  import { defaultResults, uploadPlaceToSupabase, uploadUserPlaceSelectionToSupabase, type Payload } from '$lib/LocationAutoComplete';
   import { getUserLocation } from '$lib/utils/getUserLocation';
 
   let query = '';
@@ -74,25 +74,16 @@
       const lng = lngFunction();
 
       // Upload place to places in Supabase
-      const payload = {
+      const payload: Payload = {
         place_id,
         description,
         geog: `SRID=4326;POINT(${lng} ${lat})`
       };
       console.log(payload);
-      uploadPlaceToSupabase(payload)
+      uploadPlaceToSupabase(payload);
 
       const user_response_id = $sessionStore?.user_response_id;
-      const { error: errorUserIDtoPlaceID } = await supabase
-        .from('user_responses')
-        .upsert(
-          { place_id, user_response_id },
-          {
-            returning: 'minimal' // Don't return the value after inserting
-          }
-        );
-
-      if (errorUserIDtoPlaceID) throw errorUserIDtoPlaceID;
+      uploadUserPlaceSelectionToSupabase(user_response_id, place_id);
     } catch (error: any) {
       alert(error.message);
     }
