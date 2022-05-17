@@ -155,6 +155,25 @@
 <!-- Init mapbox -->
 <div id="map" class="w-full" />
 
+<div class="dropdown dropdown-hover">
+	<label tabindex="0" class="btn btn-ghost btn-circle avatar">
+		<div class="w-10 rounded-full">
+			<img src="https://api.lorem.space/image/face?hash=33791" alt="User Profile" />
+		</div>
+	</label>
+	<ul
+		tabindex="0"
+		class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+	>
+		<li>
+			<a class="justify-between" href="/profile">
+				Profile
+				<span class="badge">New</span>
+			</a>
+		</li>
+	</ul>
+</div>
+
 <style>
 	#map {
 		height: calc(100vh - 4rem);
