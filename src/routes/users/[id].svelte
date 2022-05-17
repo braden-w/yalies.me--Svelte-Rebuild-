@@ -1,6 +1,6 @@
-<script context="module">
+<script context="module" lang="ts">
   import { supabase } from '$lib/utils/supabaseClient';
-  export async function load({ params }) {
+  export async function load({ params }: { params: { id: string } }) {
     const { data, error } = await supabase
       .from('users')
       .select('name, avatar_url, user_responses(places(description))')
