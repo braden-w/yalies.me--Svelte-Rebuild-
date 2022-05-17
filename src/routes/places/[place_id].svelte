@@ -1,8 +1,10 @@
 <script context="module" lang="ts">
+  import type { definitions } from '$lib/types/supabase';
+
   import { supabase } from '$lib/utils/supabaseClient';
   export async function load({ params }: { params: { place_id: string } }) {
     const { data, error } = await supabase
-      .from('users_to_places')
+      .from<definitions['users_to_places']>('users_to_places')
       .select('name, avatar_url, place_id, description')
       .eq('place_id', params.place_id);
     if (error) return { status: error.code, props: { error } };
