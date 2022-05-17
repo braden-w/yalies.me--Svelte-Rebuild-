@@ -1,7 +1,4 @@
-import type {definitions} from "$lib/supabase";
-import {sessionStore} from "$lib/utils/sessionStore";
 import {supabase} from "$lib/utils/supabaseClient";
-import {get} from "svelte/store";
 
 export const defaultResults = [
   {
@@ -217,12 +214,25 @@ export const defaultResults = [
   }
 ];
 
+export interface Payload {
+  place_id: string;
+  description: string;
+  geog: string;
+}
 
-async function uploadPlaceToSupabase(payload){
+
+export async function uploadPlaceToSupabase(payload: Payload) {
   const {error: errorPlaces} = await supabase
     .from('places')
     .upsert(payload, {
       returning: 'minimal' // Don't return the value after inserting
     });
   if (errorPlaces) throw errorPlaces;
+}
+export async function uploadUserPlaceSelectionToSupabase(user_response_id: string | null, place_id: string) {
+  if (!user_response_id) return;
+  const {error: errorUserIDtoPlaceID} = await supabase
+    .from('user_responses')
+    .upsert({place_id, user_response_id}, {returning: 'minimal'});
+  if (errorUserIDtoPlaceID) throw errorUserIDtoPlaceID;
 }
