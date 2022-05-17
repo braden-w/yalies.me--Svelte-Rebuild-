@@ -8,12 +8,19 @@
       .maybeSingle();
 
     if (error) return { status: error.code, props: { error } };
-    return { status: 200, props: { userProfileInformation: data } };
+    return {
+      status: 200,
+      props: { userProfileInformation: { id: params.id, ...data } }
+    };
   }
 </script>
 
 <script lang="ts">
+  import LocationAutoComplete from '$lib/LocationAutoComplete.svelte';
+  import { sessionStore } from '$lib/utils/sessionStore';
+
   export let userProfileInformation: {
+    id: string;
     name: string;
     avatar_url: string;
     user_responses: {
@@ -49,21 +56,25 @@
           <p class="text-lg">Yale University</p>
         </div>
 
-        <div class="form-control">
-          <label class="label" for="location">
-            <span class="label-text">I'm currently in...</span>
-          </label>
-          <input
-            tabindex="0"
-            type="text"
-            id="location"
-            class="input input-bordered"
-            disabled
-            placeholder="Start typing your city here..."
-            bind:value={userProfileInformation.user_responses.places
-              .description}
-          />
-        </div>
+        {#if userProfileInformation?.id === $sessionStore?.id}
+          <LocationAutoComplete />
+        {:else}
+          <div class="form-control">
+            <label class="label" for="location">
+              <span class="label-text">I'm currently in...</span>
+            </label>
+            <input
+              tabindex="0"
+              type="text"
+              id="location"
+              class="input input-bordered"
+              disabled
+              placeholder="Start typing your city here..."
+              bind:value={userProfileInformation.user_responses.places
+                .description}
+            />
+          </div>
+        {/if}
 
         <div class="form-control mt-6">
           <a href="/" class="btn btn-primary">Go To Map</a>
