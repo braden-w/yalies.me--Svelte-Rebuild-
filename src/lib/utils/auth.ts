@@ -15,7 +15,6 @@ export const signIn = async () => {
 		}
 	} finally {
 		loading.set(false);
-		goto('/');
 	}
 };
 
@@ -31,6 +30,7 @@ export async function signOut() {
 		}
 	} finally {
 		loading.set(false);
+		goto('/landing');
 	}
 }
 
