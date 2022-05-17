@@ -1,7 +1,6 @@
 <script lang="ts">
   import { supabase } from '$lib/utils/supabaseClient';
   import { sessionStore } from '$lib/utils/sessionStore';
-  import type { definitions } from '$lib/supabase';
   import { defaultResults } from '$lib/LocationAutoComplete';
   import { getUserLocation } from '$lib/utils/getUserLocation';
 
