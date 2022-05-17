@@ -3,6 +3,11 @@
   import LocationAutoComplete from '$lib/LocationAutoComplete.svelte';
 </script>
 
+<svelte:head>
+  <title>Profile</title>
+  <meta name="description" content="My Profile Information" />
+</svelte:head>
+
 <!-- Put a centered card on the screen. Inside it, there are multiple labelled inputs that are binded to the corresponding properties of the user -->
 <!-- <div class="w-full max-w-md mx-auto">
 	<div
