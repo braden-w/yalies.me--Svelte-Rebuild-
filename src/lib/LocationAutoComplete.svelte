@@ -12,7 +12,6 @@
 		.eq('id', $sessionStore?.id)
 		.maybeSingle()
 		.then(({ data, error }) => {
-			console.log('🚀 ~ file: LocationAutoComplete.svelte ~ line 16 ~ .then ~ data', data, error);
 			if (data) {
 				const typed_data = data as unknown as {
 					user_responses: { places: { place_id: string; description: string } };
