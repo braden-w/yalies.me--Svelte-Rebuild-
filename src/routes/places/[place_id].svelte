@@ -42,8 +42,11 @@
 </script>
 
 <svelte:head>
-  <title>Profile</title>
-  <meta name="description" content="My Profile Information" />
+  <title>{placeInformation.description}</title>
+  <meta
+    name="description"
+    content={`Users currently in ${placeInformation.description}`}
+  />
 </svelte:head>
 
 <div class="hero min-h-screen-nav bg-base-200">
