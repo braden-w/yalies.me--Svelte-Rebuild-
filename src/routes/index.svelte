@@ -72,7 +72,7 @@
 
 			// Three cases for the number of people in the fetchedLocation
 			if (shuffledPeople.length === 0) return '';
-			return `<div class="dropdown dropdown-open">
+			return `<div class="dropdown dropdown-hover">
 				<label tabindex="0" name="selected" class="stack">
 					<div class="avatar indicator">
 						<span class="indicator-item badge badge-secondary">${fetchedLocation.people.length}</span>
