@@ -37,9 +37,9 @@
 </svelte:head>
 
 <div class="hero min-h-screen-nav bg-base-200">
-  <div class="hero-content flex-col lg:flex-row-reverse">
+  <div class="hero-content flex-col lg:flex-row">
     <div class="text-center lg:text-left">
-      <h1 class="text-5xl font-bold">Where are you now?</h1>
+      <h1 class="text-5xl font-bold">{placeInformation.place_id}</h1>
       <p class="py-6">
         Enter your current city. For privacy, feel free to use a city that is in
         proximity rather than exact location.
