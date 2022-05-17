@@ -53,7 +53,7 @@
             <div class="avatar mx-auto">
               <div class="w-28 rounded">
                 <img
-                  src={$sessionStore?.avatar_url}
+                  src={user_in_place.avatar_url}
                   alt="Profile"
                   width="100%"
                   height="100%"
@@ -61,7 +61,7 @@
                 />
               </div>
             </div>
-            <h1 class="text-2xl font-bold">{$sessionStore?.name}</h1>
+            <h1 class="text-2xl font-bold">{user_in_place.name}</h1>
             <p class="text-lg">Yale University</p>
           </div>
 
