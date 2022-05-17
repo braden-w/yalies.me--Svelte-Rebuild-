@@ -1,271 +1,46 @@
 <script lang="ts">
   import { supabase } from '$lib/utils/supabaseClient';
   import { sessionStore } from '$lib/utils/sessionStore';
-  import type { definitions } from '$lib/supabase';
+  import {
+    defaultResults,
+    uploadPlaceToSupabase,
+    uploadUserPlaceSelectionToSupabase,
+    type Payload
+  } from '$lib/LocationAutoComplete';
+  import { getUserLocation } from '$lib/utils/getUserLocation';
 
   let query = '';
-  let loading = false;
-  let results: google.maps.places.AutocompletePrediction[] = [];
-  function resetResults() {
-    results = [
-      {
-        description: 'New Haven, CT, USA',
-        matched_substrings: [
-          {
-            length: 9,
-            offset: 0
-          }
-        ],
-        place_id: 'ChIJ5XCAOkTY54kR7WSyWcZUo_Y',
-        structured_formatting: {
-          main_text: 'New Haven',
-          main_text_matched_substrings: [
-            {
-              length: 9,
-              offset: 0
-            }
-          ],
-          secondary_text: 'CT, USA'
-        },
-        terms: [
-          {
-            offset: 0,
-            value: 'New Haven'
-          },
-          {
-            offset: 11,
-            value: 'CT'
-          },
-          {
-            offset: 15,
-            value: 'USA'
-          }
-        ],
-        types: ['locality', 'political', 'geocode']
-      },
-      {
-        description: 'New York, NY, USA',
-        matched_substrings: [
-          {
-            length: 8,
-            offset: 0
-          }
-        ],
-        place_id: 'ChIJOwg_06VPwokRYv534QaPC8g',
-        structured_formatting: {
-          main_text: 'New York',
-          main_text_matched_substrings: [
-            {
-              length: 8,
-              offset: 0
-            }
-          ],
-          secondary_text: 'NY, USA'
-        },
-        terms: [
-          {
-            offset: 0,
-            value: 'New York'
-          },
-          {
-            offset: 10,
-            value: 'NY'
-          },
-          {
-            offset: 14,
-            value: 'USA'
-          }
-        ],
-        types: ['locality', 'political', 'geocode']
-      },
-      {
-        description: 'Los Angeles, CA, USA',
-        matched_substrings: [
-          {
-            length: 8,
-            offset: 0
-          }
-        ],
-        place_id: 'ChIJE9on3F3HwoAR9AhGJW_fL-I',
-        structured_formatting: {
-          main_text: 'Los Angeles',
-          main_text_matched_substrings: [
-            {
-              length: 8,
-              offset: 0
-            }
-          ],
-          secondary_text: 'CA, USA'
-        },
-        terms: [
-          {
-            offset: 0,
-            value: 'Los Angeles'
-          },
-          {
-            offset: 13,
-            value: 'CA'
-          },
-          {
-            offset: 17,
-            value: 'USA'
-          }
-        ],
-        types: ['locality', 'political', 'geocode']
-      },
-      {
-        description: 'San Francisco, CA, USA',
-        matched_substrings: [
-          {
-            length: 8,
-            offset: 0
-          }
-        ],
-        place_id: 'ChIJIQBpAG2ahYAR_6128GcTUEo',
-        structured_formatting: {
-          main_text: 'San Francisco',
-          main_text_matched_substrings: [
-            {
-              length: 8,
-              offset: 0
-            }
-          ],
-          secondary_text: 'CA, USA'
-        },
-        terms: [
-          {
-            offset: 0,
-            value: 'San Francisco'
-          },
-          {
-            offset: 15,
-            value: 'CA'
-          },
-          {
-            offset: 19,
-            value: 'USA'
-          }
-        ],
-        types: ['locality', 'political', 'geocode']
-      },
-      {
-        description: 'Boston, MA, USA',
-        matched_substrings: [
-          {
-            length: 6,
-            offset: 0
-          }
-        ],
-        place_id: 'ChIJGzE9DS1l44kRoOhiASS_fHg',
-        structured_formatting: {
-          main_text: 'Boston',
-          main_text_matched_substrings: [
-            {
-              length: 6,
-              offset: 0
-            }
-          ],
-          secondary_text: 'MA, USA'
-        },
-        terms: [
-          {
-            offset: 0,
-            value: 'Boston'
-          },
-          {
-            offset: 8,
-            value: 'MA'
-          },
-          {
-            offset: 12,
-            value: 'USA'
-          }
-        ],
-        types: ['locality', 'political', 'geocode']
-      },
-      {
-        description: 'Washington D.C., DC, USA',
-        matched_substrings: [
-          {
-            length: 10,
-            offset: 0
-          }
-        ],
-        place_id: 'ChIJW-T2Wt7Gt4kRKl2I1CJFUsI',
-        reference: 'ChIJW-T2Wt7Gt4kRKl2I1CJFUsI',
-        structured_formatting: {
-          main_text: 'Washington D.C.',
-          main_text_matched_substrings: [
-            {
-              length: 10,
-              offset: 0
-            }
-          ],
-          secondary_text: 'DC, USA'
-        },
-        terms: [
-          {
-            offset: 0,
-            value: 'Washington D.C.'
-          },
-          {
-            offset: 17,
-            value: 'DC'
-          },
-          {
-            offset: 21,
-            value: 'USA'
-          }
-        ],
-        types: ['locality', 'political', 'geocode']
-      }
-    ];
+  $: isQueryLongEnough = query.length >= 2;
+
+  let results: google.maps.places.AutocompletePrediction[] = defaultResults;
+
+  const resetResults = () => (results = defaultResults);
+
+  async function fetchLocations() {
+    const userLocation = await getUserLocation();
+    query = userLocation?.user_responses.places.description ?? '';
+    if (query !== '') results = [];
   }
-  resetResults();
+  fetchLocations();
 
-  supabase
-    .from<definitions['users']>('users')
-    .select('user_responses(places(place_id, description))')
-    .eq('id', $sessionStore?.id)
-    .maybeSingle()
-    .then(({ data, error }) => {
-      if (data) {
-        const typed_data = data as unknown as {
-          user_responses: { places: { place_id: string; description: string } };
-        };
-        query = typed_data.user_responses.places.description;
-        results = [];
-      }
-      if (error) {
-        console.error(error);
-      }
-    });
-
-  // When query changes value
+  // Functions for when query changes value
   let timer: NodeJS.Timeout | null;
-  function handleQueryChange() {
-    if (query.length == 0) {
-      const user_response_id = $sessionStore?.user_response_id;
-      supabase.from('user_responses').upsert(
-        { place_id: null, user_response_id },
-        {
-          returning: 'minimal' // Don't return the value after inserting
-        }
-      );
-    }
-    if (query.length < 2) {
-      resetResults();
-    } else {
-      if (timer) clearTimeout(timer);
-      timer = setTimeout(() => {
-        fetchResults();
-      }, 300);
-    }
+  $: if (query.length == 0) {
+    const user_response_id = $sessionStore?.user_response_id;
+    supabase
+      .from('user_responses')
+      .upsert({ place_id: null, user_response_id }, { returning: 'minimal' });
+  }
+  $: if (query.length < 2) resetResults();
+  $: if (query.length >= 2) {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => {
+      fetchResults();
+    }, 300);
   }
 
   // Fetch results from the Google Places API
   function fetchResults() {
-    loading = true;
     const sessionToken = new google.maps.places.AutocompleteSessionToken();
     const service = new google.maps.places.AutocompleteService();
     const request: google.maps.places.AutocompletionRequest = {
@@ -275,11 +50,11 @@
     };
     service.getPlacePredictions(request, (response, status) => {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
-        loading = false;
-        results = response ?? [];
+        isQueryLongEnough
+          ? (results = response ?? defaultResults)
+          : resetResults();
         console.log(results);
       }
-      loading = false;
     });
   }
 
@@ -304,30 +79,16 @@
       const lng = lngFunction();
 
       // Upload place to places in Supabase
-      const payload = {
+      const payload: Payload = {
         place_id,
         description,
         geog: `SRID=4326;POINT(${lng} ${lat})`
       };
       console.log(payload);
-      const { error: errorPlaces } = await supabase
-        .from('places')
-        .upsert(payload, {
-          returning: 'minimal' // Don't return the value after inserting
-        });
-      if (errorPlaces) throw errorPlaces;
+      uploadPlaceToSupabase(payload);
 
       const user_response_id = $sessionStore?.user_response_id;
-      const { error: errorUserIDtoPlaceID } = await supabase
-        .from('user_responses')
-        .upsert(
-          { place_id, user_response_id },
-          {
-            returning: 'minimal' // Don't return the value after inserting
-          }
-        );
-
-      if (errorUserIDtoPlaceID) throw errorUserIDtoPlaceID;
+      uploadUserPlaceSelectionToSupabase(user_response_id, place_id);
     } catch (error: any) {
       alert(error.message);
     }
@@ -357,7 +118,6 @@
       class="input input-bordered"
       placeholder="Start typing your city here..."
       bind:value={query}
-      on:input={handleQueryChange}
     />
   </div>
 
