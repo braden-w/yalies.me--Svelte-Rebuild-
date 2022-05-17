@@ -3,7 +3,7 @@
 	export async function load({ params }) {
 		const { data, error } = await supabase
 			.from('users')
-			.select('name, avatar_url')
+			.select('name, avatar_url, user_responses(places(description))')
 			.eq('id', params.id)
 			.maybeSingle();
 
@@ -15,7 +15,15 @@
 <script lang="ts">
 	import LocationAutoComplete from '$lib/LocationAutoComplete.svelte';
 
-	export let userProfileInformation;
+	export let userProfileInformation: {
+		name: string;
+		avatar_url: string;
+		user_responses: {
+			places: {
+				description: string;
+			};
+		};
+	};
 </script>
 
 <div class="hero min-h-screen-nav bg-base-200">
@@ -48,6 +56,7 @@
 						id="location"
 						class="input input-bordered"
 						placeholder="Start typing your city here..."
+						bind:value={userProfileInformation.user_responses.places.description}
 					/>
 				</div>
 
