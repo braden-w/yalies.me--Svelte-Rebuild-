@@ -7,7 +7,7 @@
   import { supabase } from '$lib/utils/supabaseClient';
   import { sessionStore } from '$lib/utils/sessionStore';
   import { signIn, signOut } from '$lib/utils/auth';
-  import type { User } from '@supabase/supabase-js';
+  import type { ApiError, User } from '@supabase/supabase-js';
   import type { SessionStore } from '$lib/types/SessionStore';
   import type { UserMetadata } from '$lib/types/UserMetaData';
   import { goto } from '$app/navigation';
@@ -43,8 +43,10 @@
           returning: 'minimal' // Don't return the value after inserting
         });
         if (error) throw error;
-      } catch (error: any) {
-        alert(error.message);
+      } catch (error) {
+        if ((error as ApiError).message) {
+          alert((error as ApiError).message);
+        }
       }
     }
   });
