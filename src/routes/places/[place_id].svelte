@@ -42,8 +42,8 @@
 </svelte:head>
 
 <div class="hero min-h-screen-nav bg-base-200">
-  <div class="hero-content flex-col lg:flex-row">
-    <div class="text-center lg:text-left">
+  <div class="hero-content flex-col">
+    <div class="text-center">
       <h1 class="text-5xl font-bold">{placeInformation.description}</h1>
       <p class="py-6">
         Users currently in {placeInformation.description}
@@ -52,10 +52,7 @@
         <a href="/" class="btn btn-primary">Go Back To Map</a>
       </div>
     </div>
-  </div>
-</div>
-<div class="hero min-h-screen-nav bg-base-200">
-  <div class="hero-content flex-row">
+
     {#each placeInformation.users_in_place as user_in_place}
       <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
         <div class="card-body">
@@ -82,4 +79,7 @@
       </div>
     {/each}
   </div>
+</div>
+<div class="hero min-h-screen-nav bg-base-200">
+  <div class="hero-content flex-row" />
 </div>
