@@ -54,10 +54,10 @@
     </div>
   </div>
 </div>
-<div class="hero min-h-screen-nav bg-base-200">
-  <div class="hero-content flex-wrap">
+<div class="hero min-h-screen bg-base-100">
+  <div class="hero-content flex-row flex-wrap">
     {#each placeInformation.users_in_place as user_in_place}
-      <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+      <div class="card flex-shrink-0  max-w-sm shadow-2xl bg-base-100">
         <div class="card-body">
           <div class="text-center">
             <div class="avatar mx-auto">
