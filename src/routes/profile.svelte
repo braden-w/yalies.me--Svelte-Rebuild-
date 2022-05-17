@@ -2,8 +2,6 @@
   import { supabase } from '$lib/utils/supabaseClient';
   import { sessionStore } from '$lib/utils/sessionStore';
   import LocationAutoComplete from '$lib/LocationAutoComplete.svelte';
-
-  const user = supabase.auth.user();
 </script>
 
 <!-- Put a centered card on the screen. Inside it, there are multiple labelled inputs that are binded to the corresponding properties of the user -->

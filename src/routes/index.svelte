@@ -31,8 +31,6 @@
   // longitude = userProfileInformation.location?.longitude ?? NewHaven.longitude;
   // latitude = userProfileInformation.location?.latitude ?? NewHaven.latitude;
   // console.log('longitude, latitude:>> ', longitude, latitude)
-  const initPx = 32;
-
   export let fetchedLocations: FetchedLocation[];
 
   onMount(() => {
@@ -158,9 +156,9 @@
         });
 
       const scalePercent = (
-        defaultPxSize: number = 40,
-        defaultZoom: number = 8,
-        scaleFactor: number = 0.1
+        defaultPxSize = 40,
+        defaultZoom = 8,
+        scaleFactor = 0.1
       ) => {
         const scalePercent = 1 + (map.getZoom() - defaultZoom) * scaleFactor;
         return defaultPxSize * scalePercent;
