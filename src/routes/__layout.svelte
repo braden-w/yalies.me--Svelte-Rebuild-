@@ -20,27 +20,28 @@
 		// Get login state on page load
 		const user = supabase.auth.user();
 		$sessionStore = processAuthState(user);
-		$sessionStore ? goto('/') : goto('/login');
+		$sessionStore ? goto('/map') : goto('/');
 	}
 
 	supabase.auth.onAuthStateChange(async (_, session) => {
-		if (!session) $sessionStore = null;
-		else {
+		// If logout
+		if (!session) {
+			$sessionStore = null;
+			goto('/');
+		} else {
+			// If login
 			try {
 				const user = supabase.auth.user();
 
 				// Save profile data to session store
-				$sessionStore = processAuthState(user);
+				$sessionStore = processAuthState(user!);
 
-				// If log out, go back to home
-				if (!$sessionStore) goto('/');
-				else {
-					// Upload profile data from sessionStore to 'user_data_new' database
-					const { error } = await supabase.from('users').upsert($sessionStore, {
-						returning: 'minimal' // Don't return the value after inserting
-					});
-					if (error) throw error;
-				}
+				// Upload profile data from sessionStore to 'user_data_new' database
+				const { error } = await supabase.from('users').upsert($sessionStore!, {
+					returning: 'minimal' // Don't return the value after inserting
+				});
+				if (error) throw error;
+				goto('/map');
 			} catch (error: any) {
 				alert(error.message);
 			}
@@ -53,8 +54,7 @@
 		return emailUser;
 	}
 
-	function processAuthState(user: User | null): SessionStore | null {
-		if (!user) return null;
+	function processAuthState(user: User): SessionStore {
 		// Get the variables "id" from $sessionStore
 		const id = user?.id;
 
