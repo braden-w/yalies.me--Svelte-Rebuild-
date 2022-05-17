@@ -112,7 +112,7 @@
 								.map(
 									(person) => `
 								<li>
-									<a class="content-center" href="/profile">
+									<a class="content-center" href="/users/${person.id}">
 										<div class="avatar">
 											<div class="w-8 rounded-lg">
 												<img src="${person.avatar_url}" referrerpolicy="no-referrer"/>
