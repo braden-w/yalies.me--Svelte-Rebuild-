@@ -7,7 +7,11 @@ export const loading: Writable<boolean> = writable(false);
 export const signIn = async () => {
   try {
     loading.set(true);
-    const { error } = await supabase.auth.signIn({ provider: 'google' });
+    const redirectURL = window.location.origin;
+    const { error } = await supabase.auth.signIn(
+      { provider: 'google' },
+      { redirectTo: redirectURL}
+    );
     if (error) throw error;
   } catch (error) {
     if ((error as ApiError).message) {
