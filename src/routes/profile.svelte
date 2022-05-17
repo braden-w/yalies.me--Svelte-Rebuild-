@@ -34,7 +34,7 @@
   class="hero min-h-screen-nav from-primary to-secondary bg-gradient-to-br text-primary-content grid"
 >
   <div class="hero-content flex-col lg:flex-row-reverse">
-    <div class="text-center lg:text-left">
+    <div class="text-center lg:text-left text-secondary-content">
       <h1 class="text-5xl font-bold">Where are you now?</h1>
       <p class="py-6">
         Enter your current city. For privacy, feel free to use a city that is in
