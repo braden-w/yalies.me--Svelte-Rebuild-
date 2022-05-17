@@ -1,10 +1,11 @@
 import {supabase} from "$lib/utils/supabaseClient";
 import type {ApiError} from "@supabase/supabase-js";
+import {writable, type Writable} from "svelte/store";
 
-export let loading = false;
+export const loading: Writable<boolean> = writable(false);
 export const signIn = async () => {
 	try {
-		loading = true;
+		loading.set(true);
 		const {error} = await supabase.auth.signIn({provider: 'google'});
 		if (error) throw error;
 	} catch (error) {
@@ -12,13 +13,13 @@ export const signIn = async () => {
 			alert((error as ApiError).message);
 		}
 	} finally {
-		loading = false;
+		loading.set(false);
 	}
 };
 
 export async function signOut() {
 	try {
-		loading = true;
+		loading.set(true);
 		const {error} = await supabase.auth.signOut();
 		if (error)
 			throw error;
@@ -27,7 +28,7 @@ export async function signOut() {
 			alert((error as ApiError).message);
 		}
 	} finally {
-		loading = false;
+		loading.set(false);
 	}
 }
 
