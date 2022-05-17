@@ -42,7 +42,7 @@
       </p>
     </div>
     <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <div class="card-body">
+      <div class="card-body text-base-content">
         <div class="text-center">
           <div class="avatar mx-auto">
             <div class="w-28 rounded">
