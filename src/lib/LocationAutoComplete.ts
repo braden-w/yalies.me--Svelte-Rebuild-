@@ -217,21 +217,12 @@ export const defaultResults = [
   }
 ];
 
-interface GetUserLocation {
-  user_responses: {places: {place_id: string; description: string}}
-}
 
-/**Gets user location and returns place_id and description */
-export async function getUserLocation(): Promise<GetUserLocation | undefined> {
-  const {data, error} = await supabase.from<definitions['users']>('users')
-    .select('user_responses(places(place_id, description))')
-    .eq('id', get(sessionStore)?.id)
-    .maybeSingle()
-  if (data) {
-    const typed_data = data as unknown as GetUserLocation;
-    return typed_data
-  }
-  if (error) {
-    console.error(error);
-  }
+async function uploadPlaceToSupabase(payload){
+  const {error: errorPlaces} = await supabase
+    .from('places')
+    .upsert(payload, {
+      returning: 'minimal' // Don't return the value after inserting
+    });
+  if (errorPlaces) throw errorPlaces;
 }
