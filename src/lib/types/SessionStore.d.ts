@@ -10,5 +10,4 @@ export interface SessionStore {
   sub: string;
   id: string | undefined;
   user_response_id: string;
-
 }

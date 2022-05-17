@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 @layer components {
-	.min-h-screen-nav {
-		max-height: calc(100vh - 4rem);
-	}
+  .min-h-screen-nav {
+    max-height: calc(100vh - 4rem);
+  }
 
-	.max-h-screen-nav {
-		max-height: calc(100vh - 4rem);
-	}
+  .max-h-screen-nav {
+    max-height: calc(100vh - 4rem);
+  }
 
-	.h-screen-nav {
-		height: calc(100vh - 4rem);
-	}
+  .h-screen-nav {
+    height: calc(100vh - 4rem);
+  }
 }
