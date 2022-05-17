@@ -72,7 +72,7 @@
 
 			// Three cases for the number of people in the fetchedLocation
 			if (shuffledPeople.length === 0) return '';
-			return `<div class="dropdown dropdown-hover">
+			return `<div class="dropdown dropdown-open">
 				<label tabindex="0" name="selected" class="stack">
 					<div class="avatar indicator">
 						<span class="indicator-item badge badge-secondary">${fetchedLocation.people.length}</span>
@@ -113,9 +113,9 @@
 							${fetchedLocation.people
 								.map(
 									(person) => `<div class="avatar">
-								<div class="w-8 h-8 rounded-lg outline-on-click">
-									<img src="${person.avatar_url}" referrerpolicy="no-referrer"/>
-								</div>`
+										<img class="w-8 h-8 rounded-lg" src="${person.avatar_url}" referrerpolicy="no-referrer"/>
+										<span class="text-xs">${person.name}</span>
+									</div> `
 								)
 								.join('')}
 						</a>
