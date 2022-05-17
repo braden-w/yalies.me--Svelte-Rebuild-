@@ -3,8 +3,8 @@
 </script>
 
 <svelte:head>
-  <title>Home</title>
-  <meta name="description" content="Svelte demo app" />
+  <title>Landing</title>
+  <meta name="description" content="Log into the map!" />
 </svelte:head>
 
 <div class="hero min-h-screen-nav">

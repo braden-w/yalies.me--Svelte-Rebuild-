@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { supabase } from '$lib/utils/supabaseClient';
   import { sessionStore } from '$lib/utils/sessionStore';
   import LocationAutoComplete from '$lib/LocationAutoComplete.svelte';
 </script>

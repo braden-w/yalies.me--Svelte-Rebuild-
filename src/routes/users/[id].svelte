@@ -24,6 +24,11 @@
   };
 </script>
 
+<svelte:head>
+  <title>{userProfileInformation.name}</title>
+  <meta name="description" content="Profile information" />
+</svelte:head>
+
 <div class="hero min-h-screen-nav bg-base-200">
   <div class="hero-content flex-col lg:flex-row-reverse">
     <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
