@@ -8,8 +8,8 @@
 	import { sessionStore } from '$lib/utils/sessionStore';
 	import { signOut } from '$lib/utils/auth';
 	import type { User } from '@supabase/supabase-js';
-	import type { SessionStore } from 'types/SessionStore';
-	import type { UserMetadata } from 'types/UserMetaData';
+	import type { SessionStore } from '$lib/types/SessionStore';
+	import type { UserMetadata } from '$lib/types/UserMetaData';
 	import { goto } from '$app/navigation';
 	import { browser } from '$app/env';
 	onMount(() => {
