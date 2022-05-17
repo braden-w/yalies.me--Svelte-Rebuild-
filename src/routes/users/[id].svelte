@@ -37,7 +37,19 @@
 					<h1 class="text-2xl font-bold">{userProfileInformation?.name}</h1>
 					<p class="text-lg">Yale University</p>
 				</div>
-				<LocationAutoComplete />
+
+				<div class="form-control">
+					<label class="label" for="location">
+						<span class="label-text">I'm currently in...</span>
+					</label>
+					<input
+						tabindex="0"
+						type="text"
+						id="location"
+						class="input input-bordered"
+						placeholder="Start typing your city here..."
+					/>
+				</div>
 
 				<div class="form-control mt-6">
 					<a href="/" class="btn btn-primary">Go To Map</a>
