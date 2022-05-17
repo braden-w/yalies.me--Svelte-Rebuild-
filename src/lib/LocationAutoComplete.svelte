@@ -80,12 +80,7 @@
         geog: `SRID=4326;POINT(${lng} ${lat})`
       };
       console.log(payload);
-      const { error: errorPlaces } = await supabase
-        .from('places')
-        .upsert(payload, {
-          returning: 'minimal' // Don't return the value after inserting
-        });
-      if (errorPlaces) throw errorPlaces;
+      uploadPlaceToSupabase(payload)
 
       const user_response_id = $sessionStore?.user_response_id;
       const { error: errorUserIDtoPlaceID } = await supabase
