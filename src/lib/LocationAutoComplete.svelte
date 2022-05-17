@@ -10,6 +10,7 @@
   import { getUserLocation } from '$lib/utils/getUserLocation';
 
   let query = '';
+  $: isQueryLongEnough = query.length >= 2;
 
   let results: google.maps.places.AutocompletePrediction[] = defaultResults;
 
