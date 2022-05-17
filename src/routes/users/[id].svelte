@@ -13,8 +13,6 @@
 </script>
 
 <script lang="ts">
-  import LocationAutoComplete from '$lib/LocationAutoComplete.svelte';
-
   export let userProfileInformation: {
     name: string;
     avatar_url: string;
