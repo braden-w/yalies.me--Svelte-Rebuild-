@@ -819,7 +819,6 @@
 									<span class="badge">New</span>
 								</a>
 							</li>
-							<li><button>Settings</button></li>
 							{#if $sessionStore !== null}
 								<li><button on:click={signOut}>Logout</button></li>
 							{:else}
