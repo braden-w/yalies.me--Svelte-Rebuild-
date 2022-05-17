@@ -114,7 +114,9 @@
 								<li>
 									<a class="justify-between" href="/profile">
 										<div class="avatar">
-											<img class="w-8 rounded-lg" src="${person.avatar_url}" referrerpolicy="no-referrer"/>
+											<div class="w-8 rounded-lg">
+												<img src="${person.avatar_url}" referrerpolicy="no-referrer"/>
+											</div>
 											<span class="text-xs">${person.name}</span>
 										</div> 
 									</a>
