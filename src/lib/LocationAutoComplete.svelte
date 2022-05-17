@@ -2,32 +2,21 @@
   import { supabase } from '$lib/utils/supabaseClient';
   import { sessionStore } from '$lib/utils/sessionStore';
   import type { definitions } from '$lib/supabase';
-  import { defaultResults } from '$lib/LocationAutoComplete';
+  import { defaultResults, getUserLocation } from '$lib/LocationAutoComplete';
 
   let query = '';
   let focused = false;
   let loading = false;
   let results: google.maps.places.AutocompletePrediction[] = defaultResults;
+
   const resetResults = () => (results = defaultResults);
 
-  supabase
-    .from<definitions['users']>('users')
-    .select('user_responses(places(place_id, description))')
-    .eq('id', $sessionStore?.id)
-    .maybeSingle()
-    .then(({ data, error }) => {
-      if (data) {
-        const typed_data = data as unknown as {
-          user_responses: { places: { place_id: string; description: string } };
-        };
-        query = typed_data.user_responses.places.description;
-        results = [];
-      }
-      if (error) {
-        console.error(error);
-      }
-    });
-
+  async function fetchLocations() {
+    const userLocation = await getUserLocation();
+    query = userLocation?.user_responses.places.description ?? '';
+    results = [];
+  }
+  fetchLocations();
   // When query changes value
   let timer: NodeJS.Timeout | null;
   $: if (query.length == 0) {
