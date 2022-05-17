@@ -1,7 +1,7 @@
 <script lang="ts">
   import { supabase } from '$lib/utils/supabaseClient';
   import { sessionStore } from '$lib/utils/sessionStore';
-  import type { definitions } from '$lib/types/supabase';
+  import type { definitions } from '$lib/supabase';
 
   let query = '';
   let loading = false;
@@ -244,6 +244,15 @@
   // When query changes value
   let timer: NodeJS.Timeout | null;
   function handleQueryChange() {
+    if (query.length == 0) {
+      const user_response_id = $sessionStore?.user_response_id;
+      supabase.from('user_responses').upsert(
+        { place_id: null, user_response_id },
+        {
+          returning: 'minimal' // Don't return the value after inserting
+        }
+      );
+    }
     if (query.length < 2) {
       resetResults();
     } else {

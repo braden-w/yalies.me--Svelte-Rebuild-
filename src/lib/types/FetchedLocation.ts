@@ -1,4 +1,5 @@
 export interface FetchedLocation {
+  place_id: string;
   description: string;
   lat: number;
   lng: number;

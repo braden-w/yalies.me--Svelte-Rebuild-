@@ -112,7 +112,9 @@
           } p-2 shadow bg-base-100 rounded-box w-52"
 				>
 					<li>
-						<a class="justify-between" href="/profile">${fetchedLocation.description}</a>
+						<a class="justify-between" href="/places/${fetchedLocation.place_id}">${
+        fetchedLocation.description
+      }</a>
 					</li>
 							${fetchedLocation.people
                 .map(

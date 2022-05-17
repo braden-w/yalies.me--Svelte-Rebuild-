@@ -16,13 +16,26 @@
     themeChange(false);
   });
 
+  function checkEmail(user: User): boolean {
+    // If the user email doesn't end with .edu, throw an error and redirect to sign in page
+    if (!user?.email) return false;
+    const email = user.email.toLowerCase();
+    if (email.endsWith('.edu')) return true;
+    else {
+      signOut();
+      alert('Please sign in with a .edu email address');
+      return false;
+    }
+  }
   if (browser) {
     // Get login state on page load
     const user = supabase.auth.user();
     if (!user) goto('/landing');
     else {
-      $sessionStore = processAuthState(user);
-      goto('/profile');
+      if (checkEmail(user)) {
+        $sessionStore = processAuthState(user);
+        goto('/profile');
+      }
     }
   }
 
@@ -135,7 +148,7 @@
             >
               <div class="card-body">
                 <span class="font-bold text-lg">Notifications</span>
-                <span class="text-info">You'll see notifications here</span>
+                <span class="text-info">You'll see notifications here!</span>
                 <div class="card-actions">
                   <button class="btn btn-primary btn-block">Hello!</button>
                 </div>

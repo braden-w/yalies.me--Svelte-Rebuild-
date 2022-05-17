@@ -30,9 +30,11 @@
 		</div>
 	</div>
 </div> -->
-<div class="hero min-h-screen-nav bg-base-200">
+<div
+  class="hero min-h-screen-nav from-primary to-secondary bg-gradient-to-br text-primary-content grid"
+>
   <div class="hero-content flex-col lg:flex-row-reverse">
-    <div class="text-center lg:text-left">
+    <div class="text-center lg:text-left text-secondary-content">
       <h1 class="text-5xl font-bold">Where are you now?</h1>
       <p class="py-6">
         Enter your current city. For privacy, feel free to use a city that is in
@@ -40,7 +42,7 @@
       </p>
     </div>
     <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <div class="card-body">
+      <div class="card-body text-base-content">
         <div class="text-center">
           <div class="avatar mx-auto">
             <div class="w-28 rounded">
