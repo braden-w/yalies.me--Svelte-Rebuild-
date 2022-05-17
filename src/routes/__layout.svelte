@@ -21,8 +21,8 @@
 		const user = supabase.auth.user();
 		if (!user) goto('/');
 		else {
-			$sessionStore = processAuthState(user);
 			goto('/map');
+			$sessionStore = processAuthState(user);
 		}
 	}
 
@@ -801,7 +801,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="dropdown dropdown-end dropdown-open">
+					<div class="dropdown dropdown-end">
 						<label tabindex="0" class="btn btn-ghost btn-circle avatar">
 							<div class="w-10 rounded-full">
 								<img src="https://api.lorem.space/image/face?hash=33791" />
