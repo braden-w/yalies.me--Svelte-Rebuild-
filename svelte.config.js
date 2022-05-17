@@ -13,7 +13,7 @@ const config = {
 
   kit: {
     adapter: netlify(),
-    prerender: {default: true},
+    prerender: { default: true },
     // Override http methods in the Todo forms
     methodOverride: {
       allowed: ['PATCH', 'DELETE']
