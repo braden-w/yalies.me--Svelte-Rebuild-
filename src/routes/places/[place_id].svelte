@@ -20,7 +20,6 @@
 </script>
 
 <script lang="ts">
-  import { sessionStore } from '$lib/utils/sessionStore';
   export let placeInformation: {
     place_id: string;
     users_in_place: {
