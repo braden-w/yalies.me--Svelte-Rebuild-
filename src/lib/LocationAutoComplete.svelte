@@ -40,7 +40,8 @@
 		const service = new google.maps.places.AutocompleteService();
 		const request: google.maps.places.AutocompletionRequest = {
 			input: query,
-			sessionToken
+			sessionToken,
+			types: ['(cities)']
 		};
 		service.getPlacePredictions(request, (response, status) => {
 			if (status === google.maps.places.PlacesServiceStatus.OK) {
