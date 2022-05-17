@@ -14,7 +14,7 @@
   async function fetchLocations() {
     const userLocation = await getUserLocation();
     query = userLocation?.user_responses.places.description ?? '';
-    results = [];
+    if (query !== '') results = [];
   }
   fetchLocations();
   // When query changes value
