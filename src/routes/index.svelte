@@ -112,13 +112,13 @@
 								.map(
 									(person) => `
 								<li>
-									<a class="justify-between" href="/profile">
+									<a class="content-center" href="/profile">
 										<div class="avatar">
 											<div class="w-8 rounded-lg">
 												<img src="${person.avatar_url}" referrerpolicy="no-referrer"/>
 											</div>
-											<span class="text-xs">${person.name}</span>
 										</div> 
+										<span class="text-xs">${person.name}</span>
 									</a>
 								</li>`
 								)
