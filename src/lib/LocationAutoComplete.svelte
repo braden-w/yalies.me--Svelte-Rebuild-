@@ -101,15 +101,23 @@
 
 <label class="block text-sm font-bold mb-2" for="location">City</label>
 <div class="dropdown w-full">
-	<input
-		tabindex="0"
-		type="text"
-		class="input shadow border rounded w-full focus:outline-none focus:shadow-outline"
-		id="location"
-		placeholder="Start typing your city here..."
-		bind:value={query}
-		on:input={handleQueryChange}
-	/>
+	<div class="form-control">
+		<label class="label" for="location">
+			<span class="label-text">City</span>
+		</label>
+		<input
+			tabindex="0"
+			type="text"
+			id="location"
+			class="input input-bordered"
+			placeholder="Start typing your city here..."
+			bind:value={query}
+			on:input={handleQueryChange}
+		/>
+		<label class="label">
+			<a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+		</label>
+	</div>
 
 	<!-- For each result in results, display  -->
 	{#if results.length > 0}
