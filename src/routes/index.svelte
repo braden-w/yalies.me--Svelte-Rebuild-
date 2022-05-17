@@ -108,18 +108,19 @@
 					<li>
 						<a class="justify-between" href="/profile">${fetchedLocation.description}</a>
 					</li>
-					<li>
-						<a class="justify-between" href="/profile">
 							${fetchedLocation.people
 								.map(
-									(person) => `<div class="avatar">
-										<img class="w-8 h-8 rounded-lg" src="${person.avatar_url}" referrerpolicy="no-referrer"/>
-										<span class="text-xs">${person.name}</span>
-									</div> `
+									(person) => `
+								<li>
+									<a class="justify-between" href="/profile">
+										<div class="avatar">
+											<img class="w-8 rounded-lg" src="${person.avatar_url}" referrerpolicy="no-referrer"/>
+											<span class="text-xs">${person.name}</span>
+										</div> 
+									</a>
+								</li>`
 								)
 								.join('')}
-						</a>
-					</li>
 				</ul>
 				</div>`;
 		}
