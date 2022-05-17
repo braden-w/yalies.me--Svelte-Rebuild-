@@ -5,16 +5,25 @@
       .from('users_to_places')
       .select('name, avatar_url, place_id, description')
       .eq('place_id', params.place_id);
+    if (error) return { status: error.code, props: { error } };
     const users_in_place = data as {
       name: string;
       avatar_url: string;
       place_id: string;
       description: string;
     }[];
-    if (error) return { status: error.code, props: { error } };
+    const description = users_in_place.length
+      ? users_in_place[0].description
+      : '';
     return {
       status: 200,
-      props: { placeInformation: { place_id: params.place_id, users_in_place } }
+      props: {
+        placeInformation: {
+          place_id: params.place_id,
+          description,
+          users_in_place
+        }
+      }
     };
   }
 </script>
@@ -22,6 +31,7 @@
 <script lang="ts">
   export let placeInformation: {
     place_id: string;
+    description: string;
     users_in_place: {
       name: string;
       avatar_url: string;
@@ -39,7 +49,7 @@
 <div class="hero min-h-screen-nav bg-base-200">
   <div class="hero-content flex-col lg:flex-row">
     <div class="text-center lg:text-left">
-      <h1 class="text-5xl font-bold">{placeInformation.place_id}</h1>
+      <h1 class="text-5xl font-bold">{placeInformation.description}</h1>
       <p class="py-6">
         Enter your current city. For privacy, feel free to use a city that is in
         proximity rather than exact location.
