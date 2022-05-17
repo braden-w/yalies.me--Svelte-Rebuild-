@@ -6,13 +6,36 @@
 	const user = supabase.auth.user();
 </script>
 
-<div class="hero min-h-screen bg-base-200">
+<!-- Put a centered card on the screen. Inside it, there are multiple labelled inputs that are binded to the corresponding properties of the user -->
+<!-- <div class="w-full max-w-md mx-auto">
+	<div
+		class="card card-bordered bg-secondary text-secondary-content shadow-md rounded-lg px-8 pt-6 pb-8 mb-4"
+	>
+		
+		<div class="mb-4">
+			<LocationAutoComplete />
+		</div>
+		<div class="mb-4">
+			<label class="block text-sm font-bold mb-2" for="website"> Website </label>
+			<input
+				class="input shadow border rounded w-full focus:outline-none focus:shadow-outline"
+				id="website"
+				type="text"
+				placeholder="Website"
+			/>
+		</div>
+		<div class="card-actions justify-end">
+			<button class="btn text-white">Change</button>
+		</div>
+	</div>
+</div> -->
+<div class="hero min-h-screen-nav bg-base-200">
 	<div class="hero-content flex-col lg:flex-row-reverse">
 		<div class="text-center lg:text-left">
 			<h1 class="text-5xl font-bold">Where are you now?</h1>
 			<p class="py-6">
 				Enter your current city. For privacy, feel free to use a city that is in proximity rather
-				thane exact location.
+				than exact location.
 			</p>
 		</div>
 		<div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -54,7 +77,7 @@
 		</div>
 	</div>
 </div>
-<div class="hero bg-base-100 text-base-content mx-auto min-h-screen max-w-md md:max-w-full">
+<!-- <div class="hero bg-base-100 text-base-content mx-auto min-h-screen max-w-md md:max-w-full">
 	<div class="hero-content px-4 text-center md:px-0">
 		<div>
 			<h2 class="mt-32 mb-2 text-4xl font-extrabold md:text-6xl">Clean HTML</h2>
@@ -251,29 +274,6 @@
 			<div sveltekit:prefetch="" class="mt-6 mb-10 flex w-full justify-center">
 				<a href="/components" class="btn btn-primary btn-wide">See All Components</a>
 			</div>
-		</div>
-	</div>
-</div>
-<!-- Put a centered card on the screen. Inside it, there are multiple labelled inputs that are binded to the corresponding properties of the user -->
-<!-- <div class="w-full max-w-md mx-auto">
-	<div
-		class="card card-bordered bg-secondary text-secondary-content shadow-md rounded-lg px-8 pt-6 pb-8 mb-4"
-	>
-		
-		<div class="mb-4">
-			<LocationAutoComplete />
-		</div>
-		<div class="mb-4">
-			<label class="block text-sm font-bold mb-2" for="website"> Website </label>
-			<input
-				class="input shadow border rounded w-full focus:outline-none focus:shadow-outline"
-				id="website"
-				type="text"
-				placeholder="Website"
-			/>
-		</div>
-		<div class="card-actions justify-end">
-			<button class="btn text-white">Change</button>
 		</div>
 	</div>
 </div> -->
