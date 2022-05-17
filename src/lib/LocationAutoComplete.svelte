@@ -1,18 +1,31 @@
 <script lang="ts">
 	import { supabase } from '$lib/utils/supabaseClient';
 	import { sessionStore } from '$lib/utils/sessionStore';
+	import type { definitions } from '$lib/types/supabase';
 
 	let query = '';
 	let loading = false;
 	let results: google.maps.places.AutocompletePrediction[] = [];
-	let selected = null;
+	supabase
+		.from<definitions['users']>('users')
+		.select('user_responses(places(place_id, description))')
+		.eq('id', $sessionStore?.id)
+		.maybeSingle()
+		.then(({ data, error }) => {
+			console.log('🚀 ~ file: LocationAutoComplete.svelte ~ line 16 ~ .then ~ data', data, error);
+			if (data) {
+				const typed_data = data as unknown as {
+					user_responses: { places: { place_id: string; description: string } };
+				};
+				query = typed_data.user_responses.places.description;
+			}
+		});
 
 	// When query changes value
 	let timer: NodeJS.Timeout | null;
 	function handleQueryChange() {
 		if (query.length < 2) {
 			results = [];
-			selected = null;
 		} else {
 			if (timer) clearTimeout(timer);
 			timer = setTimeout(() => {
@@ -35,7 +48,6 @@
 				loading = false;
 				results = response ?? [];
 				console.log(results);
-				selected = null;
 			}
 			loading = false;
 		});
@@ -44,7 +56,6 @@
 	async function handleClick(clicked: google.maps.places.AutocompletePrediction) {
 		try {
 			query = clicked.description;
-			selected = clicked;
 			// Upload the place_id and description props to supabase
 			const { place_id, description } = clicked;
 
