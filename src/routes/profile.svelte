@@ -4,7 +4,7 @@
 	import LocationAutoComplete from '$lib/LocationAutoComplete.svelte';
 
 	const user = supabase.auth.user();
-	let quickSelectPlace = 1;
+	let quickSelectPlace;
 	let quickSelectPlaces = [
 		{
 			description: 'New Haven, CT, USA',
@@ -332,7 +332,7 @@
 					<input
 						type="radio"
 						name="options"
-						data-title={place.description}
+						data-title={place.description.split(', ').slice(0, 2).join(', ')}
 						class="btn"
 						group={quickSelectPlace}
 						value={index}
