@@ -112,7 +112,7 @@
 <div class="dropdown dropdown-top w-full">
 	<div class="form-control">
 		<label class="label" for="location">
-			<span class="label-text">City</span>
+			<span class="label-text">I'm currently in...</span>
 		</label>
 		<input
 			tabindex="0"
@@ -123,9 +123,6 @@
 			bind:value={query}
 			on:input={handleQueryChange}
 		/>
-		<label class="label">
-			<a href="#" class="label-text-alt link link-hover">Forgot password?</a>
-		</label>
 	</div>
 
 	<!-- For each result in results, display  -->
