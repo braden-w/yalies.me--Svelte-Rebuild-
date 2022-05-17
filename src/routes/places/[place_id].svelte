@@ -48,9 +48,9 @@
       <p class="py-6">
         Users currently in {placeInformation.description}
       </p>
-      <div class="form-control">
+      <!-- <div class="form-control">
         <a href="/" class="btn btn-primary">Go Back To Map</a>
-      </div>
+      </div> -->
     </div>
 
     {#each placeInformation.users_in_place as user_in_place}
