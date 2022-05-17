@@ -123,9 +123,9 @@
 						>
 							<div class="card-body">
 								<span class="font-bold text-lg">Notifications</span>
-								<span class="text-info">Subtotal: $999</span>
+								<span class="text-info">You'll see notifications here</span>
 								<div class="card-actions">
-									<button class="btn btn-primary btn-block">View cart</button>
+									<button class="btn btn-primary btn-block">Hello!</button>
 								</div>
 							</div>
 						</div>
