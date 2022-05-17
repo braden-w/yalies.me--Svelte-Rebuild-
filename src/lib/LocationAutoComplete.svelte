@@ -236,6 +236,9 @@
         query = typed_data.user_responses.places.description;
         results = [];
       }
+      if (error) {
+        console.error(error);
+      }
     });
 
   // When query changes value
