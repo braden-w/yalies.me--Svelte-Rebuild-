@@ -55,6 +55,7 @@
 						type="text"
 						id="location"
 						class="input input-bordered"
+						disabled
 						placeholder="Start typing your city here..."
 						bind:value={userProfileInformation.user_responses.places.description}
 					/>
