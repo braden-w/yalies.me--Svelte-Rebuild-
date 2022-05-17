@@ -33,7 +33,6 @@
 			goto('/');
 		} else {
 			// If login
-			goto('/map');
 			const user = supabase.auth.user();
 
 			// Save profile data to session store
@@ -812,10 +811,10 @@
 							class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
 						>
 							<li>
-								<button class="justify-between">
+								<a class="justify-between" href="/profile">
 									Profile
 									<span class="badge">New</span>
-								</button>
+								</a>
 							</li>
 							<li><button>Settings</button></li>
 							{#if $sessionStore !== null}
