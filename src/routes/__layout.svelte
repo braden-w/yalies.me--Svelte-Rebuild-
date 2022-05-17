@@ -34,15 +34,13 @@
 				// Save profile data to session store
 				$sessionStore = payload;
 
-				if (payload) {
+				if (!payload) goto('/');
+				else {
 					// Upload profile data from sessionStore to 'user_data_new' database
 					const { error } = await supabase.from('users').upsert(payload, {
 						returning: 'minimal' // Don't return the value after inserting
 					});
 					if (error) throw error;
-				}
-				else {
-					goto('/')
 				}
 			} catch (error: any) {
 				alert(error.message);
