@@ -46,29 +46,30 @@
         proximity rather than exact location.
       </p>
     </div>
-    {#each }
-    <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <div class="card-body">
-        <div class="text-center">
-          <div class="avatar mx-auto">
-            <div class="w-28 rounded">
-              <img
-                src={$sessionStore?.avatar_url}
-                alt="Profile"
-                width="100%"
-                height="100%"
-                referrerpolicy="no-referrer"
-              />
+    {#each placeInformation.users_in_place as user_in_place}
+      <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div class="card-body">
+          <div class="text-center">
+            <div class="avatar mx-auto">
+              <div class="w-28 rounded">
+                <img
+                  src={$sessionStore?.avatar_url}
+                  alt="Profile"
+                  width="100%"
+                  height="100%"
+                  referrerpolicy="no-referrer"
+                />
+              </div>
             </div>
+            <h1 class="text-2xl font-bold">{$sessionStore?.name}</h1>
+            <p class="text-lg">Yale University</p>
           </div>
-          <h1 class="text-2xl font-bold">{$sessionStore?.name}</h1>
-          <p class="text-lg">Yale University</p>
-        </div>
 
-        <div class="form-control mt-6">
-          <a href="/" class="btn btn-primary">Go To Map</a>
+          <div class="form-control mt-6">
+            <a href="/" class="btn btn-primary">Go To Map</a>
+          </div>
         </div>
       </div>
-    </div>
+    {/each}
   </div>
 </div>
