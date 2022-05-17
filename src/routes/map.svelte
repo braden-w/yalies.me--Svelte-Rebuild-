@@ -120,6 +120,27 @@
 				});
 			});
 
+			const scalePercent = (
+				defaultPxSize: number = 40,
+				defaultZoom: number = 8,
+				scaleFactor: number = 0.1
+			) => {
+				const scalePercent = 1 + (map.getZoom() - defaultZoom) * scaleFactor;
+				return defaultPxSize * scalePercent;
+			};
+
+			/** Scale icons on zoom */
+			map.on('zoom', () => {
+				const newPx = scalePercent();
+				console.log('🚀 ~ file: map.svelte ~ line 135 ~ map.on ~ newPx', newPx);
+				el.querySelectorAll('.outline-on-click').forEach((innerEl) => {
+					// Set the height and width innerEl to newPx
+					innerEl.style.width = `${newPx}px`;
+					innerEl.style.height = `${newPx}px`;
+				});
+				el.style.transformOrigin = 'bottom';
+			});
+
 			// Add the marker to the map
 			new mapboxgl.Marker(el).setLngLat([fetchedLocation.lng, fetchedLocation.lat]).addTo(map);
 		});
