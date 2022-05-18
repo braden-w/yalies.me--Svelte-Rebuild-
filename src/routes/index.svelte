@@ -27,7 +27,8 @@
 
   mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_KEY;
 
-  const NewHaven = { longitude: -72.9, latitude: 41.3 };
+  const NewHaven = { longitude: -72.9, latitude: 41.3, zoom: 8 };
+  const CenterUS = { longitude: -95.7, latitude: 37.1, zoom: 3 };
   // longitude = userProfileInformation.location?.longitude ?? NewHaven.longitude;
   // latitude = userProfileInformation.location?.latitude ?? NewHaven.latitude;
   // console.log('longitude, latitude:>> ', longitude, latitude)
@@ -37,9 +38,9 @@
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/dark-v10',
-      center: [NewHaven.longitude, NewHaven.latitude],
+      center: [CenterUS.longitude, CenterUS.latitude],
       doubleClickZoom: false,
-      zoom: 8,
+      zoom: CenterUS.zoom,
       maxZoom: 10
     });
 
@@ -59,7 +60,7 @@
 
     map.on('load', () => {
       map.flyTo({
-        center: [NewHaven.longitude, NewHaven.latitude],
+        center: [CenterUS.longitude, CenterUS.latitude],
         speed: 2.5,
         essential: true
       });
@@ -80,7 +81,7 @@
 						<span class="indicator-item badge badge-secondary">${
               fetchedLocation.people.length
             }</span>
-						<div class="w-16 h-16 rounded-lg outline-on-click">
+						<div class="w-8 h-8 rounded-lg outline-on-click">
 							<img src="${
                 fetchedLocation.people[0].avatar_url
               }" referrerpolicy="no-referrer"/>
@@ -89,7 +90,7 @@
 					${
             shuffledPeople.length >= 2
               ? `<div class="avatar">
-						<div class="w-16 h-16 rounded-lg outline-on-click">
+						<div class="w-8 h-8 rounded-lg outline-on-click">
 							<img src="${fetchedLocation.people[1].avatar_url}" referrerpolicy="no-referrer"/>
 						</div>
 					</div>`
@@ -98,7 +99,7 @@
 					${
             shuffledPeople.length >= 3
               ? `<div class="avatar">
-						<div class="w-16 h-16 rounded-lg outline-on-click">
+						<div class="w-8 h-8 rounded-lg outline-on-click">
 							<img src="${fetchedLocation.people[2].avatar_url}" referrerpolicy="no-referrer"/>
 						</div>
 					</div>`
@@ -159,7 +160,7 @@
 
       const scalePercent = (
         defaultPxSize = 40,
-        defaultZoom = 8,
+        defaultZoom = 3,
         scaleFactor = 0.1
       ) => {
         const scalePercent = 1 + (map.getZoom() - defaultZoom) * scaleFactor;
