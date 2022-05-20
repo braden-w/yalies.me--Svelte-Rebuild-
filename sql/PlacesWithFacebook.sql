@@ -25,6 +25,10 @@ SELECT
       )
     FROM
       facebook
+    WHERE
+      facebook.place_id = places.place_id
+      and year is not null
+      and image is not null
   ) AS people
 FROM
   places;
