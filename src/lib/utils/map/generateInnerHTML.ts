@@ -7,8 +7,8 @@ export function generateInnerHTML(fetchedLocation: FetchedLocation) {
   // Three cases for the number of people in the fetchedLocation
   if (shuffledPeople.length === 0) return '';
   return `<div class="dropdown dropdown-hover">
-  ${generateStackOfIcons(shuffledPeople, fetchedLocation)}
-  ${generateHoverList(shuffledPeople, fetchedLocation)}
+  ${stackOfIcons(shuffledPeople, fetchedLocation)}
+  ${listOfPeopleOnHover(shuffledPeople, fetchedLocation)}
 </div>`;
 }
 
@@ -25,7 +25,7 @@ function personToListItem(person: Person): string {
     </li>`;
 }
 
-function generateStackOfIcons(
+function stackOfIcons(
   shuffledPeople: Person[],
   fetchedLocation: FetchedLocation
 ): string {
@@ -71,7 +71,7 @@ function generateStackOfIcons(
   </label>`;
 }
 /**Generates the dropdown menu that is created when you hover on a component */
-function generateHoverList(
+function listOfPeopleOnHover(
   shuffledPeople: Person[],
   fetchedLocation: FetchedLocation
 ): string {
