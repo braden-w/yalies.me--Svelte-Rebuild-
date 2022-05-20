@@ -7,7 +7,8 @@
    */
   export async function load() {
     const { data, error } = await supabase
-      .rpc('fetch_locations')
+      .from('places_with_people')
+      .select('place_id, description, lat, lng, people')
       .not('people', 'is', null);
     console.log('🚀 ~ file: map.svelte ~ line 8 ~ load ~ data', data, error);
     const fetchedLocations = data as FetchedLocation[];
