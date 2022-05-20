@@ -97,12 +97,14 @@ function generateHover({
     numberOfIconsStacked > 3 ? '3' : numberOfIconsStacked
   } p-2 shadow bg-base-100 rounded-box w-52">
     ${placeTitle} 
-    ${people.map(personToListItem).join('')}
+    ${peopleToListItems(people)}
   </ul>`;
 }
 
-function personToListItem(person: Person): string {
-  return `<li>
+function peopleToListItems(people: Person[]): string {
+  return people
+    .map(
+      (person) => `<li>
       <a class="content-center" href="/users/${person.id}">
         <div class="avatar">
           <div class="w-8 rounded-lg">
@@ -111,5 +113,7 @@ function personToListItem(person: Person): string {
         </div>
         <span class="text-xs">${person.name}</span>
       </a>
-    </li>`;
+    </li>`
+    )
+    .join('');
 }
