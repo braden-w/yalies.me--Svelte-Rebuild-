@@ -1,40 +1,45 @@
-import type { FetchedLocation, Person } from '$lib/types/FetchedLocation';
+import type { definitions } from '$lib/types/supabase';
 
-export function generateInnerHTML(fetchedLocation: FetchedLocation) {
-  // Get 3 random people from the 'people' property of fetchedLocation
-  const shuffledPeople = fetchedLocation.people.sort(() => 0.5 - Math.random());
+interface Person {
+  id: string;
+  name: string;
+  avatar_url: string;
+}
 
-  // Three cases for the number of people in the fetchedLocation
-  if (shuffledPeople.length === 0) return '';
+export function generateInnerHTML(place: definitions['places_with_people']) {
+  // Get 3 random people from the 'people' property of placeWithPeople
+  const people = place.people as unknown as Person[];
+  const stackIcons = people.sort(() => 0.5 - Math.random()).slice(0, 3);
+  const { place_id, description } = place;
+
+  // Three cases for the number of people in the placeWithPeople
+  if (stackIcons.length === 0) return '';
   return `<div class="dropdown dropdown-hover">
-  ${stackOfIcons(shuffledPeople, fetchedLocation)}
-  ${listOfPeopleOnHover(shuffledPeople, fetchedLocation)}
+  ${stackOfIcons(stackIcons, people)}
+  ${listOfPeopleOnHover(stackIcons, { place_id, description }, people)}
 </div>`;
 }
 
-function stackOfIcons(
-  shuffledPeople: Person[],
-  fetchedLocation: FetchedLocation
-): string {
+function stackOfIcons(stackIcons: Person[], people: Person[]): string {
   return `<label tabindex="0" name="selected" class="stack">
     <div class="avatar indicator">
       <span class="indicator-item badge badge-secondary"
-        >${fetchedLocation.people.length}</span
+        >${people.length}</span
       >
       <div class="w-8 h-8 rounded-lg outline-on-click">
         <img
-          src="${fetchedLocation.people[0].avatar_url}"
+          src="${stackIcons[0].avatar_url}"
           referrerpolicy="no-referrer"
         />
       </div>
     </div>
     ${
-      shuffledPeople.length >= 2
+      stackIcons.length >= 2
         ? `
     <div class="avatar">
       <div class="w-8 h-8 rounded-lg outline-on-click">
         <img
-          src="${fetchedLocation.people[1].avatar_url}"
+          src="${stackIcons[1].avatar_url}"
           referrerpolicy="no-referrer"
         />
       </div>
@@ -42,12 +47,12 @@ function stackOfIcons(
     `
         : ''
     } ${
-    shuffledPeople.length >= 3
+    stackIcons.length >= 3
       ? `
     <div class="avatar">
       <div class="w-8 h-8 rounded-lg outline-on-click">
         <img
-          src="${fetchedLocation.people[2].avatar_url}"
+          src="${stackIcons[2].avatar_url}"
           referrerpolicy="no-referrer"
         />
       </div>
@@ -60,19 +65,20 @@ function stackOfIcons(
 
 /**Generates the dropdown menu that is created when you hover on a component */
 function listOfPeopleOnHover(
-  shuffledPeople: Person[],
-  fetchedLocation: FetchedLocation
+  stackIcons: Person[],
+  { place_id, description }: { place_id: string; description: string },
+  people: Person[]
 ): string {
   const placeTitle = `<li>
-      <a class="justify-between" href="/places/${fetchedLocation.place_id}">
-        ${fetchedLocation.description}
+      <a class="justify-between" href="/places/${place_id}">
+        ${description}
       </a>
     </li>`;
   return `<ul tabindex="0" class="menu menu-compact dropdown-content mt-${
-    shuffledPeople.length > 3 ? '3' : shuffledPeople.length
+    stackIcons.length > 3 ? '3' : stackIcons.length
   } p-2 shadow bg-base-100 rounded-box w-52">
     ${placeTitle} 
-    ${fetchedLocation.people.map(personToListItem).join('')}
+    ${people.map(personToListItem).join('')}
   </ul>`;
 }
 
