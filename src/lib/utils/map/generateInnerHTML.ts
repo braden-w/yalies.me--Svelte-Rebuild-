@@ -17,7 +17,7 @@ export function generateInnerHTML(place: definitions['places_with_people']) {
   if (stackIcons.length === 0) return '';
   return `<div class="dropdown dropdown-hover">
   ${generateStackOfIcons({ threePeople: stackIcons, indicator: people.length })}
-  ${listOfPeopleOnHover(stackIcons, { place_id, description }, peopleAtPlace)}
+  ${generateHover(stackIcons.length, { place_id, description }, peopleAtPlace)}
 </div>`;
 }
 
@@ -72,8 +72,8 @@ function generateStackOfIcons({
 }
 
 /**Generates the dropdown menu that is created when you hover on a component */
-function listOfPeopleOnHover(
-  stackIcons: Person[],
+function generateHover(
+  numberOfIconsStacked: number,
   { place_id, description }: { place_id: string; description: string },
   people: Person[]
 ): string {
@@ -83,7 +83,7 @@ function listOfPeopleOnHover(
       </a>
     </li>`;
   return `<ul tabindex="0" class="menu menu-compact dropdown-content mt-${
-    stackIcons.length > 3 ? '3' : stackIcons.length
+    numberOfIconsStacked > 3 ? '3' : numberOfIconsStacked
   } p-2 shadow bg-base-100 rounded-box w-52">
     ${placeTitle} 
     ${people.map(personToListItem).join('')}
