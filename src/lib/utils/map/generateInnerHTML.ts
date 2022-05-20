@@ -8,39 +8,45 @@ interface Person {
 
 export function generateInnerHTML(place: definitions['places_with_people']) {
   // Get 3 random people from the 'people' property of placeWithPeople
-  const peopleAtPlace = place.people as unknown as Person[];
+  const people = place.people as unknown as Person[];
   /**The first three people who will be the icons in the stack on the map */
-  const stackIcons = peopleAtPlace.sort(() => 0.5 - Math.random()).slice(0, 3);
+  const stackIcons = people.sort(() => 0.5 - Math.random()).slice(0, 3);
   const { place_id, description } = place;
 
   // Three cases for the number of people in the placeWithPeople
   if (stackIcons.length === 0) return '';
   return `<div class="dropdown dropdown-hover">
-  ${stackOfIcons(stackIcons, peopleAtPlace)}
+  ${stackOfIcons({ threePeople: stackIcons, indicator: people.length })}
   ${listOfPeopleOnHover(stackIcons, { place_id, description }, peopleAtPlace)}
 </div>`;
 }
 
-function stackOfIcons(stackIcons: Person[], people: Person[]): string {
+function stackOfIcons({
+  threePeople,
+  indicator
+}: {
+  threePeople: Person[];
+  indicator: number;
+}): string {
   return `<label tabindex="0" name="selected" class="stack">
     <div class="avatar indicator">
       <span class="indicator-item badge badge-secondary"
-        >${people.length}</span
+        >${indicator}</span
       >
       <div class="w-8 h-8 rounded-lg outline-on-click">
         <img
-          src="${stackIcons[0].avatar_url}"
+          src="${threePeople[0].avatar_url}"
           referrerpolicy="no-referrer"
         />
       </div>
     </div>
     ${
-      stackIcons.length >= 2
+      threePeople.length >= 2
         ? `
     <div class="avatar">
       <div class="w-8 h-8 rounded-lg outline-on-click">
         <img
-          src="${stackIcons[1].avatar_url}"
+          src="${threePeople[1].avatar_url}"
           referrerpolicy="no-referrer"
         />
       </div>
@@ -48,12 +54,12 @@ function stackOfIcons(stackIcons: Person[], people: Person[]): string {
     `
         : ''
     } ${
-    stackIcons.length >= 3
+    threePeople.length >= 3
       ? `
     <div class="avatar">
       <div class="w-8 h-8 rounded-lg outline-on-click">
         <img
-          src="${stackIcons[2].avatar_url}"
+          src="${threePeople[2].avatar_url}"
           referrerpolicy="no-referrer"
         />
       </div>
