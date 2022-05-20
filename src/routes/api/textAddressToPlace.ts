@@ -2,12 +2,18 @@ import type {Payload} from "$lib/LocationAutoComplete";
 import type {definitions} from "$lib/supabase";
 import {supabase} from "$lib/utils/supabaseClient";
 
+interface TextToPlaceResponse {
+  place_id: string,
+    lat: number,
+    lng: number,
+}
+
 async function getPlaceIdFromFacebook() {
   const {data} = await supabase.from<definitions['facebook']>('facebook').select('*');
   const firstResult = data?.[0];
 }
 
-async function textAddressToPlace(address: string) {
+async function textAddressToPlace(address: string): TextToPlaceResponse {
   try {
     // Use Google Autocomplete API to get place_id, lat, and lng from the address
     const requestString = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${import.meta.env.VITE_GOOGLE_MAP_KEY_SERVER}`
