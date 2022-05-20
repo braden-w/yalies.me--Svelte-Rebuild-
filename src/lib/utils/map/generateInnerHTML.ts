@@ -16,12 +16,12 @@ export function generateInnerHTML(place: definitions['places_with_people']) {
   // Three cases for the number of people in the placeWithPeople
   if (stackIcons.length === 0) return '';
   return `<div class="dropdown dropdown-hover">
-  ${stackOfIcons({ threePeople: stackIcons, indicator: people.length })}
+  ${generateStackOfIcons({ threePeople: stackIcons, indicator: people.length })}
   ${listOfPeopleOnHover(stackIcons, { place_id, description }, peopleAtPlace)}
 </div>`;
 }
 
-function stackOfIcons({
+function generateStackOfIcons({
   threePeople,
   indicator
 }: {
