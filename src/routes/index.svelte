@@ -1,5 +1,4 @@
 <script context="module" lang="ts">
-  import type { FetchedLocation } from '$lib/types/FetchedLocation';
   export const prerender = false;
   /** List all places from the database. Return it as a list of items that contains place description, place lat, place lng, and place people
    * Place people is a list of users that are associated with the place
@@ -7,11 +6,11 @@
    */
   export async function load() {
     const { data, error } = await supabase
-      .from('places_with_people')
+      .from<definitions['places_with_people']>('places_with_people')
       .select('place_id, description, lat, lng, people')
       .not('people', 'is', null);
-    const fetchedLocations = data as FetchedLocation[];
-    return { status: 200, props: { fetchedLocations } };
+    const places = data;
+    return { status: 200, props: { places } };
   }
 </script>
 
@@ -25,6 +24,7 @@
   import { onMount } from 'svelte';
   import { supabase } from '$lib/utils/supabaseClient';
   import { generateInnerHTML } from '$lib/utils/map/generateInnerHTML';
+  import type { definitions } from '$lib/types/supabase';
 
   mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_KEY;
 
@@ -33,7 +33,7 @@
   // longitude = userProfileInformation.location?.longitude ?? NewHaven.longitude;
   // latitude = userProfileInformation.location?.latitude ?? NewHaven.latitude;
   // console.log('longitude, latitude:>> ', longitude, latitude)
-  export let fetchedLocations: FetchedLocation[];
+  export let places: definitions['places_with_people'][];
 
   onMount(() => {
     const map = new mapboxgl.Map({
@@ -68,10 +68,10 @@
       // loadFacebook(map!, queryYear)
     });
 
-    fetchedLocations.forEach((fetchedLocation) => {
+    places.forEach((place) => {
       const el = document.createElement('div');
       el.className = 'marker';
-      el.innerHTML = generateInnerHTML(fetchedLocation);
+      el.innerHTML = generateInnerHTML(place);
 
       // On click, add a shadow around it
       el.addEventListener('click', () => {
@@ -115,9 +115,7 @@
       });
 
       // Add the marker to the map
-      new mapboxgl.Marker(el)
-        .setLngLat([fetchedLocation.lng, fetchedLocation.lat])
-        .addTo(map);
+      new mapboxgl.Marker(el).setLngLat([place.lng, place.lat]).addTo(map);
     });
   });
 </script>
