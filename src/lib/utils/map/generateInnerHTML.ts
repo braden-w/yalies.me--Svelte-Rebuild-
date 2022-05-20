@@ -7,7 +7,29 @@ export function generateInnerHTML(fetchedLocation: FetchedLocation) {
   // Three cases for the number of people in the fetchedLocation
   if (shuffledPeople.length === 0) return '';
   return `<div class="dropdown dropdown-hover">
-  <label tabindex="0" name="selected" class="stack">
+  ${generateStackOfIcons(shuffledPeople, fetchedLocation)}
+  ${generateHoverList(shuffledPeople, fetchedLocation)}
+</div>`;
+}
+
+function personToListItem(person: Person): string {
+  return `<li>
+      <a class="content-center" href="/users/${person.id}">
+        <div class="avatar">
+          <div class="w-8 rounded-lg">
+            <img src="${person.avatar_url}" referrerpolicy="no-referrer" />
+          </div>
+        </div>
+        <span class="text-xs">${person.name}</span>
+      </a>
+    </li>`;
+}
+
+function generateStackOfIcons(
+  shuffledPeople: Person[],
+  fetchedLocation: FetchedLocation
+): string {
+  return `<label tabindex="0" name="selected" class="stack">
     <div class="avatar indicator">
       <span class="indicator-item badge badge-secondary"
         >${fetchedLocation.people.length}</span
@@ -46,24 +68,8 @@ export function generateInnerHTML(fetchedLocation: FetchedLocation) {
     `
       : ''
   }
-  </label>
-  ${generateHoverList(shuffledPeople, fetchedLocation)}
-</div>`;
+  </label>`;
 }
-
-function personToListItem(person: Person): string {
-  return `<li>
-      <a class="content-center" href="/users/${person.id}">
-        <div class="avatar">
-          <div class="w-8 rounded-lg">
-            <img src="${person.avatar_url}" referrerpolicy="no-referrer" />
-          </div>
-        </div>
-        <span class="text-xs">${person.name}</span>
-      </a>
-    </li>`;
-}
-
 /**Generates the dropdown menu that is created when you hover on a component */
 function generateHoverList(
   shuffledPeople: Person[],
