@@ -1,4 +1,4 @@
-import { Person } from '$lib/types/FetchedLocation';
+import type { Person } from '$lib/types/FetchedLocation';
 
 export function personToListItem(person: Person): string {
   return `<li>

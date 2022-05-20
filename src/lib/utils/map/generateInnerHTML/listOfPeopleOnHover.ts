@@ -1,4 +1,4 @@
-import { FetchedLocation, Person } from '$lib/types/FetchedLocation';
+import type { FetchedLocation, Person } from '$lib/types/FetchedLocation';
 import { personToListItem } from './personToListItem';
 
 /**Generates the dropdown menu that is created when you hover on a component */

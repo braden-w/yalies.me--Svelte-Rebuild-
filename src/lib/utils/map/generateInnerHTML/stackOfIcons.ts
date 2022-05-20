@@ -1,4 +1,4 @@
-import { FetchedLocation, Person } from '$lib/types/FetchedLocation';
+import type { Person, FetchedLocation } from '$lib/types/FetchedLocation';
 
 export function stackOfIcons(
   shuffledPeople: Person[],
