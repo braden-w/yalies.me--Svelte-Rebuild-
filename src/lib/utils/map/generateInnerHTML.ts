@@ -19,9 +19,9 @@ export function generateInnerHTML(place: definitions['places_with_people']) {
   ${generateStackOfIcons({ threePeople: stackIcons, indicator: people.length })}
   ${generateHover({
     numberOfIconsStacked: stackIcons.length,
-    place_id,
-    description,
-    people: peopleAtPlace
+    place_id: place_id ?? '',
+    description: description ?? '',
+    people
   })}
 </div>`;
 }
