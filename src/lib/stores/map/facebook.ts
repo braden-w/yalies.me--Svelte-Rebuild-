@@ -9,6 +9,7 @@ export async function load() {
   const { data } = await supabase
     .from<definitions['facebook_to_places']>('facebook_to_places')
     .select('*')
-    .not('year', 'is', null);
+    .not('year', 'is', null)
+    .not('image', 'is', null);
   facebook.set(data);
 }
