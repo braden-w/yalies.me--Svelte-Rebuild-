@@ -1,6 +1,6 @@
 <script lang="ts">
   import { supabase } from '$lib/utils/supabaseClient';
-  import { sessionStore } from '$lib/utils/sessionStore';
+  import { sessionStore } from '$lib/stores/sessionStore';
   import {
     defaultResults,
     uploadPlaceToSupabase,

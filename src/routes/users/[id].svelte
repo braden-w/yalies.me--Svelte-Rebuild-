@@ -17,7 +17,7 @@
 
 <script lang="ts">
   import LocationAutoComplete from '$lib/LocationAutoComplete.svelte';
-  import { sessionStore } from '$lib/utils/sessionStore';
+  import { sessionStore } from '$lib/stores/sessionStore';
 
   export let userProfileInformation: {
     id: string;

@@ -5,7 +5,7 @@
   import { onMount } from 'svelte';
   import { themeChange } from 'theme-change';
   import { supabase } from '$lib/utils/supabaseClient';
-  import { sessionStore } from '$lib/utils/sessionStore';
+  import { sessionStore } from '$lib/stores/sessionStore';
   import { signIn, signOut } from '$lib/utils/auth';
   import type { ApiError, User } from '@supabase/supabase-js';
   import type { SessionStore } from '$lib/types/SessionStore';
