@@ -6,7 +6,7 @@
     uploadPlaceToSupabase,
     uploadUserPlaceSelectionToSupabase,
     type Payload
-  } from '$lib/LocationAutoComplete';
+  } from '$lib/components/LocationAutoComplete';
   import { getUserLocation } from '$lib/utils/getUserLocation';
 
   let query = '';

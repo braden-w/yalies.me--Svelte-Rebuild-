@@ -1,6 +1,6 @@
 <script lang="ts">
   import { sessionStore } from '$lib/stores/sessionStore';
-  import LocationAutoComplete from '$lib/LocationAutoComplete.svelte';
+  import LocationAutoComplete from '$lib/components/LocationAutoComplete.svelte';
 </script>
 
 <svelte:head>

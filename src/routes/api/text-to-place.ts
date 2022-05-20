@@ -1,4 +1,4 @@
-import type { Payload } from '$lib/LocationAutoComplete';
+import type { Payload } from '$lib/components/LocationAutoComplete';
 import { supabase } from '$lib/utils/supabaseClient';
 interface TextToPlaceResponse {
   place_id: string | null;
