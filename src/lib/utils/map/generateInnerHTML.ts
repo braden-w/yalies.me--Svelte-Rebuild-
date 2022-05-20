@@ -5,16 +5,14 @@ function generateHoverList(
   shuffledPeople: Person[],
   fetchedLocation: FetchedLocation
 ): string {
-  return `<ul tabindex="0" class="menu menu-compact dropdown-content mt-${
-    shuffledPeople.length > 3 ? '3' : shuffledPeople.length
-  } p-2 shadow bg-base-100 rounded-box w-52">
-    <li>
+  const placeTitle = `<li>
       <a class="justify-between" href="/places/${fetchedLocation.place_id}">
         ${fetchedLocation.description}
       </a>
-    </li>
-    ${fetchedLocation.people.map((person) =>
-    `<li>
+    </li>`;
+  const placePeople = `${fetchedLocation.people
+    .map(
+      (person) => `<li>
       <a class="content-center" href="/users/${person.id}">
         <div class="avatar">
           <div class="w-8 rounded-lg">
@@ -23,7 +21,14 @@ function generateHoverList(
         </div>
         <span class="text-xs">${person.name}</span>
       </a>
-    </li>`).join('')}
+    </li>`
+    )
+    .join('')}`;
+  return `<ul tabindex="0" class="menu menu-compact dropdown-content mt-${
+    shuffledPeople.length > 3 ? '3' : shuffledPeople.length
+  } p-2 shadow bg-base-100 rounded-box w-52">
+    ${placeTitle} 
+    ${placePeople}
   </ul>`;
 }
 
