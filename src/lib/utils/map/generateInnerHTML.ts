@@ -1,36 +1,5 @@
 import type { FetchedLocation, Person } from '$lib/types/FetchedLocation';
 
-function personToListItem(person: Person): string {
-  return `<li>
-      <a class="content-center" href="/users/${person.id}">
-        <div class="avatar">
-          <div class="w-8 rounded-lg">
-            <img src="${person.avatar_url}" referrerpolicy="no-referrer" />
-          </div>
-        </div>
-        <span class="text-xs">${person.name}</span>
-      </a>
-    </li>`;
-}
-
-/**Generates the dropdown menu that is created when you hover on a component */
-function generateHoverList(
-  shuffledPeople: Person[],
-  fetchedLocation: FetchedLocation
-): string {
-  const placeTitle = `<li>
-      <a class="justify-between" href="/places/${fetchedLocation.place_id}">
-        ${fetchedLocation.description}
-      </a>
-    </li>`;
-  return `<ul tabindex="0" class="menu menu-compact dropdown-content mt-${
-    shuffledPeople.length > 3 ? '3' : shuffledPeople.length
-  } p-2 shadow bg-base-100 rounded-box w-52">
-    ${placeTitle} 
-    ${fetchedLocation.people.map(personToListItem).join('')}
-  </ul>`;
-}
-
 export function generateInnerHTML(fetchedLocation: FetchedLocation) {
   // Get 3 random people from the 'people' property of fetchedLocation
   const shuffledPeople = fetchedLocation.people.sort(() => 0.5 - Math.random());
@@ -80,4 +49,35 @@ export function generateInnerHTML(fetchedLocation: FetchedLocation) {
   </label>
   ${generateHoverList(shuffledPeople, fetchedLocation)}
 </div>`;
+}
+
+function personToListItem(person: Person): string {
+  return `<li>
+      <a class="content-center" href="/users/${person.id}">
+        <div class="avatar">
+          <div class="w-8 rounded-lg">
+            <img src="${person.avatar_url}" referrerpolicy="no-referrer" />
+          </div>
+        </div>
+        <span class="text-xs">${person.name}</span>
+      </a>
+    </li>`;
+}
+
+/**Generates the dropdown menu that is created when you hover on a component */
+function generateHoverList(
+  shuffledPeople: Person[],
+  fetchedLocation: FetchedLocation
+): string {
+  const placeTitle = `<li>
+      <a class="justify-between" href="/places/${fetchedLocation.place_id}">
+        ${fetchedLocation.description}
+      </a>
+    </li>`;
+  return `<ul tabindex="0" class="menu menu-compact dropdown-content mt-${
+    shuffledPeople.length > 3 ? '3' : shuffledPeople.length
+  } p-2 shadow bg-base-100 rounded-box w-52">
+    ${placeTitle} 
+    ${fetchedLocation.people.map(personToListItem).join('')}
+  </ul>`;
 }
