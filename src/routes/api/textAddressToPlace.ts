@@ -7,6 +7,27 @@ async function getPlaceIdFromFacebook() {
   const firstResult = data?.[0];
 }
 
+async function textAddressToPlace(address: string) {
+  // Use Google Autocomplete API to get place_id, lat, and lng from the address
+  const requestString = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${import.meta.env.VITE_GOOGLE_MAP_KEY_SERVER}`
+  const response = await fetch(requestString);
+  const {results} = await response.json();
+  // Return the place_id and lat/lng of the first result
+  return {
+    place_id: results[0].place_id,
+    lat: results[0].geometry.location.lat,
+    lng: results[0].geometry.location.lng,
+  }
+}
+
+
+export async function get() {
+  const res = await textAddressToPlace("Boston, MA, USA");
+  return {status: 200, body: res};
+}
+
+
+
 
 
 
