@@ -10,7 +10,8 @@ SELECT
       json_agg(
         json_build_object(
           'email',
-          facebook.email 'first_name',
+          facebook.email,
+          'first_name',
           facebook.first_name,
           'middle_name',
           facebook.middle_name,
