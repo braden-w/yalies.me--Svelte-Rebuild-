@@ -7,9 +7,8 @@ export const facebook: Writable<definitions['facebook_to_places'][] | null> =
 
 export async function loadFacebook() {
   const { data } = await supabase
-    .from<definitions['facebook_to_places']>('facebook_to_places')
-    .select('*')
-    .not('year', 'is', null)
-    .not('image', 'is', null);
+    .from<definitions['places_with_facebook']>('places_with_facebook')
+    .select('place_id, description, lat, lng, people')
+    .not('people', 'is', null);
   facebook.set(data);
 }
