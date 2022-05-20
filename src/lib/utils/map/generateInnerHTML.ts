@@ -21,13 +21,21 @@ export function generateInnerHTML<T extends Person | PersonFromFacebook>(
   // Get 3 random people from the 'people' property of placeWithPeople
   const people = place.people as unknown as T[];
   /**The first three people who will be the icons in the stack on the map */
-  const stackIcons = people.sort(() => 0.5 - Math.random()).slice(0, 3);
+  const stackIcons = people
+    .sort(() => 0.5 - Math.random())
+    .slice(0, 3)
+    .map((person) => {
+      return (<Person>person).avatar_url ?? (<PersonFromFacebook>person).image;
+    });
   const { place_id, description } = place;
 
   // Three cases for the number of people in the placeWithPeople
   if (stackIcons.length === 0) return '';
   return `<div class="dropdown dropdown-hover">
-  ${generateStackOfIcons({ threePeople: stackIcons, indicator: people.length })}
+  ${generateStackOfIcons({
+    threeAvatars: stackIcons,
+    indicator: people.length
+  })}
   ${generateHover({
     numberOfIconsStacked: stackIcons.length,
     place_id: place_id ?? '',
@@ -38,11 +46,11 @@ export function generateInnerHTML<T extends Person | PersonFromFacebook>(
 }
 
 /**Generates a stack of icons with three random people and an indicator in the top right for overall number of people at a location */
-function generateStackOfIcons<T extends Person | PersonFromFacebook>({
-  threePeople,
+function generateStackOfIcons({
+  threeAvatars,
   indicator
 }: {
-  threePeople: T[];
+  threeAvatars: string[];
   indicator: number;
 }): string {
   return `<label tabindex="0" name="selected" class="stack">
@@ -52,18 +60,18 @@ function generateStackOfIcons<T extends Person | PersonFromFacebook>({
       >
       <div class="w-8 h-8 rounded-lg outline-on-click">
         <img
-          src="${threePeople[0].avatar_url}"
+          src="${threeAvatars[0]}"
           referrerpolicy="no-referrer"
         />
       </div>
     </div>
     ${
-      threePeople.length >= 2
+      threeAvatars.length >= 2
         ? `
     <div class="avatar">
       <div class="w-8 h-8 rounded-lg outline-on-click">
         <img
-          src="${threePeople[1].avatar_url}"
+          src="${threeAvatars[1]}"
           referrerpolicy="no-referrer"
         />
       </div>
@@ -71,12 +79,12 @@ function generateStackOfIcons<T extends Person | PersonFromFacebook>({
     `
         : ''
     } ${
-    threePeople.length >= 3
+    threeAvatars.length >= 3
       ? `
     <div class="avatar">
       <div class="w-8 h-8 rounded-lg outline-on-click">
         <img
-          src="${threePeople[2].avatar_url}"
+          src="${threeAvatars[2]}"
           referrerpolicy="no-referrer"
         />
       </div>
