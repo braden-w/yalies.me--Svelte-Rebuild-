@@ -8,15 +8,16 @@ interface Person {
 
 export function generateInnerHTML(place: definitions['places_with_people']) {
   // Get 3 random people from the 'people' property of placeWithPeople
-  const people = place.people as unknown as Person[];
-  const stackIcons = people.sort(() => 0.5 - Math.random()).slice(0, 3);
+  const peopleAtPlace = place.people as unknown as Person[];
+  /**The first three people who will be the icons in the stack on the map */
+  const stackIcons = peopleAtPlace.sort(() => 0.5 - Math.random()).slice(0, 3);
   const { place_id, description } = place;
 
   // Three cases for the number of people in the placeWithPeople
   if (stackIcons.length === 0) return '';
   return `<div class="dropdown dropdown-hover">
-  ${stackOfIcons(stackIcons, people)}
-  ${listOfPeopleOnHover(stackIcons, { place_id, description }, people)}
+  ${stackOfIcons(stackIcons, peopleAtPlace)}
+  ${listOfPeopleOnHover(stackIcons, { place_id, description }, peopleAtPlace)}
 </div>`;
 }
 
