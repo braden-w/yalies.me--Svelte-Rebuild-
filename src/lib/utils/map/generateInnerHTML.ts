@@ -17,7 +17,12 @@ export function generateInnerHTML(place: definitions['places_with_people']) {
   if (stackIcons.length === 0) return '';
   return `<div class="dropdown dropdown-hover">
   ${generateStackOfIcons({ threePeople: stackIcons, indicator: people.length })}
-  ${generateHover(stackIcons.length, { place_id, description }, peopleAtPlace)}
+  ${generateHover({
+    numberOfIconsStacked: stackIcons.length,
+    place_id,
+    description,
+    people: peopleAtPlace
+  })}
 </div>`;
 }
 
@@ -72,11 +77,17 @@ function generateStackOfIcons({
 }
 
 /**Generates the dropdown menu that is created when you hover on a component */
-function generateHover(
-  numberOfIconsStacked: number,
-  { place_id, description }: { place_id: string; description: string },
-  people: Person[]
-): string {
+function generateHover({
+  numberOfIconsStacked,
+  place_id,
+  description,
+  people
+}: {
+  numberOfIconsStacked: number;
+  place_id: string;
+  description: string;
+  people: Person[];
+}): string {
   const placeTitle = `<li>
       <a class="justify-between" href="/places/${place_id}">
         ${description}
