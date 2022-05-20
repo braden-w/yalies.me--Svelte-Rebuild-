@@ -1,5 +1,18 @@
 import type { FetchedLocation, Person } from '$lib/types/FetchedLocation';
 
+function personToListItem(person: Person): string {
+  return `<li>
+      <a class="content-center" href="/users/${person.id}">
+        <div class="avatar">
+          <div class="w-8 rounded-lg">
+            <img src="${person.avatar_url}" referrerpolicy="no-referrer" />
+          </div>
+        </div>
+        <span class="text-xs">${person.name}</span>
+      </a>
+    </li>`;
+}
+
 /**Generates the dropdown menu that is created when you hover on a component */
 function generateHoverList(
   shuffledPeople: Person[],
@@ -10,25 +23,11 @@ function generateHoverList(
         ${fetchedLocation.description}
       </a>
     </li>`;
-  const placePeople = `${fetchedLocation.people
-    .map(
-      (person) => `<li>
-      <a class="content-center" href="/users/${person.id}">
-        <div class="avatar">
-          <div class="w-8 rounded-lg">
-            <img src="${person.avatar_url}" referrerpolicy="no-referrer" />
-          </div>
-        </div>
-        <span class="text-xs">${person.name}</span>
-      </a>
-    </li>`
-    )
-    .join('')}`;
   return `<ul tabindex="0" class="menu menu-compact dropdown-content mt-${
     shuffledPeople.length > 3 ? '3' : shuffledPeople.length
   } p-2 shadow bg-base-100 rounded-box w-52">
     ${placeTitle} 
-    ${placePeople}
+    ${fetchedLocation.people.map(personToListItem).join('')}
   </ul>`;
 }
 
