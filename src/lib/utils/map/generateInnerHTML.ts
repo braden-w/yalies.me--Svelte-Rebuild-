@@ -21,6 +21,7 @@ export function generateInnerHTML(place: definitions['places_with_people']) {
 </div>`;
 }
 
+/**Generates a stack of icons with three random people and an indicator in the top right for overall number of people at a location */
 function generateStackOfIcons({
   threePeople,
   indicator
