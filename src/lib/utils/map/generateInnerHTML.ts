@@ -1,6 +1,6 @@
 import type { FetchedLocation } from '$lib/types/FetchedLocation';
+import { stackOfIcons } from '$lib/utils/map/generateInnerHTML/stackOfIcons';
 import { listOfPeopleOnHover } from './generateInnerHTML/listOfPeopleOnHover';
-import { stackOfIcons } from './stackOfIcons';
 
 export function generateInnerHTML(fetchedLocation: FetchedLocation) {
   // Get 3 random people from the 'people' property of fetchedLocation
