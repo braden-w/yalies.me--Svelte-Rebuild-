@@ -880,6 +880,204 @@ export interface paths {
       };
     };
   };
+  "/places_with_facebook": {
+    get: {
+      parameters: {
+        query: {
+          place_id?: parameters["rowFilter.places_with_facebook.place_id"];
+          description?: parameters["rowFilter.places_with_facebook.description"];
+          lat?: parameters["rowFilter.places_with_facebook.lat"];
+          lng?: parameters["rowFilter.places_with_facebook.lng"];
+          people?: parameters["rowFilter.places_with_facebook.people"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["places_with_facebook"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** places_with_facebook */
+          places_with_facebook?: definitions["places_with_facebook"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          place_id?: parameters["rowFilter.places_with_facebook.place_id"];
+          description?: parameters["rowFilter.places_with_facebook.description"];
+          lat?: parameters["rowFilter.places_with_facebook.lat"];
+          lng?: parameters["rowFilter.places_with_facebook.lng"];
+          people?: parameters["rowFilter.places_with_facebook.people"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          place_id?: parameters["rowFilter.places_with_facebook.place_id"];
+          description?: parameters["rowFilter.places_with_facebook.description"];
+          lat?: parameters["rowFilter.places_with_facebook.lat"];
+          lng?: parameters["rowFilter.places_with_facebook.lng"];
+          people?: parameters["rowFilter.places_with_facebook.people"];
+        };
+        body: {
+          /** places_with_facebook */
+          places_with_facebook?: definitions["places_with_facebook"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
+  "/places_with_people": {
+    get: {
+      parameters: {
+        query: {
+          place_id?: parameters["rowFilter.places_with_people.place_id"];
+          description?: parameters["rowFilter.places_with_people.description"];
+          lat?: parameters["rowFilter.places_with_people.lat"];
+          lng?: parameters["rowFilter.places_with_people.lng"];
+          people?: parameters["rowFilter.places_with_people.people"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["places_with_people"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** places_with_people */
+          places_with_people?: definitions["places_with_people"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          place_id?: parameters["rowFilter.places_with_people.place_id"];
+          description?: parameters["rowFilter.places_with_people.description"];
+          lat?: parameters["rowFilter.places_with_people.lat"];
+          lng?: parameters["rowFilter.places_with_people.lng"];
+          people?: parameters["rowFilter.places_with_people.people"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          place_id?: parameters["rowFilter.places_with_people.place_id"];
+          description?: parameters["rowFilter.places_with_people.description"];
+          lat?: parameters["rowFilter.places_with_people.lat"];
+          lng?: parameters["rowFilter.places_with_people.lng"];
+          people?: parameters["rowFilter.places_with_people.people"];
+        };
+        body: {
+          /** places_with_people */
+          places_with_people?: definitions["places_with_people"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
   "/relationships_between_users": {
     get: {
       parameters: {
@@ -2593,6 +2791,38 @@ export interface definitions {
     /** Format: double precision */
     lat?: number;
   };
+  places_with_facebook: {
+    /**
+     * Format: character varying
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    place_id?: string;
+    /** Format: character varying */
+    description?: string;
+    /** Format: double precision */
+    lat?: number;
+    /** Format: double precision */
+    lng?: number;
+    /** Format: json */
+    people?: string;
+  };
+  places_with_people: {
+    /**
+     * Format: character varying
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    place_id?: string;
+    /** Format: character varying */
+    description?: string;
+    /** Format: double precision */
+    lat?: number;
+    /** Format: double precision */
+    lng?: number;
+    /** Format: json */
+    people?: string;
+  };
   relationships_between_users: {
     /** Format: character varying */
     from_email: string;
@@ -3087,11 +3317,20 @@ export interface definitions {
 }
 
 export interface parameters {
-  /** @description Preference */
+  /**
+   * @description Preference
+   * @enum {string}
+   */
   preferParams: "params=single-object";
-  /** @description Preference */
+  /**
+   * @description Preference
+   * @enum {string}
+   */
   preferReturn: "return=representation" | "return=minimal" | "return=none";
-  /** @description Preference */
+  /**
+   * @description Preference
+   * @enum {string}
+   */
   preferCount: "count=none";
   /** @description Filtering Columns */
   select: string;
@@ -3304,6 +3543,30 @@ export interface parameters {
   "rowFilter.places.lng": string;
   /** Format: double precision */
   "rowFilter.places.lat": string;
+  /** @description places_with_facebook */
+  "body.places_with_facebook": definitions["places_with_facebook"];
+  /** Format: character varying */
+  "rowFilter.places_with_facebook.place_id": string;
+  /** Format: character varying */
+  "rowFilter.places_with_facebook.description": string;
+  /** Format: double precision */
+  "rowFilter.places_with_facebook.lat": string;
+  /** Format: double precision */
+  "rowFilter.places_with_facebook.lng": string;
+  /** Format: json */
+  "rowFilter.places_with_facebook.people": string;
+  /** @description places_with_people */
+  "body.places_with_people": definitions["places_with_people"];
+  /** Format: character varying */
+  "rowFilter.places_with_people.place_id": string;
+  /** Format: character varying */
+  "rowFilter.places_with_people.description": string;
+  /** Format: double precision */
+  "rowFilter.places_with_people.lat": string;
+  /** Format: double precision */
+  "rowFilter.places_with_people.lng": string;
+  /** Format: json */
+  "rowFilter.places_with_people.people": string;
   /** @description relationships_between_users */
   "body.relationships_between_users": definitions["relationships_between_users"];
   /** Format: character varying */
