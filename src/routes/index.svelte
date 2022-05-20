@@ -10,7 +10,6 @@
       .from('places_with_people')
       .select('place_id, description, lat, lng, people')
       .not('people', 'is', null);
-    console.log('🚀 ~ file: map.svelte ~ line 8 ~ load ~ data', data, error);
     const fetchedLocations = data as FetchedLocation[];
     return { status: 200, props: { fetchedLocations } };
   }
