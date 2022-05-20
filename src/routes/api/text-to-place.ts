@@ -1,35 +1,21 @@
 import type { Payload } from '$lib/LocationAutoComplete';
-import type { definitions } from '$lib/supabase';
 import { supabase } from '$lib/utils/supabaseClient';
-
 interface TextToPlaceResponse {
   place_id: string | null;
   lat: number | null;
   lng: number | null;
 }
 
-async function geocodeAddress(address: string) {
-  try {
-    const requestString = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
-      address
-    )}&key=${import.meta.env.VITE_GOOGLE_MAP_KEY_SERVER}`;
-    const response = await fetch(requestString);
-    const data = await response.json();
-    return { data, error: null };
-  } catch (error) {
-    return { data: null, error };
-  }
+
+export async function get() {
+  const textToPlaceResponse = await textAddressToPlaceLatLng('Boston, MA, USA');
+  return {
+    status: 200,
+    body: { textToPlaceResponse}
+  };
 }
 
-async function getPlaceIdFromFacebook() {
-  const { data } = await supabase
-    .from<definitions['facebook']>('facebook')
-    .select('*')
-    .eq('year', '2022');
-  return { data };
-}
-
-async function textAddressToPlace(
+async function textAddressToPlaceLatLng(
   address: string
 ): Promise<TextToPlaceResponse> {
   // Use Google Autocomplete API to get place_id, lat, and lng from the address
@@ -44,12 +30,17 @@ async function textAddressToPlace(
   };
 }
 
-export async function get() {
-  const textToPlaceResponse = await textAddressToPlace('Boston, MA, USA');
-  return {
-    status: 200,
-    body: { textToPlaceResponse, data: await getPlaceIdFromFacebook() }
-  };
+async function geocodeAddress(address: string) {
+  try {
+    const requestString = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
+      address
+    )}&key=${import.meta.env.VITE_GOOGLE_MAP_KEY_SERVER}`;
+    const response = await fetch(requestString);
+    const data = await response.json();
+    return {data, error: null};
+  } catch (error) {
+    return {data: null, error};
+  }
 }
 
 export async function uploadPlaceToSupabase(payload: Payload) {
