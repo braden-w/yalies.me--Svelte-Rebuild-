@@ -104,11 +104,13 @@
       map.on('zoom', () => {
         const newPx = scalePercent();
         console.log('🚀 ~ file: map.svelte ~ line 135 ~ map.on ~ newPx', newPx);
-        el.querySelectorAll('.outline-on-click').forEach((innerEl) => {
-          // Set the height and width innerEl to newPx
-          innerEl.style.width = `${newPx}px`;
-          innerEl.style.height = `${newPx}px`;
-        });
+        el.querySelectorAll<HTMLElement>('.outline-on-click').forEach(
+          (innerEl) => {
+            // Set the height and width innerEl to newPx
+            innerEl.style.width = `${newPx}px`;
+            innerEl.style.height = `${newPx}px`;
+          }
+        );
         el.style.transformOrigin = 'bottom';
       });
 
