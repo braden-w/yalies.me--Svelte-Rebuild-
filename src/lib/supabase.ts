@@ -330,6 +330,46 @@ export interface paths {
       };
     };
   };
+  "/facebook_to_places": {
+    get: {
+      parameters: {
+        query: {
+          email?: parameters["rowFilter.facebook_to_places.email"];
+          first_name?: parameters["rowFilter.facebook_to_places.first_name"];
+          middle_name?: parameters["rowFilter.facebook_to_places.middle_name"];
+          last_name?: parameters["rowFilter.facebook_to_places.last_name"];
+          year?: parameters["rowFilter.facebook_to_places.year"];
+          image?: parameters["rowFilter.facebook_to_places.image"];
+          place_id?: parameters["rowFilter.facebook_to_places.place_id"];
+          description?: parameters["rowFilter.facebook_to_places.description"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["facebook_to_places"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+  };
   "/feedback": {
     get: {
       parameters: {
@@ -2433,6 +2473,32 @@ export interface definitions {
      */
     place_id?: string;
   };
+  facebook_to_places: {
+    /**
+     * Format: character varying
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    email?: string;
+    /** Format: character varying */
+    first_name?: string;
+    /** Format: character varying */
+    middle_name?: string;
+    /** Format: character varying */
+    last_name?: string;
+    /** Format: integer */
+    year?: number;
+    /** Format: character varying */
+    image?: string;
+    /**
+     * Format: character varying
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    place_id?: string;
+    /** Format: character varying */
+    description?: string;
+  };
   feedback: {
     /** Format: character varying */
     email?: string;
@@ -3148,6 +3214,24 @@ export interface parameters {
   "rowFilter.facebook.preferred_name": string;
   /** Format: character varying */
   "rowFilter.facebook.place_id": string;
+  /** @description facebook_to_places */
+  "body.facebook_to_places": definitions["facebook_to_places"];
+  /** Format: character varying */
+  "rowFilter.facebook_to_places.email": string;
+  /** Format: character varying */
+  "rowFilter.facebook_to_places.first_name": string;
+  /** Format: character varying */
+  "rowFilter.facebook_to_places.middle_name": string;
+  /** Format: character varying */
+  "rowFilter.facebook_to_places.last_name": string;
+  /** Format: integer */
+  "rowFilter.facebook_to_places.year": string;
+  /** Format: character varying */
+  "rowFilter.facebook_to_places.image": string;
+  /** Format: character varying */
+  "rowFilter.facebook_to_places.place_id": string;
+  /** Format: character varying */
+  "rowFilter.facebook_to_places.description": string;
   /** @description feedback */
   "body.feedback": definitions["feedback"];
   /** Format: character varying */
