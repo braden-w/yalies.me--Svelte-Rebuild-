@@ -1,17 +1,12 @@
 <script context="module" lang="ts">
-  import type { FetchedLocation } from '$lib/types/FetchedLocation';
   export const prerender = false;
   /** List all places from the database. Return it as a list of items that contains place description, place lat, place lng, and place people
    * Place people is a list of users that are associated with the place
    * Each user has a id, name, and avatar_url
    */
   export async function load() {
-    const { data, error } = await supabase
-      .from('places_with_people')
-      .select('place_id, description, lat, lng, people')
-      .not('people', 'is', null);
-    const fetchedLocations = data as FetchedLocation[];
-    return { status: 200, props: { fetchedLocations } };
+    await loadFacebook();
+    return { status: 200, props: {} };
   }
 </script>
 
@@ -23,7 +18,7 @@
   import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
   import { onMount } from 'svelte';
-  import { supabase } from '$lib/utils/supabaseClient';
+  import { facebook, loadFacebook } from '$lib/stores/map/facebook';
   import { generateInnerHTML } from '$lib/utils/map/generateInnerHTML';
 
   mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_KEY;
@@ -33,7 +28,6 @@
   // longitude = userProfileInformation.location?.longitude ?? NewHaven.longitude;
   // latitude = userProfileInformation.location?.latitude ?? NewHaven.latitude;
   // console.log('longitude, latitude:>> ', longitude, latitude)
-  export let fetchedLocations: FetchedLocation[];
 
   onMount(() => {
     const map = new mapboxgl.Map({
@@ -68,10 +62,20 @@
       // loadFacebook(map!, queryYear)
     });
 
-    fetchedLocations.forEach((fetchedLocation) => {
+    console.log(
+      '🚀 ~ file: facebook.svelte ~ line 67 ~ onMount ~ facebook',
+      $facebook
+    );
+    if ($facebook === null) return;
+    $facebook.forEach((place) => {
+      console.log(
+        '🚀 ~ file: facebook.svelte ~ line 71 ~ $facebook.forEach ~ place',
+        place
+      );
+
       const el = document.createElement('div');
       el.className = 'marker';
-      el.innerHTML = generateInnerHTML(fetchedLocation);
+      el.innerHTML = generateInnerHTML(place);
 
       // On click, add a shadow around it
       el.addEventListener('click', () => {
@@ -115,9 +119,7 @@
       });
 
       // Add the marker to the map
-      new mapboxgl.Marker(el)
-        .setLngLat([fetchedLocation.lng, fetchedLocation.lat])
-        .addTo(map);
+      new mapboxgl.Marker(el).setLngLat([place.lng, place.lat]).addTo(map);
     });
   });
 </script>
