@@ -115,7 +115,9 @@
           </label>
         </div>
         <div class="flex-1">
-          <a href={$sessionStore !== null ? "/" : "/landing"} class="btn btn-ghost normal-case text-xl">Map of Yalies</a
+          <a
+            href={$sessionStore !== null ? '/' : '/landing'}
+            class="btn btn-ghost normal-case text-xl">Map of Yalies</a
           >
         </div>
         <div class="flex-none">
