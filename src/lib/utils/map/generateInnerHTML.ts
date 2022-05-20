@@ -15,11 +15,9 @@ interface PersonFromFacebook {
   year: number;
 }
 
-export function generateInnerHTML<T extends Person | PersonFromFacebook>(
-  place: definitions['places_with_people']
-) {
+export function generateInnerHTML(place: definitions['places_with_people']) {
   // Get 3 random people from the 'people' property of placeWithPeople
-  const people = place.people as unknown as T[];
+  const people = place.people as unknown as (Person | PersonFromFacebook)[];
   /**The first three people who will be the icons in the stack on the map */
   const stackIcons = people
     .sort(() => 0.5 - Math.random())
@@ -96,7 +94,7 @@ function generateStackOfIcons({
 }
 
 /**Generates the dropdown menu that is created when you hover on a component */
-function generateHover<T extends Person | PersonFromFacebook>({
+function generateHover({
   numberOfIconsStacked,
   place_id,
   description,
@@ -105,7 +103,7 @@ function generateHover<T extends Person | PersonFromFacebook>({
   numberOfIconsStacked: number;
   place_id: string;
   description: string;
-  people: T[];
+  people: (Person | PersonFromFacebook)[];
 }): string {
   const placeTitle = `<li>
       <a class="justify-between" href="/places/${place_id}">
@@ -120,17 +118,28 @@ function generateHover<T extends Person | PersonFromFacebook>({
   </ul>`;
 }
 
-function peopleToListItems(people: Person[]): string {
+function peopleToListItems(people: (Person | PersonFromFacebook)[]): string {
   return people
     .map(
       (person) => `<li>
-      <a class="content-center" href="/users/${person.id}">
+      <a class="content-center" href="${
+        (<Person>person).id
+          ? `/users/${(<Person>person).id}`
+          : `/facebook/${(<PersonFromFacebook>person).email}`
+      }">
         <div class="avatar">
           <div class="w-8 rounded-lg">
-            <img src="${person.avatar_url}" referrerpolicy="no-referrer" />
+            <img src="${
+              (<Person>person).avatar_url ?? (<PersonFromFacebook>person).image
+            }" referrerpolicy="no-referrer" />
           </div>
         </div>
-        <span class="text-xs">${person.name}</span>
+        <span class="text-xs">${
+          (<Person>person).name ??
+          `${(<PersonFromFacebook>person).first_name} ${
+            (<PersonFromFacebook>person).last_name
+          }`
+        }</span>
       </a>
     </li>`
     )
