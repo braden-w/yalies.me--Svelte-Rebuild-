@@ -3,9 +3,9 @@ import type {definitions} from "$lib/supabase";
 import {supabase} from "$lib/utils/supabaseClient";
 
 interface TextToPlaceResponse {
-  place_id: string,
-    lat: number,
-    lng: number,
+  place_id: string | null,
+    lat: number | null,
+    lng: number | null,
 }
 
 async function getPlaceIdFromFacebook() {
