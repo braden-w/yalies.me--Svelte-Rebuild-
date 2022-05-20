@@ -1,4 +1,4 @@
-import type { definitions } from '$lib/supabase';
+import type { definitions } from '$lib/types/supabase';
 import { sessionStore } from '$lib/stores/sessionStore';
 import { supabase } from '$lib/utils/supabaseClient';
 import { get } from 'svelte/store';
