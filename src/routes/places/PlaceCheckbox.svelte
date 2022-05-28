@@ -1,17 +1,11 @@
 <script lang="ts">
   import { sessionStore } from '$lib/stores/sessionStore';
-  import type { definitions } from '$lib/types/supabase';
   import {
     setUserLocation,
     resetUserLocation,
     userLocationStore
   } from '$lib/utils/getUserLocation';
-
-  interface PlaceInformation {
-    place_id: string;
-    description: string;
-    users_in_place: definitions['users_to_places'][];
-  }
+  import type { PlaceInformation } from 'src/routes/places/[place_id].svelte';
 
   export let placeInformation: PlaceInformation;
 
