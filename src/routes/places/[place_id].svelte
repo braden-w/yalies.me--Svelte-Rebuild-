@@ -32,7 +32,7 @@
 </script>
 
 <script lang="ts">
-  import TableOfUsers from './TableOfUsers.svelte';
+  import TableOfUsers from '$lib/components/TableOfUsers.svelte';
 
   import PlaceCheckbox from './PlaceCheckbox.svelte';
 
