@@ -7,7 +7,7 @@ interface GetUserLocation {
   user_responses: { places: { place_id: string; description: string } };
 }
 
-/**Gets user location and returns place_id and description */
+/** Gets user location and returns place_id and description */
 export async function getUserLocation(): Promise<GetUserLocation | undefined> {
   const { data, error } = await supabase
     .from<definitions['users']>('users')
@@ -18,6 +18,17 @@ export async function getUserLocation(): Promise<GetUserLocation | undefined> {
     const typed_data = data as unknown as GetUserLocation;
     return typed_data;
   }
+  if (error) {
+    console.error(error);
+  }
+}
+
+/** Updates the place_id in the user_responses table based off the */
+export async function setUserLocation(place_id: string) {
+  const { data, error } = await supabase
+    .from<definitions['user_responses']>('user_responses').update({
+      place_id: place_id
+    }).eq('user_response_id', get(sessionStore)?.user_response_id);
   if (error) {
     console.error(error);
   }
