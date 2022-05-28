@@ -20,8 +20,8 @@ export async function refreshUserLocation(): Promise<void> {
   }
   if (error) {
     console.error(error);
+    userLocationStore.set(null);
   }
-  userLocationStore.set(null);
 }
 
 export async function resetUserLocation(): Promise<void> {
