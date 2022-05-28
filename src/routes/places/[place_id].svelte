@@ -30,7 +30,10 @@
     place_id: string;
     description: string;
     users_in_place: definitions['users_to_places'][];
-  };
+  /** Is the current logged in user in this location? */
+  $: userInPlace = placeInformation.users_in_place
+    .map((user) => user.id)
+    .includes($sessionStore?.id as string);
 </script>
 
 <svelte:head>
@@ -54,7 +57,7 @@
           <span class="label-text">
             I'm Currently in {placeInformation.description}
           </span>
-          <input type="checkbox" class="toggle" />
+          <input type="checkbox" class="toggle" bind:checked={userInPlace} />
         </label>
       </div>
       <div class="form-control">
