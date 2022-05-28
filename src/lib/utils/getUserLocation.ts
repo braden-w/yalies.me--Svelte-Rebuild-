@@ -26,9 +26,11 @@ export async function getUserLocation(): Promise<GetUserLocation | undefined> {
 /** Updates the place_id in the user_responses table based off the */
 export async function setUserLocation(place_id: string) {
   const { data, error } = await supabase
-    .from<definitions['user_responses']>('user_responses').update({
+    .from<definitions['user_responses']>('user_responses')
+    .update({
       place_id: place_id
-    }).eq('user_response_id', get(sessionStore)?.user_response_id);
+    })
+    .eq('user_response_id', get(sessionStore)?.user_response_id);
   if (error) {
     console.error(error);
   }
