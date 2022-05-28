@@ -36,6 +36,14 @@
   import PlaceCheckbox from './PlaceCheckbox.svelte';
 
   export let placeInformation: PlaceInformation;
+  async function refreshUsersInPlace() {
+    const { data: users_in_place, error } = await supabase
+      .from<definitions['users_to_places']>('users_to_places')
+      .select('id, name, avatar_url, place_id, description')
+      .eq('place_id', placeInformation.place_id);
+    if (error) console.log(error);
+    placeInformation.users_in_place = users_in_place!;
+  }
 </script>
 
 <svelte:head>
