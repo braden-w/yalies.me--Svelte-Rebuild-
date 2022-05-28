@@ -28,6 +28,11 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { sessionStore } from '$lib/stores/sessionStore';
+  import {
+    type GetUserLocation,
+    getUserLocation,
+    setUserLocation
+  } from '$lib/utils/getUserLocation';
 
   interface PlaceInformation {
     place_id: string;
@@ -41,7 +46,7 @@
     const { data, error } = await supabase
       .from<definitions['users_to_places']>('users_to_places')
       .select('id, name, avatar_url, place_id, description')
-      .eq('place_id', $page.params.slug);
+      .eq('place_id', placeInformation.place_id);
     const users_in_place = data as PlaceInformation['users_in_place'];
     placeInformation.users_in_place = users_in_place;
     if (error) return;
@@ -51,6 +56,35 @@
   $: userInPlace = placeInformation.users_in_place
     .map((user) => user.id)
     .includes($sessionStore?.id as string);
+
+  const RESET_TO_BLANK_LOCATION = { places: { place_id: '', description: '' } };
+  /** Returns the location to toggle to when the toggle is reset */
+  async function getOldLocationToResetTo() {
+    let oldLocation: GetUserLocation | undefined | null =
+      await getUserLocation();
+    const oldPlaceID = oldLocation?.places.place_id;
+    return oldPlaceID === placeInformation.place_id
+      ? RESET_TO_BLANK_LOCATION
+      : oldLocation;
+  }
+
+  export async function toggleUserLocation() {
+    const oldLocation = await getOldLocationToResetTo();
+    if (!userInPlace) {
+      setUserLocation(placeInformation.place_id);
+      console.log(
+        '🚀 ~ file: [placeInformation.place_id].svelte ~ line 67 ~ toggleUserLocation ~ place_id',
+        placeInformation.place_id
+      );
+    } else {
+      if (!oldLocation?.places.place_id) return;
+      setUserLocation(oldLocation?.places.place_id);
+      console.log(
+        '🚀 ~ file: [place_id].svelte ~ line 71 ~ toggleUserLocation ~ oldLocation?.places.place_id',
+        oldLocation?.places.place_id
+      );
+    }
+  }
 </script>
 
 <svelte:head>
@@ -74,7 +108,12 @@
           <span class="label-text">
             I'm Currently in {placeInformation.description}
           </span>
-          <input type="checkbox" class="toggle" bind:checked={userInPlace} />
+          <input
+            type="checkbox"
+            class="toggle"
+            bind:checked={userInPlace}
+            on:click={toggleUserLocation}
+          />
         </label>
       </div>
       <div class="form-control">
