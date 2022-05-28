@@ -70,6 +70,71 @@
 </div>
 <div class="hero min-h-screen bg-base-100">
   <div class="hero-content flex-row flex-wrap">
+    <div class="overflow-x-auto w-full">
+      <table class="table w-full">
+        <!-- head -->
+        <thead>
+          <tr>
+            <th>
+              <label>
+                <input type="checkbox" class="checkbox" />
+              </label>
+            </th>
+            <th>Name</th>
+            <th>Job</th>
+            <th>Favorite Color</th>
+            <th />
+          </tr>
+        </thead>
+        <tbody>
+          <!-- row 1 -->
+          {#each placeInformation.users_in_place as user_in_place}
+            <tr>
+              <th>
+                <label>
+                  <input type="checkbox" class="checkbox" />
+                </label>
+              </th>
+              <td>
+                <div class="flex items-center space-x-3">
+                  <div class="avatar">
+                    <div class="mask mask-squircle w-12 h-12">
+                      <img
+                        src={user_in_place.avatar_url}
+                        alt="User Profile"
+                        referrerpolicy="no-referrer"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <div class="font-bold">{user_in_place.name}</div>
+                    <div class="text-sm opacity-50">{user_in_place.id}</div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                Zemlak, Daniel and Leannon
+                <br />
+                <span class="badge badge-ghost badge-sm"
+                  >Desktop Support Technician</span
+                >
+              </td>
+              <td>Purple</td>
+              <th>
+                <a
+                  href={`/users/${user_in_place.id}`}
+                  class="btn btn-ghost btn-xs"
+                >
+                  details
+                </a>
+              </th>
+            </tr>
+          {/each}
+        </tbody>
+        <!-- foot -->
+        <tfoot />
+      </table>
+    </div>
     {#each placeInformation.users_in_place as user_in_place}
       <div class="card flex-shrink-0  max-w-sm shadow-2xl bg-base-100">
         <div class="card-body">
