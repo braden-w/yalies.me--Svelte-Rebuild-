@@ -4,15 +4,15 @@ import { supabase } from '$lib/utils/supabaseClient';
 import { get } from 'svelte/store';
 
 interface GetUserLocation {
-  user_responses: { places: { place_id: string; description: string } };
+  places: { place_id: string; description: string };
 }
 
 /** Gets user location and returns place_id and description */
 export async function getUserLocation(): Promise<GetUserLocation | undefined> {
   const { data, error } = await supabase
-    .from<definitions['users']>('users')
-    .select('user_responses(places(place_id, description))')
-    .eq('id', get(sessionStore)?.id)
+    .from<definitions['user_responses']>('user_responses')
+    .select('places(place_id, description)')
+    .eq('user_response_id', get(sessionStore)?.user_response_id)
     .maybeSingle();
   if (data) {
     const typed_data = data as unknown as GetUserLocation;

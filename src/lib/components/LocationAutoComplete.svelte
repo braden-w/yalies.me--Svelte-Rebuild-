@@ -18,7 +18,7 @@
 
   async function fetchLocations() {
     const userLocation = await getUserLocation();
-    query = userLocation?.user_responses.places.description ?? '';
+    query = userLocation?.places.description ?? '';
     if (query !== '') results = [];
   }
   fetchLocations();
