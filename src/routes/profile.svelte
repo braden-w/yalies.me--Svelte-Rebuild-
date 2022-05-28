@@ -60,7 +60,7 @@
         <LocationAutoComplete />
 
         <div class="form-control mt-6">
-          <a href="/" class="btn btn-primary">Go Back To Map</a>
+          <a href="/" class="btn btn-primary">Go To Map</a>
         </div>
       </div>
     </div>
