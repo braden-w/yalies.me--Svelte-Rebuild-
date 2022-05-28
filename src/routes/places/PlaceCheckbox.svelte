@@ -35,8 +35,8 @@
         resetUserLocation();
       else
         await setUserLocation(
-          oldPlace?.places.place_id,
-          oldPlace?.places.description
+          oldPlace?.places.place_id as string,
+          oldPlace?.places.description as string
         );
       console.log(
         '🚀 ~ file: PlaceCheckbox.svelte ~ line 41 ~ handleToggleUserLocation ~           oldPlace?.places.place_id,',
