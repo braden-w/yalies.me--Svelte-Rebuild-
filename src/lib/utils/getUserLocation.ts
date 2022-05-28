@@ -7,6 +7,10 @@ export interface GetUserLocation {
   places: { place_id: string | null; description: string };
 }
 
+const BLANK_LOCATION: GetUserLocation = {
+  places: { place_id: null, description: '' }
+};
+
 /** Gets user location and returns place_id and description */
 export async function refreshUserLocation(): Promise<GetUserLocation | null> {
   const { data, error } = await supabase
