@@ -48,6 +48,15 @@
       <p class="py-6">
         Users currently in {placeInformation.description}
       </p>
+      <!-- Add a toggle that I am currently in this location -->
+      <div class="form-control">
+        <label class="label cursor-pointer">
+          <span class="label-text">
+            I'm Currently in {placeInformation.description}
+          </span>
+          <input type="checkbox" class="toggle" />
+        </label>
+      </div>
       <div class="form-control">
         <a href="/" class="btn btn-primary">Go Back To Map</a>
       </div>
