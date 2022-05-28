@@ -2,6 +2,13 @@
   import type { definitions } from '$lib/types/supabase';
 
   import { supabase } from '$lib/utils/supabaseClient';
+
+  export interface PlaceInformation {
+    place_id: string;
+    description: string;
+    users_in_place: definitions['users_to_places'][];
+  }
+
   export async function load({ params }: { params: { place_id: string } }) {
     const { data, error } = await supabase
       .from<definitions['users_to_places']>('users_to_places')
@@ -27,12 +34,6 @@
 
 <script lang="ts">
   import PlaceCheckbox from './PlaceCheckbox.svelte';
-
-  interface PlaceInformation {
-    place_id: string;
-    description: string;
-    users_in_place: definitions['users_to_places'][];
-  }
 
   export let placeInformation: PlaceInformation;
 </script>
