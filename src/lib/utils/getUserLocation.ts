@@ -3,12 +3,12 @@ import { sessionStore } from '$lib/stores/sessionStore';
 import { supabase } from '$lib/utils/supabaseClient';
 import { get } from 'svelte/store';
 
-interface GetUserLocation {
-  places: { place_id: string; description: string };
+export interface GetUserLocation {
+  places: { place_id: string | null; description: string };
 }
 
 /** Gets user location and returns place_id and description */
-export async function getUserLocation(): Promise<GetUserLocation | undefined> {
+export async function getUserLocation(): Promise<GetUserLocation | null> {
   const { data, error } = await supabase
     .from<definitions['user_responses']>('user_responses')
     .select('places(place_id, description)')
@@ -21,10 +21,11 @@ export async function getUserLocation(): Promise<GetUserLocation | undefined> {
   if (error) {
     console.error(error);
   }
+  return null;
 }
 
-/** Updates the place_id in the user_responses table based off the */
-export async function setUserLocation(place_id: string) {
+/** Updates the place_id in the user_responses table based off the user's user_response_id */
+export async function setUserLocation(place_id: string | null) {
   const { error } = await supabase
     .from<definitions['user_responses']>('user_responses')
     .update({
