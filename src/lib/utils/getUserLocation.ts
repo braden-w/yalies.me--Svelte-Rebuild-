@@ -4,11 +4,11 @@ import { supabase } from '$lib/utils/supabaseClient';
 import { get, writable, type Writable } from 'svelte/store';
 
 export interface GetUserLocation {
-  places: { place_id: string | null; description: string };
+  places: { place_id: string; description: string };
 }
 
 /** Gets user location and returns place_id and description */
-export async function refreshAndGetUserLocation(): Promise<GetUserLocation | null> {
+export async function refreshUserLocation(): Promise<void> {
   const { data, error } = await supabase
     .from<definitions['user_responses']>('user_responses')
     .select('places(place_id, description)')
@@ -17,13 +17,11 @@ export async function refreshAndGetUserLocation(): Promise<GetUserLocation | nul
   if (data) {
     const typed_data = data as unknown as GetUserLocation;
     userLocationStore.set(typed_data);
-    return typed_data;
   }
   if (error) {
     console.error(error);
   }
   userLocationStore.set(null);
-  return null;
 }
 
 export async function resetUserLocation(): Promise<void> {

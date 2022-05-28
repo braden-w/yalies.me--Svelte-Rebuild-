@@ -7,7 +7,10 @@
     uploadUserPlaceSelectionToSupabase,
     type Payload
   } from '$lib/components/LocationAutoComplete';
-  import { getUserLocation } from '$lib/utils/getUserLocation';
+  import {
+    refreshUserLocation,
+    userLocationStore
+  } from '$lib/utils/getUserLocation';
 
   let query = '';
   $: isQueryLongEnough = query.length >= 2;
@@ -16,12 +19,13 @@
 
   const resetResults = () => (results = defaultResults);
 
-  async function fetchLocations() {
-    const userLocation = await getUserLocation();
-    query = userLocation?.places.description ?? '';
+  /** If the user already has a location, put that location description inside the box */
+  async function prepopulateLocation() {
+    await refreshUserLocation();
+    query = $userLocationStore?.places.description ?? '';
     if (query !== '') results = [];
   }
-  fetchLocations();
+  prepopulateLocation();
 
   // Functions for when query changes value
   let timer: NodeJS.Timeout | null;
