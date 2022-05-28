@@ -1,14 +1,14 @@
 import type { definitions } from '$lib/types/supabase';
 import { sessionStore } from '$lib/stores/sessionStore';
 import { supabase } from '$lib/utils/supabaseClient';
-import { get } from 'svelte/store';
+import { get, writable, type Writable } from 'svelte/store';
 
 export interface GetUserLocation {
   places: { place_id: string | null; description: string };
 }
 
 /** Gets user location and returns place_id and description */
-export async function getUserLocation(): Promise<GetUserLocation | null> {
+export async function refreshUserLocation(): Promise<GetUserLocation | null> {
   const { data, error } = await supabase
     .from<definitions['user_responses']>('user_responses')
     .select('places(place_id, description)')
@@ -16,11 +16,13 @@ export async function getUserLocation(): Promise<GetUserLocation | null> {
     .maybeSingle();
   if (data) {
     const typed_data = data as unknown as GetUserLocation;
+    userLocationStore.set(typed_data);
     return typed_data;
   }
   if (error) {
     console.error(error);
   }
+  userLocationStore.set(null);
   return null;
 }
 
@@ -36,3 +38,6 @@ export async function setUserLocation(place_id: string | null) {
     console.error(error);
   }
 }
+
+export const userLocationStore: Writable<GetUserLocation | null> =
+  writable(null);
