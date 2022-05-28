@@ -36,6 +36,7 @@
   }
 
   export let placeInformation: PlaceInformation;
+  /** Refresh the list of users in this location */
   async function refreshPlaceInformationUsersInPlace() {
     const { data, error } = await supabase
       .from<definitions['users_to_places']>('users_to_places')
