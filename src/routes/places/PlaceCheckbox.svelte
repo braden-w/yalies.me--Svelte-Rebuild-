@@ -16,8 +16,8 @@
 
   let checked = userInPlace;
 
+  /** Old location, which the user will reset to */
   const oldPlace = $userLocationStore;
-  console.log('🚀 ~ file: PlaceCheckbox.svelte ~ line 27 ~ oldPlace', oldPlace);
 
   $: handleToggleUserLocation(checked);
   export async function handleToggleUserLocation(checked: boolean) {
