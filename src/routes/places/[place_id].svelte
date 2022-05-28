@@ -56,7 +56,7 @@
       <!-- Add a toggle that I am currently in this location -->
       <PlaceCheckbox {placeInformation} />
       <div class="form-control">
-        <a href="/" class="btn btn-primary">Go Back To Map</a>
+        <a href="/map" class="btn btn-primary">Go Back To Map</a>
       </div>
     </div>
   </div>
