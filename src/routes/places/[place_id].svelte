@@ -26,10 +26,26 @@
 </script>
 
 <script lang="ts">
-  export let placeInformation: {
+  import { page } from '$app/stores';
+  import { sessionStore } from '$lib/stores/sessionStore';
+
+  interface PlaceInformation {
     place_id: string;
     description: string;
     users_in_place: definitions['users_to_places'][];
+  }
+
+  export let placeInformation: PlaceInformation;
+  async function refreshPlaceInformationUsersInPlace() {
+    const { data, error } = await supabase
+      .from<definitions['users_to_places']>('users_to_places')
+      .select('id, name, avatar_url, place_id, description')
+      .eq('place_id', $page.params.slug);
+    const users_in_place = data as PlaceInformation['users_in_place'];
+    placeInformation.users_in_place = users_in_place;
+    if (error) return;
+  }
+
   /** Is the current logged in user in this location? */
   $: userInPlace = placeInformation.users_in_place
     .map((user) => user.id)
