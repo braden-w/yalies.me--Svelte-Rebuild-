@@ -7,7 +7,7 @@ export interface GetUserLocation {
   places: { place_id: string; description: string };
 }
 
-/** Gets user location and returns place_id and description */
+/** Refreshes the location store */
 export async function refreshUserLocation(): Promise<void> {
   const { data, error } = await supabase
     .from<definitions['user_responses']>('user_responses')
