@@ -10,12 +10,11 @@
   }
 
   export async function load({ params }: { params: { place_id: string } }) {
-    const { data, error } = await supabase
+    const { data: users_in_place, error } = await supabase
       .from<definitions['users_to_places']>('users_to_places')
       .select('id, name, avatar_url, place_id, description')
       .eq('place_id', params.place_id);
     if (error) return { status: error.code, props: { error } };
-    const users_in_place = data;
     const description = users_in_place.length
       ? users_in_place[0].description
       : '';
