@@ -6,6 +6,7 @@
     userLocationStore
   } from '$lib/utils/getUserLocation';
   import type { PlaceInformation } from 'src/routes/places/[place_id].svelte';
+  import { createEventDispatcher } from 'svelte';
 
   export let placeInformation: PlaceInformation;
 
@@ -20,6 +21,7 @@
   const oldPlace = $userLocationStore;
 
   $: handleToggleUserLocation(checked);
+  const dispatch = createEventDispatcher();
   export async function handleToggleUserLocation(checked: boolean) {
     if (checked) {
       await setUserLocation(
@@ -44,6 +46,7 @@
         oldPlace?.places.place_id
       );
     }
+    dispatch('toggled');
   }
 </script>
 

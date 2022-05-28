@@ -62,7 +62,7 @@
         Users currently in {placeInformation.description}
       </p>
       <!-- Add a toggle that I am currently in this location -->
-      <PlaceCheckbox {placeInformation} />
+      <PlaceCheckbox {placeInformation} on:toggled={refreshUsersInPlace} />
       <div class="form-control">
         <a href="/map" class="btn btn-primary">Go Back To Map</a>
       </div>
