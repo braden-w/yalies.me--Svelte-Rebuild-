@@ -10,16 +10,15 @@
   }
 
   /** Function that matches query by place_id, description, and finally fuzzy description */
-  async function getUsersInPlace(
-    place_id: string
-  ): Promise<definitions['users_to_places'][] | undefined | null> {
+  async function getUsersInPlace(query: string) {
     // Attempt to match the query by place_id
     const { data: dataMatchPlaceID, error: errorMatchPlaceID } = await supabase
       .from<definitions['users_to_places']>('users_to_places')
       .select('id, name, avatar_url, place_id, description')
-      .eq('place_id', place_id);
+      .eq('place_id', query);
     if (errorMatchPlaceID) console.log(errorMatchPlaceID);
     if (dataMatchPlaceID?.length !== 0) return dataMatchPlaceID;
+
     // Attempt to match the query by place description
     const {
       data: dataMatchPlaceDescription,
@@ -27,9 +26,11 @@
     } = await supabase
       .from<definitions['users_to_places']>('users_to_places')
       .select('id, name, avatar_url, place_id, description')
-      .eq('description', place_id);
+      .eq('description', query);
     if (errorMatchPlaceDescription) console.log(errorMatchPlaceDescription);
-    if (dataMatchPlaceDescription?.length !== 0) return dataMatchPlaceID;
+    if (dataMatchPlaceDescription?.length !== 0)
+      return dataMatchPlaceDescription;
+
     // Attempt to fuzzy match the query by place_description
     const {
       data: dataFuzzyMatchPlaceDescription,
@@ -37,15 +38,36 @@
     } = await supabase
       .from<definitions['users_to_places']>('users_to_places')
       .select('id, name, avatar_url, place_id, description')
-      .ilike('description', `%${place_id}%`);
-    if (errorFuzzyMatchPlaceDescription)
-      console.log(errorFuzzyMatchPlaceDescription);
-    if (dataFuzzyMatchPlaceDescription?.length !== 0) return;
+      .ilike('description', `%${query}%`);
+    if (dataFuzzyMatchPlaceDescription?.length !== 0) {
+      const redirect = {
+        status: 302,
+        redirect: '/'
+      };
+      console.log(
+        '🚀 ~ file: [place_id].svelte ~ line 47 ~ getUsersInPlace ~ redirect',
+        redirect
+      );
+      throw redirect;
+    }
   }
 
   export async function load({ params }: { params: { place_id: string } }) {
-    let users_in_place = await getUsersInPlace(params.place_id);
-    if (error) return { status: error.code, props: { error } };
+    const users_in_place = await getUsersInPlace(params.place_id).catch(
+      (error) => {
+        console.log(
+          '🚀 ~ file: [place_id].svelte ~ line 57 ~ load ~ error',
+          error
+        );
+        if (error.status === 302) {
+          return error;
+        }
+      }
+    );
+    console.log(
+      '🚀 ~ file: [place_id].svelte ~ line 57 ~ load ~ users_in_place',
+      users_in_place
+    );
     const place_id = users_in_place?.length
       ? users_in_place[0].place_id
       : params.place_id;
