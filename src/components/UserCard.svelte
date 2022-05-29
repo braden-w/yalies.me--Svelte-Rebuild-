@@ -1,7 +1,9 @@
 <script lang="ts">
-  import type { UserProfileInformation } from 'src/routes/users/[id].svelte';
+  import type { definitions } from '$lib/types/supabase';
 
-  export let userProfileInformation: UserProfileInformation;
+  export let avatar_url: definitions['users_facebook_places']['avatar_url'] =
+    '';
+  export let name: definitions['users_facebook_places']['name'] = '';
 </script>
 
 <div
@@ -12,7 +14,7 @@
       class="mask mask-squircle h-24 w-24 bg-base-content bg-opacity-10 p-px"
     >
       <img
-        src={userProfileInformation.avatar_url}
+        src={avatar_url}
         alt="Avatar Tailwind CSS Component"
         class="mask mask-squircle"
         width="94"
@@ -24,7 +26,7 @@
   <div>
     <div class="text-center">
       <div class="text-lg font-extrabold">
-        {userProfileInformation?.name}
+        {name}
       </div>
       <div class="my-3 text-sm text-base-content/70">
         Ethics, Politics, & Economics
@@ -41,13 +43,13 @@
       <div class="badge badge-ghost">Illustration</div>
     </div>
   </div>
-  <div class="dropdown dropdown-top">
+  <div class="dropdown-top dropdown">
     <div tabindex="0">
       <div class="btn-group">
         <button class="btn btn-accent btn-sm">Follow</button>
         <button
           aria-label="button component"
-          class="btn btn-accent btn-square btn-sm"
+          class="btn btn-square btn-accent btn-sm"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +69,7 @@
     </div>
     <div tabindex="0" class="dropdown-content py-2">
       <div
-        class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
+        class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
       >
         <div class="card-body">
           <h2 class="card-title font-extrabold capitalize">

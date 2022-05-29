@@ -2,7 +2,7 @@
   import type { definitions } from '$lib/types/supabase';
   import { supabase } from '$lib/utils/supabaseClient';
 
-  export type UserProfileInformation = definitions['users'] & {
+  export type definitions['users_facebook_places'] = definitions['users'] & {
     user_responses: {
       interests: string;
       expression: string;
@@ -33,7 +33,7 @@
 </script>
 
 <script lang="ts">
-  export let userProfileInformation: UserProfileInformation;
+  export let userProfileInformation: definitions['users_facebook_places'];
   const userResponses = [
     {
       name: 'interests',
@@ -208,7 +208,7 @@
               <button class="btn btn-accent btn-sm">Follow</button>
               <button
                 aria-label="button component"
-                class="btn btn-square btn-accent btn-sm"
+                class="btn btn-accent btn-square btn-sm"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1355,7 +1355,7 @@
                 <div class="flex space-x-1">
                   <button
                     aria-label="button component"
-                    class="btn btn-square btn-ghost"
+                    class="btn btn-ghost btn-square"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1379,7 +1379,7 @@
                   </button>
                   <button
                     aria-label="button component"
-                    class="btn btn-square btn-ghost"
+                    class="btn btn-ghost btn-square"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1432,7 +1432,7 @@
                 <div tabindex="0">
                   <button
                     aria-label="loading button"
-                    class="btn loading btn-ghost btn-sm btn-circle"
+                    class="btn btn-circle loading btn-ghost btn-sm"
                   />
                 </div>
                 <div tabindex="0" class="dropdown-content py-2">

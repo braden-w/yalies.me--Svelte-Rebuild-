@@ -1,7 +1,5 @@
 <script lang="ts">
-  import type { UserProfileInformation } from 'src/routes/users/[id].svelte';
-
-  export let userProfileInformation: UserProfileInformation;
+  export let userProfileInformation: definitions['users_facebook_places'];
   let tab = 0;
 </script>
 

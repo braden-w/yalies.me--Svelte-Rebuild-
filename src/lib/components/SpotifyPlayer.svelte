@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let url: string;
+  export let url = '';
   const defaultPlaylistID = '1uUHti2X6KkpUFcOr4FJ8v';
   $: playlistID = getPlaylistID();
   function getPlaylistID() {

@@ -1,7 +1,8 @@
 <script lang="ts">
-  import type { UserProfileInformation } from 'src/routes/users/[id].svelte';
+  import type { definitions } from '$lib/types/supabase';
 
-  export let userProfileInformation: UserProfileInformation;
+  export let avatar_url: definitions['users_facebook_places']['avatar_url'] =
+    '';
 </script>
 
 <div
@@ -11,7 +12,7 @@
     <div class="online avatar">
       <div class="mask mask-squircle h-16 w-16 bg-base-100 p-1">
         <img
-          src={userProfileInformation.avatar_url}
+          src={avatar_url}
           alt="Avatar Tailwind CSS Component"
           class="mask mask-squircle"
         />
@@ -20,7 +21,7 @@
     <div class="online avatar">
       <div class="mask mask-squircle h-16 w-16 bg-base-100 p-1">
         <img
-          src={userProfileInformation.avatar_url}
+          src={avatar_url}
           alt="Avatar Tailwind CSS Component"
           class="mask mask-squircle"
         />
@@ -29,7 +30,7 @@
     <div class="avatar offline">
       <div class="mask mask-squircle h-16 w-16 bg-base-100 p-1">
         <img
-          src={userProfileInformation.avatar_url}
+          src={avatar_url}
           alt="Avatar Tailwind CSS Component"
           class="mask mask-squircle"
         />
@@ -38,7 +39,7 @@
     <div class="avatar">
       <div class="mask mask-squircle h-16 w-16 bg-base-100 p-1">
         <img
-          src={userProfileInformation.avatar_url}
+          src={avatar_url}
           alt="Avatar Tailwind CSS Component"
           class="mask mask-squircle"
         />

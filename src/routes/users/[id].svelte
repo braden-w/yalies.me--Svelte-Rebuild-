@@ -2,7 +2,6 @@
   import type { definitions } from '$lib/types/supabase';
   import { supabase } from '$lib/utils/supabaseClient';
 
-  export type UserProfileInformation = definitions['users_facebook_places'];
   export async function load({ params }: { params: { id: string } }) {
     const { data, error } = await supabase
       .from<definitions['users_facebook_places']>('users_facebook_places')
@@ -25,8 +24,7 @@
   import UserCard from '../../components/UserCard.svelte';
   import SpotifyPlayer from '$lib/components/SpotifyPlayer.svelte';
 
-  export let userProfileInformation: UserProfileInformation;
-  const userResponses = userProfileInformation;
+  export let userProfileInformation: definitions['users_facebook_places'];
 </script>
 
 <svelte:head>
@@ -46,23 +44,23 @@
     >
       <!-- Cell 1 -->
       <div class="col-span-1 row-span-2">
-        <UserCard {userProfileInformation} />
+        <UserCard {...userProfileInformation} />
       </div>
       <div class="col-span-1 row-span-1">
-        <UserSocials {...userResponses} />
+        <UserSocials {...userProfileInformation} />
       </div>
       <!-- Cell 2 -->
       <div class="col-span-1 row-span-3">
-        <UserLocationCard {userProfileInformation} />
+        <UserLocationCard {...userProfileInformation} />
         <!-- <UserAvatarsRow {userProfileInformation} /> -->
       </div>
       <!-- Cell 3 -->
       <div class="col-span-1 row-span-6">
-        <SpotifyPlayer url={userResponses.expression} />
+        <SpotifyPlayer url={userProfileInformation.expression} />
       </div>
       <!-- Cell 4 -->
       <div class="col-span-3 row-span-6">
-        <UserResponsesCard {userProfileInformation} />
+        <UserResponsesCard {...userProfileInformation} />
       </div>
       <!-- Cell 5 -->
       <!-- <div class="col-span-2 row-span-3"> -->

@@ -1,11 +1,16 @@
 <script lang="ts">
   import { sessionStore } from '$lib/stores/sessionStore';
+  import type { definitions } from '$lib/types/supabase';
 
-  import type { UserProfileInformation } from 'src/routes/users/[id].svelte';
-
-  export let userProfileInformation: UserProfileInformation;
-  const userResponses = userProfileInformation;
-  const isCurrentUser = userProfileInformation?.id === $sessionStore?.id;
+  export let id: definitions['users_facebook_places']['id'] = '';
+  export let major: definitions['users_facebook_places']['major'] = '';
+  export let phone: definitions['users_facebook_places']['phone'] = '';
+  export let interests: definitions['users_facebook_places']['interests'] = '';
+  export let instagram: definitions['users_facebook_places']['instagram'] = '';
+  export let linkedin: definitions['users_facebook_places']['linkedin'] = '';
+  export let expression: definitions['users_facebook_places']['expression'] =
+    '';
+  const isCurrentUser = id === $sessionStore?.id;
   export let inputsList = [
     {
       name: 'university',
@@ -17,13 +22,13 @@
       name: 'major',
       label: 'Major',
       icon: 'book',
-      value: userResponses.major
+      value: major
     },
     {
       name: 'phone',
       label: 'Phone',
       icon: 'phone',
-      value: userResponses.phone
+      value: phone
     }
   ];
   export let userIntegrations = [
@@ -31,25 +36,25 @@
       name: 'interests',
       label: 'Interests',
       icon: 'heart',
-      value: userResponses.interests
+      value: interests
     },
     {
       name: 'instagram',
       label: 'Instagram',
       icon: 'instagram',
-      value: userResponses.instagram
+      value: instagram
     },
     {
       name: 'linkedin',
       label: 'Linkedin',
       icon: 'linkedin',
-      value: userResponses.linkedin
+      value: linkedin
     },
     {
       name: 'expression',
       label: 'Spotify',
       icon: 'spotify',
-      value: userResponses.expression
+      value: expression
     }
   ];
 </script>

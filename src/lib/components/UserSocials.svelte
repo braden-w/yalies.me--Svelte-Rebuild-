@@ -1,9 +1,12 @@
 <script lang="ts">
-  export let email = '';
-  export let phone = '';
-  export let expression = '';
-  export let instagram = '';
-  export let linkedin = '';
+  import type { definitions } from '$lib/types/supabase';
+
+  export let email: definitions['users_facebook_places']['email'] = '';
+  export let phone: definitions['users_facebook_places']['phone'] = '';
+  export let expression: definitions['users_facebook_places']['expression'] =
+    '';
+  export let instagram: definitions['users_facebook_places']['instagram'] = '';
+  export let linkedin: definitions['users_facebook_places']['linkedin'] = '';
 </script>
 
 <div
