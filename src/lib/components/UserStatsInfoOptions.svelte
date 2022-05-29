@@ -12,18 +12,21 @@
     <button
       class="tab tab-lifted tab-border-none tab-lg flex-1"
       class:tab-active={tab === 0}
+      on:click={() => (tab = 0)}
     >
       Stats
     </button>
     <button
       class="tab tab-lifted tab-border-none tab-lg flex-1"
       class:tab-active={tab === 1}
+      on:click={() => (tab = 1)}
     >
       Info
     </button>
     <button
       class="tab tab-lifted tab-border-none tab-lg flex-1"
       class:tab-active={tab === 2}
+      on:click={() => (tab = 2)}
     >
       Options
     </button>
