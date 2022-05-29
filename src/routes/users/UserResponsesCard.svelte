@@ -52,25 +52,27 @@
 </script>
 
 <div
-  class="grid h-100 flex-grow card shadow-2xl bg-base-100 rounded-box place-items-center"
+  class="grid h-100 card shadow-2xl bg-base-100 rounded-box place-items-center"
 >
-  {#each userResponses as { name, label, icon, value }}
-    <div class="form-control">
-      <label class="label" for={name}>
-        <span class="label-text">{label}</span>
-        <button class="btn btn-xs btn-primary btn-circle">
-          <i class="fa fa-{icon}" /></button
-        >
-      </label>
-      <input
-        tabindex="0"
-        type="text"
-        id={name}
-        class="input input-bordered"
-        disabled
-        placeholder="Start typing your response here..."
-        bind:value
-      />
-    </div>
-  {/each}
+  <div class="card-body">
+    {#each userResponses as { name, label, icon, value }}
+      <div class="form-control">
+        <label class="label" for={name}>
+          <span class="label-text">{label}</span>
+          <button class="btn btn-xs btn-primary btn-circle">
+            <i class="fa fa-{icon}" /></button
+          >
+        </label>
+        <input
+          tabindex="0"
+          type="text"
+          id={name}
+          class="input input-bordered"
+          disabled
+          placeholder="Start typing your response here..."
+          bind:value
+        />
+      </div>
+    {/each}
+  </div>
 </div>
