@@ -1,7 +1,10 @@
 <script lang="ts">
+  import { sessionStore } from '$lib/stores/sessionStore';
+
   import type { UserProfileInformation } from 'src/routes/users/[id].svelte';
 
   export let userProfileInformation: UserProfileInformation;
+  const isCurrentUser = userProfileInformation?.id === $sessionStore?.id;
   const userResponses = [
     {
       name: 'interests',
@@ -70,7 +73,7 @@
           type="text"
           id={name}
           class="input input-bordered"
-          disabled
+          disabled={!isCurrentUser}
           placeholder="Start typing your response here..."
           bind:value
         />
