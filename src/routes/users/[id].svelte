@@ -37,6 +37,7 @@
 
   import UserCard from '../../components/UserCard.svelte';
   import LocationAutoComplete from '$lib/components/LocationAutoComplete.svelte';
+import { sessionStore } from '$lib/stores/sessionStore';
 
   export let userProfileInformation: UserProfileInformation;
   const userResponses = [
@@ -572,7 +573,25 @@
             Enter your current city. For privacy, feel free to use a city that
             is in proximity rather than exact location.
           </div>
-          <LocationAutoComplete />
+          {#if userProfileInformation?.id === $sessionStore?.id}
+            <LocationAutoComplete />
+          {:else}
+            <div class="form-control">
+              <label class="label" for="location">
+                <span class="label-text">I'm currently in...</span>
+              </label>
+              <input
+                tabindex="0"
+                type="text"
+                id="location"
+                class="input input-bordered"
+                disabled
+                placeholder="Start typing your city here..."
+                bind:value={userProfileInformation.user_responses.places
+                  .description}
+              />
+            </div>
+          {/if}
         </div>
         <div class="form-control">
           <button class="btn btn-secondary btn-block space-x-2"
