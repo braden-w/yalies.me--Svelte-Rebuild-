@@ -95,7 +95,7 @@
 <div class="hero min-h-screen-nav bg-base-200">
   <div class="w-full">
     <!-- A centered large card with two columns and bg-base-100 -->
-    <div class="flex w-full">
+    <div class="flex w-full content-around justify-center">
       <UserCard {userProfileInformation} />
       <div class="divider divider-horizontal">OR</div>
       <UserResponsesCard {userProfileInformation} />
