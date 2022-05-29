@@ -254,6 +254,7 @@
         </div>
       </div>
       <UserStatsInfoOptions {userProfileInformation} />
+      <UserResponsesCard {userProfileInformation} />
       <div
         class="col-span-3 row-span-1 mx-2 flex w-72 flex-shrink-0 flex-col justify-center xl:mx-0 xl:w-auto"
       >
