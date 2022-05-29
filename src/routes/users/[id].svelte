@@ -64,7 +64,7 @@
       <!-- Cell 2 -->
       <div class="row-span-1 bg-teal-400">
         <div
-          class="row-span-1 mx-2 flex w-72 flex-shrink-0 flex-col justify-center xl:mx-0 xl:w-full"
+          class="mx-2 flex w-72 flex-shrink-0 flex-col justify-center xl:mx-0 xl:w-full"
         >
           <div class="flex items-center justify-between">
             <div class="online avatar">
@@ -115,16 +115,16 @@
         <UserResponsesCard {userProfileInformation} />
       </div>
       <!-- Cell 5 -->
-      <div class="row-span-3 bg-teal-400" />
+      <div class="row-span-3 bg-teal-400">
+        <UserStatsInfoOptions {userProfileInformation} />
+      </div>
       <!-- Cell 6 -->
       <div class="row-span-3 bg-teal-400">
         <SpotifyPlayer url={userProfileInformation.user_responses.expression} />
       </div>
 
       <!-- Cell 7 -->
-      <div class="row-span-4 bg-teal-400">
-        <UserStatsInfoOptions {userProfileInformation} />
-      </div>
+      <div class="row-span-4 bg-teal-400" />
       <!-- Cell 8 -->
       <div class="row-span-2 bg-teal-400">
         <UserMenuItems {userProfileInformation} />
