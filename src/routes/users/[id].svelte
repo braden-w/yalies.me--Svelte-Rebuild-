@@ -571,56 +571,30 @@
             Enter your current city. For privacy, feel free to use a city that
             is in proximity rather than exact location.
           </div>
-          <div class="dropdown w-full flex-1">
-            <div tabindex="0">
-              <div class="form-control">
-                <label class="label cursor-pointer"
-                  ><span class="label-text">Enable teleportation</span>
-                  <input type="checkbox" class="toggle toggle-primary" /></label
-                >
-              </div>
-              <div class="form-control">
-                <label class="label cursor-pointer"
-                  ><span class="label-text">Enable time travel</span>
-                  <input
-                    type="checkbox"
-                    class="toggle toggle-secondary"
-                  /></label
-                >
-              </div>
-              <div class="form-control">
-                <label class="label cursor-pointer"
-                  ><span class="label-text">Enable laser eyes</span>
-                  <input type="checkbox" class="toggle toggle-accent" /></label
-                >
-              </div>
-              <div class="form-control">
-                <label class="label cursor-pointer"
-                  ><span class="label-text">Enable immortality</span>
-                  <input type="checkbox" class="toggle" /></label
-                >
-              </div>
-            </div>
-            <div tabindex="0" class="dropdown-content py-2">
-              <div
-                class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
-              >
-                <div class="card-body">
-                  <h2 class="card-title font-extrabold capitalize">
-                    toggle component
-                  </h2>
-                  <p class="text-neutral-content text-sm text-opacity-80">
-                    Use toggle to switch between two states
-                  </p>
-                  <div class="mt-4 flex justify-end">
-                    <a
-                      href="/components/toggle"
-                      class="btn btn-primary btn-sm xl:btn-md">See component</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
+
+          <div class="form-control">
+            <label class="label cursor-pointer"
+              ><span class="label-text">Enable teleportation</span>
+              <input type="checkbox" class="toggle toggle-primary" /></label
+            >
+          </div>
+          <div class="form-control">
+            <label class="label cursor-pointer"
+              ><span class="label-text">Enable time travel</span>
+              <input type="checkbox" class="toggle toggle-secondary" /></label
+            >
+          </div>
+          <div class="form-control">
+            <label class="label cursor-pointer"
+              ><span class="label-text">Enable laser eyes</span>
+              <input type="checkbox" class="toggle toggle-accent" /></label
+            >
+          </div>
+          <div class="form-control">
+            <label class="label cursor-pointer"
+              ><span class="label-text">Enable immortality</span>
+              <input type="checkbox" class="toggle" /></label
+            >
           </div>
         </div>
         <div class="form-control">
