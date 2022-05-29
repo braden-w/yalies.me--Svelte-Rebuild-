@@ -29,14 +29,17 @@
       users_in_place = dataMatchPlaceID;
     }
     if (error) return { status: error.code, props: { error } };
-    const description = users_in_place.length
+    const place_id = users_in_place?.length
+      ? users_in_place[0].place_id
+      : params.place_id;
+    const description = users_in_place?.length
       ? users_in_place[0].description
       : '';
     return {
       status: 200,
       props: {
         placeInformation: {
-          place_id: params.place_id,
+          place_id,
           description,
           users_in_place
         }
