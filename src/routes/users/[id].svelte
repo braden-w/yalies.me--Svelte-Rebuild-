@@ -55,7 +55,7 @@
   <div class="h-full w-full">
     <div
       id="component-demo"
-      class="flex h-full w-full flex-col items-stretch gap-4 overflow-x-auto px-4 pt-1 pb-10 xl:grid xl:grid-flow-col xl:grid-cols-4 xl:grid-rows-6"
+      class="flex w-full flex-col items-stretch gap-4 overflow-x-auto px-4 pt-1 pb-10 xl:grid xl:grid-flow-col xl:grid-cols-4 xl:grid-rows-6"
     >
       <!-- Cell 1 -->
       <div class="row-span-2 bg-teal-400">
@@ -66,7 +66,7 @@
         <div
           class="row-span-1 mx-2 flex w-72 flex-shrink-0 flex-col justify-center xl:mx-0 xl:w-full"
         >
-          <div class="dropdown dropdown-end w-full">
+          <div class="dropdown-end dropdown w-full">
             <div tabindex="0">
               <div class="flex items-center justify-between">
                 <div class="online avatar">
