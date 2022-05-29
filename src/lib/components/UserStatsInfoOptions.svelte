@@ -29,6 +29,7 @@
     </button>
   </div>
 
+  <!-- Begin Tab Page 0 -->
   <div
     class="bg-base-100 grid w-full flex-grow gap-3 rounded-xl rounded-tl-none p-6 shadow-xl"
   >
@@ -152,4 +153,6 @@
       </div>
     </div>
   </div>
+  <!-- Begin Tab Page 1 -->
+  <!-- Begin Tab Page 2 -->
 </div>
