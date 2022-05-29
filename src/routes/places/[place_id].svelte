@@ -41,7 +41,10 @@
       .ilike('description', `%${query}%`);
     if (errorFuzzyMatchPlaceDescription)
       console.log(errorFuzzyMatchPlaceDescription);
-    if (dataFuzzyMatchPlaceDescription?.length !== 0) {
+    if (
+      dataFuzzyMatchPlaceDescription &&
+      dataFuzzyMatchPlaceDescription?.length !== 0
+    ) {
       const redirect = {
         status: 302,
         redirect: `${dataFuzzyMatchPlaceDescription[0].description}`
