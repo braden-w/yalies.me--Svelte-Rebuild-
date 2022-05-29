@@ -1,9 +1,11 @@
 <script lang="ts">
   import LocationAutoComplete from '$lib/components/LocationAutoComplete.svelte';
   import { sessionStore } from '$lib/stores/sessionStore';
-  import type { UserProfileInformation } from 'src/routes/users/[id].svelte';
+  import type { definitions } from '$lib/types/supabase';
 
-  export let userProfileInformation: UserProfileInformation;
+  export let id: definitions['users_facebook_places']['id'] = '';
+  export let description: definitions['users_facebook_places']['description'] =
+    '';
 </script>
 
 <div
@@ -15,7 +17,7 @@
       Enter your current city. For privacy, feel free to use a city that is in
       proximity rather than exact location.
     </div>
-    {#if userProfileInformation?.id === $sessionStore?.id}
+    {#if id === $sessionStore?.id}
       <LocationAutoComplete />
     {:else}
       <div class="form-control">
@@ -29,7 +31,7 @@
           class="input input-bordered"
           disabled
           placeholder="Start typing your city here..."
-          bind:value={userProfileInformation.description}
+          bind:value={description}
         />
       </div>
     {/if}
