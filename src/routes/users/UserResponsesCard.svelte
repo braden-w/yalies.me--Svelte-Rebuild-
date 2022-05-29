@@ -4,25 +4,26 @@
   import type { UserProfileInformation } from 'src/routes/users/[id].svelte';
 
   export let userProfileInformation: UserProfileInformation;
+  const userResponses = userProfileInformation.user_responses;
   const isCurrentUser = userProfileInformation?.id === $sessionStore?.id;
-  export let userResponses = [
+  export let inputsList = [
     {
       name: 'university',
       label: 'University',
       icon: 'graduation-cap',
-      value: userProfileInformation.user_responses.university
+      value: userResponses.university
     },
     {
       name: 'major',
       label: 'Major',
       icon: 'book',
-      value: userProfileInformation.user_responses.major
+      value: userResponses.major
     },
     {
       name: 'phone',
       label: 'Phone',
       icon: 'phone',
-      value: userProfileInformation.user_responses.phone
+      value: userResponses.phone
     }
   ];
   export let userIntegrations = [
@@ -30,25 +31,25 @@
       name: 'interests',
       label: 'Interests',
       icon: 'heart',
-      value: userProfileInformation.user_responses.interests
+      value: userResponses.interests
     },
     {
       name: 'instagram',
       label: 'Instagram',
       icon: 'instagram',
-      value: userProfileInformation.user_responses.instagram
+      value: userResponses.instagram
     },
     {
       name: 'linkedin',
       label: 'Linkedin',
       icon: 'linkedin',
-      value: userProfileInformation.user_responses.linkedin
+      value: userResponses.linkedin
     },
     {
       name: 'expression',
       label: 'Spotify',
       icon: 'spotify',
-      value: userProfileInformation.user_responses.expression
+      value: userResponses.expression
     }
   ];
 </script>
@@ -60,7 +61,7 @@
     <div class="text-xl font-extrabold">Contact Information</div>
     <div class="my-4 text-xs text-base-content/70" />
 
-    {#each userResponses as { name, label, icon, value }}
+    {#each inputsList as { name, label, icon, value }}
       <div class="form-control">
         <label class="label" for={name}>
           <span class="label-text">{label}</span>
