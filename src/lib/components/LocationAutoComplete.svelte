@@ -95,6 +95,8 @@
       uploadUserPlaceSelectionToSupabase(user_response_id, place_id);
     } catch (error: any) {
       alert(error.message);
+    } finally {
+      refreshUserLocation();
     }
   }
 </script>
