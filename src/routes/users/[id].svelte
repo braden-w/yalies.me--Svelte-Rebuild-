@@ -33,7 +33,7 @@
 </script>
 
 <script lang="ts">
-  import UserStatsInfoOptions from './UserStatsInfoOptions.svelte';
+  import UserStatsInfoOptions from '../../lib/components/UserStatsInfoOptions.svelte';
 
   import UserCard from '../../components/UserCard.svelte';
 
