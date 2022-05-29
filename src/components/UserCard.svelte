@@ -7,104 +7,38 @@
 <div
   class="bg-base-100 rounded-box mx-2 grid w-72 flex-shrink-0 place-items-center items-center gap-4 p-4 py-8 shadow-xl xl:mx-0"
 >
-  <div class="dropdown">
-    <div tabindex="0">
-      <div class="online avatar">
-        <div
-          class="mask mask-squircle bg-base-content h-24 w-24 bg-opacity-10 p-px"
-        >
-          <img
-            src={userProfileInformation.avatar_url}
-            alt="Avatar Tailwind CSS Component"
-            class="mask mask-squircle"
-            width="94"
-            height="94"
-          />
-        </div>
-      </div>
-    </div>
-    <div tabindex="0" class="dropdown-content py-2">
-      <div
-        class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
-      >
-        <div class="card-body">
-          <h2 class="card-title font-extrabold capitalize">avatar component</h2>
-          <p class="text-neutral-content text-sm text-opacity-80">
-            Use avatar component with any size
-          </p>
-          <div class="mt-4 flex justify-end">
-            <a
-              href="/components/avatar"
-              class="btn btn-primary btn-sm xl:btn-md">See component</a
-            >
-          </div>
-        </div>
-      </div>
+  <div class="online avatar">
+    <div
+      class="mask mask-squircle bg-base-content h-24 w-24 bg-opacity-10 p-px"
+    >
+      <img
+        src={userProfileInformation.avatar_url}
+        alt="Avatar Tailwind CSS Component"
+        class="mask mask-squircle"
+        width="94"
+        height="94"
+      />
     </div>
   </div>
+
   <div>
-    <div class="dropdown w-full">
-      <div tabindex="0">
-        <div class="text-center">
-          <div class="text-lg font-extrabold">
-            {userProfileInformation?.name}
-          </div>
-          <div class="text-base-content/70 my-3 text-sm">
-            Ethics, Politics, & Economics
-            <br />
-            Yale University
-            <br />
-            Student
-          </div>
-        </div>
+    <div class="text-center">
+      <div class="text-lg font-extrabold">
+        {userProfileInformation?.name}
       </div>
-      <div tabindex="0" class="dropdown-content py-2">
-        <div
-          class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
-        >
-          <div class="card-body">
-            <h2 class="card-title font-extrabold capitalize">card component</h2>
-            <p class="text-neutral-content text-sm text-opacity-80">
-              Card component is used to show products, features and more.
-            </p>
-            <div class="mt-4 flex justify-end">
-              <a
-                href="/components/card"
-                class="btn btn-primary btn-sm xl:btn-md">See component</a
-              >
-            </div>
-          </div>
-        </div>
+      <div class="text-base-content/70 my-3 text-sm">
+        Ethics, Politics, & Economics
+        <br />
+        Yale University
+        <br />
+        Student
       </div>
     </div>
-    <div class="dropdown w-full">
-      <div tabindex="0">
-        <div class="mt-2 text-center">
-          <div class="badge badge-ghost">Design</div>
-          <div class="badge badge-ghost">Art</div>
-          <div class="badge badge-ghost">Illustration</div>
-        </div>
-      </div>
-      <div tabindex="0" class="dropdown-content py-2">
-        <div
-          class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
-        >
-          <div class="card-body">
-            <h2 class="card-title font-extrabold capitalize">
-              badge component
-            </h2>
-            <p class="text-neutral-content text-sm text-opacity-80">
-              Use badge component to highlight small inline items
-            </p>
-            <div class="mt-4 flex justify-end">
-              <a
-                href="/components/badge"
-                class="btn btn-primary btn-sm xl:btn-md">See component</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
+
+    <div class="mt-2 text-center">
+      <div class="badge badge-ghost">Design</div>
+      <div class="badge badge-ghost">Art</div>
+      <div class="badge badge-ghost">Illustration</div>
     </div>
   </div>
   <div class="dropdown dropdown-top">
