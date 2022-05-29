@@ -33,6 +33,8 @@
 </script>
 
 <script lang="ts">
+  import UserSocials from './UserSocials.svelte';
+
   import UserAvatarsRow from './UserAvatarsRow.svelte';
 
   import UserResponsesCard from './UserResponsesCard.svelte';
@@ -62,6 +64,7 @@
       <!-- Cell 1 -->
       <div class="col-span-1 row-span-3">
         <UserCard {userProfileInformation} />
+        <UserSocials {userProfileInformation}></UserSocials>
       </div>
       <!-- Cell 2 -->
       <div class="col-span-1 row-span-3">
