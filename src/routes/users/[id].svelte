@@ -58,11 +58,11 @@
       class="flex w-full flex-col items-stretch gap-4 overflow-x-auto px-4 pt-1 pb-10 xl:grid xl:grid-flow-col xl:grid-cols-3 xl:grid-rows-6"
     >
       <!-- Cell 1 -->
-      <div class="row-span-2 bg-teal-400">
+      <div class="row-span-2">
         <UserCard {userProfileInformation} />
       </div>
       <!-- Cell 2 -->
-      <div class="row-span-1 bg-teal-400">
+      <div class="row-span-1">
         <div
           class="mx-2 flex w-72 flex-shrink-0 flex-col justify-center xl:mx-0 xl:w-full"
         >
@@ -107,19 +107,19 @@
         </div>
       </div>
       <!-- Cell 3 -->
-      <div class="row-span-3 bg-teal-400">
+      <div class="row-span-3">
         <UserLocationCard {userProfileInformation} />
       </div>
       <!-- Cell 4 -->
-      <div class="row-span-6 bg-teal-400">
+      <div class="row-span-6">
         <UserResponsesCard {userProfileInformation} />
       </div>
       <!-- Cell 5 -->
-      <div class="row-span-3 bg-teal-400">
+      <div class="row-span-3">
         <UserStatsInfoOptions {userProfileInformation} />
       </div>
       <!-- Cell 6 -->
-      <div class="row-span-3 bg-teal-400">
+      <div class="row-span-3">
         <SpotifyPlayer url={userProfileInformation.user_responses.expression} />
       </div>
 
