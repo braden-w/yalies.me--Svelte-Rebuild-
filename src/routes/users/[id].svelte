@@ -59,20 +59,20 @@
       class="flex w-full flex-col items-stretch gap-4 overflow-x-auto px-4 pt-1 pb-10 xl:grid xl:grid-flow-col xl:grid-cols-5 xl:grid-rows-6"
     >
       <!-- Cell 1 -->
-      <div class="col-span-1 row-span-1">
+      <div class="col-span-1 row-span-3">
         <UserCard {userProfileInformation} />
       </div>
       <!-- Cell 2 -->
-      <div class="col-span-1 row-span-1">
+      <div class="col-span-1 row-span-3">
         <UserLocationCard {userProfileInformation} />
         <!-- <UserAvatarsRow {userProfileInformation} /> -->
       </div>
       <!-- Cell 3 -->
-      <div class="col-span-1 row-span-2">
+      <div class="col-span-1 row-span-6">
         <SpotifyPlayer url={userProfileInformation.user_responses.expression} />
       </div>
       <!-- Cell 4 -->
-      <div class="col-span-2 row-span-6">
+      <div class="col-span-3 row-span-6">
         <UserResponsesCard {userProfileInformation} />
       </div>
       <!-- Cell 5 -->
