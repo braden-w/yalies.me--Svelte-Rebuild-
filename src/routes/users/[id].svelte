@@ -113,128 +113,154 @@
       id="component-demo"
       class="flex w-full items-center gap-4 overflow-y-hidden overflow-x-scroll px-10 pt-1 pb-10 xl:grid grid-flow-col grid-rows-6 xl:overflow-x-auto xl:px-4"
     >
-      <UserCard {userProfileInformation} />
-      <div
-        class="row-span-1 mx-2 flex w-72 flex-shrink-0 flex-col justify-center xl:mx-0"
-      >
-        <div class="dropdown dropdown-end w-full">
-          <div tabindex="0">
-            <div class="flex items-center justify-between">
-              <div class="online avatar">
-                <div class="mask mask-squircle bg-base-100 h-16 w-16 p-1">
-                  <img
-                    src={userProfileInformation.avatar_url}
-                    alt="Avatar Tailwind CSS Component"
-                    class="mask mask-squircle"
-                  />
+      <!-- Cell 1 -->
+      <div class="bg-teal-400 row-span-2">
+        <UserCard {userProfileInformation} />
+      </div>
+      <!-- Cell 2 -->
+      <div class="bg-teal-400 row-span-1">
+        <div
+          class="row-span-1 mx-2 flex w-72 flex-shrink-0 flex-col justify-center xl:mx-0"
+        >
+          <div class="dropdown dropdown-end w-full">
+            <div tabindex="0">
+              <div class="flex items-center justify-between">
+                <div class="online avatar">
+                  <div class="mask mask-squircle bg-base-100 h-16 w-16 p-1">
+                    <img
+                      src={userProfileInformation.avatar_url}
+                      alt="Avatar Tailwind CSS Component"
+                      class="mask mask-squircle"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div class="online avatar">
-                <div class="mask mask-squircle bg-base-100 h-16 w-16 p-1">
-                  <img
-                    src={userProfileInformation.avatar_url}
-                    alt="Avatar Tailwind CSS Component"
-                    class="mask mask-squircle"
-                  />
+                <div class="online avatar">
+                  <div class="mask mask-squircle bg-base-100 h-16 w-16 p-1">
+                    <img
+                      src={userProfileInformation.avatar_url}
+                      alt="Avatar Tailwind CSS Component"
+                      class="mask mask-squircle"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div class="avatar offline">
-                <div class="mask mask-squircle bg-base-100 h-16 w-16 p-1">
-                  <img
-                    src={userProfileInformation.avatar_url}
-                    alt="Avatar Tailwind CSS Component"
-                    class="mask mask-squircle"
-                  />
+                <div class="avatar offline">
+                  <div class="mask mask-squircle bg-base-100 h-16 w-16 p-1">
+                    <img
+                      src={userProfileInformation.avatar_url}
+                      alt="Avatar Tailwind CSS Component"
+                      class="mask mask-squircle"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div class="avatar">
-                <div class="mask mask-squircle bg-base-100 h-16 w-16 p-1">
-                  <img
-                    src={userProfileInformation.avatar_url}
-                    alt="Avatar Tailwind CSS Component"
-                    class="mask mask-squircle"
-                  />
+                <div class="avatar">
+                  <div class="mask mask-squircle bg-base-100 h-16 w-16 p-1">
+                    <img
+                      src={userProfileInformation.avatar_url}
+                      alt="Avatar Tailwind CSS Component"
+                      class="mask mask-squircle"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div tabindex="0" class="dropdown-content py-2">
-            <div
-              class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
-            >
-              <div class="card-body">
-                <h2 class="card-title font-extrabold capitalize">
-                  avatar component
-                </h2>
-                <p class="text-neutral-content text-sm text-opacity-80">
-                  Use avatar component with any size
-                </p>
-                <div class="mt-4 flex justify-end">
-                  <a
-                    href="/components/avatar"
-                    class="btn btn-primary btn-sm xl:btn-md">See component</a
-                  >
+            <div tabindex="0" class="dropdown-content py-2">
+              <div
+                class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
+              >
+                <div class="card-body">
+                  <h2 class="card-title font-extrabold capitalize">
+                    avatar component
+                  </h2>
+                  <p class="text-neutral-content text-sm text-opacity-80">
+                    Use avatar component with any size
+                  </p>
+                  <div class="mt-4 flex justify-end">
+                    <a
+                      href="/components/avatar"
+                      class="btn btn-primary btn-sm xl:btn-md">See component</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <UserResponsesCard
-        {userProfileInformation}
-        userResponses={[
-          {
-            name: 'university',
-            label: 'University',
-            icon: 'graduation-cap',
-            value: userProfileInformation.user_responses.university
-          },
-          {
-            name: 'major',
-            label: 'Major',
-            icon: 'book',
-            value: userProfileInformation.user_responses.major
-          },
-          {
-            name: 'phone',
-            label: 'Phone',
-            icon: 'phone',
-            value: userProfileInformation.user_responses.phone
-          }
-        ]}
-      />
+      <!-- Cell 3 -->
+      <div class="bg-teal-400 row-span-3">3</div>
+      <!-- Cell 4 -->
+      <div class="bg-teal-400 row-span-6">
+        <UserResponsesCard
+          {userProfileInformation}
+          userResponses={[
+            {
+              name: 'university',
+              label: 'University',
+              icon: 'graduation-cap',
+              value: userProfileInformation.user_responses.university
+            },
+            {
+              name: 'major',
+              label: 'Major',
+              icon: 'book',
+              value: userProfileInformation.user_responses.major
+            },
+            {
+              name: 'phone',
+              label: 'Phone',
+              icon: 'phone',
+              value: userProfileInformation.user_responses.phone
+            }
+          ]}
+        />
+      </div>
+      <!-- Cell 5 -->
+      <div class="bg-teal-400 row-span-3">
+        <UserResponsesCard
+          {userProfileInformation}
+          userResponses={[
+            {
+              name: 'interests',
+              label: 'Interests',
+              icon: 'heart',
+              value: userProfileInformation.user_responses.interests
+            },
+            {
+              name: 'expression',
+              label: 'Spotify',
+              icon: 'spotify',
+              value: userProfileInformation.user_responses.expression
+            },
+            {
+              name: 'instagram',
+              label: 'Instagram',
+              icon: 'instagram',
+              value: userProfileInformation.user_responses.instagram
+            },
+            {
+              name: 'linkedin',
+              label: 'Linkedin',
+              icon: 'linkedin',
+              value: userProfileInformation.user_responses.linkedin
+            }
+          ]}
+        />
+      </div>
+      <!-- Cell 6 -->
+      <div class="bg-teal-400 row-span-3">6</div>
+      <!-- Cell 7 -->
+      <div class="bg-teal-400 row-span-4">
+        <UserStatsInfoOptions {userProfileInformation} />
+      </div>
+      <!-- Cell 8 -->
+      <div class="bg-teal-400 row-span-2">7</div>
+      <!-- 
+      
+      
       <UserLocationCard {userProfileInformation} />
-      <UserResponsesCard
-        {userProfileInformation}
-        userResponses={[
-          {
-            name: 'interests',
-            label: 'Interests',
-            icon: 'heart',
-            value: userProfileInformation.user_responses.interests
-          },
-          {
-            name: 'expression',
-            label: 'Spotify',
-            icon: 'spotify',
-            value: userProfileInformation.user_responses.expression
-          },
-          {
-            name: 'instagram',
-            label: 'Instagram',
-            icon: 'instagram',
-            value: userProfileInformation.user_responses.instagram
-          },
-          {
-            name: 'linkedin',
-            label: 'Linkedin',
-            icon: 'linkedin',
-            value: userProfileInformation.user_responses.linkedin
-          }
-        ]}
-      />
+      
       <UserMenuItems {userProfileInformation} />
-      <!-- <div
+      <div
         class="card card-compact xl:card-normal bg-base-100 col-span-3 row-span-4 mx-2 w-72 flex-shrink-0 overflow-visible shadow-xl xl:mx-0 xl:w-auto"
       >
         <div class="dropdown">
@@ -379,7 +405,6 @@
           </div>
         </div>
       </div>
-      <UserStatsInfoOptions {userProfileInformation} />
       
 
       <div
