@@ -11,8 +11,8 @@
     },
     {
       name: 'expression',
-      label: 'Expression',
-      icon: 'smile',
+      label: 'Spotify',
+      icon: 'spotify',
       value: userProfileInformation.user_responses.expression
     },
     {
@@ -58,7 +58,7 @@
     <div class="form-control">
       <label class="label" for={name}>
         <span class="label-text">{label}</span>
-        <i class="fas fa-{icon} text-base" />
+        <i class="fa fa-{icon}" />
       </label>
       <input
         tabindex="0"

@@ -98,7 +98,7 @@
     <div class="flex w-full">
       <UserCard {userProfileInformation} />
       <div class="divider divider-horizontal">OR</div>
-      <UserResponsesCard {userProfileInformation}></UserResponsesCard>
+      <UserResponsesCard {userProfileInformation} />
     </div>
   </div>
 </div>
