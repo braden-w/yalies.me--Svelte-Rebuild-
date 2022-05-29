@@ -52,6 +52,7 @@
     "cookie": "^0.4.1",
     "daisyui": "^2.14.3",
     "mapbox-gl": "^2.8.2",
-    "theme-change": "^2.0.2"
+    "theme-change": "^2.0.2",
+    "vite-plugin-svelte-console-remover": "^1.0.10"
   }
 }
