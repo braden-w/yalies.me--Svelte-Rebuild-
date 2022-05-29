@@ -17,7 +17,7 @@
       .select('id, name, avatar_url, place_id, description')
       .eq('place_id', query);
     if (errorMatchPlaceID) console.log(errorMatchPlaceID);
-    if (dataMatchPlaceID?.length !== 0) return dataMatchPlaceID;
+    if (dataMatchPlaceID?.length !== 0) return { data: dataMatchPlaceID };
 
     // Attempt to match the query by place description
     const {
@@ -29,7 +29,7 @@
       .eq('description', query);
     if (errorMatchPlaceDescription) console.log(errorMatchPlaceDescription);
     if (dataMatchPlaceDescription?.length !== 0)
-      return dataMatchPlaceDescription;
+      return { data: dataMatchPlaceDescription };
 
     // Attempt to fuzzy match the query by place_description
     const {
@@ -49,38 +49,36 @@
         status: 302,
         redirect: `${dataFuzzyMatchPlaceDescription[0].description}`
       };
-      throw redirect;
+      return { redirect };
     }
+    return { status: 404 };
   }
 
   export async function load({ params }: { params: { place_id: string } }) {
-    try {
-      const users_in_place = await getUsersInPlace(params.place_id);
-      const place_id = users_in_place?.length
-        ? users_in_place[0].place_id
-        : params.place_id;
-      const description = users_in_place?.length
-        ? users_in_place[0].description
-        : '';
-      return {
-        status: 200,
-        props: {
-          placeInformation: {
-            place_id,
-            description,
-            users_in_place
-          }
+    const { data: users_in_place, redirect } = await getUsersInPlace(
+      params.place_id
+    );
+    console.log(
+      '🚀 ~ file: [place_id].svelte ~ line 60 ~ load ~ redirect',
+      redirect
+    );
+    if (redirect) return redirect;
+    const place_id = users_in_place?.length
+      ? users_in_place[0].place_id
+      : params.place_id;
+    const description = users_in_place?.length
+      ? users_in_place[0].description
+      : '';
+    return {
+      status: 200,
+      props: {
+        placeInformation: {
+          place_id,
+          description,
+          users_in_place
         }
-      };
-    } catch (error) {
-      if (error.status === 302) {
-        console.log(
-          '🚀 ~ file: [place_id].svelte ~ line 57 ~ load ~ error',
-          error
-        );
-        return error;
       }
-    }
+    };
   }
 </script>
 
