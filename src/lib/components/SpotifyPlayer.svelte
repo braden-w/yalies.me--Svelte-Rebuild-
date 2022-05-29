@@ -14,7 +14,7 @@
   }
 </script>
 
-<div class="rounded-box w-72 bg-base-100 shadow-xl xl:mx-0 xl:h-full">
+<div class="rounded-box h-80 w-72 bg-base-100 shadow-xl xl:mx-0 xl:w-full">
   <iframe
     title="Spotify Player"
     src={`https://open.spotify.com/embed/playlist/${playlistID}`}
