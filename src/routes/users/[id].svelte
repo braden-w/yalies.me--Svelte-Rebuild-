@@ -44,20 +44,22 @@
 </svelte:head>
 
 <div class="hero min-h-screen-nav bg-base-200">
-  <div class="hero-content flex-col lg:flex-row-reverse">
+  <div class="w-full">
+    <!-- A centered large card with two columns and bg-base-100 -->
     <div class="flex w-full">
       <div
-        class="grid h-20 flex-grow card bg-base-300 rounded-box place-items-center"
+        class="grid h-100 flex-grow card shadow-2xl bg-base-100 rounded-box place-items-center"
       >
-        content
+        <div class="card-body">content</div>
       </div>
       <div class="divider divider-horizontal">OR</div>
       <div
-        class="grid h-20 flex-grow card bg-base-300 rounded-box place-items-center"
+        class="grid h-100 flex-grow card shadow-2xl bg-base-100 rounded-box place-items-center"
       >
-        content
+        <div class="card-body">content</div>
       </div>
     </div>
+
     <UserCard {userProfileInformation} />
     <!-- Create a card that displays -->
     <!-- the user's information -->
