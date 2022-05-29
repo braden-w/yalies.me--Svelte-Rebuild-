@@ -97,10 +97,10 @@
   <div class="w-full h-full">
     <div
       id="component-demo"
-      class="flex w-full grid-flow-row grid-cols-12 items-center gap-4 overflow-y-hidden overflow-x-scroll px-10 pt-1 pb-10 xl:grid xl:overflow-x-auto xl:px-4 svelte-1n6ue57"
+      class="flex w-full grid-flow-row grid-cols-12 items-center gap-4 overflow-y-hidden overflow-x-scroll px-10 pt-1 pb-10 xl:grid xl:overflow-x-auto xl:px-4"
     >
       <div
-        class="bg-base-100 rounded-box col-span-3 row-span-3 mx-2 grid w-72 flex-shrink-0 place-items-center items-center gap-4 p-4 py-8 shadow-xl xl:mx-0 xl:w-full svelte-1n6ue57"
+        class="bg-base-100 rounded-box col-span-3 row-span-3 mx-2 grid w-72 flex-shrink-0 place-items-center items-center gap-4 p-4 py-8 shadow-xl xl:mx-0 xl:w-full"
       >
         <div class="dropdown">
           <div tabindex="0">
@@ -249,7 +249,7 @@
         </div>
       </div>
       <div
-        class="bg-base-100 rounded-box col-span-3 row-span-3 mx-2 flex w-72 flex-shrink-0 flex-col justify-center gap-4 p-4 shadow-xl xl:mx-0 xl:w-full svelte-1n6ue57"
+        class="bg-base-100 rounded-box col-span-3 row-span-3 mx-2 flex w-72 flex-shrink-0 flex-col justify-center gap-4 p-4 shadow-xl xl:mx-0 xl:w-full"
       >
         <div class="px-6 pt-6">
           <div class="text-xl font-extrabold">Superpower settings</div>
@@ -350,7 +350,7 @@
         </div>
       </div>
       <div
-        class="card card-compact xl:card-normal bg-base-100 col-span-3 row-span-4 mx-2 w-72 flex-shrink-0 overflow-visible shadow-xl xl:mx-0 xl:w-auto svelte-1n6ue57"
+        class="card card-compact xl:card-normal bg-base-100 col-span-3 row-span-4 mx-2 w-72 flex-shrink-0 overflow-visible shadow-xl xl:mx-0 xl:w-auto"
       >
         <div class="dropdown">
           <div tabindex="0">
@@ -495,7 +495,7 @@
         </div>
       </div>
       <div
-        class="col-span-3 row-span-3 mx-2 flex w-72 flex-shrink-0 flex-col xl:mx-0 xl:w-full svelte-1n6ue57"
+        class="col-span-3 row-span-3 mx-2 flex w-72 flex-shrink-0 flex-col xl:mx-0 xl:w-full"
       >
         <div class="dropdown">
           <div tabindex="0" class="bg-opacity-100">
@@ -681,7 +681,7 @@
         </div>
       </div>
       <div
-        class="col-span-3 row-span-1 mx-2 flex w-72 flex-shrink-0 flex-col justify-center xl:mx-0 xl:w-auto svelte-1n6ue57"
+        class="col-span-3 row-span-1 mx-2 flex w-72 flex-shrink-0 flex-col justify-center xl:mx-0 xl:w-auto"
       >
         <div class="dropdown dropdown-end w-full">
           <div tabindex="0">
@@ -747,7 +747,7 @@
         </div>
       </div>
       <div
-        class="bg-base-100 text-base-content rounded-box col-span-3 row-span-4 mx-2 grid w-72 flex-shrink-0 shadow-xl xl:mx-0 xl:w-auto xl:place-self-stretch svelte-1n6ue57"
+        class="bg-base-100 text-base-content rounded-box col-span-3 row-span-4 mx-2 grid w-72 flex-shrink-0 shadow-xl xl:mx-0 xl:w-auto xl:place-self-stretch"
       >
         <div class="grid w-full grid-cols-1 gap-4 p-4">
           <div class="dropdown">
@@ -824,7 +824,7 @@
         </div>
       </div>
       <div
-        class="col-span-3 row-span-2 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-auto svelte-1n6ue57"
+        class="col-span-3 row-span-2 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-auto"
       >
         <div class="dropdown dropdown-end dropdown-top">
           <div tabindex="0">
@@ -897,7 +897,7 @@
         </div>
       </div>
       <div
-        class="bg-base-100 text-base-content rounded-box col-span-3 row-span-3 mx-2 grid w-72 flex-shrink-0 items-stretch shadow-xl xl:mx-0 xl:w-auto xl:place-self-stretch svelte-1n6ue57"
+        class="bg-base-100 text-base-content rounded-box col-span-3 row-span-3 mx-2 grid w-72 flex-shrink-0 items-stretch shadow-xl xl:mx-0 xl:w-auto xl:place-self-stretch"
       >
         <div class="grid place-content-center gap-4 p-4">
           <div class="dropdown dropdown-end">
@@ -1029,7 +1029,7 @@
         </div>
       </div>
       <div
-        class="col-span-3 row-span-2 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-auto xl:place-self-stretch svelte-1n6ue57"
+        class="col-span-3 row-span-2 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-auto xl:place-self-stretch"
       >
         <div class="bg-base-100 text-base-content rounded-box shadow-xl">
           <div class="dropdown dropdown-end w-full">
@@ -1120,7 +1120,7 @@
         </div>
       </div>
       <div
-        class="col-span-3 row-span-1 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-auto svelte-1n6ue57"
+        class="col-span-3 row-span-1 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-auto"
       >
         <div class="bg-base-100 text-base-content rounded-box shadow-xl">
           <div class="dropdown dropdown-end dropdown-top w-full">
@@ -1271,7 +1271,7 @@
         </div>
       </div>
       <div
-        class="col-span-3 row-span-1 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-auto svelte-1n6ue57"
+        class="col-span-3 row-span-1 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-auto"
       >
         <div
           class="bg-neutral text-neutral-content rounded-box flex items-center shadow-xl"
@@ -1419,7 +1419,7 @@
         </div>
       </div>
       <div
-        class="card bg-base-100 col-span-3 row-span-1 mx-2 w-72 flex-shrink-0 overflow-visible shadow-lg xl:mx-0 xl:w-auto xl:place-self-stretch svelte-1n6ue57"
+        class="card bg-base-100 col-span-3 row-span-1 mx-2 w-72 flex-shrink-0 overflow-visible shadow-lg xl:mx-0 xl:w-auto xl:place-self-stretch"
       >
         <div class="card-body flex-row items-center space-x-4 px-4">
           <div class="flex-1">
