@@ -21,7 +21,13 @@
 
   /** Old location, which the user will reset to */
   let oldPlace = get(userLocationStore);
-  refreshUserLocation().then(() => (oldPlace = get(userLocationStore)));
+  refreshUserLocation().then(() => {
+    oldPlace = get(userLocationStore);
+    console.log(
+      '🚀 ~ file: PlaceCheckbox.svelte ~ line 25 ~ oldPlace',
+      oldPlace
+    );
+  });
 
   $: handleToggleUserLocation(checked);
   const dispatch = createEventDispatcher();
