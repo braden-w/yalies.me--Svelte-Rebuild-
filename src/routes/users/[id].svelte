@@ -5,6 +5,13 @@
   export type UserProfileInformation = definitions['users'] & {
     user_responses: {
       places: {
+        interests: string;
+        expression: string;
+        university: string;
+        instagram: string;
+        linkedin: string;
+        phone: string;
+        major: string;
         description: string;
       };
     };
@@ -12,7 +19,9 @@
   export async function load({ params }: { params: { id: string } }) {
     const { data, error } = await supabase
       .from<definitions['users']>('users')
-      .select('name, avatar_url, user_responses(places(description))')
+      .select(
+        'name, avatar_url, user_responses(interests, expression, university, instagram, linkedin, phone, major, places(description))'
+      )
       .eq('id', params.id)
       .maybeSingle();
     if (error) return { status: error.code, props: { error } };
