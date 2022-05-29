@@ -7,7 +7,7 @@
 </script>
 
 <div
-  class="bg-base-100 rounded-box col-span-3 row-span-3 mx-2 flex w-72 flex-shrink-0 flex-col justify-center gap-4 p-4 shadow-xl xl:mx-0 xl:w-full"
+  class="bg-base-100 rounded-box row-span-3 mx-2 flex w-72 flex-shrink-0 flex-col justify-center gap-4 p-4 shadow-xl xl:mx-0"
 >
   <div class="px-6 pt-6">
     <div class="text-xl font-extrabold">Where are you now?</div>

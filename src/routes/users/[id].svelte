@@ -111,11 +111,11 @@
   <div class="w-full h-full">
     <div
       id="component-demo"
-      class="flex w-full grid-flow-col items-center gap-4 overflow-y-hidden overflow-x-scroll px-10 pt-1 pb-10 xl:grid xl:overflow-x-auto xl:px-4"
+      class="flex w-full items-center gap-4 overflow-y-hidden overflow-x-scroll px-10 pt-1 pb-10 xl:grid grid-flow-col grid-rows-6 xl:overflow-x-auto xl:px-4"
     >
       <UserCard {userProfileInformation} />
       <div
-        class="col-span-3 row-span-1 mx-2 flex w-72 flex-shrink-0 flex-col justify-center xl:mx-0 xl:w-auto"
+        class="row-span-1 mx-2 flex w-72 flex-shrink-0 flex-col justify-center xl:mx-0"
       >
         <div class="dropdown dropdown-end w-full">
           <div tabindex="0">
@@ -180,8 +180,31 @@
           </div>
         </div>
       </div>
+      <UserResponsesCard
+        {userProfileInformation}
+        userResponses={[
+          {
+            name: 'university',
+            label: 'University',
+            icon: 'graduation-cap',
+            value: userProfileInformation.user_responses.university
+          },
+          {
+            name: 'major',
+            label: 'Major',
+            icon: 'book',
+            value: userProfileInformation.user_responses.major
+          },
+          {
+            name: 'phone',
+            label: 'Phone',
+            icon: 'phone',
+            value: userProfileInformation.user_responses.phone
+          }
+        ]}
+      />
       <UserLocationCard {userProfileInformation} />
-      <!-- <UserResponsesCard
+      <UserResponsesCard
         {userProfileInformation}
         userResponses={[
           {
@@ -211,7 +234,7 @@
         ]}
       />
       <UserMenuItems {userProfileInformation} />
-      <div
+      <!-- <div
         class="card card-compact xl:card-normal bg-base-100 col-span-3 row-span-4 mx-2 w-72 flex-shrink-0 overflow-visible shadow-xl xl:mx-0 xl:w-auto"
       >
         <div class="dropdown">
@@ -357,29 +380,7 @@
         </div>
       </div>
       <UserStatsInfoOptions {userProfileInformation} />
-      <UserResponsesCard
-        {userProfileInformation}
-        userResponses={[
-          {
-            name: 'university',
-            label: 'University',
-            icon: 'graduation-cap',
-            value: userProfileInformation.user_responses.university
-          },
-          {
-            name: 'major',
-            label: 'Major',
-            icon: 'book',
-            value: userProfileInformation.user_responses.major
-          },
-          {
-            name: 'phone',
-            label: 'Phone',
-            icon: 'phone',
-            value: userProfileInformation.user_responses.phone
-          }
-        ]}
-      />
+      
 
       <div
         class="bg-base-100 text-base-content rounded-box col-span-3 row-span-4 mx-2 grid w-72 flex-shrink-0 shadow-xl xl:mx-0 xl:w-auto xl:place-self-stretch"
