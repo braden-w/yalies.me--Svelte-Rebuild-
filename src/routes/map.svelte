@@ -92,7 +92,7 @@
         });
 
       const scalePercent = (
-        defaultPxSize = 40,
+        defaultPxSize = 32,
         defaultZoom = 3,
         scaleFactor = 0.1
       ) => {
