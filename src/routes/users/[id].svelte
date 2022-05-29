@@ -38,6 +38,7 @@
   import UserLocationCard from '../../lib/components/UserLocationCard.svelte';
   import UserStatsInfoOptions from '../../lib/components/UserStatsInfoOptions.svelte';
   import UserCard from '../../components/UserCard.svelte';
+  import SpotifyPlayer from '$lib/components/SpotifyPlayer.svelte';
 
   export let userProfileInformation: UserProfileInformation;
 </script>
@@ -193,7 +194,7 @@
       </div>
       <!-- Cell 6 -->
       <div class="bg-teal-400 row-span-3">
-        <UserMenuItems {userProfileInformation} />
+        <SpotifyPlayer url={userProfileInformation.user_responses.expression} />
       </div>
 
       <!-- Cell 7 -->
@@ -201,7 +202,9 @@
         <UserStatsInfoOptions {userProfileInformation} />
       </div>
       <!-- Cell 8 -->
-      <div class="bg-teal-400 row-span-2">7</div>
+      <div class="bg-teal-400 row-span-2">
+        <UserMenuItems {userProfileInformation} />
+      </div>
       <!-- 
       
       
