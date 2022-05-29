@@ -110,7 +110,7 @@
   />
 </svelte:head>
 
-<div class="hero min-h-screen-nav bg-base-200 text-base-content">
+<div class="min-h-screen-nav hero bg-base-200 text-base-content">
   <div class="hero-content flex-col">
     <div class="text-center">
       <h1 class="text-5xl font-bold">{placeInformation.description}</h1>
@@ -127,11 +127,11 @@
 </div>
 <div class="hero min-h-screen bg-base-100">
   <div class="hero-content flex-row flex-wrap">
-    <div class="overflow-x-auto w-full">
+    <div class="w-full overflow-x-auto">
       <TableOfUsers users={placeInformation.users_in_place} />
     </div>
     {#each placeInformation.users_in_place as user_in_place}
-      <div class="card flex-shrink-0  max-w-sm shadow-2xl bg-base-100">
+      <div class="card max-w-sm  flex-shrink-0 bg-base-100 shadow-2xl">
         <div class="card-body">
           <div class="text-center">
             <div class="avatar mx-auto">

@@ -51,13 +51,13 @@
   );
 </script>
 
-<div class="card shadow-2xl bg-base-100 rounded-2xl place-items-center">
+<div class="card place-items-center rounded-2xl bg-base-100 shadow-2xl">
   <div class="card-body">
     {#each userResponses as { name, label, icon, value }}
       <div class="form-control">
         <label class="label" for={name}>
           <span class="label-text">{label}</span>
-          <button class="btn btn-xs btn-primary btn-circle">
+          <button class="btn btn-primary btn-circle btn-xs">
             <i class="fa fa-{icon}" /></button
           >
         </label>

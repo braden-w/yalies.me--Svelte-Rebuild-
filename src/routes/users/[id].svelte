@@ -51,18 +51,18 @@
     crossorigin="anonymous"></script>
 </svelte:head>
 
-<div class="hero min-h-screen-nav bg-base-200">
-  <div class="w-full h-full">
+<div class="min-h-screen-nav hero bg-base-200">
+  <div class="h-full w-full">
     <div
       id="component-demo"
-      class="w-full h-full flex flex-col xl:grid xl:grid-flow-col xl:grid-cols-4 xl:grid-rows-6 items-stretch overflow-x-auto gap-4 px-4 pt-1 pb-10"
+      class="flex h-full w-full flex-col items-stretch gap-4 overflow-x-auto px-4 pt-1 pb-10 xl:grid xl:grid-flow-col xl:grid-cols-4 xl:grid-rows-6"
     >
       <!-- Cell 1 -->
-      <div class="bg-teal-400 row-span-2">
+      <div class="row-span-2 bg-teal-400">
         <UserCard {userProfileInformation} />
       </div>
       <!-- Cell 2 -->
-      <div class="bg-teal-400 row-span-1">
+      <div class="row-span-1 bg-teal-400">
         <div
           class="row-span-1 mx-2 flex w-72 flex-shrink-0 flex-col justify-center xl:mx-0 xl:w-full"
         >
@@ -70,7 +70,7 @@
             <div tabindex="0">
               <div class="flex items-center justify-between">
                 <div class="online avatar">
-                  <div class="mask mask-squircle bg-base-100 h-16 w-16 p-1">
+                  <div class="mask mask-squircle h-16 w-16 bg-base-100 p-1">
                     <img
                       src={userProfileInformation.avatar_url}
                       alt="Avatar Tailwind CSS Component"
@@ -79,7 +79,7 @@
                   </div>
                 </div>
                 <div class="online avatar">
-                  <div class="mask mask-squircle bg-base-100 h-16 w-16 p-1">
+                  <div class="mask mask-squircle h-16 w-16 bg-base-100 p-1">
                     <img
                       src={userProfileInformation.avatar_url}
                       alt="Avatar Tailwind CSS Component"
@@ -88,7 +88,7 @@
                   </div>
                 </div>
                 <div class="avatar offline">
-                  <div class="mask mask-squircle bg-base-100 h-16 w-16 p-1">
+                  <div class="mask mask-squircle h-16 w-16 bg-base-100 p-1">
                     <img
                       src={userProfileInformation.avatar_url}
                       alt="Avatar Tailwind CSS Component"
@@ -97,7 +97,7 @@
                   </div>
                 </div>
                 <div class="avatar">
-                  <div class="mask mask-squircle bg-base-100 h-16 w-16 p-1">
+                  <div class="mask mask-squircle h-16 w-16 bg-base-100 p-1">
                     <img
                       src={userProfileInformation.avatar_url}
                       alt="Avatar Tailwind CSS Component"
@@ -109,13 +109,13 @@
             </div>
             <div tabindex="0" class="dropdown-content py-2">
               <div
-                class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
+                class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
                   <h2 class="card-title font-extrabold capitalize">
                     avatar component
                   </h2>
-                  <p class="text-neutral-content text-sm text-opacity-80">
+                  <p class="text-sm text-neutral-content text-opacity-80">
                     Use avatar component with any size
                   </p>
                   <div class="mt-4 flex justify-end">
@@ -131,11 +131,11 @@
         </div>
       </div>
       <!-- Cell 3 -->
-      <div class="bg-teal-400 row-span-3">
+      <div class="row-span-3 bg-teal-400">
         <UserLocationCard {userProfileInformation} />
       </div>
       <!-- Cell 4 -->
-      <div class="bg-teal-400 row-span-6">
+      <div class="row-span-6 bg-teal-400">
         <UserResponsesCard
           {userProfileInformation}
           userResponses={[
@@ -161,7 +161,7 @@
         />
       </div>
       <!-- Cell 5 -->
-      <div class="bg-teal-400 row-span-3">
+      <div class="row-span-3 bg-teal-400">
         <UserResponsesCard
           {userProfileInformation}
           userResponses={[
@@ -193,16 +193,16 @@
         />
       </div>
       <!-- Cell 6 -->
-      <div class="bg-teal-400 row-span-3">
+      <div class="row-span-3 bg-teal-400">
         <SpotifyPlayer url={userProfileInformation.user_responses.expression} />
       </div>
 
       <!-- Cell 7 -->
-      <div class="bg-teal-400 row-span-4">
+      <div class="row-span-4 bg-teal-400">
         <UserStatsInfoOptions {userProfileInformation} />
       </div>
       <!-- Cell 8 -->
-      <div class="bg-teal-400 row-span-2">
+      <div class="row-span-2 bg-teal-400">
         <UserMenuItems {userProfileInformation} />
       </div>
       <!-- 

@@ -5,11 +5,11 @@
 </script>
 
 <div
-  class="bg-base-100 rounded-box grid place-items-center items-center w-72 gap-4 p-4 py-8 shadow-xl xl:mx-0 xl:w-full h-full"
+  class="rounded-box grid h-full w-72 place-items-center items-center gap-4 bg-base-100 p-4 py-8 shadow-xl xl:mx-0 xl:w-full"
 >
   <div class="online avatar">
     <div
-      class="mask mask-squircle bg-base-content h-24 w-24 bg-opacity-10 p-px"
+      class="mask mask-squircle h-24 w-24 bg-base-content bg-opacity-10 p-px"
     >
       <img
         src={userProfileInformation.avatar_url}
@@ -26,7 +26,7 @@
       <div class="text-lg font-extrabold">
         {userProfileInformation?.name}
       </div>
-      <div class="text-base-content/70 my-3 text-sm">
+      <div class="my-3 text-sm text-base-content/70">
         Ethics, Politics, & Economics
         <br />
         Yale University
@@ -65,13 +65,13 @@
     </div>
     <div tabindex="0" class="dropdown-content py-2">
       <div
-        class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
+        class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
       >
         <div class="card-body">
           <h2 class="card-title font-extrabold capitalize">
             button group component
           </h2>
-          <p class="text-neutral-content text-sm text-opacity-80">
+          <p class="text-sm text-neutral-content text-opacity-80">
             Use it to group multiple buttons together
           </p>
           <div class="mt-4 flex justify-end">

@@ -6,12 +6,11 @@ interface TextToPlaceResponse {
   lng: number | null;
 }
 
-
 export async function get() {
   const textToPlaceResponse = await textAddressToPlaceLatLng('Boston, MA, USA');
   return {
     status: 200,
-    body: { textToPlaceResponse}
+    body: { textToPlaceResponse }
   };
 }
 
@@ -37,9 +36,9 @@ async function geocodeAddress(address: string) {
     )}&key=${import.meta.env.VITE_GOOGLE_MAP_KEY_SERVER}`;
     const response = await fetch(requestString);
     const data = await response.json();
-    return {data, error: null};
+    return { data, error: null };
   } catch (error) {
-    return {data: null, error};
+    return { data: null, error };
   }
 }
 

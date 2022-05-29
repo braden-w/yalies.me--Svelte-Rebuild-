@@ -6,7 +6,7 @@
   export let userProfileInformation: UserProfileInformation;
 </script>
 
-<div class="card shadow-2xl bg-base-100 rounded-2xl place-items-center">
+<div class="card place-items-center rounded-2xl bg-base-100 shadow-2xl">
   <div class="card-body">
     <div class="text-center">
       <div class="avatar mx-auto">

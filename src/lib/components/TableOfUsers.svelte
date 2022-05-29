@@ -31,7 +31,7 @@
         <td>
           <div class="flex items-center space-x-3">
             <div class="avatar">
-              <div class="mask mask-squircle w-12 h-12">
+              <div class="mask mask-squircle h-12 w-12">
                 <img
                   src={user.avatar_url}
                   alt="User Profile"
@@ -48,7 +48,7 @@
         <td>
           Zemlak, Daniel and Leannon
           <br />
-          <span class="badge badge-ghost badge-sm"
+          <span class="badge badge-sm badge-ghost"
             >Desktop Support Technician</span
           >
         </td>
