@@ -8,7 +8,7 @@ export interface GetUserLocation {
 }
 
 /** Refreshes the location store */
-export async function refreshUserLocation(): Promise<void> {
+export async function refreshUserLocation(): Promise<GetUserLocation | null> {
   const { data, error } = await supabase
     .from<definitions['user_responses']>('user_responses')
     .select('places(place_id, description)')
@@ -17,11 +17,13 @@ export async function refreshUserLocation(): Promise<void> {
   if (data) {
     const typed_data = data as unknown as GetUserLocation;
     userLocationStore.set(typed_data);
+    return typed_data;
   }
   if (error) {
     console.error(error);
     userLocationStore.set(null);
   }
+  return null;
 }
 
 export async function resetUserLocation(): Promise<void> {
