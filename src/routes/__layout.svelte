@@ -35,7 +35,6 @@
     else {
       if (checkEmail(user)) {
         $sessionStore = processAuthState(user);
-        goto('/profile');
       }
     }
   }
@@ -116,7 +115,7 @@
         </div>
         <div class="flex-1">
           <a
-            href={$sessionStore !== null ? '/' : '/landing'}
+            href={$sessionStore !== null ? '/map' : '/landing'}
             class="btn btn-ghost normal-case text-xl">Map of Yalies</a
           >
         </div>
@@ -953,7 +952,7 @@
       <li><a href="">Who's in New Haven</a></li>
       {#if $sessionStore !== null}
         <li>
-          <a href="/">Map</a>
+          <a href="/map">Map</a>
         </li>
       {/if}
       <li><a href="">Ride Share</a></li>
