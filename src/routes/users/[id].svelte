@@ -35,8 +35,6 @@
 <script lang="ts">
   import UserSocials from '../../lib/components/UserSocials.svelte';
 
-  import UserAvatarsRow from './UserAvatarsRow.svelte';
-
   import UserResponsesCard from './UserResponsesCard.svelte';
   import UserLocationCard from '../../lib/components/UserLocationCard.svelte';
   import UserStatsInfoOptions from '../../lib/components/UserStatsInfoOptions.svelte';
@@ -62,9 +60,11 @@
       class="flex w-full flex-col items-stretch gap-4 overflow-x-auto px-4 pt-1 pb-10 xl:grid xl:grid-flow-col xl:grid-cols-5 xl:grid-rows-6"
     >
       <!-- Cell 1 -->
-      <div class="col-span-1 row-span-3">
+      <div class="col-span-1 row-span-2">
         <UserCard {userProfileInformation} />
-        <UserSocials {userProfileInformation}></UserSocials>
+      </div>
+      <div class="col-span-1 row-span-1">
+        <UserSocials {userProfileInformation} />
       </div>
       <!-- Cell 2 -->
       <div class="col-span-1 row-span-3">
