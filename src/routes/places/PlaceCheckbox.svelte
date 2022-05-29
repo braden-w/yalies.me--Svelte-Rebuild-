@@ -58,7 +58,7 @@
 <div class="form-control">
   <label class="label cursor-pointer">
     <span class="label-text">
-      I'm Currently in {placeInformation.description}
+      I'm currently in {placeInformation.description}
     </span>
     <input type="checkbox" class="toggle" bind:checked />
   </label>
