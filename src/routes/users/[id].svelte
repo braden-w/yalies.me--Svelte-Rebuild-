@@ -49,7 +49,8 @@
   <meta name="description" content="Profile information" />
   <script
     src="https://kit.fontawesome.com/f538ad6371.js"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous">
+  </script>
 </svelte:head>
 
 <div class="min-h-screen-nav hero bg-base-200">

@@ -65,8 +65,8 @@
         <label class="label" for={name}>
           <span class="label-text">{label}</span>
           <button class="btn btn-circle btn-primary btn-xs">
-            <i class="fa fa-{icon}" /></button
-          >
+            <i class="fa fa-{icon}" />
+          </button>
         </label>
         <input
           tabindex="0"
@@ -87,8 +87,8 @@
         <label class="label" for={name}>
           <span class="label-text">{label}</span>
           <button class="btn btn-circle btn-primary btn-xs">
-            <i class="fa fa-{icon}" /></button
-          >
+            <i class="fa fa-{icon}" />
+          </button>
         </label>
         <input
           tabindex="0"
@@ -118,7 +118,7 @@
           d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
         />
       </svg>
-      <span>Apply settings</span></button
-    >
+      <span>Apply settings</span>
+    </button>
   </div>
 </div>

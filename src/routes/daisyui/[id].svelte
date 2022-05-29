@@ -85,7 +85,8 @@
   <meta name="description" content="Profile information" />
   <script
     src="https://kit.fontawesome.com/f538ad6371.js"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous">
+  </script>
 </svelte:head>
 
 <div class="min-h-screen-nav hero bg-base-200">
@@ -208,19 +209,21 @@
               <button
                 aria-label="button component"
                 class="btn btn-square btn-accent btn-sm"
-                ><svg
+              >
+                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   class="h-6 w-6 stroke-current"
-                  ><path
+                >
+                  <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
-                  /></svg
-                ></button
-              >
+                  />
+                </svg>
+              </button>
             </div>
           </div>
           <div tabindex="0" class="dropdown-content py-2">
@@ -256,31 +259,28 @@
           <div class="dropdown w-full flex-1">
             <div tabindex="0">
               <div class="form-control">
-                <label class="label cursor-pointer"
-                  ><span class="label-text">Enable teleportation</span>
-                  <input type="checkbox" class="toggle toggle-primary" /></label
-                >
+                <label class="label cursor-pointer">
+                  <span class="label-text">Enable teleportation</span>
+                  <input type="checkbox" class="toggle toggle-primary" />
+                </label>
               </div>
               <div class="form-control">
-                <label class="label cursor-pointer"
-                  ><span class="label-text">Enable time travel</span>
-                  <input
-                    type="checkbox"
-                    class="toggle toggle-secondary"
-                  /></label
-                >
+                <label class="label cursor-pointer">
+                  <span class="label-text">Enable time travel</span>
+                  <input type="checkbox" class="toggle toggle-secondary" />
+                </label>
               </div>
               <div class="form-control">
-                <label class="label cursor-pointer"
-                  ><span class="label-text">Enable laser eyes</span>
-                  <input type="checkbox" class="toggle toggle-accent" /></label
-                >
+                <label class="label cursor-pointer">
+                  <span class="label-text">Enable laser eyes</span>
+                  <input type="checkbox" class="toggle toggle-accent" />
+                </label>
               </div>
               <div class="form-control">
-                <label class="label cursor-pointer"
-                  ><span class="label-text">Enable immortality</span>
-                  <input type="checkbox" class="toggle" /></label
-                >
+                <label class="label cursor-pointer">
+                  <span class="label-text">Enable immortality</span>
+                  <input type="checkbox" class="toggle" />
+                </label>
               </div>
             </div>
             <div tabindex="0" class="dropdown-content py-2">
@@ -308,20 +308,21 @@
         <div class="form-control">
           <div class="dropdown-top dropdown dropdown-end">
             <div tabindex="0">
-              <button class="btn btn-secondary btn-block space-x-2"
-                ><svg
+              <button class="btn btn-secondary btn-block space-x-2">
+                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   class="h-6 w-6 stroke-current"
-                  ><path
+                >
+                  <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  /></svg
-                > <span>Apply settings</span></button
-              >
+                  />
+                </svg> <span>Apply settings</span>
+              </button>
             </div>
             <div tabindex="0" class="dropdown-content py-2">
               <div
@@ -389,7 +390,7 @@
               <div tabindex="0">
                 <div
                   tabindex="0"
-                  class="btn btn-ghost btn-circle btn-xs mx-1 inline-block text-info"
+                  class="btn btn-circle btn-ghost btn-xs mx-1 inline-block text-info"
                 >
                   <svg
                     width="20"
@@ -398,13 +399,14 @@
                     fill="none"
                     viewBox="0 0 24 24"
                     class="inline h-5 w-5 stroke-current"
-                    ><path
+                  >
+                    <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
                       d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    /></svg
-                  >
+                    />
+                  </svg>
                 </div>
               </div>
               <div tabindex="0" class="dropdown-content py-2">
@@ -944,13 +946,14 @@
                     fill="none"
                     viewBox="0 0 24 24"
                     class="mx-2 h-6 w-6 stroke-current"
-                    ><path
+                  >
+                    <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
                       d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    /></svg
-                  >
+                    />
+                  </svg>
                   <span class="text-sm"
                     >Lorem ipsum dolor sit amet, consectetur adip!</span
                   >
@@ -989,13 +992,14 @@
                     fill="none"
                     viewBox="0 0 24 24"
                     class="mx-2 h-6 w-6 stroke-current"
-                    ><path
+                  >
+                    <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
                       d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
-                    /></svg
-                  >
+                    />
+                  </svg>
                   <span class="text-sm"
                     >Lorem ipsum dolor sit amet, consectetur adip!</span
                   >
@@ -1032,64 +1036,69 @@
           <div class="dropdown dropdown-end w-full">
             <div tabindex="0">
               <ul class="menu overflow-visible p-3">
-                <li class="menu-title"><span>Menu Title</span></li>
+                <li class="menu-title">
+                  <span>Menu Title</span>
+                </li>
                 <li>
-                  <button
-                    ><svg
+                  <button>
+                    <svg
                       width="20"
                       height="20"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       class="mr-2 inline-block h-5 w-5 stroke-current"
-                      ><path
+                    >
+                      <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-width="2"
                         d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
-                      /></svg
-                    >
+                      />
+                    </svg>
                     Menu Item 1</button
                   >
                 </li>
                 <li>
-                  <button
-                    ><svg
+                  <button>
+                    <svg
                       width="20"
                       height="20"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       class="mr-2 inline-block h-5 w-5 stroke-current"
-                      ><path
+                    >
+                      <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-width="2"
                         d="M13 10V3L4 14h7v7l9-11h-7z"
-                      /></svg
-                    >
+                      />
+                    </svg>
                     Menu Item 2</button
                   >
                 </li>
                 <li>
-                  <button
-                    ><svg
+                  <button>
+                    <svg
                       width="20"
                       height="20"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       class="mr-2 inline-block h-5 w-5 stroke-current"
-                      ><path
+                    >
+                      <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-width="2"
                         d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
-                      /></svg
-                    >
+                      />
+                    </svg>
                     Menu Item 3
-                    <div class="badge badge-success">new</div></button
-                  >
+                    <div class="badge badge-success">new</div>
+                  </button>
                 </li>
               </ul>
             </div>
@@ -1123,27 +1132,18 @@
           <div class="dropdown-top dropdown dropdown-end w-full">
             <div tabindex="0">
               <div class="flex justify-center gap-8 p-4">
-                <label aria-label="checkbox CSS component"
-                  ><input type="checkbox" class="checkbox" /></label
-                >
-                <label aria-label="checkbox CSS component"
-                  ><input
-                    type="checkbox"
-                    class="checkbox checkbox-primary"
-                  /></label
-                >
-                <label aria-label="checkbox CSS component"
-                  ><input
-                    type="checkbox"
-                    class="checkbox checkbox-secondary"
-                  /></label
-                >
-                <label aria-label="checkbox CSS component"
-                  ><input
-                    type="checkbox"
-                    class="checkbox checkbox-accent"
-                  /></label
-                >
+                <label aria-label="checkbox CSS component">
+                  <input type="checkbox" class="checkbox" />
+                </label>
+                <label aria-label="checkbox CSS component">
+                  <input type="checkbox" class="checkbox checkbox-primary" />
+                </label>
+                <label aria-label="checkbox CSS component">
+                  <input type="checkbox" class="checkbox checkbox-secondary" />
+                </label>
+                <label aria-label="checkbox CSS component">
+                  <input type="checkbox" class="checkbox checkbox-accent" />
+                </label>
               </div>
             </div>
             <div tabindex="0" class="dropdown-content py-2">
@@ -1278,40 +1278,42 @@
               <div class="breadcrumbs px-4 text-sm">
                 <ul>
                   <li>
-                    <a href="/"
-                      ><svg
+                    <a href="/">
+                      <svg
                         width="20"
                         height="20"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
                         class="mr-2 h-4 w-4 stroke-current"
-                        ><path
+                      >
+                        <path
                           stroke-linecap="round"
                           stroke-linejoin="round"
                           stroke-width="2"
                           d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
-                        /></svg
-                      >
+                        />
+                      </svg>
                       Documents</a
                     >
                   </li>
                   <li>
-                    <a href="/"
-                      ><svg
+                    <a href="/">
+                      <svg
                         width="20"
                         height="20"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
                         class="mr-2 h-4 w-4 stroke-current"
-                        ><path
+                      >
+                        <path
                           stroke-linecap="round"
                           stroke-linejoin="round"
                           stroke-width="2"
                           d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                        /></svg
-                      >
+                        />
+                      </svg>
                       Add Document</a
                     >
                   </li>
@@ -1354,40 +1356,45 @@
                   <button
                     aria-label="button component"
                     class="btn btn-square btn-ghost"
-                    ><svg
+                  >
+                    <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       class="inline-block h-6 w-6 stroke-current"
-                      ><path
+                    >
+                      <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-width="2"
                         d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                      /><path
+                      />
+                      <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-width="2"
                         d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                      /></svg
-                    ></button
-                  >
+                      />
+                    </svg>
+                  </button>
                   <button
                     aria-label="button component"
                     class="btn btn-square btn-ghost"
-                    ><svg
+                  >
+                    <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       class="inline-block h-6 w-6 stroke-current"
-                      ><path
+                    >
+                      <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-width="2"
                         d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
-                      /></svg
-                    ></button
-                  >
+                      />
+                    </svg>
+                  </button>
                 </div>
               </div>
               <div tabindex="0" class="dropdown-content py-2">
@@ -1490,19 +1497,21 @@
                 <button
                   aria-label="circle button component"
                   class="btn btn-circle"
-                  ><svg
+                >
+                  <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     class="inline-block h-6 w-6 stroke-current"
-                    ><path
+                  >
+                    <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
                       d="M6 18L18 6M6 6l12 12"
-                    /></svg
-                  ></button
-                >
+                    />
+                  </svg>
+                </button>
               </div>
               <div tabindex="0" class="dropdown-content py-2">
                 <div

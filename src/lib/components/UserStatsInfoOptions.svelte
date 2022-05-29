@@ -226,13 +226,14 @@
                   fill="none"
                   viewBox="0 0 24 24"
                   class="mx-2 h-6 w-6 stroke-current"
-                  ><path
+                >
+                  <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  /></svg
-                >
+                  />
+                </svg>
                 <span class="text-sm"
                   >Lorem ipsum dolor sit amet, consectetur adip!</span
                 >
@@ -271,13 +272,14 @@
                   fill="none"
                   viewBox="0 0 24 24"
                   class="mx-2 h-6 w-6 stroke-current"
-                  ><path
+                >
+                  <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
-                  /></svg
-                >
+                  />
+                </svg>
                 <span class="text-sm"
                   >Lorem ipsum dolor sit amet, consectetur adip!</span
                 >
@@ -321,28 +323,28 @@
         <div class="dropdown w-full flex-1">
           <div tabindex="0">
             <div class="form-control">
-              <label class="label cursor-pointer"
-                ><span class="label-text">Enable teleportation</span>
-                <input type="checkbox" class="toggle toggle-primary" /></label
-              >
+              <label class="label cursor-pointer">
+                <span class="label-text">Enable teleportation</span>
+                <input type="checkbox" class="toggle toggle-primary" />
+              </label>
             </div>
             <div class="form-control">
-              <label class="label cursor-pointer"
-                ><span class="label-text">Enable time travel</span>
-                <input type="checkbox" class="toggle toggle-secondary" /></label
-              >
+              <label class="label cursor-pointer">
+                <span class="label-text">Enable time travel</span>
+                <input type="checkbox" class="toggle toggle-secondary" />
+              </label>
             </div>
             <div class="form-control">
-              <label class="label cursor-pointer"
-                ><span class="label-text">Enable laser eyes</span>
-                <input type="checkbox" class="toggle toggle-accent" /></label
-              >
+              <label class="label cursor-pointer">
+                <span class="label-text">Enable laser eyes</span>
+                <input type="checkbox" class="toggle toggle-accent" />
+              </label>
             </div>
             <div class="form-control">
-              <label class="label cursor-pointer"
-                ><span class="label-text">Enable immortality</span>
-                <input type="checkbox" class="toggle" /></label
-              >
+              <label class="label cursor-pointer">
+                <span class="label-text">Enable immortality</span>
+                <input type="checkbox" class="toggle" />
+              </label>
             </div>
           </div>
           <div tabindex="0" class="dropdown-content py-2">
@@ -370,20 +372,21 @@
       <div class="form-control">
         <div class="dropdown-top dropdown dropdown-end">
           <div tabindex="0">
-            <button class="btn btn-secondary btn-block space-x-2"
-              ><svg
+            <button class="btn btn-secondary btn-block space-x-2">
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 class="h-6 w-6 stroke-current"
-                ><path
+              >
+                <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                /></svg
-              > <span>Apply settings</span></button
-            >
+                />
+              </svg> <span>Apply settings</span>
+            </button>
           </div>
           <div tabindex="0" class="dropdown-content py-2">
             <div

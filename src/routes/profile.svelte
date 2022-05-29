@@ -84,7 +84,8 @@
 			<div class="flex flex-col mt-10 mb-20 lg:flex-row">
 				<div class="flex flex-col w-full text-left">
 					<div class="flex-grow w-full max-w-xs mx-auto shadow-lg mockup-code sm:max-w-md">
-						<pre><code
+						<pre>
+<code
 								>&lt;a class="<span class="text-amber-400"
 									>inline-block px-4 py-3
     text-sm font-semibold text-center
@@ -93,7 +94,8 @@
     rounded-md cursor-pointer
     hover:bg-indigo-700</span
 								>"&gt;Button&lt;/a&gt;</code
-							></pre>
+							>
+</pre>
 					</div>
 					<div class="flex items-start justify-center h-16 mt-4">
 						<button
@@ -105,10 +107,12 @@
 				<div class="uppercase divider text-base-content/50 lg:divider-horizontal">vs</div>
 				<div class="flex flex-col w-full text-left">
 					<div class="flex-grow w-full max-w-xs mx-auto shadow-lg mockup-code sm:max-w-md">
-						<pre><code
+						<pre>
+<code
 								>&lt;a class="<span class="text-teal-500">btn btn-primary</span
 								>"&gt;Button&lt;/a&gt;</code
-							></pre>
+							>
+</pre>
 					</div>
 					<div class="flex items-start justify-center h-16 mt-4">
 						<button class="btn btn-primary">Button</button>
@@ -122,7 +126,8 @@
 			<div class="flex flex-col mt-10 mb-20 lg:flex-row">
 				<div class="flex flex-col w-full text-left">
 					<div class="flex-grow w-full max-w-xs mx-auto shadow-lg mockup-code sm:max-w-md">
-						<pre><code
+						<pre>
+<code
 								>&lt;div class="<span class="text-amber-400">relative</span>"&gt;
     &lt;input type="checkbox" class="<span class="text-amber-400"
 									>peer
@@ -139,7 +144,8 @@
     rounded-full bg-gray-300</span
 								>"&gt;&lt;/span&gt;
   &lt;/div&gt;</code
-							></pre>
+							>
+</pre>
 					</div>
 					<div class="flex items-start justify-center h-16 mt-4">
 						<div class="relative">
@@ -160,10 +166,12 @@
 					<div
 						class="relative flex-grow w-full max-w-xs mx-auto shadow-lg mockup-code sm:max-w-md lg:overflow-hidden"
 					>
-						<pre><code
+						<pre>
+<code
 								>&lt;input type="checkbox" class="<span class="text-teal-500">toggle</span
 								>"/&gt;</code
-							></pre>
+							>
+</pre>
 						<img
 							loading="lazy"
 							class="pointer-events-none absolute bottom-0 right-[-6.1em] hidden -rotate-90 transition duration-1000 lg:block translate-x-60"
@@ -187,7 +195,8 @@
 			<div class="flex flex-col mt-10 mb-20 lg:flex-row">
 				<div class="flex flex-col w-full text-left">
 					<div class="flex-grow w-full max-w-xs mx-auto shadow-lg mockup-code sm:max-w-md">
-						<pre><code
+						<pre>
+<code
 								>&lt;ul class="py-3 bg-gray-100 rounded-xl"&gt;
     &lt;li&gt;
       &lt;span class="<span class="text-amber-400"
@@ -204,7 +213,8 @@
 									>block px-5 py-3 rounded-lg text-gray-900 hover:bg-gray-200 active:bg-indigo-600 active:text-white outline-none cursor-pointer</span
 								>"&gt;Third Menu Item&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;</code
-							></pre>
+							>
+</pre>
 					</div>
 					<div class="flex items-start justify-center mt-4 overflow-hidden">
 						<ul class="p-3 bg-gray-100 rounded-xl">
@@ -238,7 +248,8 @@
 				<div class="uppercase divider text-base-content/50 lg:divider-horizontal">vs</div>
 				<div class="flex flex-col w-full text-left">
 					<div class="flex-grow w-full max-w-xs mx-auto shadow-lg mockup-code sm:max-w-md">
-						<pre class="pr-4"><code
+						<pre class="pr-4">
+<code
 								>&lt;ul class="<span class="text-teal-500">menu</span
 								> p-3 bg-base-200 rounded-xl"&gt;
     &lt;li class="<span class="text-teal-500">menu-title</span>"&gt;
@@ -248,14 +259,23 @@
     &lt;li&gt;&lt;a&gt;Second Menu Item&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a&gt;Third Menu Item&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;</code
-							></pre>
+							>
+</pre>
 					</div>
 					<div class="flex items-start justify-center mt-4">
 						<ul class="p-3 menu bg-base-200 rounded-xl">
-							<li class="menu-title"><span>Menu Title</span></li>
-							<li><a href="/">First Menu Item</a></li>
-							<li><a href="/">Second Menu Item</a></li>
-							<li><a href="/">Third Menu Item</a></li>
+							<li class="menu-title">
+<span>Menu Title</span>
+</li>
+							<li>
+<a href="/">First Menu Item</a>
+</li>
+							<li>
+<a href="/">Second Menu Item</a>
+</li>
+							<li>
+<a href="/">Third Menu Item</a>
+</li>
 						</ul>
 					</div>
 				</div>

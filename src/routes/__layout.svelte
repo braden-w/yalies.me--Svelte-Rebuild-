@@ -108,7 +108,8 @@
               fill="none"
               viewBox="0 0 24 24"
               class="inline-block h-5 w-5 stroke-current"
-              ><path
+            >
+              <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
@@ -128,7 +129,7 @@
             <label
               for="main-drawer "
               tabindex="0"
-              class="btn btn-ghost btn-circle"
+              class="btn btn-circle btn-ghost"
             >
               <div class="indicator">
                 <svg
@@ -137,13 +138,14 @@
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  ><path
+                >
+                  <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-                  /></svg
-                >
+                  />
+                </svg>
                 <span class="badge indicator-item badge-sm">8</span>
               </div>
             </label>
@@ -169,23 +171,25 @@
                 fill="none"
                 viewBox="0 0 24 24"
                 class="inline-block h-5 w-5 stroke-current md:h-6 md:w-6"
-                ><path
+              >
+                <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
-                /></svg
-              > <span class="hidden md:inline">Theme</span>
+                />
+              </svg> <span class="hidden md:inline">Theme</span>
               <svg
                 width="12px"
                 height="12px"
                 class="ml-1 hidden h-3 w-3 fill-current opacity-60 sm:inline-block"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 2048 2048"
-                ><path
-                  d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"
-                /></svg
               >
+                <path
+                  d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"
+                />
+              </svg>
             </div>
 
             <div
@@ -916,7 +920,7 @@
             </div>
           </div>
           <div class="dropdown dropdown-end">
-            <label tabindex="0" class="avatar btn btn-ghost btn-circle">
+            <label tabindex="0" class="avatar btn btn-circle btn-ghost">
               <div class="w-10 rounded-full">
                 <img
                   src={$sessionStore?.avatar_url ??
@@ -936,9 +940,13 @@
                 </a>
               </li>
               {#if $sessionStore !== null}
-                <li><button on:click={signOut}>Logout</button></li>
+                <li>
+                  <button on:click={signOut}>Logout</button>
+                </li>
               {:else}
-                <li><button on:click={signIn}>Login</button></li>
+                <li>
+                  <button on:click={signIn}>Login</button>
+                </li>
               {/if}
             </ul>
           </div>
@@ -953,15 +961,23 @@
     <label for="main-drawer" class="drawer-overlay" />
     <ul class="menu w-80 overflow-y-auto bg-base-200 p-4 text-base-content">
       <!-- Sidebar content here -->
-      <li><a href="">Who's in New Haven</a></li>
+      <li>
+        <a href="">Who's in New Haven</a>
+      </li>
       {#if $sessionStore !== null}
         <li>
           <a href="/map">Map</a>
         </li>
       {/if}
-      <li><a href="">Ride Share</a></li>
-      <li><a href="">Track Meals</a></li>
-      <li><a href="butteries">Butteries</a></li>
+      <li>
+        <a href="">Ride Share</a>
+      </li>
+      <li>
+        <a href="">Track Meals</a>
+      </li>
+      <li>
+        <a href="butteries">Butteries</a>
+      </li>
     </ul>
   </div>
 </div>
@@ -969,4 +985,5 @@
 <!-- <footer>
 	<p>Made with love and <span>❤️</span> by Braden</p>
 </footer> -->
-<style></style>
+<style>
+</style>
