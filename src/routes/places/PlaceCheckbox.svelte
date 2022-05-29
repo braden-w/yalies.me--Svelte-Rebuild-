@@ -3,10 +3,12 @@
   import {
     setUserLocation,
     resetUserLocation,
-    userLocationStore
+    userLocationStore,
+    refreshUserLocation
   } from '$lib/utils/getUserLocation';
   import type { PlaceInformation } from 'src/routes/places/[place_id].svelte';
   import { createEventDispatcher } from 'svelte';
+  import { get } from 'svelte/store';
 
   export let placeInformation: PlaceInformation;
 
@@ -18,11 +20,13 @@
   let checked = userInPlace;
 
   /** Old location, which the user will reset to */
-  const oldPlace = $userLocationStore;
+  let oldPlace = get(userLocationStore);
+  refreshUserLocation().then(() => (oldPlace = get(userLocationStore)));
 
   $: handleToggleUserLocation(checked);
   const dispatch = createEventDispatcher();
   export async function handleToggleUserLocation(checked: boolean) {
+    // If the toggle is moved to checked
     if (checked) {
       await setUserLocation(
         placeInformation.place_id,
@@ -34,17 +38,12 @@
       );
     } else {
       if (oldPlace?.places.place_id === placeInformation.place_id)
-        resetUserLocation();
+        await resetUserLocation();
       else
         await setUserLocation(
           oldPlace?.places.place_id as string,
           oldPlace?.places.description as string
         );
-      console.log(
-        '🚀 ~ file: PlaceCheckbox.svelte ~ line 41 ~ handleToggleUserLocation ~           oldPlace?.places.place_id,',
-        oldPlace,
-        oldPlace?.places.place_id
-      );
     }
     dispatch('toggled');
   }
