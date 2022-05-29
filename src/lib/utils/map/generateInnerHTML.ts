@@ -112,7 +112,7 @@ function generateHover({
       </a>
     </li>`;
   return `<ul tabindex="0" class="menu menu-compact dropdown-content mt-${
-    numberOfIconsStacked >= 3 ? '3' : numberOfIconsStacked
+    numberOfIconsStacked >= 3 ? '2.5' : numberOfIconsStacked
   } p-2 shadow bg-base-100 rounded-box w-52">
     ${placeTitle} 
     ${peopleToListItems(people)}
