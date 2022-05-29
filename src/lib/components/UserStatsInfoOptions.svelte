@@ -108,7 +108,7 @@
         </div>
       </div>
     </div>
-    <div class="text-lg font-extrabold">Audience Report</div>
+    <div class="text-lg font-extrabold">Follower Report</div>
     <div class="grid gap-3">
       <div class="dropdown dropdown-top">
         <div tabindex="0">
