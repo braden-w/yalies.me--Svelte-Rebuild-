@@ -33,7 +33,7 @@
 </script>
 
 <script lang="ts">
-  import UserResponsesCard from '../../lib/components/UserResponses.svelte';
+  import UserMenuItems from '../../lib/components/UserMenuItems.svelte';
 
   import UserLocationCard from '../../lib/components/UserLocationCard.svelte';
 
@@ -570,7 +570,7 @@
       </div>
       <UserLocationCard {userProfileInformation} />
 
-      <UserResponsesCard {userProfileInformation} />
+      <UserMenuItems {userProfileInformation} />
       <div
         class="col-span-3 row-span-1 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-auto"
       >
