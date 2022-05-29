@@ -11,8 +11,9 @@
 
   /** Function that matches query by place_id, description, and finally fuzzy description */
   async function getUsersInPlace(query: string): Promise<
-    | { data: definitions['users_to_places'][] | null }
+    | { data: definitions['users_to_places'][] | null; redirect: null }
     | {
+        data: null;
         redirect: { status: number; redirect?: string };
       }
   > {
@@ -22,7 +23,8 @@
       .select('id, name, avatar_url, place_id, description')
       .eq('place_id', query);
     if (errorMatchPlaceID) console.log(errorMatchPlaceID);
-    if (dataMatchPlaceID?.length !== 0) return { data: dataMatchPlaceID };
+    if (dataMatchPlaceID?.length !== 0)
+      return { data: dataMatchPlaceID, redirect: null };
 
     // Attempt to match the query by place description
     const {
@@ -34,7 +36,7 @@
       .eq('description', query);
     if (errorMatchPlaceDescription) console.log(errorMatchPlaceDescription);
     if (dataMatchPlaceDescription?.length !== 0)
-      return { data: dataMatchPlaceDescription };
+      return { data: dataMatchPlaceDescription, redirect: null };
 
     // Attempt to fuzzy match the query by place_description
     const {
@@ -54,10 +56,10 @@
         status: 302,
         redirect: `${dataFuzzyMatchPlaceDescription[0].description}`
       };
-      return { redirect };
+      return { data: null, redirect };
     }
     const redirect = { status: 404 };
-    return { redirect };
+    return { data: null, redirect };
   }
 
   export async function load({ params }: { params: { place_id: string } }) {
