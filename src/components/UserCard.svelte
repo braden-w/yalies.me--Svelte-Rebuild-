@@ -2,10 +2,11 @@
   import type { UserProfileInformation } from 'src/routes/users/[id].svelte';
 
   export let userProfileInformation: UserProfileInformation;
+  const userResponses = userProfileInformation.user_responses;
 </script>
 
 <div
-  class="rounded-box grid h-full w-72 place-items-center items-center gap-4 bg-base-100 p-4 py-8 shadow-xl xl:mx-0 xl:w-full"
+  class="rounded-box grid w-72 place-items-center items-center gap-4 bg-base-100 p-4 py-8 shadow-xl xl:mx-0 xl:w-full"
 >
   <div class="online avatar">
     <div
@@ -40,8 +41,51 @@
       <div class="badge badge-ghost">Art</div>
       <div class="badge badge-ghost">Illustration</div>
     </div>
+    <div class="mt-2 text-center">
+      {#if userProfileInformation.email}
+        <a
+          class="badge badge-primary"
+          href={`mailto:${userProfileInformation.email}`}
+        >
+          Email
+        </a>
+      {/if}
+      {#if userResponses.phone}
+        <a class="badge badge-primary" href={`sms:${userResponses.phone}`}>
+          Text
+        </a>
+      {/if}
+
+      {#if userResponses.expression}
+        <a
+          class="badge badge-primary"
+          target="_blank"
+          href={userResponses.expression}
+        >
+          Spotify
+        </a>
+      {/if}
+      {#if userResponses.instagram}
+        <a
+          class="badge badge-primary"
+          target="_blank"
+          href={`https://www.instagram.com/${currentSelectedUser.instagram}/`}
+        >
+          Instagram
+        </a>
+      {/if}
+      {#if userResponses.linkedin}
+        <a
+          class="badge badge-primary"
+          target="_blank"
+          href={userResponses.linkedin}
+        >
+          LinkedIn
+        </a>
+      {/if}
+    </div>
   </div>
-  <div class="dropdown dropdown-top">
+  <div class="dropdown-top dropdown">
     <div tabindex="0">
       <div class="btn-group">
         <button class="btn btn-accent btn-sm">Follow</button>
@@ -65,7 +109,7 @@
     </div>
     <div tabindex="0" class="dropdown-content py-2">
       <div
-        class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
+        class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
       >
         <div class="card-body">
           <h2 class="card-title font-extrabold capitalize">
