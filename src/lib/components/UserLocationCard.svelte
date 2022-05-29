@@ -36,7 +36,7 @@
   </div>
   <div class="form-control">
     <div class="divider" />
-    <button class="btn btn-secondary btn-block space-x-2">
+    <a class="btn btn-secondary btn-block space-x-2" href="/map">
       <!-- Insert an svg of a map -->
       <svg
         class="h-6 w-6"
@@ -54,6 +54,6 @@
         <circle cx="12" cy="10" r="3" />
       </svg>
       <span>Go to Map</span>
-    </button>
+    </a>
   </div>
 </div>
