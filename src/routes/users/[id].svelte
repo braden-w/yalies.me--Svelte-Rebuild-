@@ -64,7 +64,7 @@
       <!-- Cell 2 -->
       <div class="bg-teal-400 row-span-1">
         <div
-          class="row-span-1 mx-2 flex w-72 flex-shrink-0 flex-col justify-center xl:mx-0"
+          class="row-span-1 mx-2 flex w-72 flex-shrink-0 flex-col justify-center xl:mx-0 xl:w-full"
         >
           <div class="dropdown dropdown-end w-full">
             <div tabindex="0">

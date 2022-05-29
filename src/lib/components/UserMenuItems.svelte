@@ -5,7 +5,7 @@
 </script>
 
 <div
-  class="col-span-3 row-span-2 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:place-self-stretch"
+  class="col-span-3 row-span-2 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:place-self-stretch xl:w-full"
 >
   <div class="bg-base-100 text-base-content rounded-box shadow-xl">
     <ul class="menu overflow-visible p-3">
