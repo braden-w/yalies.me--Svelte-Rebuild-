@@ -58,7 +58,9 @@
     <div class="form-control">
       <label class="label" for={name}>
         <span class="label-text">{label}</span>
-        <i class="fa fa-{icon}" />
+        <button class="btn btn-xs btn-circle">
+          <i class="fa fa-{icon}" /></button
+        >
       </label>
       <input
         tabindex="0"
