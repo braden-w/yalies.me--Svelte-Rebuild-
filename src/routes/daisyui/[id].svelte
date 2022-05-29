@@ -2,26 +2,10 @@
   import type { definitions } from '$lib/types/supabase';
   import { supabase } from '$lib/utils/supabaseClient';
 
-  export type definitions['users_facebook_places'] = definitions['users'] & {
-    user_responses: {
-      interests: string;
-      expression: string;
-      university: string;
-      instagram: string;
-      linkedin: string;
-      phone: string;
-      major: string;
-      places: {
-        description: string;
-      };
-    };
-  };
   export async function load({ params }: { params: { id: string } }) {
     const { data, error } = await supabase
-      .from<definitions['users']>('users')
-      .select(
-        'name, avatar_url, user_responses(interests, expression, university, instagram, linkedin, phone, major, places(description))'
-      )
+      .from<definitions['users_facebook_places']>('users_facebook_places')
+      .select('*')
       .eq('id', params.id)
       .maybeSingle();
     if (error) return { status: error.code, props: { error } };
@@ -34,50 +18,6 @@
 
 <script lang="ts">
   export let userProfileInformation: definitions['users_facebook_places'];
-  const userResponses = [
-    {
-      name: 'interests',
-      label: 'Interests',
-      icon: 'heart',
-      value: userProfileInformation.user_responses.interests
-    },
-    {
-      name: 'expression',
-      label: 'Expression',
-      icon: 'smile',
-      value: userProfileInformation.user_responses.expression
-    },
-    // {
-    //   name: 'university',
-    //   label: 'University',
-    //   icon: 'graduation-cap',
-    //   value: userProfileInformation.user_responses.university
-    // },
-    {
-      name: 'instagram',
-      label: 'Instagram',
-      icon: 'instagram',
-      value: userProfileInformation.user_responses.instagram
-    },
-    {
-      name: 'linkedin',
-      label: 'Linkedin',
-      icon: 'linkedin',
-      value: userProfileInformation.user_responses.linkedin
-    },
-    {
-      name: 'phone',
-      label: 'Phone',
-      icon: 'phone',
-      value: userProfileInformation.user_responses.phone
-    },
-    {
-      name: 'major',
-      label: 'Major',
-      icon: 'book',
-      value: userProfileInformation.user_responses.major
-    }
-  ];
 </script>
 
 <svelte:head>
