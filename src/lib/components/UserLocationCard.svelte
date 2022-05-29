@@ -30,7 +30,7 @@
           disabled
           placeholder="Start typing your city here..."
           bind:value={userProfileInformation.user_responses.places.description}
-        />./UserStatsInfoOptions.svelte./UserStatsInfoOptions.svelte
+        />
       </div>
     {/if}
   </div>
