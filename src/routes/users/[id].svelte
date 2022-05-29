@@ -20,7 +20,7 @@
     const { data, error } = await supabase
       .from<definitions['users']>('users')
       .select(
-        'name, avatar_url, user_responses(interests, expression, university, instagram, linkedin, phone, major, places(description))'
+        'name, email, avatar_url, user_responses(interests, expression, university, instagram, linkedin, phone, major, places(description))'
       )
       .eq('id', params.id)
       .maybeSingle();
