@@ -10,10 +10,24 @@
   }
 
   export async function load({ params }: { params: { place_id: string } }) {
-    const { data: users_in_place, error } = await supabase
+    console.log(
+      '🚀 ~ file: [place_id].svelte ~ line 13 ~ load ~ place_id',
+      params.place_id
+    );
+    let users_in_place;
+    const { data: dataMatchPlaceID, error } = await supabase
       .from<definitions['users_to_places']>('users_to_places')
       .select('id, name, avatar_url, place_id, description')
       .eq('place_id', params.place_id);
+    if (dataMatchPlaceID?.length !== 0) {
+      users_in_place = dataMatchPlaceID;
+    } else {
+      const { data: dataMatchPlaceID, error } = await supabase
+        .from<definitions['users_to_places']>('users_to_places')
+        .select('id, name, avatar_url, place_id, description')
+        .eq('description', params.place_id);
+      users_in_place = dataMatchPlaceID;
+    }
     if (error) return { status: error.code, props: { error } };
     const description = users_in_place.length
       ? users_in_place[0].description
