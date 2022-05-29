@@ -52,12 +52,12 @@
       icon: 'smile',
       value: userProfileInformation.user_responses.expression
     },
-    {
-      name: 'university',
-      label: 'University',
-      icon: 'graduation-cap',
-      value: userProfileInformation.user_responses.university
-    },
+    // {
+    //   name: 'university',
+    //   label: 'University',
+    //   icon: 'graduation-cap',
+    //   value: userProfileInformation.user_responses.university
+    // },
     {
       name: 'instagram',
       label: 'Instagram',
@@ -96,28 +96,20 @@
 <div class="hero min-h-screen-nav bg-base-200">
   <div class="w-full h-full">
     <!-- A centered large card with two columns and bg-base-100 -->
-    <div class="grid grid-rows-3 grid-flow-col w-full h-full">
-      <div
-        class="col-span-1 row-span-1 shadow-lg bg-base-200 font-bold p-10 rounded-lg"
-      >
+    <div class="grid grid-cols-12 w-full h-full">
+      <div class="col-span-1 shadow-lg bg-base-200 font-bold p-10 rounded-lg">
         1
         <UserCard {userProfileInformation} />
       </div>
-      <div
-        class="col-span-1 row-span-2 shadow-lg bg-base-200 font-bold p-10 rounded-lg"
-      >
-        2
-        <SpotifyPlayer url={userProfileInformation.user_responses.expression} />
-      </div>
-      <div
-        class="col-span-2 row-span-1 shadow-lg bg-base-200 font-bold p-10 rounded-lg"
-      >
+      <div class="col-span-2 shadow-lg bg-base-200 font-bold p-10 rounded-lg">
         3
         <UserResponsesCard {userProfileInformation} />
       </div>
-      <div
-        class="col-span-2 row-span-2 shadow-lg bg-base-200 font-bold p-10 rounded-lg"
-      >
+      <div class="col-span-1 shadow-lg bg-base-200 font-bold p-10 rounded-lg">
+        2
+        <SpotifyPlayer url={userProfileInformation.user_responses.expression} />
+      </div>
+      <div class="col-span-2 shadow-lg bg-base-200 font-bold p-10 rounded-lg">
         4
       </div>
     </div>
