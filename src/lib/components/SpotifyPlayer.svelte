@@ -14,12 +14,13 @@
   }
 </script>
 
-<iframe
-  title="Spotify Player"
-  src={`https://open.spotify.com/embed/playlist/${playlistID}`}
-  width="100%"
-  height="100%"
-  frameborder="0"
-  allowtransparency={true}
-  allow="encrypted-media"
-/>
+<div class="rounded-box w-72 bg-base-100 shadow-xl xl:mx-0 xl:h-full">
+  <iframe
+    title="Spotify Player"
+    src={`https://open.spotify.com/embed/playlist/${playlistID}`}
+    class="rounded-box h-full w-full"
+    frameborder="0"
+    allowtransparency={true}
+    allow="encrypted-media"
+  />
+</div>
