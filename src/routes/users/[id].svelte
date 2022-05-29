@@ -107,7 +107,7 @@
       class="flex w-full grid-flow-row grid-cols-12 items-center gap-4 overflow-y-hidden overflow-x-scroll px-10 pt-1 pb-10 xl:grid xl:overflow-x-auto xl:px-4"
     >
       <UserCard {userProfileInformation} />
-      <UserResponsesCard></UserResponsesCard>
+      <UserResponsesCard {userProfileInformation} />
       <div
         class="card card-compact xl:card-normal bg-base-100 col-span-3 row-span-4 mx-2 w-72 flex-shrink-0 overflow-visible shadow-xl xl:mx-0 xl:w-auto"
       >
