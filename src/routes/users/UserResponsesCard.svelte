@@ -79,58 +79,21 @@
         />
       </div>
     {/each}
-
-    <div class="form-control">
-      <label class="label cursor-pointer"
-        ><span class="label-text">Enable laser eyes</span>
-        <input type="checkbox" class="toggle toggle-accent" /></label
-      >
-    </div>
-    <div class="form-control">
-      <label class="label cursor-pointer"
-        ><span class="label-text">Enable immortality</span>
-        <input type="checkbox" class="toggle" /></label
-      >
-    </div>
   </div>
   <div class="form-control">
-    <div class="dropdown dropdown-top dropdown-end">
-      <div tabindex="0">
-        <button class="btn btn-secondary btn-block space-x-2"
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            class="h-6 w-6 stroke-current"
-            ><path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-            /></svg
-          > <span>Apply settings</span></button
-        >
-      </div>
-      <div tabindex="0" class="dropdown-content py-2">
-        <div
-          class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
-        >
-          <div class="card-body">
-            <h2 class="card-title font-extrabold capitalize">
-              button component
-            </h2>
-            <p class="text-neutral-content text-sm text-opacity-80">
-              Buttons come in various shapes, colors and sizes
-            </p>
-            <div class="mt-4 flex justify-end">
-              <a
-                href="/components/button"
-                class="btn btn-primary btn-sm xl:btn-md">See component</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <button class="btn btn-secondary btn-block space-x-2"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        class="h-6 w-6 stroke-current"
+        ><path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+        /></svg
+      > <span>Apply settings</span></button
+    >
   </div>
 </div>
