@@ -54,19 +54,19 @@
 <div
   class="grid h-100 flex-grow card shadow-2xl bg-base-100 rounded-box place-items-center"
 >
-  {#each userResponsesNonempty as { name, label, icon, value }}
+  {#each userResponses as { name, label, icon, value }}
     <div class="form-control">
-      <label class="label" for="location">
+      <label class="label" for={name}>
         <span class="label-text">{label}</span>
         <i class="fas fa-{icon} text-base" />
       </label>
       <input
         tabindex="0"
         type="text"
-        id="location"
+        id={name}
         class="input input-bordered"
         disabled
-        placeholder="Start typing your city here..."
+        placeholder="Start typing your response here..."
         bind:value
       />
     </div>
