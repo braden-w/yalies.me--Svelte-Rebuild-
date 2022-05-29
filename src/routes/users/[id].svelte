@@ -41,6 +41,7 @@
   import SpotifyPlayer from '$lib/components/SpotifyPlayer.svelte';
 
   export let userProfileInformation: UserProfileInformation;
+  const userResponses = userProfileInformation.user_responses;
 </script>
 
 <svelte:head>
@@ -65,10 +66,10 @@
       <div class="col-span-1 row-span-1">
         <UserSocials
           email={userProfileInformation.email}
-          phone={userProfileInformation.user_responses.phone}
-          expression={userProfileInformation.user_responses.expression}
-          instagram={userProfileInformation.user_responses.instagram}
-          linkedin={userProfileInformation.user_responses.linkedin}
+          phone={userResponses.phone}
+          expression={userResponses.expression}
+          instagram={userResponses.instagram}
+          linkedin={userResponses.linkedin}
         />
       </div>
       <!-- Cell 2 -->
@@ -78,7 +79,7 @@
       </div>
       <!-- Cell 3 -->
       <div class="col-span-1 row-span-6">
-        <SpotifyPlayer url={userProfileInformation.user_responses.expression} />
+        <SpotifyPlayer url={userResponses.expression} />
       </div>
       <!-- Cell 4 -->
       <div class="col-span-3 row-span-6">
