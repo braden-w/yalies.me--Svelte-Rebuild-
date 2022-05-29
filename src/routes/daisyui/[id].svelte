@@ -33,11 +33,6 @@
 </script>
 
 <script lang="ts">
-  import UserResponsesCard from './UserResponsesCard.svelte';
-
-  import UserCard from './CardOfUser.svelte';
-  import SpotifyPlayer from '$lib/components/SpotifyPlayer.svelte';
-
   export let userProfileInformation: UserProfileInformation;
   const userResponses = [
     {
