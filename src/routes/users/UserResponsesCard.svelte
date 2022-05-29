@@ -5,7 +5,52 @@
 
   export let userProfileInformation: UserProfileInformation;
   const isCurrentUser = userProfileInformation?.id === $sessionStore?.id;
-  export let userResponses;
+  export let userResponses = [
+    {
+      name: 'university',
+      label: 'University',
+      icon: 'graduation-cap',
+      value: userProfileInformation.user_responses.university
+    },
+    {
+      name: 'major',
+      label: 'Major',
+      icon: 'book',
+      value: userProfileInformation.user_responses.major
+    },
+    {
+      name: 'phone',
+      label: 'Phone',
+      icon: 'phone',
+      value: userProfileInformation.user_responses.phone
+    }
+  ];
+  export let userIntegrations = [
+    {
+      name: 'interests',
+      label: 'Interests',
+      icon: 'heart',
+      value: userProfileInformation.user_responses.interests
+    },
+    {
+      name: 'instagram',
+      label: 'Instagram',
+      icon: 'instagram',
+      value: userProfileInformation.user_responses.instagram
+    },
+    {
+      name: 'linkedin',
+      label: 'Linkedin',
+      icon: 'linkedin',
+      value: userProfileInformation.user_responses.linkedin
+    },
+    {
+      name: 'expression',
+      label: 'Spotify',
+      icon: 'spotify',
+      value: userProfileInformation.user_responses.expression
+    }
+  ];
 </script>
 
 <div
@@ -13,15 +58,34 @@
 >
   <div class="px-6 pt-6">
     <div class="text-xl font-extrabold">Responses</div>
-    <div class="my-4 text-xs text-base-content/70">
-      A manner of expressing yourself
-    </div>
+    <div class="my-4 text-xs text-base-content/70" />
 
     {#each userResponses as { name, label, icon, value }}
       <div class="form-control">
         <label class="label" for={name}>
           <span class="label-text">{label}</span>
-          <button class="btn btn-primary btn-xs btn-circle">
+          <button class="btn btn-circle btn-primary btn-xs">
+            <i class="fa fa-{icon}" /></button
+          >
+        </label>
+        <input
+          tabindex="0"
+          type="text"
+          id={name}
+          class="input input-bordered"
+          disabled={!isCurrentUser}
+          placeholder="Start typing your response here..."
+          bind:value
+        />
+      </div>
+    {/each}
+    <div class="text-xl font-extrabold">Integrations</div>
+    <div class="my-4 text-xs text-base-content/70">Put your Instagram</div>
+    {#each userIntegrations as { name, label, icon, value }}
+      <div class="form-control">
+        <label class="label" for={name}>
+          <span class="label-text">{label}</span>
+          <button class="btn btn-circle btn-primary btn-xs">
             <i class="fa fa-{icon}" /></button
           >
         </label>

@@ -138,58 +138,12 @@
       <div class="row-span-6 bg-teal-400">
         <UserResponsesCard
           {userProfileInformation}
-          userResponses={[
-            {
-              name: 'university',
-              label: 'University',
-              icon: 'graduation-cap',
-              value: userProfileInformation.user_responses.university
-            },
-            {
-              name: 'major',
-              label: 'Major',
-              icon: 'book',
-              value: userProfileInformation.user_responses.major
-            },
-            {
-              name: 'phone',
-              label: 'Phone',
-              icon: 'phone',
-              value: userProfileInformation.user_responses.phone
-            }
-          ]}
         />
       </div>
       <!-- Cell 5 -->
       <div class="row-span-3 bg-teal-400">
         <UserResponsesCard
           {userProfileInformation}
-          userResponses={[
-            {
-              name: 'interests',
-              label: 'Interests',
-              icon: 'heart',
-              value: userProfileInformation.user_responses.interests
-            },
-            {
-              name: 'expression',
-              label: 'Spotify',
-              icon: 'spotify',
-              value: userProfileInformation.user_responses.expression
-            },
-            {
-              name: 'instagram',
-              label: 'Instagram',
-              icon: 'instagram',
-              value: userProfileInformation.user_responses.instagram
-            },
-            {
-              name: 'linkedin',
-              label: 'Linkedin',
-              icon: 'linkedin',
-              value: userProfileInformation.user_responses.linkedin
-            }
-          ]}
         />
       </div>
       <!-- Cell 6 -->
