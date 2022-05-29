@@ -4,22 +4,24 @@ OR REPLACE VIEW users_facebook_places AS
 SELECT
   users.id,
   users.email,
-  coalesce(
+  COALESCE(
     users.name,
-    CONCAT(facebook.first_name, ' ', facebook.last_name)
-  ) as name,
-  coalesce(users.avatar_url, facebook.image) as avatar_url,
+    CONCAT(facebook.first_name, ' ', facebook.last_name) :: character varying
+  ) AS name,
+  COALESCE(users.avatar_url, facebook.image) AS avatar_url,
   places.place_id,
   places.description,
   COALESCE(user_responses.phone, facebook.phone) AS phone,
+  user_responses.interests,
   user_responses.expression,
   user_responses.instagram,
   user_responses.linkedin,
+  facebook.major,
   facebook.year
 FROM
   users
-  left JOIN user_responses ON users.user_response_id = user_responses.user_response_id
-  left JOIN places on places.place_id = user_responses.place_id full
-  join facebook on users.email = facebook.email
-where
-  facebook.year is not null
+  LEFT JOIN user_responses ON users.user_response_id = user_responses.user_response_id
+  LEFT JOIN places ON places.place_id = user_responses.place_id FULL
+  JOIN facebook ON users.email = facebook.email
+WHERE
+  facebook.year IS NOT NULL;
