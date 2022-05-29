@@ -33,7 +33,7 @@
 </script>
 
 <script lang="ts">
-  import UserSocials from './UserSocials.svelte';
+  import UserSocials from '../../lib/components/UserSocials.svelte';
 
   import UserAvatarsRow from './UserAvatarsRow.svelte';
 
