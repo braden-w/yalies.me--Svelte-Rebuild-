@@ -109,7 +109,7 @@
                 class="mask mask-squircle bg-base-content h-24 w-24 bg-opacity-10 p-px"
               >
                 <img
-                  src="/tailwind-css-component-profile-1@94w.jpg"
+                  src={userProfileInformation.avatar_url}
                   alt="Avatar Tailwind CSS Component"
                   class="mask mask-squircle"
                   width="94"
@@ -143,13 +143,15 @@
           <div class="dropdown w-full">
             <div tabindex="0">
               <div class="text-center">
-                <div class="text-lg font-extrabold">Betsy Braddock</div>
+                <div class="text-lg font-extrabold">
+                  {userProfileInformation?.name}
+                </div>
                 <div class="text-base-content/70 my-3 text-sm">
-                  Strategic Art Manager
+                  Ethics, Politics, & Economics
                   <br />
-                  Global Illustration Observer
+                  Yale University
                   <br />
-                  Business Alignment Developer
+                  Student
                 </div>
               </div>
             </div>
