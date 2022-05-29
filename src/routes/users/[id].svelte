@@ -47,11 +47,7 @@
   <div class="w-full">
     <!-- A centered large card with two columns and bg-base-100 -->
     <div class="flex w-full">
-      <div
-        class="grid h-100 flex-grow card shadow-2xl bg-base-100 rounded-box place-items-center"
-      >
-        <div class="card-body">content</div>
-      </div>
+      <UserCard {userProfileInformation} />
       <div class="divider divider-horizontal">OR</div>
       <div
         class="grid h-100 flex-grow card shadow-2xl bg-base-100 rounded-box place-items-center"
@@ -60,7 +56,6 @@
       </div>
     </div>
 
-    <UserCard {userProfileInformation} />
     <!-- Create a card that displays -->
     <!-- the user's information -->
     <div class="flex-1">
