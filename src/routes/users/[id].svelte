@@ -98,7 +98,7 @@
   <div class="w-full h-full">
     <div
       id="component-demo"
-      class="flex w-full grid-flow-col grid-cols-12 items-center gap-4 overflow-y-hidden overflow-x-scroll px-10 pt-1 pb-10 xl:grid xl:overflow-x-auto xl:px-4"
+      class="flex w-full grid-flow-col items-center gap-4 overflow-y-hidden overflow-x-scroll px-10 pt-1 pb-10 xl:grid xl:overflow-x-auto xl:px-4"
     >
       <UserCard {userProfileInformation} />
       <div
