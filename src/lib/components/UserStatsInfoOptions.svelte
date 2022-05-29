@@ -30,129 +30,247 @@
   </div>
 
   <!-- Begin Tab Page 0 -->
-  <div
-    class="bg-base-100 grid w-full flex-grow gap-3 rounded-xl rounded-tl-none p-6 shadow-xl"
-  >
-    <div class="flex items-center space-x-2">
+  {#if tab === 0}
+    <div
+      class="bg-base-100 grid w-full flex-grow gap-3 rounded-xl rounded-tl-none p-6 shadow-xl"
+    >
+      <div class="flex items-center space-x-2">
+        <div class="dropdown">
+          <div tabindex="0">
+            <div class="online avatar">
+              <div
+                class="mask mask-hexagon bg-base-content h-16 w-16 bg-opacity-10 p-px"
+              >
+                <img
+                  src={userProfileInformation.avatar_url}
+                  alt="Avatar Tailwind CSS Component"
+                  class="mask mask-hexagon"
+                />
+              </div>
+            </div>
+          </div>
+          <div tabindex="0" class="dropdown-content py-2">
+            <div
+              class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
+            >
+              <div class="card-body">
+                <h2 class="card-title font-extrabold capitalize">
+                  avatar component
+                </h2>
+                <p class="text-neutral-content text-sm text-opacity-80">
+                  Use avatar component with any size
+                </p>
+                <div class="mt-4 flex justify-end">
+                  <a
+                    href="/components/avatar"
+                    class="btn btn-primary btn-sm xl:btn-md">See component</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="text-lg font-extrabold">Braden Wong</div>
+          <div class="text-base-content/70 text-sm">220 Followers</div>
+        </div>
+      </div>
       <div class="dropdown">
         <div tabindex="0">
-          <div class="online avatar">
-            <div
-              class="mask mask-hexagon bg-base-content h-16 w-16 bg-opacity-10 p-px"
-            >
-              <img
-                src={userProfileInformation.avatar_url}
-                alt="Avatar Tailwind CSS Component"
-                class="mask mask-hexagon"
+          <div class="divider text-base-content/60 m-0">Reports</div>
+        </div>
+        <div tabindex="0" class="dropdown-content py-2">
+          <div
+            class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
+          >
+            <div class="card-body">
+              <h2 class="card-title font-extrabold capitalize">
+                divider component
+              </h2>
+              <p class="text-neutral-content text-sm text-opacity-80">
+                User divider component to visually separate items
+              </p>
+              <div class="mt-4 flex justify-end">
+                <a
+                  href="/components/divider"
+                  class="btn btn-primary btn-sm xl:btn-md">See component</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-lg font-extrabold">Follower Report</div>
+      <div class="grid gap-3">
+        <div class="dropdown dropdown-top">
+          <div tabindex="0">
+            <div class="flex items-center p-1">
+              <span class="text-base-content/70 w-48 text-xs"
+                >Search Engines</span
+              >
+              <progress
+                max="100"
+                class="progress progress-success"
+                value="50"
+              />
+            </div>
+            <div class="flex items-center p-1">
+              <span class="text-base-content/70 w-48 text-xs">Direct</span>
+              <progress
+                max="100"
+                class="progress progress-primary"
+                value="30"
+              />
+            </div>
+            <div class="flex items-center p-1">
+              <span class="text-base-content/70 w-48 text-xs">Social Media</span
+              >
+              <progress
+                max="100"
+                class="progress progress-secondary"
+                value="70"
+              />
+            </div>
+            <div class="flex items-center p-1">
+              <span class="text-base-content/70 w-48 text-xs">Emails</span>
+              <progress max="100" class="progress progress-accent" value="90" />
+            </div>
+            <div class="flex items-center p-1">
+              <span class="text-base-content/70 w-48 text-xs">Ad campaigns</span
+              >
+              <progress
+                max="100"
+                class="progress progress-warning"
+                value="65"
               />
             </div>
           </div>
-        </div>
-        <div tabindex="0" class="dropdown-content py-2">
-          <div
-            class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
-          >
-            <div class="card-body">
-              <h2 class="card-title font-extrabold capitalize">
-                avatar component
-              </h2>
-              <p class="text-neutral-content text-sm text-opacity-80">
-                Use avatar component with any size
-              </p>
-              <div class="mt-4 flex justify-end">
-                <a
-                  href="/components/avatar"
-                  class="btn btn-primary btn-sm xl:btn-md">See component</a
-                >
+          <div tabindex="0" class="dropdown-content py-2">
+            <div
+              class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
+            >
+              <div class="card-body">
+                <h2 class="card-title font-extrabold capitalize">
+                  progress component
+                </h2>
+                <p class="text-neutral-content text-sm text-opacity-80">
+                  Show progressbar, loadings or simple bar charts using progress
+                  component
+                </p>
+                <div class="mt-4 flex justify-end">
+                  <a
+                    href="/components/progress"
+                    class="btn btn-primary btn-sm xl:btn-md">See component</a
+                  >
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div>
-        <div class="text-lg font-extrabold">Braden Wong</div>
-        <div class="text-base-content/70 text-sm">220 Followers</div>
-      </div>
     </div>
-    <div class="dropdown">
-      <div tabindex="0">
-        <div class="divider text-base-content/60 m-0">Reports</div>
-      </div>
-      <div tabindex="0" class="dropdown-content py-2">
-        <div
-          class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
-        >
-          <div class="card-body">
-            <h2 class="card-title font-extrabold capitalize">
-              divider component
-            </h2>
-            <p class="text-neutral-content text-sm text-opacity-80">
-              User divider component to visually separate items
-            </p>
-            <div class="mt-4 flex justify-end">
-              <a
-                href="/components/divider"
-                class="btn btn-primary btn-sm xl:btn-md">See component</a
+  {/if}
+  <!-- Begin Tab Page 1 -->
+  {#if tab === 1}{/if}
+  <!-- Begin Tab Page 2 -->
+  {#if tab === 2}
+    <div
+      class="bg-base-100 rounded-box col-span-3 row-span-3 mx-2 flex w-72 flex-shrink-0 flex-col justify-center gap-4 p-4 shadow-xl xl:mx-0 xl:w-full"
+    >
+      <div class="px-6 pt-6">
+        <div class="text-xl font-extrabold">Superpower settings</div>
+        <div class="text-base-content/70 my-4 text-xs">
+          Enable your favorite superpowers. Terms and conditions apply
+        </div>
+        <div class="dropdown w-full flex-1">
+          <div tabindex="0">
+            <div class="form-control">
+              <label class="label cursor-pointer"
+                ><span class="label-text">Enable teleportation</span>
+                <input type="checkbox" class="toggle toggle-primary" /></label
+              >
+            </div>
+            <div class="form-control">
+              <label class="label cursor-pointer"
+                ><span class="label-text">Enable time travel</span>
+                <input type="checkbox" class="toggle toggle-secondary" /></label
+              >
+            </div>
+            <div class="form-control">
+              <label class="label cursor-pointer"
+                ><span class="label-text">Enable laser eyes</span>
+                <input type="checkbox" class="toggle toggle-accent" /></label
+              >
+            </div>
+            <div class="form-control">
+              <label class="label cursor-pointer"
+                ><span class="label-text">Enable immortality</span>
+                <input type="checkbox" class="toggle" /></label
               >
             </div>
           </div>
+          <div tabindex="0" class="dropdown-content py-2">
+            <div
+              class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
+            >
+              <div class="card-body">
+                <h2 class="card-title font-extrabold capitalize">
+                  toggle component
+                </h2>
+                <p class="text-neutral-content text-sm text-opacity-80">
+                  Use toggle to switch between two states
+                </p>
+                <div class="mt-4 flex justify-end">
+                  <a
+                    href="/components/toggle"
+                    class="btn btn-primary btn-sm xl:btn-md">See component</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="text-lg font-extrabold">Follower Report</div>
-    <div class="grid gap-3">
-      <div class="dropdown dropdown-top">
-        <div tabindex="0">
-          <div class="flex items-center p-1">
-            <span class="text-base-content/70 w-48 text-xs">Search Engines</span
+      <div class="form-control">
+        <div class="dropdown dropdown-top dropdown-end">
+          <div tabindex="0">
+            <button class="btn btn-secondary btn-block space-x-2"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                class="h-6 w-6 stroke-current"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                /></svg
+              > <span>Apply settings</span></button
             >
-            <progress max="100" class="progress progress-success" value="50" />
           </div>
-          <div class="flex items-center p-1">
-            <span class="text-base-content/70 w-48 text-xs">Direct</span>
-            <progress max="100" class="progress progress-primary" value="30" />
-          </div>
-          <div class="flex items-center p-1">
-            <span class="text-base-content/70 w-48 text-xs">Social Media</span>
-            <progress
-              max="100"
-              class="progress progress-secondary"
-              value="70"
-            />
-          </div>
-          <div class="flex items-center p-1">
-            <span class="text-base-content/70 w-48 text-xs">Emails</span>
-            <progress max="100" class="progress progress-accent" value="90" />
-          </div>
-          <div class="flex items-center p-1">
-            <span class="text-base-content/70 w-48 text-xs">Ad campaigns</span>
-            <progress max="100" class="progress progress-warning" value="65" />
-          </div>
-        </div>
-        <div tabindex="0" class="dropdown-content py-2">
-          <div
-            class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
-          >
-            <div class="card-body">
-              <h2 class="card-title font-extrabold capitalize">
-                progress component
-              </h2>
-              <p class="text-neutral-content text-sm text-opacity-80">
-                Show progressbar, loadings or simple bar charts using progress
-                component
-              </p>
-              <div class="mt-4 flex justify-end">
-                <a
-                  href="/components/progress"
-                  class="btn btn-primary btn-sm xl:btn-md">See component</a
-                >
+          <div tabindex="0" class="dropdown-content py-2">
+            <div
+              class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
+            >
+              <div class="card-body">
+                <h2 class="card-title font-extrabold capitalize">
+                  button component
+                </h2>
+                <p class="text-neutral-content text-sm text-opacity-80">
+                  Buttons come in various shapes, colors and sizes
+                </p>
+                <div class="mt-4 flex justify-end">
+                  <a
+                    href="/components/button"
+                    class="btn btn-primary btn-sm xl:btn-md">See component</a
+                  >
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- Begin Tab Page 1 -->
-  <!-- Begin Tab Page 2 -->
+  {/if}
 </div>
