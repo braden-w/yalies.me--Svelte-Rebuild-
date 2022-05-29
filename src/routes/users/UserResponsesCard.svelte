@@ -101,9 +101,9 @@
         />
       </div>
     {/each}
-    <div class="divider" />
   </div>
   <div class="form-control">
+    <div class="divider" />
     <button class="btn btn-secondary btn-block space-x-2">
       <svg
         xmlns="http://www.w3.org/2000/svg"
