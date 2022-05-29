@@ -35,6 +35,7 @@
     {/if}
   </div>
   <div class="form-control">
+    <div class="divider" />
     <button class="btn btn-secondary btn-block space-x-2">
       <!-- Insert an svg of a map -->
       <svg
