@@ -5,7 +5,7 @@
 </script>
 
 <div
-  class="bg-base-100 rounded-box row-span-2 mx-2 grid w-72 flex-shrink-0 place-items-center items-center gap-4 p-4 py-8 shadow-xl xl:mx-0"
+  class="bg-base-100 rounded-box mx-2 grid w-72 flex-shrink-0 place-items-center items-center gap-4 p-4 py-8 shadow-xl xl:mx-0"
 >
   <div class="dropdown">
     <div tabindex="0">
