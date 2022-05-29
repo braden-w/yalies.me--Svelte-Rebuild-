@@ -55,7 +55,7 @@
   <div class="h-full w-full">
     <div
       id="component-demo"
-      class="flex w-full flex-col items-stretch gap-4 overflow-x-auto px-4 pt-1 pb-10 xl:grid xl:grid-flow-col xl:grid-cols-4 xl:grid-rows-6"
+      class="flex w-full flex-col items-stretch gap-4 overflow-x-auto px-4 pt-1 pb-10 xl:grid xl:grid-flow-col xl:grid-cols-3 xl:grid-rows-6"
     >
       <!-- Cell 1 -->
       <div class="row-span-2 bg-teal-400">
@@ -123,14 +123,9 @@
         <SpotifyPlayer url={userProfileInformation.user_responses.expression} />
       </div>
 
-      <!-- Cell 7 -->
-      <div class="row-span-4 bg-teal-400" />
-      <!-- Cell 8 -->
-      <div class="row-span-2 bg-teal-400">
-        <UserMenuItems {userProfileInformation} />
-      </div>
       <!-- 
       
+      <UserMenuItems {userProfileInformation} />
       
       <div
         class="flex-shrink-0 col-span-3 row-span-4 mx-2 overflow-visible shadow-xl card card-compact xl:card-normal bg-base-100 w-72 xl:mx-0 xl:w-auto"
