@@ -1,4 +1,6 @@
 export interface SessionStore {
+  id: string | undefined;
+  user_response_id: string;
   avatar_url: string;
   email: string;
   email_verified: boolean;
@@ -8,6 +10,4 @@ export interface SessionStore {
   picture: string;
   provider_id: string;
   sub: string;
-  id: string | undefined;
-  user_response_id: string;
 }

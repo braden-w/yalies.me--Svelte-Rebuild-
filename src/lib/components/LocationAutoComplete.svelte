@@ -1,13 +1,16 @@
 <script lang="ts">
   import { supabase } from '$lib/utils/supabaseClient';
-  import { sessionStore } from '$lib/utils/sessionStore';
+  import { sessionStore } from '$lib/stores/sessionStore';
   import {
     defaultResults,
     uploadPlaceToSupabase,
     uploadUserPlaceSelectionToSupabase,
     type Payload
-  } from '$lib/LocationAutoComplete';
-  import { getUserLocation } from '$lib/utils/getUserLocation';
+  } from '$lib/components/LocationAutoComplete';
+  import {
+    refreshUserLocation,
+    userLocationStore
+  } from '$lib/utils/getUserLocation';
 
   let query = '';
   $: isQueryLongEnough = query.length >= 2;
@@ -16,12 +19,13 @@
 
   const resetResults = () => (results = defaultResults);
 
-  async function fetchLocations() {
-    const userLocation = await getUserLocation();
-    query = userLocation?.user_responses.places.description ?? '';
+  /** If the user already has a location, put that location description inside the box */
+  async function prepopulateLocation() {
+    await refreshUserLocation();
+    query = $userLocationStore?.places.description ?? '';
     if (query !== '') results = [];
   }
-  fetchLocations();
+  prepopulateLocation();
 
   // Functions for when query changes value
   let timer: NodeJS.Timeout | null;
@@ -91,6 +95,8 @@
       uploadUserPlaceSelectionToSupabase(user_response_id, place_id);
     } catch (error: any) {
       alert(error.message);
+    } finally {
+      refreshUserLocation();
     }
   }
 </script>

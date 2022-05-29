@@ -5,13 +5,14 @@
   import { onMount } from 'svelte';
   import { themeChange } from 'theme-change';
   import { supabase } from '$lib/utils/supabaseClient';
-  import { sessionStore } from '$lib/utils/sessionStore';
+  import { sessionStore } from '$lib/stores/sessionStore';
   import { signIn, signOut } from '$lib/utils/auth';
   import type { ApiError, User } from '@supabase/supabase-js';
   import type { SessionStore } from '$lib/types/SessionStore';
   import type { UserMetadata } from '$lib/types/UserMetaData';
   import { goto } from '$app/navigation';
   import { browser } from '$app/env';
+  import { session } from '$app/stores';
   onMount(() => {
     themeChange(false);
   });
@@ -34,7 +35,6 @@
     else {
       if (checkEmail(user)) {
         $sessionStore = processAuthState(user);
-        goto('/profile');
       }
     }
   }
@@ -114,8 +114,9 @@
           </label>
         </div>
         <div class="flex-1">
-          <a href="/" class="btn btn-ghost normal-case text-xl"
-            >Yalies Around Me</a
+          <a
+            href={$sessionStore !== null ? '/map' : '/landing'}
+            class="btn btn-ghost normal-case text-xl">Map of Yalies</a
           >
         </div>
         <div class="flex-none">
@@ -949,9 +950,11 @@
     <ul class="menu p-4 overflow-y-auto w-80 bg-base-200 text-base-content">
       <!-- Sidebar content here -->
       <li><a href="">Who's in New Haven</a></li>
-      <li>
-        <a href="/">Map</a>
-      </li>
+      {#if $sessionStore !== null}
+        <li>
+          <a href="/map">Map</a>
+        </li>
+      {/if}
       <li><a href="">Ride Share</a></li>
       <li><a href="">Track Meals</a></li>
       <li><a href="butteries">Butteries</a></li>

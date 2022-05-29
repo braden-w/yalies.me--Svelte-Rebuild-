@@ -12,228 +12,6 @@ export interface paths {
       };
     };
   };
-  '/2022_facebook': {
-    get: {
-      parameters: {
-        query: {
-          id?: parameters['rowFilter.2022_facebook.id'];
-          upi?: parameters['rowFilter.2022_facebook.upi'];
-          netid?: parameters['rowFilter.2022_facebook.netid'];
-          email?: parameters['rowFilter.2022_facebook.email'];
-          mailbox?: parameters['rowFilter.2022_facebook.mailbox'];
-          first_name?: parameters['rowFilter.2022_facebook.first_name'];
-          last_name?: parameters['rowFilter.2022_facebook.last_name'];
-          school_code?: parameters['rowFilter.2022_facebook.school_code'];
-          school?: parameters['rowFilter.2022_facebook.school'];
-          curriculum?: parameters['rowFilter.2022_facebook.curriculum'];
-          organization_code?: parameters['rowFilter.2022_facebook.organization_code'];
-          organization?: parameters['rowFilter.2022_facebook.organization'];
-          title?: parameters['rowFilter.2022_facebook.title'];
-          address?: parameters['rowFilter.2022_facebook.address'];
-          unit_class?: parameters['rowFilter.2022_facebook.unit_class'];
-          unit_code?: parameters['rowFilter.2022_facebook.unit_code'];
-          unit?: parameters['rowFilter.2022_facebook.unit'];
-          postal_address?: parameters['rowFilter.2022_facebook.postal_address'];
-          office_building?: parameters['rowFilter.2022_facebook.office_building'];
-          cv?: parameters['rowFilter.2022_facebook.cv'];
-          profile?: parameters['rowFilter.2022_facebook.profile'];
-          city?: parameters['rowFilter.2022_facebook.city'];
-          year?: parameters['rowFilter.2022_facebook.year'];
-          college?: parameters['rowFilter.2022_facebook.college'];
-          college_code?: parameters['rowFilter.2022_facebook.college_code'];
-          leave?: parameters['rowFilter.2022_facebook.leave'];
-          eli_whitney?: parameters['rowFilter.2022_facebook.eli_whitney'];
-          image?: parameters['rowFilter.2022_facebook.image'];
-          birthday?: parameters['rowFilter.2022_facebook.birthday'];
-          major?: parameters['rowFilter.2022_facebook.major'];
-          phone?: parameters['rowFilter.2022_facebook.phone'];
-          access_code?: parameters['rowFilter.2022_facebook.access_code'];
-          middle_name?: parameters['rowFilter.2022_facebook.middle_name'];
-          office_room?: parameters['rowFilter.2022_facebook.office_room'];
-          website?: parameters['rowFilter.2022_facebook.website'];
-          education?: parameters['rowFilter.2022_facebook.education'];
-          name_recording?: parameters['rowFilter.2022_facebook.name_recording'];
-          pronouns?: parameters['rowFilter.2022_facebook.pronouns'];
-          phonetic_name?: parameters['rowFilter.2022_facebook.phonetic_name'];
-          suffix?: parameters['rowFilter.2022_facebook.suffix'];
-          fax?: parameters['rowFilter.2022_facebook.fax'];
-          city_as_point?: parameters['rowFilter.2022_facebook.city_as_point'];
-          birth_day?: parameters['rowFilter.2022_facebook.birth_day'];
-          birth_month?: parameters['rowFilter.2022_facebook.birth_month'];
-          visitor?: parameters['rowFilter.2022_facebook.visitor'];
-          preferred_name?: parameters['rowFilter.2022_facebook.preferred_name'];
-          /** Filtering Columns */
-          select?: parameters['select'];
-          /** Ordering */
-          order?: parameters['order'];
-          /** Limiting and Pagination */
-          offset?: parameters['offset'];
-          /** Limiting and Pagination */
-          limit?: parameters['limit'];
-        };
-        header: {
-          /** Limiting and Pagination */
-          Range?: parameters['range'];
-          /** Limiting and Pagination */
-          'Range-Unit'?: parameters['rangeUnit'];
-          /** Preference */
-          Prefer?: parameters['preferCount'];
-        };
-      };
-      responses: {
-        /** OK */
-        200: {
-          schema: definitions['2022_facebook'][];
-        };
-        /** Partial Content */
-        206: unknown;
-      };
-    };
-    post: {
-      parameters: {
-        body: {
-          /** 2022_facebook */
-          '2022_facebook'?: definitions['2022_facebook'];
-        };
-        query: {
-          /** Filtering Columns */
-          select?: parameters['select'];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters['preferReturn'];
-        };
-      };
-      responses: {
-        /** Created */
-        201: unknown;
-      };
-    };
-    delete: {
-      parameters: {
-        query: {
-          id?: parameters['rowFilter.2022_facebook.id'];
-          upi?: parameters['rowFilter.2022_facebook.upi'];
-          netid?: parameters['rowFilter.2022_facebook.netid'];
-          email?: parameters['rowFilter.2022_facebook.email'];
-          mailbox?: parameters['rowFilter.2022_facebook.mailbox'];
-          first_name?: parameters['rowFilter.2022_facebook.first_name'];
-          last_name?: parameters['rowFilter.2022_facebook.last_name'];
-          school_code?: parameters['rowFilter.2022_facebook.school_code'];
-          school?: parameters['rowFilter.2022_facebook.school'];
-          curriculum?: parameters['rowFilter.2022_facebook.curriculum'];
-          organization_code?: parameters['rowFilter.2022_facebook.organization_code'];
-          organization?: parameters['rowFilter.2022_facebook.organization'];
-          title?: parameters['rowFilter.2022_facebook.title'];
-          address?: parameters['rowFilter.2022_facebook.address'];
-          unit_class?: parameters['rowFilter.2022_facebook.unit_class'];
-          unit_code?: parameters['rowFilter.2022_facebook.unit_code'];
-          unit?: parameters['rowFilter.2022_facebook.unit'];
-          postal_address?: parameters['rowFilter.2022_facebook.postal_address'];
-          office_building?: parameters['rowFilter.2022_facebook.office_building'];
-          cv?: parameters['rowFilter.2022_facebook.cv'];
-          profile?: parameters['rowFilter.2022_facebook.profile'];
-          city?: parameters['rowFilter.2022_facebook.city'];
-          year?: parameters['rowFilter.2022_facebook.year'];
-          college?: parameters['rowFilter.2022_facebook.college'];
-          college_code?: parameters['rowFilter.2022_facebook.college_code'];
-          leave?: parameters['rowFilter.2022_facebook.leave'];
-          eli_whitney?: parameters['rowFilter.2022_facebook.eli_whitney'];
-          image?: parameters['rowFilter.2022_facebook.image'];
-          birthday?: parameters['rowFilter.2022_facebook.birthday'];
-          major?: parameters['rowFilter.2022_facebook.major'];
-          phone?: parameters['rowFilter.2022_facebook.phone'];
-          access_code?: parameters['rowFilter.2022_facebook.access_code'];
-          middle_name?: parameters['rowFilter.2022_facebook.middle_name'];
-          office_room?: parameters['rowFilter.2022_facebook.office_room'];
-          website?: parameters['rowFilter.2022_facebook.website'];
-          education?: parameters['rowFilter.2022_facebook.education'];
-          name_recording?: parameters['rowFilter.2022_facebook.name_recording'];
-          pronouns?: parameters['rowFilter.2022_facebook.pronouns'];
-          phonetic_name?: parameters['rowFilter.2022_facebook.phonetic_name'];
-          suffix?: parameters['rowFilter.2022_facebook.suffix'];
-          fax?: parameters['rowFilter.2022_facebook.fax'];
-          city_as_point?: parameters['rowFilter.2022_facebook.city_as_point'];
-          birth_day?: parameters['rowFilter.2022_facebook.birth_day'];
-          birth_month?: parameters['rowFilter.2022_facebook.birth_month'];
-          visitor?: parameters['rowFilter.2022_facebook.visitor'];
-          preferred_name?: parameters['rowFilter.2022_facebook.preferred_name'];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters['preferReturn'];
-        };
-      };
-      responses: {
-        /** No Content */
-        204: never;
-      };
-    };
-    patch: {
-      parameters: {
-        query: {
-          id?: parameters['rowFilter.2022_facebook.id'];
-          upi?: parameters['rowFilter.2022_facebook.upi'];
-          netid?: parameters['rowFilter.2022_facebook.netid'];
-          email?: parameters['rowFilter.2022_facebook.email'];
-          mailbox?: parameters['rowFilter.2022_facebook.mailbox'];
-          first_name?: parameters['rowFilter.2022_facebook.first_name'];
-          last_name?: parameters['rowFilter.2022_facebook.last_name'];
-          school_code?: parameters['rowFilter.2022_facebook.school_code'];
-          school?: parameters['rowFilter.2022_facebook.school'];
-          curriculum?: parameters['rowFilter.2022_facebook.curriculum'];
-          organization_code?: parameters['rowFilter.2022_facebook.organization_code'];
-          organization?: parameters['rowFilter.2022_facebook.organization'];
-          title?: parameters['rowFilter.2022_facebook.title'];
-          address?: parameters['rowFilter.2022_facebook.address'];
-          unit_class?: parameters['rowFilter.2022_facebook.unit_class'];
-          unit_code?: parameters['rowFilter.2022_facebook.unit_code'];
-          unit?: parameters['rowFilter.2022_facebook.unit'];
-          postal_address?: parameters['rowFilter.2022_facebook.postal_address'];
-          office_building?: parameters['rowFilter.2022_facebook.office_building'];
-          cv?: parameters['rowFilter.2022_facebook.cv'];
-          profile?: parameters['rowFilter.2022_facebook.profile'];
-          city?: parameters['rowFilter.2022_facebook.city'];
-          year?: parameters['rowFilter.2022_facebook.year'];
-          college?: parameters['rowFilter.2022_facebook.college'];
-          college_code?: parameters['rowFilter.2022_facebook.college_code'];
-          leave?: parameters['rowFilter.2022_facebook.leave'];
-          eli_whitney?: parameters['rowFilter.2022_facebook.eli_whitney'];
-          image?: parameters['rowFilter.2022_facebook.image'];
-          birthday?: parameters['rowFilter.2022_facebook.birthday'];
-          major?: parameters['rowFilter.2022_facebook.major'];
-          phone?: parameters['rowFilter.2022_facebook.phone'];
-          access_code?: parameters['rowFilter.2022_facebook.access_code'];
-          middle_name?: parameters['rowFilter.2022_facebook.middle_name'];
-          office_room?: parameters['rowFilter.2022_facebook.office_room'];
-          website?: parameters['rowFilter.2022_facebook.website'];
-          education?: parameters['rowFilter.2022_facebook.education'];
-          name_recording?: parameters['rowFilter.2022_facebook.name_recording'];
-          pronouns?: parameters['rowFilter.2022_facebook.pronouns'];
-          phonetic_name?: parameters['rowFilter.2022_facebook.phonetic_name'];
-          suffix?: parameters['rowFilter.2022_facebook.suffix'];
-          fax?: parameters['rowFilter.2022_facebook.fax'];
-          city_as_point?: parameters['rowFilter.2022_facebook.city_as_point'];
-          birth_day?: parameters['rowFilter.2022_facebook.birth_day'];
-          birth_month?: parameters['rowFilter.2022_facebook.birth_month'];
-          visitor?: parameters['rowFilter.2022_facebook.visitor'];
-          preferred_name?: parameters['rowFilter.2022_facebook.preferred_name'];
-        };
-        body: {
-          /** 2022_facebook */
-          '2022_facebook'?: definitions['2022_facebook'];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters['preferReturn'];
-        };
-      };
-      responses: {
-        /** No Content */
-        204: never;
-      };
-    };
-  };
   '/errors': {
     get: {
       parameters: {
@@ -324,6 +102,271 @@ export interface paths {
       responses: {
         /** No Content */
         204: never;
+      };
+    };
+  };
+  '/facebook': {
+    get: {
+      parameters: {
+        query: {
+          id?: parameters['rowFilter.facebook.id'];
+          upi?: parameters['rowFilter.facebook.upi'];
+          netid?: parameters['rowFilter.facebook.netid'];
+          email?: parameters['rowFilter.facebook.email'];
+          mailbox?: parameters['rowFilter.facebook.mailbox'];
+          first_name?: parameters['rowFilter.facebook.first_name'];
+          last_name?: parameters['rowFilter.facebook.last_name'];
+          school_code?: parameters['rowFilter.facebook.school_code'];
+          school?: parameters['rowFilter.facebook.school'];
+          curriculum?: parameters['rowFilter.facebook.curriculum'];
+          organization_code?: parameters['rowFilter.facebook.organization_code'];
+          organization?: parameters['rowFilter.facebook.organization'];
+          title?: parameters['rowFilter.facebook.title'];
+          address?: parameters['rowFilter.facebook.address'];
+          unit_class?: parameters['rowFilter.facebook.unit_class'];
+          unit_code?: parameters['rowFilter.facebook.unit_code'];
+          unit?: parameters['rowFilter.facebook.unit'];
+          postal_address?: parameters['rowFilter.facebook.postal_address'];
+          office_building?: parameters['rowFilter.facebook.office_building'];
+          cv?: parameters['rowFilter.facebook.cv'];
+          profile?: parameters['rowFilter.facebook.profile'];
+          city?: parameters['rowFilter.facebook.city'];
+          year?: parameters['rowFilter.facebook.year'];
+          college?: parameters['rowFilter.facebook.college'];
+          college_code?: parameters['rowFilter.facebook.college_code'];
+          leave?: parameters['rowFilter.facebook.leave'];
+          eli_whitney?: parameters['rowFilter.facebook.eli_whitney'];
+          image?: parameters['rowFilter.facebook.image'];
+          birthday?: parameters['rowFilter.facebook.birthday'];
+          major?: parameters['rowFilter.facebook.major'];
+          phone?: parameters['rowFilter.facebook.phone'];
+          access_code?: parameters['rowFilter.facebook.access_code'];
+          middle_name?: parameters['rowFilter.facebook.middle_name'];
+          office_room?: parameters['rowFilter.facebook.office_room'];
+          website?: parameters['rowFilter.facebook.website'];
+          education?: parameters['rowFilter.facebook.education'];
+          name_recording?: parameters['rowFilter.facebook.name_recording'];
+          pronouns?: parameters['rowFilter.facebook.pronouns'];
+          phonetic_name?: parameters['rowFilter.facebook.phonetic_name'];
+          suffix?: parameters['rowFilter.facebook.suffix'];
+          fax?: parameters['rowFilter.facebook.fax'];
+          city_as_point?: parameters['rowFilter.facebook.city_as_point'];
+          birth_day?: parameters['rowFilter.facebook.birth_day'];
+          birth_month?: parameters['rowFilter.facebook.birth_month'];
+          visitor?: parameters['rowFilter.facebook.visitor'];
+          preferred_name?: parameters['rowFilter.facebook.preferred_name'];
+          place_id?: parameters['rowFilter.facebook.place_id'];
+          /** Filtering Columns */
+          select?: parameters['select'];
+          /** Ordering */
+          order?: parameters['order'];
+          /** Limiting and Pagination */
+          offset?: parameters['offset'];
+          /** Limiting and Pagination */
+          limit?: parameters['limit'];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters['range'];
+          /** Limiting and Pagination */
+          'Range-Unit'?: parameters['rangeUnit'];
+          /** Preference */
+          Prefer?: parameters['preferCount'];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions['facebook'][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** facebook */
+          facebook?: definitions['facebook'];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters['select'];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters['preferReturn'];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          id?: parameters['rowFilter.facebook.id'];
+          upi?: parameters['rowFilter.facebook.upi'];
+          netid?: parameters['rowFilter.facebook.netid'];
+          email?: parameters['rowFilter.facebook.email'];
+          mailbox?: parameters['rowFilter.facebook.mailbox'];
+          first_name?: parameters['rowFilter.facebook.first_name'];
+          last_name?: parameters['rowFilter.facebook.last_name'];
+          school_code?: parameters['rowFilter.facebook.school_code'];
+          school?: parameters['rowFilter.facebook.school'];
+          curriculum?: parameters['rowFilter.facebook.curriculum'];
+          organization_code?: parameters['rowFilter.facebook.organization_code'];
+          organization?: parameters['rowFilter.facebook.organization'];
+          title?: parameters['rowFilter.facebook.title'];
+          address?: parameters['rowFilter.facebook.address'];
+          unit_class?: parameters['rowFilter.facebook.unit_class'];
+          unit_code?: parameters['rowFilter.facebook.unit_code'];
+          unit?: parameters['rowFilter.facebook.unit'];
+          postal_address?: parameters['rowFilter.facebook.postal_address'];
+          office_building?: parameters['rowFilter.facebook.office_building'];
+          cv?: parameters['rowFilter.facebook.cv'];
+          profile?: parameters['rowFilter.facebook.profile'];
+          city?: parameters['rowFilter.facebook.city'];
+          year?: parameters['rowFilter.facebook.year'];
+          college?: parameters['rowFilter.facebook.college'];
+          college_code?: parameters['rowFilter.facebook.college_code'];
+          leave?: parameters['rowFilter.facebook.leave'];
+          eli_whitney?: parameters['rowFilter.facebook.eli_whitney'];
+          image?: parameters['rowFilter.facebook.image'];
+          birthday?: parameters['rowFilter.facebook.birthday'];
+          major?: parameters['rowFilter.facebook.major'];
+          phone?: parameters['rowFilter.facebook.phone'];
+          access_code?: parameters['rowFilter.facebook.access_code'];
+          middle_name?: parameters['rowFilter.facebook.middle_name'];
+          office_room?: parameters['rowFilter.facebook.office_room'];
+          website?: parameters['rowFilter.facebook.website'];
+          education?: parameters['rowFilter.facebook.education'];
+          name_recording?: parameters['rowFilter.facebook.name_recording'];
+          pronouns?: parameters['rowFilter.facebook.pronouns'];
+          phonetic_name?: parameters['rowFilter.facebook.phonetic_name'];
+          suffix?: parameters['rowFilter.facebook.suffix'];
+          fax?: parameters['rowFilter.facebook.fax'];
+          city_as_point?: parameters['rowFilter.facebook.city_as_point'];
+          birth_day?: parameters['rowFilter.facebook.birth_day'];
+          birth_month?: parameters['rowFilter.facebook.birth_month'];
+          visitor?: parameters['rowFilter.facebook.visitor'];
+          preferred_name?: parameters['rowFilter.facebook.preferred_name'];
+          place_id?: parameters['rowFilter.facebook.place_id'];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters['preferReturn'];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          id?: parameters['rowFilter.facebook.id'];
+          upi?: parameters['rowFilter.facebook.upi'];
+          netid?: parameters['rowFilter.facebook.netid'];
+          email?: parameters['rowFilter.facebook.email'];
+          mailbox?: parameters['rowFilter.facebook.mailbox'];
+          first_name?: parameters['rowFilter.facebook.first_name'];
+          last_name?: parameters['rowFilter.facebook.last_name'];
+          school_code?: parameters['rowFilter.facebook.school_code'];
+          school?: parameters['rowFilter.facebook.school'];
+          curriculum?: parameters['rowFilter.facebook.curriculum'];
+          organization_code?: parameters['rowFilter.facebook.organization_code'];
+          organization?: parameters['rowFilter.facebook.organization'];
+          title?: parameters['rowFilter.facebook.title'];
+          address?: parameters['rowFilter.facebook.address'];
+          unit_class?: parameters['rowFilter.facebook.unit_class'];
+          unit_code?: parameters['rowFilter.facebook.unit_code'];
+          unit?: parameters['rowFilter.facebook.unit'];
+          postal_address?: parameters['rowFilter.facebook.postal_address'];
+          office_building?: parameters['rowFilter.facebook.office_building'];
+          cv?: parameters['rowFilter.facebook.cv'];
+          profile?: parameters['rowFilter.facebook.profile'];
+          city?: parameters['rowFilter.facebook.city'];
+          year?: parameters['rowFilter.facebook.year'];
+          college?: parameters['rowFilter.facebook.college'];
+          college_code?: parameters['rowFilter.facebook.college_code'];
+          leave?: parameters['rowFilter.facebook.leave'];
+          eli_whitney?: parameters['rowFilter.facebook.eli_whitney'];
+          image?: parameters['rowFilter.facebook.image'];
+          birthday?: parameters['rowFilter.facebook.birthday'];
+          major?: parameters['rowFilter.facebook.major'];
+          phone?: parameters['rowFilter.facebook.phone'];
+          access_code?: parameters['rowFilter.facebook.access_code'];
+          middle_name?: parameters['rowFilter.facebook.middle_name'];
+          office_room?: parameters['rowFilter.facebook.office_room'];
+          website?: parameters['rowFilter.facebook.website'];
+          education?: parameters['rowFilter.facebook.education'];
+          name_recording?: parameters['rowFilter.facebook.name_recording'];
+          pronouns?: parameters['rowFilter.facebook.pronouns'];
+          phonetic_name?: parameters['rowFilter.facebook.phonetic_name'];
+          suffix?: parameters['rowFilter.facebook.suffix'];
+          fax?: parameters['rowFilter.facebook.fax'];
+          city_as_point?: parameters['rowFilter.facebook.city_as_point'];
+          birth_day?: parameters['rowFilter.facebook.birth_day'];
+          birth_month?: parameters['rowFilter.facebook.birth_month'];
+          visitor?: parameters['rowFilter.facebook.visitor'];
+          preferred_name?: parameters['rowFilter.facebook.preferred_name'];
+          place_id?: parameters['rowFilter.facebook.place_id'];
+        };
+        body: {
+          /** facebook */
+          facebook?: definitions['facebook'];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters['preferReturn'];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
+  '/facebook_to_places': {
+    get: {
+      parameters: {
+        query: {
+          email?: parameters['rowFilter.facebook_to_places.email'];
+          first_name?: parameters['rowFilter.facebook_to_places.first_name'];
+          middle_name?: parameters['rowFilter.facebook_to_places.middle_name'];
+          last_name?: parameters['rowFilter.facebook_to_places.last_name'];
+          year?: parameters['rowFilter.facebook_to_places.year'];
+          image?: parameters['rowFilter.facebook_to_places.image'];
+          place_id?: parameters['rowFilter.facebook_to_places.place_id'];
+          description?: parameters['rowFilter.facebook_to_places.description'];
+          /** Filtering Columns */
+          select?: parameters['select'];
+          /** Ordering */
+          order?: parameters['order'];
+          /** Limiting and Pagination */
+          offset?: parameters['offset'];
+          /** Limiting and Pagination */
+          limit?: parameters['limit'];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters['range'];
+          /** Limiting and Pagination */
+          'Range-Unit'?: parameters['rangeUnit'];
+          /** Preference */
+          Prefer?: parameters['preferCount'];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions['facebook_to_places'][];
+        };
+        /** Partial Content */
+        206: unknown;
       };
     };
   };
@@ -837,6 +880,204 @@ export interface paths {
       };
     };
   };
+  '/places_with_facebook': {
+    get: {
+      parameters: {
+        query: {
+          place_id?: parameters['rowFilter.places_with_facebook.place_id'];
+          description?: parameters['rowFilter.places_with_facebook.description'];
+          lat?: parameters['rowFilter.places_with_facebook.lat'];
+          lng?: parameters['rowFilter.places_with_facebook.lng'];
+          people?: parameters['rowFilter.places_with_facebook.people'];
+          /** Filtering Columns */
+          select?: parameters['select'];
+          /** Ordering */
+          order?: parameters['order'];
+          /** Limiting and Pagination */
+          offset?: parameters['offset'];
+          /** Limiting and Pagination */
+          limit?: parameters['limit'];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters['range'];
+          /** Limiting and Pagination */
+          'Range-Unit'?: parameters['rangeUnit'];
+          /** Preference */
+          Prefer?: parameters['preferCount'];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions['places_with_facebook'][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** places_with_facebook */
+          places_with_facebook?: definitions['places_with_facebook'];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters['select'];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters['preferReturn'];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          place_id?: parameters['rowFilter.places_with_facebook.place_id'];
+          description?: parameters['rowFilter.places_with_facebook.description'];
+          lat?: parameters['rowFilter.places_with_facebook.lat'];
+          lng?: parameters['rowFilter.places_with_facebook.lng'];
+          people?: parameters['rowFilter.places_with_facebook.people'];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters['preferReturn'];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          place_id?: parameters['rowFilter.places_with_facebook.place_id'];
+          description?: parameters['rowFilter.places_with_facebook.description'];
+          lat?: parameters['rowFilter.places_with_facebook.lat'];
+          lng?: parameters['rowFilter.places_with_facebook.lng'];
+          people?: parameters['rowFilter.places_with_facebook.people'];
+        };
+        body: {
+          /** places_with_facebook */
+          places_with_facebook?: definitions['places_with_facebook'];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters['preferReturn'];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
+  '/places_with_people': {
+    get: {
+      parameters: {
+        query: {
+          place_id?: parameters['rowFilter.places_with_people.place_id'];
+          description?: parameters['rowFilter.places_with_people.description'];
+          lat?: parameters['rowFilter.places_with_people.lat'];
+          lng?: parameters['rowFilter.places_with_people.lng'];
+          people?: parameters['rowFilter.places_with_people.people'];
+          /** Filtering Columns */
+          select?: parameters['select'];
+          /** Ordering */
+          order?: parameters['order'];
+          /** Limiting and Pagination */
+          offset?: parameters['offset'];
+          /** Limiting and Pagination */
+          limit?: parameters['limit'];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters['range'];
+          /** Limiting and Pagination */
+          'Range-Unit'?: parameters['rangeUnit'];
+          /** Preference */
+          Prefer?: parameters['preferCount'];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions['places_with_people'][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** places_with_people */
+          places_with_people?: definitions['places_with_people'];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters['select'];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters['preferReturn'];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          place_id?: parameters['rowFilter.places_with_people.place_id'];
+          description?: parameters['rowFilter.places_with_people.description'];
+          lat?: parameters['rowFilter.places_with_people.lat'];
+          lng?: parameters['rowFilter.places_with_people.lng'];
+          people?: parameters['rowFilter.places_with_people.people'];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters['preferReturn'];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          place_id?: parameters['rowFilter.places_with_people.place_id'];
+          description?: parameters['rowFilter.places_with_people.description'];
+          lat?: parameters['rowFilter.places_with_people.lat'];
+          lng?: parameters['rowFilter.places_with_people.lng'];
+          people?: parameters['rowFilter.places_with_people.people'];
+        };
+        body: {
+          /** places_with_people */
+          places_with_people?: definitions['places_with_people'];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters['preferReturn'];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
   '/relationships_between_users': {
     get: {
       parameters: {
@@ -1285,6 +1526,7 @@ export interface paths {
           /** Unique key from Google Account */
           id?: parameters['rowFilter.users.id'];
           user_response_id?: parameters['rowFilter.users.user_response_id'];
+          created_at?: parameters['rowFilter.users.created_at'];
           /** Filtering Columns */
           select?: parameters['select'];
           /** Ordering */
@@ -1347,6 +1589,7 @@ export interface paths {
           /** Unique key from Google Account */
           id?: parameters['rowFilter.users.id'];
           user_response_id?: parameters['rowFilter.users.user_response_id'];
+          created_at?: parameters['rowFilter.users.created_at'];
         };
         header: {
           /** Preference */
@@ -1373,6 +1616,7 @@ export interface paths {
           /** Unique key from Google Account */
           id?: parameters['rowFilter.users.id'];
           user_response_id?: parameters['rowFilter.users.user_response_id'];
+          created_at?: parameters['rowFilter.users.created_at'];
         };
         body: {
           /** users */
@@ -2308,7 +2552,22 @@ export interface paths {
 }
 
 export interface definitions {
-  '2022_facebook': {
+  errors: {
+    /**
+     * Format: character varying
+     * @description Note:
+     * This is a Foreign Key to `users3.email`.<fk table='users3' column='email'/>
+     */
+    email: string;
+    /** Format: json */
+    error: string;
+    /**
+     * Format: timestamp without time zone
+     * @default CURRENT_TIMESTAMP
+     */
+    date?: string;
+  };
+  facebook: {
     /** Format: integer */
     id?: number;
     /** Format: integer */
@@ -2405,21 +2664,38 @@ export interface definitions {
     visitor?: boolean;
     /** Format: character varying */
     preferred_name?: string;
-  };
-  errors: {
     /**
      * Format: character varying
      * @description Note:
-     * This is a Foreign Key to `users3.email`.<fk table='users3' column='email'/>
+     * This is a Foreign Key to `places.place_id`.<fk table='places' column='place_id'/>
      */
-    email: string;
-    /** Format: json */
-    error: string;
+    place_id?: string;
+  };
+  facebook_to_places: {
     /**
-     * Format: timestamp without time zone
-     * @default CURRENT_TIMESTAMP
+     * Format: character varying
+     * @description Note:
+     * This is a Primary Key.<pk/>
      */
-    date?: string;
+    email?: string;
+    /** Format: character varying */
+    first_name?: string;
+    /** Format: character varying */
+    middle_name?: string;
+    /** Format: character varying */
+    last_name?: string;
+    /** Format: integer */
+    year?: number;
+    /** Format: character varying */
+    image?: string;
+    /**
+     * Format: character varying
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    place_id?: string;
+    /** Format: character varying */
+    description?: string;
   };
   feedback: {
     /** Format: character varying */
@@ -2515,6 +2791,38 @@ export interface definitions {
     /** Format: double precision */
     lat?: number;
   };
+  places_with_facebook: {
+    /**
+     * Format: character varying
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    place_id?: string;
+    /** Format: character varying */
+    description?: string;
+    /** Format: double precision */
+    lat?: number;
+    /** Format: double precision */
+    lng?: number;
+    /** Format: json */
+    people?: string;
+  };
+  places_with_people: {
+    /**
+     * Format: character varying
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    place_id?: string;
+    /** Format: character varying */
+    description?: string;
+    /** Format: double precision */
+    lat?: number;
+    /** Format: double precision */
+    lng?: number;
+    /** Format: json */
+    people?: string;
+  };
   relationships_between_users: {
     /** Format: character varying */
     from_email: string;
@@ -2590,7 +2898,7 @@ export interface definitions {
     /**
      * Format: character varying
      * @description Note:
-     * This is a Foreign Key to `2022_facebook.email`.<fk table='2022_facebook' column='email'/>
+     * This is a Foreign Key to `facebook.email`.<fk table='facebook' column='email'/>
      */
     email: string;
     /** Format: boolean */
@@ -2623,6 +2931,11 @@ export interface definitions {
      * This is a Foreign Key to `user_responses.user_response_id`.<fk table='user_responses' column='user_response_id'/>
      */
     user_response_id: string;
+    /**
+     * Format: timestamp with time zone
+     * @default now()
+     */
+    created_at: string;
   };
   users3: {
     /** Format: integer */
@@ -3004,11 +3317,20 @@ export interface definitions {
 }
 
 export interface parameters {
-  /** @description Preference */
+  /**
+   * @description Preference
+   * @enum {string}
+   */
   preferParams: 'params=single-object';
-  /** @description Preference */
+  /**
+   * @description Preference
+   * @enum {string}
+   */
   preferReturn: 'return=representation' | 'return=minimal' | 'return=none';
-  /** @description Preference */
+  /**
+   * @description Preference
+   * @enum {string}
+   */
   preferCount: 'count=none';
   /** @description Filtering Columns */
   select: string;
@@ -3027,100 +3349,6 @@ export interface parameters {
   offset: string;
   /** @description Limiting and Pagination */
   limit: string;
-  /** @description 2022_facebook */
-  'body.2022_facebook': definitions['2022_facebook'];
-  /** Format: integer */
-  'rowFilter.2022_facebook.id': string;
-  /** Format: integer */
-  'rowFilter.2022_facebook.upi': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.netid': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.email': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.mailbox': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.first_name': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.last_name': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.school_code': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.school': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.curriculum': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.organization_code': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.organization': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.title': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.address': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.unit_class': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.unit_code': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.unit': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.postal_address': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.office_building': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.cv': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.profile': string;
-  /** Format: json */
-  'rowFilter.2022_facebook.city': string;
-  /** Format: integer */
-  'rowFilter.2022_facebook.year': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.college': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.college_code': string;
-  /** Format: boolean */
-  'rowFilter.2022_facebook.leave': string;
-  /** Format: boolean */
-  'rowFilter.2022_facebook.eli_whitney': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.image': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.birthday': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.major': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.phone': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.access_code': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.middle_name': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.office_room': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.website': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.education': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.name_recording': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.pronouns': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.phonetic_name': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.suffix': string;
-  /** Format: bigint */
-  'rowFilter.2022_facebook.fax': string;
-  /** Format: extensions.geometry(Point,4326) */
-  'rowFilter.2022_facebook.city_as_point': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.birth_day': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.birth_month': string;
-  /** Format: boolean */
-  'rowFilter.2022_facebook.visitor': string;
-  /** Format: character varying */
-  'rowFilter.2022_facebook.preferred_name': string;
   /** @description errors */
   'body.errors': definitions['errors'];
   /** Format: character varying */
@@ -3129,6 +3357,120 @@ export interface parameters {
   'rowFilter.errors.error': string;
   /** Format: timestamp without time zone */
   'rowFilter.errors.date': string;
+  /** @description facebook */
+  'body.facebook': definitions['facebook'];
+  /** Format: integer */
+  'rowFilter.facebook.id': string;
+  /** Format: integer */
+  'rowFilter.facebook.upi': string;
+  /** Format: character varying */
+  'rowFilter.facebook.netid': string;
+  /** Format: character varying */
+  'rowFilter.facebook.email': string;
+  /** Format: character varying */
+  'rowFilter.facebook.mailbox': string;
+  /** Format: character varying */
+  'rowFilter.facebook.first_name': string;
+  /** Format: character varying */
+  'rowFilter.facebook.last_name': string;
+  /** Format: character varying */
+  'rowFilter.facebook.school_code': string;
+  /** Format: character varying */
+  'rowFilter.facebook.school': string;
+  /** Format: character varying */
+  'rowFilter.facebook.curriculum': string;
+  /** Format: character varying */
+  'rowFilter.facebook.organization_code': string;
+  /** Format: character varying */
+  'rowFilter.facebook.organization': string;
+  /** Format: character varying */
+  'rowFilter.facebook.title': string;
+  /** Format: character varying */
+  'rowFilter.facebook.address': string;
+  /** Format: character varying */
+  'rowFilter.facebook.unit_class': string;
+  /** Format: character varying */
+  'rowFilter.facebook.unit_code': string;
+  /** Format: character varying */
+  'rowFilter.facebook.unit': string;
+  /** Format: character varying */
+  'rowFilter.facebook.postal_address': string;
+  /** Format: character varying */
+  'rowFilter.facebook.office_building': string;
+  /** Format: character varying */
+  'rowFilter.facebook.cv': string;
+  /** Format: character varying */
+  'rowFilter.facebook.profile': string;
+  /** Format: json */
+  'rowFilter.facebook.city': string;
+  /** Format: integer */
+  'rowFilter.facebook.year': string;
+  /** Format: character varying */
+  'rowFilter.facebook.college': string;
+  /** Format: character varying */
+  'rowFilter.facebook.college_code': string;
+  /** Format: boolean */
+  'rowFilter.facebook.leave': string;
+  /** Format: boolean */
+  'rowFilter.facebook.eli_whitney': string;
+  /** Format: character varying */
+  'rowFilter.facebook.image': string;
+  /** Format: character varying */
+  'rowFilter.facebook.birthday': string;
+  /** Format: character varying */
+  'rowFilter.facebook.major': string;
+  /** Format: character varying */
+  'rowFilter.facebook.phone': string;
+  /** Format: character varying */
+  'rowFilter.facebook.access_code': string;
+  /** Format: character varying */
+  'rowFilter.facebook.middle_name': string;
+  /** Format: character varying */
+  'rowFilter.facebook.office_room': string;
+  /** Format: character varying */
+  'rowFilter.facebook.website': string;
+  /** Format: character varying */
+  'rowFilter.facebook.education': string;
+  /** Format: character varying */
+  'rowFilter.facebook.name_recording': string;
+  /** Format: character varying */
+  'rowFilter.facebook.pronouns': string;
+  /** Format: character varying */
+  'rowFilter.facebook.phonetic_name': string;
+  /** Format: character varying */
+  'rowFilter.facebook.suffix': string;
+  /** Format: bigint */
+  'rowFilter.facebook.fax': string;
+  /** Format: extensions.geometry(Point,4326) */
+  'rowFilter.facebook.city_as_point': string;
+  /** Format: character varying */
+  'rowFilter.facebook.birth_day': string;
+  /** Format: character varying */
+  'rowFilter.facebook.birth_month': string;
+  /** Format: boolean */
+  'rowFilter.facebook.visitor': string;
+  /** Format: character varying */
+  'rowFilter.facebook.preferred_name': string;
+  /** Format: character varying */
+  'rowFilter.facebook.place_id': string;
+  /** @description facebook_to_places */
+  'body.facebook_to_places': definitions['facebook_to_places'];
+  /** Format: character varying */
+  'rowFilter.facebook_to_places.email': string;
+  /** Format: character varying */
+  'rowFilter.facebook_to_places.first_name': string;
+  /** Format: character varying */
+  'rowFilter.facebook_to_places.middle_name': string;
+  /** Format: character varying */
+  'rowFilter.facebook_to_places.last_name': string;
+  /** Format: integer */
+  'rowFilter.facebook_to_places.year': string;
+  /** Format: character varying */
+  'rowFilter.facebook_to_places.image': string;
+  /** Format: character varying */
+  'rowFilter.facebook_to_places.place_id': string;
+  /** Format: character varying */
+  'rowFilter.facebook_to_places.description': string;
   /** @description feedback */
   'body.feedback': definitions['feedback'];
   /** Format: character varying */
@@ -3201,6 +3543,30 @@ export interface parameters {
   'rowFilter.places.lng': string;
   /** Format: double precision */
   'rowFilter.places.lat': string;
+  /** @description places_with_facebook */
+  'body.places_with_facebook': definitions['places_with_facebook'];
+  /** Format: character varying */
+  'rowFilter.places_with_facebook.place_id': string;
+  /** Format: character varying */
+  'rowFilter.places_with_facebook.description': string;
+  /** Format: double precision */
+  'rowFilter.places_with_facebook.lat': string;
+  /** Format: double precision */
+  'rowFilter.places_with_facebook.lng': string;
+  /** Format: json */
+  'rowFilter.places_with_facebook.people': string;
+  /** @description places_with_people */
+  'body.places_with_people': definitions['places_with_people'];
+  /** Format: character varying */
+  'rowFilter.places_with_people.place_id': string;
+  /** Format: character varying */
+  'rowFilter.places_with_people.description': string;
+  /** Format: double precision */
+  'rowFilter.places_with_people.lat': string;
+  /** Format: double precision */
+  'rowFilter.places_with_people.lng': string;
+  /** Format: json */
+  'rowFilter.places_with_people.people': string;
   /** @description relationships_between_users */
   'body.relationships_between_users': definitions['relationships_between_users'];
   /** Format: character varying */
@@ -3287,6 +3653,8 @@ export interface parameters {
   'rowFilter.users.id': string;
   /** Format: character varying */
   'rowFilter.users.user_response_id': string;
+  /** Format: timestamp with time zone */
+  'rowFilter.users.created_at': string;
   /** @description users3 */
   'body.users3': definitions['users3'];
   /** Format: integer */

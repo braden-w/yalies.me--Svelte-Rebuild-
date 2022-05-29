@@ -1,22 +1,83 @@
 <script context="module" lang="ts">
-  import type { definitions } from '$lib/supabase';
+  import type { definitions } from '$lib/types/supabase';
 
   import { supabase } from '$lib/utils/supabaseClient';
-  export async function load({ params }: { params: { place_id: string } }) {
-    const { data, error } = await supabase
+
+  export interface PlaceInformation {
+    place_id: string;
+    description: string;
+    users_in_place: definitions['users_to_places'][];
+  }
+
+  /** Function that matches query by place_id, description, and finally fuzzy description */
+  async function getUsersInPlace(query: string): Promise<
+    | { data: definitions['users_to_places'][] | null; redirect: null }
+    | {
+        data: null;
+        redirect: { status: number; redirect?: string };
+      }
+  > {
+    // Attempt to match the query by place_id
+    const { data: dataMatchPlaceID, error: errorMatchPlaceID } = await supabase
       .from<definitions['users_to_places']>('users_to_places')
       .select('id, name, avatar_url, place_id, description')
-      .eq('place_id', params.place_id);
-    if (error) return { status: error.code, props: { error } };
-    const users_in_place = data;
-    const description = users_in_place.length
+      .eq('place_id', query);
+    if (errorMatchPlaceID) console.log(errorMatchPlaceID);
+    if (dataMatchPlaceID?.length !== 0)
+      return { data: dataMatchPlaceID, redirect: null };
+
+    // Attempt to match the query by place description
+    const {
+      data: dataMatchPlaceDescription,
+      error: errorMatchPlaceDescription
+    } = await supabase
+      .from<definitions['users_to_places']>('users_to_places')
+      .select('id, name, avatar_url, place_id, description')
+      .eq('description', query);
+    if (errorMatchPlaceDescription) console.log(errorMatchPlaceDescription);
+    if (dataMatchPlaceDescription?.length !== 0)
+      return { data: dataMatchPlaceDescription, redirect: null };
+
+    // Attempt to fuzzy match the query by place_description
+    const {
+      data: dataFuzzyMatchPlaceDescription,
+      error: errorFuzzyMatchPlaceDescription
+    } = await supabase
+      .from<definitions['users_to_places']>('users_to_places')
+      .select('id, name, avatar_url, place_id, description')
+      .ilike('description', `%${query}%`);
+    if (errorFuzzyMatchPlaceDescription)
+      console.log(errorFuzzyMatchPlaceDescription);
+    if (
+      dataFuzzyMatchPlaceDescription &&
+      dataFuzzyMatchPlaceDescription?.length !== 0
+    ) {
+      const redirect = {
+        status: 302,
+        redirect: `${dataFuzzyMatchPlaceDescription[0].description}`
+      };
+      return { data: null, redirect };
+    }
+    const redirect = { status: 404 };
+    return { data: null, redirect };
+  }
+
+  export async function load({ params }: { params: { place_id: string } }) {
+    const { data: users_in_place, redirect } = await getUsersInPlace(
+      params.place_id
+    );
+    if (redirect) return redirect;
+    const place_id = users_in_place?.length
+      ? users_in_place[0].place_id
+      : params.place_id;
+    const description = users_in_place?.length
       ? users_in_place[0].description
       : '';
     return {
       status: 200,
       props: {
         placeInformation: {
-          place_id: params.place_id,
+          place_id,
           description,
           users_in_place
         }
@@ -26,11 +87,19 @@
 </script>
 
 <script lang="ts">
-  export let placeInformation: {
-    place_id: string;
-    description: string;
-    users_in_place: definitions['users_to_places'][];
-  };
+  import TableOfUsers from '$lib/components/TableOfUsers.svelte';
+
+  import PlaceCheckbox from './PlaceCheckbox.svelte';
+
+  export let placeInformation: PlaceInformation;
+  async function refreshUsersInPlace() {
+    const { data: users_in_place, error } = await supabase
+      .from<definitions['users_to_places']>('users_to_places')
+      .select('id, name, avatar_url, place_id, description')
+      .eq('place_id', placeInformation.place_id);
+    if (error) console.log(error);
+    placeInformation.users_in_place = users_in_place!;
+  }
 </script>
 
 <svelte:head>
@@ -48,14 +117,19 @@
       <p class="py-6">
         Users currently in {placeInformation.description}
       </p>
+      <!-- Add a toggle that I am currently in this location -->
+      <PlaceCheckbox {placeInformation} on:toggled={refreshUsersInPlace} />
       <div class="form-control">
-        <a href="/" class="btn btn-primary">Go Back To Map</a>
+        <a href="/map" class="btn btn-primary">Go Back To Map</a>
       </div>
     </div>
   </div>
 </div>
 <div class="hero min-h-screen bg-base-100">
   <div class="hero-content flex-row flex-wrap">
+    <div class="overflow-x-auto w-full">
+      <TableOfUsers users={placeInformation.users_in_place} />
+    </div>
     {#each placeInformation.users_in_place as user_in_place}
       <div class="card flex-shrink-0  max-w-sm shadow-2xl bg-base-100">
         <div class="card-body">

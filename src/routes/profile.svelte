@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { sessionStore } from '$lib/utils/sessionStore';
-  import LocationAutoComplete from '$lib/LocationAutoComplete.svelte';
+  import { sessionStore } from '$lib/stores/sessionStore';
+  import LocationAutoComplete from '$lib/components/LocationAutoComplete.svelte';
 </script>
 
 <svelte:head>
@@ -60,7 +60,7 @@
         <LocationAutoComplete />
 
         <div class="form-control mt-6">
-          <a href="/" class="btn btn-primary">Go Back To Map</a>
+          <a href="/map" class="btn btn-primary">Go To Map</a>
         </div>
       </div>
     </div>

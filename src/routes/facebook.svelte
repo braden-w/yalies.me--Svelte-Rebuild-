@@ -1,17 +1,12 @@
 <script context="module" lang="ts">
-  import type { FetchedLocation } from '$lib/types/FetchedLocation';
   export const prerender = false;
   /** List all places from the database. Return it as a list of items that contains place description, place lat, place lng, and place people
    * Place people is a list of users that are associated with the place
    * Each user has a id, name, and avatar_url
    */
   export async function load() {
-    const { data, error } = await supabase
-      .rpc('fetch_locations')
-      .not('people', 'is', null);
-    console.log('🚀 ~ file: map.svelte ~ line 8 ~ load ~ data', data, error);
-    const fetchedLocations = data as FetchedLocation[];
-    return { status: 200, props: { fetchedLocations } };
+    await loadFacebook();
+    return { status: 200, props: {} };
   }
 </script>
 
@@ -23,7 +18,8 @@
   import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
   import { onMount } from 'svelte';
-  import { supabase } from '$lib/utils/supabaseClient';
+  import { facebook, loadFacebook } from '$lib/stores/map/facebook';
+  import { generateInnerHTML } from '$lib/utils/map/generateInnerHTML';
 
   mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_KEY;
 
@@ -32,7 +28,6 @@
   // longitude = userProfileInformation.location?.longitude ?? NewHaven.longitude;
   // latitude = userProfileInformation.location?.latitude ?? NewHaven.latitude;
   // console.log('longitude, latitude:>> ', longitude, latitude)
-  export let fetchedLocations: FetchedLocation[];
 
   onMount(() => {
     const map = new mapboxgl.Map({
@@ -67,78 +62,20 @@
       // loadFacebook(map!, queryYear)
     });
 
-    function generateInnerHTML(fetchedLocation: FetchedLocation) {
-      // Get 3 random people from the 'people' property of fetchedLocation
-      const shuffledPeople = fetchedLocation.people.sort(
-        () => 0.5 - Math.random()
+    console.log(
+      '🚀 ~ file: facebook.svelte ~ line 67 ~ onMount ~ facebook',
+      $facebook
+    );
+    if ($facebook === null) return;
+    $facebook.forEach((place) => {
+      console.log(
+        '🚀 ~ file: facebook.svelte ~ line 71 ~ $facebook.forEach ~ place',
+        place
       );
 
-      // Three cases for the number of people in the fetchedLocation
-      if (shuffledPeople.length === 0) return '';
-      return `<div class="dropdown dropdown-hover">
-				<label tabindex="0" name="selected" class="stack">
-					<div class="avatar indicator">
-						<span class="indicator-item badge badge-secondary">${
-              fetchedLocation.people.length
-            }</span>
-						<div class="w-8 h-8 rounded-lg outline-on-click">
-							<img src="${
-                fetchedLocation.people[0].avatar_url
-              }" referrerpolicy="no-referrer"/>
-						</div>
-					</div>
-					${
-            shuffledPeople.length >= 2
-              ? `<div class="avatar">
-						<div class="w-8 h-8 rounded-lg outline-on-click">
-							<img src="${fetchedLocation.people[1].avatar_url}" referrerpolicy="no-referrer"/>
-						</div>
-					</div>`
-              : ''
-          }
-					${
-            shuffledPeople.length >= 3
-              ? `<div class="avatar">
-						<div class="w-8 h-8 rounded-lg outline-on-click">
-							<img src="${fetchedLocation.people[2].avatar_url}" referrerpolicy="no-referrer"/>
-						</div>
-					</div>`
-              : ''
-          }
-				</label>
-				<ul
-					tabindex="0"
-					class="menu menu-compact dropdown-content mt-${
-            shuffledPeople.length > 3 ? '3' : shuffledPeople.length
-          } p-2 shadow bg-base-100 rounded-box w-52"
-				>
-					<li>
-						<a class="justify-between" href="/places/${fetchedLocation.place_id}">${
-        fetchedLocation.description
-      }</a>
-					</li>
-							${fetchedLocation.people
-                .map(
-                  (person) => `
-								<li>
-									<a class="content-center" href="/users/${person.id}">
-										<div class="avatar">
-											<div class="w-8 rounded-lg">
-												<img src="${person.avatar_url}" referrerpolicy="no-referrer"/>
-											</div>
-										</div> 
-										<span class="text-xs">${person.name}</span>
-									</a>
-								</li>`
-                )
-                .join('')}
-				</ul>
-				</div>`;
-    }
-    fetchedLocations.forEach((fetchedLocation) => {
       const el = document.createElement('div');
       el.className = 'marker';
-      el.innerHTML = generateInnerHTML(fetchedLocation);
+      el.innerHTML = generateInnerHTML(place);
 
       // On click, add a shadow around it
       el.addEventListener('click', () => {
@@ -171,18 +108,18 @@
       map.on('zoom', () => {
         const newPx = scalePercent();
         console.log('🚀 ~ file: map.svelte ~ line 135 ~ map.on ~ newPx', newPx);
-        el.querySelectorAll('.outline-on-click').forEach((innerEl) => {
-          // Set the height and width innerEl to newPx
-          innerEl.style.width = `${newPx}px`;
-          innerEl.style.height = `${newPx}px`;
-        });
+        el.querySelectorAll<HTMLElement>('.outline-on-click').forEach(
+          (innerEl) => {
+            // Set the height and width innerEl to newPx
+            innerEl.style.width = `${newPx}px`;
+            innerEl.style.height = `${newPx}px`;
+          }
+        );
         el.style.transformOrigin = 'bottom';
       });
 
       // Add the marker to the map
-      new mapboxgl.Marker(el)
-        .setLngLat([fetchedLocation.lng, fetchedLocation.lat])
-        .addTo(map);
+      new mapboxgl.Marker(el).setLngLat([place.lng, place.lat]).addTo(map);
     });
   });
 </script>
