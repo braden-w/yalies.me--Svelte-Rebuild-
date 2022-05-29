@@ -143,7 +143,9 @@
         </div>
       </div>
       <!-- Cell 3 -->
-      <div class="bg-teal-400 row-span-3">3</div>
+      <div class="bg-teal-400 row-span-3">
+        <UserLocationCard {userProfileInformation} />
+      </div>
       <!-- Cell 4 -->
       <div class="bg-teal-400 row-span-6">
         <UserResponsesCard
@@ -203,7 +205,10 @@
         />
       </div>
       <!-- Cell 6 -->
-      <div class="bg-teal-400 row-span-3">6</div>
+      <div class="bg-teal-400 row-span-3">
+        <UserMenuItems {userProfileInformation} />
+      </div>
+
       <!-- Cell 7 -->
       <div class="bg-teal-400 row-span-4">
         <UserStatsInfoOptions {userProfileInformation} />
@@ -213,9 +218,6 @@
       <!-- 
       
       
-      <UserLocationCard {userProfileInformation} />
-      
-      <UserMenuItems {userProfileInformation} />
       <div
         class="card card-compact xl:card-normal bg-base-100 col-span-3 row-span-4 mx-2 w-72 flex-shrink-0 overflow-visible shadow-xl xl:mx-0 xl:w-auto"
       >
