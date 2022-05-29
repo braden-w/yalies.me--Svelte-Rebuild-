@@ -44,7 +44,7 @@
     <div class="mt-2 text-center">
       {#if userProfileInformation.email}
         <a
-          class="badge badge-primary"
+          class="btn btn-circle btn-sm"
           href={`mailto:${userProfileInformation.email}`}
         >
           <!-- Make an svg email icon -->
@@ -65,7 +65,7 @@
         </a>
       {/if}
       {#if userResponses.phone}
-        <a class="badge badge-primary" href={`sms:${userResponses.phone}`}>
+        <a class="btn btn-circle btn-sm" href={`sms:${userResponses.phone}`}>
           <!-- Make a svg phone icon -->
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +85,11 @@
       {/if}
 
       {#if userResponses.expression}
-        <a class="badge" target="_blank" href={userResponses.expression}>
+        <a
+          class="btn btn-circle btn-sm"
+          target="_blank"
+          href={userResponses.expression}
+        >
           <!-- Make a Green Spotify Icon -->
           <svg
             class="h-6 w-6"
@@ -107,7 +111,7 @@
       {/if}
       {#if userResponses.instagram}
         <a
-          class="badge badge-primary"
+          class="btn btn-circle btn-sm"
           target="_blank"
           href={`https://www.instagram.com/${userResponses.instagram}/`}
         >
@@ -172,7 +176,7 @@
       {/if}
       {#if userResponses.linkedin}
         <a
-          class="badge badge-primary"
+          class="btn btn-circle btn-sm"
           target="_blank"
           href={userResponses.linkedin}
         >
@@ -218,7 +222,7 @@
         <button class="btn btn-accent btn-sm">Follow</button>
         <button
           aria-label="button component"
-          class="btn btn-accent btn-square btn-sm"
+          class="btn btn-square btn-accent btn-sm"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -238,7 +242,7 @@
     </div>
     <div tabindex="0" class="dropdown-content py-2">
       <div
-        class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
+        class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
       >
         <div class="card-body">
           <h2 class="card-title font-extrabold capitalize">
