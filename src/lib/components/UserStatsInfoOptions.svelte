@@ -1,5 +1,8 @@
 <script lang="ts">
-  export let userProfileInformation: definitions['users_facebook_places'];
+  import type { definitions } from '$lib/types/supabase';
+
+  export let avatar_url: definitions['users_facebook_places']['avatar_url'] =
+    '';
   let tab = 0;
 </script>
 
@@ -43,7 +46,7 @@
                 class="mask mask-hexagon h-16 w-16 bg-base-content bg-opacity-10 p-px"
               >
                 <img
-                  src={userProfileInformation.avatar_url}
+                  src={avatar_url}
                   alt="Avatar Tailwind CSS Component"
                   class="mask mask-hexagon"
                 />
