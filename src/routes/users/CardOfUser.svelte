@@ -6,7 +6,7 @@
   export let userProfileInformation: UserProfileInformation;
 </script>
 
-<div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+<div class="card shadow-2xl bg-base-100 rounded-2xl place-items-center">
   <div class="card-body">
     <div class="text-center">
       <div class="avatar mx-auto">

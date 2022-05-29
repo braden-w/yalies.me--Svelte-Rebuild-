@@ -51,9 +51,7 @@
   );
 </script>
 
-<div
-  class="grid h-100 card shadow-2xl bg-base-100 rounded-box place-items-center"
->
+<div class="card shadow-2xl bg-base-100 rounded-2xl place-items-center">
   <div class="card-body">
     {#each userResponses as { name, label, icon, value }}
       <div class="form-control">
