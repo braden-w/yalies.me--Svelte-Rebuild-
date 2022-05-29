@@ -5,7 +5,7 @@
 </script>
 
 <div
-  class="bg-base-100 rounded-box col-span-3 row-span-3 mx-2 grid w-72 flex-shrink-0 place-items-center items-center gap-4 p-4 py-8 shadow-xl xl:mx-0 xl:w-full"
+  class="bg-base-100 rounded-box grid place-items-center items-center w-72 gap-4 p-4 py-8 shadow-xl xl:mx-0 xl:w-full h-full"
 >
   <div class="online avatar">
     <div
