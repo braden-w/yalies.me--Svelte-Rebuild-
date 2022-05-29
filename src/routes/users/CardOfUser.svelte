@@ -1,17 +1,9 @@
 <script lang="ts">
   import LocationAutoComplete from '$lib/components/LocationAutoComplete.svelte';
   import { sessionStore } from '$lib/stores/sessionStore';
+  import type { UserProfileInformation } from 'src/routes/users/[id].svelte';
 
-  export let userProfileInformation: {
-    id: string;
-    name: string;
-    avatar_url: string;
-    user_responses: {
-      places: {
-        description: string;
-      };
-    };
-  };
+  export let userProfileInformation: UserProfileInformation;
 </script>
 
 <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
