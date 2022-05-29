@@ -89,19 +89,19 @@
 </svelte:head>
 
 <div class="min-h-screen-nav hero bg-base-200">
-  <div class="w-full h-full">
+  <div class="h-full w-full">
     <div
       id="component-demo"
-      class="flex items-center w-full px-10 pt-1 pb-10 overflow-x-scroll overflow-y-hidden grid-flow-row grid-cols-12 gap-4 xl:grid xl:overflow-x-auto xl:px-4"
+      class="flex w-full grid-flow-row grid-cols-12 items-center gap-4 overflow-y-hidden overflow-x-scroll px-10 pt-1 pb-10 xl:grid xl:overflow-x-auto xl:px-4"
     >
       <div
-        class="items-center flex-shrink-0 p-4 py-8 mx-2 shadow-xl rounded-box col-span-3 row-span-3 grid w-72 place-items-center gap-4 bg-base-100 xl:mx-0 xl:w-full"
+        class="rounded-box col-span-3 row-span-3 mx-2 grid w-72 flex-shrink-0 place-items-center items-center gap-4 bg-base-100 p-4 py-8 shadow-xl xl:mx-0 xl:w-full"
       >
         <div class="dropdown">
           <div tabindex="0">
             <div class="online avatar">
               <div
-                class="w-24 h-24 p-px mask mask-squircle bg-base-content bg-opacity-10"
+                class="mask mask-squircle h-24 w-24 bg-base-content bg-opacity-10 p-px"
               >
                 <img
                   src={userProfileInformation.avatar_url}
@@ -113,18 +113,18 @@
               </div>
             </div>
           </div>
-          <div tabindex="0" class="py-2 dropdown-content">
+          <div tabindex="0" class="dropdown-content py-2">
             <div
-              class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+              class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
-                <h2 class="font-extrabold capitalize card-title">
+                <h2 class="card-title font-extrabold capitalize">
                   avatar component
                 </h2>
                 <p class="text-sm text-neutral-content text-opacity-80">
                   Use avatar component with any size
                 </p>
-                <div class="flex justify-end mt-4">
+                <div class="mt-4 flex justify-end">
                   <a
                     href="/components/avatar"
                     class="btn btn-primary btn-sm xl:btn-md">See component</a
@@ -135,7 +135,7 @@
           </div>
         </div>
         <div>
-          <div class="w-full dropdown">
+          <div class="dropdown w-full">
             <div tabindex="0">
               <div class="text-center">
                 <div class="text-lg font-extrabold">
@@ -150,18 +150,18 @@
                 </div>
               </div>
             </div>
-            <div tabindex="0" class="py-2 dropdown-content">
+            <div tabindex="0" class="dropdown-content py-2">
               <div
-                class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="font-extrabold capitalize card-title">
+                  <h2 class="card-title font-extrabold capitalize">
                     card component
                   </h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Card component is used to show products, features and more.
                   </p>
-                  <div class="flex justify-end mt-4">
+                  <div class="mt-4 flex justify-end">
                     <a
                       href="/components/card"
                       class="btn btn-primary btn-sm xl:btn-md">See component</a
@@ -171,7 +171,7 @@
               </div>
             </div>
           </div>
-          <div class="w-full dropdown">
+          <div class="dropdown w-full">
             <div tabindex="0">
               <div class="mt-2 text-center">
                 <div class="badge badge-ghost">Design</div>
@@ -179,18 +179,18 @@
                 <div class="badge badge-ghost">Illustration</div>
               </div>
             </div>
-            <div tabindex="0" class="py-2 dropdown-content">
+            <div tabindex="0" class="dropdown-content py-2">
               <div
-                class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="font-extrabold capitalize card-title">
+                  <h2 class="card-title font-extrabold capitalize">
                     badge component
                   </h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Use badge component to highlight small inline items
                   </p>
-                  <div class="flex justify-end mt-4">
+                  <div class="mt-4 flex justify-end">
                     <a
                       href="/components/badge"
                       class="btn btn-primary btn-sm xl:btn-md">See component</a
@@ -212,7 +212,7 @@
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  class="w-6 h-6 stroke-current"
+                  class="h-6 w-6 stroke-current"
                   ><path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -223,18 +223,18 @@
               >
             </div>
           </div>
-          <div tabindex="0" class="py-2 dropdown-content">
+          <div tabindex="0" class="dropdown-content py-2">
             <div
-              class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+              class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
-                <h2 class="font-extrabold capitalize card-title">
+                <h2 class="card-title font-extrabold capitalize">
                   button group component
                 </h2>
                 <p class="text-sm text-neutral-content text-opacity-80">
                   Use it to group multiple buttons together
                 </p>
-                <div class="flex justify-end mt-4">
+                <div class="mt-4 flex justify-end">
                   <a
                     href="/components/button-group"
                     class="btn btn-primary btn-sm xl:btn-md">See component</a
@@ -246,23 +246,23 @@
         </div>
       </div>
       <div
-        class="flex flex-col justify-center flex-shrink-0 p-4 mx-2 shadow-xl rounded-box col-span-3 row-span-3 w-72 gap-4 bg-base-100 xl:mx-0 xl:w-full"
+        class="rounded-box col-span-3 row-span-3 mx-2 flex w-72 flex-shrink-0 flex-col justify-center gap-4 bg-base-100 p-4 shadow-xl xl:mx-0 xl:w-full"
       >
         <div class="px-6 pt-6">
           <div class="text-xl font-extrabold">Superpower settings</div>
           <div class="my-4 text-xs text-base-content/70">
             Enable your favorite superpowers. Terms and conditions apply
           </div>
-          <div class="flex-1 w-full dropdown">
+          <div class="dropdown w-full flex-1">
             <div tabindex="0">
               <div class="form-control">
-                <label class="cursor-pointer label"
+                <label class="label cursor-pointer"
                   ><span class="label-text">Enable teleportation</span>
                   <input type="checkbox" class="toggle toggle-primary" /></label
                 >
               </div>
               <div class="form-control">
-                <label class="cursor-pointer label"
+                <label class="label cursor-pointer"
                   ><span class="label-text">Enable time travel</span>
                   <input
                     type="checkbox"
@@ -271,30 +271,30 @@
                 >
               </div>
               <div class="form-control">
-                <label class="cursor-pointer label"
+                <label class="label cursor-pointer"
                   ><span class="label-text">Enable laser eyes</span>
                   <input type="checkbox" class="toggle toggle-accent" /></label
                 >
               </div>
               <div class="form-control">
-                <label class="cursor-pointer label"
+                <label class="label cursor-pointer"
                   ><span class="label-text">Enable immortality</span>
                   <input type="checkbox" class="toggle" /></label
                 >
               </div>
             </div>
-            <div tabindex="0" class="py-2 dropdown-content">
+            <div tabindex="0" class="dropdown-content py-2">
               <div
-                class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="font-extrabold capitalize card-title">
+                  <h2 class="card-title font-extrabold capitalize">
                     toggle component
                   </h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Use toggle to switch between two states
                   </p>
-                  <div class="flex justify-end mt-4">
+                  <div class="mt-4 flex justify-end">
                     <a
                       href="/components/toggle"
                       class="btn btn-primary btn-sm xl:btn-md">See component</a
@@ -313,7 +313,7 @@
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  class="w-6 h-6 stroke-current"
+                  class="h-6 w-6 stroke-current"
                   ><path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -323,18 +323,18 @@
                 > <span>Apply settings</span></button
               >
             </div>
-            <div tabindex="0" class="py-2 dropdown-content">
+            <div tabindex="0" class="dropdown-content py-2">
               <div
-                class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="font-extrabold capitalize card-title">
+                  <h2 class="card-title font-extrabold capitalize">
                     button component
                   </h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Buttons come in various shapes, colors and sizes
                   </p>
-                  <div class="flex justify-end mt-4">
+                  <div class="mt-4 flex justify-end">
                     <a
                       href="/components/button"
                       class="btn btn-primary btn-sm xl:btn-md">See component</a
@@ -347,7 +347,7 @@
         </div>
       </div>
       <div
-        class="flex-shrink-0 mx-2 overflow-visible shadow-xl card card-compact col-span-3 row-span-4 w-72 bg-base-100 xl:card-normal xl:mx-0 xl:w-auto"
+        class="card card-compact col-span-3 row-span-4 mx-2 w-72 flex-shrink-0 overflow-visible bg-base-100 shadow-xl xl:card-normal xl:mx-0 xl:w-auto"
       >
         <div class="dropdown">
           <div tabindex="0">
@@ -361,18 +361,18 @@
               />
             </figure>
           </div>
-          <div tabindex="0" class="py-2 dropdown-content">
+          <div tabindex="0" class="dropdown-content py-2">
             <div
-              class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+              class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
-                <h2 class="font-extrabold capitalize card-title">
+                <h2 class="card-title font-extrabold capitalize">
                   card component
                 </h2>
                 <p class="text-sm text-neutral-content text-opacity-80">
                   Card component is used to show products, features and more.
                 </p>
-                <div class="flex justify-end mt-4">
+                <div class="mt-4 flex justify-end">
                   <a
                     href="/components/card"
                     class="btn btn-primary btn-sm xl:btn-md">See component</a
@@ -383,13 +383,13 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="flex items-center font-extrabold card-title">
+          <div class="card-title flex items-center font-extrabold">
             Card Component
             <div class="dropdown-top dropdown dropdown-end">
               <div tabindex="0">
                 <div
                   tabindex="0"
-                  class="inline-block mx-1 btn btn-ghost btn-circle btn-xs text-info"
+                  class="btn btn-ghost btn-circle btn-xs mx-1 inline-block text-info"
                 >
                   <svg
                     width="20"
@@ -397,7 +397,7 @@
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    class="inline w-5 h-5 stroke-current"
+                    class="inline h-5 w-5 stroke-current"
                     ><path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -407,18 +407,18 @@
                   >
                 </div>
               </div>
-              <div tabindex="0" class="py-2 dropdown-content">
+              <div tabindex="0" class="dropdown-content py-2">
                 <div
-                  class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                  class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
                 >
                   <div class="card-body">
-                    <h2 class="font-extrabold capitalize card-title">
+                    <h2 class="card-title font-extrabold capitalize">
                       dropdown component
                     </h2>
                     <p class="text-sm text-neutral-content text-opacity-80">
                       helper dropdown can show an element when focused.
                     </p>
-                    <div class="flex justify-end mt-4">
+                    <div class="mt-4 flex justify-end">
                       <a
                         href="/components/dropdown"
                         class="btn btn-primary btn-sm xl:btn-md"
@@ -430,24 +430,24 @@
               </div>
             </div>
           </div>
-          <div class="w-full dropdown">
+          <div class="dropdown w-full">
             <div tabindex="0">
               <div class="mb-2">
                 <div class="badge badge-ghost">May 14th</div>
               </div>
             </div>
-            <div tabindex="0" class="py-2 dropdown-content">
+            <div tabindex="0" class="dropdown-content py-2">
               <div
-                class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="font-extrabold capitalize card-title">
+                  <h2 class="card-title font-extrabold capitalize">
                     badge component
                   </h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Use badge component to highlight small inline items
                   </p>
-                  <div class="flex justify-end mt-4">
+                  <div class="mt-4 flex justify-end">
                     <a
                       href="/components/badge"
                       class="btn btn-primary btn-sm xl:btn-md">See component</a
@@ -461,23 +461,23 @@
             Use card component to easily show blog posts, products, features,
             items and more.
           </p>
-          <div class="justify-end card-actions">
+          <div class="card-actions justify-end">
             <div class="dropdown-top dropdown dropdown-end">
               <div tabindex="0">
                 <button class="btn btn-primary">Get Started</button>
               </div>
-              <div tabindex="0" class="py-2 dropdown-content">
+              <div tabindex="0" class="dropdown-content py-2">
                 <div
-                  class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                  class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
                 >
                   <div class="card-body">
-                    <h2 class="font-extrabold capitalize card-title">
+                    <h2 class="card-title font-extrabold capitalize">
                       button component
                     </h2>
                     <p class="text-sm text-neutral-content text-opacity-80">
                       Buttons come in various shapes, colors and sizes
                     </p>
-                    <div class="flex justify-end mt-4">
+                    <div class="mt-4 flex justify-end">
                       <a
                         href="/components/button"
                         class="btn btn-primary btn-sm xl:btn-md"
@@ -492,35 +492,35 @@
         </div>
       </div>
       <div
-        class="flex flex-col flex-shrink-0 mx-2 col-span-3 row-span-3 w-72 xl:mx-0 xl:w-full"
+        class="col-span-3 row-span-3 mx-2 flex w-72 flex-shrink-0 flex-col xl:mx-0 xl:w-full"
       >
         <div class="dropdown">
           <div tabindex="0" class="bg-opacity-100">
-            <div class="flex-grow-0 w-full tabs">
+            <div class="tabs w-full flex-grow-0">
               <button
-                class="flex-1 tab tab-active tab-lifted tab-border-none tab-lg"
+                class="tab tab-active tab-lifted tab-border-none tab-lg flex-1"
                 >Stats</button
               >
-              <button class="flex-1 tab tab-lifted tab-border-none tab-lg"
+              <button class="tab tab-lifted tab-border-none tab-lg flex-1"
                 >Info</button
               >
-              <button class="flex-1 tab tab-lifted tab-border-none tab-lg"
+              <button class="tab tab-lifted tab-border-none tab-lg flex-1"
                 >Options</button
               >
             </div>
           </div>
-          <div tabindex="0" class="py-2 dropdown-content">
+          <div tabindex="0" class="dropdown-content py-2">
             <div
-              class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+              class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
-                <h2 class="font-extrabold capitalize card-title">
+                <h2 class="card-title font-extrabold capitalize">
                   tab component
                 </h2>
                 <p class="text-sm text-neutral-content text-opacity-80">
                   Beautiful tabs to switch between sections
                 </p>
-                <div class="flex justify-end mt-4">
+                <div class="mt-4 flex justify-end">
                   <a
                     href="/components/tab"
                     class="btn btn-primary btn-sm xl:btn-md">See component</a
@@ -531,14 +531,14 @@
           </div>
         </div>
         <div
-          class="flex-grow w-full p-6 rounded-tl-none shadow-xl grid gap-3 rounded-xl bg-base-100"
+          class="grid w-full flex-grow gap-3 rounded-xl rounded-tl-none bg-base-100 p-6 shadow-xl"
         >
           <div class="flex items-center space-x-2">
             <div class="dropdown">
               <div tabindex="0">
                 <div class="online avatar">
                   <div
-                    class="w-16 h-16 p-px mask mask-hexagon bg-base-content bg-opacity-10"
+                    class="mask mask-hexagon h-16 w-16 bg-base-content bg-opacity-10 p-px"
                   >
                     <img
                       src={userProfileInformation.avatar_url}
@@ -548,18 +548,18 @@
                   </div>
                 </div>
               </div>
-              <div tabindex="0" class="py-2 dropdown-content">
+              <div tabindex="0" class="dropdown-content py-2">
                 <div
-                  class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                  class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
                 >
                   <div class="card-body">
-                    <h2 class="font-extrabold capitalize card-title">
+                    <h2 class="card-title font-extrabold capitalize">
                       avatar component
                     </h2>
                     <p class="text-sm text-neutral-content text-opacity-80">
                       Use avatar component with any size
                     </p>
-                    <div class="flex justify-end mt-4">
+                    <div class="mt-4 flex justify-end">
                       <a
                         href="/components/avatar"
                         class="btn btn-primary btn-sm xl:btn-md"
@@ -577,20 +577,20 @@
           </div>
           <div class="dropdown">
             <div tabindex="0">
-              <div class="m-0 divider text-base-content/60">Reports</div>
+              <div class="divider m-0 text-base-content/60">Reports</div>
             </div>
-            <div tabindex="0" class="py-2 dropdown-content">
+            <div tabindex="0" class="dropdown-content py-2">
               <div
-                class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="font-extrabold capitalize card-title">
+                  <h2 class="card-title font-extrabold capitalize">
                     divider component
                   </h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     User divider component to visually separate items
                   </p>
-                  <div class="flex justify-end mt-4">
+                  <div class="mt-4 flex justify-end">
                     <a
                       href="/components/divider"
                       class="btn btn-primary btn-sm xl:btn-md">See component</a
@@ -651,19 +651,19 @@
                   />
                 </div>
               </div>
-              <div tabindex="0" class="py-2 dropdown-content">
+              <div tabindex="0" class="dropdown-content py-2">
                 <div
-                  class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                  class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
                 >
                   <div class="card-body">
-                    <h2 class="font-extrabold capitalize card-title">
+                    <h2 class="card-title font-extrabold capitalize">
                       progress component
                     </h2>
                     <p class="text-sm text-neutral-content text-opacity-80">
                       Show progressbar, loadings or simple bar charts using
                       progress component
                     </p>
-                    <div class="flex justify-end mt-4">
+                    <div class="mt-4 flex justify-end">
                       <a
                         href="/components/progress"
                         class="btn btn-primary btn-sm xl:btn-md"
@@ -678,13 +678,13 @@
         </div>
       </div>
       <div
-        class="flex flex-col justify-center flex-shrink-0 mx-2 col-span-3 row-span-1 w-72 xl:mx-0 xl:w-auto"
+        class="col-span-3 row-span-1 mx-2 flex w-72 flex-shrink-0 flex-col justify-center xl:mx-0 xl:w-auto"
       >
-        <div class="w-full dropdown dropdown-end">
+        <div class="dropdown dropdown-end w-full">
           <div tabindex="0">
             <div class="flex items-center justify-between">
               <div class="online avatar">
-                <div class="w-16 h-16 p-1 mask mask-squircle bg-base-100">
+                <div class="mask mask-squircle h-16 w-16 bg-base-100 p-1">
                   <img
                     src={userProfileInformation.avatar_url}
                     alt="Avatar Tailwind CSS Component"
@@ -693,7 +693,7 @@
                 </div>
               </div>
               <div class="online avatar">
-                <div class="w-16 h-16 p-1 mask mask-squircle bg-base-100">
+                <div class="mask mask-squircle h-16 w-16 bg-base-100 p-1">
                   <img
                     src={userProfileInformation.avatar_url}
                     alt="Avatar Tailwind CSS Component"
@@ -702,7 +702,7 @@
                 </div>
               </div>
               <div class="avatar offline">
-                <div class="w-16 h-16 p-1 mask mask-squircle bg-base-100">
+                <div class="mask mask-squircle h-16 w-16 bg-base-100 p-1">
                   <img
                     src={userProfileInformation.avatar_url}
                     alt="Avatar Tailwind CSS Component"
@@ -711,7 +711,7 @@
                 </div>
               </div>
               <div class="avatar">
-                <div class="w-16 h-16 p-1 mask mask-squircle bg-base-100">
+                <div class="mask mask-squircle h-16 w-16 bg-base-100 p-1">
                   <img
                     src={userProfileInformation.avatar_url}
                     alt="Avatar Tailwind CSS Component"
@@ -721,18 +721,18 @@
               </div>
             </div>
           </div>
-          <div tabindex="0" class="py-2 dropdown-content">
+          <div tabindex="0" class="dropdown-content py-2">
             <div
-              class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+              class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
-                <h2 class="font-extrabold capitalize card-title">
+                <h2 class="card-title font-extrabold capitalize">
                   avatar component
                 </h2>
                 <p class="text-sm text-neutral-content text-opacity-80">
                   Use avatar component with any size
                 </p>
-                <div class="flex justify-end mt-4">
+                <div class="mt-4 flex justify-end">
                   <a
                     href="/components/avatar"
                     class="btn btn-primary btn-sm xl:btn-md">See component</a
@@ -744,12 +744,12 @@
         </div>
       </div>
       <div
-        class="flex-shrink-0 mx-2 shadow-xl rounded-box col-span-3 row-span-4 grid w-72 bg-base-100 text-base-content xl:mx-0 xl:w-auto xl:place-self-stretch"
+        class="rounded-box col-span-3 row-span-4 mx-2 grid w-72 flex-shrink-0 bg-base-100 text-base-content shadow-xl xl:mx-0 xl:w-auto xl:place-self-stretch"
       >
-        <div class="w-full p-4 grid grid-cols-1 gap-4">
+        <div class="grid w-full grid-cols-1 gap-4 p-4">
           <div class="dropdown">
             <div tabindex="0">
-              <div class="w-full grid grid-cols-2 gap-4">
+              <div class="grid w-full grid-cols-2 gap-4">
                 <button class="btn btn-block">Neutral</button>
                 <button class="btn btn-primary btn-block">primary</button>
                 <button class="btn btn-secondary btn-block">secondary</button>
@@ -758,18 +758,18 @@
                 <button class="btn btn-success btn-block">success</button>
               </div>
             </div>
-            <div tabindex="0" class="py-2 dropdown-content">
+            <div tabindex="0" class="dropdown-content py-2">
               <div
-                class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="font-extrabold capitalize card-title">
+                  <h2 class="card-title font-extrabold capitalize">
                     button component
                   </h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Buttons come in various shapes, colors and sizes
                   </p>
-                  <div class="flex justify-end mt-4">
+                  <div class="mt-4 flex justify-end">
                     <a
                       href="/components/button"
                       class="btn btn-primary btn-sm xl:btn-md">See component</a
@@ -781,7 +781,7 @@
           </div>
           <div class="dropdown-top dropdown">
             <div tabindex="0">
-              <div class="w-full grid grid-cols-2 gap-4">
+              <div class="grid w-full grid-cols-2 gap-4">
                 <button class="btn btn-warning btn-block">warning</button>
                 <button class="btn btn-error btn-block">error</button>
                 <button class="btn btn-outline btn-block">outline</button>
@@ -797,18 +797,18 @@
                 <button class="btn btn-link btn-block">link</button>
               </div>
             </div>
-            <div tabindex="0" class="py-2 dropdown-content">
+            <div tabindex="0" class="dropdown-content py-2">
               <div
-                class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="font-extrabold capitalize card-title">
+                  <h2 class="card-title font-extrabold capitalize">
                     button component
                   </h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Buttons come in various shapes, colors and sizes
                   </p>
-                  <div class="flex justify-end mt-4">
+                  <div class="mt-4 flex justify-end">
                     <a
                       href="/components/button"
                       class="btn btn-primary btn-sm xl:btn-md">See component</a
@@ -821,39 +821,39 @@
         </div>
       </div>
       <div
-        class="flex-shrink-0 mx-2 col-span-3 row-span-2 grid w-72 gap-4 xl:mx-0 xl:w-auto"
+        class="col-span-3 row-span-2 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-auto"
       >
         <div class="dropdown-top dropdown dropdown-end">
           <div tabindex="0">
             <div class="grid gap-4">
-              <div class="flex btn-group">
-                <button class="flex-1 btn">1</button>
-                <button class="flex-1 btn btn-active">2</button>
-                <button class="flex-1 btn">3</button>
-                <button class="flex-1 btn">4</button>
-                <button class="flex-1 btn">5</button>
+              <div class="btn-group flex">
+                <button class="btn flex-1">1</button>
+                <button class="btn btn-active flex-1">2</button>
+                <button class="btn flex-1">3</button>
+                <button class="btn flex-1">4</button>
+                <button class="btn flex-1">5</button>
               </div>
-              <div class="flex btn-group">
-                <button class="flex-1 btn btn-outline">1</button>
-                <button class="flex-1 btn btn-outline">2</button>
-                <button class="flex-1 btn btn-outline">3</button>
-                <button class="flex-1 btn btn-outline">4</button>
-                <button class="flex-1 btn btn-outline">5</button>
+              <div class="btn-group flex">
+                <button class="btn btn-outline flex-1">1</button>
+                <button class="btn btn-outline flex-1">2</button>
+                <button class="btn btn-outline flex-1">3</button>
+                <button class="btn btn-outline flex-1">4</button>
+                <button class="btn btn-outline flex-1">5</button>
               </div>
             </div>
           </div>
-          <div tabindex="0" class="py-2 dropdown-content">
+          <div tabindex="0" class="dropdown-content py-2">
             <div
-              class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+              class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
-                <h2 class="font-extrabold capitalize card-title">
+                <h2 class="card-title font-extrabold capitalize">
                   pagination component
                 </h2>
                 <p class="text-sm text-neutral-content text-opacity-80">
                   Pagination buttons in many colors and sizes!
                 </p>
-                <div class="flex justify-end mt-4">
+                <div class="mt-4 flex justify-end">
                   <a
                     href="/components/pagination"
                     class="btn btn-primary btn-sm xl:btn-md">See component</a
@@ -865,24 +865,24 @@
         </div>
         <div class="dropdown-top dropdown dropdown-end">
           <div tabindex="0">
-            <div class="items-center tabs tabs-boxed">
-              <button class="flex-1 tab">Tab 1</button>
-              <button class="flex-1 tab tab-active">Tab 2</button>
-              <button class="flex-1 tab">Tab 3</button>
+            <div class="tabs tabs-boxed items-center">
+              <button class="tab flex-1">Tab 1</button>
+              <button class="tab tab-active flex-1">Tab 2</button>
+              <button class="tab flex-1">Tab 3</button>
             </div>
           </div>
-          <div tabindex="0" class="py-2 dropdown-content">
+          <div tabindex="0" class="dropdown-content py-2">
             <div
-              class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+              class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
-                <h2 class="font-extrabold capitalize card-title">
+                <h2 class="card-title font-extrabold capitalize">
                   tab component
                 </h2>
                 <p class="text-sm text-neutral-content text-opacity-80">
                   Tab component with several sizes and styles
                 </p>
-                <div class="flex justify-end mt-4">
+                <div class="mt-4 flex justify-end">
                   <a
                     href="/components/tab"
                     class="btn btn-primary btn-sm xl:btn-md">See component</a
@@ -894,36 +894,36 @@
         </div>
       </div>
       <div
-        class="items-stretch flex-shrink-0 mx-2 shadow-xl rounded-box col-span-3 row-span-3 grid w-72 bg-base-100 text-base-content xl:mx-0 xl:w-auto xl:place-self-stretch"
+        class="rounded-box col-span-3 row-span-3 mx-2 grid w-72 flex-shrink-0 items-stretch bg-base-100 text-base-content shadow-xl xl:mx-0 xl:w-auto xl:place-self-stretch"
       >
-        <div class="p-4 grid place-content-center gap-4">
+        <div class="grid place-content-center gap-4 p-4">
           <div class="dropdown dropdown-end">
             <div tabindex="0">
-              <div class="flex-col alert space-y-2">
+              <div class="alert flex-col space-y-2">
                 <div class="flex-1">
                   <span class="mx-3 text-sm"
                     >Lorem ipsum dolor sit amet, consectetur adip!</span
                   >
                 </div>
                 <div class="flex-none">
-                  <button class="mr-2 btn btn-outline btn-primary btn-sm"
+                  <button class="btn btn-outline btn-primary btn-sm mr-2"
                     >Cancel</button
                   > <button class="btn btn-primary btn-sm">Apply</button>
                 </div>
               </div>
             </div>
-            <div tabindex="0" class="py-2 dropdown-content">
+            <div tabindex="0" class="dropdown-content py-2">
               <div
-                class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="font-extrabold capitalize card-title">
+                  <h2 class="card-title font-extrabold capitalize">
                     alert component
                   </h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Show alerts, warnings, notification or other info
                   </p>
-                  <div class="flex justify-end mt-4">
+                  <div class="mt-4 flex justify-end">
                     <a
                       href="/components/alert"
                       class="btn btn-primary btn-sm xl:btn-md">See component</a
@@ -943,7 +943,7 @@
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    class="w-6 h-6 mx-2 stroke-current"
+                    class="mx-2 h-6 w-6 stroke-current"
                     ><path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -957,18 +957,18 @@
                 </div>
               </div>
             </div>
-            <div tabindex="0" class="py-2 dropdown-content">
+            <div tabindex="0" class="dropdown-content py-2">
               <div
-                class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="font-extrabold capitalize card-title">
+                  <h2 class="card-title font-extrabold capitalize">
                     alert component
                   </h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Show alerts, warnings, notification or other info
                   </p>
-                  <div class="flex justify-end mt-4">
+                  <div class="mt-4 flex justify-end">
                     <a
                       href="/components/alert"
                       class="btn btn-primary btn-sm xl:btn-md">See component</a
@@ -988,7 +988,7 @@
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    class="w-6 h-6 mx-2 stroke-current"
+                    class="mx-2 h-6 w-6 stroke-current"
                     ><path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -1002,18 +1002,18 @@
                 </div>
               </div>
             </div>
-            <div tabindex="0" class="py-2 dropdown-content">
+            <div tabindex="0" class="dropdown-content py-2">
               <div
-                class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="font-extrabold capitalize card-title">
+                  <h2 class="card-title font-extrabold capitalize">
                     alert component
                   </h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Show alerts, warnings, notification or other info
                   </p>
-                  <div class="flex justify-end mt-4">
+                  <div class="mt-4 flex justify-end">
                     <a
                       href="/components/alert"
                       class="btn btn-primary btn-sm xl:btn-md">See component</a
@@ -1026,12 +1026,12 @@
         </div>
       </div>
       <div
-        class="flex-shrink-0 mx-2 col-span-3 row-span-2 grid w-72 gap-4 xl:mx-0 xl:w-auto xl:place-self-stretch"
+        class="col-span-3 row-span-2 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-auto xl:place-self-stretch"
       >
-        <div class="shadow-xl rounded-box bg-base-100 text-base-content">
-          <div class="w-full dropdown dropdown-end">
+        <div class="rounded-box bg-base-100 text-base-content shadow-xl">
+          <div class="dropdown dropdown-end w-full">
             <div tabindex="0">
-              <ul class="p-3 overflow-visible menu">
+              <ul class="menu overflow-visible p-3">
                 <li class="menu-title"><span>Menu Title</span></li>
                 <li>
                   <button
@@ -1041,7 +1041,7 @@
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
-                      class="inline-block w-5 h-5 mr-2 stroke-current"
+                      class="mr-2 inline-block h-5 w-5 stroke-current"
                       ><path
                         stroke-linecap="round"
                         stroke-linejoin="round"
@@ -1060,7 +1060,7 @@
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
-                      class="inline-block w-5 h-5 mr-2 stroke-current"
+                      class="mr-2 inline-block h-5 w-5 stroke-current"
                       ><path
                         stroke-linecap="round"
                         stroke-linejoin="round"
@@ -1079,7 +1079,7 @@
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
-                      class="inline-block w-5 h-5 mr-2 stroke-current"
+                      class="mr-2 inline-block h-5 w-5 stroke-current"
                       ><path
                         stroke-linecap="round"
                         stroke-linejoin="round"
@@ -1093,18 +1093,18 @@
                 </li>
               </ul>
             </div>
-            <div tabindex="0" class="py-2 dropdown-content">
+            <div tabindex="0" class="dropdown-content py-2">
               <div
-                class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="font-extrabold capitalize card-title">
+                  <h2 class="card-title font-extrabold capitalize">
                     menu component
                   </h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Use it for sidebar or any other list of items
                   </p>
-                  <div class="flex justify-end mt-4">
+                  <div class="mt-4 flex justify-end">
                     <a
                       href="/components/menu"
                       class="btn btn-primary btn-sm xl:btn-md">See component</a
@@ -1117,12 +1117,12 @@
         </div>
       </div>
       <div
-        class="flex-shrink-0 mx-2 col-span-3 row-span-1 grid w-72 gap-4 xl:mx-0 xl:w-auto"
+        class="col-span-3 row-span-1 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-auto"
       >
-        <div class="shadow-xl rounded-box bg-base-100 text-base-content">
-          <div class="w-full dropdown-top dropdown dropdown-end">
+        <div class="rounded-box bg-base-100 text-base-content shadow-xl">
+          <div class="dropdown-top dropdown dropdown-end w-full">
             <div tabindex="0">
-              <div class="flex justify-center p-4 gap-8">
+              <div class="flex justify-center gap-8 p-4">
                 <label aria-label="checkbox CSS component"
                   ><input type="checkbox" class="checkbox" /></label
                 >
@@ -1146,18 +1146,18 @@
                 >
               </div>
             </div>
-            <div tabindex="0" class="py-2 dropdown-content">
+            <div tabindex="0" class="dropdown-content py-2">
               <div
-                class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="font-extrabold capitalize card-title">
+                  <h2 class="card-title font-extrabold capitalize">
                     checkbox component
                   </h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Colorful, animated and accessible
                   </p>
-                  <div class="flex justify-end mt-4">
+                  <div class="mt-4 flex justify-end">
                     <a
                       href="/components/checkbox"
                       class="btn btn-primary btn-sm xl:btn-md">See component</a
@@ -1167,10 +1167,10 @@
               </div>
             </div>
           </div>
-          <div class="w-full dropdown dropdown-end">
+          <div class="dropdown dropdown-end w-full">
             <div tabindex="0">
               <div
-                class="justify-center w-full px-4 pb-4 rating rating-lg rating-half"
+                class="rating rating-lg rating-half w-full justify-center px-4 pb-4"
               >
                 <input
                   type="radio"
@@ -1182,80 +1182,80 @@
                   type="radio"
                   aria-label="Rating half star"
                   name="rating-10"
-                  class="bg-green-500 mask mask-half-1 mask-star-2"
+                  class="mask mask-half-1 mask-star-2 bg-green-500"
                 />
                 <input
                   type="radio"
                   aria-label="Rating 1 star"
                   name="rating-10"
-                  class="bg-green-500 mask mask-half-2 mask-star-2"
+                  class="mask mask-half-2 mask-star-2 bg-green-500"
                 />
                 <div class="w-1" />
                 <input
                   type="radio"
                   aria-label="Rating 1 and half star"
                   name="rating-10"
-                  class="bg-green-500 mask mask-half-1 mask-star-2"
+                  class="mask mask-half-1 mask-star-2 bg-green-500"
                 />
                 <input
                   type="radio"
                   aria-label="Rating 2 star"
                   name="rating-10"
-                  class="bg-green-500 mask mask-half-2 mask-star-2"
+                  class="mask mask-half-2 mask-star-2 bg-green-500"
                 />
                 <div class="w-1" />
                 <input
                   type="radio"
                   aria-label="Rating 2 and half star"
                   name="rating-10"
-                  class="bg-green-500 mask mask-half-1 mask-star-2"
+                  class="mask mask-half-1 mask-star-2 bg-green-500"
                 />
                 <input
                   type="radio"
                   aria-label="Rating 3 star"
                   name="rating-10"
-                  class="bg-green-500 mask mask-half-2 mask-star-2"
+                  class="mask mask-half-2 mask-star-2 bg-green-500"
                 />
                 <div class="w-1" />
                 <input
                   type="radio"
                   aria-label="Rating 3 and half star"
                   name="rating-10"
-                  class="bg-green-500 mask mask-half-1 mask-star-2"
+                  class="mask mask-half-1 mask-star-2 bg-green-500"
                 />
                 <input
                   type="radio"
                   aria-label="Rating 4 star"
                   name="rating-10"
-                  class="bg-green-500 mask mask-half-2 mask-star-2"
+                  class="mask mask-half-2 mask-star-2 bg-green-500"
                 />
                 <div class="w-1" />
                 <input
                   type="radio"
                   aria-label="Rating 4 and half star"
                   name="rating-10"
-                  class="bg-green-500 mask mask-half-1 mask-star-2"
+                  class="mask mask-half-1 mask-star-2 bg-green-500"
                 />
                 <input
                   type="radio"
                   aria-label="Rating 5 star"
                   name="rating-10"
-                  class="bg-green-500 mask mask-half-2 mask-star-2"
+                  class="mask mask-half-2 mask-star-2 bg-green-500"
                 />
               </div>
             </div>
-            <div tabindex="0" class="py-2 dropdown-content">
+            <div tabindex="0" class="dropdown-content py-2">
               <div
-                class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="font-extrabold capitalize card-title">
+                  <h2 class="card-title font-extrabold capitalize">
                     Rating component
                   </h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Styled radio buttons
                   </p>
-                  <div class="flex justify-end mt-4">
+                  <div class="mt-4 flex justify-end">
                     <a
                       href="/components/rating"
                       class="btn btn-primary btn-sm xl:btn-md">See component</a
@@ -1268,14 +1268,14 @@
         </div>
       </div>
       <div
-        class="flex-shrink-0 mx-2 col-span-3 row-span-1 grid w-72 gap-4 xl:mx-0 xl:w-auto"
+        class="col-span-3 row-span-1 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-auto"
       >
         <div
-          class="flex items-center shadow-xl rounded-box bg-neutral text-neutral-content"
+          class="rounded-box flex items-center bg-neutral text-neutral-content shadow-xl"
         >
           <div class="dropdown-top dropdown">
             <div tabindex="0">
-              <div class="px-4 text-sm breadcrumbs">
+              <div class="breadcrumbs px-4 text-sm">
                 <ul>
                   <li>
                     <a href="/"
@@ -1285,7 +1285,7 @@
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
-                        class="w-4 h-4 mr-2 stroke-current"
+                        class="mr-2 h-4 w-4 stroke-current"
                         ><path
                           stroke-linecap="round"
                           stroke-linejoin="round"
@@ -1304,7 +1304,7 @@
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
-                        class="w-4 h-4 mr-2 stroke-current"
+                        class="mr-2 h-4 w-4 stroke-current"
                         ><path
                           stroke-linecap="round"
                           stroke-linejoin="round"
@@ -1318,18 +1318,18 @@
                 </ul>
               </div>
             </div>
-            <div tabindex="0" class="py-2 dropdown-content">
+            <div tabindex="0" class="dropdown-content py-2">
               <div
-                class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="font-extrabold capitalize card-title">
+                  <h2 class="card-title font-extrabold capitalize">
                     breadcrumbs component
                   </h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Make a better navigation with breadcrumbs!
                   </p>
-                  <div class="flex justify-end mt-4">
+                  <div class="mt-4 flex justify-end">
                     <a
                       href="/components/breadcrumbs"
                       class="btn btn-primary btn-sm xl:btn-md">See component</a
@@ -1341,7 +1341,7 @@
           </div>
         </div>
         <div
-          class="flex items-center p-4 shadow-xl rounded-box bg-accent text-accent-content"
+          class="rounded-box flex items-center bg-accent p-4 text-accent-content shadow-xl"
         >
           <div class="flex-1 px-2">
             <h2 class="text-3xl font-extrabold">4,600</h2>
@@ -1358,7 +1358,7 @@
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
-                      class="inline-block w-6 h-6 stroke-current"
+                      class="inline-block h-6 w-6 stroke-current"
                       ><path
                         stroke-linecap="round"
                         stroke-linejoin="round"
@@ -1379,7 +1379,7 @@
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
-                      class="inline-block w-6 h-6 stroke-current"
+                      class="inline-block h-6 w-6 stroke-current"
                       ><path
                         stroke-linecap="round"
                         stroke-linejoin="round"
@@ -1390,18 +1390,18 @@
                   >
                 </div>
               </div>
-              <div tabindex="0" class="py-2 dropdown-content">
+              <div tabindex="0" class="dropdown-content py-2">
                 <div
-                  class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                  class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
                 >
                   <div class="card-body">
-                    <h2 class="font-extrabold capitalize card-title">
+                    <h2 class="card-title font-extrabold capitalize">
                       button component
                     </h2>
                     <p class="text-sm text-neutral-content text-opacity-80">
                       Buttons come in various shapes, colors and sizes
                     </p>
-                    <div class="flex justify-end mt-4">
+                    <div class="mt-4 flex justify-end">
                       <a
                         href="/components/button"
                         class="btn btn-primary btn-sm xl:btn-md"
@@ -1416,11 +1416,11 @@
         </div>
       </div>
       <div
-        class="flex-shrink-0 mx-2 overflow-visible shadow-lg card col-span-3 row-span-1 w-72 bg-base-100 xl:mx-0 xl:w-auto xl:place-self-stretch"
+        class="card col-span-3 row-span-1 mx-2 w-72 flex-shrink-0 overflow-visible bg-base-100 shadow-lg xl:mx-0 xl:w-auto xl:place-self-stretch"
       >
-        <div class="flex-row items-center px-4 card-body space-x-4">
+        <div class="card-body flex-row items-center space-x-4 px-4">
           <div class="flex-1">
-            <h2 class="flex mb-0 card-title">
+            <h2 class="card-title mb-0 flex">
               <div class="dropdown-top dropdown">
                 <div tabindex="0">
                   <button
@@ -1428,18 +1428,18 @@
                     class="btn loading btn-ghost btn-sm btn-circle"
                   />
                 </div>
-                <div tabindex="0" class="py-2 dropdown-content">
+                <div tabindex="0" class="dropdown-content py-2">
                   <div
-                    class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                    class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
                   >
                     <div class="card-body">
-                      <h2 class="font-extrabold capitalize card-title">
+                      <h2 class="card-title font-extrabold capitalize">
                         loading button component
                       </h2>
                       <p class="text-sm text-neutral-content text-opacity-80">
                         Buttons can get loadings state using a simple class
                       </p>
-                      <div class="flex justify-end mt-4">
+                      <div class="mt-4 flex justify-end">
                         <a
                           href="/components/button"
                           class="btn btn-primary btn-sm xl:btn-md"
@@ -1452,7 +1452,7 @@
               </div>
               Downloading...
             </h2>
-            <div class="w-full dropdown-top dropdown">
+            <div class="dropdown-top dropdown w-full">
               <div tabindex="0">
                 <progress
                   max="100"
@@ -1460,19 +1460,19 @@
                   value="70"
                 />
               </div>
-              <div tabindex="0" class="py-2 dropdown-content">
+              <div tabindex="0" class="dropdown-content py-2">
                 <div
-                  class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                  class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
                 >
                   <div class="card-body">
-                    <h2 class="font-extrabold capitalize card-title">
+                    <h2 class="card-title font-extrabold capitalize">
                       progress component
                     </h2>
                     <p class="text-sm text-neutral-content text-opacity-80">
                       Show progressbar, loadings or simple bar charts using
                       progress component
                     </p>
-                    <div class="flex justify-end mt-4">
+                    <div class="mt-4 flex justify-end">
                       <a
                         href="/components/progress"
                         class="btn btn-primary btn-sm xl:btn-md"
@@ -1494,7 +1494,7 @@
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    class="inline-block w-6 h-6 stroke-current"
+                    class="inline-block h-6 w-6 stroke-current"
                     ><path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -1504,18 +1504,18 @@
                   ></button
                 >
               </div>
-              <div tabindex="0" class="py-2 dropdown-content">
+              <div tabindex="0" class="dropdown-content py-2">
                 <div
-                  class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                  class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
                 >
                   <div class="card-body">
-                    <h2 class="font-extrabold capitalize card-title">
+                    <h2 class="card-title font-extrabold capitalize">
                       button component
                     </h2>
                     <p class="text-sm text-neutral-content text-opacity-80">
                       Buttons come in various shapes, colors and sizes
                     </p>
-                    <div class="flex justify-end mt-4">
+                    <div class="mt-4 flex justify-end">
                       <a
                         href="/components/button"
                         class="btn btn-primary btn-sm xl:btn-md"

@@ -5,11 +5,11 @@
 </script>
 
 <div
-  class="items-center h-full p-4 py-8 shadow-xl grid gap-4 rounded-box w-72 place-items-center bg-base-100 xl:mx-0 xl:w-full"
+  class="rounded-box grid h-full w-72 place-items-center items-center gap-4 bg-base-100 p-4 py-8 shadow-xl xl:mx-0 xl:w-full"
 >
   <div class="online avatar">
     <div
-      class="w-24 h-24 p-px mask mask-squircle bg-base-content bg-opacity-10"
+      class="mask mask-squircle h-24 w-24 bg-base-content bg-opacity-10 p-px"
     >
       <img
         src={userProfileInformation.avatar_url}
@@ -52,7 +52,7 @@
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            class="w-6 h-6 stroke-current"
+            class="h-6 w-6 stroke-current"
             ><path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -63,18 +63,18 @@
         >
       </div>
     </div>
-    <div tabindex="0" class="py-2 dropdown-content">
+    <div tabindex="0" class="dropdown-content py-2">
       <div
-        class="shadow-xl card compact rounded-box w-72 bg-neutral-focus text-neutral-content"
+        class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
       >
         <div class="card-body">
-          <h2 class="font-extrabold capitalize card-title">
+          <h2 class="card-title font-extrabold capitalize">
             button group component
           </h2>
           <p class="text-sm text-neutral-content text-opacity-80">
             Use it to group multiple buttons together
           </p>
-          <div class="flex justify-end mt-4">
+          <div class="mt-4 flex justify-end">
             <a
               href="/components/button-group"
               class="btn btn-primary btn-sm xl:btn-md">See component</a

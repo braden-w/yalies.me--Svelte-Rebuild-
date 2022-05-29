@@ -10,6 +10,6 @@
 <iframe
   src="https://yalebutterybook.com"
   title="Yale Buttery Book"
-  class="w-full h-screen-nav"
+  class="h-screen-nav w-full"
   frameborder="0"
 />

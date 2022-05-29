@@ -56,7 +56,7 @@
 </script>
 
 <div class="form-control">
-  <label class="cursor-pointer label">
+  <label class="label cursor-pointer">
     <span class="label-text">
       I'm currently in {placeInformation.description}
     </span>

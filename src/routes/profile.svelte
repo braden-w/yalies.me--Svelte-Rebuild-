@@ -32,7 +32,7 @@
 </div> -->
 <!-- <div class="hero min-h-screen-nav from-primary via-secondary to-base-200 bg-gradient-to-b text-primary-content grid" > -->
 <div class="min-h-screen-nav hero grid bg-base-200 text-base-content">
-  <div class="flex-col hero-content lg:flex-row-reverse">
+  <div class="hero-content flex-col lg:flex-row-reverse">
     <div class="text-center lg:text-left">
       <h1 class="text-5xl font-bold">Where are you now?</h1>
       <p class="py-6">
@@ -40,11 +40,11 @@
         proximity rather than exact location.
       </p>
     </div>
-    <div class="flex-shrink-0 w-full max-w-sm shadow-2xl card bg-base-100">
+    <div class="card w-full max-w-sm flex-shrink-0 bg-base-100 shadow-2xl">
       <div class="card-body text-base-content">
         <div class="text-center">
-          <div class="mx-auto avatar">
-            <div class="rounded w-28">
+          <div class="avatar mx-auto">
+            <div class="w-28 rounded">
               <img
                 src={$sessionStore?.avatar_url}
                 alt="Profile"
@@ -59,7 +59,7 @@
         </div>
         <LocationAutoComplete />
 
-        <div class="mt-6 form-control">
+        <div class="form-control mt-6">
           <a href="/map" class="btn btn-primary">Go To Map</a>
         </div>
       </div>

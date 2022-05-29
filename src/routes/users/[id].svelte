@@ -52,25 +52,25 @@
 </svelte:head>
 
 <div class="min-h-screen-nav hero bg-base-200">
-  <div class="w-full h-full">
+  <div class="h-full w-full">
     <div
       id="component-demo"
-      class="flex flex-col items-stretch w-full h-full px-4 pt-1 pb-10 overflow-x-auto gap-4 xl:grid xl:grid-flow-col xl:grid-cols-4 xl:grid-rows-6"
+      class="flex h-full w-full flex-col items-stretch gap-4 overflow-x-auto px-4 pt-1 pb-10 xl:grid xl:grid-flow-col xl:grid-cols-4 xl:grid-rows-6"
     >
       <!-- Cell 1 -->
-      <div class="bg-teal-400 row-span-2">
+      <div class="row-span-2 bg-teal-400">
         <UserCard {userProfileInformation} />
       </div>
       <!-- Cell 2 -->
-      <div class="bg-teal-400 row-span-1">
+      <div class="row-span-1 bg-teal-400">
         <div
-          class="flex flex-col justify-center flex-shrink-0 mx-2 row-span-1 w-72 xl:mx-0 xl:w-full"
+          class="row-span-1 mx-2 flex w-72 flex-shrink-0 flex-col justify-center xl:mx-0 xl:w-full"
         >
-          <div class="w-full dropdown dropdown-end">
+          <div class="dropdown dropdown-end w-full">
             <div tabindex="0">
               <div class="flex items-center justify-between">
                 <div class="online avatar">
-                  <div class="w-16 h-16 p-1 mask mask-squircle bg-base-100">
+                  <div class="mask mask-squircle h-16 w-16 bg-base-100 p-1">
                     <img
                       src={userProfileInformation.avatar_url}
                       alt="Avatar Tailwind CSS Component"
@@ -79,7 +79,7 @@
                   </div>
                 </div>
                 <div class="online avatar">
-                  <div class="w-16 h-16 p-1 mask mask-squircle bg-base-100">
+                  <div class="mask mask-squircle h-16 w-16 bg-base-100 p-1">
                     <img
                       src={userProfileInformation.avatar_url}
                       alt="Avatar Tailwind CSS Component"
@@ -88,7 +88,7 @@
                   </div>
                 </div>
                 <div class="avatar offline">
-                  <div class="w-16 h-16 p-1 mask mask-squircle bg-base-100">
+                  <div class="mask mask-squircle h-16 w-16 bg-base-100 p-1">
                     <img
                       src={userProfileInformation.avatar_url}
                       alt="Avatar Tailwind CSS Component"
@@ -97,7 +97,7 @@
                   </div>
                 </div>
                 <div class="avatar">
-                  <div class="w-16 h-16 p-1 mask mask-squircle bg-base-100">
+                  <div class="mask mask-squircle h-16 w-16 bg-base-100 p-1">
                     <img
                       src={userProfileInformation.avatar_url}
                       alt="Avatar Tailwind CSS Component"
@@ -107,18 +107,18 @@
                 </div>
               </div>
             </div>
-            <div tabindex="0" class="py-2 dropdown-content">
+            <div tabindex="0" class="dropdown-content py-2">
               <div
-                class="shadow-xl compact card rounded-box w-72 bg-neutral-focus text-neutral-content"
+                class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="font-extrabold capitalize card-title">
+                  <h2 class="card-title font-extrabold capitalize">
                     avatar component
                   </h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Use avatar component with any size
                   </p>
-                  <div class="flex justify-end mt-4">
+                  <div class="mt-4 flex justify-end">
                     <a
                       href="/components/avatar"
                       class="btn btn-primary btn-sm xl:btn-md">See component</a
@@ -131,11 +131,11 @@
         </div>
       </div>
       <!-- Cell 3 -->
-      <div class="bg-teal-400 row-span-3">
+      <div class="row-span-3 bg-teal-400">
         <UserLocationCard {userProfileInformation} />
       </div>
       <!-- Cell 4 -->
-      <div class="bg-teal-400 row-span-6">
+      <div class="row-span-6 bg-teal-400">
         <UserResponsesCard
           {userProfileInformation}
           userResponses={[
@@ -161,7 +161,7 @@
         />
       </div>
       <!-- Cell 5 -->
-      <div class="bg-teal-400 row-span-3">
+      <div class="row-span-3 bg-teal-400">
         <UserResponsesCard
           {userProfileInformation}
           userResponses={[
@@ -193,23 +193,23 @@
         />
       </div>
       <!-- Cell 6 -->
-      <div class="bg-teal-400 row-span-3">
+      <div class="row-span-3 bg-teal-400">
         <SpotifyPlayer url={userProfileInformation.user_responses.expression} />
       </div>
 
       <!-- Cell 7 -->
-      <div class="bg-teal-400 row-span-4">
+      <div class="row-span-4 bg-teal-400">
         <UserStatsInfoOptions {userProfileInformation} />
       </div>
       <!-- Cell 8 -->
-      <div class="bg-teal-400 row-span-2">
+      <div class="row-span-2 bg-teal-400">
         <UserMenuItems {userProfileInformation} />
       </div>
       <!-- 
       
       
       <div
-        class="flex-shrink-0 mx-2 overflow-visible shadow-xl card card-compact xl:card-normal bg-base-100 col-span-3 row-span-4 w-72 xl:mx-0 xl:w-auto"
+        class="flex-shrink-0 col-span-3 row-span-4 mx-2 overflow-visible shadow-xl card card-compact xl:card-normal bg-base-100 w-72 xl:mx-0 xl:w-auto"
       >
         <div class="dropdown">
           <div tabindex="0">
@@ -356,12 +356,12 @@
       
 
       <div
-        class="flex-shrink-0 mx-2 shadow-xl bg-base-100 text-base-content rounded-box col-span-3 row-span-4 grid w-72 xl:mx-0 xl:w-auto xl:place-self-stretch"
+        class="grid flex-shrink-0 col-span-3 row-span-4 mx-2 shadow-xl bg-base-100 text-base-content rounded-box w-72 xl:mx-0 xl:w-auto xl:place-self-stretch"
       >
-        <div class="w-full p-4 grid grid-cols-1 gap-4">
+        <div class="grid w-full grid-cols-1 gap-4 p-4">
           <div class="dropdown">
             <div tabindex="0">
-              <div class="w-full grid grid-cols-2 gap-4">
+              <div class="grid w-full grid-cols-2 gap-4">
                 <button class="btn btn-block">Neutral</button>
                 <button class="btn btn-primary btn-block">primary</button>
                 <button class="btn btn-secondary btn-block">secondary</button>
@@ -393,7 +393,7 @@
           </div>
           <div class="dropdown dropdown-top">
             <div tabindex="0">
-              <div class="w-full grid grid-cols-2 gap-4">
+              <div class="grid w-full grid-cols-2 gap-4">
                 <button class="btn btn-warning btn-block">warning</button>
                 <button class="btn btn-error btn-block">error</button>
                 <button class="btn btn-outline btn-block">outline</button>
@@ -433,7 +433,7 @@
         </div>
       </div>
       <div
-        class="flex-shrink-0 mx-2 col-span-3 row-span-2 grid w-72 gap-4 xl:mx-0 xl:w-auto"
+        class="grid flex-shrink-0 col-span-3 row-span-2 gap-4 mx-2 w-72 xl:mx-0 xl:w-auto"
       >
         <div class="dropdown dropdown-end dropdown-top">
           <div tabindex="0">
@@ -507,12 +507,12 @@
       </div>
 
       <div
-        class="flex-shrink-0 mx-2 col-span-3 row-span-1 grid w-72 gap-4 xl:mx-0 xl:w-auto"
+        class="grid flex-shrink-0 col-span-3 row-span-1 gap-4 mx-2 w-72 xl:mx-0 xl:w-auto"
       >
         <div class="shadow-xl bg-base-100 text-base-content rounded-box">
           <div class="w-full dropdown dropdown-end dropdown-top">
             <div tabindex="0">
-              <div class="flex justify-center p-4 gap-8">
+              <div class="flex justify-center gap-8 p-4">
                 <label aria-label="checkbox CSS component"
                   ><input type="checkbox" class="checkbox" /></label
                 >
@@ -658,7 +658,7 @@
         </div>
       </div>
       <div
-        class="flex-shrink-0 mx-2 col-span-3 row-span-1 grid w-72 gap-4 xl:mx-0 xl:w-auto"
+        class="grid flex-shrink-0 col-span-3 row-span-1 gap-4 mx-2 w-72 xl:mx-0 xl:w-auto"
       >
         <div
           class="flex items-center shadow-xl bg-neutral text-neutral-content rounded-box"
@@ -806,9 +806,9 @@
         </div>
       </div>
       <div
-        class="flex-shrink-0 mx-2 overflow-visible shadow-lg card bg-base-100 col-span-3 row-span-1 w-72 xl:mx-0 xl:w-auto xl:place-self-stretch"
+        class="flex-shrink-0 col-span-3 row-span-1 mx-2 overflow-visible shadow-lg card bg-base-100 w-72 xl:mx-0 xl:w-auto xl:place-self-stretch"
       >
-        <div class="flex-row items-center px-4 card-body space-x-4">
+        <div class="flex-row items-center px-4 space-x-4 card-body">
           <div class="flex-1">
             <h2 class="flex mb-0 card-title">
               <div class="dropdown dropdown-top">

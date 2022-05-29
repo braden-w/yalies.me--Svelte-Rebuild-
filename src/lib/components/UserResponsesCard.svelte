@@ -51,7 +51,7 @@
   );
 </script>
 
-<div class="shadow-2xl card place-items-center rounded-2xl bg-base-100">
+<div class="card place-items-center rounded-2xl bg-base-100 shadow-2xl">
   <div class="card-body">
     {#each userResponses as { name, label, icon, value }}
       <div class="form-control">
