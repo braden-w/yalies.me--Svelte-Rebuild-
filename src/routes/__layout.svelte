@@ -12,7 +12,6 @@
   import type { UserMetadata } from '$lib/types/UserMetaData';
   import { goto } from '$app/navigation';
   import { browser } from '$app/env';
-  import { session } from '$app/stores';
   onMount(() => {
     themeChange(false);
   });
