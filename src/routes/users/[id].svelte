@@ -96,18 +96,14 @@
 
 <div class="w-full h-full">
   <div class="grid grid-flow-col grid-rows-6">
-    <div class="bg-teal-400 row-span-3">1</div>
-    <div class="bg-teal-400 row-span-3">2</div>
+    <div class="bg-teal-400 row-span-2">1</div>
+    <div class="bg-teal-400 row-span-1">2</div>
     <div class="bg-teal-400 row-span-3">3</div>
-    <div class="bg-teal-400 row-span-3">4</div>
-    <div class="bg-teal-400 row-span-3">5</div>
+    <div class="bg-teal-400 row-span-6">4</div>
     <div class="bg-teal-400 row-span-3">6</div>
-    <div class="bg-teal-400 row-span-3">7</div>
-    <div class="bg-teal-400 row-span-3">8</div>
-    <div class="bg-teal-400 row-span-3">9</div>
-    <div class="bg-teal-400 row-span-3">10</div>
-    <div class="bg-teal-400 row-span-3">11</div>
-    <div class="bg-teal-400 row-span-3">12</div>
+    <div class="bg-teal-400 row-span-3">6</div>
+    <div class="bg-teal-400 row-span-4">7</div>
+    <div class="bg-teal-400 row-span-2">7</div>
   </div>
 </div>
 
