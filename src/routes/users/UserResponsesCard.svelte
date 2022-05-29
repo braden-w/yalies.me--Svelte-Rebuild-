@@ -46,12 +46,15 @@
       value: userProfileInformation.user_responses.major
     }
   ];
+  $: userResponsesNonempty = userResponses.filter(
+    (response) => response.value !== null
+  );
 </script>
 
 <div
   class="grid h-100 flex-grow card shadow-2xl bg-base-100 rounded-box place-items-center"
 >
-  {#each userResponses as { name, label, icon, value }}
+  {#each userResponsesNonempty as { name, label, icon, value }}
     <div class="form-control">
       <label class="label" for="location">
         <span class="label-text">{label}</span>
