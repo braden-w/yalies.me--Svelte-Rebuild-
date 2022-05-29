@@ -142,9 +142,6 @@
       </div>
       <!-- Cell 5 -->
       <div class="row-span-3 bg-teal-400">
-        <UserResponsesCard
-          {userProfileInformation}
-        />
       </div>
       <!-- Cell 6 -->
       <div class="row-span-3 bg-teal-400">
