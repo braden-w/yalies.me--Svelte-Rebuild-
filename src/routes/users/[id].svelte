@@ -546,7 +546,7 @@
                     class="mask mask-hexagon bg-base-content h-16 w-16 bg-opacity-10 p-px"
                   >
                     <img
-                      src="/tailwind-css-component-profile-5@56w.png"
+                      src={userProfileInformation.avatar_url}
                       alt="Avatar Tailwind CSS Component"
                       class="mask mask-hexagon"
                     />
@@ -576,7 +576,7 @@
               </div>
             </div>
             <div>
-              <div class="text-lg font-extrabold">Beatrice Thurman</div>
+              <div class="text-lg font-extrabold">Braden Wong</div>
               <div class="text-base-content/70 text-sm">220 Followers</div>
             </div>
           </div>
@@ -691,7 +691,7 @@
               <div class="online avatar">
                 <div class="mask mask-squircle bg-base-100 h-16 w-16 p-1">
                   <img
-                    src="/tailwind-css-component-profile-3@56w.png"
+                    src={userProfileInformation.avatar_url}
                     alt="Avatar Tailwind CSS Component"
                     class="mask mask-squircle"
                   />
@@ -700,7 +700,7 @@
               <div class="online avatar">
                 <div class="mask mask-squircle bg-base-100 h-16 w-16 p-1">
                   <img
-                    src="/tailwind-css-component-profile-2@56w.png"
+                    src={userProfileInformation.avatar_url}
                     alt="Avatar Tailwind CSS Component"
                     class="mask mask-squircle"
                   />
@@ -709,7 +709,7 @@
               <div class="avatar offline">
                 <div class="mask mask-squircle bg-base-100 h-16 w-16 p-1">
                   <img
-                    src="/tailwind-css-component-profile-4@56w.png"
+                    src={userProfileInformation.avatar_url}
                     alt="Avatar Tailwind CSS Component"
                     class="mask mask-squircle"
                   />
@@ -718,7 +718,7 @@
               <div class="avatar">
                 <div class="mask mask-squircle bg-base-100 h-16 w-16 p-1">
                   <img
-                    src="/tailwind-css-component-profile-5@56w.png"
+                    src={userProfileInformation.avatar_url}
                     alt="Avatar Tailwind CSS Component"
                     class="mask mask-squircle"
                   />
