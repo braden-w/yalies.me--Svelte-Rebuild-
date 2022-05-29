@@ -65,7 +65,7 @@
     </div>
     <div tabindex="0" class="dropdown-content py-2">
       <div
-        class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
+        class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
       >
         <div class="card-body">
           <h2 class="card-title font-extrabold capitalize">
