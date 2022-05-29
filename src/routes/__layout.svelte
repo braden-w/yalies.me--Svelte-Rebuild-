@@ -51,10 +51,14 @@
       // Save profile data to session store
       $sessionStore = processAuthState(user!);
       try {
-        // Upload profile data from sessionStore to 'user_data_new' database
-        const { error } = await supabase.from('users').upsert($sessionStore!, {
-          returning: 'minimal' // Don't return the value after inserting
-        });
+        // Upload profile data from sessionStore to 'users' database
+        const { data, error } = await supabase
+          .from('users')
+          .upsert($sessionStore!);
+        console.log(
+          '🚀 ~ file: __layout.svelte ~ line 58 ~ const{data,error}=awaitsupabase.from ~ data',
+          data
+        );
         if (error) throw error;
       } catch (error) {
         if ((error as ApiError).message) {
