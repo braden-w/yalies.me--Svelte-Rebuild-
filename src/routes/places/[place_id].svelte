@@ -66,10 +66,6 @@
     const { data: users_in_place, redirect } = await getUsersInPlace(
       params.place_id
     );
-    console.log(
-      '🚀 ~ file: [place_id].svelte ~ line 60 ~ load ~ redirect',
-      redirect
-    );
     if (redirect) return redirect;
     const place_id = users_in_place?.length
       ? users_in_place[0].place_id
