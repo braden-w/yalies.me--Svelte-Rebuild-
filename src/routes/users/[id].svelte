@@ -33,6 +33,8 @@
 </script>
 
 <script lang="ts">
+  import UserResponsesCard from './UserResponsesCard.svelte';
+
   import UserCard from './CardOfUser.svelte';
 
   export let userProfileInformation: UserProfileInformation;
@@ -96,27 +98,7 @@
     <div class="flex w-full">
       <UserCard {userProfileInformation} />
       <div class="divider divider-horizontal">OR</div>
-      <div
-        class="grid h-100 flex-grow card shadow-2xl bg-base-100 rounded-box place-items-center"
-      >
-        {#each userResponses as { name, label, icon, value }}
-          <div class="form-control">
-            <label class="label" for="location">
-              <span class="label-text">{label}</span>
-              <i class="fas fa-{icon} text-base" />
-            </label>
-            <input
-              tabindex="0"
-              type="text"
-              id="location"
-              class="input input-bordered"
-              disabled
-              placeholder="Start typing your city here..."
-              bind:value
-            />
-          </div>
-        {/each}
-      </div>
+      <UserResponsesCard {userProfileInformation}></UserResponsesCard>
     </div>
   </div>
 </div>
