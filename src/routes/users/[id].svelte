@@ -118,40 +118,5 @@
         {/each}
       </div>
     </div>
-
-    <!-- Create a card that displays -->
-    <!-- the user's information -->
-    <div class="flex-1">
-      <div class="flex flex-col">
-        <div class="flex-1">
-          <h2 class="text-2xl font-bold">
-            {userProfileInformation.name}
-          </h2>
-        </div>
-        <div class="flex-1">
-          <p class="text-base">
-            {userProfileInformation.user_responses.interests}
-          </p>
-          <p class="text-base">
-            {userProfileInformation.user_responses.expression}
-          </p>
-          <p class="text-base">
-            {userProfileInformation.user_responses.university}
-          </p>
-          <p class="text-base">
-            {userProfileInformation.user_responses.instagram}
-          </p>
-          <p class="text-base">
-            {userProfileInformation.user_responses.linkedin}
-          </p>
-          <p class="text-base">
-            {userProfileInformation.user_responses.phone}
-          </p>
-          <p class="text-base">
-            {userProfileInformation.user_responses.major}
-          </p>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
