@@ -79,6 +79,7 @@
         />
       </div>
     {/each}
+    <div class="divider" />
     <div class="text-xl font-extrabold">Integrations</div>
     <div class="my-4 text-xs text-base-content/70">Put your Instagram</div>
     {#each userIntegrations as { name, label, icon, value }}
@@ -100,21 +101,24 @@
         />
       </div>
     {/each}
+    <div class="divider" />
   </div>
   <div class="form-control">
-    <button class="btn btn-secondary btn-block space-x-2"
-      ><svg
+    <button class="btn btn-secondary btn-block space-x-2">
+      <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         class="h-6 w-6 stroke-current"
-        ><path
+      >
+        <path
           stroke-linecap="round"
           stroke-linejoin="round"
           stroke-width="2"
           d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-        /></svg
-      > <span>Apply settings</span></button
+        />
+      </svg>
+      <span>Apply settings</span></button
     >
   </div>
 </div>
