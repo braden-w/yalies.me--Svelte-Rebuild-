@@ -2,6 +2,7 @@
   import type { UserProfileInformation } from 'src/routes/users/[id].svelte';
 
   export let userProfileInformation: UserProfileInformation;
+  let tab = 0;
 </script>
 
 <div
@@ -10,13 +11,22 @@
   <div class="dropdown">
     <div tabindex="0" class="bg-opacity-100">
       <div class="tabs w-full flex-grow-0">
-        <button class="tab tab-lifted tab-active tab-border-none tab-lg flex-1">
+        <button
+          class="tab tab-lifted tab-border-none tab-lg flex-1"
+          class:tab-active={tab === 0}
+        >
           Stats
         </button>
-        <button class="tab tab-lifted tab-border-none tab-lg flex-1">
+        <button
+          class="tab tab-lifted tab-border-none tab-lg flex-1"
+          class:tab-active={tab === 1}
+        >
           Info
         </button>
-        <button class="tab tab-lifted tab-border-none tab-lg flex-1">
+        <button
+          class="tab tab-lifted tab-border-none tab-lg flex-1"
+          class:tab-active={tab === 2}
+        >
           Options
         </button>
       </div>
