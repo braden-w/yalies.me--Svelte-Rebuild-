@@ -112,7 +112,7 @@
 
 <!-- A Location Autocomplete built with DaisyUI that uses the Google Map Places API to autocomplete the location as the user is typing -->
 
-<div class="dropdown-top dropdown w-full">
+<div class="w-full dropdown-top dropdown">
   <div class="form-control">
     <label class="label" for="location">
       <span class="label-text">I'm currently in...</span>
@@ -130,7 +130,7 @@
   <!-- For each result in results, display  -->
   {#if results.length > 0}
     <ul
-      class="text-md dropdown-content menu  rounded-box menu-compact w-full bg-base-100 shadow"
+      class="w-full shadow text-md dropdown-content menu  rounded-box menu-compact bg-base-100"
       tabindex="0"
     >
       {#each results as result}

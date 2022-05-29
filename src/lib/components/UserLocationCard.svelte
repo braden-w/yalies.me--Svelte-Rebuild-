@@ -7,7 +7,7 @@
 </script>
 
 <div
-  class="rounded-box row-span-3 mx-2 flex w-72 flex-shrink-0 flex-col justify-center gap-4 bg-base-100 p-4 shadow-xl xl:mx-0 xl:w-full"
+  class="flex flex-col justify-center flex-shrink-0 p-4 mx-2 shadow-xl rounded-box row-span-3 w-72 gap-4 bg-base-100 xl:mx-0 xl:w-full"
 >
   <div class="px-6 pt-6">
     <div class="text-xl font-extrabold">Where are you now?</div>
@@ -38,7 +38,7 @@
     <button class="btn btn-secondary btn-block space-x-2">
       <!-- Insert an svg of a map -->
       <svg
-        class="h-6 w-6"
+        class="w-6 h-6"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"

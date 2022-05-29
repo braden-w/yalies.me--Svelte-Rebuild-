@@ -11,28 +11,28 @@
 <!-- Put a centered card on the screen. Inside it, there are multiple labelled inputs that are binded to the corresponding properties of the user -->
 <!-- <div class="w-full max-w-md mx-auto">
 	<div
-		class="card card-bordered bg-secondary text-secondary-content shadow-md rounded-lg px-8 pt-6 pb-8 mb-4"
+		class="px-8 pt-6 pb-8 mb-4 rounded-lg shadow-md card card-bordered bg-secondary text-secondary-content"
 	>
 		
 		<div class="mb-4">
 		</div>
 		<div class="mb-4">
-			<label class="block text-sm font-bold mb-2" for="website"> Website </label>
+			<label class="block mb-2 text-sm font-bold" for="website"> Website </label>
 			<input
-				class="input shadow border rounded w-full focus:outline-none focus:shadow-outline"
+				class="w-full border rounded shadow input focus:outline-none focus:shadow-outline"
 				id="website"
 				type="text"
 				placeholder="Website"
 			/>
 		</div>
-		<div class="card-actions justify-end">
-			<button class="btn text-white">Change</button>
+		<div class="justify-end card-actions">
+			<button class="text-white btn">Change</button>
 		</div>
 	</div>
 </div> -->
 <!-- <div class="hero min-h-screen-nav from-primary via-secondary to-base-200 bg-gradient-to-b text-primary-content grid" > -->
 <div class="min-h-screen-nav hero grid bg-base-200 text-base-content">
-  <div class="hero-content flex-col lg:flex-row-reverse">
+  <div class="flex-col hero-content lg:flex-row-reverse">
     <div class="text-center lg:text-left">
       <h1 class="text-5xl font-bold">Where are you now?</h1>
       <p class="py-6">
@@ -40,11 +40,11 @@
         proximity rather than exact location.
       </p>
     </div>
-    <div class="card w-full max-w-sm flex-shrink-0 bg-base-100 shadow-2xl">
+    <div class="flex-shrink-0 w-full max-w-sm shadow-2xl card bg-base-100">
       <div class="card-body text-base-content">
         <div class="text-center">
-          <div class="avatar mx-auto">
-            <div class="w-28 rounded">
+          <div class="mx-auto avatar">
+            <div class="rounded w-28">
               <img
                 src={$sessionStore?.avatar_url}
                 alt="Profile"
@@ -59,31 +59,31 @@
         </div>
         <LocationAutoComplete />
 
-        <div class="form-control mt-6">
+        <div class="mt-6 form-control">
           <a href="/map" class="btn btn-primary">Go To Map</a>
         </div>
       </div>
     </div>
   </div>
 </div>
-<!-- <div class="hero bg-base-100 text-base-content mx-auto min-h-screen max-w-md md:max-w-full">
-	<div class="hero-content px-4 text-center md:px-0">
+<!-- <div class="max-w-md min-h-screen mx-auto hero bg-base-100 text-base-content md:max-w-full">
+	<div class="px-4 text-center hero-content md:px-0">
 		<div>
 			<h2 class="mt-32 mb-2 text-4xl font-extrabold md:text-6xl">Clean HTML</h2>
 			<h3 class="mb-5 text-3xl font-bold">with component classes</h3>
-			<p class="mx-auto mb-5 w-full max-w-lg">
+			<p class="w-full max-w-lg mx-auto mb-5">
 				Don't reinvent the wheel! <br />daisyUI adds classes to Tailwind CSS for all common UI
 				components. Classes like <span class="badge badge-outline">btn</span>,
 				<span class="badge badge-outline">card</span>, etc. This allows us to focus on important
 				things instead of making basic elements for every project.
 			</p>
-			<p class="mx-auto mt-20 w-full max-w-lg" />
+			<p class="w-full max-w-lg mx-auto mt-20" />
 			<div class="font-bold">Creating a button</div>
 			using only utility classes vs using daisyUI component classes
 			<p />
-			<div class="mt-10 mb-20 flex flex-col lg:flex-row">
-				<div class="flex w-full flex-col text-left">
-					<div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md">
+			<div class="flex flex-col mt-10 mb-20 lg:flex-row">
+				<div class="flex flex-col w-full text-left">
+					<div class="flex-grow w-full max-w-xs mx-auto shadow-lg mockup-code sm:max-w-md">
 						<pre><code
 								>&lt;a class="<span class="text-amber-400"
 									>inline-block px-4 py-3
@@ -95,33 +95,33 @@
 								>"&gt;Button&lt;/a&gt;</code
 							></pre>
 					</div>
-					<div class="mt-4 flex h-16 items-start justify-center">
+					<div class="flex items-start justify-center h-16 mt-4">
 						<button
-							class="inline-block cursor-pointer rounded-md bg-indigo-600 px-4 py-3 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-indigo-700"
+							class="inline-block px-4 py-3 text-sm font-semibold text-center text-white uppercase bg-indigo-600 cursor-pointer rounded-md transition duration-200 ease-in-out hover:bg-indigo-700"
 							>Button</button
 						>
 					</div>
 				</div>
-				<div class="divider text-base-content/50 lg:divider-horizontal uppercase">vs</div>
-				<div class="flex w-full flex-col text-left">
-					<div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md">
+				<div class="uppercase divider text-base-content/50 lg:divider-horizontal">vs</div>
+				<div class="flex flex-col w-full text-left">
+					<div class="flex-grow w-full max-w-xs mx-auto shadow-lg mockup-code sm:max-w-md">
 						<pre><code
 								>&lt;a class="<span class="text-teal-500">btn btn-primary</span
 								>"&gt;Button&lt;/a&gt;</code
 							></pre>
 					</div>
-					<div class="mt-4 flex h-16 items-start justify-center">
+					<div class="flex items-start justify-center h-16 mt-4">
 						<button class="btn btn-primary">Button</button>
 					</div>
 				</div>
 			</div>
-			<p class="mx-auto mt-20 w-full max-w-lg" />
+			<p class="w-full max-w-lg mx-auto mt-20" />
 			<div class="font-bold">Creating a toggle</div>
 			using only utility classes vs using daisyUI component classes
 			<p />
-			<div class="mt-10 mb-20 flex flex-col lg:flex-row">
-				<div class="flex w-full flex-col text-left">
-					<div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md">
+			<div class="flex flex-col mt-10 mb-20 lg:flex-row">
+				<div class="flex flex-col w-full text-left">
+					<div class="flex-grow w-full max-w-xs mx-auto shadow-lg mockup-code sm:max-w-md">
 						<pre><code
 								>&lt;div class="<span class="text-amber-400">relative</span>"&gt;
     &lt;input type="checkbox" class="<span class="text-amber-400"
@@ -141,24 +141,24 @@
   &lt;/div&gt;</code
 							></pre>
 					</div>
-					<div class="mt-4 flex h-16 items-start justify-center">
+					<div class="flex items-start justify-center h-16 mt-4">
 						<div class="relative">
 							<input
 								aria-label="Toggle"
 								type="checkbox"
 								checked="checked"
-								class="peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-gray-300 checked:border-gray-900"
+								class="w-12 h-6 border border-gray-300 rounded-full appearance-none cursor-pointer peer checked:border-gray-900"
 							/>
 							<span
-								class="pointer-events-none absolute top-1 left-1 block h-4 w-4 rounded-full bg-gray-300 transition-all duration-200 peer-checked:left-7 peer-checked:bg-gray-900"
+								class="absolute block w-4 h-4 bg-gray-300 rounded-full pointer-events-none top-1 left-1 transition-all duration-200 peer-checked:left-7 peer-checked:bg-gray-900"
 							/>
 						</div>
 					</div>
 				</div>
-				<div class="divider text-base-content/50 lg:divider-horizontal uppercase">vs</div>
-				<div class="flex w-full flex-col text-left">
+				<div class="uppercase divider text-base-content/50 lg:divider-horizontal">vs</div>
+				<div class="flex flex-col w-full text-left">
 					<div
-						class="mockup-code relative mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md lg:overflow-hidden"
+						class="relative flex-grow w-full max-w-xs mx-auto shadow-lg mockup-code sm:max-w-md lg:overflow-hidden"
 					>
 						<pre><code
 								>&lt;input type="checkbox" class="<span class="text-teal-500">toggle</span
@@ -173,20 +173,20 @@
 							height="375"
 						/>
 					</div>
-					<div class="mt-4 flex h-16 items-start justify-center">
+					<div class="flex items-start justify-center h-16 mt-4">
 						<div>
 							<input aria-label="Toggle" type="checkbox" checked="checked" class="toggle" />
 						</div>
 					</div>
 				</div>
 			</div>
-			<p class="mx-auto w-full max-w-lg" />
+			<p class="w-full max-w-lg mx-auto" />
 			<div class="font-bold">Creating a menu component</div>
 			using only utility classes vs using daisyUI component classes
 			<p />
-			<div class="mt-10 mb-20 flex flex-col lg:flex-row">
-				<div class="flex w-full flex-col text-left">
-					<div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md">
+			<div class="flex flex-col mt-10 mb-20 lg:flex-row">
+				<div class="flex flex-col w-full text-left">
+					<div class="flex-grow w-full max-w-xs mx-auto shadow-lg mockup-code sm:max-w-md">
 						<pre><code
 								>&lt;ul class="py-3 bg-gray-100 rounded-xl"&gt;
     &lt;li&gt;
@@ -206,38 +206,38 @@
   &lt;/ul&gt;</code
 							></pre>
 					</div>
-					<div class="mt-4 flex items-start justify-center overflow-hidden">
-						<ul class="rounded-xl bg-gray-100 p-3">
+					<div class="flex items-start justify-center mt-4 overflow-hidden">
+						<ul class="p-3 bg-gray-100 rounded-xl">
 							<li>
 								<span class="block px-5 py-1 text-xs font-bold text-gray-400">Menu Title</span>
 							</li>
 							<li>
 								<a
 									href="/"
-									class="block cursor-pointer rounded-lg px-5 py-3 text-gray-900 outline-none hover:bg-gray-200 active:bg-indigo-600 active:text-white"
+									class="block px-5 py-3 text-gray-900 rounded-lg outline-none cursor-pointer hover:bg-gray-200 active:bg-indigo-600 active:text-white"
 									>First Menu Item</a
 								>
 							</li>
 							<li>
 								<a
 									href="/"
-									class="block cursor-pointer rounded-lg px-5 py-3 text-gray-900 outline-none hover:bg-gray-200 active:bg-indigo-600 active:text-white"
+									class="block px-5 py-3 text-gray-900 rounded-lg outline-none cursor-pointer hover:bg-gray-200 active:bg-indigo-600 active:text-white"
 									>Second Menu Item</a
 								>
 							</li>
 							<li>
 								<a
 									href="/"
-									class="block cursor-pointer rounded-lg px-5 py-3 text-gray-900 outline-none hover:bg-gray-200 active:bg-indigo-600 active:text-white"
+									class="block px-5 py-3 text-gray-900 rounded-lg outline-none cursor-pointer hover:bg-gray-200 active:bg-indigo-600 active:text-white"
 									>Third Menu Item</a
 								>
 							</li>
 						</ul>
 					</div>
 				</div>
-				<div class="divider text-base-content/50 lg:divider-horizontal uppercase">vs</div>
-				<div class="flex w-full flex-col text-left">
-					<div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md">
+				<div class="uppercase divider text-base-content/50 lg:divider-horizontal">vs</div>
+				<div class="flex flex-col w-full text-left">
+					<div class="flex-grow w-full max-w-xs mx-auto shadow-lg mockup-code sm:max-w-md">
 						<pre class="pr-4"><code
 								>&lt;ul class="<span class="text-teal-500">menu</span
 								> p-3 bg-base-200 rounded-xl"&gt;
@@ -250,8 +250,8 @@
   &lt;/ul&gt;</code
 							></pre>
 					</div>
-					<div class="mt-4 flex items-start justify-center">
-						<ul class="menu bg-base-200 rounded-xl p-3">
+					<div class="flex items-start justify-center mt-4">
+						<ul class="p-3 menu bg-base-200 rounded-xl">
 							<li class="menu-title"><span>Menu Title</span></li>
 							<li><a href="/">First Menu Item</a></li>
 							<li><a href="/">Second Menu Item</a></li>
@@ -260,7 +260,7 @@
 					</div>
 				</div>
 			</div>
-			<div sveltekit:prefetch="" class="mt-6 mb-10 flex w-full justify-center">
+			<div sveltekit:prefetch="" class="flex justify-center w-full mt-6 mb-10">
 				<a href="/components" class="btn btn-primary btn-wide">See All Components</a>
 			</div>
 		</div>

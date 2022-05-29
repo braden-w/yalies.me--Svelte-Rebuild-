@@ -5,10 +5,10 @@
 </script>
 
 <div
-  class="col-span-3 row-span-2 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-full xl:place-self-stretch"
+  class="flex-shrink-0 mx-2 col-span-3 row-span-2 grid w-72 gap-4 xl:mx-0 xl:w-full xl:place-self-stretch"
 >
-  <div class="rounded-box bg-base-100 text-base-content shadow-xl">
-    <ul class="menu overflow-visible p-3">
+  <div class="shadow-xl rounded-box bg-base-100 text-base-content">
+    <ul class="p-3 overflow-visible menu">
       <li class="menu-title"><span>Menu Title</span></li>
       <li>
         <button
@@ -18,7 +18,7 @@
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            class="mr-2 inline-block h-5 w-5 stroke-current"
+            class="inline-block w-5 h-5 mr-2 stroke-current"
             ><path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -37,7 +37,7 @@
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            class="mr-2 inline-block h-5 w-5 stroke-current"
+            class="inline-block w-5 h-5 mr-2 stroke-current"
             ><path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -56,7 +56,7 @@
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            class="mr-2 inline-block h-5 w-5 stroke-current"
+            class="inline-block w-5 h-5 mr-2 stroke-current"
             ><path
               stroke-linecap="round"
               stroke-linejoin="round"

@@ -107,7 +107,7 @@
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              class="inline-block h-5 w-5 stroke-current"
+              class="inline-block w-5 h-5 stroke-current"
               ><path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -120,7 +120,7 @@
         <div class="flex-1">
           <a
             href={$sessionStore !== null ? '/map' : '/landing'}
-            class="btn btn-ghost text-xl normal-case">Map of Yalies</a
+            class="text-xl normal-case btn btn-ghost">Map of Yalies</a
           >
         </div>
         <div class="flex-none">
@@ -133,7 +133,7 @@
               <div class="indicator">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
+                  class="w-5 h-5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -149,7 +149,7 @@
             </label>
             <div
               tabindex="0"
-              class="card dropdown-content card-compact mt-3 w-52 bg-base-100 shadow"
+              class="mt-3 shadow card dropdown-content card-compact w-52 bg-base-100"
             >
               <div class="card-body">
                 <span class="text-lg font-bold">Notifications</span>
@@ -161,14 +161,14 @@
             </div>
           </div>
           <div title="Change Theme" class="dropdown dropdown-end ">
-            <div tabindex="0" class="btn btn-ghost gap-1 normal-case">
+            <div tabindex="0" class="normal-case btn btn-ghost gap-1">
               <svg
                 width="20"
                 height="20"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                class="inline-block h-5 w-5 stroke-current md:h-6 md:w-6"
+                class="inline-block w-5 h-5 stroke-current md:h-6 md:w-6"
                 ><path
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -179,7 +179,7 @@
               <svg
                 width="12px"
                 height="12px"
-                class="ml-1 hidden h-3 w-3 fill-current opacity-60 sm:inline-block"
+                class="hidden w-3 h-3 ml-1 fill-current opacity-60 sm:inline-block"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 2048 2048"
                 ><path
@@ -191,7 +191,7 @@
             <div
               class="dropdown-content rounded-t-box rounded-b-box top-px mt-16 h-[70vh] max-h-96 w-52 overflow-y-auto bg-base-200 text-base-content shadow-2xl"
             >
-              <div class="grid grid-cols-1 gap-3 p-3" tabindex="0">
+              <div class="p-3 grid grid-cols-1 gap-3" tabindex="0">
                 <div
                   class="overflow-hidden rounded-lg outline-2 outline-offset-2 outline-base-content"
                   data-set-theme="yale"
@@ -199,14 +199,14 @@
                 >
                   <div
                     data-theme="yale"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">yale</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -223,14 +223,14 @@
                 >
                   <div
                     data-theme="light"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">light</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -247,14 +247,14 @@
                 >
                   <div
                     data-theme="dark"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">dark</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -271,14 +271,14 @@
                 >
                   <div
                     data-theme="cupcake"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">cupcake</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -295,14 +295,14 @@
                 >
                   <div
                     data-theme="bumblebee"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">bumblebee</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -319,14 +319,14 @@
                 >
                   <div
                     data-theme="emerald"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">emerald</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -343,14 +343,14 @@
                 >
                   <div
                     data-theme="corporate"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">corporate</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -367,14 +367,14 @@
                 >
                   <div
                     data-theme="synthwave"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">synthwave</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -391,14 +391,14 @@
                 >
                   <div
                     data-theme="retro"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">retro</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -415,14 +415,14 @@
                 >
                   <div
                     data-theme="cyberpunk"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">cyberpunk</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -439,14 +439,14 @@
                 >
                   <div
                     data-theme="valentine"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">valentine</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -463,14 +463,14 @@
                 >
                   <div
                     data-theme="halloween"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">halloween</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -487,14 +487,14 @@
                 >
                   <div
                     data-theme="garden"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">garden</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -511,14 +511,14 @@
                 >
                   <div
                     data-theme="forest"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">forest</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -535,14 +535,14 @@
                 >
                   <div
                     data-theme="aqua"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">aqua</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -559,14 +559,14 @@
                 >
                   <div
                     data-theme="lofi"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">lofi</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -583,14 +583,14 @@
                 >
                   <div
                     data-theme="pastel"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">pastel</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -607,14 +607,14 @@
                 >
                   <div
                     data-theme="fantasy"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">fantasy</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -631,14 +631,14 @@
                 >
                   <div
                     data-theme="wireframe"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">wireframe</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -655,14 +655,14 @@
                 >
                   <div
                     data-theme="black"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">black</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -679,14 +679,14 @@
                 >
                   <div
                     data-theme="luxury"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">luxury</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -703,14 +703,14 @@
                 >
                   <div
                     data-theme="dracula"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">dracula</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -727,14 +727,14 @@
                 >
                   <div
                     data-theme="cmyk"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">cmyk</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -751,14 +751,14 @@
                 >
                   <div
                     data-theme="autumn"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">autumn</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -775,14 +775,14 @@
                 >
                   <div
                     data-theme="business"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">business</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -799,14 +799,14 @@
                 >
                   <div
                     data-theme="acid"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">acid</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -823,14 +823,14 @@
                 >
                   <div
                     data-theme="lemonade"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">lemonade</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -847,14 +847,14 @@
                 >
                   <div
                     data-theme="night"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">night</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -871,14 +871,14 @@
                 >
                   <div
                     data-theme="coffee"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">coffee</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -895,14 +895,14 @@
                 >
                   <div
                     data-theme="winter"
-                    class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
+                    class="w-full font-sans cursor-pointer bg-base-100 text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
                       <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4"
+                        class="flex px-4 py-3 col-span-5 row-span-3 row-start-1 gap-1"
                       >
                         <div class="flex-grow text-sm font-bold">winter</div>
-                        <div class="flex flex-shrink-0 flex-wrap gap-1">
+                        <div class="flex flex-wrap flex-shrink-0 gap-1">
                           <div class="w-2 rounded bg-primary" />
                           <div class="w-2 rounded bg-secondary" />
                           <div class="w-2 rounded bg-accent" />
@@ -927,7 +927,7 @@
             </label>
             <ul
               tabindex="0"
-              class="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow"
+              class="p-2 mt-3 shadow dropdown-content menu rounded-box menu-compact w-52 bg-base-100"
             >
               <li>
                 <a class="justify-between" href="/profile">
@@ -951,7 +951,7 @@
   </div>
   <div class="drawer-side">
     <label for="main-drawer" class="drawer-overlay" />
-    <ul class="menu w-80 overflow-y-auto bg-base-200 p-4 text-base-content">
+    <ul class="p-4 overflow-y-auto menu w-80 bg-base-200 text-base-content">
       <!-- Sidebar content here -->
       <li><a href="">Who's in New Haven</a></li>
       {#if $sessionStore !== null}

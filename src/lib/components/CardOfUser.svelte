@@ -6,11 +6,11 @@
   export let userProfileInformation: UserProfileInformation;
 </script>
 
-<div class="card place-items-center rounded-2xl bg-base-100 shadow-2xl">
+<div class="shadow-2xl card place-items-center rounded-2xl bg-base-100">
   <div class="card-body">
     <div class="text-center">
-      <div class="avatar mx-auto">
-        <div class="w-28 rounded">
+      <div class="mx-auto avatar">
+        <div class="rounded w-28">
           <img
             src={userProfileInformation?.avatar_url}
             alt="Profile"
@@ -43,7 +43,7 @@
       </div>
     {/if}
 
-    <div class="form-control mt-6">
+    <div class="mt-6 form-control">
       <a href="/map" class="btn btn-primary">Go To Map</a>
     </div>
   </div>

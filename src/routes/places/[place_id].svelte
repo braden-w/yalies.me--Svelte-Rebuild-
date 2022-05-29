@@ -111,7 +111,7 @@
 </svelte:head>
 
 <div class="min-h-screen-nav hero bg-base-200 text-base-content">
-  <div class="hero-content flex-col">
+  <div class="flex-col hero-content">
     <div class="text-center">
       <h1 class="text-5xl font-bold">{placeInformation.description}</h1>
       <p class="py-6">
@@ -125,17 +125,17 @@
     </div>
   </div>
 </div>
-<div class="hero min-h-screen bg-base-100">
-  <div class="hero-content flex-row flex-wrap">
+<div class="min-h-screen hero bg-base-100">
+  <div class="flex-row flex-wrap hero-content">
     <div class="w-full overflow-x-auto">
       <TableOfUsers users={placeInformation.users_in_place} />
     </div>
     {#each placeInformation.users_in_place as user_in_place}
-      <div class="card max-w-sm  flex-shrink-0 bg-base-100 shadow-2xl">
+      <div class="flex-shrink-0 max-w-sm shadow-2xl card  bg-base-100">
         <div class="card-body">
           <div class="text-center">
-            <div class="avatar mx-auto">
-              <div class="w-28 rounded">
+            <div class="mx-auto avatar">
+              <div class="rounded w-28">
                 <img
                   src={user_in_place.avatar_url}
                   alt="Profile"
@@ -149,7 +149,7 @@
             <p class="text-lg">Yale University</p>
           </div>
 
-          <div class="form-control mt-6">
+          <div class="mt-6 form-control">
             <a href={`/users/${user_in_place.id}`} class="btn btn-primary">
               Go to Profile
             </a>

@@ -133,4 +133,4 @@
 </svelte:head>
 
 <!-- Init mapbox -->
-<div id="map" class="h-screen-nav w-full" />
+<div id="map" class="w-full h-screen-nav" />
