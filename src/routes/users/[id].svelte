@@ -18,9 +18,6 @@
 <script lang="ts">
   import UserCard from './CardOfUser.svelte';
 
-  import LocationAutoComplete from '$lib/components/LocationAutoComplete.svelte';
-  import { sessionStore } from '$lib/stores/sessionStore';
-
   export let userProfileInformation: {
     id: string;
     name: string;
@@ -41,5 +38,6 @@
 <div class="hero min-h-screen-nav bg-base-200">
   <div class="hero-content flex-col lg:flex-row-reverse">
     <UserCard {userProfileInformation}></UserCard>
+    <!-- Create a card that displays -->
   </div>
 </div>
