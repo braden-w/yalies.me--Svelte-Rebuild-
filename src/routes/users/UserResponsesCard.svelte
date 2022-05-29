@@ -19,12 +19,6 @@
       value: userProfileInformation.user_responses.expression
     },
     {
-      name: 'university',
-      label: 'University',
-      icon: 'graduation-cap',
-      value: userProfileInformation.user_responses.university
-    },
-    {
       name: 'instagram',
       label: 'Instagram',
       icon: 'instagram',
@@ -37,16 +31,22 @@
       value: userProfileInformation.user_responses.linkedin
     },
     {
-      name: 'phone',
-      label: 'Phone',
-      icon: 'phone',
-      value: userProfileInformation.user_responses.phone
+      name: 'university',
+      label: 'University',
+      icon: 'graduation-cap',
+      value: userProfileInformation.user_responses.university
     },
     {
       name: 'major',
       label: 'Major',
       icon: 'book',
       value: userProfileInformation.user_responses.major
+    },
+    {
+      name: 'phone',
+      label: 'Phone',
+      icon: 'phone',
+      value: userProfileInformation.user_responses.phone
     }
   ];
 </script>
