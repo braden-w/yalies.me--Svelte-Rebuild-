@@ -39,51 +39,45 @@
       .from<definitions['users_to_places']>('users_to_places')
       .select('id, name, avatar_url, place_id, description')
       .ilike('description', `%${query}%`);
+    if (errorFuzzyMatchPlaceDescription)
+      console.log(errorFuzzyMatchPlaceDescription);
     if (dataFuzzyMatchPlaceDescription?.length !== 0) {
       const redirect = {
         status: 302,
-        redirect: '/'
+        redirect: `${dataFuzzyMatchPlaceDescription[0].description}`
       };
-      console.log(
-        '🚀 ~ file: [place_id].svelte ~ line 47 ~ getUsersInPlace ~ redirect',
-        redirect
-      );
       throw redirect;
     }
   }
 
   export async function load({ params }: { params: { place_id: string } }) {
-    const users_in_place = await getUsersInPlace(params.place_id).catch(
-      (error) => {
+    try {
+      const users_in_place = await getUsersInPlace(params.place_id);
+      const place_id = users_in_place?.length
+        ? users_in_place[0].place_id
+        : params.place_id;
+      const description = users_in_place?.length
+        ? users_in_place[0].description
+        : '';
+      return {
+        status: 200,
+        props: {
+          placeInformation: {
+            place_id,
+            description,
+            users_in_place
+          }
+        }
+      };
+    } catch (error) {
+      if (error.status === 302) {
         console.log(
           '🚀 ~ file: [place_id].svelte ~ line 57 ~ load ~ error',
           error
         );
-        if (error.status === 302) {
-          return error;
-        }
+        return error;
       }
-    );
-    console.log(
-      '🚀 ~ file: [place_id].svelte ~ line 57 ~ load ~ users_in_place',
-      users_in_place
-    );
-    const place_id = users_in_place?.length
-      ? users_in_place[0].place_id
-      : params.place_id;
-    const description = users_in_place?.length
-      ? users_in_place[0].description
-      : '';
-    return {
-      status: 200,
-      props: {
-        placeInformation: {
-          place_id,
-          description,
-          users_in_place
-        }
-      }
-    };
+    }
   }
 </script>
 
