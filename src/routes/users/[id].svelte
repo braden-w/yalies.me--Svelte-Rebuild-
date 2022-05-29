@@ -37,7 +37,6 @@
 
   import UserResponsesCard from './UserResponsesCard.svelte';
   import UserLocationCard from '../../lib/components/UserLocationCard.svelte';
-  import UserStatsInfoOptions from '../../lib/components/UserStatsInfoOptions.svelte';
   import UserCard from '../../components/UserCard.svelte';
   import SpotifyPlayer from '$lib/components/SpotifyPlayer.svelte';
 
@@ -64,7 +63,13 @@
         <UserCard {userProfileInformation} />
       </div>
       <div class="col-span-1 row-span-1">
-        <UserSocials {userProfileInformation} />
+        <UserSocials
+          email={userProfileInformation.email}
+          phone={userProfileInformation.user_responses.phone}
+          expression={userProfileInformation.user_responses.expression}
+          instagram={userProfileInformation.user_responses.instagram}
+          linkedin={userProfileInformation.user_responses.linkedin}
+        />
       </div>
       <!-- Cell 2 -->
       <div class="col-span-1 row-span-3">

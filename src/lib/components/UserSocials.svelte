@@ -1,19 +1,19 @@
 <script lang="ts">
   import type { UserProfileInformation } from 'src/routes/users/[id].svelte';
 
-  export let userProfileInformation: UserProfileInformation;
-  const userResponses = userProfileInformation.user_responses;
+  export let email: string;
+  export let phone: string;
+  export let expression: string;
+  export let instagram: string;
+  export let linkedin: string;
 </script>
 
 <div
   class="rounded-box w-72 place-items-center items-center gap-4 bg-base-100 p-4 py-8 shadow-xl xl:mx-0 xl:w-full"
 >
   <div class="mt-2 text-center">
-    {#if userProfileInformation.email}
-      <a
-        class="btn btn-circle btn-sm"
-        href={`mailto:${userProfileInformation.email}`}
-      >
+    {#if email}
+      <a class="btn btn-circle btn-sm" href={`mailto:${email}`}>
         <!-- Make an svg email icon -->
         <svg
           class="h-6 w-6"
@@ -31,8 +31,8 @@
         </svg>
       </a>
     {/if}
-    {#if userResponses.phone}
-      <a class="btn btn-circle btn-sm" href={`sms:${userResponses.phone}`}>
+    {#if phone}
+      <a class="btn btn-circle btn-sm" href={`sms:${phone}`}>
         <!-- Make a svg phone icon -->
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -51,12 +51,8 @@
       </a>
     {/if}
 
-    {#if userResponses.expression}
-      <a
-        class="btn btn-circle btn-sm"
-        target="_blank"
-        href={userResponses.expression}
-      >
+    {#if expression}
+      <a class="btn btn-circle btn-sm" target="_blank" href={expression}>
         <!-- Make a Green Spotify Icon -->
         <svg
           class="h-6 w-6"
@@ -76,11 +72,11 @@
         </svg>
       </a>
     {/if}
-    {#if userResponses.instagram}
+    {#if instagram}
       <a
         class="btn btn-circle btn-sm"
         target="_blank"
-        href={`https://www.instagram.com/${userResponses.instagram}/`}
+        href={`https://www.instagram.com/${instagram}/`}
       >
         <!-- Make an Instagram SVG Icon -->
         <svg
@@ -141,12 +137,8 @@
         </svg>
       </a>
     {/if}
-    {#if userResponses.linkedin}
-      <a
-        class="btn btn-circle btn-sm"
-        target="_blank"
-        href={userResponses.linkedin}
-      >
+    {#if linkedin}
+      <a class="btn btn-circle btn-sm" target="_blank" href={linkedin}>
         <!-- Make an LinkedIn SVG Icon -->
         <svg
           class="h-6 w-6"
