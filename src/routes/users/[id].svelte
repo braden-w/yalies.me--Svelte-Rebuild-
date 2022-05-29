@@ -54,7 +54,7 @@
   <div class="w-full h-full">
     <div
       id="component-demo"
-      class="flex w-full items-center gap-4 overflow-y-hidden overflow-x-scroll px-10 pt-1 pb-10 xl:grid xl:items-stretch grid-flow-col grid-rows-6 xl:overflow-x-auto xl:px-4"
+      class="w-full h-full gap-4 px-10 pt-1 pb-10 grid items-stretch grid-flow-col grid-rows-6 overflow-x-auto px-4"
     >
       <!-- Cell 1 -->
       <div class="bg-teal-400 row-span-2">
