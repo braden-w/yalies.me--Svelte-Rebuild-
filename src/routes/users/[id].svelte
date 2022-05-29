@@ -37,7 +37,7 @@
 
   import UserCard from '../../components/UserCard.svelte';
   import LocationAutoComplete from '$lib/components/LocationAutoComplete.svelte';
-import { sessionStore } from '$lib/stores/sessionStore';
+  import { sessionStore } from '$lib/stores/sessionStore';
 
   export let userProfileInformation: UserProfileInformation;
   const userResponses = [
@@ -594,20 +594,25 @@ import { sessionStore } from '$lib/stores/sessionStore';
           {/if}
         </div>
         <div class="form-control">
-          <button class="btn btn-secondary btn-block space-x-2"
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
+          <button class="btn btn-secondary btn-block space-x-2">
+            <!-- Insert an svg of a map -->
+            <svg
+              class="w-6 h-6"
               fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
-              class="h-6 w-6 stroke-current"
-              ><path
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-              /></svg
-            > <span>Apply settings</span></button
-          >
+                d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"
+              />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span>Go to Map</span>
+          </button>
         </div>
       </div>
 
