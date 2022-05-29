@@ -61,7 +61,7 @@
           alert((error as ApiError).message);
         }
       } finally {
-        goto('/profile');
+        // goto('/profile');
       }
     }
   });
