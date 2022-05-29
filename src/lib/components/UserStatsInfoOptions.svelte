@@ -10,15 +10,15 @@
   <div class="dropdown">
     <div tabindex="0" class="bg-opacity-100">
       <div class="tabs w-full flex-grow-0">
-        <button class="tab tab-lifted tab-active tab-border-none tab-lg flex-1"
-          >Stats</button
-        >
-        <button class="tab tab-lifted tab-border-none tab-lg flex-1"
-          >Info</button
-        >
-        <button class="tab tab-lifted tab-border-none tab-lg flex-1"
-          >Options</button
-        >
+        <button class="tab tab-lifted tab-active tab-border-none tab-lg flex-1">
+          Stats
+        </button>
+        <button class="tab tab-lifted tab-border-none tab-lg flex-1">
+          Info
+        </button>
+        <button class="tab tab-lifted tab-border-none tab-lg flex-1">
+          Options
+        </button>
       </div>
     </div>
     <div tabindex="0" class="dropdown-content py-2">
