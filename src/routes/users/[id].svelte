@@ -64,13 +64,7 @@
         <UserCard {userProfileInformation} />
       </div>
       <div class="col-span-1 row-span-1">
-        <UserSocials
-          email={userProfileInformation.email}
-          phone={userResponses.phone}
-          expression={userResponses.expression}
-          instagram={userResponses.instagram}
-          linkedin={userResponses.linkedin}
-        />
+        <UserSocials email={userProfileInformation.email} {...userResponses} />
       </div>
       <!-- Cell 2 -->
       <div class="col-span-1 row-span-3">
