@@ -4,14 +4,14 @@
   import type { UserProfileInformation } from 'src/routes/users/[id].svelte';
 
   export let userProfileInformation: UserProfileInformation;
-  const userResponses = userProfileInformation.user_responses;
+  const userResponses = userProfileInformation;
   const isCurrentUser = userProfileInformation?.id === $sessionStore?.id;
   export let inputsList = [
     {
       name: 'university',
       label: 'University',
       icon: 'graduation-cap',
-      value: userResponses.university
+      value: 'Yale University'
     },
     {
       name: 'major',

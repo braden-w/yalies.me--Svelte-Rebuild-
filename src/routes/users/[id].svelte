@@ -2,26 +2,11 @@
   import type { definitions } from '$lib/types/supabase';
   import { supabase } from '$lib/utils/supabaseClient';
 
-  export type UserProfileInformation = definitions['users'] & {
-    user_responses: {
-      interests: string;
-      expression: string;
-      university: string;
-      instagram: string;
-      linkedin: string;
-      phone: string;
-      major: string;
-      places: {
-        description: string;
-      };
-    };
-  };
+  export type UserProfileInformation = definitions['users_facebook_places'];
   export async function load({ params }: { params: { id: string } }) {
     const { data, error } = await supabase
-      .from<definitions['users']>('users')
-      .select(
-        'name, email, avatar_url, user_responses(interests, expression, university, instagram, linkedin, phone, major, places(description))'
-      )
+      .from<definitions['users_facebook_places']>('users_facebook_places')
+      .select('*')
       .eq('id', params.id)
       .maybeSingle();
     if (error) return { status: error.code, props: { error } };
@@ -41,7 +26,7 @@
   import SpotifyPlayer from '$lib/components/SpotifyPlayer.svelte';
 
   export let userProfileInformation: UserProfileInformation;
-  const userResponses = userProfileInformation.user_responses;
+  const userResponses = userProfileInformation;
 </script>
 
 <svelte:head>
@@ -64,7 +49,7 @@
         <UserCard {userProfileInformation} />
       </div>
       <div class="col-span-1 row-span-1">
-        <UserSocials email={userProfileInformation.email} {...userResponses} />
+        <UserSocials {...userResponses} />
       </div>
       <!-- Cell 2 -->
       <div class="col-span-1 row-span-3">

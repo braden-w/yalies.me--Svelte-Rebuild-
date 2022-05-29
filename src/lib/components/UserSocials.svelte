@@ -1,11 +1,9 @@
 <script lang="ts">
-  import type { UserProfileInformation } from 'src/routes/users/[id].svelte';
-
-  export let email: string;
-  export let phone: string;
-  export let expression: string;
-  export let instagram: string;
-  export let linkedin: string;
+  export let email = '';
+  export let phone = '';
+  export let expression = '';
+  export let instagram = '';
+  export let linkedin = '';
 </script>
 
 <div
