@@ -97,19 +97,26 @@
   <div class="w-full h-full">
     <!-- A centered large card with two columns and bg-base-100 -->
     <div class="grid grid-rows-3 grid-flow-col w-full h-full">
-      <div class="row-span-1 shadow-lg bg-green-100 font-bold p-10 rounded-lg">
+      <div
+        class="col-span-1 row-span-1 shadow-lg bg-base-200 font-bold p-10 rounded-lg"
+      >
         1
         <UserCard {userProfileInformation} />
       </div>
-      <div class="row-span-2 shadow-lg bg-green-100 font-bold p-10 rounded-lg">
+      <div
+        class="col-span-1 row-span-2 shadow-lg bg-base-200 font-bold p-10 rounded-lg"
+      >
         2
         <SpotifyPlayer url={userProfileInformation.user_responses.expression} />
       </div>
-      <div class="col-span-4 shadow-lg bg-green-100 font-bold p-10 rounded-lg">
+      <div
+        class="col-span-2 row-span-1 shadow-lg bg-base-200 font-bold p-10 rounded-lg"
+      >
+        3
         <UserResponsesCard {userProfileInformation} />
       </div>
       <div
-        class="row-span-2 col-span-2 shadow-lg bg-green-100 font-bold p-10 rounded-lg"
+        class="col-span-2 row-span-2 shadow-lg bg-base-200 font-bold p-10 rounded-lg"
       >
         4
       </div>
