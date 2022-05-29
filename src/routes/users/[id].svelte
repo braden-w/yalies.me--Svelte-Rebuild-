@@ -40,50 +40,6 @@
   import UserCard from '../../components/UserCard.svelte';
 
   export let userProfileInformation: UserProfileInformation;
-  const userResponses = [
-    {
-      name: 'interests',
-      label: 'Interests',
-      icon: 'heart',
-      value: userProfileInformation.user_responses.interests
-    },
-    {
-      name: 'expression',
-      label: 'Expression',
-      icon: 'smile',
-      value: userProfileInformation.user_responses.expression
-    },
-    // {
-    //   name: 'university',
-    //   label: 'University',
-    //   icon: 'graduation-cap',
-    //   value: userProfileInformation.user_responses.university
-    // },
-    {
-      name: 'instagram',
-      label: 'Instagram',
-      icon: 'instagram',
-      value: userProfileInformation.user_responses.instagram
-    },
-    {
-      name: 'linkedin',
-      label: 'Linkedin',
-      icon: 'linkedin',
-      value: userProfileInformation.user_responses.linkedin
-    },
-    {
-      name: 'phone',
-      label: 'Phone',
-      icon: 'phone',
-      value: userProfileInformation.user_responses.phone
-    },
-    {
-      name: 'major',
-      label: 'Major',
-      icon: 'book',
-      value: userProfileInformation.user_responses.major
-    }
-  ];
 </script>
 
 <svelte:head>
