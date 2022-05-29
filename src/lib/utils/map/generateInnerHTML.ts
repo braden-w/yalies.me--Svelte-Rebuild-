@@ -51,12 +51,13 @@ function generateStackOfIcons({
   threeAvatars: string[];
   indicator: number;
 }): string {
+  const avatarSize = 8;
   return `<label tabindex="0" name="selected" class="stack">
     <div class="avatar indicator">
       <span class="indicator-item badge badge-secondary"
         >${indicator}</span
       >
-      <div class="w-8 h-8 rounded-lg outline-on-click">
+      <div class="w-${avatarSize} h-${avatarSize} rounded-lg outline-on-click">
         <img
           src="${threeAvatars[0]}"
           referrerpolicy="no-referrer"
@@ -67,7 +68,7 @@ function generateStackOfIcons({
       threeAvatars.length >= 2
         ? `
     <div class="avatar">
-      <div class="w-8 h-8 rounded-lg outline-on-click">
+      <div class="w-${avatarSize} h-${avatarSize} rounded-lg outline-on-click">
         <img
           src="${threeAvatars[1]}"
           referrerpolicy="no-referrer"
@@ -80,7 +81,7 @@ function generateStackOfIcons({
     threeAvatars.length >= 3
       ? `
     <div class="avatar">
-      <div class="w-8 h-8 rounded-lg outline-on-click">
+      <div class="w-${avatarSize} h-${avatarSize} rounded-lg outline-on-click">
         <img
           src="${threeAvatars[2]}"
           referrerpolicy="no-referrer"
@@ -111,7 +112,7 @@ function generateHover({
       </a>
     </li>`;
   return `<ul tabindex="0" class="menu menu-compact dropdown-content mt-${
-    numberOfIconsStacked > 3 ? '3' : numberOfIconsStacked
+    numberOfIconsStacked >= 3 ? '3' : numberOfIconsStacked
   } p-2 shadow bg-base-100 rounded-box w-52">
     ${placeTitle} 
     ${peopleToListItems(people)}
