@@ -10,7 +10,12 @@
   }
 
   /** Function that matches query by place_id, description, and finally fuzzy description */
-  async function getUsersInPlace(query: string) {
+  async function getUsersInPlace(query: string): Promise<
+    | { data: definitions['users_to_places'][] | null }
+    | {
+        redirect: { status: number; redirect?: string };
+      }
+  > {
     // Attempt to match the query by place_id
     const { data: dataMatchPlaceID, error: errorMatchPlaceID } = await supabase
       .from<definitions['users_to_places']>('users_to_places')
@@ -51,7 +56,8 @@
       };
       return { redirect };
     }
-    return { status: 404 };
+    const redirect = { status: 404 };
+    return { redirect };
   }
 
   export async function load({ params }: { params: { place_id: string } }) {
