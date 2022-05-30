@@ -5,7 +5,7 @@
     resetUserLocation,
     userLocationStore,
     refreshUserLocation
-  } from '$lib/utils/getUserLocation';
+  } from '$lib/stores/UserLocationStore';
   import type { PlaceInformation } from 'src/routes/places/[place_id].svelte';
   import { createEventDispatcher } from 'svelte';
   import { get } from 'svelte/store';

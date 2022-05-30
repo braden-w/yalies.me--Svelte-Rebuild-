@@ -10,7 +10,7 @@
   import {
     refreshUserLocation,
     userLocationStore
-  } from '$lib/utils/getUserLocation';
+  } from '$lib/stores/UserLocationStore';
 
   let query = '';
   $: isQueryLongEnough = query.length >= 2;
