@@ -1,7 +1,7 @@
 import type { definitions } from '$lib/types/supabase';
 import { sessionStore } from '$lib/stores/sessionStore';
 import { supabase } from '$lib/utils/supabaseClient';
-import { get, writable, type Writable } from 'svelte/store';
+import { derived, get, writable, type Writable } from 'svelte/store';
 
 export interface GetUserLocation {
    place_id: string; description: string;
@@ -57,3 +57,6 @@ export async function setUserLocation(
 
 export const userLocationStore: Writable<GetUserLocation | null> =
   writable(null);
+
+  // Create a derived store that gets the place_id and description from the $sessionStore
+export const derivedUserLocationStore = derived(sessionStore, $sessionStore => {$sessionStore?.place_id, $sessionStore?.description});
