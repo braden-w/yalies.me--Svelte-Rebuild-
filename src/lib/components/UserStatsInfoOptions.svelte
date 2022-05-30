@@ -49,6 +49,7 @@
                   src={avatar_url}
                   alt="Avatar Tailwind CSS Component"
                   class="mask mask-hexagon"
+                  referrerpolicy="no-referrer"
                 />
               </div>
             </div>

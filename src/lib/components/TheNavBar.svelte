@@ -837,6 +837,7 @@
                   src={$sessionStore?.avatar_url ??
                     'https://api.lorem.space/image/face?hash=33791'}
                   alt="User Profile"
+                  referrerpolicy="no-referrer"
                 />
               </div>
             </label>

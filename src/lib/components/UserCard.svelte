@@ -9,7 +9,7 @@
 <div
   class="rounded-box grid w-72 place-items-center items-center gap-4 bg-base-100 p-4 py-8 shadow-xl xl:mx-0 xl:w-full"
 >
-  <div class="online avatar">
+  <div class="avatar online">
     <div
       class="mask mask-squircle h-24 w-24 bg-base-content bg-opacity-10 p-px"
     >
@@ -17,6 +17,7 @@
         src={avatar_url}
         alt="Avatar Tailwind CSS Component"
         class="mask mask-squircle"
+        referrerpolicy="no-referrer"
         width="94"
         height="94"
       />
@@ -43,7 +44,7 @@
       <div class="badge badge-ghost">Illustration</div>
     </div>
   </div>
-  <div class="dropdown-top dropdown">
+  <div class="dropdown dropdown-top">
     <div tabindex="0">
       <div class="btn-group">
         <button class="btn btn-accent btn-sm">Follow</button>
@@ -69,7 +70,7 @@
     </div>
     <div tabindex="0" class="dropdown-content py-2">
       <div
-        class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
+        class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
       >
         <div class="card-body">
           <h2 class="card-title font-extrabold capitalize">
