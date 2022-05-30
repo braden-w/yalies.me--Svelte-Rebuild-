@@ -17,6 +17,7 @@
   import { browser } from '$app/env';
 
   import TheNavBar from '$lib/components/TheNavBar.svelte';
+  import LoginSplashScreen from '$lib/components/LoginSplashScreen.svelte';
   import type { definitions } from '$lib/types/supabase';
   onMount(() => {
     themeChange(false);
@@ -108,9 +109,11 @@
   {$authLoadingStore}
   {$profileStore}
   {#if $authLoadingStore}
+    Loading
+  {:else if $profileStore}
     <slot />
   {:else}
-    <slot />
+    <LoginSplashScreen />
   {/if}
 </TheNavBar>
 
