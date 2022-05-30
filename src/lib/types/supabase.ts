@@ -1900,6 +1900,7 @@ export interface paths {
         query: {
           id?: parameters["rowFilter.users_facebook_places.id"];
           email?: parameters["rowFilter.users_facebook_places.email"];
+          user_response_id?: parameters["rowFilter.users_facebook_places.user_response_id"];
           name?: parameters["rowFilter.users_facebook_places.name"];
           avatar_url?: parameters["rowFilter.users_facebook_places.avatar_url"];
           place_id?: parameters["rowFilter.users_facebook_places.place_id"];
@@ -2980,7 +2981,7 @@ export interface definitions {
      * Format: timestamp with time zone
      * @default now()
      */
-    created_at: string;
+    created_at?: string;
   };
   users3: {
     /** Format: integer */
@@ -3129,6 +3130,12 @@ export interface definitions {
      * This is a Foreign Key to `facebook.email`.<fk table='facebook' column='email'/>
      */
     email?: string;
+    /**
+     * Format: character varying
+     * @description Note:
+     * This is a Foreign Key to `user_responses.user_response_id`.<fk table='user_responses' column='user_response_id'/>
+     */
+    user_response_id?: string;
     /** Format: character varying */
     name?: string;
     /** Format: character varying */
@@ -3867,6 +3874,8 @@ export interface parameters {
   "rowFilter.users_facebook_places.id": string;
   /** Format: character varying */
   "rowFilter.users_facebook_places.email": string;
+  /** Format: character varying */
+  "rowFilter.users_facebook_places.user_response_id": string;
   /** Format: character varying */
   "rowFilter.users_facebook_places.name": string;
   /** Format: character varying */
