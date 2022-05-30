@@ -5,13 +5,14 @@
   import { onMount } from 'svelte';
   import { themeChange } from 'theme-change';
   import { supabase } from '$lib/utils/supabaseClient';
-  import { sessionStore } from '$lib/stores/sessionStore';
+  import { refreshSessionStore, sessionStore } from '$lib/stores/sessionStore';
   import { signIn, signOut } from '$lib/utils/auth';
   import type { ApiError, User } from '@supabase/supabase-js';
   import type { SessionStore } from '$lib/types/SessionStore';
   import type { UserMetadata } from '$lib/types/UserMetaData';
   import { goto } from '$app/navigation';
   import { browser } from '$app/env';
+  import type { definitions } from '$lib/types/supabase';
   onMount(() => {
     themeChange(false);
   });
@@ -48,12 +49,10 @@
       const user = supabase.auth.user();
 
       // Save profile data to session store
-      $sessionStore = processAuthState(user!);
+      const payload: SessionStore = processAuthState(user!);
       try {
         // Upload profile data from sessionStore to 'users' database
-        const { data, error } = await supabase
-          .from('users')
-          .upsert($sessionStore!);
+        const { data, error } = await supabase.from('users').upsert(payload);
         console.log(
           '🚀 ~ file: __layout.svelte ~ line 58 ~ const{data,error}=awaitsupabase.from ~ data',
           data
@@ -64,6 +63,7 @@
           alert((error as ApiError).message);
         }
       } finally {
+        refreshSessionStore(payload.id);
         // goto('/profile');
       }
     }

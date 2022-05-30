@@ -30,7 +30,7 @@ export async function resetUserLocation(): Promise<void> {
   const { error } = await supabase
     .from<definitions['user_responses']>('user_responses')
     .update({
-      place_id: null
+      place_id: null as unknown as undefined
     })
     .eq('user_response_id', get(sessionStore)?.user_response_id);
   if (error) {
