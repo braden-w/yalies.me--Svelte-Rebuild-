@@ -4,6 +4,7 @@ OR REPLACE VIEW users_facebook_places AS
 SELECT
   users.id,
   users.email,
+  users.user_response_id,
   COALESCE(
     users.name,
     CONCAT(facebook.first_name, ' ', facebook.last_name) :: character varying
