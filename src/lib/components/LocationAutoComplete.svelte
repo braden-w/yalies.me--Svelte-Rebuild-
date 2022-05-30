@@ -22,7 +22,7 @@
   /** If the user already has a location, put that location description inside the box */
   async function prepopulateLocation() {
     await refreshUserLocation();
-    query = $userLocationStore?.places.description ?? '';
+    query = $userLocationStore?.description ?? '';
     if (query !== '') results = [];
   }
   prepopulateLocation();
