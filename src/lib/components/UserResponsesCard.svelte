@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { sessionStore } from '$lib/stores/auth/profileStore';
+  import { profileStore } from '$lib/stores/auth/profileStore';
   import type { definitions } from '$lib/types/supabase';
 
   export let id: definitions['users_facebook_places']['id'] = '';
@@ -10,7 +10,7 @@
   export let linkedin: definitions['users_facebook_places']['linkedin'] = '';
   export let expression: definitions['users_facebook_places']['expression'] =
     '';
-  const isCurrentUser = id === $sessionStore?.id;
+  const isCurrentUser = id === $profileStore?.id;
   export let inputsList = [
     {
       name: 'university',

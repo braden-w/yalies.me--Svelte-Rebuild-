@@ -1,5 +1,5 @@
 import type { definitions } from '$lib/types/supabase';
-import { sessionStore } from '$lib/stores/auth/profileStore';
+import { profileStore } from '$lib/stores/auth/profileStore';
 import { supabase } from '$lib/utils/supabaseClient';
 import { derived, get, writable, type Writable } from 'svelte/store';
 
@@ -15,7 +15,7 @@ export async function refreshUserLocation(): Promise<
   const { data, error } = await supabase
     .from<definitions['users_facebook_places']>('users_facebook_places')
     .select('place_id, description')
-    .eq('user_response_id', get(sessionStore)?.user_response_id)
+    .eq('user_response_id', get(profileStore)?.user_response_id)
     .maybeSingle();
   if (data && data.place_id && data.description) {
     userLocationStore.set({
@@ -37,7 +37,7 @@ export async function resetUserLocation(): Promise<void> {
     .update({
       place_id: null
     })
-    .eq('user_response_id', get(sessionStore)?.user_response_id);
+    .eq('user_response_id', get(profileStore)?.user_response_id);
   console.log(
     '🚀 ~ file: UserLocationStore.ts ~ line 35 ~ resetUserLocation ~ data',
     data
@@ -58,7 +58,7 @@ export async function setUserLocation(
     .update({
       place_id: place_id
     })
-    .eq('user_response_id', get(sessionStore)?.user_response_id);
+    .eq('user_response_id', get(profileStore)?.user_response_id);
   if (error) {
     console.error(error);
   }
@@ -68,10 +68,10 @@ export async function setUserLocation(
 export const userLocationStore: Writable<GetUserLocation | null> =
   writable(null);
 
-// Create a derived store that gets the place_id and description from the $sessionStore
+// Create a derived store that gets the place_id and description from the $profileStore
 export const derivedUserLocationStore = derived(
-  sessionStore,
-  ($sessionStore) => {
-    $sessionStore?.place_id, $sessionStore?.description;
+  profileStore,
+  ($profileStore) => {
+    $profileStore?.place_id, $profileStore?.description;
   }
 );

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { sessionStore } from '$lib/stores/auth/profileStore';
+  import { profileStore } from '$lib/stores/auth/profileStore';
   import { signIn, signOut } from '$lib/stores/auth/authLoadingStore';
 </script>
 
@@ -12,7 +12,7 @@
         <div class="flex-none">
           <label
             for="main-drawer"
-            class="btn btn-square btn-ghost drawer-button"
+            class="btn btn-ghost btn-square drawer-button"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -31,16 +31,16 @@
         </div>
         <div class="flex-1">
           <a
-            href={$sessionStore !== null ? '/map' : '/landing'}
+            href={$profileStore !== null ? '/map' : '/landing'}
             class="btn btn-ghost text-xl normal-case">Map of Yalies</a
           >
         </div>
         <div class="flex-none">
-          <div class="dropdown-end dropdown">
+          <div class="dropdown dropdown-end">
             <label
               for="main-drawer "
               tabindex="0"
-              class="btn btn-circle btn-ghost"
+              class="btn btn-ghost btn-circle"
             >
               <div class="indicator">
                 <svg
@@ -62,7 +62,7 @@
             </label>
             <div
               tabindex="0"
-              class="card-compact card dropdown-content mt-3 w-52 bg-base-100 shadow"
+              class="card dropdown-content card-compact mt-3 w-52 bg-base-100 shadow"
             >
               <div class="card-body">
                 <span class="text-lg font-bold">Notifications</span>
@@ -831,10 +831,10 @@
             </div>
           </div>
           <div class="dropdown-end dropdown">
-            <label tabindex="0" class="avatar btn btn-circle btn-ghost">
+            <label tabindex="0" class="avatar btn btn-ghost btn-circle">
               <div class="w-10 rounded-full">
                 <img
-                  src={$sessionStore?.avatar_url ??
+                  src={$profileStore?.avatar_url ??
                     'https://api.lorem.space/image/face?hash=33791'}
                   alt="User Profile"
                   referrerpolicy="no-referrer"
@@ -851,7 +851,7 @@
                   <span class="badge">New</span>
                 </a>
               </li>
-              {#if $sessionStore !== null}
+              {#if $profileStore !== null}
                 <li>
                   <button on:click={signOut}>Logout</button>
                 </li>
@@ -876,7 +876,7 @@
       <li>
         <a href="">Who's in New Haven</a>
       </li>
-      {#if $sessionStore !== null}
+      {#if $profileStore !== null}
         <li>
           <a href="/map">Map</a>
         </li>

@@ -9,7 +9,7 @@
   // };
   export async function load({ params }: { params: { id: string } }) {
     // If user is current user, redirect to /profile
-    // if (params.id === get(sessionStore)?.id) return redirectToProfile;
+    // if (params.id === get(profileStore)?.id) return redirectToProfile;
 
     const { data, error } = await supabase
       .from<definitions['users_facebook_places']>('users_facebook_places')

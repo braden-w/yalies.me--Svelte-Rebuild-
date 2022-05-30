@@ -1,6 +1,6 @@
 <script lang="ts">
   import LocationAutoComplete from '$lib/components/LocationAutoComplete.svelte';
-  import { sessionStore } from '$lib/stores/auth/profileStore';
+  import { profileStore } from '$lib/stores/auth/profileStore';
   import type { definitions } from '$lib/types/supabase';
 
   export let id: definitions['users_facebook_places']['id'] = '';
@@ -17,7 +17,7 @@
       Enter your current city. For privacy, feel free to use a city that is in
       proximity rather than exact location.
     </div>
-    {#if id === $sessionStore?.id}
+    {#if id === $profileStore?.id}
       <LocationAutoComplete />
     {:else}
       <div class="form-control">

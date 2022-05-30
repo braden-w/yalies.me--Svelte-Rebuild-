@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { sessionStore } from '$lib/stores/auth/profileStore';
+  import { profileStore } from '$lib/stores/auth/profileStore';
   import LocationAutoComplete from '$lib/components/LocationAutoComplete.svelte';
 </script>
 
@@ -46,7 +46,7 @@
           <div class="avatar mx-auto">
             <div class="w-28 rounded">
               <img
-                src={$sessionStore?.avatar_url}
+                src={$profileStore?.avatar_url}
                 alt="Profile"
                 width="100%"
                 height="100%"
@@ -54,7 +54,7 @@
               />
             </div>
           </div>
-          <h1 class="text-2xl font-bold">{$sessionStore?.name}</h1>
+          <h1 class="text-2xl font-bold">{$profileStore?.name}</h1>
           <p class="text-lg">Yale University</p>
         </div>
         <LocationAutoComplete />

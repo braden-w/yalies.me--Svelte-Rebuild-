@@ -4,8 +4,8 @@ import { supabase } from '$lib/utils/supabaseClient';
 import createStore from '$lib/utils/createStore';
 
 
-export async function refreshSessionStore(queryId: string | undefined) {
-  const id = queryId ?? get(sessionStore)?.id;
+export async function refreshProfileStore(queryId: string | undefined) {
+  const id = queryId ?? get(profileStore)?.id;
   if (!id) throw new Error('No ID provided to refresh user data');
   const { data, error } = await supabase
     .from<definitions['users_facebook_places']>('users_facebook_places')
@@ -14,19 +14,19 @@ export async function refreshSessionStore(queryId: string | undefined) {
     .maybeSingle();
   if (data) {
     console.log(
-      '🚀 ~ file: sessionStore.ts ~ line 8 ~ refreshSessionStore ~ data',
+      '🚀 ~ file: profileStore.ts ~ line 8 ~ refreshProfileStore ~ data',
       data
     );
-    sessionStore.set(data);
+    profileStore.set(data);
     return data;
   }
   if (error) {
     console.error(error);
-    sessionStore.set(null);
+    profileStore.set(null);
   }
   return null;
 }
 
-export const sessionStore: Writable<
+export const profileStore: Writable<
   definitions['users_facebook_places'] | null
-> = createStore<definitions['users_facebook_places'] | null>('yalies.me-sessionStore', null);
+> = createStore<definitions['users_facebook_places'] | null>('yalies.me-profileStore', null);

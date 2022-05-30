@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { sessionStore } from '$lib/stores/auth/profileStore';
+  import { profileStore } from '$lib/stores/auth/profileStore';
   import {
     setUserLocation,
     resetUserLocation,
@@ -15,7 +15,7 @@
   /** Is the current logged in user in this location? */
   const userInPlace = placeInformation.users_in_place
     .map((user) => user.id)
-    .includes($sessionStore?.id as string);
+    .includes($profileStore?.id as string);
 
   let checked = userInPlace;
 

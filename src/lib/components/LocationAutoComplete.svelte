@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { sessionStore } from '$lib/stores/auth/profileStore';
+  import { profileStore } from '$lib/stores/auth/profileStore';
   import {
     defaultResults,
     uploadPlaceToSupabase,
@@ -86,7 +86,7 @@
       console.log(payload);
       uploadPlaceToSupabase(payload);
 
-      const user_response_id = $sessionStore?.user_response_id;
+      const user_response_id = $profileStore?.user_response_id;
       uploadUserPlaceSelectionToSupabase(user_response_id, place_id);
     } catch (error: any) {
       alert(error.message);
@@ -107,7 +107,7 @@
 
 <!-- A Location Autocomplete built with DaisyUI that uses the Google Map Places API to autocomplete the location as the user is typing -->
 
-<div class="dropdown-top dropdown w-full">
+<div class="dropdown dropdown-top w-full">
   <div class="form-control">
     <label class="label" for="location">
       <span class="label-text">I'm currently in...</span>

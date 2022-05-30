@@ -5,10 +5,13 @@
   import { onMount } from 'svelte';
   import { themeChange } from 'theme-change';
   import { supabase } from '$lib/utils/supabaseClient';
-  import { refreshSessionStore, sessionStore } from '$lib/stores/auth/profileStore';
+  import {
+    refreshProfileStore,
+    profileStore
+  } from '$lib/stores/auth/profileStore';
   import { authLoadingStore, signOut } from '$lib/stores/auth/authLoadingStore';
   import type { ApiError, User } from '@supabase/supabase-js';
-  import type { SessionStore } from '$lib/types/SessionStore';
+  import type { ProfileStore } from '$lib/types/ProfileStore';
   import type { UserMetadata } from '$lib/types/UserMetaData';
   import { goto } from '$app/navigation';
   import { browser } from '$app/env';
@@ -45,7 +48,7 @@
   supabase.auth.onAuthStateChange(async (_, loggedIn) => {
     // If logout
     if (!loggedIn) {
-      $sessionStore = null;
+      $profileStore = null;
       $authLoadingStore = false;
       return goto('/landing');
     }
@@ -57,9 +60,9 @@
     );
 
     // Save profile data to session store
-    const payload: SessionStore = processAuthState(user);
+    const payload: ProfileStore = processAuthState(user);
     try {
-      // Upload profile data from sessionStore to 'users' database
+      // Upload profile data from profileStore to 'users' database
       const { data, error } = await supabase
         .from<definitions['users']>('users')
         .upsert(payload);
@@ -73,7 +76,7 @@
         alert((error as ApiError).message);
       }
     } finally {
-      refreshSessionStore(payload.id);
+      refreshProfileStore(payload.id);
       $authLoadingStore = false;
       // goto('/profile');
     }
@@ -85,8 +88,8 @@
     return emailUser;
   }
 
-  function processAuthState(user: User | null): SessionStore {
-    // Get the variables "id" from $sessionStore
+  function processAuthState(user: User | null): ProfileStore {
+    // Get the variables "id" from $profileStore
     const id = user?.id;
 
     // Get the user_response_id from userMetaData
