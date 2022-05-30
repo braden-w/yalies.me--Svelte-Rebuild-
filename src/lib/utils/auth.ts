@@ -3,10 +3,10 @@ import { supabase } from '$lib/utils/supabaseClient';
 import type { ApiError } from '@supabase/supabase-js';
 import { writable, type Writable } from 'svelte/store';
 
-export const loading: Writable<boolean> = writable(false);
+export const authLoadingStore: Writable<boolean> = writable(false);
 export const signIn = async () => {
   try {
-    loading.set(true);
+    authLoadingStore.set(true);
     const redirectURL = window.location.origin;
     const { error } = await supabase.auth.signIn(
       { provider: 'google' },
@@ -18,13 +18,13 @@ export const signIn = async () => {
       alert((error as ApiError).message);
     }
   } finally {
-    loading.set(false);
+    authLoadingStore.set(false);
   }
 };
 
 export async function signOut() {
   try {
-    loading.set(true);
+    authLoadingStore.set(true);
     const { error } = await supabase.auth.signOut();
     if (error) throw error;
   } catch (error) {
@@ -32,7 +32,6 @@ export async function signOut() {
       alert((error as ApiError).message);
     }
   } finally {
-    loading.set(false);
-    goto('/landing');
+    authLoadingStore.set(false);
   }
 }
