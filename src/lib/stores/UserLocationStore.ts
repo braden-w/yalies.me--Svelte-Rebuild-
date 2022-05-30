@@ -1,5 +1,5 @@
 import type { definitions } from '$lib/types/supabase';
-import { sessionStore } from '$lib/stores/sessionStore';
+import {  sessionStore } from '$lib/stores/sessionStore';
 import { supabase } from '$lib/utils/supabaseClient';
 import { derived, get, writable, type Writable } from 'svelte/store';
 
@@ -26,12 +26,13 @@ export async function refreshUserLocation(): Promise<definitions['users_facebook
 }
 
 export async function resetUserLocation(): Promise<void> {
-  const { error } = await supabase
+  const { data, error} = await supabase
     .from<definitions['user_responses']>('user_responses')
     .update({
       place_id: null 
     })
     .eq('user_response_id', get(sessionStore)?.user_response_id);
+  console.log("🚀 ~ file: UserLocationStore.ts ~ line 35 ~ resetUserLocation ~ data", data)
   if (error) {
     console.error(error);
   }

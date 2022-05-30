@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { supabase } from '$lib/utils/supabaseClient';
   import { sessionStore } from '$lib/stores/sessionStore';
   import {
     defaultResults,
@@ -29,12 +28,8 @@
 
   // Functions for when query changes value
   let timer: NodeJS.Timeout | null;
-  $: if (query.length == 0) {
-    const user_response_id = $sessionStore?.user_response_id;
-    supabase
-      .from('user_responses')
-      .upsert({ place_id: null, user_response_id }, { returning: 'minimal' });
-  }
+  // Don't reset user location because query length is 0 on load
+  // $: if (query.length == 0) resetUserLocation();
   $: if (query.length < 2) resetResults();
   $: if (query.length >= 2) {
     if (timer) clearTimeout(timer);
