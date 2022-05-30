@@ -32,7 +32,7 @@
         <div class="flex-1">
           <a
             href={$profileStore !== null ? '/map' : '/landing'}
-            class="btn btn-ghost text-xl normal-case">Map of Yalies</a
+            class="btn btn-ghost text-xl normal-case">Yalies.Me</a
           >
         </div>
         <div class="flex-none">

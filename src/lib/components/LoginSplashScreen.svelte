@@ -14,7 +14,7 @@
   <div class="hero-overlay bg-opacity-60" />
   <div class="hero-content text-center text-neutral-content">
     <div class="align-center max-w-md">
-      <h1 class="mb-5 text-5xl font-bold">Map of Yalies</h1>
+      <h1 class="mb-5 text-5xl font-bold">Yalies.Me</h1>
       <p class="mb-5">
         An app that solves a single question: who is in my area?
       </p>
