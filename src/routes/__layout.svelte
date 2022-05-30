@@ -14,46 +14,53 @@
   import { browser } from '$app/env';
 
   import TheNavBar from '$lib/components/TheNavBar.svelte';
+  import type { definitions } from '$lib/types/supabase';
   onMount(() => {
     themeChange(false);
   });
 
-  function checkEmail(user: User): boolean {
-    // If the user email doesn't end with .edu, throw an error and redirect to sign in page
+  // If the user email doesn't end with .edu, throw an error and redirect to sign in page
+  function emailIsEdu(user: User): boolean {
     if (!user?.email) return false;
     const email = user.email.toLowerCase();
-    if (email.endsWith('.edu')) return true;
-    else {
+    return email.endsWith('.edu');
+  }
+
+  function redirectIfUserNullOrNotEdu(user: User | null) {
+    // Get login state on page load
+    if (!user) return;
+    if (!emailIsEdu(user)) {
       signOut();
       alert('Please sign in with a .edu email address');
-      return false;
-    }
-  }
-  if (browser) {
-    // Get login state on page load
-    const user = supabase.auth.user();
-    if (!user) goto('/landing');
-    else {
-      if (checkEmail(user)) {
-        $sessionStore = processAuthState(user);
-      }
     }
   }
 
-  supabase.auth.onAuthStateChange(async (_, session) => {
-    // If logout
-    if (!session) {
+  // Handle login state on page load
+  if (browser) {
+    redirectIfUserNullOrNotEdu(supabase.auth.user());
+  }
+
+  // Handle login state once supabase changes kick in
+  supabase.auth.onAuthStateChange(async (_, loggedIn) => {
+    if (!loggedIn) {
+      // If logout
       $sessionStore = null;
       goto('/landing');
     } else {
       // If login
       const user = supabase.auth.user();
+      console.log(
+        '🚀 ~ file: __layout.svelte ~ line 48 ~ supabase.auth.onAuthStateChange ~ user',
+        user
+      );
 
       // Save profile data to session store
-      const payload: SessionStore = processAuthState(user!);
+      const payload: SessionStore = processAuthState(user);
       try {
         // Upload profile data from sessionStore to 'users' database
-        const { data, error } = await supabase.from('users').upsert(payload);
+        const { data, error } = await supabase
+          .from<definitions['users']>('users')
+          .upsert(payload);
         console.log(
           '🚀 ~ file: __layout.svelte ~ line 58 ~ const{data,error}=awaitsupabase.from ~ data',
           data
@@ -64,7 +71,7 @@
           alert((error as ApiError).message);
         }
       } finally {
-        refreshSessionStore();
+        refreshSessionStore(payload.id);
         // goto('/profile');
       }
     }
@@ -76,7 +83,7 @@
     return emailUser;
   }
 
-  function processAuthState(user: User): SessionStore {
+  function processAuthState(user: User | null): SessionStore {
     // Get the variables "id" from $sessionStore
     const id = user?.id;
 

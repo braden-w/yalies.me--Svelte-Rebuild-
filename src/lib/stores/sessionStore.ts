@@ -1,14 +1,16 @@
-import { type Writable, get } from 'svelte/store';
+import {  get, type Writable } from 'svelte/store';
 import type { definitions } from '$lib/types/supabase';
 import { supabase } from '$lib/utils/supabaseClient';
 import createStore from '$lib/utils/createStore';
 
 
-export async function refreshSessionStore() {
+export async function refreshSessionStore(queryId: string | undefined) {
+  const id = queryId ?? get(sessionStore)?.id;
+  if (!id) throw new Error('No ID provided to refresh user data');
   const { data, error } = await supabase
     .from<definitions['users_facebook_places']>('users_facebook_places')
     .select('*')
-    .eq('id', get(sessionStore)?.id)
+    .eq('id', id)
     .maybeSingle();
   if (data) {
     console.log(
