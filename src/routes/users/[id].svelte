@@ -1,8 +1,17 @@
 <script context="module" lang="ts">
   import type { definitions } from '$lib/types/supabase';
   import { supabase } from '$lib/utils/supabaseClient';
+  import { sessionStore } from '$lib/stores/sessionStore';
+  import { get } from 'svelte/store';
 
   export async function load({ params }: { params: { id: string } }) {
+    if (params.id === get(sessionStore)?.id) {
+      // Return redirect to /profile
+      return {
+        status: 302,
+        redirect: '/profile'
+      };
+    }
     const { data, error } = await supabase
       .from<definitions['users_facebook_places']>('users_facebook_places')
       .select('*')
