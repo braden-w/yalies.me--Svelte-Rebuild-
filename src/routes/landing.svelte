@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { signIn, loading } from '$lib/utils/auth';
+  import { signIn, authLoadingStore } from '$lib/utils/auth';
 </script>
 
 <svelte:head>
@@ -23,7 +23,7 @@
       <p class="mb-5">
         An app that solves a single question: who is in my area?
       </p>
-      <button class:$loading class="btn" on:click={signIn}>
+      <button class:loading={$authLoadingStore} class="btn" on:click={signIn}>
         <div class="left">
           <img
             width="20px"

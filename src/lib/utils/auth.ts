@@ -3,7 +3,7 @@ import { supabase } from '$lib/utils/supabaseClient';
 import type { ApiError } from '@supabase/supabase-js';
 import { writable, type Writable } from 'svelte/store';
 
-export const authLoadingStore: Writable<boolean> = writable(false);
+export const authLoadingStore: Writable<boolean> = writable(true);
 export const signIn = async () => {
   try {
     authLoadingStore.set(true);

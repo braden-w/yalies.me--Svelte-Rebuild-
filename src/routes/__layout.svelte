@@ -6,7 +6,7 @@
   import { themeChange } from 'theme-change';
   import { supabase } from '$lib/utils/supabaseClient';
   import { refreshSessionStore, sessionStore } from '$lib/stores/sessionStore';
-  import { signOut } from '$lib/utils/auth';
+  import { authLoadingStore, signOut } from '$lib/utils/auth';
   import type { ApiError, User } from '@supabase/supabase-js';
   import type { SessionStore } from '$lib/types/SessionStore';
   import type { UserMetadata } from '$lib/types/UserMetaData';
@@ -38,6 +38,7 @@
   // Handle login state on page load
   if (browser) {
     redirectIfUserNullOrNotEdu(supabase.auth.user());
+    $authLoadingStore = false;
   }
 
   // Handle login state once supabase changes kick in
@@ -45,6 +46,7 @@
     // If logout
     if (!loggedIn) {
       $sessionStore = null;
+      $authLoadingStore = false;
       return goto('/landing');
     }
     // If login
@@ -72,6 +74,7 @@
       }
     } finally {
       refreshSessionStore(payload.id);
+      $authLoadingStore = false;
       // goto('/profile');
     }
   });
@@ -99,7 +102,12 @@
 </script>
 
 <TheNavBar>
-  <slot />
+  {$authLoadingStore}
+  {#if $authLoadingStore}
+    Hello
+  {:else}
+    <slot />
+  {/if}
 </TheNavBar>
 
 <!-- <footer>
