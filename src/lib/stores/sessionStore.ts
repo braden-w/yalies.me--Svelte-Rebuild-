@@ -1,6 +1,7 @@
-import { writable, type Writable, get } from 'svelte/store';
+import { type Writable, get } from 'svelte/store';
 import type { definitions } from '$lib/types/supabase';
 import { supabase } from '$lib/utils/supabaseClient';
+import createStore from '$lib/utils/createStore';
 
 
 export async function refreshSessionStore() {
@@ -26,5 +27,4 @@ export async function refreshSessionStore() {
 
 export const sessionStore: Writable<
   definitions['users_facebook_places'] | null
-> = writable( localStorage.stored_object ? JSON.parse(localStorage.stored_object) : {});
-sessionStore.subscribe(val => localStorage.setItem("yalies.me-sessionStore",JSON.stringify(val)));
+> = createStore<definitions['users_facebook_places'] | null>('yalies.me-sessionStore', null);
