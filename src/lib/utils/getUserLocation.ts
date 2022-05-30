@@ -4,20 +4,19 @@ import { supabase } from '$lib/utils/supabaseClient';
 import { get, writable, type Writable } from 'svelte/store';
 
 export interface GetUserLocation {
-  places: { place_id: string; description: string };
+   place_id: string; description: string;
 }
 
 /** Refreshes the location store */
-export async function refreshUserLocation(): Promise<GetUserLocation | null> {
+export async function refreshUserLocation(): Promise<definitions['users_facebook_places'] | null>{
   const { data, error } = await supabase
-    .from<definitions['user_responses']>('user_responses')
-    .select('places(place_id, description)')
+    .from<definitions['users_facebook_places']>('users_facebook_places')
+    .select('place_id, description')
     .eq('user_response_id', get(sessionStore)?.user_response_id)
     .maybeSingle();
-  if (data) {
-    const typed_data = data as unknown as GetUserLocation;
-    userLocationStore.set(typed_data);
-    return typed_data;
+  if (data && data.place_id && data.description) {
+    userLocationStore.set({ place_id: data.place_id, description: data.description });
+    return data;
   }
   if (error) {
     console.error(error);
@@ -30,7 +29,7 @@ export async function resetUserLocation(): Promise<void> {
   const { error } = await supabase
     .from<definitions['user_responses']>('user_responses')
     .update({
-      place_id: null as unknown as undefined
+      place_id: null 
     })
     .eq('user_response_id', get(sessionStore)?.user_response_id);
   if (error) {
@@ -53,7 +52,7 @@ export async function setUserLocation(
   if (error) {
     console.error(error);
   }
-  userLocationStore.set({ places: { place_id, description } });
+  userLocationStore.set({  place_id, description });
 }
 
 export const userLocationStore: Writable<GetUserLocation | null> =
