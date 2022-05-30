@@ -1,4 +1,3 @@
-import { goto } from '$app/navigation';
 import { supabase } from '$lib/utils/supabaseClient';
 import type { ApiError } from '@supabase/supabase-js';
 import { writable, type Writable } from 'svelte/store';
