@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { sessionStore } from '$lib/stores/sessionStore';
+  import { sessionStore } from '$lib/stores/auth/profileStore';
   import type { definitions } from '$lib/types/supabase';
 
   export let id: definitions['users_facebook_places']['id'] = '';

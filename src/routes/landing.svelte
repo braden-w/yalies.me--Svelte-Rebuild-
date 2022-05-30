@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { signIn, authLoadingStore } from '$lib/stores/authStore';
+  import { signIn, authLoadingStore } from '$lib/stores/auth/authLoadingStore';
 </script>
 
 <svelte:head>

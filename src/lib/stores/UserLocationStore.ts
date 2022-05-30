@@ -1,5 +1,5 @@
 import type { definitions } from '$lib/types/supabase';
-import { sessionStore } from '$lib/stores/sessionStore';
+import { sessionStore } from '$lib/stores/auth/profileStore';
 import { supabase } from '$lib/utils/supabaseClient';
 import { derived, get, writable, type Writable } from 'svelte/store';
 

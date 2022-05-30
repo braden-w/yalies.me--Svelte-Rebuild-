@@ -6,7 +6,7 @@
   import UserCard from '$lib/components/UserCard.svelte';
   import SpotifyPlayer from '$lib/components/SpotifyPlayer.svelte';
   import type { definitions } from '$lib/types/supabase';
-  import { refreshSessionStore, sessionStore } from '$lib/stores/sessionStore';
+  import { refreshSessionStore, sessionStore } from '$lib/stores/auth/profileStore';
 
   export let userProfileInformation: Promise<
     definitions['users_facebook_places'] | null
