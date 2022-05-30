@@ -40,7 +40,7 @@
             <label
               for="main-drawer "
               tabindex="0"
-              class="btn btn-ghost btn-circle"
+              class="btn btn-circle btn-ghost"
             >
               <div class="indicator">
                 <svg
@@ -62,7 +62,7 @@
             </label>
             <div
               tabindex="0"
-              class="card dropdown-content card-compact mt-3 w-52 bg-base-100 shadow"
+              class="card-compact card dropdown-content mt-3 w-52 bg-base-100 shadow"
             >
               <div class="card-body">
                 <span class="text-lg font-bold">Notifications</span>
@@ -831,7 +831,7 @@
             </div>
           </div>
           <div class="dropdown-end dropdown">
-            <label tabindex="0" class="avatar btn btn-ghost btn-circle">
+            <label tabindex="0" class="avatar btn btn-circle btn-ghost">
               <div class="w-10 rounded-full">
                 <img
                   src={$sessionStore?.avatar_url ??
