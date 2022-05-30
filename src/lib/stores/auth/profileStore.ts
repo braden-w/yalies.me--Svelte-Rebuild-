@@ -1,8 +1,7 @@
-import {  get, type Writable } from 'svelte/store';
 import type { definitions } from '$lib/types/supabase';
-import { supabase } from '$lib/utils/supabaseClient';
 import createStore from '$lib/utils/createStore';
-
+import { supabase } from '$lib/utils/supabaseClient';
+import { get, type Writable } from 'svelte/store';
 
 export async function refreshProfileStore(queryId: string | undefined) {
   const id = queryId ?? get(profileStore)?.id;
@@ -29,4 +28,7 @@ export async function refreshProfileStore(queryId: string | undefined) {
 
 export const profileStore: Writable<
   definitions['users_facebook_places'] | null
-> = createStore<definitions['users_facebook_places'] | null>('yalies.me-profileStore', null);
+> = createStore<definitions['users_facebook_places'] | null>(
+  'yalies.me-profileStore',
+  null
+);
