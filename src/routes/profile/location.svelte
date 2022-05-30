@@ -4,8 +4,8 @@
 </script>
 
 <svelte:head>
-  <title>Profile</title>
-  <meta name="description" content="My Profile Information" />
+  <title>Edit Location</title>
+  <meta name="description" content="Edit my current location." />
 </svelte:head>
 
 <!-- Put a centered card on the screen. Inside it, there are multiple labelled inputs that are binded to the corresponding properties of the user -->
