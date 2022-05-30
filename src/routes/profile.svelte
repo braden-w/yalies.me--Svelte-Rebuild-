@@ -6,10 +6,15 @@
   import UserCard from '$lib/components/UserCard.svelte';
   import SpotifyPlayer from '$lib/components/SpotifyPlayer.svelte';
   import type { definitions } from '$lib/types/supabase';
-  import { sessionStore } from '$lib/stores/sessionStore';
+  import { refreshSessionStore, sessionStore } from '$lib/stores/sessionStore';
 
-  export let userProfileInformation: definitions['users_facebook_places'] =
-    $sessionStore;
+  export let userProfileInformation:
+    | definitions['users_facebook_places']
+    | null;
+  async function prepopulateUserProfileInformation() {
+    return (userProfileInformation = await refreshSessionStore());
+  }
+  prepopulateUserProfileInformation();
 </script>
 
 <svelte:head>
@@ -29,23 +34,43 @@
     >
       <!-- Cell 1 -->
       <div class="col-span-1 row-span-2">
-        <UserCard {...userProfileInformation} />
+        <UserCard
+          name={$sessionStore?.name}
+          avatar_url={$sessionStore?.avatar_url}
+        />
       </div>
       <div class="col-span-1 row-span-1">
-        <UserSocials {...userProfileInformation} />
+        <UserSocials
+          email={$sessionStore?.email}
+          phone={$sessionStore?.phone}
+          expression={$sessionStore?.expression}
+          instagram={$sessionStore?.instagram}
+          linkedin={$sessionStore?.linkedin}
+        />
       </div>
       <!-- Cell 2 -->
       <div class="col-span-1 row-span-3">
-        <UserLocationCard {...userProfileInformation} />
+        <UserLocationCard
+          id={$sessionStore?.id}
+          description={$sessionStore?.description}
+        />
         <!-- <UserAvatarsRow {userProfileInformation} /> -->
       </div>
       <!-- Cell 3 -->
       <div class="col-span-1 row-span-6">
-        <SpotifyPlayer url={userProfileInformation.expression} />
+        <SpotifyPlayer url={$sessionStore?.expression} />
       </div>
       <!-- Cell 4 -->
       <div class="col-span-3 row-span-6">
-        <UserResponsesCard {...userProfileInformation} />
+        <UserResponsesCard
+          id={$sessionStore?.id}
+          interests={$sessionStore?.interests}
+          major={$sessionStore?.major}
+          phone={$sessionStore?.phone}
+          expression={$sessionStore?.expression}
+          instagram={$sessionStore?.instagram}
+          linkedin={$sessionStore?.linkedin}
+        />
       </div>
       <!-- Cell 5 -->
       <!-- <div class="col-span-2 row-span-3"> -->
