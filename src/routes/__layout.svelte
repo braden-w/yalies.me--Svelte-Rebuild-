@@ -42,38 +42,37 @@
 
   // Handle login state once supabase changes kick in
   supabase.auth.onAuthStateChange(async (_, loggedIn) => {
+    // If logout
     if (!loggedIn) {
-      // If logout
       $sessionStore = null;
-      goto('/landing');
-    } else {
-      // If login
-      const user = supabase.auth.user();
-      console.log(
-        '🚀 ~ file: __layout.svelte ~ line 48 ~ supabase.auth.onAuthStateChange ~ user',
-        user
-      );
+      return goto('/landing');
+    }
+    // If login
+    const user = supabase.auth.user();
+    console.log(
+      '🚀 ~ file: __layout.svelte ~ line 48 ~ supabase.auth.onAuthStateChange ~ user',
+      user
+    );
 
-      // Save profile data to session store
-      const payload: SessionStore = processAuthState(user);
-      try {
-        // Upload profile data from sessionStore to 'users' database
-        const { data, error } = await supabase
-          .from<definitions['users']>('users')
-          .upsert(payload);
-        console.log(
-          '🚀 ~ file: __layout.svelte ~ line 58 ~ const{data,error}=awaitsupabase.from ~ data',
-          data
-        );
-        if (error) throw error;
-      } catch (error) {
-        if ((error as ApiError).message) {
-          alert((error as ApiError).message);
-        }
-      } finally {
-        refreshSessionStore(payload.id);
-        // goto('/profile');
+    // Save profile data to session store
+    const payload: SessionStore = processAuthState(user);
+    try {
+      // Upload profile data from sessionStore to 'users' database
+      const { data, error } = await supabase
+        .from<definitions['users']>('users')
+        .upsert(payload);
+      console.log(
+        '🚀 ~ file: __layout.svelte ~ line 58 ~ const{data,error}=awaitsupabase.from ~ data',
+        data
+      );
+      if (error) throw error;
+    } catch (error) {
+      if ((error as ApiError).message) {
+        alert((error as ApiError).message);
       }
+    } finally {
+      refreshSessionStore(payload.id);
+      // goto('/profile');
     }
   });
 
