@@ -37,7 +37,7 @@
 
 <svelte:head>
   <title>{userProfileInformation.name}</title>
-  <meta name="description" content="Profile information" />
+  <meta name="description" content="Profile information." />
   <script
     src="https://kit.fontawesome.com/f538ad6371.js"
     crossorigin="anonymous">
