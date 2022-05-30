@@ -6,7 +6,7 @@
   import { themeChange } from 'theme-change';
   import { supabase } from '$lib/utils/supabaseClient';
   import { refreshSessionStore, sessionStore } from '$lib/stores/sessionStore';
-  import { authLoadingStore, signOut } from '$lib/utils/auth';
+  import { authLoadingStore, signOut } from '$lib/stores/authStore';
   import type { ApiError, User } from '@supabase/supabase-js';
   import type { SessionStore } from '$lib/types/SessionStore';
   import type { UserMetadata } from '$lib/types/UserMetaData';

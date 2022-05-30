@@ -1,6 +1,6 @@
 <script lang="ts">
   import { sessionStore } from '$lib/stores/sessionStore';
-  import { signIn, signOut } from '$lib/utils/auth';
+  import { signIn, signOut } from '$lib/stores/authStore';
 </script>
 
 <div class="drawer bg-base-100">
