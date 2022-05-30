@@ -12,7 +12,6 @@
   import type { UserMetadata } from '$lib/types/UserMetaData';
   import { goto } from '$app/navigation';
   import { browser } from '$app/env';
-  import type { definitions } from '$lib/types/supabase';
   onMount(() => {
     themeChange(false);
   });
@@ -63,7 +62,7 @@
           alert((error as ApiError).message);
         }
       } finally {
-        refreshSessionStore(payload.id);
+        refreshSessionStore();
         // goto('/profile');
       }
     }
@@ -124,11 +123,11 @@
           >
         </div>
         <div class="flex-none">
-          <div class="dropdown dropdown-end">
+          <div class="dropdown-end dropdown">
             <label
               for="main-drawer "
               tabindex="0"
-              class="btn btn-circle btn-ghost"
+              class="btn btn-ghost btn-circle"
             >
               <div class="indicator">
                 <svg
@@ -161,7 +160,7 @@
               </div>
             </div>
           </div>
-          <div title="Change Theme" class="dropdown dropdown-end ">
+          <div title="Change Theme" class="dropdown-end dropdown ">
             <div tabindex="0" class="btn btn-ghost gap-1 normal-case">
               <svg
                 width="20"
@@ -918,8 +917,8 @@
               </div>
             </div>
           </div>
-          <div class="dropdown dropdown-end">
-            <label tabindex="0" class="avatar btn btn-circle btn-ghost">
+          <div class="dropdown-end dropdown">
+            <label tabindex="0" class="avatar btn btn-ghost btn-circle">
               <div class="w-10 rounded-full">
                 <img
                   src={$sessionStore?.avatar_url ??

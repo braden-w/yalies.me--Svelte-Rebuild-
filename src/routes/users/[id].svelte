@@ -28,9 +28,9 @@
 <script lang="ts">
   import UserSocials from '../../lib/components/UserSocials.svelte';
 
-  import UserResponsesCard from './UserResponsesCard.svelte';
+  import UserResponsesCard from '../../lib/components/UserResponsesCard.svelte';
   import UserLocationCard from '../../lib/components/UserLocationCard.svelte';
-  import UserCard from '../../components/UserCard.svelte';
+  import UserCard from '../../lib/components/UserCard.svelte';
   import SpotifyPlayer from '$lib/components/SpotifyPlayer.svelte';
 
   export let userProfileInformation: definitions['users_facebook_places'];
