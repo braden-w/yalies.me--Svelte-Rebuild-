@@ -4,14 +4,14 @@
   import { sessionStore } from '$lib/stores/sessionStore';
   import { get } from 'svelte/store';
 
+  const redirectToProfile = {
+    status: 302,
+    redirect: '/profile'
+  };
   export async function load({ params }: { params: { id: string } }) {
-    if (params.id === get(sessionStore)?.id) {
-      // Return redirect to /profile
-      return {
-        status: 302,
-        redirect: '/profile'
-      };
-    }
+    // If user is current user, redirect to /profile
+    if (params.id === get(sessionStore)?.id) return redirectToProfile;
+
     const { data, error } = await supabase
       .from<definitions['users_facebook_places']>('users_facebook_places')
       .select('*')
