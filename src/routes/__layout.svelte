@@ -106,8 +106,9 @@
 
 <TheNavBar>
   {$authLoadingStore}
+  {$profileStore}
   {#if $authLoadingStore}
-    Hello
+    <slot />
   {:else}
     <slot />
   {/if}
