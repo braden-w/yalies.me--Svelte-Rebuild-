@@ -1,4 +1,13 @@
 <script lang="ts">
+  import InstagramIcon from '$lib/components/icons/InstagramIcon.svelte';
+  import InterestsIcon from '$lib/components/icons/InterestsIcon.svelte';
+
+  import LinkedInIcon from '$lib/components/icons/LinkedInIcon.svelte';
+  import MajorIcon from '$lib/components/icons/MajorIcon.svelte';
+  import PhoneIcon from '$lib/components/icons/PhoneIcon.svelte';
+  import SpotifyIcon from '$lib/components/icons/SpotifyIcon.svelte';
+  import UniversityIcon from '$lib/components/icons/UniversityIcon.svelte';
+
   import { profileStore } from '$lib/stores/auth/profileStore';
   import type { definitions } from '$lib/types/supabase';
 
@@ -15,19 +24,19 @@
     {
       name: 'university',
       label: 'University',
-      icon: 'graduation-cap',
+      icon: UniversityIcon,
       value: 'Yale University'
     },
     {
       name: 'major',
       label: 'Major',
-      icon: 'book',
+      icon: MajorIcon,
       value: major
     },
     {
       name: 'phone',
       label: 'Phone',
-      icon: 'phone',
+      icon: PhoneIcon,
       value: phone
     }
   ];
@@ -35,25 +44,25 @@
     {
       name: 'interests',
       label: 'Interests',
-      icon: 'heart',
+      icon: InterestsIcon,
       value: interests
     },
     {
       name: 'instagram',
       label: 'Instagram',
-      icon: 'instagram',
+      icon: InstagramIcon,
       value: instagram
     },
     {
       name: 'linkedin',
       label: 'Linkedin',
-      icon: 'linkedin',
+      icon: LinkedInIcon,
       value: linkedin
     },
     {
       name: 'expression',
       label: 'Spotify',
-      icon: 'spotify',
+      icon: SpotifyIcon,
       value: expression
     }
   ];
@@ -71,7 +80,7 @@
         <label class="label" for={name}>
           <span class="label-text">{label}</span>
           <button class="btn btn-primary btn-circle btn-xs">
-            <i class="fa fa-{icon}" />
+            <svelte:component this={icon} />
           </button>
         </label>
         <input
@@ -93,7 +102,7 @@
         <label class="label" for={name}>
           <span class="label-text">{label}</span>
           <button class="btn btn-primary btn-circle btn-xs">
-            <i class="fa fa-{icon}" />
+            <svelte:component this={icon} />
           </button>
         </label>
         <input
