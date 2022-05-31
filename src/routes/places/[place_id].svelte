@@ -8,7 +8,14 @@
     description: string;
     users_in_place: definitions['users_facebook_places'][];
   }
-
+  const desiredColumns: (keyof definitions['users_facebook_places'])[] = [
+    'id',
+    'name',
+    'avatar_url',
+    'place_id',
+    'description'
+  ];
+  const selectQuery = '*';
   /** Function that matches query by place_id, description, and finally fuzzy description */
   async function getUsersInPlace(query: string): Promise<
     | { data: definitions['users_facebook_places'][] | null; redirect: null }
@@ -20,7 +27,7 @@
     // Attempt to match the query by place_id
     const { data: dataMatchPlaceID, error: errorMatchPlaceID } = await supabase
       .from<definitions['users_facebook_places']>('users_facebook_places')
-      .select('id, name, avatar_url, place_id, description')
+      .select(selectQuery)
       .eq('place_id', query);
     if (errorMatchPlaceID) console.log(errorMatchPlaceID);
     if (dataMatchPlaceID?.length !== 0)
@@ -32,7 +39,7 @@
       error: errorMatchPlaceDescription
     } = await supabase
       .from<definitions['users_facebook_places']>('users_facebook_places')
-      .select('id, name, avatar_url, place_id, description')
+      .select(selectQuery)
       .eq('description', query);
     if (errorMatchPlaceDescription) console.log(errorMatchPlaceDescription);
     if (dataMatchPlaceDescription?.length !== 0)
@@ -44,7 +51,7 @@
       error: errorFuzzyMatchPlaceDescription
     } = await supabase
       .from<definitions['users_facebook_places']>('users_facebook_places')
-      .select('id, name, avatar_url, place_id, description')
+      .select(selectQuery)
       .ilike('description', `%${query}%`);
     if (errorFuzzyMatchPlaceDescription)
       console.log(errorFuzzyMatchPlaceDescription);
@@ -95,7 +102,7 @@
   async function refreshUsersInPlace() {
     const { data: users_in_place, error } = await supabase
       .from<definitions['users_facebook_places']>('users_facebook_places')
-      .select('id, name, avatar_url, place_id, description')
+      .select('selectQuery')
       .eq('place_id', placeInformation.place_id);
     if (error) console.log(error);
     placeInformation.users_in_place = users_in_place!;
@@ -117,6 +124,19 @@
       <p class="py-6">
         Users currently in {placeInformation.description}
       </p>
+      <!-- Add a carousel with users -->
+      <div
+        class="carousel-center carousel rounded-box max-w-md space-x-4 bg-neutral p-4"
+      >
+        {#each placeInformation.users_in_place as user}
+          <div class="carousel-item">
+            <img
+              src="https://api.lorem.space/image/furniture?w=250&h=180&hash=8B7BCDC2"
+              class="rounded-box"
+            />
+          </div>
+        {/each}
+      </div>
       <!-- Add a toggle that I am currently in this location -->
       <PlaceCheckbox {placeInformation} on:toggled={refreshUsersInPlace} />
       <div class="form-control">
@@ -130,32 +150,5 @@
     <div class="w-full overflow-x-auto">
       <TableOfUsers users={placeInformation.users_in_place} />
     </div>
-    {#each placeInformation.users_in_place as user_in_place}
-      <div class="card max-w-sm flex-shrink-0 bg-base-100  shadow-2xl">
-        <div class="card-body">
-          <div class="text-center">
-            <div class="avatar mx-auto">
-              <div class="w-28 rounded">
-                <img
-                  src={user_in_place.avatar_url}
-                  alt="Profile"
-                  width="100%"
-                  height="100%"
-                  referrerpolicy="no-referrer"
-                />
-              </div>
-            </div>
-            <h1 class="text-2xl font-bold">{user_in_place.name}</h1>
-            <p class="text-lg">Yale University</p>
-          </div>
-
-          <div class="form-control mt-6">
-            <a href={`/users/${user_in_place.id}`} class="btn btn-primary">
-              Go to Profile
-            </a>
-          </div>
-        </div>
-      </div>
-    {/each}
   </div>
 </div>
