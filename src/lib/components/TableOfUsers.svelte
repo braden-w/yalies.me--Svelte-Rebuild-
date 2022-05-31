@@ -10,11 +10,7 @@
   <!-- head -->
   <thead>
     <tr>
-      <th>
-        <label>
-          <input type="checkbox" class="checkbox" />
-        </label>
-      </th>
+      <th />
       <th>Name</th>
       <th>College</th>
       <th>Socials</th>
@@ -23,12 +19,10 @@
   </thead>
   <tbody>
     <!-- row 1 -->
-    {#each users as user}
+    {#each users as user, index}
       <tr class="hover">
         <th>
-          <label>
-            <input type="checkbox" class="checkbox" />
-          </label>
+          {index + 1}
         </th>
         <td>
           <div class="flex items-center space-x-3">
