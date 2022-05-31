@@ -100,7 +100,6 @@
 
     // Create payload for auth information
     const payload = { id, user_response_id, ...userMetaData };
-
     return payload;
   }
 
