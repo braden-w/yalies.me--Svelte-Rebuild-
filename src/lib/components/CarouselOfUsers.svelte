@@ -5,7 +5,7 @@
 </script>
 
 <div
-  class="carousel-center carousel rounded-box max-w-md space-x-4 bg-neutral p-4"
+  class="carousel-center carousel rounded-box max-w-md justify-center space-x-4 bg-neutral p-4"
 >
   {#each users as user}
     <div class="carousel-item">
