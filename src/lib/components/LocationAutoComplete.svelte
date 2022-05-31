@@ -98,7 +98,7 @@
 
 <!-- A Location Autocomplete built with DaisyUI that uses the Google Map Places API to autocomplete the location as the user is typing -->
 
-<div class="dropdown-top dropdown w-full">
+<div class="dropdown dropdown-top w-full">
   <div class="form-control">
     <label class="label" for="location">
       <span class="label-text">I'm currently in...</span>
