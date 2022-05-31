@@ -46,11 +46,6 @@
                     <img src={person.avatar_url} alt={person.name} />
                   </div>
                 {/each}
-                <div class="avatar placeholder">
-                  <div class="w-12 bg-neutral-focus text-neutral-content">
-                    <span>+99</span>
-                  </div>
-                </div>
               </div>
 
               <!-- {getPeopleNames(place)} -->
