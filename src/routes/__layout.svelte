@@ -18,9 +18,12 @@
   import TheNavBar from '$lib/components/TheNavBar.svelte';
   import LoginSplashScreen from '$lib/components/LoginSplashScreen.svelte';
   import type { definitionsJSON } from '$lib/types/definitionsJSON';
-  onMount(() => {
-    themeChange(false);
-  });
+
+  // Handle login state on page load
+  if (browser) {
+    redirectIfUserNullOrNotEdu(supabase.auth.user());
+    $authLoadingStore = false;
+  }
 
   // If the user email doesn't end with .edu, throw an error and redirect to sign in page
   function emailIsEdu(user: User): boolean {
@@ -36,12 +39,6 @@
       signOut();
       alert('Please sign in with a .edu email address');
     }
-  }
-
-  // Handle login state on page load
-  if (browser) {
-    redirectIfUserNullOrNotEdu(supabase.auth.user());
-    $authLoadingStore = false;
   }
 
   // Handle login state once supabase changes kick in
@@ -106,11 +103,13 @@
 
     return payload;
   }
+
+  onMount(() => {
+    themeChange(false);
+  });
 </script>
 
 <TheNavBar>
-  {$authLoadingStore}
-  {$profileStore}
   {#if $authLoadingStore}
     Loading
   {:else if $profileStore}
