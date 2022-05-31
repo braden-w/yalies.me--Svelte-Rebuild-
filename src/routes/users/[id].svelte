@@ -48,7 +48,7 @@
     >
       <!-- Cell 1 -->
       <div class="col-span-1 row-span-2">
-        <UserCard {...userProfileInformation} />
+        <UserCard {...userProfileInformation} isCurrentUser={false} />
       </div>
       <div class="col-span-1 row-span-1">
         <UserSocials {...userProfileInformation} />
@@ -64,7 +64,7 @@
       </div>
       <!-- Cell 4 -->
       <div class="col-span-3 row-span-6">
-        <UserResponsesCard {...userProfileInformation} />
+        <UserResponsesCard {...userProfileInformation} isCurrentUser={false} />
       </div>
       <!-- Cell 5 -->
       <!-- <div class="col-span-2 row-span-3"> -->
