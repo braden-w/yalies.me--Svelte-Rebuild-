@@ -34,19 +34,19 @@
         <div class="col-span-1 row-span-2">
           <UserCard bind:userProfileInformation={$profileStore} />
         </div>
-        <div class="col-span-1 row-span-1">
+        <div class="col-span-1">
           <div class="rounded-box bg-neutral w-72 py-2 shadow-xl xl:w-full">
             <UserSocials bind:userProfileInformation={$profileStore} />
           </div>
         </div>
         <!-- Cell 2 -->
         <div class="col-span-1 row-span-3">
-          <UserLocationCard bind:userProfileInformation={$profileStore} />
+          <SpotifyPlayer url={userProfileInformation?.expression} />
           <!-- <UserAvatarsRow {userProfileInformation} /> -->
         </div>
         <!-- Cell 3 -->
         <div class="col-span-1 row-span-6">
-          <SpotifyPlayer url={userProfileInformation?.expression} />
+          <UserLocationCard bind:userProfileInformation={$profileStore} />
         </div>
         <!-- Cell 4 -->
         <div class="col-span-3 row-span-6">
