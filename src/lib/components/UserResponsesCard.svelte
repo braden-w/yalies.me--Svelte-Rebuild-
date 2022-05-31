@@ -14,7 +14,6 @@
   } from '$lib/stores/auth/profileStore';
   import type { definitions } from '$lib/types/supabase';
 
-  export let id: definitions['users_facebook_places']['id'] = '';
   export let major: definitions['users_facebook_places']['major'] = '';
   export let phone: definitions['users_facebook_places']['phone'] = '';
   export let interests: definitions['users_facebook_places']['interests'] = '';
@@ -22,8 +21,9 @@
   export let linkedin: definitions['users_facebook_places']['linkedin'] = '';
   export let expression: definitions['users_facebook_places']['expression'] =
     '';
-  const isCurrentUser = id === $profileStore?.id;
-  export let inputsList = [
+  /** Set this to true if this userCard refers to the currrent logged in user */
+  export let isCurrentUser: boolean;
+  const inputsList = [
     {
       name: 'university',
       label: 'University',
@@ -43,7 +43,7 @@
       value: phone ?? ''
     }
   ];
-  export let userIntegrations = [
+  const userIntegrations = [
     {
       name: 'interests',
       label: 'Interests',
