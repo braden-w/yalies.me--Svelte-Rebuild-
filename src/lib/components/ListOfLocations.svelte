@@ -19,7 +19,7 @@
 <div class="rounded-box bg-base-100 text-base-content shadow-xl">
   <ul class="menu overflow-visible p-3">
     <li class="menu-title">
-      <span>Places</span>
+      <span>Locations</span>
     </li>
     {#await promise}
       Loading...
