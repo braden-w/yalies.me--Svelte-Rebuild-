@@ -13,7 +13,7 @@
   export let placeInformation: PlaceInformation;
 
   /** Is the current logged in user in this location? */
-  const isCurrentUserInPlace = placeInformation.users_in_place
+  const isCurrentUserInPlace: boolean = placeInformation.users_in_place
     .map((user) => user.id)
     .includes($profileStore?.id as string);
 
