@@ -1,5 +1,6 @@
 import netlify from '@sveltejs/adapter-netlify';
 import preprocess from 'svelte-preprocess';
+import removeConsole from 'vite-plugin-svelte-console-remover';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -14,6 +15,7 @@ const config = {
   kit: {
     adapter: netlify(),
     prerender: { default: true },
+    vite: { plugins: [removeConsole()] },
     // Override http methods in the Todo forms
     methodOverride: {
       allowed: ['PATCH', 'DELETE']

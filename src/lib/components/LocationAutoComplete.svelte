@@ -1,40 +1,26 @@
 <script lang="ts">
-  import { supabase } from '$lib/utils/supabaseClient';
-  import { sessionStore } from '$lib/stores/sessionStore';
+  import { profileStore } from '$lib/stores/auth/profileStore';
   import {
     defaultResults,
     uploadPlaceToSupabase,
     uploadUserPlaceSelectionToSupabase,
     type Payload
   } from '$lib/components/LocationAutoComplete';
-  import {
-    refreshUserLocation,
-    userLocationStore
-  } from '$lib/utils/getUserLocation';
+  import { refreshUserLocation } from '$lib/stores/UserLocationStore';
 
-  let query = '';
+  export let isCurrentUser: boolean;
+  export let query = '';
+
   $: isQueryLongEnough = query.length >= 2;
 
   let results: google.maps.places.AutocompletePrediction[] = defaultResults;
 
   const resetResults = () => (results = defaultResults);
 
-  /** If the user already has a location, put that location description inside the box */
-  async function prepopulateLocation() {
-    await refreshUserLocation();
-    query = $userLocationStore?.places.description ?? '';
-    if (query !== '') results = [];
-  }
-  prepopulateLocation();
-
   // Functions for when query changes value
   let timer: NodeJS.Timeout | null;
-  $: if (query.length == 0) {
-    const user_response_id = $sessionStore?.user_response_id;
-    supabase
-      .from('user_responses')
-      .upsert({ place_id: null, user_response_id }, { returning: 'minimal' });
-  }
+  // Don't reset user location because query length is 0 on load
+  // $: if (query.length == 0) resetUserLocation();
   $: if (query.length < 2) resetResults();
   $: if (query.length >= 2) {
     if (timer) clearTimeout(timer);
@@ -91,7 +77,7 @@
       console.log(payload);
       uploadPlaceToSupabase(payload);
 
-      const user_response_id = $sessionStore?.user_response_id;
+      const user_response_id = $profileStore?.user_response_id;
       uploadUserPlaceSelectionToSupabase(user_response_id, place_id);
     } catch (error: any) {
       alert(error.message);
@@ -122,19 +108,20 @@
       type="text"
       id="location"
       class="input input-bordered"
-      placeholder="Start typing your city here..."
+      placeholder={isCurrentUser ? 'Start typing your city here...' : 'n/a'}
       bind:value={query}
+      disabled={!isCurrentUser}
     />
   </div>
 
   <!-- For each result in results, display  -->
   {#if results.length > 0}
     <ul
-      class="menu menu-compact dropdown-content  shadow bg-base-100 rounded-box text-md w-full"
+      class="text-md dropdown-content menu rounded-box menu-compact  w-full bg-base-100 shadow"
       tabindex="0"
     >
       {#each results as result}
-        <li on:click={handleClick(result)}>
+        <li on:click={() => handleClick(result)}>
           <button>
             {result.description}
           </button>
