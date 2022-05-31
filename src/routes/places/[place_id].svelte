@@ -139,7 +139,7 @@
       <PlaceCheckbox {placeInformation} on:toggled={refreshUsersInPlace} />
       <div class="form-control">
         <div class="divider" />
-        <a href="/profile" class="btn btn-primary">
+        <a sveltekit:prefetch href="/profile" class="btn btn-primary">
           <ProfileIcon />
           Edit My Profile</a
         >

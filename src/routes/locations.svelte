@@ -85,7 +85,8 @@
         />
 
         <div class="form-control mt-6">
-          <a href="/map" class="btn btn-primary">Go To Map</a>
+          <a href="/map" class="btn btn-primary" sveltekit:prefetch>Go To Map</a
+          >
         </div>
       </div>
     </div>

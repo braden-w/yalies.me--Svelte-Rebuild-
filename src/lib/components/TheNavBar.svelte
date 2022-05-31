@@ -31,6 +31,7 @@
         </div>
         <div class="flex-1">
           <a
+            sveltekit:prefetch
             href={$profileStore !== null ? '/map' : '/landing'}
             class="btn btn-ghost text-xl normal-case">Yalies.Me</a
           >
@@ -62,7 +63,7 @@
             </label>
             <div
               tabindex="0"
-              class="card dropdown-content card-compact mt-3 w-52 bg-base-100 shadow"
+              class="card-compact card dropdown-content mt-3 w-52 bg-base-100 shadow"
             >
               <div class="card-body">
                 <span class="text-lg font-bold">Notifications</span>
@@ -881,7 +882,7 @@
       </li>
       {#if $profileStore !== null}
         <li>
-          <a href="/map">Map</a>
+          <a href="/map" sveltekit:prefetch>Map</a>
         </li>
       {/if}
       <li>

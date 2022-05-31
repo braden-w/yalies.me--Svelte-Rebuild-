@@ -28,7 +28,11 @@
   </div>
   <div class="form-control">
     <div class="divider" />
-    <a class="btn btn-secondary btn-block space-x-2" href="/map">
+    <a
+      class="btn btn-secondary btn-block space-x-2"
+      href="/map"
+      sveltekit:prefetch
+    >
       <!-- Insert an svg of a map -->
       <MapIcon />
       <span>Go to Map</span>
