@@ -56,8 +56,8 @@
         </td>
         <td> <UserSocials userProfileInformation={user} /></td>
         <th>
-          <a href={`/users/${user.id}`} class="btn btn-ghost btn-xs">
-            details
+          <a href={`/users/${user.id}`} class="btn btn-primary btn-md">
+            Go to Profile
           </a>
         </th>
       </tr>
