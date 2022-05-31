@@ -139,16 +139,14 @@
       <PlaceCheckbox {placeInformation} on:toggled={refreshUsersInPlace} />
       <div class="form-control">
         <div class="divider" />
-        <div>
-          <a href="/profile" class="btn btn-primary">
-            <ProfileIcon />
-            Edit My Profile</a
-          >
-          <a href="/map" class="btn btn-primary"><MapIcon /> Map</a>
-          <a href="/locations" class="btn btn-primary">
-            <LocationsListIcon /> Locations</a
-          >
-        </div>
+        <a href="/profile" class="btn btn-primary">
+          <ProfileIcon />
+          Edit My Profile</a
+        >
+        <a href="/map" class="btn btn-primary"><MapIcon /> Map</a>
+        <a href="/locations" class="btn btn-primary">
+          <LocationsListIcon /> Locations</a
+        >
       </div>
     </div>
   </div>
