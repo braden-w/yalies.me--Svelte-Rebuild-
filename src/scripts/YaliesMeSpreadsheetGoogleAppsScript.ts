@@ -4,6 +4,7 @@ const VITE_SUPABASE_ANON_KEY = "<Insert Supabase Anon Key>"
 const headers = ['name', 'year', 'email', 'major', 'description', 'phone', 'instagram', 'linkedin', 'interests', 'expression'];
 function myFunction() {
   clearEntireSpreadsheet();
+  writeHeadersOnFirstRow();
   const response = UrlFetchApp.fetch(`${VITE_SUPABASE_URL}/rest/v1/users_facebook_places?id=not.is.null`, {
     headers: {
       Apikey: VITE_SUPABASE_ANON_KEY,
@@ -32,4 +33,10 @@ function clearEntireSpreadsheet() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const sheet = ss.getActiveSheet();
   sheet.clear();
+}
+
+function writeHeadersOnFirstRow() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = ss.getActiveSheet();
+  sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
 }
