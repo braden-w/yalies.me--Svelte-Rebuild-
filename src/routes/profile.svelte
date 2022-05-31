@@ -33,12 +33,13 @@
         <!-- Cell 1 -->
         <div class="col-span-1 row-span-2">
           <UserCard bind:userProfileInformation={$profileStore} />
-        </div>
-        <div class="col-span-1">
-          <div class="rounded-box bg-neutral w-72 py-2 shadow-xl xl:w-full">
+          <div
+            class="rounded-box bg-neutral w-72 py-2 shadow-xl xl:w-full mt-4"
+          >
             <UserSocials bind:userProfileInformation={$profileStore} />
           </div>
         </div>
+        <div class="col-span-1" />
         <!-- Cell 2 -->
         <div class="col-span-1 row-span-3">
           <SpotifyPlayer url={userProfileInformation?.expression} />
