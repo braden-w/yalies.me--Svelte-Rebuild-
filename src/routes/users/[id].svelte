@@ -2,15 +2,7 @@
   import type { definitions } from '$lib/types/supabase';
   import { supabase } from '$lib/utils/supabaseClient';
 
-  // TODO: Redirect to profile if it matches the current user
-  // const redirectToProfile = {
-  //   status: 302,
-  //   redirect: '/profile'
-  // };
   export async function load({ params }: { params: { id: string } }) {
-    // If user is current user, redirect to /profile
-    // if (params.id === get(profileStore)?.id) return redirectToProfile;
-
     const { data, error } = await supabase
       .from<definitions['users_facebook_places']>('users_facebook_places')
       .select('*')
