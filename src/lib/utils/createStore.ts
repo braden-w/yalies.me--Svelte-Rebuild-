@@ -10,7 +10,7 @@ function createStore<T>(key: string, initValue: T): Writable<T> {
   if (storedValueStr != null) store.set(JSON.parse(storedValueStr));
 
   store.subscribe((val) => {
-    if ( val === null || val === undefined) {
+    if (val === null || val === undefined) {
       localStorage.removeItem(key);
     } else {
       localStorage.setItem(key, JSON.stringify(val));
