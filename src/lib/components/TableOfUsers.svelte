@@ -24,7 +24,7 @@
   <tbody>
     <!-- row 1 -->
     {#each users as user}
-      <tr>
+      <tr class="hover">
         <th>
           <label>
             <input type="checkbox" class="checkbox" />
