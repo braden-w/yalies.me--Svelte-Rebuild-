@@ -40,7 +40,7 @@
     >
       <!-- Cell 1 -->
       <div class="col-span-1 row-span-2">
-        <UserCard {...userProfileInformation} isCurrentUser={false} />
+        <UserCard {userProfileInformation} />
       </div>
       <div class="col-span-1 row-span-1">
         <UserSocials {...userProfileInformation} />
