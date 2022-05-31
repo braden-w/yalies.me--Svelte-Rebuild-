@@ -1,6 +1,7 @@
 <script lang="ts">
   import { profileStore } from '$lib/stores/auth/profileStore';
   import LocationAutoComplete from '$lib/components/LocationAutoComplete.svelte';
+  import TableOfLocations from '$lib/components/TableOfLocations.svelte';
 </script>
 
 <svelte:head>
@@ -66,6 +67,14 @@
           <a href="/map" class="btn btn-primary">Go To Map</a>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="hero min-h-screen bg-base-100">
+  <div class="hero-content flex-row flex-wrap">
+    <div class="w-full overflow-x-auto">
+      <TableOfLocations />
     </div>
   </div>
 </div>
