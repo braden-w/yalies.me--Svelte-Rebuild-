@@ -4,6 +4,8 @@
   export let avatar_url: definitions['users_facebook_places']['avatar_url'] =
     '';
   export let name: definitions['users_facebook_places']['name'] = '';
+  export let major: definitions['users_facebook_places']['major'] = '';
+  export let school: definitions['users_facebook_places']['school'] = '';
 </script>
 
 <div
@@ -30,9 +32,11 @@
         {name}
       </div>
       <div class="my-3 text-sm text-base-content/70">
-        Ethics, Politics, & Economics
+        {major}
         <br />
         Yale University
+        <br />
+        {school}
         <br />
         Student
       </div>
@@ -44,13 +48,13 @@
       <div class="badge badge-ghost">Illustration</div>
     </div>
   </div>
-  <div class="dropdown dropdown-top">
+  <div class="dropdown-top dropdown">
     <div tabindex="0">
       <div class="btn-group">
         <button class="btn btn-accent btn-sm">Follow</button>
         <button
           aria-label="button component"
-          class="btn btn-square btn-accent btn-sm"
+          class="btn btn-accent btn-square btn-sm"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
