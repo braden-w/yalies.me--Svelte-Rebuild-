@@ -1,7 +1,27 @@
+<script context="module" lang="ts">
+  import type { definitionsJSON } from '$lib/types/definitionsJSON';
+  import { supabase } from '$lib/utils/supabaseClient';
+
+  export async function load() {
+    const { data, error } = await supabase
+      .from<definitionsJSON['places_with_people']>('places_with_people')
+      .select('*')
+      .not('people', 'is', null);
+    return {
+      status: 200,
+      props: {
+        places
+      }
+    };
+  }
+</script>
+
 <script lang="ts">
   import { profileStore } from '$lib/stores/auth/profileStore';
   import LocationAutoComplete from '$lib/components/LocationAutoComplete.svelte';
   import TableOfLocations from '$lib/components/TableOfLocations.svelte';
+
+  export let places;
 </script>
 
 <svelte:head>
