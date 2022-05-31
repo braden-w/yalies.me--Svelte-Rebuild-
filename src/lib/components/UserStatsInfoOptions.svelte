@@ -7,7 +7,7 @@
 </script>
 
 <div
-  class="col-span-3 row-span-3 mx-2 flex w-72 flex-shrink-0 flex-col xl:mx-0 xl:w-full"
+  class="col-span-3 row-span-3 mx-2 flex flex-shrink-0 flex-col xl:mx-0 xl:w-full"
 >
   <div class="tabs w-full flex-grow-0">
     <button
@@ -41,7 +41,7 @@
       <div class="flex items-center space-x-2">
         <div class="dropdown">
           <div tabindex="0">
-            <div class="online avatar">
+            <div class="avatar online">
               <div
                 class="mask mask-hexagon h-16 w-16 bg-base-content bg-opacity-10 p-px"
               >
@@ -56,7 +56,7 @@
           </div>
           <div tabindex="0" class="dropdown-content py-2">
             <div
-              class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
+              class="card compact rounded-box bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
                 <h2 class="card-title font-extrabold capitalize">
@@ -86,7 +86,7 @@
         </div>
         <div tabindex="0" class="dropdown-content py-2">
           <div
-            class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
+            class="card compact rounded-box bg-neutral-focus text-neutral-content shadow-xl"
           >
             <div class="card-body">
               <h2 class="card-title font-extrabold capitalize">
@@ -152,7 +152,7 @@
           </div>
           <div tabindex="0" class="dropdown-content py-2">
             <div
-              class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
+              class="card compact rounded-box bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
                 <h2 class="card-title font-extrabold capitalize">
@@ -178,7 +178,7 @@
   <!-- Begin Tab Page 1 -->
   {#if tab === 1}
     <div
-      class="rounded-box col-span-3 row-span-3 mx-2 grid w-72 flex-shrink-0 items-stretch bg-base-100 text-base-content shadow-xl xl:mx-0 xl:w-auto xl:place-self-stretch"
+      class="rounded-box col-span-3 row-span-3 mx-2 grid flex-shrink-0 items-stretch bg-base-100 text-base-content shadow-xl xl:mx-0 xl:w-auto xl:place-self-stretch"
     >
       <div class="grid place-content-center gap-4 p-4">
         <div class="dropdown dropdown-end">
@@ -198,7 +198,7 @@
           </div>
           <div tabindex="0" class="dropdown-content py-2">
             <div
-              class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
+              class="card compact rounded-box bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
                 <h2 class="card-title font-extrabold capitalize">
@@ -244,7 +244,7 @@
           </div>
           <div tabindex="0" class="dropdown-content py-2">
             <div
-              class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
+              class="card compact rounded-box bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
                 <h2 class="card-title font-extrabold capitalize">
@@ -290,7 +290,7 @@
           </div>
           <div tabindex="0" class="dropdown-content py-2">
             <div
-              class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
+              class="card compact rounded-box bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
                 <h2 class="card-title font-extrabold capitalize">
@@ -315,7 +315,7 @@
   <!-- Begin Tab Page 2 -->
   {#if tab === 2}
     <div
-      class="rounded-box col-span-3 row-span-3 mx-2 flex w-72 flex-shrink-0 flex-col justify-center gap-4 bg-base-100 p-4 shadow-xl xl:mx-0 xl:w-full"
+      class="rounded-box col-span-3 row-span-3 mx-2 flex flex-shrink-0 flex-col justify-center gap-4 bg-base-100 p-4 shadow-xl xl:mx-0 xl:w-full"
     >
       <div class="px-6 pt-6">
         <div class="text-xl font-extrabold">Superpower settings</div>
@@ -351,7 +351,7 @@
           </div>
           <div tabindex="0" class="dropdown-content py-2">
             <div
-              class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
+              class="card compact rounded-box bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
                 <h2 class="card-title font-extrabold capitalize">
@@ -392,7 +392,7 @@
           </div>
           <div tabindex="0" class="dropdown-content py-2">
             <div
-              class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
+              class="card compact rounded-box bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
                 <h2 class="card-title font-extrabold capitalize">

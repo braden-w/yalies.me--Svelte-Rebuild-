@@ -44,7 +44,7 @@
       </div>
       <div class="col-span-1 row-span-1">
         <div
-          class="rounded-box w-72 place-items-center items-center gap-4 bg-base-100 p-4 py-8 shadow-xl xl:mx-0 xl:w-full"
+          class="rounded-box place-items-center items-center gap-4 bg-base-100 p-4 py-8 shadow-xl xl:mx-0 xl:w-full"
         >
           <UserSocials {userProfileInformation} />
         </div>

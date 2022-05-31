@@ -8,7 +8,7 @@
 </script>
 
 <div
-  class="rounded-box grid w-72 place-items-center items-center gap-4 bg-base-100 p-4 py-8 shadow-xl xl:mx-0 xl:w-full"
+  class="rounded-box grid place-items-center items-center gap-4 bg-base-100 p-4 py-8 shadow-xl xl:mx-0 xl:w-full"
 >
   <div class="avatar online">
     <div
@@ -55,7 +55,7 @@
         <button class="btn btn-accent btn-sm">Follow</button>
         <button
           aria-label="button component"
-          class="btn btn-square btn-accent btn-sm"
+          class="btn btn-accent btn-square btn-sm"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +75,7 @@
     </div>
     <div tabindex="0" class="dropdown-content py-2">
       <div
-        class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
+        class="card compact rounded-box bg-neutral-focus text-neutral-content shadow-xl"
       >
         <div class="card-body">
           <h2 class="card-title font-extrabold capitalize">

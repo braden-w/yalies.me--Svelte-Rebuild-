@@ -11,7 +11,7 @@
 </script>
 
 <div
-  class="rounded-box row-span-3 mx-2 flex w-72 flex-shrink-0 flex-col justify-center gap-4 bg-base-100 p-4 shadow-xl xl:mx-0 xl:w-full"
+  class="rounded-box row-span-3 mx-2 flex flex-shrink-0 flex-col justify-center gap-4 bg-base-100 p-4 shadow-xl xl:mx-0 xl:w-full"
 >
   <div class="px-6 pt-6">
     <div class="text-xl font-extrabold">Where are you now?</div>

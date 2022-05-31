@@ -23,7 +23,7 @@
       <!-- Cell 1 -->
       <div class="col-span-1 row-span-3">
         <UserCard bind:userProfileInformation={$profileStore} />
-        <div class="rounded-box mt-4 w-72 bg-neutral py-2 shadow-xl xl:w-full">
+        <div class="rounded-box mt-4 bg-neutral py-2 shadow-xl xl:w-full">
           <UserSocials bind:userProfileInformation={$profileStore} />
         </div>
       </div>
