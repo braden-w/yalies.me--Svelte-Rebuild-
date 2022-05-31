@@ -1,13 +1,14 @@
 const VITE_SUPABASE_URL = "<Insert Supabase URL>";
 const VITE_SUPABASE_ANON_KEY = "<Insert Supabase Anon Key>"
 
+const headers = ['name', 'year', 'email', 'major', 'description', 'phone', 'instagram', 'linkedin', 'interests', 'expression'];
 function myFunction() {
   clearEntireSpreadsheet();
   const response = UrlFetchApp.fetch(`${VITE_SUPABASE_URL}/rest/v1/users_facebook_places?id=not.is.null`, {
-  headers: {
-    Apikey: VITE_SUPABASE_ANON_KEY,
-    Authorization: `Bearer ${VITE_SUPABASE_ANON_KEY}`,
-  },
+    headers: {
+      Apikey: VITE_SUPABASE_ANON_KEY,
+      Authorization: `Bearer ${VITE_SUPABASE_ANON_KEY}`,
+    },
   })
   const data = JSON.parse(response.getContentText());
   Logger.log(data);
@@ -18,10 +19,9 @@ function myFunction() {
 
   const rows = data.map(
     (row) => {
-      const {name, year, email, major, description, phone, instagram, linkedin, interests, expression} = row
-      return [name, year, email, major, description, phone, instagram, linkedin, interests, expression]
-    }
-  )
+      return headers.map((column) => row.hasOwnProperty(column) ? row[column] : '');
+    })
+
 
   dataRange = sheet.getRange(2, 1, rows.length, rows[0].length);
   dataRange.setValues(rows);
