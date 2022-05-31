@@ -70,9 +70,11 @@
     }
   ];
 
+  let isApplySettingsLoading = false;
   async function applySettings(
     responsesList = [...inputsList, ...userIntegrations]
   ) {
+    isApplySettingsLoading = true;
     console.log(
       '🚀 ~ file: UserResponsesCard.svelte ~ line 76 ~ responsesList',
       responsesList
@@ -87,6 +89,7 @@
 
     // Upload payload to the database
     await uploadUserResponses(payload);
+    isApplySettingsLoading = false;
   }
 </script>
 
@@ -143,6 +146,7 @@
     <div class="divider" />
     <button
       class="btn btn-secondary btn-block space-x-2"
+      class:loading={isApplySettingsLoading}
       on:click={() => applySettings([...inputsList, ...userIntegrations])}
     >
       <svg
