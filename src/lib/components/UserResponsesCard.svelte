@@ -73,6 +73,10 @@
   async function applySettings(
     responsesList = [...inputsList, ...userIntegrations]
   ) {
+    console.log(
+      '🚀 ~ file: UserResponsesCard.svelte ~ line 76 ~ responsesList',
+      responsesList
+    );
     let accumulator: { [key: string]: string; user_response_id: string } = {
       user_response_id: $profileStore?.user_response_id ?? ''
     };
@@ -135,7 +139,7 @@
     <div class="divider" />
     <button
       class="btn btn-secondary btn-block space-x-2"
-      on:click={applySettings}
+      on:click={() => applySettings([...inputsList, ...userIntegrations])}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
