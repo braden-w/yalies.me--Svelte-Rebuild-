@@ -6,12 +6,12 @@
   export interface PlaceInformation {
     place_id: string;
     description: string;
-    users_in_place: definitions['users_to_places'][];
+    users_in_place: definitions['users_facebook_places'][];
   }
 
   /** Function that matches query by place_id, description, and finally fuzzy description */
   async function getUsersInPlace(query: string): Promise<
-    | { data: definitions['users_to_places'][] | null; redirect: null }
+    | { data: definitions['users_facebook_places'][] | null; redirect: null }
     | {
         data: null;
         redirect: { status: number; redirect?: string };
@@ -19,7 +19,7 @@
   > {
     // Attempt to match the query by place_id
     const { data: dataMatchPlaceID, error: errorMatchPlaceID } = await supabase
-      .from<definitions['users_to_places']>('users_to_places')
+      .from<definitions['users_facebook_places']>('users_facebook_places')
       .select('id, name, avatar_url, place_id, description')
       .eq('place_id', query);
     if (errorMatchPlaceID) console.log(errorMatchPlaceID);
@@ -31,7 +31,7 @@
       data: dataMatchPlaceDescription,
       error: errorMatchPlaceDescription
     } = await supabase
-      .from<definitions['users_to_places']>('users_to_places')
+      .from<definitions['users_facebook_places']>('users_facebook_places')
       .select('id, name, avatar_url, place_id, description')
       .eq('description', query);
     if (errorMatchPlaceDescription) console.log(errorMatchPlaceDescription);
@@ -43,7 +43,7 @@
       data: dataFuzzyMatchPlaceDescription,
       error: errorFuzzyMatchPlaceDescription
     } = await supabase
-      .from<definitions['users_to_places']>('users_to_places')
+      .from<definitions['users_facebook_places']>('users_facebook_places')
       .select('id, name, avatar_url, place_id, description')
       .ilike('description', `%${query}%`);
     if (errorFuzzyMatchPlaceDescription)
@@ -94,7 +94,7 @@
   export let placeInformation: PlaceInformation;
   async function refreshUsersInPlace() {
     const { data: users_in_place, error } = await supabase
-      .from<definitions['users_to_places']>('users_to_places')
+      .from<definitions['users_facebook_places']>('users_facebook_places')
       .select('id, name, avatar_url, place_id, description')
       .eq('place_id', placeInformation.place_id);
     if (error) console.log(error);
