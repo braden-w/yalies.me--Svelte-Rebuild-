@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { definitionsJSON, Person } from '$lib/types/definitionsJSON';
-import { generateStackOfIcons } from '$lib/utils/map/generateInnerHTML';
+  import { generateStackOfIcons } from '$lib/utils/map/generateInnerHTML';
 
   import { supabase } from '$lib/utils/supabaseClient';
 
@@ -10,6 +10,12 @@ import { generateStackOfIcons } from '$lib/utils/map/generateInnerHTML';
     .not('people', 'is', null);
   function getPeopleNames(place: definitionsJSON['places_with_people']) {
     return place.people?.map((person) => (<Person>person).name);
+  }
+
+  function getThreeAvatarUrls(place: definitionsJSON['places_with_people']) {
+    return place.people
+      ?.slice(0, 3)
+      .map((person) => (<Person>person).avatar_url);
   }
 </script>
 
@@ -28,6 +34,10 @@ import { generateStackOfIcons } from '$lib/utils/map/generateInnerHTML';
         {#each places as place}
           <li>
             <a href={`/places/${place.place_id}`}>
+              {@html generateStackOfIcons({
+                threeAvatars: getThreeAvatarUrls(place) ?? [],
+                indicator: (place.people ?? []).length
+              })}
               <svg
                 width="20"
                 height="20"
