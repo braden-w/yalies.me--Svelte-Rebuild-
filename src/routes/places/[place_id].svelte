@@ -134,7 +134,7 @@
               src="https://api.lorem.space/image/furniture?w=250&h=180&hash=8B7BCDC2"
               class="rounded-box"
             />
-            <div class="card w-24 bg-base-100 shadow-xl">
+            <div class="card w-36 bg-base-100 shadow-xl">
               <figure>
                 <img
                   src={user.avatar_url}
@@ -152,6 +152,7 @@
                 </div>
 
                 <div class="form-control mt-6">
+                  <div class="divider" />
                   <a href={`/users/${user.id}`} class="btn btn-ghost">
                     Go to Profile
                   </a>
@@ -164,6 +165,7 @@
       <!-- Add a toggle that I am currently in this location -->
       <PlaceCheckbox {placeInformation} on:toggled={refreshUsersInPlace} />
       <div class="form-control">
+        <div class="divider" />
         <a href="/map" class="btn btn-primary">Go Back To Map</a>
       </div>
     </div>
