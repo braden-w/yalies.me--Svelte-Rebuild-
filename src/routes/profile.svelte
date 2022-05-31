@@ -35,6 +35,8 @@
           <UserCard
             name={userProfileInformation?.name}
             avatar_url={userProfileInformation?.avatar_url}
+            major={userProfileInformation?.major}
+            school={userProfileInformation?.school}
           />
         </div>
         <div class="col-span-1 row-span-1">
