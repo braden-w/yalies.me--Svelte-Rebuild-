@@ -7,7 +7,7 @@
 <div
   class="carousel-center carousel rounded-box max-w-md space-x-4 bg-neutral p-4"
 >
-  {#each [...users, ...users, ...users, ...users, ...users, ...users] as user}
+  {#each users as user}
     <div class="carousel-item">
       <div class="avatar">
         <div class="mask mask-squircle w-8">
