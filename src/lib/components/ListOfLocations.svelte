@@ -1,5 +1,5 @@
 <script lang="ts">
-  import LocationsListIcon from './LocationsListIcon.svelte';
+  import LocationsListIcon from './icons/LocationsListIcon.svelte';
 
   import type { definitionsJSON, Person } from '$lib/types/definitionsJSON';
   import { generateStackOfIcons } from '$lib/utils/map/generateInnerHTML';

@@ -97,6 +97,8 @@
 </script>
 
 <script lang="ts">
+  import ProfileIcon from '../../lib/components/icons/ProfileIcon.svelte';
+
   import CarouselOfUsers from '../../lib/components/CarouselOfUsers.svelte';
 
   import TableOfUsers from '$lib/components/TableOfUsers.svelte';
@@ -137,11 +139,16 @@
       <PlaceCheckbox {placeInformation} on:toggled={refreshUsersInPlace} />
       <div class="form-control">
         <div class="divider" />
-        <a href="/profile" class="btn btn-primary">Edit My Profile</a>
-        <a href="/map" class="btn btn-primary"><MapIcon /> Map</a>
-        <a href="/locations" class="btn btn-primary">
-          <LocationsListIcon /> Locations</a
-        >
+        <div>
+          <a href="/profile" class="btn btn-primary">
+            <ProfileIcon />
+            Edit My Profile</a
+          >
+          <a href="/map" class="btn btn-primary"><MapIcon /> Map</a>
+          <a href="/locations" class="btn btn-primary">
+            <LocationsListIcon /> Locations</a
+          >
+        </div>
       </div>
     </div>
   </div>
