@@ -134,19 +134,19 @@
               src="https://api.lorem.space/image/furniture?w=250&h=180&hash=8B7BCDC2"
               class="rounded-box"
             />
-            <div class="card w-96 bg-base-100 shadow-xl">
+            <div class="card w-24 bg-base-100 shadow-xl">
+              <figure>
+                <img
+                  src={user.avatar_url}
+                  alt="Profile"
+                  width="100%"
+                  referrerpolicy="no-referrer"
+                />
+              </figure>
               <div class="card-body">
                 <div class="text-center">
                   <div class="avatar mx-auto">
-                    <div class="w-28 rounded">
-                      <img
-                        src={user.avatar_url}
-                        alt="Profile"
-                        width="100%"
-                        height="100%"
-                        referrerpolicy="no-referrer"
-                      />
-                    </div>
+                    <div class="w-28 rounded" />
                   </div>
                   <h1 class="text-2xl font-bold">
                     {user.name}
