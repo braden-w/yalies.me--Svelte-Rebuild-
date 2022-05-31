@@ -21,7 +21,7 @@
     </div>
     <LocationAutoComplete
       {isCurrentUser}
-      query={userProfileInformation?.description}
+      query={userProfileInformation?.description ?? ''}
     />
   </div>
   <div class="form-control">
