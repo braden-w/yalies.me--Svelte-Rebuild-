@@ -17,7 +17,7 @@
       </th>
       <th>Name</th>
       <th>College</th>
-      <th>Favorite Color</th>
+      <th>Socials</th>
       <th />
     </tr>
   </thead>
