@@ -10,11 +10,12 @@
     refreshProfileStore,
     profileStore
   } from '$lib/stores/auth/profileStore';
+  import { get } from 'svelte/store';
 
   export let userProfileInformation: Promise<
     definitions['users_facebook_places'] | null
   >;
-  userProfileInformation = refreshProfileStore();
+  userProfileInformation = refreshProfileStore(get(profileStore)?.id);
 </script>
 
 <svelte:head>
