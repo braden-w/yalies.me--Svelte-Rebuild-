@@ -20,14 +20,6 @@
 
   const resetResults = () => (results = defaultResults);
 
-  /** If the user already has a location, put that location description inside the box */
-  async function prepopulateLocation() {
-    await refreshUserLocation();
-    query = $userLocationStore?.description ?? '';
-    if (query !== '') results = [];
-  }
-  prepopulateLocation();
-
   // Functions for when query changes value
   let timer: NodeJS.Timeout | null;
   // Don't reset user location because query length is 0 on load
@@ -121,6 +113,7 @@
       class="input input-bordered"
       placeholder={isCurrentUser ? 'Start typing your city here...' : 'n/a'}
       bind:value={query}
+      disabled={!isCurrentUser}
     />
   </div>
 
