@@ -30,7 +30,7 @@
     <div class="divider" />
     <a class="btn btn-secondary btn-block space-x-2" href="/map">
       <!-- Insert an svg of a map -->
-      <MapIcon></MapIcon>
+      <MapIcon />
       <span>Go to Map</span>
     </a>
   </div>
