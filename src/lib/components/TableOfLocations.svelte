@@ -15,8 +15,6 @@
       <tr>
         <th />
         <th>Name</th>
-        <th>College</th>
-        <th>Socials</th>
         <th />
       </tr>
     </thead>
@@ -28,9 +26,7 @@
             <th>
               {index + 1}
             </th>
-            <td> Hi </td>
-            <td>Hi</td>
-            <td />
+            <td> {place.description} </td>
             <th>
               <a
                 href={`/places/${place.place_id}`}
