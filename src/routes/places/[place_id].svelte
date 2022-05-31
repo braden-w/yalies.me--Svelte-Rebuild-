@@ -126,7 +126,7 @@
       </p>
       <!-- Add a carousel with users -->
       <div
-        class="carousel-center carousel rounded-box max-w-md space-x-4 bg-neutral p-4"
+        class="carousel-center carousel rounded-box w-full space-x-4 bg-neutral p-4"
       >
         {#each placeInformation.users_in_place as user}
           <div class="carousel-item">
