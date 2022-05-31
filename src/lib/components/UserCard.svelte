@@ -49,10 +49,10 @@
       {/if}
     </div>
   </div>
-  <div class="dropdown-top dropdown">
+  <div class="dropdown dropdown-top">
     <div tabindex="0">
       <div class="btn-group">
-        <button class="btn btn-accent btn-sm">Follow</button>
+        <button class="btn btn-accent btn-sm">Add Friend</button>
         <button
           aria-label="button component"
           class="btn btn-square btn-accent btn-sm"
