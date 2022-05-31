@@ -7,13 +7,13 @@
     .from<definitionsJSON['places_with_people']>('places_with_people')
     .select('*')
     .not('people', 'is', null);
-  let people;
-  promise.then(
-    ({ data: places }) =>
-      (people = places.map((place) => {
-        return place.people;
-      }))
-  );
+  let people: definitionsJSON['people'][];
+  promise.then(({ data: places }) => {
+    if (!places) return;
+    people = places.map((place) => {
+      return place.people;
+    });
+  });
 </script>
 
 {#await promise}
