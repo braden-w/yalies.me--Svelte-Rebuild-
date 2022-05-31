@@ -10,15 +10,17 @@
   {#each [...users, ...users, ...users, ...users, ...users, ...users] as user}
     <div class="carousel-item">
       <div class="avatar">
-        <a class="mask mask-squircle w-8" href={`/users/${user.id}`}>
-          <img
-            src={user.avatar_url}
-            alt="Profile"
-            height="100%"
-            width="100%"
-            referrerpolicy="no-referrer"
-          />
-        </a>
+        <div class="mask mask-squircle w-8">
+          <a href={`/users/${user.id}`}>
+            <img
+              src={user.avatar_url}
+              alt="Profile"
+              height="100%"
+              width="100%"
+              referrerpolicy="no-referrer"
+            />
+          </a>
+        </div>
       </div>
       <figure />
     </div>
