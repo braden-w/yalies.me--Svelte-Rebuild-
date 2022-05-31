@@ -8,9 +8,6 @@
     .from<definitionsJSON['places_with_people']>('places_with_people')
     .select('*')
     .not('people', 'is', null);
-  function getPeopleNames(place: definitionsJSON['places_with_people']) {
-    return place.people?.map((person) => (<Person>person).name);
-  }
 
   function getThreeAvatarUrls(place: definitionsJSON['places_with_people']) {
     return place.people
@@ -46,4 +43,3 @@
     {/await}
   </ul>
 </div>
-
