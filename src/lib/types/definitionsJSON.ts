@@ -1,12 +1,12 @@
 import type {definitions} from "$lib/types/supabase";
 
-interface Person {
+export interface Person {
   id: string;
   name: string;
   avatar_url: string;
 }
 
-interface PersonFromFacebook {
+export interface PersonFromFacebook {
   email: string;
   first_name: string;
   middle_name: string;
