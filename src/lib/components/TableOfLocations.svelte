@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { definitionsJSON } from '$lib/types/definitionsJSON';
+  import type { definitionsJSON, Person } from '$lib/types/definitionsJSON';
 
   import { supabase } from '$lib/utils/supabaseClient';
 
@@ -7,11 +7,11 @@
     .from<definitionsJSON['places_with_people']>('places_with_people')
     .select('*')
     .not('people', 'is', null);
-  let people: definitionsJSON['people'][];
+  let people: definitionsJSON['places_with_people']['people'];
   promise.then(({ data: places }) => {
     if (!places) return;
     people = places.map((place) => {
-      return place.people;
+      return place.people?.map((person) => (<Person>person).name);
     });
   });
 </script>
@@ -37,7 +37,7 @@
               {index + 1}
             </th>
             <td> {place.description} </td>
-            <td> {place.people} </td>
+            <td> {people} </td>
             <th>
               <a
                 href={`/places/${place.place_id}`}
