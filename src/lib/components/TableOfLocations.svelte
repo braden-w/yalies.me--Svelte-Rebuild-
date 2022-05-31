@@ -41,9 +41,9 @@
             <td> {place.description} </td>
             <td class="overflow-visible">
               <div class="avatar-group overflow-visible -space-x-2">
-                {#each [...getPeopleNameAndAvatarURL(place), ...getPeopleNameAndAvatarURL(place), ...getPeopleNameAndAvatarURL(place)] as { name, avatar_url }}
+                {#each place.people as person}
                   <div class="avatar h-8 w-8">
-                    <img src={avatar_url} alt={name} />
+                    <img src={person.avatar_url} alt={person.name} />
                   </div>
                 {/each}
                 <div class="avatar placeholder">
