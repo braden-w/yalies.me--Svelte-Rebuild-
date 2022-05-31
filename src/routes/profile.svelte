@@ -11,6 +11,7 @@
     profileStore
   } from '$lib/stores/auth/profileStore';
   import { get } from 'svelte/store';
+  import TableOfLocations from '$lib/components/TableOfLocations.svelte';
 
   export let userProfileInformation: Promise<
     definitions['users_facebook_places'] | null
@@ -45,14 +46,17 @@
           <!-- <UserAvatarsRow {userProfileInformation} /> -->
         </div>
         <!-- Cell 3 -->
-        <div class="col-span-1 row-span-6">
+        <div class="col-span-1 row-span-3">
           <UserLocationCard bind:userProfileInformation={$profileStore} />
         </div>
         <!-- Cell 4 -->
+        <div class="col-span-1 row-span-3">
+          <TableOfLocations />
+        </div>
+        <!-- Cell 5 -->
         <div class="col-span-3 row-span-6">
           <UserResponsesCard bind:userProfileInformation={$profileStore} />
         </div>
-        <!-- Cell 5 -->
         <!-- <div class="col-span-2 row-span-3"> -->
         <!-- <UserStatsInfoOptions {userProfileInformation} /> -->
         <!-- </div> -->
