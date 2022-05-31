@@ -32,12 +32,7 @@
       >
         <!-- Cell 1 -->
         <div class="col-span-1 row-span-2">
-          <UserCard
-            name={userProfileInformation?.name}
-            avatar_url={userProfileInformation?.avatar_url}
-            major={userProfileInformation?.major}
-            school={userProfileInformation?.school}
-          />
+          <UserCard isCurrentUser={true} />
         </div>
         <div class="col-span-1 row-span-1">
           <UserSocials
@@ -63,13 +58,13 @@
         <!-- Cell 4 -->
         <div class="col-span-3 row-span-6">
           <UserResponsesCard
-            id={userProfileInformation?.id}
             interests={userProfileInformation?.interests}
             major={userProfileInformation?.major}
             phone={userProfileInformation?.phone}
             expression={userProfileInformation?.expression}
             instagram={userProfileInformation?.instagram}
             linkedin={userProfileInformation?.linkedin}
+            isCurrentUser={true}
           />
         </div>
         <!-- Cell 5 -->
