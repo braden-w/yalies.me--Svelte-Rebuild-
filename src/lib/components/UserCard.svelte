@@ -52,7 +52,7 @@
         <button class="btn btn-accent btn-sm">Follow</button>
         <button
           aria-label="button component"
-          class="btn btn-square btn-accent btn-sm"
+          class="btn btn-accent btn-square btn-sm"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -75,16 +75,14 @@
         class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
       >
         <div class="card-body">
-          <h2 class="card-title font-extrabold capitalize">
-            button group component
-          </h2>
+          <h2 class="card-title font-extrabold capitalize">Keep Track of People I Met</h2>
           <p class="text-sm text-neutral-content text-opacity-80">
-            Use it to group multiple buttons together
+            Coming Soon!
           </p>
           <div class="mt-4 flex justify-end">
             <a
-              href="/components/button-group"
-              class="btn btn-primary btn-sm xl:btn-md">See component</a
+              href="mailto:braden.wong@yale.edu"
+              class="btn btn-primary btn-sm xl:btn-md">Request a Feature</a
             >
           </div>
         </div>
