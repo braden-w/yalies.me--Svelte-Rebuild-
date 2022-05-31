@@ -3,12 +3,12 @@
 
   import { supabase } from '$lib/utils/supabaseClient';
 
-  let promise = supabase.from<definitions['places'][]>('places').select('*');
+  let promise = supabase.from<definitions['places']>('places').select('*');
 </script>
 
 {#await promise}
   Loading...
-{:then places}
+{:then { data: places }}
   <table class="table w-full">
     <!-- head -->
     <thead>
@@ -21,44 +21,27 @@
       </tr>
     </thead>
     <tbody>
-      <!-- row 1 -->
-      {#each places as place, index}
-        <tr class="hover" id={place.id}>
-          <th>
-            {index + 1}
-          </th>
-          <td>
-            <div class="flex items-center space-x-3">
-              <div class="avatar">
-                <div class="mask mask-squircle h-12 w-12">
-                  <img
-                    src={place.avatar_url}
-                    alt="User Profile"
-                    referrerpolicy="no-referrer"
-                  />
-                </div>
-              </div>
-              <div>
-                <div class="font-bold">{place.name}</div>
-                <div class="text-sm opacity-50">{place.id}</div>
-              </div>
-            </div>
-          </td>
-          <td>
-            {#if place?.school || place?.college}
-              {[place?.school, place?.college].join(', ')}
-              <br />
-            {/if}
-            <span class="badge badge-sm badge-ghost">{place?.major}</span>
-          </td>
-          <td />
-          <th>
-            <a href={`/users/${place.id}`} class="btn btn-primary btn-md">
-              Go to Profile
-            </a>
-          </th>
-        </tr>
-      {/each}
+      {#if places}
+        <!-- row 1 -->
+        {#each places as place, index}
+          <tr class="hover" id={place.place_id}>
+            <th>
+              {index + 1}
+            </th>
+            <td> Hi </td>
+            <td>Hi</td>
+            <td />
+            <th>
+              <a
+                href={`/places/${place.place_id}`}
+                class="btn btn-primary btn-md"
+              >
+                Go to Place
+              </a>
+            </th>
+          </tr>
+        {/each}
+      {/if}
     </tbody>
     <!-- foot -->
     <tfoot />
