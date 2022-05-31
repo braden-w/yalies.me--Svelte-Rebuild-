@@ -66,6 +66,16 @@
       value: expression
     }
   ];
+
+  const applySettings(responsesList = [...inputsList, ...userIntegrations]){
+    let payload: definitions['user_responses']= {}
+    responsesList.forEach(response => {
+      payload[response.name] = response.value
+    })
+    // Upload justValues to the database
+    
+
+  }
 </script>
 
 <div
@@ -115,7 +125,10 @@
   </div>
   <div class="form-control">
     <div class="divider" />
-    <button class="btn btn-secondary btn-block space-x-2">
+    <button
+      class="btn btn-secondary btn-block space-x-2"
+      on:click={applySettings}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
