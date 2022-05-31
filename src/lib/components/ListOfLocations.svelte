@@ -51,7 +51,7 @@
 
   <div class="form-control">
     <!-- <div class="divider" /> -->
-    <a class="btn btn-secondary btn-block space-x-2" href="/Locations">
+    <a class="btn btn-secondary btn-block space-x-2" href="/locations">
       <!-- Insert an svg of a list of Locations -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
