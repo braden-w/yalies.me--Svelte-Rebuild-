@@ -145,10 +145,7 @@
               </figure>
               <div class="card-body">
                 <div class="text-center">
-                  <div class="avatar mx-auto">
-                    <div class="w-28 rounded" />
-                  </div>
-                  <h1 class="text-2xl font-bold">
+                  <h1 class="card-title">
                     {user.name}
                   </h1>
                   <p class="text-lg">Yale University</p>
