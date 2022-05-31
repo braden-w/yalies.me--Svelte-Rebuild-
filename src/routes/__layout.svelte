@@ -60,7 +60,8 @@
     );
 
     // Save profile data to session store
-    const payload: definitionsJSON['users'] = processAuthState(user);
+    const payload: definitionsJSON['users'] | null = processAuthState(user);
+    if (!payload) return;
     try {
       // Upload profile data from profileStore to 'users' database
       const { data, error } = await supabase
