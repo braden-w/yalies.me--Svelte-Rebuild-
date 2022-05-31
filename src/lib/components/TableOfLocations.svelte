@@ -22,15 +22,15 @@
 <div
   class="col-span-3 row-span-2 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-full xl:place-self-stretch"
 />
-{#await promise}
-  Loading...
-{:then { data: places }}
-  {#if places}
-    <div class="rounded-box bg-base-100 text-base-content shadow-xl">
-      <ul class="menu overflow-visible p-3">
-        <li class="menu-title">
-          <span>Places</span>
-        </li>
+<div class="rounded-box bg-base-100 text-base-content shadow-xl">
+  <ul class="menu overflow-visible p-3">
+    <li class="menu-title">
+      <span>Places</span>
+    </li>
+    {#await promise}
+      Loading...
+    {:then { data: places }}
+      {#if places}
         {#each places as place}
           <li>
             <a href={`/places/${place.place_id}`}>
@@ -43,19 +43,27 @@
             </a>
           </li>
         {/each}
-      </ul>
-    </div>
-    <table class="table w-full">
-      <!-- head -->
-      <thead>
-        <tr>
-          <th />
-          <th>Name</th>
-          <th> People </th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- row 1 -->
+      {/if}
+    {:catch name}
+      {name}
+    {/await}
+  </ul>
+</div>
+<table class="table w-full">
+  <!-- head -->
+  <thead>
+    <tr>
+      <th />
+      <th>Name</th>
+      <th> People </th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- row 1 -->
+    {#await promise}
+      Loading...
+    {:then { data: places }}
+      {#if places}
         {#each places as place, index}
           <tr class="hover" id={place.place_id}>
             <th>
@@ -73,11 +81,11 @@
             </th>
           </tr>
         {/each}
-      </tbody>
-      <!-- foot -->
-      <tfoot />
-    </table>
-  {/if}
-{:catch name}
-  {name}
-{/await}
+      {/if}
+    {:catch name}
+      {name}
+    {/await}
+  </tbody>
+  <!-- foot -->
+  <tfoot />
+</table>
