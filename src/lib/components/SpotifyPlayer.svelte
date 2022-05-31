@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let url: string;
+  export let url = '';
   const defaultPlaylistID = '1uUHti2X6KkpUFcOr4FJ8v';
   $: playlistID = getPlaylistID();
   function getPlaylistID() {
@@ -14,12 +14,13 @@
   }
 </script>
 
-<iframe
-  title="Spotify Player"
-  src={`https://open.spotify.com/embed/playlist/${playlistID}`}
-  width="100%"
-  height="100%"
-  frameborder="0"
-  allowtransparency={true}
-  allow="encrypted-media"
-/>
+<div class="rounded-box h-full bg-base-100 shadow-xl xl:mx-0 xl:w-full">
+  <iframe
+    title="Spotify Player"
+    src={`https://open.spotify.com/embed/playlist/${playlistID}`}
+    class="rounded-box h-full w-full"
+    frameborder="0"
+    allowtransparency={true}
+    allow="encrypted-media"
+  />
+</div>

@@ -1,4 +1,4 @@
-export interface SessionStore {
+export interface ProfileStore {
   id: string | undefined;
   user_response_id: string;
   avatar_url: string;

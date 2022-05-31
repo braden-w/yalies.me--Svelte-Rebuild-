@@ -1,12 +1,13 @@
 <script lang="ts">
-  import type { UserProfileInformation } from 'src/routes/users/[id].svelte';
+  import type { definitions } from '$lib/types/supabase';
 
-  export let userProfileInformation: UserProfileInformation;
+  export let avatar_url: definitions['users_facebook_places']['avatar_url'] =
+    '';
   let tab = 0;
 </script>
 
 <div
-  class="col-span-3 row-span-3 mx-2 flex w-72 flex-shrink-0 flex-col xl:mx-0 xl:w-full"
+  class="col-span-3 row-span-3 mx-2 flex flex-shrink-0 flex-col xl:mx-0 xl:w-full"
 >
   <div class="tabs w-full flex-grow-0">
     <button
@@ -35,32 +36,33 @@
   <!-- Begin Tab Page 0 -->
   {#if tab === 0}
     <div
-      class="bg-base-100 grid w-full flex-grow gap-3 rounded-xl rounded-tl-none p-6 shadow-xl"
+      class="grid w-full flex-grow gap-3 rounded-xl rounded-tl-none bg-base-100 p-6 shadow-xl"
     >
       <div class="flex items-center space-x-2">
         <div class="dropdown">
           <div tabindex="0">
-            <div class="online avatar">
+            <div class="avatar online">
               <div
-                class="mask mask-hexagon bg-base-content h-16 w-16 bg-opacity-10 p-px"
+                class="mask mask-hexagon h-16 w-16 bg-base-content bg-opacity-10 p-px"
               >
                 <img
-                  src={userProfileInformation.avatar_url}
+                  src={avatar_url}
                   alt="Avatar Tailwind CSS Component"
                   class="mask mask-hexagon"
+                  referrerpolicy="no-referrer"
                 />
               </div>
             </div>
           </div>
           <div tabindex="0" class="dropdown-content py-2">
             <div
-              class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
+              class="card compact rounded-box bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
                 <h2 class="card-title font-extrabold capitalize">
                   avatar component
                 </h2>
-                <p class="text-neutral-content text-sm text-opacity-80">
+                <p class="text-sm text-neutral-content text-opacity-80">
                   Use avatar component with any size
                 </p>
                 <div class="mt-4 flex justify-end">
@@ -75,22 +77,22 @@
         </div>
         <div>
           <div class="text-lg font-extrabold">Braden Wong</div>
-          <div class="text-base-content/70 text-sm">220 Followers</div>
+          <div class="text-sm text-base-content/70">220 Followers</div>
         </div>
       </div>
       <div class="dropdown">
         <div tabindex="0">
-          <div class="divider text-base-content/60 m-0">Reports</div>
+          <div class="divider m-0 text-base-content/60">Reports</div>
         </div>
         <div tabindex="0" class="dropdown-content py-2">
           <div
-            class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
+            class="card compact rounded-box bg-neutral-focus text-neutral-content shadow-xl"
           >
             <div class="card-body">
               <h2 class="card-title font-extrabold capitalize">
                 divider component
               </h2>
-              <p class="text-neutral-content text-sm text-opacity-80">
+              <p class="text-sm text-neutral-content text-opacity-80">
                 User divider component to visually separate items
               </p>
               <div class="mt-4 flex justify-end">
@@ -105,10 +107,10 @@
       </div>
       <div class="text-lg font-extrabold">Follower Report</div>
       <div class="grid gap-3">
-        <div class="dropdown dropdown-top">
+        <div class="dropdown-top dropdown">
           <div tabindex="0">
             <div class="flex items-center p-1">
-              <span class="text-base-content/70 w-48 text-xs"
+              <span class="w-48 text-xs text-base-content/70"
                 >Search Engines</span
               >
               <progress
@@ -118,7 +120,7 @@
               />
             </div>
             <div class="flex items-center p-1">
-              <span class="text-base-content/70 w-48 text-xs">Direct</span>
+              <span class="w-48 text-xs text-base-content/70">Direct</span>
               <progress
                 max="100"
                 class="progress progress-primary"
@@ -126,7 +128,7 @@
               />
             </div>
             <div class="flex items-center p-1">
-              <span class="text-base-content/70 w-48 text-xs">Social Media</span
+              <span class="w-48 text-xs text-base-content/70">Social Media</span
               >
               <progress
                 max="100"
@@ -135,11 +137,11 @@
               />
             </div>
             <div class="flex items-center p-1">
-              <span class="text-base-content/70 w-48 text-xs">Emails</span>
+              <span class="w-48 text-xs text-base-content/70">Emails</span>
               <progress max="100" class="progress progress-accent" value="90" />
             </div>
             <div class="flex items-center p-1">
-              <span class="text-base-content/70 w-48 text-xs">Ad campaigns</span
+              <span class="w-48 text-xs text-base-content/70">Ad campaigns</span
               >
               <progress
                 max="100"
@@ -150,13 +152,13 @@
           </div>
           <div tabindex="0" class="dropdown-content py-2">
             <div
-              class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
+              class="card compact rounded-box bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
                 <h2 class="card-title font-extrabold capitalize">
                   progress component
                 </h2>
-                <p class="text-neutral-content text-sm text-opacity-80">
+                <p class="text-sm text-neutral-content text-opacity-80">
                   Show progressbar, loadings or simple bar charts using progress
                   component
                 </p>
@@ -176,7 +178,7 @@
   <!-- Begin Tab Page 1 -->
   {#if tab === 1}
     <div
-      class="bg-base-100 text-base-content rounded-box col-span-3 row-span-3 mx-2 grid w-72 flex-shrink-0 items-stretch shadow-xl xl:mx-0 xl:w-auto xl:place-self-stretch"
+      class="rounded-box col-span-3 row-span-3 mx-2 grid flex-shrink-0 items-stretch bg-base-100 text-base-content shadow-xl xl:mx-0 xl:w-auto xl:place-self-stretch"
     >
       <div class="grid place-content-center gap-4 p-4">
         <div class="dropdown dropdown-end">
@@ -188,7 +190,7 @@
                 >
               </div>
               <div class="flex-none">
-                <button class="btn btn-primary btn-outline btn-sm mr-2"
+                <button class="btn btn-outline btn-primary btn-sm mr-2"
                   >Cancel</button
                 > <button class="btn btn-primary btn-sm">Apply</button>
               </div>
@@ -196,13 +198,13 @@
           </div>
           <div tabindex="0" class="dropdown-content py-2">
             <div
-              class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
+              class="card compact rounded-box bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
                 <h2 class="card-title font-extrabold capitalize">
                   alert component
                 </h2>
-                <p class="text-neutral-content text-sm text-opacity-80">
+                <p class="text-sm text-neutral-content text-opacity-80">
                   Show alerts, warnings, notification or other info
                 </p>
                 <div class="mt-4 flex justify-end">
@@ -215,7 +217,7 @@
             </div>
           </div>
         </div>
-        <div class="dropdown dropdown-end dropdown-top">
+        <div class="dropdown-top dropdown dropdown-end">
           <div tabindex="0">
             <div class="alert alert-info">
               <div class="flex-1">
@@ -226,13 +228,14 @@
                   fill="none"
                   viewBox="0 0 24 24"
                   class="mx-2 h-6 w-6 stroke-current"
-                  ><path
+                >
+                  <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  /></svg
-                >
+                  />
+                </svg>
                 <span class="text-sm"
                   >Lorem ipsum dolor sit amet, consectetur adip!</span
                 >
@@ -241,13 +244,13 @@
           </div>
           <div tabindex="0" class="dropdown-content py-2">
             <div
-              class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
+              class="card compact rounded-box bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
                 <h2 class="card-title font-extrabold capitalize">
                   alert component
                 </h2>
-                <p class="text-neutral-content text-sm text-opacity-80">
+                <p class="text-sm text-neutral-content text-opacity-80">
                   Show alerts, warnings, notification or other info
                 </p>
                 <div class="mt-4 flex justify-end">
@@ -260,7 +263,7 @@
             </div>
           </div>
         </div>
-        <div class="dropdown dropdown-end dropdown-top">
+        <div class="dropdown-top dropdown dropdown-end">
           <div tabindex="0">
             <div class="alert alert-success">
               <div class="flex-1">
@@ -271,13 +274,14 @@
                   fill="none"
                   viewBox="0 0 24 24"
                   class="mx-2 h-6 w-6 stroke-current"
-                  ><path
+                >
+                  <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
-                  /></svg
-                >
+                  />
+                </svg>
                 <span class="text-sm"
                   >Lorem ipsum dolor sit amet, consectetur adip!</span
                 >
@@ -286,13 +290,13 @@
           </div>
           <div tabindex="0" class="dropdown-content py-2">
             <div
-              class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
+              class="card compact rounded-box bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
                 <h2 class="card-title font-extrabold capitalize">
                   alert component
                 </h2>
-                <p class="text-neutral-content text-sm text-opacity-80">
+                <p class="text-sm text-neutral-content text-opacity-80">
                   Show alerts, warnings, notification or other info
                 </p>
                 <div class="mt-4 flex justify-end">
@@ -311,49 +315,49 @@
   <!-- Begin Tab Page 2 -->
   {#if tab === 2}
     <div
-      class="bg-base-100 rounded-box col-span-3 row-span-3 mx-2 flex w-72 flex-shrink-0 flex-col justify-center gap-4 p-4 shadow-xl xl:mx-0 xl:w-full"
+      class="rounded-box col-span-3 row-span-3 mx-2 flex flex-shrink-0 flex-col justify-center gap-4 bg-base-100 p-4 shadow-xl xl:mx-0 xl:w-full"
     >
       <div class="px-6 pt-6">
         <div class="text-xl font-extrabold">Superpower settings</div>
-        <div class="text-base-content/70 my-4 text-xs">
+        <div class="my-4 text-xs text-base-content/70">
           Enable your favorite superpowers. Terms and conditions apply
         </div>
         <div class="dropdown w-full flex-1">
           <div tabindex="0">
             <div class="form-control">
-              <label class="label cursor-pointer"
-                ><span class="label-text">Enable teleportation</span>
-                <input type="checkbox" class="toggle toggle-primary" /></label
-              >
+              <label class="label cursor-pointer">
+                <span class="label-text">Enable teleportation</span>
+                <input type="checkbox" class="toggle toggle-primary" />
+              </label>
             </div>
             <div class="form-control">
-              <label class="label cursor-pointer"
-                ><span class="label-text">Enable time travel</span>
-                <input type="checkbox" class="toggle toggle-secondary" /></label
-              >
+              <label class="label cursor-pointer">
+                <span class="label-text">Enable time travel</span>
+                <input type="checkbox" class="toggle toggle-secondary" />
+              </label>
             </div>
             <div class="form-control">
-              <label class="label cursor-pointer"
-                ><span class="label-text">Enable laser eyes</span>
-                <input type="checkbox" class="toggle toggle-accent" /></label
-              >
+              <label class="label cursor-pointer">
+                <span class="label-text">Enable laser eyes</span>
+                <input type="checkbox" class="toggle toggle-accent" />
+              </label>
             </div>
             <div class="form-control">
-              <label class="label cursor-pointer"
-                ><span class="label-text">Enable immortality</span>
-                <input type="checkbox" class="toggle" /></label
-              >
+              <label class="label cursor-pointer">
+                <span class="label-text">Enable immortality</span>
+                <input type="checkbox" class="toggle" />
+              </label>
             </div>
           </div>
           <div tabindex="0" class="dropdown-content py-2">
             <div
-              class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
+              class="card compact rounded-box bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
                 <h2 class="card-title font-extrabold capitalize">
                   toggle component
                 </h2>
-                <p class="text-neutral-content text-sm text-opacity-80">
+                <p class="text-sm text-neutral-content text-opacity-80">
                   Use toggle to switch between two states
                 </p>
                 <div class="mt-4 flex justify-end">
@@ -368,32 +372,33 @@
         </div>
       </div>
       <div class="form-control">
-        <div class="dropdown dropdown-top dropdown-end">
+        <div class="dropdown-top dropdown dropdown-end">
           <div tabindex="0">
-            <button class="btn btn-secondary btn-block space-x-2"
-              ><svg
+            <button class="btn btn-secondary btn-block space-x-2">
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 class="h-6 w-6 stroke-current"
-                ><path
+              >
+                <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                /></svg
-              > <span>Apply settings</span></button
-            >
+                />
+              </svg> <span>Apply settings</span>
+            </button>
           </div>
           <div tabindex="0" class="dropdown-content py-2">
             <div
-              class="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl"
+              class="card compact rounded-box bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
                 <h2 class="card-title font-extrabold capitalize">
                   button component
                 </h2>
-                <p class="text-neutral-content text-sm text-opacity-80">
+                <p class="text-sm text-neutral-content text-opacity-80">
                   Buttons come in various shapes, colors and sizes
                 </p>
                 <div class="mt-4 flex justify-end">

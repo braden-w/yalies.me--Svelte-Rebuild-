@@ -1,23 +1,11 @@
-import type { definitions } from '$lib/types/supabase';
+import { profileStore } from '$lib/stores/auth/profileStore';
+import type {definitionsJSON, Person, PersonFromFacebook} from '$lib/types/definitionsJSON';
+import { get } from 'svelte/store';
 
-interface Person {
-  id: string;
-  name: string;
-  avatar_url: string;
-}
 
-interface PersonFromFacebook {
-  email: string;
-  first_name: string;
-  middle_name: string;
-  last_name: string;
-  image: string;
-  year: number;
-}
-
-export function generateInnerHTML(place: definitions['places_with_people']) {
+export function generateInnerHTML(place: definitionsJSON['places_with_people']) {
   // Get 3 random people from the 'people' property of placeWithPeople
-  const people = place.people as unknown as (Person | PersonFromFacebook)[];
+  const people = place.people ?? [];
   /**The first three people who will be the icons in the stack on the map */
   const stackIcons = people
     .sort(() => 0.5 - Math.random())
@@ -44,7 +32,7 @@ export function generateInnerHTML(place: definitions['places_with_people']) {
 }
 
 /**Generates a stack of icons with three random people and an indicator in the top right for overall number of people at a location */
-function generateStackOfIcons({
+export function generateStackOfIcons({
   threeAvatars,
   indicator
 }: {
@@ -119,15 +107,21 @@ function generateHover({
   </ul>`;
 }
 
+function linkForUserProfile(person: Person | PersonFromFacebook): string {
+  // If person has no id, it must be from facebook
+  if (!(<Person>person).id)
+    return `/facebook/${(<PersonFromFacebook>person).email}`;
+  // If person's id matches the current user's id, return the current user's profile
+  if ((<Person>person).id === get(profileStore)?.id) return `/profile`;
+  // Otherwise, return the person's profile
+  return `/users/${(<Person>person).id}`;
+}
+
 function peopleToListItems(people: (Person | PersonFromFacebook)[]): string {
   return people
     .map(
       (person) => `<li>
-      <a class="content-center" href="${
-        (<Person>person).id
-          ? `/users/${(<Person>person).id}`
-          : `/facebook/${(<PersonFromFacebook>person).email}`
-      }">
+      <a class="content-center" href="${linkForUserProfile(person)}">
         <div class="avatar">
           <div class="w-8 rounded-lg">
             <img src="${

@@ -1,44 +1,35 @@
 <script lang="ts">
   import LocationAutoComplete from '$lib/components/LocationAutoComplete.svelte';
-  import { sessionStore } from '$lib/stores/sessionStore';
-  import type { UserProfileInformation } from 'src/routes/users/[id].svelte';
+  import { profileStore } from '$lib/stores/auth/profileStore';
+  import type { definitions } from '$lib/types/supabase';
+  import { get } from 'svelte/store';
 
-  export let userProfileInformation: UserProfileInformation;
+  export let userProfileInformation:
+    | definitions['users_facebook_places']
+    | null;
+  const isCurrentUser = userProfileInformation?.id === get(profileStore)?.id;
 </script>
 
 <div
-  class="bg-base-100 rounded-box col-span-3 row-span-3 mx-2 flex w-72 flex-shrink-0 flex-col justify-center gap-4 p-4 shadow-xl xl:mx-0 xl:w-full"
+  class="rounded-box  mx-2 flex flex-shrink-0 flex-col justify-center gap-4 bg-base-100 p-4 shadow-xl xl:mx-0 xl:w-full"
 >
   <div class="px-6 pt-6">
     <div class="text-xl font-extrabold">Where are you now?</div>
-    <div class="text-base-content/70 my-4 text-xs">
+    <div class="my-4 text-xs text-base-content/70">
       Enter your current city. For privacy, feel free to use a city that is in
       proximity rather than exact location.
     </div>
-    {#if userProfileInformation?.id === $sessionStore?.id}
-      <LocationAutoComplete />
-    {:else}
-      <div class="form-control">
-        <label class="label" for="location">
-          <span class="label-text">I'm currently in...</span>
-        </label>
-        <input
-          tabindex="0"
-          type="text"
-          id="location"
-          class="input input-bordered"
-          disabled
-          placeholder="Start typing your city here..."
-          bind:value={userProfileInformation.user_responses.places.description}
-        />./UserStatsInfoOptions.svelte./UserStatsInfoOptions.svelte
-      </div>
-    {/if}
+    <LocationAutoComplete
+      {isCurrentUser}
+      query={userProfileInformation?.description ?? ''}
+    />
   </div>
   <div class="form-control">
-    <button class="btn btn-secondary btn-block space-x-2">
+    <div class="divider" />
+    <a class="btn btn-secondary btn-block space-x-2" href="/map">
       <!-- Insert an svg of a map -->
       <svg
-        class="w-6 h-6"
+        class="h-6 w-6"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -53,6 +44,6 @@
         <circle cx="12" cy="10" r="3" />
       </svg>
       <span>Go to Map</span>
-    </button>
+    </a>
   </div>
 </div>
