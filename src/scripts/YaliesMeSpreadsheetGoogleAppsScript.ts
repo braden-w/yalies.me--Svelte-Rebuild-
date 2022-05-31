@@ -13,18 +13,18 @@ function myFunction() {
   Logger.log(data);
 
   // The following code is modified from https://stackoverflow.com/questions/17982546/google-script-json-into-google-sheet
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sheet = ss.getActiveSheet();
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = ss.getActiveSheet();
 
-  var dataSet = data
-  var rows = []
+  const dataSet = data
+  const rows = []
 
   for (i = 0; i < dataSet.length; i++) {
     const row = dataSet[i];
     rows.push([row.name, row.year, row.email, row.major, row.description, row.phone, row.instagram, row.linkedin]);
   }
 
-  dataRange = sheet.getRange(1, 1, rows.length, rows[0].length);
+  dataRange = sheet.getRange(2, 1, rows.length, rows[0].length);
   dataRange.setValues(rows);
 
 }
