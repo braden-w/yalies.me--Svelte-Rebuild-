@@ -11,7 +11,7 @@
     <div class="carousel-item">
       <div class="avatar">
         <div class="mask mask-squircle w-8">
-          <a href={`/users/${user.id}`}>
+          <a href={`#${user.id}`}>
             <img
               src={user.avatar_url}
               alt="Profile"
