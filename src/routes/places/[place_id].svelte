@@ -134,6 +134,33 @@
               src="https://api.lorem.space/image/furniture?w=250&h=180&hash=8B7BCDC2"
               class="rounded-box"
             />
+            <div class="card max-w-sm flex-shrink-0 bg-base-100  shadow-2xl">
+              <div class="card-body">
+                <div class="text-center">
+                  <div class="avatar mx-auto">
+                    <div class="w-28 rounded">
+                      <img
+                        src={user.avatar_url}
+                        alt="Profile"
+                        width="100%"
+                        height="100%"
+                        referrerpolicy="no-referrer"
+                      />
+                    </div>
+                  </div>
+                  <h1 class="text-2xl font-bold">
+                    {user.name}
+                  </h1>
+                  <p class="text-lg">Yale University</p>
+                </div>
+
+                <div class="form-control mt-6">
+                  <a href={`/users/${user.id}`} class="btn btn-primary">
+                    Go to Profile
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         {/each}
       </div>
