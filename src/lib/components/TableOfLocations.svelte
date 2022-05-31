@@ -1,12 +1,19 @@
 <script lang="ts">
-  import type { definitions } from '$lib/types/supabase';
+  import type { definitionsJSON } from '$lib/types/definitionsJSON';
 
   import { supabase } from '$lib/utils/supabaseClient';
 
   let promise = supabase
-    .from<definitions['places_with_people']>('places_with_people')
+    .from<definitionsJSON['places_with_people']>('places_with_people')
     .select('*')
     .not('people', 'is', null);
+  let people;
+  promise.then(
+    ({ data: places }) =>
+      (people = places.map((place) => {
+        return place.people;
+      }))
+  );
 </script>
 
 {#await promise}
@@ -18,7 +25,7 @@
       <tr>
         <th />
         <th>Name</th>
-        <th />
+        <th> People </th>
       </tr>
     </thead>
     <tbody>
@@ -30,6 +37,7 @@
               {index + 1}
             </th>
             <td> {place.description} </td>
+            <td> {place.people} </td>
             <th>
               <a
                 href={`/places/${place.place_id}`}
