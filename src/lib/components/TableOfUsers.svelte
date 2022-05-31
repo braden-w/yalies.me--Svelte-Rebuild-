@@ -20,7 +20,7 @@
   <tbody>
     <!-- row 1 -->
     {#each users as user, index}
-      <tr class="hover">
+      <tr class="hover" id={user.id}>
         <th>
           {index + 1}
         </th>
