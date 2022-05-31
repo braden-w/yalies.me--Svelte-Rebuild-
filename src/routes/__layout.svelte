@@ -56,12 +56,14 @@
       user
     );
     if (user) $authLoadingStore = false;
-    syncProfileDataToSupabaseAndStore(user);
+    const payload: definitionsJSON['users'] | null = processAuthState(user);
+    syncProfileDataToSupabaseAndStore(payload);
   });
 
-  async function syncProfileDataToSupabaseAndStore(user: User | null) {
+  async function syncProfileDataToSupabaseAndStore(
+    payload: definitionsJSON['users'] | null
+  ) {
     // Save profile data to session store
-    const payload: definitionsJSON['users'] | null = processAuthState(user);
     if (!payload) return;
     try {
       // Upload profile data from profileStore to 'users' database
