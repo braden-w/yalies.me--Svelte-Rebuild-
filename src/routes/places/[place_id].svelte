@@ -143,10 +143,12 @@
           <ProfileIcon />
           Edit My Profile</a
         >
-        <a href="/map" class="btn btn-primary"><MapIcon /> Map</a>
-        <a href="/locations" class="btn btn-primary">
-          <LocationsListIcon /> Locations</a
-        >
+        <div class="grid grid-flow-row grid-cols-2 md:grid-cols-2">
+          <a href="/map" class="btn btn-ghost"><MapIcon /> Map</a>
+          <a href="/locations" class="btn btn-ghost">
+            <LocationsListIcon /> Locations</a
+          >
+        </div>
       </div>
     </div>
   </div>
