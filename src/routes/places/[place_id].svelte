@@ -143,12 +143,12 @@
           <ProfileIcon />
           Edit My Profile</a
         >
-        <div class="flex flex-row">
-          <a href="/map" class="btn btn-ghost shrink grow basis-0">
+        <div class="flex flex-row mt-4">
+          <a href="/map" class="btn btn-ghost btn-xs shrink grow basis-0">
             <MapIcon /> Map
           </a>
           <div class="divider divider-horizontal" />
-          <a href="/locations" class="btn btn-ghost shrink grow basis-0">
+          <a href="/locations" class="btn btn-ghost btn-xs shrink grow basis-0">
             <LocationsListIcon /> Locations
           </a>
         </div>
