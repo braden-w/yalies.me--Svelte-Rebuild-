@@ -30,7 +30,7 @@
         Loading...
       {:then { data: places }}
         {#if places}
-          {#each [...places, ...places, ...places] as place}
+          {#each places as place}
             <li>
               <a href={`/places/${place.place_id}`}>
                 {@html generateStackOfIcons({
@@ -50,24 +50,25 @@
   </div>
 
   <div class="form-control">
-    <a class="btn btn-secondary btn-block space-x-2" href="/map">
-      <!-- Insert an svg of a map -->
+    <!-- <div class="divider" /> -->
+    <a class="btn btn-secondary btn-block space-x-2" href="/Locations">
+      <!-- Insert an svg of a list of Locations -->
       <svg
+        xmlns="http://www.w3.org/2000/svg"
         class="h-6 w-6"
         fill="none"
-        stroke="currentColor"
         viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+        stroke="currentColor"
+        stroke-width="2"
       >
         <path
           stroke-linecap="round"
           stroke-linejoin="round"
-          stroke-width="2"
-          d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"
+          d="M4 6h16M4 10h16M4 14h16M4 18h16"
         />
-        <circle cx="12" cy="10" r="3" />
       </svg>
-      <span>Go to Map</span>
+
+      <span>Go to Locations</span>
     </a>
   </div>
 </div>
