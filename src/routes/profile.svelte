@@ -33,15 +33,15 @@
         <!-- <UserAvatarsRow {userProfileInformation} /> -->
       </div>
       <!-- Cell 3 -->
-      <div class="col-span-4 row-span-3 lg:col-span-3">
+      <div class="col-span-4 row-span-3 xl:col-span-3">
         <UserLocationCard bind:userProfileInformation={$profileStore} />
       </div>
       <!-- Cell 4 -->
-      <div class="col-span-4 row-span-3 lg:col-span-3">
+      <div class="col-span-4 row-span-3 xl:col-span-3">
         <ListOfLocations />
       </div>
       <!-- Cell 5 -->
-      <div class="col-span-4 row-span-6 lg:col-span-6">
+      <div class="col-span-4 row-span-6 xl:col-span-6">
         <UserResponsesCard bind:userProfileInformation={$profileStore} />
       </div>
       <!-- <div class="col-span-2 row-span-3"> -->
