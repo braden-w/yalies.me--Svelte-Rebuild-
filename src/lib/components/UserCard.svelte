@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { profileStore } from '$lib/stores/auth/profileStore';
+
   import type { definitions } from '$lib/types/supabase';
 
   export let avatar_url: definitions['users_facebook_places']['avatar_url'] =
@@ -6,6 +8,8 @@
   export let name: definitions['users_facebook_places']['name'] = '';
   export let major: definitions['users_facebook_places']['major'] = '';
   export let school: definitions['users_facebook_places']['school'] = '';
+  /** Set this to true if this userCard refers to the currrent logged in user */
+  export let isCurrentUser: boolean;
 </script>
 
 <div
@@ -16,7 +20,7 @@
       class="mask mask-squircle h-24 w-24 bg-base-content bg-opacity-10 p-px"
     >
       <img
-        src={avatar_url}
+        src={isCurrentUser ? $profileStore?.avatar_url : avatar_url}
         alt="Avatar Tailwind CSS Component"
         class="mask mask-squircle"
         referrerpolicy="no-referrer"
@@ -29,14 +33,14 @@
   <div>
     <div class="text-center">
       <div class="text-lg font-extrabold">
-        {name}
+        {isCurrentUser ? $profileStore?.name : name}
       </div>
       <div class="my-3 text-sm text-base-content/70">
-        {major}
+        {isCurrentUser ? $profileStore?.major : major}
         <br />
         Yale University
         <br />
-        {school}
+        {isCurrentUser ? $profileStore?.school : school}
         <br />
         Student
       </div>
