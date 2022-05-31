@@ -142,6 +142,14 @@
 </div>
 <div class="hero min-h-screen bg-base-100">
   <div class="hero-content w-full flex-row flex-wrap">
+    <div class="w-full">
+      <h1 class="text-5xl font-bold">
+        Users in {placeInformation.description}
+      </h1>
+      <p class="py-6">
+        {placeInformation.users_in_place.length} users currently in {placeInformation.description}
+      </p>
+    </div>
     <div class="w-full overflow-x-auto">
       <TableOfUsers users={placeInformation.users_in_place} />
     </div>
