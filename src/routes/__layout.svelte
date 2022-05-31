@@ -42,7 +42,7 @@
   }
 
   // Handle login state once supabase changes kick in
-  supabase.auth.onAuthStateChange(async (_, loggedIn) => {
+  supabase.auth.onAuthStateChange((_, loggedIn) => {
     // If logout
     if (!loggedIn) {
       $profileStore = null;
@@ -56,7 +56,10 @@
       user
     );
     if (user) $authLoadingStore = false;
+    syncProfileDataToStoreAndSupabase(user);
+  });
 
+  async function syncProfileDataToStoreAndSupabase(user: User | null) {
     // Save profile data to session store
     const payload: definitionsJSON['users'] | null = processAuthState(user);
     if (!payload) return;
@@ -78,7 +81,7 @@
       refreshProfileStore(payload.id);
       // goto('/profile');
     }
-  });
+  }
 
   /** Get everything before the @ of the email */
   function getUserFromEmail(email: string): string {
