@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { sessionStore } from '$lib/stores/sessionStore';
+  import { profileStore } from '$lib/stores/auth/profileStore';
   import {
     setUserLocation,
     resetUserLocation,
     userLocationStore,
     refreshUserLocation
-  } from '$lib/utils/getUserLocation';
+  } from '$lib/stores/UserLocationStore';
   import type { PlaceInformation } from 'src/routes/places/[place_id].svelte';
   import { createEventDispatcher } from 'svelte';
   import { get } from 'svelte/store';
@@ -13,21 +13,18 @@
   export let placeInformation: PlaceInformation;
 
   /** Is the current logged in user in this location? */
-  const userInPlace = placeInformation.users_in_place
+  const isCurrentUserInPlace: boolean = placeInformation.users_in_place
     .map((user) => user.id)
-    .includes($sessionStore?.id as string);
+    .includes($profileStore?.id as string);
 
-  let checked = userInPlace;
+  // Check if the user is in the place
+  let checked = isCurrentUserInPlace;
 
   /** Old location, which the user will reset to */
-  let oldPlace = get(userLocationStore);
-  refreshUserLocation().then(() => {
-    oldPlace = get(userLocationStore);
-    console.log(
-      '🚀 ~ file: PlaceCheckbox.svelte ~ line 25 ~ oldPlace',
-      oldPlace
-    );
-  });
+  const oldPlace = {
+    place_id: $profileStore?.place_id,
+    description: $profileStore?.description
+  };
 
   $: handleToggleUserLocation(checked);
   const dispatch = createEventDispatcher();
@@ -43,12 +40,12 @@
         placeInformation.place_id
       );
     } else {
-      if (oldPlace?.places.place_id === placeInformation.place_id)
+      if (oldPlace.place_id === placeInformation.place_id)
         await resetUserLocation();
       else
         await setUserLocation(
-          oldPlace?.places.place_id as string,
-          oldPlace?.places.description as string
+          oldPlace.place_id as string,
+          oldPlace.description as string
         );
     }
     dispatch('toggled');

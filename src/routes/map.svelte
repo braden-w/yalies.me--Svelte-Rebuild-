@@ -92,7 +92,7 @@
         });
 
       const scalePercent = (
-        defaultPxSize = 40,
+        defaultPxSize = 32,
         defaultZoom = 3,
         scaleFactor = 0.1
       ) => {
@@ -129,4 +129,4 @@
 </svelte:head>
 
 <!-- Init mapbox -->
-<div id="map" class="w-full h-screen-nav" />
+<div id="map" class="h-screen-nav w-full" />
