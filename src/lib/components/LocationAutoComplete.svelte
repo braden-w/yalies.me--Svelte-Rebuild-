@@ -124,7 +124,7 @@
       tabindex="0"
     >
       {#each results as result}
-        <li on:click={handleClick(result)}>
+        <li on:click={() => handleClick(result)}>
           <button>
             {result.description}
           </button>
