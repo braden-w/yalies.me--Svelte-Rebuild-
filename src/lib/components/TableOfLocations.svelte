@@ -7,14 +7,6 @@
     .from<definitionsJSON['places_with_people']>('places_with_people')
     .select('*')
     .not('people', 'is', null);
-  function getPeopleNameAndAvatarURL(
-    place: definitionsJSON['places_with_people']
-  ) {
-    return place.people?.map((person) => ({
-      name: (<Person>person).name,
-      avatar_url: (<Person>person).avatar_url
-    }));
-  }
 </script>
 
 <table class="table w-full">
