@@ -6,10 +6,7 @@
     uploadUserPlaceSelectionToSupabase,
     type Payload
   } from '$lib/components/LocationAutoComplete';
-  import {
-    refreshUserLocation,
-    userLocationStore
-  } from '$lib/stores/UserLocationStore';
+  import { refreshUserLocation } from '$lib/stores/UserLocationStore';
 
   export let isCurrentUser: boolean;
   export let query = '';
