@@ -1,4 +1,6 @@
 <script lang="ts">
+  import UserSocials from '$lib/components/UserSocials.svelte';
+
   import type { PlaceInformation } from 'src/routes/places/[place_id].svelte';
 
   export let users: PlaceInformation['users_in_place'];
@@ -14,7 +16,7 @@
         </label>
       </th>
       <th>Name</th>
-      <th>Job</th>
+      <th>College</th>
       <th>Favorite Color</th>
       <th />
     </tr>
@@ -46,11 +48,12 @@
           </div>
         </td>
         <td>
-          Zemlak, Daniel and Leannon
-          <br />
-          <span class="badge badge-sm badge-ghost"
-            >Desktop Support Technician</span
-          >
+          <UserSocials userProfileInformation={user} />
+          {#if user?.school || user?.college}
+            {[user?.school, user?.college].join(', ')}
+            <br />
+          {/if}
+          <span class="badge badge-sm badge-ghost">{user?.major}</span>
         </td>
         <td>Purple</td>
         <th>
