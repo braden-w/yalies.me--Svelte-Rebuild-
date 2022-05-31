@@ -124,7 +124,7 @@
     <div class="text-center">
       <h1 class="text-5xl font-bold">{placeInformation.description}</h1>
       <p class="py-6">
-        Users currently in {placeInformation.description}
+        {placeInformation.users_in_place.length} users currently in {placeInformation.description}
       </p>
       <!-- Add a carousel with users -->
       <CarouselOfUsers users={placeInformation.users_in_place} />
