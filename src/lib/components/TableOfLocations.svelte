@@ -19,6 +19,7 @@
       <th />
       <th>Name</th>
       <th> People </th>
+      <th />
     </tr>
   </thead>
   <tbody>
