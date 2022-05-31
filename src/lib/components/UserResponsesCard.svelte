@@ -34,13 +34,13 @@
       name: 'major',
       label: 'Major',
       icon: MajorIcon,
-      value: major
+      value: major ?? ''
     },
     {
       name: 'phone',
       label: 'Phone',
       icon: PhoneIcon,
-      value: phone
+      value: phone ?? ''
     }
   ];
   export let userIntegrations = [
@@ -48,39 +48,39 @@
       name: 'interests',
       label: 'Interests',
       icon: InterestsIcon,
-      value: interests
+      value: interests ?? ''
     },
     {
       name: 'instagram',
       label: 'Instagram',
       icon: InstagramIcon,
-      value: instagram
+      value: instagram ?? ''
     },
     {
       name: 'linkedin',
       label: 'Linkedin',
       icon: LinkedInIcon,
-      value: linkedin
+      value: linkedin ?? ''
     },
     {
       name: 'expression',
       label: 'Spotify',
       icon: SpotifyIcon,
-      value: expression
+      value: expression ?? ''
     }
   ];
 
   async function applySettings(
     responsesList = [...inputsList, ...userIntegrations]
   ) {
-    let payload: definitions['user_responses'] = responsesList.reduce(function (
-      map,
-      obj
-    ) {
-      map[obj.name] = obj.value;
-      return map;
-    },
-    {});
+    let accumulator: { [key: string]: string; user_response_id: string } = {
+      user_response_id: $profileStore?.user_response_id ?? ''
+    };
+    let payload: definitions['user_responses'] = responsesList.reduce(
+      (obj, item) => ((obj[item.name] = item.value), obj),
+      accumulator
+    );
+
     // Upload payload to the database
     await uploadUserResponses(payload);
   }
