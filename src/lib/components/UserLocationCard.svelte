@@ -1,5 +1,5 @@
 <script lang="ts">
-  import MapIcon from './MapIcon.svelte';
+  import MapIcon from './icons/MapIcon.svelte';
 
   import LocationAutoComplete from '$lib/components/LocationAutoComplete.svelte';
   import { profileStore } from '$lib/stores/auth/profileStore';
