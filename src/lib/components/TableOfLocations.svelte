@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { definitionsJSON, Person } from '$lib/types/definitionsJSON';
+  import type { definitionsJSON } from '$lib/types/definitionsJSON';
 
   import { supabase } from '$lib/utils/supabaseClient';
 
@@ -7,8 +7,13 @@
     .from<definitionsJSON['places_with_people']>('places_with_people')
     .select('*')
     .not('people', 'is', null);
-  function getPeopleNames(place: definitionsJSON['places_with_people']) {
-    return place.people?.map((person) => (<Person>person).name);
+  function getPeopleNameAndAvatarURL(
+    place: definitionsJSON['places_with_people']
+  ) {
+    return place.people?.map((person) => ({
+      name: (<Person>person).name,
+      avatar_url: (<Person>person).avatar_url
+    }));
   }
 </script>
 
@@ -34,7 +39,22 @@
               {index + 1}
             </th>
             <td> {place.description} </td>
-            <td> {getPeopleNames(place)} </td>
+            <td>
+              <div class="avatar-group -space-x-6">
+                {#each getPeopleNameAndAvatarURL(place) as { name, avatar_url }}
+                  <div class="avatar w-8">
+                    <img src={avatar_url} alt={name} />
+                  </div>
+                {/each}
+                <div class="avatar placeholder">
+                  <div class="w-12 bg-neutral-focus text-neutral-content">
+                    <span>+99</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- {getPeopleNames(place)} -->
+            </td>
             <th>
               <a
                 href={`/places/${place.place_id}`}
