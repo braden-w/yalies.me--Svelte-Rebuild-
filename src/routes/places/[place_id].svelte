@@ -104,7 +104,7 @@
   async function refreshUsersInPlace() {
     const { data: users_in_place, error } = await supabase
       .from<definitions['users_facebook_places']>('users_facebook_places')
-      .select('selectQuery')
+      .select(selectQuery)
       .eq('place_id', placeInformation.place_id);
     if (error) console.log(error);
     placeInformation.users_in_place = users_in_place!;
