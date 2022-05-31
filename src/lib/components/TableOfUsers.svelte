@@ -48,14 +48,13 @@
           </div>
         </td>
         <td>
-          <UserSocials userProfileInformation={user} />
           {#if user?.school || user?.college}
             {[user?.school, user?.college].join(', ')}
             <br />
           {/if}
           <span class="badge badge-sm badge-ghost">{user?.major}</span>
         </td>
-        <td>Purple</td>
+        <td> <UserSocials userProfileInformation={user} /></td>
         <th>
           <a href={`/users/${user.id}`} class="btn btn-ghost btn-xs">
             details
