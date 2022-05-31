@@ -74,6 +74,10 @@
 <div class="hero min-h-screen bg-base-100">
   <div class="hero-content w-full flex-row flex-wrap">
     <div class="w-full overflow-x-auto">
+      <div class="w-full">
+        <h1 class="text-5xl font-bold">Locations</h1>
+        <p class="py-6">There are currently a lot of locations!</p>
+      </div>
       <TableOfLocations />
     </div>
   </div>
