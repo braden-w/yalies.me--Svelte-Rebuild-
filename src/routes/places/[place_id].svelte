@@ -130,10 +130,6 @@
       >
         {#each placeInformation.users_in_place as user}
           <div class="carousel-item">
-            <img
-              src="https://api.lorem.space/image/furniture?w=250&h=180&hash=8B7BCDC2"
-              class="rounded-box"
-            />
             <div class="card w-36 bg-base-100 shadow-xl">
               <figure>
                 <img
@@ -148,7 +144,6 @@
                   <h1 class="card-title">
                     {user.name}
                   </h1>
-                  <p class="text-lg">Yale University</p>
                 </div>
 
                 <div class="form-control mt-6">
