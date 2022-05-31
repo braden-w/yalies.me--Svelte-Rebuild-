@@ -32,23 +32,14 @@
       >
         <!-- Cell 1 -->
         <div class="col-span-1 row-span-2">
-          <UserCard bind:userProfileInformation={$profileStore}/>
+          <UserCard bind:userProfileInformation={$profileStore} />
         </div>
         <div class="col-span-1 row-span-1">
-          <UserSocials
-            email={userProfileInformation?.email}
-            phone={userProfileInformation?.phone}
-            expression={userProfileInformation?.expression}
-            instagram={userProfileInformation?.instagram}
-            linkedin={userProfileInformation?.linkedin}
-          />
+          <UserSocials bind:userProfileInformation={$profileStore} />
         </div>
         <!-- Cell 2 -->
         <div class="col-span-1 row-span-3">
-          <UserLocationCard
-            id={userProfileInformation?.id}
-            description={userProfileInformation?.description}
-          />
+          <UserLocationCard bind:userProfileInformation={$profileStore} />
           <!-- <UserAvatarsRow {userProfileInformation} /> -->
         </div>
         <!-- Cell 3 -->
@@ -57,15 +48,7 @@
         </div>
         <!-- Cell 4 -->
         <div class="col-span-3 row-span-6">
-          <UserResponsesCard
-            interests={userProfileInformation?.interests}
-            major={userProfileInformation?.major}
-            phone={userProfileInformation?.phone}
-            expression={userProfileInformation?.expression}
-            instagram={userProfileInformation?.instagram}
-            linkedin={userProfileInformation?.linkedin}
-            isCurrentUser={true}
-          />
+          <UserResponsesCard bind:userProfileInformation={$profileStore} />
         </div>
         <!-- Cell 5 -->
         <!-- <div class="col-span-2 row-span-3"> -->

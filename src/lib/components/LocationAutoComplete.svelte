@@ -11,7 +11,9 @@
     userLocationStore
   } from '$lib/stores/UserLocationStore';
 
-  let query = '';
+  export let isCurrentUser: boolean;
+  export let query = '';
+
   $: isQueryLongEnough = query.length >= 2;
 
   let results: google.maps.places.AutocompletePrediction[] = defaultResults;
@@ -107,7 +109,7 @@
 
 <!-- A Location Autocomplete built with DaisyUI that uses the Google Map Places API to autocomplete the location as the user is typing -->
 
-<div class="dropdown dropdown-top w-full">
+<div class="dropdown-top dropdown w-full">
   <div class="form-control">
     <label class="label" for="location">
       <span class="label-text">I'm currently in...</span>
@@ -117,7 +119,7 @@
       type="text"
       id="location"
       class="input input-bordered"
-      placeholder="Start typing your city here..."
+      placeholder={isCurrentUser ? 'Start typing your city here...' : 'n/a'}
       bind:value={query}
     />
   </div>

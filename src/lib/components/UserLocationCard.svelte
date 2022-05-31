@@ -2,10 +2,12 @@
   import LocationAutoComplete from '$lib/components/LocationAutoComplete.svelte';
   import { profileStore } from '$lib/stores/auth/profileStore';
   import type { definitions } from '$lib/types/supabase';
+  import { get } from 'svelte/store';
 
-  export let id: definitions['users_facebook_places']['id'] = '';
-  export let description: definitions['users_facebook_places']['description'] =
-    '';
+  export let userProfileInformation:
+    | definitions['users_facebook_places']
+    | null;
+  const isCurrentUser = userProfileInformation?.id === get(profileStore)?.id;
 </script>
 
 <div
@@ -17,24 +19,10 @@
       Enter your current city. For privacy, feel free to use a city that is in
       proximity rather than exact location.
     </div>
-    {#if id === $profileStore?.id}
-      <LocationAutoComplete />
-    {:else}
-      <div class="form-control">
-        <label class="label" for="location">
-          <span class="label-text">I'm currently in...</span>
-        </label>
-        <input
-          tabindex="0"
-          type="text"
-          id="location"
-          class="input input-bordered"
-          disabled
-          placeholder="Start typing your city here..."
-          bind:value={description}
-        />
-      </div>
-    {/if}
+    <LocationAutoComplete
+      {isCurrentUser}
+      query={userProfileInformation?.description}
+    />
   </div>
   <div class="form-control">
     <div class="divider" />

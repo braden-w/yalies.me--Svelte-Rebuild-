@@ -43,11 +43,11 @@
         <UserCard {userProfileInformation} />
       </div>
       <div class="col-span-1 row-span-1">
-        <UserSocials {...userProfileInformation} />
+        <UserSocials {userProfileInformation} />
       </div>
       <!-- Cell 2 -->
       <div class="col-span-1 row-span-3">
-        <UserLocationCard {...userProfileInformation} />
+        <UserLocationCard {userProfileInformation} />
         <!-- <UserAvatarsRow {userProfileInformation} /> -->
       </div>
       <!-- Cell 3 -->
@@ -56,7 +56,7 @@
       </div>
       <!-- Cell 4 -->
       <div class="col-span-3 row-span-6">
-        <UserResponsesCard {...userProfileInformation} isCurrentUser={false} />
+        <UserResponsesCard {userProfileInformation} />
       </div>
       <!-- Cell 5 -->
       <!-- <div class="col-span-2 row-span-3"> -->

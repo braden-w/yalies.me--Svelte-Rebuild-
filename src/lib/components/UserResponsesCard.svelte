@@ -12,17 +12,16 @@
     profileStore,
     uploadUserResponses
   } from '$lib/stores/auth/profileStore';
+  import { get } from 'svelte/store';
   import type { definitions } from '$lib/types/supabase';
 
-  export let major: definitions['users_facebook_places']['major'] = '';
-  export let phone: definitions['users_facebook_places']['phone'] = '';
-  export let interests: definitions['users_facebook_places']['interests'] = '';
-  export let instagram: definitions['users_facebook_places']['instagram'] = '';
-  export let linkedin: definitions['users_facebook_places']['linkedin'] = '';
-  export let expression: definitions['users_facebook_places']['expression'] =
-    '';
+  export let userProfileInformation:
+    | definitions['users_facebook_places']
+    | null;
+
   /** Set this to true if this userCard refers to the currrent logged in user */
-  export let isCurrentUser: boolean;
+  export let isCurrentUser =
+    userProfileInformation?.id === get(profileStore)?.id;
   const inputsList = [
     {
       name: 'university',
@@ -34,13 +33,13 @@
       name: 'major',
       label: 'Major',
       icon: MajorIcon,
-      value: major ?? ''
+      value: userProfileInformation?.major ?? ''
     },
     {
       name: 'phone',
       label: 'Phone',
       icon: PhoneIcon,
-      value: phone ?? ''
+      value: userProfileInformation?.phone ?? ''
     }
   ];
   const userIntegrations = [
@@ -48,25 +47,25 @@
       name: 'interests',
       label: 'Interests',
       icon: InterestsIcon,
-      value: interests ?? ''
+      value: userProfileInformation?.interests ?? ''
     },
     {
       name: 'instagram',
       label: 'Instagram',
       icon: InstagramIcon,
-      value: instagram ?? ''
+      value: userProfileInformation?.instagram ?? ''
     },
     {
       name: 'linkedin',
       label: 'Linkedin',
       icon: LinkedInIcon,
-      value: linkedin ?? ''
+      value: userProfileInformation?.linkedin ?? ''
     },
     {
       name: 'expression',
       label: 'Spotify',
       icon: SpotifyIcon,
-      value: expression ?? ''
+      value: userProfileInformation?.expression ?? ''
     }
   ];
 

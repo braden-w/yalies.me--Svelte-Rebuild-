@@ -7,20 +7,20 @@
 
   import type { definitions } from '$lib/types/supabase';
 
-  export let email: definitions['users_facebook_places']['email'] = '';
-  export let phone: definitions['users_facebook_places']['phone'] = '';
-  export let expression: definitions['users_facebook_places']['expression'] =
-    '';
-  export let instagram: definitions['users_facebook_places']['instagram'] = '';
-  export let linkedin: definitions['users_facebook_places']['linkedin'] = '';
+  export let userProfileInformation:
+    | definitions['users_facebook_places']
+    | null;
 </script>
 
 <div
   class="rounded-box w-72 place-items-center items-center gap-4 bg-base-100 p-4 py-8 shadow-xl xl:mx-0 xl:w-full"
 >
   <div class="mt-2 text-center">
-    {#if email}
-      <a class="btn btn-circle btn-sm" href={`mailto:${email}`}>
+    {#if userProfileInformation?.email}
+      <a
+        class="btn btn-circle btn-sm"
+        href={`mailto:${userProfileInformation?.email}`}
+      >
         <!-- Make an svg email icon -->
         <svg
           class="h-6 w-6"
@@ -38,8 +38,11 @@
         </svg>
       </a>
     {/if}
-    {#if phone}
-      <a class="btn btn-circle btn-sm" href={`sms:${phone}`}>
+    {#if userProfileInformation?.phone}
+      <a
+        class="btn btn-circle btn-sm"
+        href={`sms:${userProfileInformation?.phone}`}
+      >
         <!-- Make a svg phone icon -->
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -58,24 +61,32 @@
       </a>
     {/if}
 
-    {#if expression}
-      <a class="btn btn-circle btn-sm" target="_blank" href={expression}>
+    {#if userProfileInformation?.expression}
+      <a
+        class="btn btn-circle btn-sm"
+        target="_blank"
+        href={userProfileInformation?.expression}
+      >
         <!-- Make a Green Spotify Icon -->
         <SpotifyIcon />
       </a>
     {/if}
-    {#if instagram}
+    {#if userProfileInformation?.instagram}
       <a
         class="btn btn-circle btn-sm"
         target="_blank"
-        href={`https://www.instagram.com/${instagram}/`}
+        href={`https://www.instagram.com/${userProfileInformation?.instagram}/`}
       >
         <!-- Make an Instagram SVG Icon -->
         <InstagramIcon />
       </a>
     {/if}
-    {#if linkedin}
-      <a class="btn btn-circle btn-sm" target="_blank" href={linkedin}>
+    {#if userProfileInformation?.linkedin}
+      <a
+        class="btn btn-circle btn-sm"
+        target="_blank"
+        href={userProfileInformation?.linkedin}
+      >
         <!-- Make an LinkedIn SVG Icon -->
         <LinkedInIcon />
       </a>
