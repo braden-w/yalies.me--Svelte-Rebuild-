@@ -79,9 +79,7 @@
       <div class="form-control">
         <label class="label" for={name}>
           <span class="label-text">{label}</span>
-          <button class="btn btn-primary btn-circle btn-xs">
-            <svelte:component this={icon} />
-          </button>
+          <svelte:component this={icon} />
         </label>
         <input
           tabindex="0"
@@ -101,9 +99,7 @@
       <div class="form-control">
         <label class="label" for={name}>
           <span class="label-text">{label}</span>
-          <button class="btn btn-primary btn-circle btn-xs">
-            <svelte:component this={icon} />
-          </button>
+          <svelte:component this={icon} />
         </label>
         <input
           tabindex="0"
