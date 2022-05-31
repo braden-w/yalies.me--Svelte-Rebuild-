@@ -97,7 +97,7 @@
 </script>
 
 <script lang="ts">
-  import ProfileIcon from '../../lib/components/icons/ProfileIcon.svelte';
+  import ProfileIcon from '../../lib/components/icons/EditProfileIcon.svelte';
 
   import CarouselOfUsers from '../../lib/components/CarouselOfUsers.svelte';
 
