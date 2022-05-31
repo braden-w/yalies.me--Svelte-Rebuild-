@@ -57,12 +57,12 @@
     );
     if (user) $authLoadingStore = false;
     const payload: definitionsJSON['users'] | null = processAuthState(user);
-    syncProfileDataToSupabaseAndStore(payload);
+    uploadProfileDataToSupabase(payload);
     refreshProfileStore(payload?.id);
   });
 
   /** Upload profile data from profileStore to 'users' database */
-  async function syncProfileDataToSupabaseAndStore(
+  async function uploadProfileDataToSupabase(
     payload: definitionsJSON['users'] | null
   ) {
     if (!payload) return;
