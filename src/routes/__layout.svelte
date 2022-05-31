@@ -58,15 +58,15 @@
     if (user) $authLoadingStore = false;
     const payload: definitionsJSON['users'] | null = processAuthState(user);
     syncProfileDataToSupabaseAndStore(payload);
+    refreshProfileStore(payload?.id);
   });
 
+  /** Upload profile data from profileStore to 'users' database */
   async function syncProfileDataToSupabaseAndStore(
     payload: definitionsJSON['users'] | null
   ) {
-    // Save profile data to session store
     if (!payload) return;
     try {
-      // Upload profile data from profileStore to 'users' database
       const { data, error } = await supabase
         .from<definitionsJSON['users']>('users')
         .upsert(payload);
@@ -79,9 +79,6 @@
       if ((error as ApiError).message) {
         alert((error as ApiError).message);
       }
-    } finally {
-      refreshProfileStore(payload.id);
-      // goto('/profile');
     }
   }
 
