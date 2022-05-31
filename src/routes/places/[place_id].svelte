@@ -126,7 +126,7 @@
   />
 </svelte:head>
 
-<div class="hero bg-base-200 text-base-content">
+<div class="h-screen-nav-buttons hero bg-base-200 text-base-content">
   <div class="hero-content flex-col py-48">
     <div class="text-center">
       <h1 class="text-5xl font-bold">{placeInformation.description}</h1>
@@ -171,3 +171,9 @@
     </div>
   </div>
 </div>
+
+<style>
+  .h-screen-nav-buttons {
+    height: calc(100vh - 8rem);
+  }
+</style>
