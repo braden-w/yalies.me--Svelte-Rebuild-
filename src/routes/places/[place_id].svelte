@@ -126,7 +126,7 @@
   />
 </svelte:head>
 
-<div class="flex flex-row">
+<div class="flex flex-row justify-between bg-base-200">
   <a href="/map" class="btn btn-ghost btn-xs shrink grow basis-0">
     <MapIcon /> Map
   </a>
