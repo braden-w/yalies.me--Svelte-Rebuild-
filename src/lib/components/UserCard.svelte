@@ -1,9 +1,9 @@
 <script lang="ts">
   import UserSocials from '$lib/components/UserSocials.svelte';
-  import type { definitions } from '$lib/types/supabase';
+  import type { definitionsJSON } from '$lib/types/definitionsJSON';
 
   export let userProfileInformation:
-    | definitions['users_facebook_places']
+    | definitionsJSON['users_facebook_places']
     | null;
 </script>
 
@@ -55,7 +55,7 @@
         <button class="btn btn-accent btn-sm">Follow</button>
         <button
           aria-label="button component"
-          class="btn btn-accent btn-square btn-sm"
+          class="btn btn-square btn-accent btn-sm"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

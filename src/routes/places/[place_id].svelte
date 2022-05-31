@@ -1,14 +1,14 @@
 <script context="module" lang="ts">
-  import type { definitions } from '$lib/types/supabase';
+  import type { definitionsJSON } from '$lib/types/definitionsJSON';
 
   import { supabase } from '$lib/utils/supabaseClient';
 
   export interface PlaceInformation {
     place_id: string;
     description: string;
-    users_in_place: definitions['users_facebook_places'][];
+    users_in_place: definitionsJSON['users_facebook_places'][];
   }
-  const desiredColumns: (keyof definitions['users_facebook_places'])[] = [
+  const desiredColumns: (keyof definitionsJSON['users_facebook_places'])[] = [
     'id',
     'name',
     'avatar_url',
@@ -18,7 +18,10 @@
   const selectQuery = '*';
   /** Function that matches query by place_id, description, and finally fuzzy description */
   async function getUsersInPlace(query: string): Promise<
-    | { data: definitions['users_facebook_places'][] | null; redirect: null }
+    | {
+        data: definitionsJSON['users_facebook_places'][] | null;
+        redirect: null;
+      }
     | {
         data: null;
         redirect: { status: number; redirect?: string };
@@ -26,7 +29,7 @@
   > {
     // Attempt to match the query by place_id
     const { data: dataMatchPlaceID, error: errorMatchPlaceID } = await supabase
-      .from<definitions['users_facebook_places']>('users_facebook_places')
+      .from<definitionsJSON['users_facebook_places']>('users_facebook_places')
       .select(selectQuery)
       .eq('place_id', query);
     if (errorMatchPlaceID) console.log(errorMatchPlaceID);
@@ -38,7 +41,7 @@
       data: dataMatchPlaceDescription,
       error: errorMatchPlaceDescription
     } = await supabase
-      .from<definitions['users_facebook_places']>('users_facebook_places')
+      .from<definitionsJSON['users_facebook_places']>('users_facebook_places')
       .select(selectQuery)
       .eq('description', query);
     if (errorMatchPlaceDescription) console.log(errorMatchPlaceDescription);
@@ -50,7 +53,7 @@
       data: dataFuzzyMatchPlaceDescription,
       error: errorFuzzyMatchPlaceDescription
     } = await supabase
-      .from<definitions['users_facebook_places']>('users_facebook_places')
+      .from<definitionsJSON['users_facebook_places']>('users_facebook_places')
       .select(selectQuery)
       .ilike('description', `%${query}%`);
     if (errorFuzzyMatchPlaceDescription)
@@ -103,7 +106,7 @@
   export let placeInformation: PlaceInformation;
   async function refreshUsersInPlace() {
     const { data: users_in_place, error } = await supabase
-      .from<definitions['users_facebook_places']>('users_facebook_places')
+      .from<definitionsJSON['users_facebook_places']>('users_facebook_places')
       .select(selectQuery)
       .eq('place_id', placeInformation.place_id);
     if (error) console.log(error);

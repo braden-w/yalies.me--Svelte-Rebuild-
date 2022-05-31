@@ -13,10 +13,10 @@
     uploadUserResponses
   } from '$lib/stores/auth/profileStore';
   import { get } from 'svelte/store';
-  import type { definitions } from '$lib/types/supabase';
+  import type { definitionsJSON } from '$lib/types/definitionsJSON';
 
   export let userProfileInformation:
-    | definitions['users_facebook_places']
+    | definitionsJSON['users_facebook_places']
     | null;
 
   /** Set this to true if this userCard refers to the currrent logged in user */
@@ -81,7 +81,7 @@
     let accumulator: { [key: string]: string; user_response_id: string } = {
       user_response_id: $profileStore?.user_response_id ?? ''
     };
-    let payload: definitions['user_responses'] = responsesList.reduce(
+    let payload: definitionsJSON['user_responses'] = responsesList.reduce(
       (obj, item) => ((obj[item.name] = item.value), obj),
       accumulator
     );

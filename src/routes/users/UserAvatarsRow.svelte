@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { definitions } from '$lib/types/supabase';
+  import type { definitionsJSON } from '$lib/types/definitionsJSON';
 
-  export let avatar_url: definitions['users_facebook_places']['avatar_url'] =
+  export let avatar_url: definitionsJSON['users_facebook_places']['avatar_url'] =
     '';
 </script>
 

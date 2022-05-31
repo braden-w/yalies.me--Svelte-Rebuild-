@@ -1,11 +1,11 @@
 <script lang="ts">
   import LocationAutoComplete from '$lib/components/LocationAutoComplete.svelte';
   import { profileStore } from '$lib/stores/auth/profileStore';
-  import type { definitions } from '$lib/types/supabase';
+  import type { definitionsJSON } from '$lib/types/definitionsJSON';
   import { get } from 'svelte/store';
 
   export let userProfileInformation:
-    | definitions['users_facebook_places']
+    | definitionsJSON['users_facebook_places']
     | null;
   const isCurrentUser = userProfileInformation?.id === get(profileStore)?.id;
 </script>

@@ -1,10 +1,10 @@
 <script context="module" lang="ts">
-  import type { definitions } from '$lib/types/supabase';
+  import type { definitionsJSON } from '$lib/types/definitionsJSON';
   import { supabase } from '$lib/utils/supabaseClient';
 
   export async function load({ params }: { params: { id: string } }) {
     const { data, error } = await supabase
-      .from<definitions['users_facebook_places']>('users_facebook_places')
+      .from<definitionsJSON['users_facebook_places']>('users_facebook_places')
       .select('*')
       .eq('id', params.id)
       .maybeSingle();
@@ -24,7 +24,7 @@
   import UserCard from '../../lib/components/UserCard.svelte';
   import SpotifyPlayer from '$lib/components/SpotifyPlayer.svelte';
 
-  export let userProfileInformation: definitions['users_facebook_places'];
+  export let userProfileInformation: definitionsJSON['users_facebook_places'];
 </script>
 
 <svelte:head>

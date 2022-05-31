@@ -1,5 +1,5 @@
 import { profileStore } from '$lib/stores/auth/profileStore';
-import type { definitions } from '$lib/types/supabase';
+import type { definitionsJSON } from '$lib/types/definitionsJSON';
 import { supabase } from '$lib/utils/supabaseClient';
 import { derived, get, writable, type Writable } from 'svelte/store';
 
@@ -10,10 +10,10 @@ export interface GetUserLocation {
 
 /** Refreshes the location store */
 export async function refreshUserLocation(): Promise<
-  definitions['users_facebook_places'] | null
+  definitionsJSON['users_facebook_places'] | null
 > {
   const { data, error } = await supabase
-    .from<definitions['users_facebook_places']>('users_facebook_places')
+    .from<definitionsJSON['users_facebook_places']>('users_facebook_places')
     .select('place_id, description')
     .eq('user_response_id', get(profileStore)?.user_response_id)
     .maybeSingle();
@@ -33,7 +33,7 @@ export async function refreshUserLocation(): Promise<
 
 export async function resetUserLocation(): Promise<void> {
   const { data, error } = await supabase
-    .from<definitions['user_responses']>('user_responses')
+    .from<definitionsJSON['user_responses']>('user_responses')
     .update({
       place_id: null
     })
@@ -54,7 +54,7 @@ export async function setUserLocation(
   description: string
 ): Promise<void> {
   const { error } = await supabase
-    .from<definitions['user_responses']>('user_responses')
+    .from<definitionsJSON['user_responses']>('user_responses')
     .update({
       place_id: place_id
     })

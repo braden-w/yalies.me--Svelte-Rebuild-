@@ -5,10 +5,10 @@
 
   import SpotifyIcon from './icons/SpotifyIcon.svelte';
 
-  import type { definitions } from '$lib/types/supabase';
+  import type { definitionsJSON } from '$lib/types/definitionsJSON';
 
   export let userProfileInformation:
-    | definitions['users_facebook_places']
+    | definitionsJSON['users_facebook_places']
     | null;
 </script>
 

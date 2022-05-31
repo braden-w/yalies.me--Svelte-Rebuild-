@@ -6,7 +6,7 @@
    */
   export async function load() {
     const { data, error } = await supabase
-      .from<definitions['places_with_people']>('places_with_people')
+      .from<definitionsJSON['places_with_people']>('places_with_people')
       .select('place_id, description, lat, lng, people')
       .not('people', 'is', null);
     const places = data;
@@ -24,7 +24,7 @@
   import { onMount } from 'svelte';
   import { supabase } from '$lib/utils/supabaseClient';
   import { generateInnerHTML } from '$lib/utils/map/generateInnerHTML';
-  import type { definitions } from '$lib/types/supabase';
+  import type { definitionsJSON } from '$lib/types/definitionsJSON';
 
   mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_KEY;
 
@@ -33,7 +33,7 @@
   // longitude = userProfileInformation.location?.longitude ?? NewHaven.longitude;
   // latitude = userProfileInformation.location?.latitude ?? NewHaven.latitude;
   // console.log('longitude, latitude:>> ', longitude, latitude)
-  export let places: definitions['places_with_people'][];
+  export let places: definitionsJSON['places_with_people'][];
 
   onMount(() => {
     const map = new mapboxgl.Map({
