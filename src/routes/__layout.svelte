@@ -11,14 +11,13 @@
   } from '$lib/stores/auth/profileStore';
   import { authLoadingStore, signOut } from '$lib/stores/auth/authLoadingStore';
   import type { ApiError, User } from '@supabase/supabase-js';
-  import type { ProfileStore } from '$lib/types/ProfileStore';
   import type { UserMetadata } from '$lib/types/UserMetaData';
   import { goto } from '$app/navigation';
   import { browser } from '$app/env';
 
   import TheNavBar from '$lib/components/TheNavBar.svelte';
   import LoginSplashScreen from '$lib/components/LoginSplashScreen.svelte';
-  import type { definitions } from '$lib/types/supabase';
+  import type { definitionsJSON } from '$lib/types/definitionsJSON';
   onMount(() => {
     themeChange(false);
   });
@@ -61,11 +60,11 @@
     );
 
     // Save profile data to session store
-    const payload: ProfileStore = processAuthState(user);
+    const payload: definitionsJSON['users'] = processAuthState(user);
     try {
       // Upload profile data from profileStore to 'users' database
       const { data, error } = await supabase
-        .from<definitions['users']>('users')
+        .from<definitionsJSON['users']>('users')
         .upsert(payload);
       console.log(
         '🚀 ~ file: __layout.svelte ~ line 58 ~ const{data,error}=awaitsupabase.from ~ data',
@@ -89,9 +88,9 @@
     return emailUser;
   }
 
-  function processAuthState(user: User | null): ProfileStore {
+  function processAuthState(user: User | null): definitionsJSON['users'] {
     // Get the variables "id" from $profileStore
-    const id = user?.id;
+    const id = user?.id!;
 
     // Get the user_response_id from userMetaData
     const userMetaData = user?.user_metadata as UserMetadata;
