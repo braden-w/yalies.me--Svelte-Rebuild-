@@ -18,6 +18,7 @@ SELECT
   user_responses.instagram,
   user_responses.linkedin,
   facebook.school,
+  facebook.college,
   COALESCE(user_responses.major, facebook.major) as major,
   facebook.year
 FROM
