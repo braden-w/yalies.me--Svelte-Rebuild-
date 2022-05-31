@@ -23,12 +23,12 @@
   export let isCurrentUser =
     userProfileInformation?.id === get(profileStore)?.id;
   const inputsList = [
-    {
-      name: 'university',
-      label: 'University',
-      icon: UniversityIcon,
-      value: 'Yale University'
-    },
+    // {
+    //   name: 'university',
+    //   label: 'University',
+    //   icon: UniversityIcon,
+    //   value: 'Yale University'
+    // },
     {
       name: 'major',
       label: 'Major',
