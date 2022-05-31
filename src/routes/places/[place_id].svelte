@@ -134,7 +134,7 @@
               src="https://api.lorem.space/image/furniture?w=250&h=180&hash=8B7BCDC2"
               class="rounded-box"
             />
-            <div class="card max-w-sm flex-shrink-0 bg-base-100  shadow-2xl">
+            <div class="card w-96 bg-base-100 shadow-xl">
               <div class="card-body">
                 <div class="text-center">
                   <div class="avatar mx-auto">
@@ -155,7 +155,7 @@
                 </div>
 
                 <div class="form-control mt-6">
-                  <a href={`/users/${user.id}`} class="btn btn-primary">
+                  <a href={`/users/${user.id}`} class="btn btn-ghost">
                     Go to Profile
                   </a>
                 </div>
