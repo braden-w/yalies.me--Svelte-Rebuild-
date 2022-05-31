@@ -126,17 +126,8 @@
   />
 </svelte:head>
 
-<div class="flex flex-row justify-between bg-base-200">
-  <a href="/map" class="btn btn-ghost btn-xs shrink grow basis-0">
-    <MapIcon /> Map
-  </a>
-  <div class="divider divider-horizontal" />
-  <a href="/locations" class="btn btn-ghost btn-xs shrink grow basis-0">
-    <LocationsListIcon /> Locations
-  </a>
-</div>
-<div class="min-h-screen-nav hero bg-base-200 text-base-content">
-  <div class="hero-content flex-col">
+<div class="hero bg-base-200 text-base-content">
+  <div class="hero-content flex-col py-48">
     <div class="text-center">
       <h1 class="text-5xl font-bold">{placeInformation.description}</h1>
       <p class="py-6">
@@ -155,6 +146,15 @@
       </div>
     </div>
   </div>
+</div>
+<div class="flex flex-row justify-between ">
+  <a href="/map" class="btn btn-ghost btn-md shrink grow basis-0">
+    <MapIcon /> Map
+  </a>
+  <div class="divider divider-horizontal" />
+  <a href="/locations" class="btn btn-ghost btn-md shrink grow basis-0">
+    <LocationsListIcon /> Locations
+  </a>
 </div>
 <div class="hero min-h-screen bg-base-100">
   <div class="hero-content w-full flex-row flex-wrap">
