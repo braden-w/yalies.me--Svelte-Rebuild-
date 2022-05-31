@@ -6,7 +6,7 @@
   import UserCard from '$lib/components/UserCard.svelte';
   import SpotifyPlayer from '$lib/components/SpotifyPlayer.svelte';
   import { profileStore } from '$lib/stores/auth/profileStore';
-  import TableOfLocations from '$lib/components/TableOfLocations.svelte';
+  import ListOfLocations from '$lib/components/ListOfLocations.svelte';
 </script>
 
 <svelte:head>
@@ -38,7 +38,7 @@
       </div>
       <!-- Cell 4 -->
       <div class="col-span-1 row-span-3">
-        <TableOfLocations />
+        <ListOfLocations />
       </div>
       <!-- Cell 5 -->
       <div class="col-span-3 row-span-6">
