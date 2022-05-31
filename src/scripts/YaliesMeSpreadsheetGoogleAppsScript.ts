@@ -1,7 +1,6 @@
 const VITE_SUPABASE_URL = "<Insert Supabase URL>";
 const VITE_SUPABASE_ANON_KEY = "<Insert Supabase Anon Key>"
 
-
 function myFunction() {
   clearEntireSpreadsheet();
   const response = UrlFetchApp.fetch(`${VITE_SUPABASE_URL}/rest/v1/users_facebook_places?id=not.is.null`, {
@@ -17,12 +16,12 @@ function myFunction() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const sheet = ss.getActiveSheet();
 
-  const rows = []
-
-  data.forEach(function (row) {
-    const {name, year, email, major, description, phone, instagram, linkedin} = row
-    rows.push([name, year, email, major, description, phone, instagram, linkedin])
-  })
+  const rows = data.map(
+    (row) => {
+      const {name, year, email, major, description, phone, instagram, linkedin, interests, expression} = row
+      return [name, year, email, major, description, phone, instagram, linkedin, interests, expression]
+    }
+  )
 
   dataRange = sheet.getRange(2, 1, rows.length, rows[0].length);
   dataRange.setValues(rows);
