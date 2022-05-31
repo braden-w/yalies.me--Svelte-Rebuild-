@@ -5,10 +5,7 @@
   import UserLocationCard from '$lib/components/UserLocationCard.svelte';
   import UserCard from '$lib/components/UserCard.svelte';
   import SpotifyPlayer from '$lib/components/SpotifyPlayer.svelte';
-  import {
-    refreshProfileStore,
-    profileStore
-  } from '$lib/stores/auth/profileStore';
+  import { profileStore } from '$lib/stores/auth/profileStore';
   import TableOfLocations from '$lib/components/TableOfLocations.svelte';
 </script>
 
