@@ -54,11 +54,6 @@
                 />
               </svg>
               {place.description}
-              {#if getPeopleNames(place)}
-                {#each getPeopleNames(place) as person}
-                  {person}
-                {/each}
-              {/if}
             </a>
           </li>
         {/each}
