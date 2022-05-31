@@ -57,7 +57,10 @@
           <h1 class="text-2xl font-bold">{$profileStore?.name}</h1>
           <p class="text-lg">Yale University</p>
         </div>
-        <LocationAutoComplete />
+        <LocationAutoComplete
+          query={$profileStore?.description}
+          isCurrentUser={true}
+        />
 
         <div class="form-control mt-6">
           <a href="/map" class="btn btn-primary">Go To Map</a>

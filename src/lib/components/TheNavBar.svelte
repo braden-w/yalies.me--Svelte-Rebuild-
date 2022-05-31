@@ -12,7 +12,7 @@
         <div class="flex-none">
           <label
             for="main-drawer"
-            class="btn btn-ghost btn-square drawer-button"
+            class="btn btn-square btn-ghost drawer-button"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +73,7 @@
               </div>
             </div>
           </div>
-          <div title="Change Theme" class="dropdown-end dropdown ">
+          <div title="Change Theme" class="dropdown dropdown-end ">
             <div tabindex="0" class="btn btn-ghost gap-1 normal-case">
               <svg
                 width="20"
@@ -830,7 +830,7 @@
               </div>
             </div>
           </div>
-          <div class="dropdown-end dropdown">
+          <div class="dropdown dropdown-end">
             <label tabindex="0" class="avatar btn btn-ghost btn-circle">
               <div class="w-10 rounded-full">
                 <img
@@ -846,8 +846,11 @@
               class="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow"
             >
               <li>
-                <a class="justify-between" href="/profile">
-                  Profile
+                <a class="justify-between" href="/profile"> Profile </a>
+              </li>
+              <li>
+                <a class="justify-between" href="/locations">
+                  Locations
                   <span class="badge">New</span>
                 </a>
               </li>
