@@ -23,10 +23,6 @@
 <svelte:head>
   <title>{userProfileInformation.name}</title>
   <meta name="description" content="Profile information" />
-  <script
-    src="https://kit.fontawesome.com/f538ad6371.js"
-    crossorigin="anonymous">
-  </script>
 </svelte:head>
 
 <div class="min-h-screen-nav hero bg-base-200">
@@ -149,7 +145,7 @@
               <button class="btn btn-accent btn-sm">Follow</button>
               <button
                 aria-label="button component"
-                class="btn btn-square btn-accent btn-sm"
+                class="btn btn-accent btn-square btn-sm"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -247,7 +243,7 @@
           </div>
         </div>
         <div class="form-control">
-          <div class="dropdown-end dropdown dropdown-top">
+          <div class="dropdown dropdown-end dropdown-top">
             <div tabindex="0">
               <button class="btn btn-secondary btn-block space-x-2">
                 <svg
@@ -289,7 +285,7 @@
         </div>
       </div>
       <div
-        class="card-compact card col-span-3 row-span-4 mx-2 w-72 flex-shrink-0 overflow-visible bg-base-100 shadow-xl xl:card-normal xl:mx-0 xl:w-auto"
+        class="card card-compact col-span-3 row-span-4 mx-2 w-72 flex-shrink-0 overflow-visible bg-base-100 shadow-xl xl:card-normal xl:mx-0 xl:w-auto"
       >
         <div class="dropdown">
           <div tabindex="0">
@@ -328,7 +324,7 @@
         <div class="card-body">
           <div class="card-title flex items-center font-extrabold">
             Card Component
-            <div class="dropdown-end dropdown dropdown-top">
+            <div class="dropdown dropdown-end dropdown-top">
               <div tabindex="0">
                 <div
                   tabindex="0"
@@ -406,7 +402,7 @@
             items and more.
           </p>
           <div class="card-actions justify-end">
-            <div class="dropdown-end dropdown dropdown-top">
+            <div class="dropdown dropdown-end dropdown-top">
               <div tabindex="0">
                 <button class="btn btn-primary">Get Started</button>
               </div>
@@ -625,7 +621,7 @@
       <div
         class="col-span-3 row-span-1 mx-2 flex w-72 flex-shrink-0 flex-col justify-center xl:mx-0 xl:w-auto"
       >
-        <div class="dropdown-end dropdown w-full">
+        <div class="dropdown dropdown-end w-full">
           <div tabindex="0">
             <div class="flex items-center justify-between">
               <div class="avatar online">
@@ -772,7 +768,7 @@
       <div
         class="col-span-3 row-span-2 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-auto"
       >
-        <div class="dropdown-end dropdown dropdown-top">
+        <div class="dropdown dropdown-end dropdown-top">
           <div tabindex="0">
             <div class="grid gap-4">
               <div class="btn-group flex">
@@ -812,7 +808,7 @@
             </div>
           </div>
         </div>
-        <div class="dropdown-end dropdown dropdown-top">
+        <div class="dropdown dropdown-end dropdown-top">
           <div tabindex="0">
             <div class="tabs tabs-boxed items-center">
               <button class="tab flex-1">Tab 1</button>
@@ -846,7 +842,7 @@
         class="rounded-box col-span-3 row-span-3 mx-2 grid w-72 flex-shrink-0 items-stretch bg-base-100 text-base-content shadow-xl xl:mx-0 xl:w-auto xl:place-self-stretch"
       >
         <div class="grid place-content-center gap-4 p-4">
-          <div class="dropdown-end dropdown">
+          <div class="dropdown dropdown-end">
             <div tabindex="0">
               <div class="alert flex-col space-y-2">
                 <div class="flex-1">
@@ -882,7 +878,7 @@
               </div>
             </div>
           </div>
-          <div class="dropdown-end dropdown dropdown-top">
+          <div class="dropdown dropdown-end dropdown-top">
             <div tabindex="0">
               <div class="alert alert-info">
                 <div class="flex-1">
@@ -928,7 +924,7 @@
               </div>
             </div>
           </div>
-          <div class="dropdown-end dropdown dropdown-top">
+          <div class="dropdown dropdown-end dropdown-top">
             <div tabindex="0">
               <div class="alert alert-success">
                 <div class="flex-1">
@@ -980,7 +976,7 @@
         class="col-span-3 row-span-2 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-auto xl:place-self-stretch"
       >
         <div class="rounded-box bg-base-100 text-base-content shadow-xl">
-          <div class="dropdown-end dropdown w-full">
+          <div class="dropdown dropdown-end w-full">
             <div tabindex="0">
               <ul class="menu overflow-visible p-3">
                 <li class="menu-title">
@@ -1051,7 +1047,7 @@
             </div>
             <div tabindex="0" class="dropdown-content py-2">
               <div
-                class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
+                class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
                   <h2 class="card-title font-extrabold capitalize">
@@ -1076,7 +1072,7 @@
         class="col-span-3 row-span-1 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-auto"
       >
         <div class="rounded-box bg-base-100 text-base-content shadow-xl">
-          <div class="dropdown-end dropdown dropdown-top w-full">
+          <div class="dropdown dropdown-end dropdown-top w-full">
             <div tabindex="0">
               <div class="flex justify-center gap-8 p-4">
                 <label aria-label="checkbox CSS component">
@@ -1095,7 +1091,7 @@
             </div>
             <div tabindex="0" class="dropdown-content py-2">
               <div
-                class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
+                class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
                   <h2 class="card-title font-extrabold capitalize">
@@ -1114,7 +1110,7 @@
               </div>
             </div>
           </div>
-          <div class="dropdown-end dropdown w-full">
+          <div class="dropdown dropdown-end w-full">
             <div tabindex="0">
               <div
                 class="rating rating-lg rating-half w-full justify-center px-4 pb-4"
@@ -1193,7 +1189,7 @@
             </div>
             <div tabindex="0" class="dropdown-content py-2">
               <div
-                class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
+                class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
                   <h2 class="card-title font-extrabold capitalize">
@@ -1269,7 +1265,7 @@
             </div>
             <div tabindex="0" class="dropdown-content py-2">
               <div
-                class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
+                class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
                   <h2 class="card-title font-extrabold capitalize">
@@ -1297,12 +1293,12 @@
             <p class="text-sm text-opacity-80">Page views</p>
           </div>
           <div class="flex-0">
-            <div class="dropdown-end dropdown dropdown-top">
+            <div class="dropdown dropdown-end dropdown-top">
               <div tabindex="0">
                 <div class="flex space-x-1">
                   <button
                     aria-label="button component"
-                    class="btn btn-square btn-ghost"
+                    class="btn btn-ghost btn-square"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1326,7 +1322,7 @@
                   </button>
                   <button
                     aria-label="button component"
-                    class="btn btn-square btn-ghost"
+                    class="btn btn-ghost btn-square"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1346,7 +1342,7 @@
               </div>
               <div tabindex="0" class="dropdown-content py-2">
                 <div
-                  class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
+                  class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
                 >
                   <div class="card-body">
                     <h2 class="card-title font-extrabold capitalize">
@@ -1384,7 +1380,7 @@
                 </div>
                 <div tabindex="0" class="dropdown-content py-2">
                   <div
-                    class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
+                    class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
                   >
                     <div class="card-body">
                       <h2 class="card-title font-extrabold capitalize">
@@ -1416,7 +1412,7 @@
               </div>
               <div tabindex="0" class="dropdown-content py-2">
                 <div
-                  class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
+                  class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
                 >
                   <div class="card-body">
                     <h2 class="card-title font-extrabold capitalize">
@@ -1439,7 +1435,7 @@
             </div>
           </div>
           <div class="flex-0">
-            <div class="dropdown-end dropdown dropdown-top">
+            <div class="dropdown dropdown-end dropdown-top">
               <div tabindex="0">
                 <button
                   aria-label="circle button component"
@@ -1462,7 +1458,7 @@
               </div>
               <div tabindex="0" class="dropdown-content py-2">
                 <div
-                  class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
+                  class="compact card rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
                 >
                   <div class="card-body">
                     <h2 class="card-title font-extrabold capitalize">
