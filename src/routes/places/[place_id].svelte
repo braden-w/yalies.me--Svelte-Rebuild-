@@ -143,8 +143,9 @@
           <ProfileIcon />
           Edit My Profile</a
         >
-        <div class="grid grid-flow-row grid-cols-2">
+        <div class="flex flex-row">
           <a href="/map" class="btn btn-ghost"><MapIcon /> Map</a>
+          <div class="divider divider-horizontal" />
           <a href="/locations" class="btn btn-ghost">
             <LocationsListIcon /> Locations
           </a>
