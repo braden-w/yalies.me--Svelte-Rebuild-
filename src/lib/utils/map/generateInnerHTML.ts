@@ -1,6 +1,6 @@
-import {get} from "svelte/store"
-import {profileStore} from '$lib/stores/auth/profileStore';
+import { profileStore } from '$lib/stores/auth/profileStore';
 import type { definitions } from '$lib/types/supabase';
+import { get } from 'svelte/store';
 
 interface Person {
   id: string;
@@ -123,7 +123,8 @@ function generateHover({
 
 function linkForUserProfile(person: Person | PersonFromFacebook): string {
   // If person has no id, it must be from facebook
-  if (!(<Person>person).id) return `/facebook/${(<PersonFromFacebook>person).email}`;
+  if (!(<Person>person).id)
+    return `/facebook/${(<PersonFromFacebook>person).email}`;
   // If person's id matches the current user's id, return the current user's profile
   if ((<Person>person).id === get(profileStore)?.id) return `/profile`;
   // Otherwise, return the person's profile
@@ -134,8 +135,7 @@ function peopleToListItems(people: (Person | PersonFromFacebook)[]): string {
   return people
     .map(
       (person) => `<li>
-      <a class="content-center" href="${
-      linkForUserProfile(person)}">
+      <a class="content-center" href="${linkForUserProfile(person)}">
         <div class="avatar">
           <div class="w-8 rounded-lg">
             <img src="${

@@ -28,13 +28,14 @@ export async function refreshProfileStore(queryId: string | undefined) {
 
 /** Updates User Responses with the payload on the user that matches user_response_id. Refreshes profileStore after completion */
 export async function uploadUserResponses(
-  payload: definitions['user_responses'], user_response_id = get(profileStore)?.user_response_id
+  payload: definitions['user_responses'],
+  user_response_id = get(profileStore)?.user_response_id
 ) {
   const { data, error } = await supabase
     .from<definitions['user_responses']>('user_responses')
     .update(payload)
-    .eq('user_response_id', user_response_id)
-    
+    .eq('user_response_id', user_response_id);
+
   if (data) {
     console.log(
       '🚀 ~ file: profileStore.ts ~ line 30 ~ uploadStoreToSupabase ~ data',

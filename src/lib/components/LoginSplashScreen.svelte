@@ -18,7 +18,7 @@
       <p class="mb-5">
         An app that solves a single question: who is in my area?
       </p>
-      <SignInGoogleButton></SignInGoogleButton>
+      <SignInGoogleButton />
     </div>
   </div>
 </div>
