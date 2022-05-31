@@ -3,7 +3,10 @@
 
   import { supabase } from '$lib/utils/supabaseClient';
 
-  let promise = supabase.from<definitions['places']>('places').select('*');
+  let promise = supabase
+    .from<definitions['places_with_people']>('places_with_people')
+    .select('*')
+    .not('people', 'is', null);
 </script>
 
 {#await promise}
