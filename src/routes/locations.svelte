@@ -3,10 +3,11 @@
   import { supabase } from '$lib/utils/supabaseClient';
 
   export async function load() {
-    const { data, error } = await supabase
+    const { data: places, error } = await supabase
       .from<definitionsJSON['places_with_people']>('places_with_people')
       .select('*')
       .not('people', 'is', null);
+    if (error) console.error(error);
     return {
       status: 200,
       props: {
@@ -21,7 +22,7 @@
   import LocationAutoComplete from '$lib/components/LocationAutoComplete.svelte';
   import TableOfLocations from '$lib/components/TableOfLocations.svelte';
 
-  export let places;
+  export let places: definitionsJSON['places_with_people'][] = [];
 </script>
 
 <svelte:head>
@@ -98,7 +99,7 @@
         <h1 class="text-5xl font-bold">Locations</h1>
         <p class="py-6">There are currently a lot of locations!</p>
       </div>
-      <TableOfLocations />
+      <TableOfLocations {places} />
     </div>
   </div>
 </div>
