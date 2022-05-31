@@ -1,4 +1,5 @@
 <script lang="ts">
+  import UserSocials from '$lib/components/UserSocials.svelte';
   import type { definitions } from '$lib/types/supabase';
 
   export let userProfileInformation:
@@ -30,20 +31,22 @@
         {userProfileInformation?.name}
       </div>
       <div class="my-3 text-sm text-base-content/70">
-        {userProfileInformation?.major}
-        <br />
-        Yale University
-        <br />
-        {userProfileInformation?.school}
-        <br />
-        Student
+        {#if userProfileInformation?.major}
+          {userProfileInformation?.major}
+          <br />
+        {/if}
       </div>
     </div>
 
     <div class="mt-2 text-center">
-      <div class="badge badge-ghost">Design</div>
-      <div class="badge badge-ghost">Art</div>
-      <div class="badge badge-ghost">Illustration</div>
+      {#if userProfileInformation?.school}
+        <div class="badge badge-ghost">{userProfileInformation?.school}</div>
+      {/if}
+      {#if userProfileInformation?.college}
+        <div class="badge badge-ghost">
+          {userProfileInformation?.college}
+        </div>
+      {/if}
     </div>
   </div>
   <div class="dropdown-top dropdown">
@@ -52,7 +55,7 @@
         <button class="btn btn-accent btn-sm">Follow</button>
         <button
           aria-label="button component"
-          class="btn btn-accent btn-square btn-sm"
+          class="btn btn-square btn-accent btn-sm"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +78,9 @@
         class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
       >
         <div class="card-body">
-          <h2 class="card-title font-extrabold capitalize">Keep Track of People I Met</h2>
+          <h2 class="card-title font-extrabold capitalize">
+            Keep Track of People I Met
+          </h2>
           <p class="text-sm text-neutral-content text-opacity-80">
             Coming Soon!
           </p>
