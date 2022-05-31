@@ -27,7 +27,6 @@
   };
 
   $: handleToggleUserLocation(checked);
-  $: console.log(checked);
   const dispatch = createEventDispatcher();
   export async function handleToggleUserLocation(checked: boolean) {
     // If the toggle is moved to checked
