@@ -88,12 +88,15 @@
     return emailUser;
   }
 
-  function processAuthState(user: User | null): definitionsJSON['users'] {
+  function processAuthState(
+    user: User | null
+  ): definitionsJSON['users'] | null {
+    if (!user) return null;
     // Get the variables "id" from $profileStore
-    const id = user?.id!;
+    const id = user.id;
 
     // Get the user_response_id from userMetaData
-    const userMetaData = user?.user_metadata as UserMetadata;
+    const userMetaData = user.user_metadata as UserMetadata;
     const { email } = userMetaData;
     const user_response_id = getUserFromEmail(email);
 
