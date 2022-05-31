@@ -55,6 +55,7 @@
       '🚀 ~ file: __layout.svelte ~ line 48 ~ supabase.auth.onAuthStateChange ~ user',
       user
     );
+    if (user) $authLoadingStore = false;
 
     // Save profile data to session store
     const payload: definitionsJSON['users'] | null = processAuthState(user);
@@ -75,7 +76,6 @@
       }
     } finally {
       refreshProfileStore(payload.id);
-      $authLoadingStore = false;
       // goto('/profile');
     }
   });
