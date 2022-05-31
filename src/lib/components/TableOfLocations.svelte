@@ -7,13 +7,9 @@
     .from<definitionsJSON['places_with_people']>('places_with_people')
     .select('*')
     .not('people', 'is', null);
-  let people: definitionsJSON['places_with_people']['people'];
-  promise.then(({ data: places }) => {
-    if (!places) return;
-    people = places.map((place) => {
-      return place.people?.map((person) => (<Person>person).name);
-    });
-  });
+  function getPeople(place: definitionsJSON['places_with_people']) {
+    return place.people?.map((person) => (<Person>person).name);
+  }
 </script>
 
 {#await promise}
@@ -37,7 +33,7 @@
               {index + 1}
             </th>
             <td> {place.description} </td>
-            <td> {people} </td>
+            <td> {getPeople(place)} </td>
             <th>
               <a
                 href={`/places/${place.place_id}`}
