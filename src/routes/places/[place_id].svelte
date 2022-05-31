@@ -149,11 +149,11 @@
 </div>
 <div class="flex flex-row justify-between ">
   <a href="/map" class="btn btn-ghost btn-md shrink grow basis-0">
-    <MapIcon /> Map
+    <MapIcon /> Go To Map
   </a>
   <div class="divider divider-horizontal" />
   <a href="/locations" class="btn btn-ghost btn-md shrink grow basis-0">
-    <LocationsListIcon /> Locations
+    <LocationsListIcon /> See All Locations
   </a>
 </div>
 <div class="hero min-h-screen bg-base-100">
