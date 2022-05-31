@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { definitionsJSON, Person } from '$lib/types/definitionsJSON';
+import { generateStackOfIcons } from '$lib/utils/map/generateInnerHTML';
 
   import { supabase } from '$lib/utils/supabaseClient';
 
@@ -7,7 +8,7 @@
     .from<definitionsJSON['places_with_people']>('places_with_people')
     .select('*')
     .not('people', 'is', null);
-  function getPeople(place: definitionsJSON['places_with_people']) {
+  function getPeopleNames(place: definitionsJSON['places_with_people']) {
     return place.people?.map((person) => (<Person>person).name);
   }
 </script>
@@ -43,8 +44,8 @@
                 />
               </svg>
               {place.description}
-              {#if getPeople(place)}
-                {#each getPeople(place) as person}
+              {#if getPeopleNames(place)}
+                {#each getPeopleNames(place) as person}
                   {person}
                 {/each}
               {/if}
@@ -111,7 +112,7 @@
               {index + 1}
             </th>
             <td> {place.description} </td>
-            <td> {getPeople(place)} </td>
+            <td> {getPeopleNames(place)} </td>
             <th>
               <a
                 href={`/places/${place.place_id}`}
