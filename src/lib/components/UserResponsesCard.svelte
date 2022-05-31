@@ -8,7 +8,10 @@
   import SpotifyIcon from '$lib/components/icons/SpotifyIcon.svelte';
   import UniversityIcon from '$lib/components/icons/UniversityIcon.svelte';
 
-  import { profileStore } from '$lib/stores/auth/profileStore';
+  import {
+    profileStore,
+    uploadUserResponses
+  } from '$lib/stores/auth/profileStore';
   import type { definitions } from '$lib/types/supabase';
 
   export let id: definitions['users_facebook_places']['id'] = '';
@@ -67,14 +70,19 @@
     }
   ];
 
-  const applySettings(responsesList = [...inputsList, ...userIntegrations]){
-    let payload: definitions['user_responses']= {}
-    responsesList.forEach(response => {
-      payload[response.name] = response.value
-    })
-    // Upload justValues to the database
-    
-
+  async function applySettings(
+    responsesList = [...inputsList, ...userIntegrations]
+  ) {
+    let payload: definitions['user_responses'] = responsesList.reduce(function (
+      map,
+      obj
+    ) {
+      map[obj.name] = obj.value;
+      return map;
+    },
+    {});
+    // Upload payload to the database
+    await uploadUserResponses(payload);
   }
 </script>
 
