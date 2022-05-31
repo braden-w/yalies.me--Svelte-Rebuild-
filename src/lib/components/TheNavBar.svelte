@@ -36,7 +36,7 @@
           >
         </div>
         <div class="flex-none">
-          <div class="dropdown dropdown-end">
+          <div class="dropdown-end dropdown">
             <label
               for="main-drawer "
               tabindex="0"
@@ -73,7 +73,7 @@
               </div>
             </div>
           </div>
-          <div title="Change Theme" class="dropdown dropdown-end ">
+          <div title="Change Theme" class="dropdown-end dropdown ">
             <div tabindex="0" class="btn btn-ghost gap-1 normal-case">
               <svg
                 width="20"
@@ -830,7 +830,7 @@
               </div>
             </div>
           </div>
-          <div class="dropdown dropdown-end">
+          <div class="dropdown-end dropdown">
             <label tabindex="0" class="avatar btn btn-ghost btn-circle">
               <div class="w-10 rounded-full">
                 <img
