@@ -126,6 +126,15 @@
   />
 </svelte:head>
 
+<div class="flex flex-row">
+  <a href="/map" class="btn btn-ghost btn-xs shrink grow basis-0">
+    <MapIcon /> Map
+  </a>
+  <div class="divider divider-horizontal" />
+  <a href="/locations" class="btn btn-ghost btn-xs shrink grow basis-0">
+    <LocationsListIcon /> Locations
+  </a>
+</div>
 <div class="min-h-screen-nav hero bg-base-200 text-base-content">
   <div class="hero-content flex-col">
     <div class="text-center">
@@ -143,15 +152,6 @@
           <ProfileIcon />
           Edit My Profile</a
         >
-        <div class="flex flex-row mt-4">
-          <a href="/map" class="btn btn-ghost btn-xs shrink grow basis-0">
-            <MapIcon /> Map
-          </a>
-          <div class="divider divider-horizontal" />
-          <a href="/locations" class="btn btn-ghost btn-xs shrink grow basis-0">
-            <LocationsListIcon /> Locations
-          </a>
-        </div>
       </div>
     </div>
   </div>
