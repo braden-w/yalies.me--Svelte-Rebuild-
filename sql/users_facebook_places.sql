@@ -17,6 +17,7 @@ SELECT
   user_responses.expression,
   user_responses.instagram,
   user_responses.linkedin,
+  facebook.school,
   facebook.major,
   facebook.year
 FROM
