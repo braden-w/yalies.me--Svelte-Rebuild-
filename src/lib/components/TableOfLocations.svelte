@@ -26,7 +26,7 @@
         </li>
         {#each places as place}
           <li>
-            <button>
+            <a href={`/places/${place.place_id}`}>
               <svg
                 width="20"
                 height="20"
@@ -48,7 +48,7 @@
                   {person}
                 {/each}
               {/if}
-            </button>
+            </a>
           </li>
         {/each}
         <li>
