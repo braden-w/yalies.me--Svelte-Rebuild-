@@ -109,7 +109,9 @@
           id={name}
           class="input input-bordered"
           disabled={!isCurrentUser}
-          placeholder="Start typing your response here..."
+          placeholder={isCurrentUser
+            ? 'Start typing your response here...'
+            : ''}
           bind:value
         />
       </div>
