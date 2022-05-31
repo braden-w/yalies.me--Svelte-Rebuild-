@@ -16,11 +16,10 @@ function myFunction() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const sheet = ss.getActiveSheet();
 
-  const dataSet = data
   const rows = []
 
-  for (i = 0; i < dataSet.length; i++) {
-    const row = dataSet[i];
+  for (i = 0; i < data.length; i++) {
+    const row = data[i];
     rows.push([row.name, row.year, row.email, row.major, row.description, row.phone, row.instagram, row.linkedin]);
   }
 
