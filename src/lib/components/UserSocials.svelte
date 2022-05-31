@@ -1,7 +1,7 @@
 <script lang="ts">
-  import LinkedInIcon from './LinkedInIcon.svelte';
+  import LinkedInIcon from './icons/LinkedInIcon.svelte';
 
-  import InstagramIcon from './InstagramIcon.svelte';
+  import InstagramIcon from './icons/InstagramIcon.svelte';
 
   import SpotifyIcon from './icons/SpotifyIcon.svelte';
 
@@ -71,11 +71,14 @@
         href={`https://www.instagram.com/${instagram}/`}
       >
         <!-- Make an Instagram SVG Icon -->
-        <InstagramIcon></InstagramIcon>
+        <InstagramIcon />
       </a>
     {/if}
     {#if linkedin}
-      <LinkedInIcon></LinkedInIcon>
+      <a class="btn btn-circle btn-sm" target="_blank" href={linkedin}>
+        <!-- Make an LinkedIn SVG Icon -->
+        <LinkedInIcon />
+      </a>
     {/if}
   </div>
 </div>
