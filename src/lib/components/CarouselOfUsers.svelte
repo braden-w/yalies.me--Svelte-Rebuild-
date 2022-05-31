@@ -1,40 +1,26 @@
 <script lang="ts">
-import type { definitions } from "$lib/types/supabase";
-
+  import type { definitions } from '$lib/types/supabase';
 
   export let users: definitions['users_facebook_places'][];
 </script>
 
 <div
-  class="carousel carousel-center rounded-box w-full space-x-4 bg-neutral p-4"
+  class="carousel-center carousel rounded-box max-w-md space-x-4 bg-neutral p-4"
 >
-  {#each users as user}
+  {#each [...users, ...users, ...users, ...users, ...users, ...users] as user}
     <div class="carousel-item">
-      <div class="card w-36 bg-base-100 shadow-xl">
-        <figure>
+      <div class="avatar">
+        <a class="mask mask-squircle w-8" href={`/users/${user.id}`}>
           <img
             src={user.avatar_url}
             alt="Profile"
+            height="100%"
             width="100%"
             referrerpolicy="no-referrer"
           />
-        </figure>
-        <div class="card-body">
-          <div class="text-center">
-            <h1 class="card-title">
-              {user.name}
-            </h1>
-          </div>
-
-          <div class="form-control">
-            <div class="divider" />
-            <a href={`/users/${user.id}`} class="btn btn-ghost">
-              Go to Profile
-            </a>
-          </div>
-        </div>
+        </a>
       </div>
+      <figure />
     </div>
   {/each}
 </div>
-../../routes/places/PlaceCheckbox.svelte../../routes/places/PlaceCheckbox.svelte
