@@ -146,7 +146,7 @@
                   </h1>
                 </div>
 
-                <div class="form-control mt-6">
+                <div class="form-control">
                   <div class="divider" />
                   <a href={`/users/${user.id}`} class="btn btn-ghost">
                     Go to Profile
