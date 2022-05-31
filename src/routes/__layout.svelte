@@ -56,10 +56,10 @@
       user
     );
     if (user) $authLoadingStore = false;
-    syncProfileDataToStoreAndSupabase(user);
+    syncProfileDataToSupabaseAndStore(user);
   });
 
-  async function syncProfileDataToStoreAndSupabase(user: User | null) {
+  async function syncProfileDataToSupabaseAndStore(user: User | null) {
     // Save profile data to session store
     const payload: definitionsJSON['users'] | null = processAuthState(user);
     if (!payload) return;
