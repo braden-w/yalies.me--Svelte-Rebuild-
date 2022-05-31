@@ -94,6 +94,8 @@
 </script>
 
 <script lang="ts">
+  import CarouselOfUsers from '../../lib/components/CarouselOfUsers.svelte';
+
   import TableOfUsers from '$lib/components/TableOfUsers.svelte';
 
   import PlaceCheckbox from './PlaceCheckbox.svelte';
@@ -125,38 +127,7 @@
         Users currently in {placeInformation.description}
       </p>
       <!-- Add a carousel with users -->
-      <div
-        class="carousel-center carousel rounded-box w-full space-x-4 bg-neutral p-4"
-      >
-        {#each placeInformation.users_in_place as user}
-          <div class="carousel-item">
-            <div class="card w-36 bg-base-100 shadow-xl">
-              <figure>
-                <img
-                  src={user.avatar_url}
-                  alt="Profile"
-                  width="100%"
-                  referrerpolicy="no-referrer"
-                />
-              </figure>
-              <div class="card-body">
-                <div class="text-center">
-                  <h1 class="card-title">
-                    {user.name}
-                  </h1>
-                </div>
-
-                <div class="form-control">
-                  <div class="divider" />
-                  <a href={`/users/${user.id}`} class="btn btn-ghost">
-                    Go to Profile
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        {/each}
-      </div>
+      <CarouselOfUsers users={placeInformation.users_in_place} />
       <!-- Add a toggle that I am currently in this location -->
       <PlaceCheckbox {placeInformation} on:toggled={refreshUsersInPlace} />
       <div class="form-control">
