@@ -25,7 +25,7 @@
           <td> {place.description} </td>
           <td class="overflow-visible">
             <div class="avatar-group -space-x-2 overflow-visible">
-              {#each place.people as person}
+              {#each place?.people as person}
                 <div class="avatar h-8 w-8">
                   <img src={person.avatar_url} alt={person.name} />
                 </div>
