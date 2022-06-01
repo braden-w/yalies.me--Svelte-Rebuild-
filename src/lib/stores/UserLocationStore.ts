@@ -1,12 +1,11 @@
 import { profileStore } from '$lib/stores/auth/profileStore';
 import type { definitionsJSON } from '$lib/types/definitionsJSON';
 import { supabase } from '$lib/utils/supabaseClient';
-import { derived, get } from 'svelte/store';
+import {  get } from 'svelte/store';
 
 /** Updates the place_id in the user_responses table based off the user's user_response_id */
 export async function setUserLocation(
   place_id: string | undefined | null,
-  description: string
 ): Promise<void> {
   const {error} = await supabase
     .from<definitionsJSON['user_responses']>('user_responses')

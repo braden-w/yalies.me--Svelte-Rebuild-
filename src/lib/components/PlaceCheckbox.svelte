@@ -25,22 +25,15 @@
   export async function handleToggleUserLocation(checked: boolean) {
     // If the toggle is moved to checked
     if (checked) {
-      await setUserLocation(
-        placeInformation.place_id,
-        placeInformation.description
-      );
+      await setUserLocation(placeInformation.place_id);
       console.log(
         '🚀 ~ file: PlaceCheckbox.svelte ~ line 33 ~ handleToggleUserLocation ~ placeInformation.place_id',
         placeInformation.place_id
       );
     } else {
       if (oldPlace.place_id === placeInformation.place_id)
-        await setUserLocation(null, '');
-      else
-        await setUserLocation(
-          oldPlace.place_id as string,
-          oldPlace.description as string
-        );
+        await setUserLocation(null);
+      else await setUserLocation(oldPlace.place_id as string);
     }
     dispatch('toggled');
   }

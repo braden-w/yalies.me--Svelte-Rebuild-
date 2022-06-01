@@ -38,7 +38,7 @@
   // Functions for when query changes value
   let timer: NodeJS.Timeout | null;
   // Don't reset user location because query length is 0 on load
-  // $: if (query.length == 0) resetUserLocation();
+  // $: if (query.length == 0) setUserLocation(null, '');
   $: if (query.length < 2) resetResults();
   $: if (query.length >= 2) {
     if (timer) clearTimeout(timer);
@@ -99,7 +99,7 @@
       // Make sure the place exists on the places table
       uploadPlaceToSupabase(payload);
 
-      await setUserLocation(place_id, description);
+      await setUserLocation(place_id);
       await refreshProfileStore($profileStore?.id);
       console.log(
         '🚀 ~ file: LocationAutoComplete.svelte ~ line 110 ~ $profileStore',
