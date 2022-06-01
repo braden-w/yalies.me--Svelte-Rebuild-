@@ -21,7 +21,7 @@
 </svelte:head>
 
 <div
-  class="hero mx-auto min-h-screen max-w-md bg-base-100 text-base-content md:max-w-full"
+  class="hero mx-auto min-h-screen-nav max-w-md bg-base-100 text-base-content md:max-w-full"
 >
   <div class="hero-overlay bg-opacity-60" />
   <div class="hero-content px-4 text-center md:px-0">
