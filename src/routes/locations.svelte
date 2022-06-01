@@ -105,7 +105,7 @@
           <h1 class="text-5xl font-bold">Locations</h1>
           <p class="py-6">There are currently a lot of locations!</p>
         </div>
-        <div class="tabs w-fullflex-grow-0">
+        <div class="tabs mb-2 w-full flex-grow-0">
           <button
             class="tab tab-bordered tab-lg flex-1"
             class:tab-active={tab === 0}
