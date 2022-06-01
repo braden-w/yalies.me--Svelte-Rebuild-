@@ -37,20 +37,30 @@
       <h2 class="mt-32 mb-2 text-4xl font-extrabold md:text-6xl">
         Get Started
       </h2>
-      <h3 class="mb-5 text-3xl font-bold">Hop Onto One of the Quick Links</h3>
-      <p class="mx-auto mb-5 w-full max-w-lg">Caption</p>
-      <div class="font-bold">Creating a button</div>
-      using only utility classes vs using daisyUI component classes
-      <p />
+      <!-- <h3 class="mb-5 text-3xl font-bold">Hop Onto One of the Quick Links</h3> -->
+      <!-- <p class="mx-auto mb-5 w-full max-w-lg">Caption</p> -->
+      <!-- <div class="font-bold">Creating a button</div> -->
+      <!-- using only utility classes vs using daisyUI component classes -->
       <div class="mt-10 mb-20 flex flex-col lg:flex-row">
         <div class="flex w-full flex-col text-left">
-          <div
-            class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md"
-          />
           <div class="mt-4 flex h-16 items-start justify-center">
             <button
               class="inline-block cursor-pointer rounded-md bg-indigo-600 px-4 py-3 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-indigo-700"
-              >Button</button
+            >
+              New Haven
+            </button>
+          </div>
+        </div>
+        <div
+          class="divider uppercase text-base-content/50 lg:divider-horizontal"
+        >
+          vs
+        </div>
+        <div class="flex w-full flex-col text-left">
+          <div class="mt-4 flex h-16 items-start justify-center">
+            <button
+              class="inline-block cursor-pointer rounded-md bg-indigo-600 px-4 py-3 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-indigo-700"
+              >Map</button
             >
           </div>
         </div>
@@ -60,31 +70,8 @@
           vs
         </div>
         <div class="flex w-full flex-col text-left">
-          <div
-            class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md"
-          />
-          <div class="mt-4 flex h-16 items-start justify-center">
-            <button
-              class="inline-block cursor-pointer rounded-md bg-indigo-600 px-4 py-3 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-indigo-700"
-              >Button</button
-            >
-          </div>
-        </div>
-        <div
-          class="divider uppercase text-base-content/50 lg:divider-horizontal"
-        >
-          vs
-        </div>
-        <div class="flex w-full flex-col text-left">
-          <div
-            class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md"
-          >
-            <pre>
-<code
-                >&lt;a class="<span class="text-teal-500">btn btn-primary</span
-                >"&gt;Button&lt;/a&gt;</code
-              >
-</pre>
+          <div class="mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md">
+            <ListOfLocations {places} />
           </div>
           <div class="mt-4 flex h-16 items-start justify-center">
             <button class="btn btn-primary">Button</button>
