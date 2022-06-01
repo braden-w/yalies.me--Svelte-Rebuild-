@@ -30,7 +30,12 @@
               </div>
               <div>
                 <div class="font-bold">{user.name}</div>
-                <div class="text-sm opacity-50">{user.college}</div>
+                {#if user?.school || user?.college}
+                  <div class="text-sm opacity-50">
+                    {[user?.school, user?.college].join(', ')}
+                    <br />
+                  </div>
+                {/if}
               </div>
             </div>
             <a href={`/places/${user.place_id}`}>
