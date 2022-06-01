@@ -14,7 +14,6 @@
   import MapIcon from '$lib/components/icons/MapIcon.svelte';
 
   import ListOfLocations from '$lib/components/ListOfLocations.svelte';
-  import LoginSplashScreen from '$lib/components/LoginSplashScreen.svelte';
   import {
     placesAndTheirPeopleStore,
     refreshPlacesAndTheirPeopleStore
