@@ -6,7 +6,6 @@
   } from '$lib/stores/UserLocationStore';
   import type { PlaceInformation } from 'src/routes/places/[place_id].svelte';
   import { createEventDispatcher } from 'svelte';
-  import { get } from 'svelte/store';
 
   export let placeInformation: PlaceInformation;
 
@@ -55,6 +54,10 @@
     <span class="label-text">
       I'm currently in {placeInformation.description}
     </span>
-    <input type="checkbox" class="toggle" bind:checked />
+    <input
+      type="checkbox"
+      class="toggle toggle-accent animate-bounce"
+      bind:checked
+    />
   </label>
 </div>
