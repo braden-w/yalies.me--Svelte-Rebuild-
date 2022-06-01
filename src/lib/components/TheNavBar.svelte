@@ -12,7 +12,7 @@
         <div class="flex-none">
           <label
             for="main-drawer"
-            class="btn btn-ghost btn-square drawer-button"
+            class="btn btn-square btn-ghost drawer-button"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -37,11 +37,11 @@
           >
         </div>
         <div class="flex-none">
-          <div class="dropdown dropdown-end">
+          <div class="dropdown-end dropdown">
             <label
               for="main-drawer "
               tabindex="0"
-              class="btn btn-circle btn-ghost"
+              class="btn btn-ghost btn-circle"
             >
               <div class="indicator">
                 <svg
@@ -74,7 +74,7 @@
               </div>
             </div>
           </div>
-          <div title="Change Theme" class="dropdown dropdown-end ">
+          <div title="Change Theme" class="dropdown-end dropdown ">
             <div tabindex="0" class="btn btn-ghost gap-1 normal-case">
               <svg
                 width="20"
@@ -831,8 +831,8 @@
               </div>
             </div>
           </div>
-          <div class="dropdown dropdown-end">
-            <label tabindex="0" class="avatar btn btn-circle btn-ghost">
+          <div class="dropdown-end dropdown">
+            <label tabindex="0" class="avatar btn btn-ghost btn-circle">
               <div class="w-10 rounded-full">
                 <img
                   src={$profileStore?.avatar_url ??
@@ -884,19 +884,21 @@
     <ul class="menu w-80 overflow-y-auto bg-base-200 p-4 text-base-content">
       <!-- Sidebar content here -->
       <li>
-        <a sveltekit:prefetch href="">Who's in New Haven</a>
+        <a sveltekit:prefetch href="/places/New Haven, CT"
+          >Who's in New Haven
+        </a>
       </li>
       {#if $profileStore !== null}
         <li>
           <a sveltekit:prefetch href="/map">Map</a>
         </li>
       {/if}
-      <li>
+      <!-- <li>
         <a sveltekit:prefetch href="">Ride Share</a>
-      </li>
-      <li>
+      </li> -->
+      <!-- <li>
         <a sveltekit:prefetch href="">Track Meals</a>
-      </li>
+      </li> -->
       <li>
         <a sveltekit:prefetch href="butteries">Butteries</a>
       </li>
