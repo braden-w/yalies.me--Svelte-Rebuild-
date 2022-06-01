@@ -39,8 +39,8 @@
             class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md"
           >
             <pre>
-<code
-                >&lt;a class="<span class="text-amber-400"
+<code>
+                &lt;a class="<span class="text-amber-400"
                   >inline-block px-4 py-3
     text-sm font-semibold text-center
     text-white uppercase transition
@@ -79,86 +79,7 @@
           </div>
         </div>
       </div>
-      <p class="mx-auto mt-20 w-full max-w-lg" />
-      <div class="font-bold">Creating a toggle</div>
       using only utility classes vs using daisyUI component classes
-      <p />
-      <div class="mt-10 mb-20 flex flex-col lg:flex-row">
-        <div class="flex w-full flex-col text-left">
-          <div
-            class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md"
-          >
-            <pre>
-<code
-                >&lt;div class="<span class="text-amber-400">relative</span
-                >"&gt;
-    &lt;input type="checkbox" class="<span class="text-amber-400"
-                  >peer
-    appearance-none cursor-pointer
-    border border-gray-300 rounded-full
-    checked:border-gray-900 w-12 h-6</span
-                >"/&gt;
-    &lt;span class="<span class="text-amber-400"
-                  >peer-checked:left-7
-    peer-checked:bg-gray-900
-    transition-all duration-200
-    pointer-events-none w-4 h-4
-    block absolute top-1 left-1
-    rounded-full bg-gray-300</span
-                >"&gt;&lt;/span&gt;
-  &lt;/div&gt;</code
-              >
-</pre>
-          </div>
-          <div class="mt-4 flex h-16 items-start justify-center">
-            <div class="relative">
-              <input
-                aria-label="Toggle"
-                type="checkbox"
-                class="peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-gray-300 checked:border-gray-900"
-              />
-              <span
-                class="pointer-events-none absolute top-1 left-1 block h-4 w-4 rounded-full bg-gray-300 transition-all duration-200 peer-checked:left-7 peer-checked:bg-gray-900"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          class="divider uppercase text-base-content/50 lg:divider-horizontal"
-        >
-          vs
-        </div>
-        <div class="flex w-full flex-col text-left">
-          <div
-            class="mockup-code relative mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md lg:overflow-hidden"
-          >
-            <pre>
-<code
-                >&lt;input type="checkbox" class="<span class="text-teal-500"
-                  >toggle</span
-                >"/&gt;</code
-              >
-</pre>
-            <img
-              loading="lazy"
-              class="pointer-events-none absolute bottom-0 right-[-6.1em] hidden translate-x-60 -rotate-90 transition duration-1000 lg:block"
-              src="/thats-quiet-big.png"
-              alt="That's quiet big"
-              width="666"
-              height="375"
-            />
-          </div>
-          <div class="mt-4 flex h-16 items-start justify-center">
-            <div>
-              <input aria-label="Toggle" type="checkbox" class="toggle" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <p class="mx-auto w-full max-w-lg" />
-      <div class="font-bold">Creating a menu component</div>
-      using only utility classes vs using daisyUI component classes
-      <p />
       <div class="mt-10 mb-20 flex flex-col lg:flex-row">
         <div class="flex w-full flex-col text-left">
           <div
