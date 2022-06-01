@@ -16,11 +16,7 @@
 </script>
 
 <script lang="ts">
-  import {
-    profileStore,
-    refreshProfileStore,
-    setUserLocation
-  } from '$lib/stores/auth/profileStore';
+  import { profileStore, setUserLocation } from '$lib/stores/auth/profileStore';
   import { defaultResults } from '$lib/components/LocationAutoComplete/DefaultResults';
   import { supabase } from '$lib/utils/supabaseClient';
 
