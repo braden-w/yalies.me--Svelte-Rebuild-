@@ -11,11 +11,10 @@
   <meta name="description" content="Log into the map!" />
 </svelte:head>
 
-<LoginSplashScreen />
-
 <div
   class="hero mx-auto min-h-screen max-w-md bg-base-100 text-base-content md:max-w-full"
 >
+  <div class="hero-overlay bg-opacity-60" />
   <div class="hero-content px-4 text-center md:px-0">
     <div>
       <h2 class="mt-32 mb-2 text-4xl font-extrabold md:text-6xl">Yalies.Me</h2>
