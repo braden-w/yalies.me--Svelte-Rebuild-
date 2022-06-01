@@ -21,6 +21,7 @@
   import { profileStore } from '$lib/stores/auth/profileStore';
   import LocationAutoComplete from '$lib/components/LocationAutoComplete.svelte';
   import TableOfLocations from '$lib/components/TableOfLocations.svelte';
+  import MapIcon from '$lib/components/icons/MapIcon.svelte';
 
   export let places: definitionsJSON['places_with_people'][] = [];
 </script>
@@ -85,8 +86,9 @@
         />
 
         <div class="form-control mt-6">
-          <a href="/map" class="btn btn-primary" sveltekit:prefetch>Go To Map</a
-          >
+          <a href="/map" class="btn btn-primary" sveltekit:prefetch>
+            Go To Map
+          </a>
         </div>
       </div>
     </div>
