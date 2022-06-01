@@ -10,7 +10,15 @@
     'New Haven In.png'
   ];
 
-  const photoURLs = photoNames.map((name) => `/photos/${name}`);
+  const photoFilePaths = photoNames.map((name) => `/photos/${name}`);
+  const albumURL = 'https://imgur.com/a/vSfU9c6';
+  const photoURLs = [
+    'https://i.imgur.com/O7KS8N5.png',
+    'https://i.imgur.com/63FnRQX.png',
+    'https://i.imgur.com/tVZGAKh.png',
+    'https://i.imgur.com/PzEQtAG.png',
+    'https://i.imgur.com/8VIWiMd.png'
+  ];
 
   export let loading: boolean;
 </script>
@@ -44,14 +52,14 @@
               </div>
               <div class="w-1/2 p-1 md:p-2">
                 <img
-                  alt="gallery"
+                  alt="Gallery"
                   class="block h-full w-full rounded-lg object-cover object-center"
                   src={photoURLs[1]}
                 />
               </div>
               <div class="w-full p-1 md:p-2">
                 <img
-                  alt="gallery"
+                  alt="Gallery"
                   class="block h-full w-full rounded-lg object-cover object-center"
                   src={photoURLs[2]}
                 />
@@ -60,21 +68,21 @@
             <div class="flex w-1/2 flex-wrap">
               <div class="w-full p-1 md:p-2">
                 <img
-                  alt="gallery"
+                  alt="Gallery"
                   class="block h-full w-full rounded-lg object-cover object-center"
                   src={photoURLs[3]}
                 />
               </div>
               <div class="w-1/2 p-1 md:p-2">
                 <img
-                  alt="gallery"
+                  alt="Gallery"
                   class="block h-full w-full rounded-lg object-cover object-center"
                   src={photoURLs[4]}
                 />
               </div>
               <div class="w-1/2 p-1 md:p-2">
                 <img
-                  alt="gallery"
+                  alt="Gallery"
                   class="block h-full w-full rounded-lg object-cover object-center"
                   src={photoURLs[5]}
                 />

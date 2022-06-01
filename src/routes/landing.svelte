@@ -12,7 +12,15 @@
     'New Haven.png',
     'New Haven In.png'
   ];
-  const photoURLs = photoNames.map((name) => `/photos/${name}`);
+  const photoFilePaths = photoNames.map((name) => `/photos/${name}`);
+  const albumURL = 'https://imgur.com/a/vSfU9c6';
+  const photoURLs = [
+    'https://i.imgur.com/O7KS8N5.png',
+    'https://i.imgur.com/63FnRQX.png',
+    'https://i.imgur.com/tVZGAKh.png',
+    'https://i.imgur.com/PzEQtAG.png',
+    'https://i.imgur.com/8VIWiMd.png'
+  ];
 
   export let loading: false;
 </script>
