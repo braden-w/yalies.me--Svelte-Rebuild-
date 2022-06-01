@@ -3,20 +3,6 @@ import type { definitionsJSON } from '$lib/types/definitionsJSON';
 import { supabase } from '$lib/utils/supabaseClient';
 import {  get } from 'svelte/store';
 
-/** Updates the place_id in the user_responses table based off the user's user_response_id */
-export async function setUserLocation(
-  place_id: string | undefined | null,
-): Promise<void> {
-  const {error} = await supabase
-    .from<definitionsJSON['user_responses']>('user_responses')
-    .update({
-      place_id: place_id
-    })
-    .eq('user_response_id', get(profileStore)?.user_response_id);
-  if (error) {
-    console.error(error);
-  }
-}
 
 // Create a derived store that gets the place_id and description from the $profileStore
 export const defaultResults = [

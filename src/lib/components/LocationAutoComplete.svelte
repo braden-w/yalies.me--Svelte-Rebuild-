@@ -18,12 +18,10 @@
 <script lang="ts">
   import {
     profileStore,
-    refreshProfileStore
+    refreshProfileStore,
+setUserLocation
   } from '$lib/stores/auth/profileStore';
-  import {
-    defaultResults,
-    setUserLocation
-  } from '$lib/stores/UserLocationStore';
+  import { defaultResults } from '$lib/stores/UserLocationStore';
   import { supabase } from '$lib/utils/supabaseClient';
 
   export let isCurrentUser: boolean;
