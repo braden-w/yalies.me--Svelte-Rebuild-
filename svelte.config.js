@@ -17,7 +17,7 @@ const config = {
     prerender: {default: true},
     vite: {
       plugins: [removeConsole()], server: {
-        fs: {allow: ['locales']}
+        fs: {allow: ['photos']}
       }
     },
     // Override http methods in the Todo forms
