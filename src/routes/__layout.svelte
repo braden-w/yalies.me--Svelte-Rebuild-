@@ -12,7 +12,6 @@
   import { authLoadingStore, signOut } from '$lib/stores/auth/authLoadingStore';
   import type { ApiError, User } from '@supabase/supabase-js';
   import type { UserMetadata } from '$lib/types/UserMetaData';
-  import { goto } from '$app/navigation';
   import { browser } from '$app/env';
 
   import TheNavBar from '$lib/components/TheNavBar.svelte';

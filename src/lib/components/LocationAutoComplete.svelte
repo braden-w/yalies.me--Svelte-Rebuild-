@@ -98,7 +98,7 @@
       uploadPlaceToSupabase(payload);
 
       await setUserLocation(place_id);
-      refreshProfileStore($profileStore?.id);
+      refreshProfileStore();
       console.log(
         '🚀 ~ file: LocationAutoComplete.svelte ~ line 110 ~ $profileStore',
         $profileStore

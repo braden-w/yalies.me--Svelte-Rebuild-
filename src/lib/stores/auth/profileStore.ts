@@ -3,7 +3,7 @@ import createStore from '$lib/utils/createStore';
 import { supabase } from '$lib/utils/supabaseClient';
 import { get, type Writable } from 'svelte/store';
 
-export async function refreshProfileStore(queryId: string | undefined) {
+export async function refreshProfileStore(queryId: string | undefined = undefined) {
   const id = queryId ?? get(profileStore)?.id;
   if (!id) throw new Error('No ID provided to refresh user data');
   const { data, error } = await supabase
@@ -41,7 +41,7 @@ export async function uploadUserResponses(
       '🚀 ~ file: profileStore.ts ~ line 30 ~ uploadStoreToSupabase ~ data',
       data
     );
-    return await refreshProfileStore(undefined);
+    return await refreshProfileStore();
   }
   if (error) {
     console.error(error);
