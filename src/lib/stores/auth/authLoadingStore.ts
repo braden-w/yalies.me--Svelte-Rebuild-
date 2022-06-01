@@ -8,6 +8,7 @@ export const signIn = async () => {
     authLoadingStore.set(true);
     // Get current url
     const redirectURL = window.location.href.split('#')[0];
+    // alert(redirectURL)
     const { error } = await supabase.auth.signIn(
       { provider: 'google' },
       { redirectTo: redirectURL }
