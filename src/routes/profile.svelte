@@ -47,10 +47,10 @@
       </div>
     </div>
     <!-- Cell 2 -->
-    <div class="col-span-4 row-span-3 xl:col-span-2">
+    <!-- <div class="col-span-4 row-span-3 xl:col-span-2">
       <SpotifyPlayer url={$profileStore?.expression} />
-      <!-- <UserAvatarsRow {userProfileInformation} /> -->
-    </div>
+      <UserAvatarsRow {userProfileInformation} />
+    </div> -->
     <!-- Cell 3 -->
     <div class="col-span-4 row-span-3 xl:col-span-3">
       <UserLocationCard bind:userProfileInformation={$profileStore} />
