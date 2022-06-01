@@ -76,7 +76,6 @@
         Enter your current city. For privacy, feel free to use a city that is in
         proximity rather than exact location.
       </p>
-      <div class="hidden lg:block"><QuickLinksBar /></div>
     </div>
     <div class="card w-full max-w-sm flex-shrink-0 bg-base-100 shadow-2xl">
       <div class="card-body text-base-content">
@@ -144,6 +143,7 @@
         {:else if tab === 1}
           <TableOfLocations places={$placesAndTheirPeopleStore} />
         {/if}
+        <QuickLinksBar />
       </div>
     </div>
   </div>
