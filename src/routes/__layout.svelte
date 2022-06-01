@@ -111,10 +111,12 @@
 </script>
 
 <TheNavBar>
-  {#if $profileStore && !$authLoadingStore}
-    <slot />
-  {:else}
+  {#if $authLoadingStore}
     <LoginSplashScreen />
+  {:else if !$profileStore}
+    <LoginSplashScreen />
+  {:else}
+    <slot />
   {/if}
 </TheNavBar>
 
