@@ -1,14 +1,11 @@
 <script lang="ts">
   import GoogleIcon from './icons/GoogleIcon.svelte';
 
-  import { signIn, authLoadingStore } from '$lib/stores/auth/authLoadingStore';
+  import { signIn } from '$lib/stores/auth/authLoadingStore';
+  export let loading = false;
 </script>
 
-<button
-  class:loading={$authLoadingStore}
-  class="btn btn-primary"
-  on:click={signIn}
->
+<button class:loading class="btn btn-primary" on:click={signIn}>
   <div class="left">
     <GoogleIcon />
   </div>
