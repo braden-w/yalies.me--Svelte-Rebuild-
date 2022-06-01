@@ -1,28 +1,4 @@
-<script lang="ts">
-  import '../app.css';
-
-  // Initialize theme-change, taken from https://github.com/saadeghi/theme-change
-  import { onMount } from 'svelte';
-  import { themeChange } from 'theme-change';
-  import { supabase } from '$lib/utils/supabaseClient';
-  import {
-    refreshProfileStore,
-    profileStore
-  } from '$lib/stores/auth/profileStore';
-  import { authLoadingStore, signOut } from '$lib/stores/auth/authLoadingStore';
-  import type { ApiError, User } from '@supabase/supabase-js';
-  import type { ProfileStore } from '$lib/types/ProfileStore';
-  import type { UserMetadata } from '$lib/types/UserMetaData';
-  import { goto } from '$app/navigation';
-  import { browser } from '$app/env';
-
-  import TheNavBar from '$lib/components/TheNavBar.svelte';
-  import LoginSplashScreen from '$lib/components/LoginSplashScreen.svelte';
-  import type { definitions } from '$lib/types/supabase';
-  onMount(() => {
-    themeChange(false);
-  });
-
+<script context="module" lang="ts">
   // If the user email doesn't end with .edu, throw an error and redirect to sign in page
   function emailIsEdu(user: User): boolean {
     if (!user?.email) return false;
@@ -39,33 +15,14 @@
     }
   }
 
-  // Handle login state on page load
-  if (browser) {
-    redirectIfUserNullOrNotEdu(supabase.auth.user());
-    $authLoadingStore = false;
-  }
-
-  // Handle login state once supabase changes kick in
-  supabase.auth.onAuthStateChange(async (_, loggedIn) => {
-    // If logout
-    if (!loggedIn) {
-      $profileStore = null;
-      $authLoadingStore = false;
-      return goto('/landing');
-    }
-    // If login
-    const user = supabase.auth.user();
-    console.log(
-      '🚀 ~ file: __layout.svelte ~ line 48 ~ supabase.auth.onAuthStateChange ~ user',
-      user
-    );
-
-    // Save profile data to session store
-    const payload: ProfileStore = processAuthState(user);
+  /** Upload profile data from profileStore to 'users' database */
+  async function uploadProfileDataToSupabase(
+    payload: definitionsJSON['users'] | null
+  ) {
+    if (!payload) return;
     try {
-      // Upload profile data from profileStore to 'users' database
       const { data, error } = await supabase
-        .from<definitions['users']>('users')
+        .from<definitionsJSON['users']>('users')
         .upsert(payload);
       console.log(
         '🚀 ~ file: __layout.svelte ~ line 58 ~ const{data,error}=awaitsupabase.from ~ data',
@@ -76,12 +33,8 @@
       if ((error as ApiError).message) {
         alert((error as ApiError).message);
       }
-    } finally {
-      refreshProfileStore(payload.id);
-      $authLoadingStore = false;
-      // goto('/profile');
     }
-  });
+  }
 
   /** Get everything before the @ of the email */
   function getUserFromEmail(email: string): string {
@@ -89,36 +42,104 @@
     return emailUser;
   }
 
-  function processAuthState(user: User | null): ProfileStore {
+  function processAuthState(
+    user: User | null
+  ): definitionsJSON['users'] | null {
+    if (!user) return null;
     // Get the variables "id" from $profileStore
-    const id = user?.id;
+    const id = user.id;
 
     // Get the user_response_id from userMetaData
-    const userMetaData = user?.user_metadata as UserMetadata;
+    const userMetaData = user.user_metadata as UserMetadata;
     const { email } = userMetaData;
     const user_response_id = getUserFromEmail(email);
 
     // Create payload for auth information
     const payload = { id, user_response_id, ...userMetaData };
-
     return payload;
   }
 </script>
 
+<script lang="ts">
+  import '../app.css';
+
+  // Initialize theme-change, taken from https://github.com/saadeghi/theme-change
+  import { onMount } from 'svelte';
+  import { themeChange } from 'theme-change';
+  import { supabase } from '$lib/utils/supabaseClient';
+  import {
+    refreshProfileStore,
+    profileStore
+  } from '$lib/stores/auth/profileStore';
+  import { authLoadingStore, signOut } from '$lib/stores/auth/authLoadingStore';
+  import type { ApiError, User } from '@supabase/supabase-js';
+  import type { UserMetadata } from '$lib/types/UserMetaData';
+  import { browser } from '$app/env';
+
+  import TheNavBar from '$lib/components/TheNavBar.svelte';
+  import LoginSplashScreen from '$lib/components/LoginSplashScreen.svelte';
+  import type { definitionsJSON } from '$lib/types/definitionsJSON';
+
+  // Handle login state on page load
+  if (browser) {
+    redirectIfUserNullOrNotEdu(supabase.auth.user());
+    $authLoadingStore = false;
+  }
+
+  // Handle login state once supabase changes kick in
+  supabase.auth.onAuthStateChange((_, loggedIn) => {
+    // If logout
+    if (!loggedIn) {
+      $profileStore = null;
+      $authLoadingStore = false;
+      console.log(
+        '🚀 ~ file: __layout.svelte ~ line 49 ~ supabase.auth.onAuthStateChange ~ authLoadingStore',
+        authLoadingStore
+      );
+      // return goto('/landing');
+    }
+    // If login
+    const user = supabase.auth.user();
+    console.log(
+      '🚀 ~ file: __layout.svelte ~ line 48 ~ supabase.auth.onAuthStateChange ~ user',
+      user
+    );
+    if (user) $authLoadingStore = false;
+    const payload: definitionsJSON['users'] | null = processAuthState(user);
+    console.log(
+      '🚀 ~ file: __layout.svelte ~ line 60 ~ supabase.auth.onAuthStateChange ~ payload',
+      payload
+    );
+    uploadProfileDataToSupabase(payload);
+    refreshProfileStore(payload?.id);
+  });
+
+  onMount(() => {
+    themeChange(false);
+  });
+</script>
+
 <TheNavBar>
-  {$authLoadingStore}
-  {$profileStore}
   {#if $authLoadingStore}
-    Loading
-  {:else if $profileStore}
-    <slot />
+    <LoginSplashScreen loading={true} />
+    <!-- Else if Logged In, just loading store -->
+    <!-- Else if Logged Out -->
+  {:else if !$profileStore}
+    <LoginSplashScreen loading={false} />
   {:else}
-    <LoginSplashScreen />
+    <slot />
   {/if}
+  <footer>
+    <div class="flex flex-col justify-center">
+      <p class="text-center">
+        Made with <span>❤️</span> by Braden.
+      </p>
+      <a class="btn btn-xs" href="mailto:braden.wong@yale.edu">
+        Request a feature or report a bug
+      </a>
+    </div>
+  </footer>
 </TheNavBar>
 
-<!-- <footer>
-	<p>Made with love and <span>❤️</span> by Braden</p>
-</footer> -->
 <style>
 </style>

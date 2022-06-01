@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { definitions } from '$lib/types/supabase';
+  import type { definitionsJSON } from '$lib/types/definitionsJSON';
 
-  export let avatar_url: definitions['users_facebook_places']['avatar_url'] =
+  export let avatar_url: definitionsJSON['users_facebook_places']['avatar_url'] =
     '';
   let tab = 0;
 </script>
@@ -107,7 +107,7 @@
       </div>
       <div class="text-lg font-extrabold">Follower Report</div>
       <div class="grid gap-3">
-        <div class="dropdown-top dropdown">
+        <div class="dropdown dropdown-top">
           <div tabindex="0">
             <div class="flex items-center p-1">
               <span class="w-48 text-xs text-base-content/70"
@@ -217,7 +217,7 @@
             </div>
           </div>
         </div>
-        <div class="dropdown-top dropdown dropdown-end">
+        <div class="dropdown dropdown-end dropdown-top">
           <div tabindex="0">
             <div class="alert alert-info">
               <div class="flex-1">
@@ -263,7 +263,7 @@
             </div>
           </div>
         </div>
-        <div class="dropdown-top dropdown dropdown-end">
+        <div class="dropdown dropdown-end dropdown-top">
           <div tabindex="0">
             <div class="alert alert-success">
               <div class="flex-1">
@@ -372,7 +372,7 @@
         </div>
       </div>
       <div class="form-control">
-        <div class="dropdown-top dropdown dropdown-end">
+        <div class="dropdown dropdown-end dropdown-top">
           <div tabindex="0">
             <button class="btn btn-secondary btn-block space-x-2">
               <svg

@@ -13,10 +13,10 @@
     uploadUserResponses
   } from '$lib/stores/auth/profileStore';
   import { get } from 'svelte/store';
-  import type { definitions } from '$lib/types/supabase';
+  import type { definitionsJSON } from '$lib/types/definitionsJSON';
 
   export let userProfileInformation:
-    | definitions['users_facebook_places']
+    | definitionsJSON['users_facebook_places']
     | null;
 
   /** Set this to true if this userCard refers to the currrent logged in user */
@@ -51,13 +51,13 @@
   const userIntegrations = [
     {
       name: 'instagram',
-      label: 'Instagram',
+      label: 'Instagram Handle',
       icon: InstagramIcon,
       value: userProfileInformation?.instagram ?? ''
     },
     {
       name: 'linkedin',
-      label: 'Linkedin',
+      label: 'LinkedIn',
       icon: LinkedInIcon,
       value: userProfileInformation?.linkedin ?? ''
     },
@@ -81,7 +81,7 @@
     let accumulator: { [key: string]: string; user_response_id: string } = {
       user_response_id: $profileStore?.user_response_id ?? ''
     };
-    let payload: definitions['user_responses'] = responsesList.reduce(
+    let payload: definitionsJSON['user_responses'] = responsesList.reduce(
       (obj, item) => ((obj[item.name] = item.value), obj),
       accumulator
     );
@@ -120,7 +120,9 @@
     {/each}
     <div class="divider" />
     <div class="text-xl font-extrabold">Social Media</div>
-    <div class="my-4 text-xs text-base-content/70">Put your Instagram</div>
+    <div class="my-4 text-xs text-base-content/70">
+      Instagram Handle, LinkedIn URL, and Spotify URL go here
+    </div>
     {#each userIntegrations as { name, label, icon, value }}
       <div class="form-control">
         <label class="label" for={name}>
@@ -141,27 +143,29 @@
       </div>
     {/each}
   </div>
-  <div class="form-control">
-    <div class="divider" />
-    <button
-      class="btn btn-secondary btn-block space-x-2"
-      class:loading={isApplySettingsLoading}
-      on:click={() => applySettings([...inputsList, ...userIntegrations])}
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        class="h-6 w-6 stroke-current"
+  {#if isCurrentUser}
+    <div class="form-control">
+      <div class="divider" />
+      <button
+        class="btn btn-secondary btn-block space-x-2"
+        class:loading={isApplySettingsLoading}
+        on:click={() => applySettings([...inputsList, ...userIntegrations])}
       >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-        />
-      </svg>
-      <span>Apply settings</span>
-    </button>
-  </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          class="h-6 w-6 stroke-current"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+        <span>Apply settings</span>
+      </button>
+    </div>
+  {/if}
 </div>

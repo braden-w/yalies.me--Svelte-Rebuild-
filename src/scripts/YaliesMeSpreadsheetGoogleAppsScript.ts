@@ -13,9 +13,10 @@ const headers = [
   'interests',
   'expression'
 ];
+
 function myFunction() {
-  clearEntireSpreadsheet();
-  writeHeadersOnFirstRow();
+  // clearEntireSpreadsheet();
+  writeHeadersOnRow(3);
   const response = UrlFetchApp.fetch(
     `${VITE_SUPABASE_URL}/rest/v1/users_facebook_places?id=not.is.null`,
     {
@@ -38,7 +39,7 @@ function myFunction() {
     );
   });
 
-  dataRange = sheet.getRange(2, 1, rows.length, rows[0].length);
+  dataRange = sheet.getRange(4, 1, rows.length, rows[0].length);
   dataRange.setValues(rows);
 }
 
@@ -48,8 +49,8 @@ function clearEntireSpreadsheet() {
   sheet.clear();
 }
 
-function writeHeadersOnFirstRow() {
+function writeHeadersOnRow(row) {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const sheet = ss.getActiveSheet();
-  sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+  sheet.getRange(row, 1, 1, headers.length).setValues([headers]);
 }

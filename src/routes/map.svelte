@@ -5,12 +5,10 @@
    * Each user has a id, name, and avatar_url
    */
   export async function load() {
-    const { data, error } = await supabase
-      .from<definitions['places_with_people']>('places_with_people')
-      .select('place_id, description, lat, lng, people')
-      .not('people', 'is', null);
-    const places = data;
-    return { status: 200, props: { places } };
+    await refreshPlacesAndTheirPeopleStore();
+    return {
+      status: 200
+    };
   }
 </script>
 
@@ -22,18 +20,19 @@
   import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
   import { onMount } from 'svelte';
-  import { supabase } from '$lib/utils/supabaseClient';
   import { generateInnerHTML } from '$lib/utils/map/generateInnerHTML';
-  import type { definitions } from '$lib/types/supabase';
+  import {
+    placesAndTheirPeopleStore,
+    refreshPlacesAndTheirPeopleStore
+  } from '$lib/stores/placesAndTheirPeopleStore';
 
   mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_KEY;
 
   const NewHaven = { longitude: -72.9, latitude: 41.3, zoom: 8 };
-  const CenterUS = { longitude: -95.7, latitude: 37.1, zoom: 3 };
+  const CenterUS = { longitude: -95.7, latitude: 37.1, zoom: 2 };
   // longitude = userProfileInformation.location?.longitude ?? NewHaven.longitude;
   // latitude = userProfileInformation.location?.latitude ?? NewHaven.latitude;
   // console.log('longitude, latitude:>> ', longitude, latitude)
-  export let places: definitions['places_with_people'][];
 
   onMount(() => {
     const map = new mapboxgl.Map({
@@ -68,6 +67,15 @@
       // loadFacebook(map!, queryYear)
     });
 
+    generateMarkers(map, $placesAndTheirPeopleStore);
+  });
+
+  /** Add a marker to the map for each place */
+  function generateMarkers(
+    map: mapboxgl.Map,
+    places: typeof $placesAndTheirPeopleStore
+  ) {
+    if (!places) return;
     places.forEach((place) => {
       const el = document.createElement('div');
       el.className = 'marker';
@@ -93,7 +101,7 @@
 
       const scalePercent = (
         defaultPxSize = 32,
-        defaultZoom = 3,
+        defaultZoom = 2,
         scaleFactor = 0.1
       ) => {
         const scalePercent = 1 + (map.getZoom() - defaultZoom) * scaleFactor;
@@ -115,9 +123,10 @@
       });
 
       // Add the marker to the map
+      if (!place.lng || !place.lat) return;
       new mapboxgl.Marker(el).setLngLat([place.lng, place.lat]).addTo(map);
     });
-  });
+  }
 </script>
 
 <svelte:head>

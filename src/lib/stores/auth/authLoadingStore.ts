@@ -2,12 +2,15 @@ import { supabase } from '$lib/utils/supabaseClient';
 import type { ApiError } from '@supabase/supabase-js';
 import { writable, type Writable } from 'svelte/store';
 
-export const authLoadingStore: Writable<boolean> = writable(true);
+/** Whether the profile information is loading (even if it is null). Set to true on login, and false when login is complete or profile information is fetched from memory.
+ * Every time the user loads or refreshes the page, it takes time for profile information to be fetched. */
+export const authLoadingStore: Writable<boolean> = writable(false);
 export const signIn = async () => {
   try {
     authLoadingStore.set(true);
     // Get current url
-    const redirectURL = window.location.href.split("#")[0]
+    const redirectURL = window.location.href.split('#')[0];
+    // alert(redirectURL)
     const { error } = await supabase.auth.signIn(
       { provider: 'google' },
       { redirectTo: redirectURL }

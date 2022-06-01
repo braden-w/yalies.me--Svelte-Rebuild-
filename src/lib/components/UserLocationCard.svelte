@@ -1,11 +1,14 @@
 <script lang="ts">
+  import MapIcon from './icons/MapIcon.svelte';
+
   import LocationAutoComplete from '$lib/components/LocationAutoComplete.svelte';
   import { profileStore } from '$lib/stores/auth/profileStore';
-  import type { definitions } from '$lib/types/supabase';
+  import type { definitionsJSON } from '$lib/types/definitionsJSON';
   import { get } from 'svelte/store';
+  import LocationsListIcon from '$lib/components/icons/LocationsListIcon.svelte';
 
   export let userProfileInformation:
-    | definitions['users_facebook_places']
+    | definitionsJSON['users_facebook_places']
     | null;
   const isCurrentUser = userProfileInformation?.id === get(profileStore)?.id;
 </script>
@@ -25,25 +28,22 @@
     />
   </div>
   <div class="form-control">
-    <div class="divider" />
-    <a class="btn btn-secondary btn-block space-x-2" href="/map">
-      <!-- Insert an svg of a map -->
-      <svg
-        class="h-6 w-6"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+    <div class="my-2 flex flex-row justify-between">
+      <a
+        href="/map"
+        sveltekit:prefetch
+        class="btn btn-ghost btn-md shrink grow basis-0"
       >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"
-        />
-        <circle cx="12" cy="10" r="3" />
-      </svg>
-      <span>Go to Map</span>
-    </a>
+        <MapIcon /> Go To Map
+      </a>
+      <div class="divider divider-horizontal" />
+      <a
+        href="/locations"
+        sveltekit:prefetch
+        class="btn btn-ghost btn-md shrink grow basis-0"
+      >
+        <LocationsListIcon /> See All Locations
+      </a>
+    </div>
   </div>
 </div>

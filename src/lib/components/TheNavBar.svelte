@@ -31,12 +31,13 @@
         </div>
         <div class="flex-1">
           <a
-            href={$profileStore !== null ? '/map' : '/landing'}
+            sveltekit:prefetch
+            href={$profileStore !== null ? '/' : '/'}
             class="btn btn-ghost text-xl normal-case">Yalies.Me</a
           >
         </div>
         <div class="flex-none">
-          <div class="dropdown dropdown-end">
+          <div class="dropdown-end dropdown">
             <label
               for="main-drawer "
               tabindex="0"
@@ -73,7 +74,7 @@
               </div>
             </div>
           </div>
-          <div title="Change Theme" class="dropdown dropdown-end ">
+          <div title="Change Theme" class="dropdown-end dropdown ">
             <div tabindex="0" class="btn btn-ghost gap-1 normal-case">
               <svg
                 width="20"
@@ -830,7 +831,7 @@
               </div>
             </div>
           </div>
-          <div class="dropdown dropdown-end">
+          <div class="dropdown-end dropdown">
             <label tabindex="0" class="avatar btn btn-ghost btn-circle">
               <div class="w-10 rounded-full">
                 <img
@@ -846,10 +847,16 @@
               class="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow"
             >
               <li>
-                <a class="justify-between" href="/profile"> Profile </a>
+                <a class="justify-between" sveltekit:prefetch href="/profile">
+                  Profile
+                </a>
               </li>
               <li>
-                <a class="justify-between" href="/locations">
+                <a class="justify-between" sveltekit:prefetch href="/map">Map</a
+                >
+              </li>
+              <li>
+                <a class="justify-between" sveltekit:prefetch href="/locations">
                   Locations
                   <span class="badge">New</span>
                 </a>
@@ -877,21 +884,27 @@
     <ul class="menu w-80 overflow-y-auto bg-base-200 p-4 text-base-content">
       <!-- Sidebar content here -->
       <li>
-        <a href="">Who's in New Haven</a>
-      </li>
-      {#if $profileStore !== null}
-        <li>
-          <a href="/map">Map</a>
-        </li>
-      {/if}
-      <li>
-        <a href="">Ride Share</a>
+        <a sveltekit:prefetch href="/places/New Haven, CT"
+          >Who's in New Haven
+        </a>
       </li>
       <li>
-        <a href="">Track Meals</a>
+        <a sveltekit:prefetch href="/map">Map</a>
       </li>
       <li>
-        <a href="butteries">Butteries</a>
+        <a sveltekit:prefetch href="/locations">Locations</a>
+      </li>
+      <li>
+        <a sveltekit:prefetch href="/profile">Profile</a>
+      </li>
+      <!-- <li>
+        <a sveltekit:prefetch href="">Ride Share</a>
+      </li> -->
+      <!-- <li>
+        <a sveltekit:prefetch href="">Track Meals</a>
+      </li> -->
+      <li>
+        <a sveltekit:prefetch href="/butteries">Butteries</a>
       </li>
     </ul>
   </div>

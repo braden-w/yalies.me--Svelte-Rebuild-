@@ -1,11 +1,11 @@
 <script lang="ts">
-  import type { definitions } from '$lib/types/supabase';
+  import type { definitionsJSON } from '$lib/types/definitionsJSON';
 
-  export let users: definitions['users_facebook_places'][] = [];
+  export let users: definitionsJSON['users_facebook_places'][] = [];
 </script>
 
 <div
-  class="carousel-center carousel rounded-box max-w-md justify-center space-x-4 bg-neutral p-4"
+  class="carousel-center carousel rounded-box justify-center space-x-4 bg-neutral p-4"
 >
   {#each users as user}
     <div class="carousel-item">

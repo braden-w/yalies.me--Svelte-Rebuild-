@@ -1,14 +1,7 @@
 <script lang="ts">
-  import { profileStore } from '$lib/stores/auth/profileStore';
-  import {
-    setUserLocation,
-    resetUserLocation,
-    userLocationStore,
-    refreshUserLocation
-  } from '$lib/stores/UserLocationStore';
+  import { profileStore, setUserLocation } from '$lib/stores/auth/profileStore';
   import type { PlaceInformation } from 'src/routes/places/[place_id].svelte';
   import { createEventDispatcher } from 'svelte';
-  import { get } from 'svelte/store';
 
   export let placeInformation: PlaceInformation;
 
@@ -31,22 +24,15 @@
   export async function handleToggleUserLocation(checked: boolean) {
     // If the toggle is moved to checked
     if (checked) {
-      await setUserLocation(
-        placeInformation.place_id,
-        placeInformation.description
-      );
+      await setUserLocation(placeInformation.place_id);
       console.log(
         '🚀 ~ file: PlaceCheckbox.svelte ~ line 33 ~ handleToggleUserLocation ~ placeInformation.place_id',
         placeInformation.place_id
       );
     } else {
       if (oldPlace.place_id === placeInformation.place_id)
-        await resetUserLocation();
-      else
-        await setUserLocation(
-          oldPlace.place_id as string,
-          oldPlace.description as string
-        );
+        await setUserLocation(null);
+      else await setUserLocation(oldPlace.place_id as string);
     }
     dispatch('toggled');
   }
@@ -57,6 +43,6 @@
     <span class="label-text">
       I'm currently in {placeInformation.description}
     </span>
-    <input type="checkbox" class="toggle" bind:checked />
+    <input type="checkbox" class="toggle toggle-accent" bind:checked />
   </label>
 </div>
