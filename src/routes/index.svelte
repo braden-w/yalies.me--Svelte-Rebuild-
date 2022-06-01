@@ -28,24 +28,15 @@
             class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md"
           >
             <pre>
-<code
-                >&lt;ul class="py-3 bg-gray-100 rounded-xl"&gt;
-    &lt;li&gt;
-      &lt;span class="<span class="text-amber-400"
-                  >block px-5 py-1 text-xs text-gray-400 font-bold</span
-                >"&gt;Menu Title&lt;/span&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a class="<span class="text-amber-400"
-                  >block px-5 py-3 rounded-lg text-gray-900 hover:bg-gray-200 active:bg-indigo-600 active:text-white outline-none cursor-pointer</span
-                >"&gt;First Menu Item&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class="<span class="text-amber-400"
-                  >block px-5 py-3 rounded-lg text-gray-900 hover:bg-gray-200 active:bg-indigo-600 active:text-white outline-none cursor-pointer</span
-                >"&gt;Second Menu Item&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class="<span class="text-amber-400"
-                  >block px-5 py-3 rounded-lg text-gray-900 hover:bg-gray-200 active:bg-indigo-600 active:text-white outline-none cursor-pointer</span
-                >"&gt;Third Menu Item&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;</code
-              >
+<code>
+                <video
+                  class="top-0 left-0 h-full w-full"
+                  src="https://i.imgur.com/0uL1zb2.mp4"
+                  autoplay
+                  loop
+                  muted
+                />
+  </code>
 </pre>
           </div>
           <div class="mt-4 flex items-start justify-center overflow-hidden">
