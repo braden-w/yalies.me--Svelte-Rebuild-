@@ -10,7 +10,7 @@
     'New Haven In.png'
   ];
 
-  const photoURLs = photoNames.map((name) => `../../photos/${name}`);
+  const photoURLs = photoNames.map((name) => `/photos/${name}`);
 </script>
 
 <div
