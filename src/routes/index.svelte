@@ -16,6 +16,7 @@
 
 <script lang="ts">
   import ListOfLocations from '$lib/components/ListOfLocations.svelte';
+  import LoginSplashScreen from '$lib/components/LoginSplashScreen.svelte';
   import type { definitionsJSON } from '$lib/types/definitionsJSON';
   import { supabase } from '$lib/utils/supabaseClient';
 
@@ -28,6 +29,8 @@
   <title>Landing</title>
   <meta name="description" content="Log into the map!" />
 </svelte:head>
+
+<LoginSplashScreen />
 
 <div
   class="hero mx-auto min-h-screen max-w-md bg-base-100 text-base-content md:max-w-full"
