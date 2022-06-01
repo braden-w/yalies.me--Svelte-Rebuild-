@@ -14,7 +14,7 @@
     </li>
     {#if users}
       {#each users as user}
-        <a href={`/users/${user.id}`}>
+        <a href={`/users/${user.id}`} id={user.id}>
           <li>
             <div class="flex flex-row justify-between">
               <div class="flex items-center space-x-3">
