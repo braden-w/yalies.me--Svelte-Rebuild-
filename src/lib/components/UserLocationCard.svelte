@@ -5,6 +5,7 @@
   import { profileStore } from '$lib/stores/auth/profileStore';
   import type { definitionsJSON } from '$lib/types/definitionsJSON';
   import { get } from 'svelte/store';
+  import LocationsListIcon from '$lib/components/icons/LocationsListIcon.svelte';
 
   export let userProfileInformation:
     | definitionsJSON['users_facebook_places']
@@ -27,15 +28,22 @@
     />
   </div>
   <div class="form-control">
-    <div class="divider" />
-    <a
-      class="btn btn-secondary btn-block space-x-2"
-      href="/map"
-      sveltekit:prefetch
-    >
-      <!-- Insert an svg of a map -->
-      <MapIcon />
-      <span>Go to Map</span>
-    </a>
+    <div class="my-2 flex flex-row justify-between">
+      <a
+        href="/map"
+        sveltekit:prefetch
+        class="btn btn-ghost btn-md shrink grow basis-0"
+      >
+        <MapIcon /> Go To Map
+      </a>
+      <div class="divider divider-horizontal" />
+      <a
+        href="/locations"
+        sveltekit:prefetch
+        class="btn btn-ghost btn-md shrink grow basis-0"
+      >
+        <LocationsListIcon /> See All Locations
+      </a>
+    </div>
   </div>
 </div>
