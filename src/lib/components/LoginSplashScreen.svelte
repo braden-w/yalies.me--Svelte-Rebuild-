@@ -4,13 +4,13 @@
 
 <div class="min-h-screen-nav hero">
   <!-- Insert video with url https://i.imgur.com/0uL1zb2.mp4 -->
-  <video
+  <!-- <video
     class="top-0 left-0 h-full w-full"
     src="https://i.imgur.com/0uL1zb2.mp4"
     autoplay
     loop
     muted
-  />
+  /> -->
   <div class="hero-overlay bg-opacity-60" />
   <div class="hero-content text-center text-neutral-content">
     <div class="align-center max-w-md">
