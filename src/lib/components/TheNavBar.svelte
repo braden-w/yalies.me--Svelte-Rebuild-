@@ -12,7 +12,7 @@
         <div class="flex-none">
           <label
             for="main-drawer"
-            class="btn btn-ghost btn-square drawer-button"
+            class="btn btn-square btn-ghost drawer-button"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -32,12 +32,12 @@
         <div class="flex-1">
           <a
             sveltekit:prefetch
-            href={$profileStore !== null ? '/map' : '/landing'}
+            href={$profileStore !== null ? '/' : '/'}
             class="btn btn-ghost text-xl normal-case">Yalies.Me</a
           >
         </div>
         <div class="flex-none">
-          <div class="dropdown dropdown-end">
+          <div class="dropdown-end dropdown">
             <label
               for="main-drawer "
               tabindex="0"
