@@ -37,7 +37,7 @@
           >
         </div>
         <div class="flex-none">
-          <div class="dropdown-end dropdown">
+          <div class="dropdown dropdown-end">
             <label
               for="main-drawer "
               tabindex="0"
@@ -74,7 +74,7 @@
               </div>
             </div>
           </div>
-          <div title="Change Theme" class="dropdown-end dropdown ">
+          <div title="Change Theme" class="dropdown dropdown-end ">
             <div tabindex="0" class="btn btn-ghost gap-1 normal-case">
               <svg
                 width="20"
@@ -831,7 +831,7 @@
               </div>
             </div>
           </div>
-          <div class="dropdown-end dropdown">
+          <div class="dropdown dropdown-end">
             <label tabindex="0" class="avatar btn btn-ghost btn-circle">
               <div class="w-10 rounded-full">
                 <img
@@ -884,8 +884,8 @@
     <ul class="menu w-80 overflow-y-auto bg-base-200 p-4 text-base-content">
       <!-- Sidebar content here -->
       <li>
-        <a sveltekit:prefetch href="/places/New Haven, CT"
-          >Who's in New Haven
+        <a sveltekit:prefetch href="/places/New Haven, CT">
+          Who's in New Haven
         </a>
       </li>
       <li>
@@ -896,6 +896,11 @@
       </li>
       <li>
         <a sveltekit:prefetch href="/profile">Profile</a>
+      </li>
+      <li>
+        <a sveltekit:prefetch href="/landing">
+          Landing
+        </a>
       </li>
       <!-- <li>
         <a sveltekit:prefetch href="">Ride Share</a>
