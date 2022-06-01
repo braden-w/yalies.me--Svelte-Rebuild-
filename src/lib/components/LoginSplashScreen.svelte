@@ -1,24 +1,89 @@
 <script lang="ts">
   import SignInGoogleButton from './SignInGoogleButton.svelte';
+  const photoNames = [
+    'LocationsTable.png',
+    'LocationsList.png',
+    'Map.png',
+    'Profile.png',
+    'Profile Other.png',
+    'New Haven.png',
+    'New Haven In.png'
+  ];
+
+  const photoURLs = photoNames.map((name) => `../../photos/${name}`);
 </script>
 
-<div class="min-h-screen-nav hero">
-  <!-- Insert video with url https://i.imgur.com/0uL1zb2.mp4 -->
-  <!-- <video
-    class="top-0 left-0 h-full w-full"
-    src="https://i.imgur.com/0uL1zb2.mp4"
-    autoplay
-    loop
-    muted
-  /> -->
+<div
+  class="min-h-screen-nav hero mx-auto max-w-md bg-base-100 text-base-content md:max-w-full"
+>
   <div class="hero-overlay bg-opacity-60" />
-  <div class="hero-content text-center text-neutral-content">
-    <div class="align-center max-w-md">
-      <h1 class="mb-5 text-5xl font-bold">Yalies.Me</h1>
-      <p class="mb-5">
+  <div class="hero-content px-4 text-center md:px-0">
+    <div>
+      <h2 class="mt-32 mb-2 text-4xl font-extrabold md:text-6xl">Yalies.Me</h2>
+      <h3 class="mb-5 text-3xl font-bold">
         An app that solves a single question: who is in my area?
+      </h3>
+      <p class="mx-auto w-full max-w-xl">
+        Quickly browse a map, list of users, and cities to see who is in your
+        area.
       </p>
-      <SignInGoogleButton />
+      <section class="overflow-hidden text-gray-700">
+        <div class="container mx-auto px-5 py-2 lg:px-32 lg:py-8">
+          <div class="-m-1 flex flex-wrap md:-m-2">
+            <div class="flex w-1/2 flex-wrap">
+              <div class="w-1/2 p-1 md:p-2">
+                <video
+                  class="block h-full w-full rounded-lg object-cover object-center"
+                  src="https://i.imgur.com/0uL1zb2.mp4"
+                  autoplay
+                  loop
+                  muted
+                />
+              </div>
+              <div class="w-1/2 p-1 md:p-2">
+                <img
+                  alt="gallery"
+                  class="block h-full w-full rounded-lg object-cover object-center"
+                  src={photoURLs[1]}
+                />
+              </div>
+              <div class="w-full p-1 md:p-2">
+                <img
+                  alt="gallery"
+                  class="block h-full w-full rounded-lg object-cover object-center"
+                  src={photoURLs[2]}
+                />
+              </div>
+            </div>
+            <div class="flex w-1/2 flex-wrap">
+              <div class="w-full p-1 md:p-2">
+                <img
+                  alt="gallery"
+                  class="block h-full w-full rounded-lg object-cover object-center"
+                  src={photoURLs[3]}
+                />
+              </div>
+              <div class="w-1/2 p-1 md:p-2">
+                <img
+                  alt="gallery"
+                  class="block h-full w-full rounded-lg object-cover object-center"
+                  src={photoURLs[4]}
+                />
+              </div>
+              <div class="w-1/2 p-1 md:p-2">
+                <img
+                  alt="gallery"
+                  class="block h-full w-full rounded-lg object-cover object-center"
+                  src={photoURLs[5]}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="mb-36 flex w-full justify-center">
+        <SignInGoogleButton />
+      </div>
     </div>
   </div>
 </div>
