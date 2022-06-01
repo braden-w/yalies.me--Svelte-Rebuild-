@@ -118,7 +118,8 @@
         <div class="w-full">
           <h1 class="text-5xl font-bold">Locations</h1>
           <p class="py-6">
-            There are currently {getNumberOfUniquePlaces(places)} locations!
+            There are currently {getNumberOfUniquePlaces(places)} locations with
+            Yalies!
           </p>
         </div>
         <div class="tabs mb-2 w-full flex-grow-0">
