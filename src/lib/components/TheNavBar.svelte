@@ -12,7 +12,7 @@
         <div class="flex-none">
           <label
             for="main-drawer"
-            class="btn btn-square btn-ghost drawer-button"
+            class="btn btn-ghost btn-square drawer-button"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@
           >
         </div>
         <div class="flex-none">
-          <div class="dropdown-end dropdown">
+          <div class="dropdown dropdown-end">
             <label
               for="main-drawer "
               tabindex="0"
@@ -904,7 +904,7 @@
         <a sveltekit:prefetch href="">Track Meals</a>
       </li> -->
       <li>
-        <a sveltekit:prefetch href="butteries">Butteries</a>
+        <a sveltekit:prefetch href="/butteries">Butteries</a>
       </li>
     </ul>
   </div>
