@@ -158,7 +158,7 @@
     </div>
   </div>
 </div>
-<div class="flex flex-row justify-between ">
+<div class="my-2 flex flex-row justify-between">
   <a href="/map" class="btn btn-ghost btn-md shrink grow basis-0">
     <MapIcon /> Go To Map
   </a>
