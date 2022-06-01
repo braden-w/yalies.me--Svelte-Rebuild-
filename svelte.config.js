@@ -14,10 +14,11 @@ const config = {
 
   kit: {
     adapter: netlify(),
-    prerender: {default: true},
+    prerender: { default: true },
     vite: {
-      plugins: [removeConsole()], server: {
-        fs: {allow: ['photos']}
+      plugins: [removeConsole()],
+      server: {
+        fs: { allow: ['photos'] }
       }
     },
     // Override http methods in the Todo forms

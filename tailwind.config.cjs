@@ -1,7 +1,7 @@
 const config = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
 
-  safelist: [{pattern: /bg-.+-.+/}],
+  safelist: [{ pattern: /bg-.+-.+/ }],
 
   theme: {
     extend: {}
@@ -17,13 +17,13 @@ const config = {
           'secondary-content': '#ffffff',
           accent: '#63aaff',
           'accent-content': '#ffffff',
-          neutral: "#191D24",
-          "neutral-focus": "#111318",
-          "neutral-content": "#A6ADBB",
-          "base-100": "#2A303C",
-          "base-200": "#242933",
-          "base-300": "#20252E",
-          "base-content": "#A6ADBB",
+          neutral: '#191D24',
+          'neutral-focus': '#111318',
+          'neutral-content': '#A6ADBB',
+          'base-100': '#2A303C',
+          'base-200': '#242933',
+          'base-300': '#20252E',
+          'base-content': '#A6ADBB'
         }
       },
       'light',
