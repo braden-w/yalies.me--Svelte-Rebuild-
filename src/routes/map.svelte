@@ -69,7 +69,7 @@
 
     generateMarkers(map, $placesAndTheirPeopleStore);
   });
-  
+
   /** Add a marker to the map for each place */
   function generateMarkers(
     map: mapboxgl.Map,
@@ -123,6 +123,7 @@
       });
 
       // Add the marker to the map
+      if (!place.lng || !place.lat) return;
       new mapboxgl.Marker(el).setLngLat([place.lng, place.lat]).addTo(map);
     });
   }
