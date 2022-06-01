@@ -42,7 +42,9 @@
       <!-- <div class="font-bold">Creating a button</div> -->
       <!-- using only utility classes vs using daisyUI component classes -->
 
-      <div class="card flex flex-row justify-between bg-base-100 p-2">
+      <div
+        class="card flex flex-col justify-between bg-base-100 p-2 md:flex-row"
+      >
         <a
           href="/map"
           sveltekit:prefetch
