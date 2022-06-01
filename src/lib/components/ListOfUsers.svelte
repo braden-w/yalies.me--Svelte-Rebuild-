@@ -10,7 +10,7 @@
 >
   <ul class="menu overflow-visible p-3">
     <li class="menu-title">
-      <span>Locations</span>
+      <span>Users</span>
     </li>
     {#if users}
       {#each users as user}
