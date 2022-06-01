@@ -24,6 +24,20 @@
   import TableOfLocations from '$lib/components/TableOfLocations.svelte';
 
   export let places: definitionsJSON['places_with_people'][] = [];
+
+  function getNumberOfUniquePlaces(
+    placesArray: definitionsJSON['places_with_people'][]
+  ) {
+    // Array of place_ids
+    const placeIds = placesArray.map((place) => place.place_id);
+
+    // Array of unique place_ids
+    const uniquePlaceIds = Array.from(new Set(placeIds));
+
+    /** Number of unique places in the array places */
+    return uniquePlaceIds.length;
+  }
+
   let tab = 0;
 </script>
 
@@ -103,7 +117,9 @@
       <div class="w-full overflow-x-auto">
         <div class="w-full">
           <h1 class="text-5xl font-bold">Locations</h1>
-          <p class="py-6">There are currently a lot of locations!</p>
+          <p class="py-6">
+            There are currently {getNumberOfUniquePlaces(places)} locations!
+          </p>
         </div>
         <div class="tabs mb-2 w-full flex-grow-0">
           <button
