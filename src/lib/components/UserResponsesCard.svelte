@@ -57,13 +57,13 @@
     },
     {
       name: 'linkedin',
-      label: 'Linkedin',
+      label: 'LinkedIn URL',
       icon: LinkedInIcon,
       value: userProfileInformation?.linkedin ?? ''
     },
     {
       name: 'expression',
-      label: 'Spotify',
+      label: 'Spotify URL',
       icon: SpotifyIcon,
       value: userProfileInformation?.expression ?? ''
     }
