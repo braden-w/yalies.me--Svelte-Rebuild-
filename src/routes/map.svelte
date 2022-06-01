@@ -29,7 +29,7 @@
   mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_KEY;
 
   const NewHaven = { longitude: -72.9, latitude: 41.3, zoom: 8 };
-  const CenterUS = { longitude: -95.7, latitude: 37.1, zoom: 3 };
+  const CenterUS = { longitude: -95.7, latitude: 37.1, zoom: 2 };
   // longitude = userProfileInformation.location?.longitude ?? NewHaven.longitude;
   // latitude = userProfileInformation.location?.latitude ?? NewHaven.latitude;
   // console.log('longitude, latitude:>> ', longitude, latitude)
@@ -101,7 +101,7 @@
 
       const scalePercent = (
         defaultPxSize = 32,
-        defaultZoom = 3,
+        defaultZoom = 2,
         scaleFactor = 0.1
       ) => {
         const scalePercent = 1 + (map.getZoom() - defaultZoom) * scaleFactor;

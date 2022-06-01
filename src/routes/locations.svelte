@@ -10,7 +10,7 @@
 </script>
 
 <script lang="ts">
-  import QuickLinksBar from './QuickLinksBar.svelte';
+  import QuickLinksBar from '../lib/components/QuickLinksBar.svelte';
 
   import { profileStore } from '$lib/stores/auth/profileStore';
   import LocationAutoComplete from '$lib/components/LocationAutoComplete.svelte';
