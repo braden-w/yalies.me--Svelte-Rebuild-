@@ -14,6 +14,7 @@
   import MapIcon from '$lib/components/icons/MapIcon.svelte';
 
   import ListOfLocations from '$lib/components/ListOfLocations.svelte';
+  import LocationsPage from '$lib/components/pages/LocationsPage.svelte';
   import {
     placesAndTheirPeopleStore,
     refreshPlacesAndTheirPeopleStore
@@ -26,6 +27,8 @@
   <title>Home</title>
   <meta name="description" content="Jump to essential pages." />
 </svelte:head>
+
+<LocationsPage />
 
 <!-- <div class="min-h-screen-nav hero bg-base-200 text-base-content">
   <div class="hero-content px-4 text-center md:px-0">
