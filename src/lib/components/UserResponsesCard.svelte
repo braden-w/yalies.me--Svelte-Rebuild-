@@ -51,19 +51,19 @@
   const userIntegrations = [
     {
       name: 'instagram',
-      label: 'Instagram',
+      label: 'Instagram Handle',
       icon: InstagramIcon,
       value: userProfileInformation?.instagram ?? ''
     },
     {
       name: 'linkedin',
-      label: 'LinkedIn URL',
+      label: 'LinkedIn',
       icon: LinkedInIcon,
       value: userProfileInformation?.linkedin ?? ''
     },
     {
       name: 'expression',
-      label: 'Spotify URL',
+      label: 'Spotify',
       icon: SpotifyIcon,
       value: userProfileInformation?.expression ?? ''
     }
@@ -120,7 +120,9 @@
     {/each}
     <div class="divider" />
     <div class="text-xl font-extrabold">Social Media</div>
-    <div class="my-4 text-xs text-base-content/70">Put your Instagram</div>
+    <div class="my-4 text-xs text-base-content/70">
+      Instagram Handle, LinkedIn URL, and Spotify URL go here
+    </div>
     {#each userIntegrations as { name, label, icon, value }}
       <div class="form-control">
         <label class="label" for={name}>
