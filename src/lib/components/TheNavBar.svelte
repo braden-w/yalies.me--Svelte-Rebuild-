@@ -12,7 +12,7 @@
         <div class="flex-none">
           <label
             for="main-drawer"
-            class="btn btn-square btn-ghost drawer-button"
+            class="btn btn-ghost btn-square drawer-button"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -37,11 +37,11 @@
           >
         </div>
         <div class="flex-none">
-          <div class="dropdown-end dropdown">
+          <div class="dropdown dropdown-end">
             <label
               for="main-drawer "
               tabindex="0"
-              class="btn btn-ghost btn-circle"
+              class="btn btn-circle btn-ghost"
             >
               <div class="indicator">
                 <svg
@@ -63,7 +63,7 @@
             </label>
             <div
               tabindex="0"
-              class="card-compact card dropdown-content mt-3 w-52 bg-base-100 shadow"
+              class="card dropdown-content card-compact mt-3 w-52 bg-base-100 shadow"
             >
               <div class="card-body">
                 <span class="text-lg font-bold">Notifications</span>
@@ -74,7 +74,7 @@
               </div>
             </div>
           </div>
-          <div title="Change Theme" class="dropdown-end dropdown ">
+          <div title="Change Theme" class="dropdown dropdown-end ">
             <div tabindex="0" class="btn btn-ghost gap-1 normal-case">
               <svg
                 width="20"
@@ -831,8 +831,8 @@
               </div>
             </div>
           </div>
-          <div class="dropdown-end dropdown">
-            <label tabindex="0" class="avatar btn btn-ghost btn-circle">
+          <div class="dropdown dropdown-end">
+            <label tabindex="0" class="avatar btn btn-circle btn-ghost">
               <div class="w-10 rounded-full">
                 <img
                   src={$profileStore?.avatar_url ??
@@ -847,10 +847,16 @@
               class="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow"
             >
               <li>
-                <a class="justify-between" href="/profile"> Profile </a>
+                <a class="justify-between" sveltekit:prefetch href="/profile">
+                  Profile
+                </a>
               </li>
               <li>
-                <a class="justify-between" href="/locations">
+                <a class="justify-between" sveltekit:prefetch href="/map">Map</a
+                >
+              </li>
+              <li>
+                <a class="justify-between" sveltekit:prefetch href="/locations">
                   Locations
                   <span class="badge">New</span>
                 </a>
@@ -878,21 +884,21 @@
     <ul class="menu w-80 overflow-y-auto bg-base-200 p-4 text-base-content">
       <!-- Sidebar content here -->
       <li>
-        <a href="">Who's in New Haven</a>
+        <a sveltekit:prefetch href="">Who's in New Haven</a>
       </li>
       {#if $profileStore !== null}
         <li>
-          <a href="/map" sveltekit:prefetch>Map</a>
+          <a sveltekit:prefetch href="/map">Map</a>
         </li>
       {/if}
       <li>
-        <a href="">Ride Share</a>
+        <a sveltekit:prefetch href="">Ride Share</a>
       </li>
       <li>
-        <a href="">Track Meals</a>
+        <a sveltekit:prefetch href="">Track Meals</a>
       </li>
       <li>
-        <a href="butteries">Butteries</a>
+        <a sveltekit:prefetch href="butteries">Butteries</a>
       </li>
     </ul>
   </div>
