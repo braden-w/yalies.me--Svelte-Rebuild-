@@ -48,7 +48,16 @@
     if (dataMatchPlaceDescription?.length !== 0)
       return { data: dataMatchPlaceDescription, redirect: null };
 
-    // Attempt to fuzzy match the query by place_description
+    // Assuming there are no users, and there are no rows in users_facebook_places, fetch place description from the places table 
+    const { data: dataJustPlace, error: errorJustPlace } = await supabase
+      .from<definitionsJSON['places']>('places')
+      .select(selectQuery)
+      .eq('place_id', query);
+    if (errorJustPlace) console.log(errorJustPlace);
+    if (dataJustPlace?.length !== 0)
+      return { data: dataJustPlace, redirect: null };
+
+    // As a last resort, attempt to fuzzy match the query by place_description
     const {
       data: dataFuzzyMatchPlaceDescription,
       error: errorFuzzyMatchPlaceDescription
@@ -69,14 +78,6 @@
       return { data: null, redirect };
     }
 
-    // As a last resort, fetch place description from the places table (this is assuming there are no users, so there are no rows in users_facebook_places)
-    const { data: dataJustPlace, error: errorJustPlace } = await supabase
-      .from<definitionsJSON['places']>('places')
-      .select(selectQuery)
-      .eq('place_id', query);
-    if (errorJustPlace) console.log(errorJustPlace);
-    if (dataJustPlace?.length !== 0)
-      return { data: dataJustPlace, redirect: null };
 
     // Otherwise, 404
     const redirect = { status: 404 };
