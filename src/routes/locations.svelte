@@ -22,6 +22,7 @@
   import LocationAutoComplete from '$lib/components/LocationAutoComplete.svelte';
   import TableOfLocations from '$lib/components/TableOfLocations.svelte';
   import MapIcon from '$lib/components/icons/MapIcon.svelte';
+  import ListOfLocations from '$lib/components/ListOfLocations.svelte';
 
   export let places: definitionsJSON['places_with_people'][] = [];
 </script>
@@ -104,7 +105,7 @@
           <h1 class="text-5xl font-bold">Locations</h1>
           <p class="py-6">There are currently a lot of locations!</p>
         </div>
-        <TableOfLocations {places} />
+        <ListOfLocations />
       </div>
     </div>
   </div>
