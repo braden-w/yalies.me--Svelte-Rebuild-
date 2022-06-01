@@ -1,5 +1,6 @@
 <script lang="ts">
   import LoginSplashScreen from '../lib/components/LoginSplashScreen.svelte';
+  export const prerender = true;
 </script>
 
 <svelte:head>
