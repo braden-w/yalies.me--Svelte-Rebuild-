@@ -55,7 +55,7 @@
     <!-- <div class="divider" /> -->
     <a class="btn btn-secondary btn-block space-x-2" href="/locations">
       <!-- Insert an svg of a list of Locations -->
-      <LocationsListIcon></LocationsListIcon>
+      <LocationsListIcon />
 
       <span>Go to Locations</span>
     </a>
