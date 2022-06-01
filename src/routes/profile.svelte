@@ -1,15 +1,8 @@
 <script lang="ts" context="module">
   export async function load() {
-    const { data: places, error } = await supabase
-      .from<definitionsJSON['places_with_people']>('places_with_people')
-      .select('*')
-      .not('people', 'is', null);
-    if (error) console.error(error);
+    refreshPlacesAndTheirPeopleStore();
     return {
-      status: 200,
-      props: {
-        places
-      }
+      status: 200
     };
   }
 </script>
@@ -23,10 +16,10 @@
   import SpotifyPlayer from '$lib/components/SpotifyPlayer.svelte';
   import { profileStore } from '$lib/stores/auth/profileStore';
   import ListOfLocations from '$lib/components/ListOfLocations.svelte';
-  import type { definitionsJSON } from '$lib/types/definitionsJSON';
-  import { supabase } from '$lib/utils/supabaseClient';
-
-  export let places: definitionsJSON['places_with_people'][] | null;
+  import {
+    placesAndTheirPeopleStore,
+    refreshPlacesAndTheirPeopleStore
+  } from '$lib/stores/placesAndTheirPeopleStore';
 </script>
 
 <svelte:head>
@@ -47,7 +40,7 @@
           <UserSocials bind:userProfileInformation={$profileStore} />
         </div>
         <UserLocationCard bind:userProfileInformation={$profileStore} />
-        <ListOfLocations {places} />
+        <ListOfLocations places={$placesAndTheirPeopleStore} />
       </div>
     </div>
     <!-- Cell 2 -->
