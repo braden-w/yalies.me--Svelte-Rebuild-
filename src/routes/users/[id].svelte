@@ -47,14 +47,14 @@
       </div>
 
       <!-- Cell 2 -->
-      <div class="col-span-1 row-span-3">
+      <div class="col-span-2 row-span-3">
         <UserLocationCard {userProfileInformation} />
         <!-- <UserAvatarsRow {userProfileInformation} /> -->
       </div>
       <!-- Cell 3 -->
-      <div class="col-span-1 row-span-6">
+      <!-- <div class="col-span-1 row-span-6">
         <SpotifyPlayer url={userProfileInformation.expression} />
-      </div>
+      </div> -->
       <!-- Cell 4 -->
       <div class="col-span-3 row-span-6">
         <UserResponsesCard {userProfileInformation} />
