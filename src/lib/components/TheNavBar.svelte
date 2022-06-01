@@ -888,11 +888,15 @@
           >Who's in New Haven
         </a>
       </li>
-      {#if $profileStore !== null}
-        <li>
-          <a sveltekit:prefetch href="/map">Map</a>
-        </li>
-      {/if}
+      <li>
+        <a sveltekit:prefetch href="/map">Map</a>
+      </li>
+      <li>
+        <a sveltekit:prefetch href="/locations">Locations</a>
+      </li>
+      <li>
+        <a sveltekit:prefetch href="/profile">Profile</a>
+      </li>
       <!-- <li>
         <a sveltekit:prefetch href="">Ride Share</a>
       </li> -->
