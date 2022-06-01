@@ -8,5 +8,5 @@
   <div class="left">
     <GoogleIcon />
   </div>
-  Login with .edu
+  Login with yale.edu
 </button>
