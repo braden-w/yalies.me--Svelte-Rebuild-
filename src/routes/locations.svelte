@@ -18,6 +18,7 @@
     placesAndTheirPeopleStore,
     refreshPlacesAndTheirPeopleStore
   } from '$lib/stores/placesAndTheirPeopleStore';
+  import EditProfileIcon from '$lib/components/icons/EditProfileIcon.svelte';
 
   function getNumberOfUniquePlaces(
     placesArray: definitionsJSON['places_with_people'][] | null
@@ -95,9 +96,9 @@
         />
 
         <div class="form-control mt-6">
-          <a href="/map" class="btn btn-primary" sveltekit:prefetch>
-            <!-- <MapIcon /> -->
-            Go To Map
+          <a href="/profile" class="btn btn-primary" sveltekit:prefetch>
+            <EditProfileIcon />
+            Edit My Full Profile
           </a>
         </div>
       </div>
