@@ -8,4 +8,4 @@
   <meta name="description" content="Log into the map!" />
 </svelte:head>
 
-<LoginSplashScreen />
+<LoginSplashScreen loading={false} />
