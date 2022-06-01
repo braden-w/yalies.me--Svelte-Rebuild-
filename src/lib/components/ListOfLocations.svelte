@@ -1,6 +1,4 @@
 <script lang="ts">
-  import LocationsListIcon from './icons/LocationsListIcon.svelte';
-
   import type { definitionsJSON, Person } from '$lib/types/definitionsJSON';
   import { generateStackOfIcons } from '$lib/utils/map/generateInnerHTML';
 
@@ -34,14 +32,4 @@
       {/each}
     {/if}
   </ul>
-</div>
-
-<div class="form-control">
-  <!-- <div class="divider" /> -->
-  <a class="btn btn-secondary btn-block space-x-2" href="/locations">
-    <!-- Insert an svg of a list of Locations -->
-    <LocationsListIcon />
-
-    <span>Go to Locations</span>
-  </a>
 </div>
