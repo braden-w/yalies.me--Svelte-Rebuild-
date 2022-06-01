@@ -54,19 +54,21 @@
     <!-- Cell 3 -->
     <div class="col-span-4 row-span-3 xl:col-span-3">
       <UserLocationCard bind:userProfileInformation={$profileStore} />
+      <ListOfLocations {places} />
     </div>
     <!-- Cell 4 -->
-    <div class="col-span-4 row-span-3 xl:col-span-3">
+    <!-- <div class="col-span-4 row-span-3 xl:col-span-3">
       <div
         class="rounded-box mx-2 flex flex-shrink-0 flex-col justify-center gap-4 bg-base-100 p-4 shadow-xl xl:mx-0 xl:w-full"
       >
         <ListOfLocations {places} />
       </div>
-    </div>
+    </div> -->
     <!-- Cell 5 -->
     <div class="col-span-4 row-span-6 xl:col-span-8">
       <UserResponsesCard bind:userProfileInformation={$profileStore} />
     </div>
+
     <!-- <div class="col-span-2 row-span-3"> -->
     <!-- <UserStatsInfoOptions {userProfileInformation} /> -->
     <!-- </div> -->
@@ -78,6 +80,17 @@
       
       <UserMenuItems {userProfileInformation} />
        -->
+
+    <!-- TODO: Button for Go to Locations
+       <div class="form-control">
+      <div class="divider" />
+      <a class="btn btn-secondary btn-block space-x-2" href="/locations">
+        Insert an svg of a list of Locations
+        <LocationsListIcon />
+
+        <span>Go to Locations</span>
+      </a>
+    </div> -->
   </div>
 </div>
 <!-- <div class="divider divider-horizontal">OR</div> -->
