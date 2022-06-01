@@ -1,18 +1,10 @@
 <script context="module" lang="ts">
   import type { definitionsJSON } from '$lib/types/definitionsJSON';
-  import { supabase } from '$lib/utils/supabaseClient';
 
   export async function load() {
-    const { data: places, error } = await supabase
-      .from<definitionsJSON['places_with_people']>('places_with_people')
-      .select('*')
-      .not('people', 'is', null);
-    if (error) console.error(error);
+    await refreshPlacesAndTheirPeopleStore();
     return {
-      status: 200,
-      props: {
-        places
-      }
+      status: 200
     };
   }
 </script>
@@ -22,14 +14,16 @@
   import LocationAutoComplete from '$lib/components/LocationAutoComplete.svelte';
   import ListOfLocations from '$lib/components/ListOfLocations.svelte';
   import TableOfLocations from '$lib/components/TableOfLocations.svelte';
-
-  export let places: definitionsJSON['places_with_people'][] = [];
+  import {
+    placesAndTheirPeopleStore,
+    refreshPlacesAndTheirPeopleStore
+  } from '$lib/stores/placesAndTheirPeopleStore';
 
   function getNumberOfUniquePlaces(
-    placesArray: definitionsJSON['places_with_people'][]
+    placesArray: definitionsJSON['places_with_people'][] | null
   ) {
     // Array of place_ids
-    const placeIds = placesArray.map((place) => place.place_id);
+    const placeIds = placesArray?.map((place) => place.place_id) ?? [];
 
     // Array of unique place_ids
     const uniquePlaceIds = Array.from(new Set(placeIds));
@@ -118,8 +112,9 @@
         <div class="w-full">
           <h1 class="text-5xl font-bold">Locations</h1>
           <p class="py-6">
-            There are currently {getNumberOfUniquePlaces(places)} locations with
-            Yalies!
+            There are currently {getNumberOfUniquePlaces(
+              $placesAndTheirPeopleStore
+            )} locations with Yalies!
           </p>
         </div>
         <div class="tabs mb-2 w-full flex-grow-0">
@@ -139,9 +134,9 @@
           </button>
         </div>
         {#if tab === 0}
-          <ListOfLocations {places} />
+          <ListOfLocations places={$placesAndTheirPeopleStore} />
         {:else if tab === 1}
-          <TableOfLocations {places} />
+          <TableOfLocations places={$placesAndTheirPeopleStore} />
         {/if}
       </div>
     </div>
