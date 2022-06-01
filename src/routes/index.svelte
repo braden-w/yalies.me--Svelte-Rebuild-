@@ -8,6 +8,9 @@
 </script>
 
 <script lang="ts">
+  import LocationsListIcon from '$lib/components/icons/LocationsListIcon.svelte';
+  import MapIcon from '$lib/components/icons/MapIcon.svelte';
+
   import ListOfLocations from '$lib/components/ListOfLocations.svelte';
   import LoginSplashScreen from '$lib/components/LoginSplashScreen.svelte';
   import {
@@ -23,16 +26,15 @@
   <meta name="description" content="Log into the map!" />
 </svelte:head>
 
-<LoginSplashScreen />
-
 <div
-  class="hero mx-auto min-h-screen max-w-md bg-base-100 text-base-content md:max-w-full"
+  class="min-h-screen-nav hero mx-auto max-w-md bg-base-200 text-base-content md:max-w-full"
 >
   <div class="hero-content px-4 text-center md:px-0">
     <div>
       <h2 class="mt-32 mb-2 text-4xl font-extrabold md:text-6xl">
         Get Started
       </h2>
+      <ListOfLocations places={$placesAndTheirPeopleStore} />
       <!-- <h3 class="mb-5 text-3xl font-bold">Hop Onto One of the Quick Links</h3> -->
       <!-- <p class="mx-auto mb-5 w-full max-w-lg">Caption</p> -->
       <!-- <div class="font-bold">Creating a button</div> -->
@@ -82,6 +84,23 @@
       </div>
     </div>
   </div>
+</div>
+<div class="my-2 flex flex-row justify-between">
+  <a
+    href="/map"
+    sveltekit:prefetch
+    class="btn btn-ghost btn-md shrink grow basis-0"
+  >
+    <MapIcon /> Go To Map
+  </a>
+  <div class="divider divider-horizontal" />
+  <a
+    href="/locations"
+    sveltekit:prefetch
+    class="btn btn-ghost btn-md shrink grow basis-0"
+  >
+    <LocationsListIcon /> See All Locations
+  </a>
 </div>
 
 <div class="min-h-screen-nav hero bg-base-200">
