@@ -47,7 +47,7 @@
     if (!loggedIn) {
       $profileStore = null;
       $authLoadingStore = false;
-      return goto('/landing');
+      // return goto('/landing');
     }
     // If login
     const user = supabase.auth.user();
