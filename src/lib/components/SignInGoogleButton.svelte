@@ -4,7 +4,11 @@
   import { signIn, authLoadingStore } from '$lib/stores/auth/authLoadingStore';
 </script>
 
-<button class:loading={$authLoadingStore} class="btn" on:click={signIn}>
+<button
+  class:loading={$authLoadingStore}
+  class="btn btn-primary"
+  on:click={signIn}
+>
   <div class="left">
     <GoogleIcon />
   </div>
