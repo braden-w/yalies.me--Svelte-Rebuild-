@@ -159,11 +159,19 @@
   </div>
 </div>
 <div class="my-2 flex flex-row justify-between">
-  <a href="/map" class="btn btn-ghost btn-md shrink grow basis-0">
+  <a
+    href="/map"
+    sveltekit:prefetch
+    class="btn btn-ghost btn-md shrink grow basis-0"
+  >
     <MapIcon /> Go To Map
   </a>
   <div class="divider divider-horizontal" />
-  <a href="/locations" class="btn btn-ghost btn-md shrink grow basis-0">
+  <a
+    href="/locations"
+    sveltekit:prefetch
+    class="btn btn-ghost btn-md shrink grow basis-0"
+  >
     <LocationsListIcon /> See All Locations
   </a>
 </div>
