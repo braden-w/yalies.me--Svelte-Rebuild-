@@ -1,12 +1,30 @@
+<script lang="ts" context="module">
+  interface Payload {
+    place_id: string;
+    description: string;
+    geog: string;
+  }
+
+  async function uploadPlaceToSupabase(payload: Payload) {
+    const { error: errorPlaces } = await supabase
+      .from('places')
+      .upsert(payload, {
+        returning: 'minimal' // Don't return the value after inserting
+      });
+    if (errorPlaces) throw errorPlaces;
+  }
+</script>
+
 <script lang="ts">
-  import { profileStore } from '$lib/stores/auth/profileStore';
+  import {
+    profileStore,
+    refreshProfileStore
+  } from '$lib/stores/auth/profileStore';
   import {
     defaultResults,
-    uploadPlaceToSupabase,
-    uploadUserPlaceSelectionToSupabase,
-    type Payload
-  } from '$lib/components/LocationAutoComplete';
-  import { refreshUserLocation } from '$lib/stores/UserLocationStore';
+    setUserLocation
+  } from '$lib/stores/UserLocationStore';
+  import { supabase } from '$lib/utils/supabaseClient';
 
   export let isCurrentUser: boolean;
   export let query = '';
@@ -74,15 +92,23 @@
         description,
         geog: `SRID=4326;POINT(${lng} ${lat})`
       };
-      console.log(payload);
+      console.log(
+        '🚀 ~ file: LocationAutoComplete.svelte ~ line 91 ~ payload',
+        payload
+      );
+      // Make sure the place exists on the places table
       uploadPlaceToSupabase(payload);
 
-      const user_response_id = $profileStore?.user_response_id;
-      uploadUserPlaceSelectionToSupabase(user_response_id, place_id);
+      await setUserLocation(place_id, description);
+      await refreshProfileStore($profileStore?.id);
+      console.log(
+        '🚀 ~ file: LocationAutoComplete.svelte ~ line 110 ~ $profileStore',
+        $profileStore
+      );
     } catch (error: any) {
       alert(error.message);
     } finally {
-      refreshUserLocation();
+      // refreshUserLocation();
     }
   }
 </script>

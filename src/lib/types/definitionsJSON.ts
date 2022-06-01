@@ -1,4 +1,4 @@
-import type {definitions} from '$lib/types/supabase';
+import type { definitions } from '$lib/types/supabase';
 
 export interface Person {
   id: string;

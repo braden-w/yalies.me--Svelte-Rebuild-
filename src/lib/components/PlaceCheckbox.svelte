@@ -1,9 +1,6 @@
 <script lang="ts">
   import { profileStore } from '$lib/stores/auth/profileStore';
-  import {
-    setUserLocation,
-    resetUserLocation
-  } from '$lib/stores/UserLocationStore';
+  import { setUserLocation } from '$lib/stores/UserLocationStore';
   import type { PlaceInformation } from 'src/routes/places/[place_id].svelte';
   import { createEventDispatcher } from 'svelte';
 
@@ -38,7 +35,7 @@
       );
     } else {
       if (oldPlace.place_id === placeInformation.place_id)
-        await resetUserLocation();
+        await setUserLocation(null, '');
       else
         await setUserLocation(
           oldPlace.place_id as string,

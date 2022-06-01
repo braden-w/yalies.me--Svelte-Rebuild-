@@ -3110,7 +3110,7 @@ export interface definitions {
      * @description Note:
      * This is a Primary Key.<pk/>
      */
-    place_id?: string;
+    place_id?: string | null;
     /** Format: character varying */
     description?: string;
     /** Format: character varying */
