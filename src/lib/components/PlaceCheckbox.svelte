@@ -54,10 +54,6 @@
     <span class="label-text">
       I'm currently in {placeInformation.description}
     </span>
-    <input
-      type="checkbox"
-      class="toggle toggle-accent animate-bounce"
-      bind:checked
-    />
+    <input type="checkbox" class="toggle toggle-accent" bind:checked />
   </label>
 </div>
