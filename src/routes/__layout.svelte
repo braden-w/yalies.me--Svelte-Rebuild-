@@ -18,7 +18,6 @@
   import TheNavBar from '$lib/components/TheNavBar.svelte';
   import LoginSplashScreen from '$lib/components/LoginSplashScreen.svelte';
   import type { definitionsJSON } from '$lib/types/definitionsJSON';
-  import QuickLinksBar from '$lib/components/QuickLinksBar.svelte';
 
   // Handle login state on page load
   if (browser) {

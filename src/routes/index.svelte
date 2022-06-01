@@ -18,6 +18,7 @@
     placesAndTheirPeopleStore,
     refreshPlacesAndTheirPeopleStore
   } from '$lib/stores/placesAndTheirPeopleStore';
+  import LocationsPage from '$lib/components/pages/LocationsPage.svelte';
 
   export const prerender = true;
 </script>
@@ -27,6 +28,7 @@
   <meta name="description" content="Jump to essential pages." />
 </svelte:head>
 
+<LocationsPage />
 <div
   class="min-h-screen-nav hero mx-auto max-w-md bg-base-200 text-base-content md:max-w-full "
 >
