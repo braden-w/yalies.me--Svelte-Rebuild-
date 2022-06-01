@@ -111,9 +111,7 @@
 </script>
 
 <TheNavBar>
-  {#if $authLoadingStore}
-    Loading
-  {:else if $profileStore}
+  {#if $profileStore && !$authLoadingStore}
     <slot />
   {:else}
     <LoginSplashScreen />
