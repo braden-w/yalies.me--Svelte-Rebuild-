@@ -29,9 +29,7 @@
 </svelte:head>
 
 <LocationsPage />
-<div
-  class="min-h-screen-nav hero mx-auto max-w-md bg-base-200 text-base-content md:max-w-full "
->
+<div class="hero bg-base-200 text-base-content">
   <div class="hero-content px-4 text-center md:px-0">
     <div class="flex flex-col gap-4">
       <h2 class="mt-32 mb-2 text-4xl font-extrabold md:text-6xl">
@@ -62,7 +60,6 @@
           <LocationsListIcon /> See All Locations
         </a>
       </div>
-      <ListOfLocations places={$placesAndTheirPeopleStore} />
       <!-- <h3 class="mb-5 text-3xl font-bold">Hop Onto One of the Quick Links</h3> -->
       <!-- <p class="mx-auto mb-5 w-full max-w-lg">Caption</p> -->
       <!-- <div class="font-bold">Creating a button</div> -->
