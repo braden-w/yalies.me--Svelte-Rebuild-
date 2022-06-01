@@ -41,9 +41,13 @@
   >
     <!-- Cell 1 -->
     <div class="col-span-4 row-span-3 xl:col-span-3">
-      <UserCard bind:userProfileInformation={$profileStore} />
-      <div class="rounded-box mt-4 bg-neutral py-2 shadow-xl xl:w-full">
-        <UserSocials bind:userProfileInformation={$profileStore} />
+      <div class="flex flex-col gap-4">
+        <UserCard bind:userProfileInformation={$profileStore} />
+        <div class="rounded-box mt-4 bg-neutral py-2 shadow-xl xl:w-full">
+          <UserSocials bind:userProfileInformation={$profileStore} />
+        </div>
+        <UserLocationCard bind:userProfileInformation={$profileStore} />
+        <ListOfLocations {places} />
       </div>
     </div>
     <!-- Cell 2 -->
@@ -52,10 +56,7 @@
       <UserAvatarsRow {userProfileInformation} />
     </div> -->
     <!-- Cell 3 -->
-    <div class="col-span-4 row-span-3 xl:col-span-3">
-      <UserLocationCard bind:userProfileInformation={$profileStore} />
-      <ListOfLocations {places} />
-    </div>
+    <div class="col-span-4 row-span-3 xl:col-span-3" />
     <!-- Cell 4 -->
     <!-- <div class="col-span-4 row-span-3 xl:col-span-3">
       <div
