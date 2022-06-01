@@ -1,10 +1,3 @@
-import { profileStore } from '$lib/stores/auth/profileStore';
-import type { definitionsJSON } from '$lib/types/definitionsJSON';
-import { supabase } from '$lib/utils/supabaseClient';
-import {  get } from 'svelte/store';
-
-
-// Create a derived store that gets the place_id and description from the $profileStore
 export const defaultResults = [
   {
     description: 'New Haven, CT, USA',
