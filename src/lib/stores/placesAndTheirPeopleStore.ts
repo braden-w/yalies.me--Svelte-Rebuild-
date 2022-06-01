@@ -20,7 +20,7 @@ export async function refreshPlacesAndTheirPeopleStore() {
 
     // Log result
     console.log(
-      '🚀 ~ file: placesAndTheirPeopleStore.ts ~ line 14 ~ refreshProfileStore ~ places',
+      '🚀 ~ file: placesAndTheirPeopleStore.ts ~ line 22 ~ refreshPlacesAndTheirPeopleStore ~ places',
       places
     );
     placesAndTheirPeopleStore.set(places);
