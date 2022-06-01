@@ -48,7 +48,7 @@
     if (dataMatchPlaceDescription?.length !== 0)
       return { data: dataMatchPlaceDescription, redirect: null };
 
-    // Assuming there are no users, and there are no rows in users_facebook_places, fetch place description from the places table 
+    // Assuming there are no users, and there are no rows in users_facebook_places, fetch place description from the places table
     const { data: dataJustPlace, error: errorJustPlace } = await supabase
       .from<definitionsJSON['places']>('places')
       .select(selectQuery)
@@ -77,7 +77,6 @@
       };
       return { data: null, redirect };
     }
-
 
     // Otherwise, 404
     const redirect = { status: 404 };
@@ -186,6 +185,6 @@
 
 <style>
   .h-screen-nav-buttons {
-    height: calc(100vh - 4rem - 3rem);
+    height: calc(100vh - 4rem - 4rem);
   }
 </style>
