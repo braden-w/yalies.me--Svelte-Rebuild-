@@ -21,7 +21,7 @@
     refreshProfileStore,
 setUserLocation
   } from '$lib/stores/auth/profileStore';
-  import { defaultResults } from '$lib/stores/UserLocationStore';
+  import { defaultResults } from '$lib/components/LocationAutoComplete/DefaultResults';
   import { supabase } from '$lib/utils/supabaseClient';
 
   export let isCurrentUser: boolean;
