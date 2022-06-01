@@ -45,7 +45,7 @@
         <a
           href="/map"
           sveltekit:prefetch
-          class="btn btn-primary btn-md shrink grow basis-0"
+          class="btn btn-ghost btn-md shrink grow basis-0"
         >
           <MapIcon /> People in New Haven
         </a>
@@ -53,7 +53,7 @@
         <a
           href="/map"
           sveltekit:prefetch
-          class="btn btn-primary btn-md shrink grow basis-0"
+          class="btn btn-ghost btn-md shrink grow basis-0"
         >
           <MapIcon /> Go To Map
         </a>
@@ -61,7 +61,7 @@
         <a
           href="/locations"
           sveltekit:prefetch
-          class="btn btn-primary btn-md shrink grow basis-0"
+          class="btn btn-ghost btn-md shrink grow basis-0"
         >
           <LocationsListIcon /> See All Locations
         </a>
