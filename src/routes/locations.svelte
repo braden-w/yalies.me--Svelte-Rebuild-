@@ -19,6 +19,8 @@
     refreshPlacesAndTheirPeopleStore
   } from '$lib/stores/placesAndTheirPeopleStore';
   import EditProfileIcon from '$lib/components/icons/EditProfileIcon.svelte';
+  import MapIcon from '$lib/components/icons/MapIcon.svelte';
+  import LocationsListIcon from '$lib/components/icons/LocationsListIcon.svelte';
 
   function getNumberOfUniquePlaces(
     placesArray: definitionsJSON['places_with_people'][] | null
@@ -72,6 +74,33 @@
         Enter your current city. For privacy, feel free to use a city that is in
         proximity rather than exact location.
       </p>
+      <div
+        class="card flex flex-col justify-between bg-base-100 p-2 md:flex-row"
+      >
+        <a
+          href="/places/New Haven, CT, USA"
+          sveltekit:prefetch
+          class="btn btn-ghost btn-md shrink grow basis-0"
+        >
+          <MapIcon /> People in New Haven
+        </a>
+        <div class="divider divider-horizontal" />
+        <a
+          href="/map"
+          sveltekit:prefetch
+          class="btn btn-ghost btn-md shrink grow basis-0"
+        >
+          <MapIcon /> Go To Map
+        </a>
+        <div class="divider divider-horizontal" />
+        <a
+          href="/locations"
+          sveltekit:prefetch
+          class="btn btn-ghost btn-md shrink grow basis-0"
+        >
+          <LocationsListIcon /> See All Locations
+        </a>
+      </div>
     </div>
     <div class="card w-full max-w-sm flex-shrink-0 bg-base-100 shadow-2xl">
       <div class="card-body text-base-content">
