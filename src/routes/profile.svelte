@@ -1,3 +1,19 @@
+<script lang="ts" context="module">
+  export async function load() {
+    const { data: places, error } = await supabase
+      .from<definitionsJSON['places_with_people']>('places_with_people')
+      .select('*')
+      .not('people', 'is', null);
+    if (error) console.error(error);
+    return {
+      status: 200,
+      props: {
+        places
+      }
+    };
+  }
+</script>
+
 <script lang="ts">
   import UserSocials from '$lib/components/UserSocials.svelte';
 
@@ -7,6 +23,10 @@
   import SpotifyPlayer from '$lib/components/SpotifyPlayer.svelte';
   import { profileStore } from '$lib/stores/auth/profileStore';
   import ListOfLocations from '$lib/components/ListOfLocations.svelte';
+  import type { definitionsJSON } from '$lib/types/definitionsJSON';
+  import { supabase } from '$lib/utils/supabaseClient';
+
+  export let places: definitionsJSON['places_with_people'][] | null;
 </script>
 
 <svelte:head>
@@ -37,7 +57,11 @@
     </div>
     <!-- Cell 4 -->
     <div class="col-span-4 row-span-3 xl:col-span-3">
-      <ListOfLocations />
+      <div
+        class="rounded-box mx-2 flex flex-shrink-0 flex-col justify-center gap-4 bg-base-100 p-4 shadow-xl xl:mx-0 xl:w-full"
+      >
+        <ListOfLocations {places} />
+      </div>
     </div>
     <!-- Cell 5 -->
     <div class="col-span-4 row-span-6 xl:col-span-8">
