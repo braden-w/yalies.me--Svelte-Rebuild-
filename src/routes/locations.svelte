@@ -75,7 +75,7 @@
         proximity rather than exact location.
       </p>
       <div
-        class="card flex flex-col justify-between bg-base-100 p-2 md:flex-row"
+        class="card flex flex-col justify-between bg-base-100 p-4 md:flex-row"
       >
         <a
           href="/places/New Haven, CT, USA"
