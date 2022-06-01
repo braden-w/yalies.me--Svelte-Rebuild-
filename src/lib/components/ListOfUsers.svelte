@@ -14,38 +14,41 @@
     </li>
     {#if users}
       {#each users as user}
-        <li>
-          <div class="flex flex-row justify-between">
-            <div class="flex items-center space-x-3">
-              <div class="avatar">
-                <div class="mask mask-squircle w-8">
-                  <img
-                    src={user.avatar_url}
-                    alt="Profile"
-                    height="100%"
-                    width="100%"
-                    referrerpolicy="no-referrer"
-                  />
+        <a href={`/users/${user.id}`}>
+          <li>
+            <div class="flex flex-row justify-between">
+              <div class="flex items-center space-x-3">
+                <div class="avatar">
+                  <div class="mask mask-squircle w-8">
+                    <img
+                      src={user.avatar_url}
+                      alt="Profile"
+                      height="100%"
+                      width="100%"
+                      referrerpolicy="no-referrer"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <div class="font-bold">{user.name}</div>
+                  {#if user?.school || user?.college}
+                    <div class="text-sm opacity-50">
+                      {[user?.school, user?.college].join(', ')}
+                      <br />
+                    </div>
+                  {/if}
+                  {#if user?.major}
+                    <span class="badge badge-xs badge-ghost">{user?.major}</span
+                    >
+                  {/if}
                 </div>
               </div>
-              <div>
-                <div class="font-bold">{user.name}</div>
-                {#if user?.school || user?.college}
-                  <div class="text-sm opacity-50">
-                    {[user?.school, user?.college].join(', ')}
-                    <br />
-                  </div>
-                {/if}
-                {#if user?.major}
-                  <span class="badge badge-xs badge-ghost">{user?.major}</span>
-                {/if}
-              </div>
+              <a href={`/places/${user.place_id}`}>
+                <UserSocials userProfileInformation={user} />
+              </a>
             </div>
-            <a href={`/places/${user.place_id}`}>
-              <UserSocials userProfileInformation={user} />
-            </a>
-          </div>
-        </li>
+          </li>
+        </a>
       {/each}
     {/if}
   </ul>
