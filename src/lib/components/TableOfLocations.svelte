@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { definitionsJSON } from '$lib/types/definitionsJSON';
 
-  export let places: definitionsJSON['users_facebook_places'][] | null = null;
+  export let places: definitionsJSON['users_facebook_places'][] | null;
 </script>
 
 <table class="table w-full">
