@@ -45,28 +45,6 @@
   <meta name="description" content="Edit my current location." />
 </svelte:head>
 
-<!-- Put a centered card on the screen. Inside it, there are multiple labelled inputs that are binded to the corresponding properties of the user -->
-<!-- <div class="w-full max-w-md mx-auto">
-	<div
-		class="px-8 pt-6 pb-8 mb-4 rounded-lg shadow-md card card-bordered bg-secondary text-secondary-content"
-	>
-		
-		<div class="mb-4">
-		</div>
-		<div class="mb-4">
-			<label class="block mb-2 text-sm font-bold" for="website"> Website </label>
-			<input
-				class="w-full border rounded shadow input focus:outline-none focus:shadow-outline"
-				id="website"
-				type="text"
-				placeholder="Website"
-			/>
-		</div>
-		<div class="justify-end card-actions">
-			<button class="text-white btn">Change</button>
-		</div>
-	</div>
-</div> -->
 <!-- <div class="hero min-h-screen-nav from-primary via-secondary to-base-200 bg-gradient-to-b text-primary-content grid" > -->
 <div class="hero grid bg-base-200 p-4 text-base-content">
   <div class="hero-content flex-col lg:flex-row-reverse">
