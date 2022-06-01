@@ -69,6 +69,7 @@
 
     generateMarkers(map, $placesAndTheirPeopleStore);
   });
+  
   /** Add a marker to the map for each place */
   function generateMarkers(
     map: mapboxgl.Map,
