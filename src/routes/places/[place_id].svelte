@@ -117,6 +117,7 @@
   import PlaceCheckbox from '../../lib/components/PlaceCheckbox.svelte';
   import MapIcon from '$lib/components/icons/MapIcon.svelte';
   import LocationsListIcon from '$lib/components/icons/LocationsListIcon.svelte';
+  import ListOfUsers from '$lib/components/ListOfUsers.svelte';
 
   export let placeInformation: PlaceInformation;
   async function refreshUsersInPlace() {
@@ -127,6 +128,7 @@
     if (error) console.log(error);
     placeInformation.users_in_place = users_in_place!;
   }
+  let tab = 0;
 </script>
 
 <svelte:head>
@@ -186,7 +188,27 @@
       </p>
     </div>
     <div class="w-full overflow-x-auto">
-      <TableOfUsers users={placeInformation.users_in_place} />
+      <div class="tabs mb-2 w-full flex-grow-0">
+        <button
+          class="tab tab-bordered tab-lg flex-1"
+          class:tab-active={tab === 0}
+          on:click={() => (tab = 0)}
+        >
+          List
+        </button>
+        <button
+          class="tab tab-bordered tab-lg flex-1"
+          class:tab-active={tab === 1}
+          on:click={() => (tab = 1)}
+        >
+          Table
+        </button>
+      </div>
+      {#if tab === 0}
+        <ListOfUsers users={placeInformation.users_in_place} />
+      {:else if tab === 1}
+        <TableOfUsers users={placeInformation.users_in_place} />
+      {/if}
     </div>
   </div>
 </div>
