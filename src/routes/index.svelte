@@ -3,8 +3,8 @@
 
   export const prerender = true;
   const photoNames = [
-    'LocationsList.png',
     'LocationsTable.png',
+    'LocationsList.png',
     'Map.png',
     'Profile.png',
     'Profile Other.png',
@@ -36,10 +36,12 @@
           <div class="-m-1 flex flex-wrap md:-m-2">
             <div class="flex w-1/2 flex-wrap">
               <div class="w-1/2 p-1 md:p-2">
-                <img
-                  alt="gallery"
+                <video
                   class="block h-full w-full rounded-lg object-cover object-center"
-                  src={photoURLs[0]}
+                  src="https://i.imgur.com/0uL1zb2.mp4"
+                  autoplay
+                  loop
+                  muted
                 />
               </div>
               <div class="w-1/2 p-1 md:p-2">
