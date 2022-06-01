@@ -52,7 +52,7 @@
           <p class="text-lg">Yale University</p>
         </div>
         <LocationAutoComplete
-          query={$profileStore?.description}
+          query={$profileStore?.description ?? ''}
           isCurrentUser={true}
         />
 

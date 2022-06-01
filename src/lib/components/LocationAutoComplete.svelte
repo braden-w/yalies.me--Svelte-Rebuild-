@@ -25,7 +25,11 @@
   import { supabase } from '$lib/utils/supabaseClient';
 
   export let isCurrentUser: boolean;
-  export let query = '';
+  export let query: string;
+  console.log(
+    '🚀 ~ file: LocationAutoComplete.svelte ~ line 29 ~ query',
+    query
+  );
 
   $: isQueryLongEnough = query.length >= 2;
 
