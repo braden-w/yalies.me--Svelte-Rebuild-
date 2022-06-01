@@ -1,6 +1,7 @@
 import type { definitionsJSON } from '$lib/types/definitionsJSON';
 import createStore from '$lib/utils/createStore';
 import { supabase } from '$lib/utils/supabaseClient';
+import type {Writable} from 'svelte/store';
 
 
 export async function refreshPlacesAndTheirPeopleStore() {
