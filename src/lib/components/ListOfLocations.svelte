@@ -13,7 +13,7 @@
 </script>
 
 <div
-  class="rounded-box max-h-96 overflow-y-auto bg-neutral text-base-content shadow-xl"
+  class="rounded-box max-h-96 overflow-y-auto bg-neutral text-neutral-content shadow-xl"
 >
   <ul class="menu overflow-visible p-3">
     <li class="menu-title">
