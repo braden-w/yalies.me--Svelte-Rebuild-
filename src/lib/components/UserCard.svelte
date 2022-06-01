@@ -1,5 +1,4 @@
 <script lang="ts">
-  import UserSocials from '$lib/components/UserSocials.svelte';
   import type { definitionsJSON } from '$lib/types/definitionsJSON';
 
   export let userProfileInformation:

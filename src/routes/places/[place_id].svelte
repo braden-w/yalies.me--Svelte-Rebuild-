@@ -103,7 +103,7 @@
 
   import TableOfUsers from '$lib/components/TableOfUsers.svelte';
 
-  import PlaceCheckbox from './PlaceCheckbox.svelte';
+  import PlaceCheckbox from '../../lib/components/PlaceCheckbox.svelte';
   import MapIcon from '$lib/components/icons/MapIcon.svelte';
   import LocationsListIcon from '$lib/components/icons/LocationsListIcon.svelte';
 

@@ -2,9 +2,7 @@
   import { profileStore } from '$lib/stores/auth/profileStore';
   import {
     setUserLocation,
-    resetUserLocation,
-    userLocationStore,
-    refreshUserLocation
+    resetUserLocation
   } from '$lib/stores/UserLocationStore';
   import type { PlaceInformation } from 'src/routes/places/[place_id].svelte';
   import { createEventDispatcher } from 'svelte';
