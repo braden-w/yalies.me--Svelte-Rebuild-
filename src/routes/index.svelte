@@ -1,5 +1,6 @@
 <script lang="ts">
   import ListOfLocations from '$lib/components/ListOfLocations.svelte';
+  import SignInGoogleButton from '$lib/components/SignInGoogleButton.svelte';
 
   import LoginSplashScreen from '../lib/components/LoginSplashScreen.svelte';
   export const prerender = true;
@@ -121,9 +122,7 @@
         </div>
       </div>
       <div class="mt-6 mb-10 flex w-full justify-center">
-        <a href="/components" class="btn btn-primary btn-wide">
-          See All Components
-        </a>
+        <SignInGoogleButton />
       </div>
     </div>
   </div>
