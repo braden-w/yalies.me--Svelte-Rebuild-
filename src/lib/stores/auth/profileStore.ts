@@ -1,3 +1,4 @@
+import {refreshPlacesAndTheirPeopleStore} from '$lib/stores/placesAndTheirPeopleStore';
 import type { definitionsJSON } from '$lib/types/definitionsJSON';
 import createStore from '$lib/utils/createStore';
 import { supabase } from '$lib/utils/supabaseClient';
@@ -71,5 +72,6 @@ export async function setUserLocation(
   if (error) {
     console.error(error);
   }
+  refreshPlacesAndTheirPeopleStore();
   return refreshProfileStore();
 }
