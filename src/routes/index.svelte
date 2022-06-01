@@ -57,8 +57,7 @@
         >
           <MapIcon /> Go To Map
         </a>
-      </div>
-      <div class="my-2 flex flex-row justify-between">
+        <div class="divider divider-horizontal" />
         <a
           href="/locations"
           sveltekit:prefetch
@@ -66,15 +65,8 @@
         >
           <LocationsListIcon /> See All Locations
         </a>
-        <div class="divider divider-horizontal" />
-        <a
-          href="/profile"
-          sveltekit:prefetch
-          class="btn btn-primary btn-md shrink grow basis-0"
-        >
-          <EditProfileIcon /> Edit Profile
-        </a>
       </div>
+
       <div class="mt-6 mb-10 flex w-full justify-center">
         <a
           href="/profile"
