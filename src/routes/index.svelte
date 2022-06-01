@@ -8,6 +8,8 @@
 </script>
 
 <script lang="ts">
+  import EditProfileIcon from '$lib/components/icons/EditProfileIcon.svelte';
+
   import LocationsListIcon from '$lib/components/icons/LocationsListIcon.svelte';
   import MapIcon from '$lib/components/icons/MapIcon.svelte';
 
@@ -43,7 +45,7 @@
         <a
           href="/map"
           sveltekit:prefetch
-          class="btn btn-ghost btn-md shrink grow basis-0"
+          class="btn btn-primary btn-md shrink grow basis-0"
         >
           <MapIcon /> People in New Haven
         </a>
@@ -51,7 +53,7 @@
         <a
           href="/map"
           sveltekit:prefetch
-          class="btn btn-ghost btn-md shrink grow basis-0"
+          class="btn btn-primary btn-md shrink grow basis-0"
         >
           <MapIcon /> Go To Map
         </a>
@@ -59,9 +61,50 @@
         <a
           href="/locations"
           sveltekit:prefetch
-          class="btn btn-ghost btn-md shrink grow basis-0"
+          class="btn btn-primary btn-md shrink grow basis-0"
         >
           <LocationsListIcon /> See All Locations
+        </a>
+        <div class="divider divider-horizontal" />
+        <a
+          href="/profile"
+          sveltekit:prefetch
+          class="btn btn-primary btn-md shrink grow basis-0"
+        >
+          <EditProfileIcon /> Edit Profile
+        </a>
+      </div>
+      <div class="my-2 flex flex-row justify-between">
+        <a
+          href="/map"
+          sveltekit:prefetch
+          class="btn btn-primary btn-md shrink grow basis-0"
+        >
+          <MapIcon /> People in New Haven
+        </a>
+        <div class="divider divider-horizontal" />
+        <a
+          href="/map"
+          sveltekit:prefetch
+          class="btn btn-primary btn-md shrink grow basis-0"
+        >
+          <MapIcon /> Go To Map
+        </a>
+        <div class="divider divider-horizontal" />
+        <a
+          href="/locations"
+          sveltekit:prefetch
+          class="btn btn-primary btn-md shrink grow basis-0"
+        >
+          <LocationsListIcon /> See All Locations
+        </a>
+        <div class="divider divider-horizontal" />
+        <a
+          href="/profile"
+          sveltekit:prefetch
+          class="btn btn-primary btn-md shrink grow basis-0"
+        >
+          <EditProfileIcon /> Edit Profile
         </a>
       </div>
       <div class="mt-6 mb-10 flex w-full justify-center">
