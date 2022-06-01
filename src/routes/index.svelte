@@ -88,7 +88,7 @@
           </div>
         </div>
       </section>
-      <div class="mt-6 mb-10 flex w-full justify-center">
+      <div class="mb-36 flex w-full justify-center">
         <SignInGoogleButton />
       </div>
     </div>
