@@ -15,19 +15,28 @@
     {#if users}
       {#each users as user}
         <li>
-          <a href={`/places/${user.place_id}`}>
-            <div class="mask mask-squircle w-8">
-              <img
-                src={user.avatar_url}
-                alt="Profile"
-                height="100%"
-                width="100%"
-                referrerpolicy="no-referrer"
-              />
+          <div class="flex flex-row justify-between">
+            <div class="flex items-center space-x-3">
+              <div class="avatar">
+                <div class="mask mask-squircle w-8">
+                  <img
+                    src={user.avatar_url}
+                    alt="Profile"
+                    height="100%"
+                    width="100%"
+                    referrerpolicy="no-referrer"
+                  />
+                </div>
+              </div>
+              <div>
+                <div class="font-bold">{user.name}</div>
+                <div class="text-sm opacity-50">{user.college}</div>
+              </div>
             </div>
-            {user.name}
-            <UserSocials userProfileInformation={user} />
-          </a>
+            <a href={`/places/${user.place_id}`}>
+              <UserSocials userProfileInformation={user} />
+            </a>
+          </div>
         </li>
       {/each}
     {/if}
