@@ -112,16 +112,26 @@
 
 <TheNavBar>
   {#if $authLoadingStore}
-    <LoginSplashScreen />
+    <LoginSplashScreen loading={true} />
+    <!-- Else if Logged In, just loading store -->
+    <!-- Else if Logged Out -->
   {:else if !$profileStore}
-    <LoginSplashScreen />
+    <LoginSplashScreen loading={false} />
   {:else}
     <slot />
   {/if}
 </TheNavBar>
 
-<!-- <footer>
-	<p>Made with love and <span>❤️</span> by Braden</p>
-</footer> -->
+<footer>
+  <div class="flex flex-col justify-center">
+    <p class="text-center">
+      Made with <span>❤️</span> by Braden.
+    </p>
+    <a class="btn btn-xs" href="mailto:braden.wong@yale.edu">
+      Request a feature or report a bug
+    </a>
+  </div>
+</footer>
+
 <style>
 </style>
