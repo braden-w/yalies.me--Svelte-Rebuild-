@@ -174,6 +174,6 @@
 
 <style>
   .h-screen-nav-buttons {
-    height: calc(100vh - 8rem);
+    height: calc(100vh - 4rem - 3rem);
   }
 </style>
