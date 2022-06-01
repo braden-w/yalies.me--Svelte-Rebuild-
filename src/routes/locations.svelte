@@ -10,6 +10,8 @@
 </script>
 
 <script lang="ts">
+  import QuickLinksBar from './QuickLinksBar.svelte';
+
   import { profileStore } from '$lib/stores/auth/profileStore';
   import LocationAutoComplete from '$lib/components/LocationAutoComplete.svelte';
   import ListOfLocations from '$lib/components/ListOfLocations.svelte';
@@ -74,33 +76,7 @@
         Enter your current city. For privacy, feel free to use a city that is in
         proximity rather than exact location.
       </p>
-      <div
-        class="card flex flex-col justify-between bg-base-100 p-4 md:flex-row"
-      >
-        <a
-          href="/places/New Haven, CT, USA"
-          sveltekit:prefetch
-          class="btn btn-ghost btn-md shrink grow basis-0"
-        >
-          <MapIcon /> People in New Haven
-        </a>
-        <div class="divider divider-horizontal" />
-        <a
-          href="/map"
-          sveltekit:prefetch
-          class="btn btn-ghost btn-md shrink grow basis-0"
-        >
-          <MapIcon /> Go To Map
-        </a>
-        <div class="divider divider-horizontal" />
-        <a
-          href="/locations"
-          sveltekit:prefetch
-          class="btn btn-ghost btn-md shrink grow basis-0"
-        >
-          <LocationsListIcon /> See All Locations
-        </a>
-      </div>
+      <div class="hidden lg:block"><QuickLinksBar /></div>
     </div>
     <div class="card w-full max-w-sm flex-shrink-0 bg-base-100 shadow-2xl">
       <div class="card-body text-base-content">
