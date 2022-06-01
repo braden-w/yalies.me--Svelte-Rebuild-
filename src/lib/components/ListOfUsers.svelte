@@ -36,6 +36,9 @@
                     <br />
                   </div>
                 {/if}
+                {#if user?.major}
+                  <span class="badge badge-xs badge-ghost">{user?.major}</span>
+                {/if}
               </div>
             </div>
             <a href={`/places/${user.place_id}`}>
