@@ -11,6 +11,8 @@
   ];
 
   const photoURLs = photoNames.map((name) => `/photos/${name}`);
+
+  export let loading: boolean;
 </script>
 
 <div
@@ -82,7 +84,7 @@
         </div>
       </section>
       <div class="mb-36 flex w-full justify-center">
-        <SignInGoogleButton />
+        <SignInGoogleButton {loading} />
       </div>
     </div>
   </div>
