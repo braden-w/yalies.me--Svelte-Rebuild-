@@ -1,29 +1,4 @@
-<script lang="ts">
-  import '../app.css';
-
-  // Initialize theme-change, taken from https://github.com/saadeghi/theme-change
-  import { onMount } from 'svelte';
-  import { themeChange } from 'theme-change';
-  import { supabase } from '$lib/utils/supabaseClient';
-  import {
-    refreshProfileStore,
-    profileStore
-  } from '$lib/stores/auth/profileStore';
-  import { authLoadingStore, signOut } from '$lib/stores/auth/authLoadingStore';
-  import type { ApiError, User } from '@supabase/supabase-js';
-  import type { UserMetadata } from '$lib/types/UserMetaData';
-  import { browser } from '$app/env';
-
-  import TheNavBar from '$lib/components/TheNavBar.svelte';
-  import LoginSplashScreen from '$lib/components/LoginSplashScreen.svelte';
-  import type { definitionsJSON } from '$lib/types/definitionsJSON';
-
-  // Handle login state on page load
-  if (browser) {
-    redirectIfUserNullOrNotEdu(supabase.auth.user());
-    $authLoadingStore = false;
-  }
-
+<script context="module" lang="ts">
   // If the user email doesn't end with .edu, throw an error and redirect to sign in page
   function emailIsEdu(user: User): boolean {
     if (!user?.email) return false;
@@ -39,26 +14,6 @@
       alert('Please sign in with a .edu email address');
     }
   }
-
-  // Handle login state once supabase changes kick in
-  supabase.auth.onAuthStateChange((_, loggedIn) => {
-    // If logout
-    if (!loggedIn) {
-      $profileStore = null;
-      $authLoadingStore = false;
-      // return goto('/landing');
-    }
-    // If login
-    const user = supabase.auth.user();
-    console.log(
-      '🚀 ~ file: __layout.svelte ~ line 48 ~ supabase.auth.onAuthStateChange ~ user',
-      user
-    );
-    if (user) $authLoadingStore = false;
-    const payload: definitionsJSON['users'] | null = processAuthState(user);
-    uploadProfileDataToSupabase(payload);
-    refreshProfileStore(payload?.id);
-  });
 
   /** Upload profile data from profileStore to 'users' database */
   async function uploadProfileDataToSupabase(
@@ -103,6 +58,61 @@
     const payload = { id, user_response_id, ...userMetaData };
     return payload;
   }
+</script>
+
+<script lang="ts">
+  import '../app.css';
+
+  // Initialize theme-change, taken from https://github.com/saadeghi/theme-change
+  import { onMount } from 'svelte';
+  import { themeChange } from 'theme-change';
+  import { supabase } from '$lib/utils/supabaseClient';
+  import {
+    refreshProfileStore,
+    profileStore
+  } from '$lib/stores/auth/profileStore';
+  import { authLoadingStore, signOut } from '$lib/stores/auth/authLoadingStore';
+  import type { ApiError, User } from '@supabase/supabase-js';
+  import type { UserMetadata } from '$lib/types/UserMetaData';
+  import { browser } from '$app/env';
+
+  import TheNavBar from '$lib/components/TheNavBar.svelte';
+  import LoginSplashScreen from '$lib/components/LoginSplashScreen.svelte';
+  import type { definitionsJSON } from '$lib/types/definitionsJSON';
+
+  // Handle login state on page load
+  if (browser) {
+    redirectIfUserNullOrNotEdu(supabase.auth.user());
+    $authLoadingStore = false;
+  }
+
+  // Handle login state once supabase changes kick in
+  supabase.auth.onAuthStateChange((_, loggedIn) => {
+    // If logout
+    if (!loggedIn) {
+      $profileStore = null;
+      $authLoadingStore = false;
+      console.log(
+        '🚀 ~ file: __layout.svelte ~ line 49 ~ supabase.auth.onAuthStateChange ~ authLoadingStore',
+        authLoadingStore
+      );
+      // return goto('/landing');
+    }
+    // If login
+    const user = supabase.auth.user();
+    console.log(
+      '🚀 ~ file: __layout.svelte ~ line 48 ~ supabase.auth.onAuthStateChange ~ user',
+      user
+    );
+    if (user) $authLoadingStore = false;
+    const payload: definitionsJSON['users'] | null = processAuthState(user);
+    console.log(
+      '🚀 ~ file: __layout.svelte ~ line 60 ~ supabase.auth.onAuthStateChange ~ payload',
+      payload
+    );
+    uploadProfileDataToSupabase(payload);
+    refreshProfileStore(payload?.id);
+  });
 
   onMount(() => {
     themeChange(false);
