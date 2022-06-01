@@ -7,7 +7,7 @@
       ?.slice(0, 3)
       .map((person) => (<Person>person).avatar_url);
   }
-  export let places: definitionsJSON['users_facebook_places'][] | null;
+  export let places: definitionsJSON['places_with_people'][] | null;
 </script>
 
 <div
