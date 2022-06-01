@@ -6,10 +6,10 @@
     'LocationsList.png',
     'LocationsTable.png',
     'Map.png',
-    'New Haven In.png',
-    'New Haven.png',
+    'Profile.png',
     'Profile Other.png',
-    'Profile.png'
+    'New Haven.png',
+    'New Haven In.png'
   ];
 
   const photoURLs = photoNames.map((name) => `../../photos/${name}`);
