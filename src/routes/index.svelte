@@ -21,65 +21,7 @@
       <h3 class="mb-5 text-3xl font-bold">
         An app that solves a single question: who is in my area?
       </h3>
-      <p class="mx-auto mb-5 w-full max-w-lg">
-        Don't reinvent the wheel! <br />daisyUI adds classes to Tailwind CSS for
-        all common UI components. Classes like
-        <span class="badge badge-outline">btn</span>,
-        <span class="badge badge-outline">card</span>, etc. This allows us to
-        focus on important things instead of making basic elements for every
-        project.
-      </p>
-      <p class="mx-auto mt-20 w-full max-w-lg" />
-      <div class="font-bold">Creating a button</div>
-      using only utility classes vs using daisyUI component classes
-      <p />
-      <div class="mt-10 mb-20 flex flex-col lg:flex-row">
-        <div class="flex w-full flex-col text-left">
-          <div
-            class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md"
-          >
-            <pre>
-<code>
-                &lt;a class="<span class="text-amber-400"
-                  >inline-block px-4 py-3
-    text-sm font-semibold text-center
-    text-white uppercase transition
-    duration-200 ease-in-out bg-indigo-600 
-    rounded-md cursor-pointer
-    hover:bg-indigo-700</span
-                >"&gt;Button&lt;/a&gt;</code
-              >
-</pre>
-          </div>
-          <div class="mt-4 flex h-16 items-start justify-center">
-            <button
-              class="inline-block cursor-pointer rounded-md bg-indigo-600 px-4 py-3 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-indigo-700"
-              >Button</button
-            >
-          </div>
-        </div>
-        <div
-          class="divider uppercase text-base-content/50 lg:divider-horizontal"
-        >
-          vs
-        </div>
-        <div class="flex w-full flex-col text-left">
-          <div
-            class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md"
-          >
-            <pre>
-<code
-                >&lt;a class="<span class="text-teal-500">btn btn-primary</span
-                >"&gt;Button&lt;/a&gt;</code
-              >
-</pre>
-          </div>
-          <div class="mt-4 flex h-16 items-start justify-center">
-            <button class="btn btn-primary">Button</button>
-          </div>
-        </div>
-      </div>
-      using only utility classes vs using daisyUI component classes
+      <p class="mx-auto mb-5 w-full max-w-lg">A map,</p>
       <div class="mt-10 mb-20 flex flex-col lg:flex-row">
         <div class="flex w-full flex-col text-left">
           <div
@@ -179,9 +121,9 @@
         </div>
       </div>
       <div class="mt-6 mb-10 flex w-full justify-center">
-        <a href="/components" class="btn btn-primary btn-wide"
-          >See All Components</a
-        >
+        <a href="/components" class="btn btn-primary btn-wide">
+          See All Components
+        </a>
       </div>
     </div>
   </div>
