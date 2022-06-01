@@ -40,7 +40,7 @@
     class="flex w-full flex-col items-stretch gap-4 px-4 pt-1 pb-10 md:grid md:grid-flow-col md:grid-cols-12 md:grid-rows-6"
   >
     <!-- Cell 1 -->
-    <div class="col-span-4 row-span-3 xl:col-span-3">
+    <div class="col-span-4 row-span-6 xl:col-span-3">
       <div class="flex flex-col gap-4">
         <UserCard bind:userProfileInformation={$profileStore} />
         <div class="rounded-box mt-4 bg-neutral py-2 shadow-xl xl:w-full">
@@ -56,7 +56,7 @@
       <UserAvatarsRow {userProfileInformation} />
     </div> -->
     <!-- Cell 3 -->
-    <div class="col-span-4 row-span-3 xl:col-span-3" />
+    <!-- <div class="col-span-4 row-span-3 xl:col-span-3" /> -->
     <!-- Cell 4 -->
     <!-- <div class="col-span-4 row-span-3 xl:col-span-3">
       <div
@@ -66,7 +66,7 @@
       </div>
     </div> -->
     <!-- Cell 5 -->
-    <div class="col-span-4 row-span-6 xl:col-span-8">
+    <div class="col-span-8 row-span-6 xl:col-span-9">
       <UserResponsesCard bind:userProfileInformation={$profileStore} />
     </div>
 
