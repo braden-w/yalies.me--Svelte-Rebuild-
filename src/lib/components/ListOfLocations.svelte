@@ -1,4 +1,6 @@
 <script lang="ts">
+  import type { placesAndTheirPeopleStore } from '$lib/stores/placesAndTheirPeopleStore';
+
   import type { definitionsJSON, Person } from '$lib/types/definitionsJSON';
   import { generateStackOfIcons } from '$lib/utils/map/generateInnerHTML';
 
@@ -7,7 +9,7 @@
       ?.slice(0, 3)
       .map((person) => (<Person>person).avatar_url);
   }
-  export let places: definitionsJSON['places_with_people'][] | null;
+  export let places: typeof $placesAndTheirPeopleStore;
 </script>
 
 <div
