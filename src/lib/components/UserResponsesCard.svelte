@@ -141,27 +141,29 @@
       </div>
     {/each}
   </div>
-  <div class="form-control">
-    <div class="divider" />
-    <button
-      class="btn btn-secondary btn-block space-x-2"
-      class:loading={isApplySettingsLoading}
-      on:click={() => applySettings([...inputsList, ...userIntegrations])}
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        class="h-6 w-6 stroke-current"
+  {#if isCurrentUser}
+    <div class="form-control">
+      <div class="divider" />
+      <button
+        class="btn btn-secondary btn-block space-x-2"
+        class:loading={isApplySettingsLoading}
+        on:click={() => applySettings([...inputsList, ...userIntegrations])}
       >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-        />
-      </svg>
-      <span>Apply settings</span>
-    </button>
-  </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          class="h-6 w-6 stroke-current"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+        <span>Apply settings</span>
+      </button>
+    </div>
+  {/if}
 </div>
