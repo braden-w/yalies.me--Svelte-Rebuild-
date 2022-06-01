@@ -24,6 +24,7 @@
   import TableOfLocations from '$lib/components/TableOfLocations.svelte';
 
   export let places: definitionsJSON['places_with_people'][] = [];
+  let tab = 0;
 </script>
 
 <svelte:head>
@@ -104,8 +105,27 @@
           <h1 class="text-5xl font-bold">Locations</h1>
           <p class="py-6">There are currently a lot of locations!</p>
         </div>
-        <ListOfLocations {places}/>
-        <TableOfLocations {places} />
+        <div class="tabs w-full flex-grow-0">
+          <button
+            class="tab tab-lifted tab-border-none tab-lg flex-1"
+            class:tab-active={tab === 0}
+            on:click={() => (tab = 0)}
+          >
+            Stats
+          </button>
+          <button
+            class="tab tab-lifted tab-border-none tab-lg flex-1"
+            class:tab-active={tab === 1}
+            on:click={() => (tab = 1)}
+          >
+            Info
+          </button>
+        </div>
+        {#if tab === 0}
+          <ListOfLocations {places} />
+        {:else if tab === 1}
+          <TableOfLocations {places} />
+        {/if}
       </div>
     </div>
   </div>
