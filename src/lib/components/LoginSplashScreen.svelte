@@ -14,10 +14,11 @@
   const albumURL = 'https://imgur.com/a/vSfU9c6';
   const photoURLs = [
     'https://i.imgur.com/O7KS8N5.png',
+    'https://i.imgur.com/8VIWiMd.png',
     'https://i.imgur.com/63FnRQX.png',
+    'https://i.imgur.com/eyq1wEn.png',
     'https://i.imgur.com/tVZGAKh.png',
-    'https://i.imgur.com/PzEQtAG.png',
-    'https://i.imgur.com/8VIWiMd.png'
+    'https://i.imgur.com/PzEQtAG.png'
   ];
 
   export let loading: boolean;
