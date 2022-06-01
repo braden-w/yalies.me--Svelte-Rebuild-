@@ -1,15 +1,8 @@
 <script lang="ts" context="module">
   export async function load() {
-    const { data: places, error } = await supabase
-      .from<definitionsJSON['places_with_people']>('places_with_people')
-      .select('*')
-      .not('people', 'is', null);
-    if (error) console.error(error);
+    refreshPlacesAndTheirPeopleStore();
     return {
-      status: 200,
-      props: {
-        places
-      }
+      status: 200
     };
   }
 </script>
@@ -17,12 +10,12 @@
 <script lang="ts">
   import ListOfLocations from '$lib/components/ListOfLocations.svelte';
   import LoginSplashScreen from '$lib/components/LoginSplashScreen.svelte';
-  import type { definitionsJSON } from '$lib/types/definitionsJSON';
-  import { supabase } from '$lib/utils/supabaseClient';
+  import {
+    placesAndTheirPeopleStore,
+    refreshPlacesAndTheirPeopleStore
+  } from '$lib/stores/placesAndTheirPeopleStore';
 
   export const prerender = true;
-  export let places: definitionsJSON['places_with_people'][] | null;
-  const checked = false;
 </script>
 
 <svelte:head>
@@ -74,7 +67,7 @@
         </div>
         <div class="flex w-full flex-col text-left">
           <div class="mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md">
-            <ListOfLocations {places} />
+            <ListOfLocations places={$placesAndTheirPeopleStore} />
           </div>
           <div class="mt-4 flex h-16 items-start justify-center">
             <button class="btn btn-primary">Button</button>
@@ -103,7 +96,7 @@
           <!-- <UserSocials bind:userProfileInformation={$profileStore} /> -->
         </div>
         <!-- <UserLocationCard bind:userProfileInformation={$profileStore} /> -->
-        <ListOfLocations {places} />
+        <ListOfLocations places={$placesAndTheirPeopleStore} />
       </div>
     </div>
     <!-- Cell 2 -->
@@ -118,7 +111,7 @@
       <div
         class="rounded-box mx-2 flex flex-shrink-0 flex-col justify-center gap-4 bg-base-100 p-4 shadow-xl xl:mx-0 xl:w-full"
       >
-        <ListOfLocations {places} />
+        <ListOfLocations places={$placesAndTheirPeopleStore} />
       </div>
     </div> -->
     <!-- Cell 5 -->
