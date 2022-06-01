@@ -2,6 +2,8 @@ import { supabase } from '$lib/utils/supabaseClient';
 import type { ApiError } from '@supabase/supabase-js';
 import { writable, type Writable } from 'svelte/store';
 
+/** Whether the profile information is finished loading (even if it is null).
+ * Every time the user loads or refreshes the page, it takes time for profile information to be fetched. */
 export const authLoadingStore: Writable<boolean> = writable(true);
 export const signIn = async () => {
   try {
