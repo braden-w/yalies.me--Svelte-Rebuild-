@@ -41,32 +41,31 @@
       <!-- <p class="mx-auto mb-5 w-full max-w-lg">Caption</p> -->
       <!-- <div class="font-bold">Creating a button</div> -->
       <!-- using only utility classes vs using daisyUI component classes -->
-      <div class="card bg-base-100 ">
-        <div class="my-2 flex flex-row justify-between">
-          <a
-            href="/map"
-            sveltekit:prefetch
-            class="btn btn-ghost btn-md shrink grow basis-0"
-          >
-            <MapIcon /> People in New Haven
-          </a>
-          <div class="divider divider-horizontal" />
-          <a
-            href="/map"
-            sveltekit:prefetch
-            class="btn btn-ghost btn-md shrink grow basis-0"
-          >
-            <MapIcon /> Go To Map
-          </a>
-          <div class="divider divider-horizontal" />
-          <a
-            href="/locations"
-            sveltekit:prefetch
-            class="btn btn-ghost btn-md shrink grow basis-0"
-          >
-            <LocationsListIcon /> See All Locations
-          </a>
-        </div>
+
+      <div class="card flex flex-row justify-between bg-base-100 p-2">
+        <a
+          href="/map"
+          sveltekit:prefetch
+          class="btn btn-ghost btn-md shrink grow basis-0"
+        >
+          <MapIcon /> People in New Haven
+        </a>
+        <div class="divider divider-horizontal" />
+        <a
+          href="/map"
+          sveltekit:prefetch
+          class="btn btn-ghost btn-md shrink grow basis-0"
+        >
+          <MapIcon /> Go To Map
+        </a>
+        <div class="divider divider-horizontal" />
+        <a
+          href="/locations"
+          sveltekit:prefetch
+          class="btn btn-ghost btn-md shrink grow basis-0"
+        >
+          <LocationsListIcon /> See All Locations
+        </a>
       </div>
 
       <div class="mb-24 flex w-full justify-center">
