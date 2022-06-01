@@ -105,16 +105,16 @@
           <h1 class="text-5xl font-bold">Locations</h1>
           <p class="py-6">There are currently a lot of locations!</p>
         </div>
-        <div class="tabs w-full flex-grow-0">
+        <div class="tabs tabs-boxed w-full flex-grow-0">
           <button
-            class="tab tab-lifted tab-border-none tab-lg flex-1"
+            class="tab  tab-border-none tab-lg flex-1"
             class:tab-active={tab === 0}
             on:click={() => (tab = 0)}
           >
             List
           </button>
           <button
-            class="tab tab-lifted tab-border-none tab-lg flex-1"
+            class="tab  tab-border-none tab-lg flex-1"
             class:tab-active={tab === 1}
             on:click={() => (tab = 1)}
           >
