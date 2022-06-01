@@ -8,7 +8,17 @@ export async function refreshPlacesAndTheirPeopleStore() {
     .from<definitionsJSON['places_with_people']>('places_with_people')
     .select('*')
     .not('people', 'is', null);
+
   if (places) {
+    // Move the place with place_id 'ChIJ5XCAOkTY54kR7WSyWcZUo_Y' to the top of the list
+    const newHavenPlaceID = 'ChIJ5XCAOkTY54kR7WSyWcZUo_Y';
+    const newHaven = places.find((place) => place.place_id === newHavenPlaceID);
+    if (newHaven) {
+      places.splice(places.indexOf(newHaven), 1);
+      places.unshift(newHaven);
+    }
+
+    // Log result
     console.log(
       '🚀 ~ file: placesAndTheirPeopleStore.ts ~ line 14 ~ refreshProfileStore ~ places',
       places
