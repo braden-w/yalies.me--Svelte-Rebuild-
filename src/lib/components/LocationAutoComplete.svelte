@@ -19,7 +19,7 @@
   import {
     profileStore,
     refreshProfileStore,
-setUserLocation
+    setUserLocation
   } from '$lib/stores/auth/profileStore';
   import { defaultResults } from '$lib/components/LocationAutoComplete/DefaultResults';
   import { supabase } from '$lib/utils/supabaseClient';
@@ -98,7 +98,7 @@ setUserLocation
       uploadPlaceToSupabase(payload);
 
       await setUserLocation(place_id);
-      await refreshProfileStore($profileStore?.id);
+      refreshProfileStore($profileStore?.id);
       console.log(
         '🚀 ~ file: LocationAutoComplete.svelte ~ line 110 ~ $profileStore',
         $profileStore
