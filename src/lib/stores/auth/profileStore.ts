@@ -1,4 +1,4 @@
-import {refreshPlacesAndTheirPeopleStore} from '$lib/stores/placesAndTheirPeopleStore';
+import { refreshPlacesAndTheirPeopleStore } from '$lib/stores/placesAndTheirPeopleStore';
 import type { definitionsJSON } from '$lib/types/definitionsJSON';
 import createStore from '$lib/utils/createStore';
 import { supabase } from '$lib/utils/supabaseClient';
@@ -60,9 +60,7 @@ export const profileStore: Writable<
 );
 
 /** Updates the place_id in the user_responses table based off the user's user_response_id */
-export async function setUserLocation(
-  place_id: string | undefined | null
-){
+export async function setUserLocation(place_id: string | undefined | null) {
   const { error } = await supabase
     .from<definitionsJSON['user_responses']>('user_responses')
     .update({
