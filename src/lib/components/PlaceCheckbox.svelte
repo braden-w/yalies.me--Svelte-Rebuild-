@@ -1,5 +1,8 @@
 <script lang="ts">
-  import { profileStore, setUserLocation } from '$lib/stores/auth/profileStore';
+  import {
+    profileStore,
+    setUserLocation
+  } from '$lib/stores/auth/profileStore';
   import type { PlaceInformation } from 'src/routes/places/[place_id].svelte';
   import { createEventDispatcher } from 'svelte';
 

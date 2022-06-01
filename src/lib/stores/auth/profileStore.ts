@@ -3,7 +3,9 @@ import createStore from '$lib/utils/createStore';
 import { supabase } from '$lib/utils/supabaseClient';
 import { get, type Writable } from 'svelte/store';
 
-export async function refreshProfileStore(queryId: string | undefined = undefined) {
+export async function refreshProfileStore(
+  queryId: string | undefined = undefined
+) {
   const id = queryId ?? get(profileStore)?.id;
   if (!id) throw new Error('No ID provided to refresh user data');
   const { data, error } = await supabase
@@ -58,9 +60,9 @@ export const profileStore: Writable<
 
 /** Updates the place_id in the user_responses table based off the user's user_response_id */
 export async function setUserLocation(
-  place_id: string | undefined | null,
-): Promise<void> {
-  const {error} = await supabase
+  place_id: string | undefined | null
+){
+  const { error } = await supabase
     .from<definitionsJSON['user_responses']>('user_responses')
     .update({
       place_id: place_id
@@ -69,4 +71,5 @@ export async function setUserLocation(
   if (error) {
     console.error(error);
   }
+  return refreshProfileStore();
 }
