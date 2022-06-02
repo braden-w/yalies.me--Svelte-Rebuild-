@@ -10,10 +10,7 @@
     <header>
       <div class="navbar bg-base-100">
         <div class="flex-none">
-          <label
-            for="main-drawer"
-            class="btn btn-square btn-ghost drawer-button"
-          >
+          <label for="main-drawer" class="btn btn-square btn-ghost drawer-button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -37,12 +34,8 @@
           >
         </div>
         <div class="flex-none">
-          <div class="dropdown-end dropdown">
-            <label
-              for="main-drawer "
-              tabindex="0"
-              class="btn btn-ghost btn-circle"
-            >
+          <div class="dropdown dropdown-end">
+            <label for="main-drawer " tabindex="0" class="btn btn-ghost btn-circle">
               <div class="indicator">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +51,7 @@
                     d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
                   />
                 </svg>
-                <span class="badge indicator-item badge-sm">8</span>
+                <span class="badge indicator-item badge-sm" />
               </div>
             </label>
             <div
@@ -74,7 +67,7 @@
               </div>
             </div>
           </div>
-          <div title="Change Theme" class="dropdown-end dropdown ">
+          <div title="Change Theme" class="dropdown dropdown-end ">
             <div tabindex="0" class="btn btn-ghost gap-1 normal-case">
               <svg
                 width="20"
@@ -98,9 +91,7 @@
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 2048 2048"
               >
-                <path
-                  d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"
-                />
+                <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z" />
               </svg>
             </div>
 
@@ -118,9 +109,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">yale</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -142,9 +131,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">light</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -166,9 +153,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">dark</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -190,9 +175,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">cupcake</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -214,9 +197,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">bumblebee</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -238,9 +219,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">emerald</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -262,9 +241,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">corporate</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -286,9 +263,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">synthwave</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -310,9 +285,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">retro</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -334,9 +307,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">cyberpunk</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -358,9 +329,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">valentine</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -382,9 +351,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">halloween</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -406,9 +373,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">garden</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -430,9 +395,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">forest</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -454,9 +417,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">aqua</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -478,9 +439,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">lofi</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -502,9 +461,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">pastel</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -526,9 +483,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">fantasy</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -550,9 +505,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">wireframe</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -574,9 +527,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">black</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -598,9 +549,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">luxury</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -622,9 +571,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">dracula</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -646,9 +593,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">cmyk</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -670,9 +615,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">autumn</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -694,9 +637,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">business</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -718,9 +659,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">acid</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -742,9 +681,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">lemonade</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -766,9 +703,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">night</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -790,9 +725,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">coffee</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -814,9 +747,7 @@
                     class="w-full cursor-pointer bg-base-100 font-sans text-base-content"
                   >
                     <div class="grid grid-cols-5 grid-rows-3">
-                      <div
-                        class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3"
-                      >
+                      <div class="col-span-5 row-span-3 row-start-1 flex gap-1 px-4 py-3">
                         <div class="flex-grow text-sm font-bold">winter</div>
                         <div class="flex flex-shrink-0 flex-wrap gap-1">
                           <div class="w-2 rounded bg-primary" />
@@ -831,12 +762,11 @@
               </div>
             </div>
           </div>
-          <div class="dropdown-end dropdown">
+          <div class="dropdown dropdown-end">
             <label tabindex="0" class="avatar btn btn-ghost btn-circle">
               <div class="w-10 rounded-full">
                 <img
-                  src={$profileStore?.avatar_url ??
-                    'https://api.lorem.space/image/face?hash=33791'}
+                  src={$profileStore?.avatar_url ?? 'https://api.lorem.space/image/face?hash=33791'}
                   alt="User Profile"
                   referrerpolicy="no-referrer"
                 />
@@ -847,13 +777,10 @@
               class="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow"
             >
               <li>
-                <a class="justify-between" sveltekit:prefetch href="/profile">
-                  Profile
-                </a>
+                <a class="justify-between" sveltekit:prefetch href="/profile"> Profile </a>
               </li>
               <li>
-                <a class="justify-between" sveltekit:prefetch href="/map">Map</a
-                >
+                <a class="justify-between" sveltekit:prefetch href="/map">Map</a>
               </li>
               <li>
                 <a class="justify-between" sveltekit:prefetch href="/locations">
@@ -884,9 +811,7 @@
     <ul class="menu w-80 overflow-y-auto bg-base-200 p-4 text-base-content">
       <!-- Sidebar content here -->
       <li>
-        <a sveltekit:prefetch href="/places/New Haven, CT"
-          >Who's in New Haven
-        </a>
+        <a sveltekit:prefetch href="/places/New Haven, CT"> Who's in New Haven </a>
       </li>
       <li>
         <a sveltekit:prefetch href="/map">Map</a>
@@ -896,6 +821,9 @@
       </li>
       <li>
         <a sveltekit:prefetch href="/profile">Profile</a>
+      </li>
+      <li>
+        <a sveltekit:prefetch href="/landing"> Landing </a>
       </li>
       <!-- <li>
         <a sveltekit:prefetch href="">Ride Share</a>

@@ -2,7 +2,7 @@
   export async function load() {
     refreshPlacesAndTheirPeopleStore();
     return {
-      status: 200
+      status: 200,
     };
   }
 </script>
@@ -18,7 +18,7 @@
   import ListOfLocations from '$lib/components/ListOfLocations.svelte';
   import {
     placesAndTheirPeopleStore,
-    refreshPlacesAndTheirPeopleStore
+    refreshPlacesAndTheirPeopleStore,
   } from '$lib/stores/placesAndTheirPeopleStore';
 </script>
 

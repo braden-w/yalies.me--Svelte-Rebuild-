@@ -8,20 +8,17 @@
   <meta name="description" content="" />
 </svelte:head>
 
-<div
-  class="hero mx-auto min-h-screen max-w-md bg-base-100 text-base-content md:max-w-full"
->
+<div class="hero mx-auto min-h-screen max-w-md bg-base-100 text-base-content md:max-w-full">
   <div class="hero-content px-4 text-center md:px-0">
     <div>
       <h2 class="mt-32 mb-2 text-4xl font-extrabold md:text-6xl">Clean HTML</h2>
       <h3 class="mb-5 text-3xl font-bold">with component classes</h3>
       <p class="mx-auto mb-5 w-full max-w-lg">
-        Don't reinvent the wheel! <br />daisyUI adds classes to Tailwind CSS for
-        all common UI components. Classes like
+        Don't reinvent the wheel! <br />daisyUI adds classes to Tailwind CSS for all common UI
+        components. Classes like
         <span class="badge badge-outline">btn</span>,
-        <span class="badge badge-outline">card</span>, etc. This allows us to
-        focus on important things instead of making basic elements for every
-        project.
+        <span class="badge badge-outline">card</span>, etc. This allows us to focus on important
+        things instead of making basic elements for every project.
       </p>
       <p class="mx-auto mt-20 w-full max-w-lg" />
       <div class="font-bold">Creating a button</div>
@@ -29,9 +26,7 @@
       <p />
       <div class="mt-10 mb-20 flex flex-col lg:flex-row">
         <div class="flex w-full flex-col text-left">
-          <div
-            class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md"
-          >
+          <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md">
             <pre>
 <code
                 >&lt;a class="<span class="text-amber-400"
@@ -52,20 +47,11 @@
             >
           </div>
         </div>
-        <div
-          class="divider uppercase text-base-content/50 lg:divider-horizontal"
-        >
-          vs
-        </div>
+        <div class="divider uppercase text-base-content/50 lg:divider-horizontal">vs</div>
         <div class="flex w-full flex-col text-left">
-          <div
-            class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md"
-          >
+          <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md">
             <pre>
-<code
-                >&lt;a class="<span class="text-teal-500">btn btn-primary</span
-                >"&gt;Button&lt;/a&gt;</code
-              >
+<code>&lt;a class="<span class="text-teal-500">btn btn-primary</span>"&gt;Button&lt;/a&gt;</code>
 </pre>
           </div>
           <div class="mt-4 flex h-16 items-start justify-center">
@@ -79,13 +65,10 @@
       <p />
       <div class="mt-10 mb-20 flex flex-col lg:flex-row">
         <div class="flex w-full flex-col text-left">
-          <div
-            class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md"
-          >
+          <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md">
             <pre>
 <code
-                >&lt;div class="<span class="text-amber-400">relative</span
-                >"&gt;
+                >&lt;div class="<span class="text-amber-400">relative</span>"&gt;
     &lt;input type="checkbox" class="<span class="text-amber-400"
                   >peer
     appearance-none cursor-pointer
@@ -118,21 +101,13 @@
             </div>
           </div>
         </div>
-        <div
-          class="divider uppercase text-base-content/50 lg:divider-horizontal"
-        >
-          vs
-        </div>
+        <div class="divider uppercase text-base-content/50 lg:divider-horizontal">vs</div>
         <div class="flex w-full flex-col text-left">
           <div
             class="mockup-code relative mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md lg:overflow-hidden"
           >
             <pre>
-<code
-                >&lt;input type="checkbox" class="<span class="text-teal-500"
-                  >toggle</span
-                >"/&gt;</code
-              >
+<code>&lt;input type="checkbox" class="<span class="text-teal-500">toggle</span>"/&gt;</code>
 </pre>
             <img
               loading="lazy"
@@ -145,12 +120,7 @@
           </div>
           <div class="mt-4 flex h-16 items-start justify-center">
             <div>
-              <input
-                aria-label="Toggle"
-                type="checkbox"
-                {checked}
-                class="toggle"
-              />
+              <input aria-label="Toggle" type="checkbox" {checked} class="toggle" />
             </div>
           </div>
         </div>
@@ -161,9 +131,7 @@
       <p />
       <div class="mt-10 mb-20 flex flex-col lg:flex-row">
         <div class="flex w-full flex-col text-left">
-          <div
-            class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md"
-          >
+          <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md">
             <pre>
 <code
                 >&lt;ul class="py-3 bg-gray-100 rounded-xl"&gt;
@@ -188,9 +156,7 @@
           <div class="mt-4 flex items-start justify-center overflow-hidden">
             <ul class="rounded-xl bg-gray-100 p-3">
               <li>
-                <span class="block px-5 py-1 text-xs font-bold text-gray-400"
-                  >Menu Title</span
-                >
+                <span class="block px-5 py-1 text-xs font-bold text-gray-400">Menu Title</span>
               </li>
               <li>
                 <a
@@ -216,15 +182,9 @@
             </ul>
           </div>
         </div>
-        <div
-          class="divider uppercase text-base-content/50 lg:divider-horizontal"
-        >
-          vs
-        </div>
+        <div class="divider uppercase text-base-content/50 lg:divider-horizontal">vs</div>
         <div class="flex w-full flex-col text-left">
-          <div
-            class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md"
-          >
+          <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md">
             <pre class="pr-4">
 <code
                 >&lt;ul class="<span class="text-teal-500">menu</span
@@ -258,9 +218,7 @@
         </div>
       </div>
       <div class="mt-6 mb-10 flex w-full justify-center">
-        <a href="/components" class="btn btn-primary btn-wide"
-          >See All Components</a
-        >
+        <a href="/components" class="btn btn-primary btn-wide">See All Components</a>
       </div>
     </div>
   </div>

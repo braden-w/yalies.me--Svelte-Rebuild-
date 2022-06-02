@@ -1,14 +1,8 @@
 import { profileStore } from '$lib/stores/auth/profileStore';
-import type {
-  definitionsJSON,
-  Person,
-  PersonFromFacebook
-} from '$lib/types/definitionsJSON';
+import type { definitionsJSON, Person, PersonFromFacebook } from '$lib/types/definitionsJSON';
 import { get } from 'svelte/store';
 
-export function generateInnerHTML(
-  place: definitionsJSON['places_with_people']
-) {
+export function generateInnerHTML(place: definitionsJSON['places_with_people']) {
   // Get 3 random people from the 'people' property of placeWithPeople
   const people = place.people ?? [];
   /**The first three people who will be the icons in the stack on the map */
@@ -25,13 +19,13 @@ export function generateInnerHTML(
   return `<div class="dropdown dropdown-hover">
   ${generateStackOfIcons({
     threeAvatars: stackIcons,
-    indicator: people.length
+    indicator: people.length,
   })}
   ${generateHover({
     numberOfIconsStacked: stackIcons.length,
     place_id: place_id ?? '',
     description: description ?? '',
-    people
+    people,
   })}
 </div>`;
 }
@@ -39,7 +33,7 @@ export function generateInnerHTML(
 /**Generates a stack of icons with three random people and an indicator in the top right for overall number of people at a location */
 export function generateStackOfIcons({
   threeAvatars,
-  indicator
+  indicator,
 }: {
   threeAvatars: string[];
   indicator: number;
@@ -92,7 +86,7 @@ function generateHover({
   numberOfIconsStacked,
   place_id,
   description,
-  people
+  people,
 }: {
   numberOfIconsStacked: number;
   place_id: string;
@@ -114,8 +108,7 @@ function generateHover({
 
 function linkForUserProfile(person: Person | PersonFromFacebook): string {
   // If person has no id, it must be from facebook
-  if (!(<Person>person).id)
-    return `/facebook/${(<PersonFromFacebook>person).email}`;
+  if (!(<Person>person).id) return `/facebook/${(<PersonFromFacebook>person).email}`;
   // If person's id matches the current user's id, return the current user's profile
   if ((<Person>person).id === get(profileStore)?.id) return `/profile`;
   // Otherwise, return the person's profile
@@ -136,9 +129,7 @@ function peopleToListItems(people: (Person | PersonFromFacebook)[]): string {
         </div>
         <span class="text-xs">${
           (<Person>person).name ??
-          `${(<PersonFromFacebook>person).first_name} ${
-            (<PersonFromFacebook>person).last_name
-          }`
+          `${(<PersonFromFacebook>person).first_name} ${(<PersonFromFacebook>person).last_name}`
         }</span>
       </a>
     </li>`

@@ -8,8 +8,8 @@ const config = {
   // for more information about preprocessors
   preprocess: [
     preprocess({
-      postcss: true
-    })
+      postcss: true,
+    }),
   ],
 
   kit: {
@@ -18,9 +18,9 @@ const config = {
     vite: { plugins: [removeConsole()] },
     // Override http methods in the Todo forms
     methodOverride: {
-      allowed: ['PATCH', 'DELETE']
-    }
-  }
+      allowed: ['PATCH', 'DELETE'],
+    },
+  },
 };
 
 export default config;

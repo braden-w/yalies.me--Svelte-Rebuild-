@@ -35,12 +35,7 @@
             <!-- {getPeopleNames(place)} -->
           </td>
           <th>
-            <a
-              href={`/places/${place.place_id}`}
-              class="btn btn-primary btn-md"
-            >
-              Go to Place
-            </a>
+            <a href={`/places/${place.place_id}`} class="btn btn-primary btn-md"> Go to Place </a>
           </th>
         </tr>
       {/each}

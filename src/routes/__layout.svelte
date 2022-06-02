@@ -16,9 +16,7 @@
   }
 
   /** Upload profile data from profileStore to 'users' database */
-  async function uploadProfileDataToSupabase(
-    payload: definitionsJSON['users'] | null
-  ) {
+  async function uploadProfileDataToSupabase(payload: definitionsJSON['users'] | null) {
     if (!payload) return;
     try {
       const { data, error } = await supabase
@@ -42,9 +40,7 @@
     return emailUser;
   }
 
-  function processAuthState(
-    user: User | null
-  ): definitionsJSON['users'] | null {
+  function processAuthState(user: User | null): definitionsJSON['users'] | null {
     if (!user) return null;
     // Get the variables "id" from $profileStore
     const id = user.id;
@@ -56,6 +52,7 @@
 
     // Create payload for auth information
     const payload = { id, user_response_id, ...userMetaData };
+    console.log('🚀 ~ file: __layout.svelte ~ line 59 ~ payload', payload);
     return payload;
   }
 </script>
@@ -67,10 +64,7 @@
   import { onMount } from 'svelte';
   import { themeChange } from 'theme-change';
   import { supabase } from '$lib/utils/supabaseClient';
-  import {
-    refreshProfileStore,
-    profileStore
-  } from '$lib/stores/auth/profileStore';
+  import { refreshProfileStore, profileStore } from '$lib/stores/auth/profileStore';
   import { authLoadingStore, signOut } from '$lib/stores/auth/authLoadingStore';
   import type { ApiError, User } from '@supabase/supabase-js';
   import type { UserMetadata } from '$lib/types/UserMetaData';
@@ -82,12 +76,15 @@
 
   // Handle login state on page load
   if (browser) {
-    redirectIfUserNullOrNotEdu(supabase.auth.user());
+    const user = supabase.auth.user();
+    redirectIfUserNullOrNotEdu(user);
+    // If user is logged in already
+    if (user) onUserHasSession();
     $authLoadingStore = false;
   }
 
   // Handle login state once supabase changes kick in
-  supabase.auth.onAuthStateChange((_, loggedIn) => {
+  supabase.auth.onAuthStateChange(async (_, loggedIn) => {
     // If logout
     if (!loggedIn) {
       $profileStore = null;
@@ -96,9 +93,15 @@
         '🚀 ~ file: __layout.svelte ~ line 49 ~ supabase.auth.onAuthStateChange ~ authLoadingStore',
         authLoadingStore
       );
+      return;
       // return goto('/landing');
+    } else {
+      // If login
+      return onUserHasSession();
     }
-    // If login
+  });
+
+  async function onUserHasSession() {
     const user = supabase.auth.user();
     console.log(
       '🚀 ~ file: __layout.svelte ~ line 48 ~ supabase.auth.onAuthStateChange ~ user',
@@ -110,9 +113,15 @@
       '🚀 ~ file: __layout.svelte ~ line 60 ~ supabase.auth.onAuthStateChange ~ payload',
       payload
     );
-    uploadProfileDataToSupabase(payload);
-    refreshProfileStore(payload?.id);
-  });
+    // Create a new row in user_responses, if not already
+    const { data, error } = await supabase
+      .from<definitionsJSON['user_responses']>('user_responses')
+      .upsert({ user_response_id: payload?.user_response_id });
+    if (data) console.log(data);
+    if (error) console.error(error);
+    await uploadProfileDataToSupabase(payload);
+    return await refreshProfileStore(payload?.id);
+  }
 
   onMount(() => {
     themeChange(false);

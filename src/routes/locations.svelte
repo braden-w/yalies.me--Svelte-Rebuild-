@@ -3,7 +3,7 @@
   export async function load() {
     await refreshPlacesAndTheirPeopleStore();
     return {
-      status: 200
+      status: 200,
     };
   }
 </script>

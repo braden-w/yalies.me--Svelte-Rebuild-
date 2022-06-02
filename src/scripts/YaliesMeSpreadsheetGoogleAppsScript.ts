@@ -11,7 +11,7 @@ const headers = [
   'instagram',
   'linkedin',
   'interests',
-  'expression'
+  'expression',
 ];
 
 function myFunction() {
@@ -22,8 +22,8 @@ function myFunction() {
     {
       headers: {
         Apikey: VITE_SUPABASE_ANON_KEY,
-        Authorization: `Bearer ${VITE_SUPABASE_ANON_KEY}`
-      }
+        Authorization: `Bearer ${VITE_SUPABASE_ANON_KEY}`,
+      },
     }
   );
   const data = JSON.parse(response.getContentText());
@@ -34,9 +34,7 @@ function myFunction() {
   const sheet = ss.getActiveSheet();
 
   const rows = data.map((row) => {
-    return headers.map((column) =>
-      row.hasOwnProperty(column) ? row[column] : ''
-    );
+    return headers.map((column) => (row.hasOwnProperty(column) ? row[column] : ''));
   });
 
   dataRange = sheet.getRange(4, 1, rows.length, rows[0].length);
