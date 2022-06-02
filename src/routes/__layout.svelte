@@ -90,27 +90,30 @@
         '🚀 ~ file: __layout.svelte ~ line 49 ~ supabase.auth.onAuthStateChange ~ authLoadingStore',
         authLoadingStore
       );
-      return
+      return;
       // return goto('/landing');
+    } else {
+      // If login
+      const user = supabase.auth.user();
+      console.log(
+        '🚀 ~ file: __layout.svelte ~ line 48 ~ supabase.auth.onAuthStateChange ~ user',
+        user
+      );
+      if (user) $authLoadingStore = false;
+      const payload: definitionsJSON['users'] | null = processAuthState(user);
+      console.log(
+        '🚀 ~ file: __layout.svelte ~ line 60 ~ supabase.auth.onAuthStateChange ~ payload',
+        payload
+      );
+      // Create a new row in user_responses, if not already
+      const { data, error } = await supabase
+        .from<definitionsJSON['user_responses']>('user_responses')
+        .upsert({ user_response_id: payload?.user_response_id });
+      if (data) console.log(data);
+      if (error) console.error(error);
+      await uploadProfileDataToSupabase(payload);
+      return await refreshProfileStore(payload?.id);
     }
-    // If login
-    const user = supabase.auth.user();
-    console.log(
-      '🚀 ~ file: __layout.svelte ~ line 48 ~ supabase.auth.onAuthStateChange ~ user',
-      user
-    );
-    if (user) $authLoadingStore = false;
-    const payload: definitionsJSON['users'] | null = processAuthState(user);
-    console.log(
-      '🚀 ~ file: __layout.svelte ~ line 60 ~ supabase.auth.onAuthStateChange ~ payload',
-      payload
-    );
-    // Create a new row in user_responses, if not already
-    await supabase
-      .from<definitionsJSON['user_responses']>('user_responses')
-      .upsert({ user_response_id: payload?.user_response_id });
-    await uploadProfileDataToSupabase(payload);
-    await refreshProfileStore(payload?.id);
   });
 
   onMount(() => {
