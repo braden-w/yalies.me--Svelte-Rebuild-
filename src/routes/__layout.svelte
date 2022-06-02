@@ -90,6 +90,7 @@
         '🚀 ~ file: __layout.svelte ~ line 49 ~ supabase.auth.onAuthStateChange ~ authLoadingStore',
         authLoadingStore
       );
+      return
       // return goto('/landing');
     }
     // If login
