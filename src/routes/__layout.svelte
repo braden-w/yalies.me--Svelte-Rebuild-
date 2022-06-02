@@ -78,6 +78,7 @@
   if (browser) {
     const user = supabase.auth.user();
     redirectIfUserNullOrNotEdu(user);
+    // If user is logged in already
     if (user) {
       onLogin();
     }
