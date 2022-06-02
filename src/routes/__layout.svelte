@@ -76,12 +76,17 @@
 
   // Handle login state on page load
   if (browser) {
-    redirectIfUserNullOrNotEdu(supabase.auth.user());
+    const user = supabase.auth.user();
+    redirectIfUserNullOrNotEdu(user);
+    if (user) {
+      onLogin();
+    }
     $authLoadingStore = false;
   }
 
   // Handle login state once supabase changes kick in
   supabase.auth.onAuthStateChange(async (_, loggedIn) => {
+    alert(loggedIn);
     // If logout
     if (!loggedIn) {
       $profileStore = null;
@@ -94,27 +99,34 @@
       // return goto('/landing');
     } else {
       // If login
-      const user = supabase.auth.user();
-      console.log(
-        '🚀 ~ file: __layout.svelte ~ line 48 ~ supabase.auth.onAuthStateChange ~ user',
-        user
-      );
-      if (user) $authLoadingStore = false;
-      const payload: definitionsJSON['users'] | null = processAuthState(user);
-      console.log(
-        '🚀 ~ file: __layout.svelte ~ line 60 ~ supabase.auth.onAuthStateChange ~ payload',
-        payload
-      );
-      // Create a new row in user_responses, if not already
-      const { data, error } = await supabase
-        .from<definitionsJSON['user_responses']>('user_responses')
-        .upsert({ user_response_id: payload?.user_response_id });
-      if (data) console.log(data);
-      if (error) console.error(error);
-      await uploadProfileDataToSupabase(payload);
-      return await refreshProfileStore(payload?.id);
+      return onLogin();
     }
   });
+
+  async function onLogin() {
+    const user = supabase.auth.user();
+    alert(user);
+    console.log(
+      '🚀 ~ file: __layout.svelte ~ line 48 ~ supabase.auth.onAuthStateChange ~ user',
+      user
+    );
+    if (user) $authLoadingStore = false;
+    const payload: definitionsJSON['users'] | null = processAuthState(user);
+    alert(payload);
+    console.log(
+      '🚀 ~ file: __layout.svelte ~ line 60 ~ supabase.auth.onAuthStateChange ~ payload',
+      payload
+    );
+    // Create a new row in user_responses, if not already
+    const { data, error } = await supabase
+      .from<definitionsJSON['user_responses']>('user_responses')
+      .upsert({ user_response_id: payload?.user_response_id });
+    alert(data);
+    if (data) console.log(data);
+    if (error) console.error(error);
+    await uploadProfileDataToSupabase(payload);
+    return await refreshProfileStore(payload?.id);
+  }
 
   onMount(() => {
     themeChange(false);
