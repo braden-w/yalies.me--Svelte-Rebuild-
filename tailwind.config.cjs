@@ -8,6 +8,7 @@ const config = {
   },
 
   daisyui: {
+    darkTheme: 'yale',
     themes: [
       {
         yale: {
