@@ -79,15 +79,12 @@
     const user = supabase.auth.user();
     redirectIfUserNullOrNotEdu(user);
     // If user is logged in already
-    if (user) {
-      onLogin();
-    }
+    if (user) onUserHasSession();
     $authLoadingStore = false;
   }
 
   // Handle login state once supabase changes kick in
   supabase.auth.onAuthStateChange(async (_, loggedIn) => {
-    alert(loggedIn);
     // If logout
     if (!loggedIn) {
       $profileStore = null;
@@ -100,11 +97,11 @@
       // return goto('/landing');
     } else {
       // If login
-      return onLogin();
+      return onUserHasSession();
     }
   });
 
-  async function onLogin() {
+  async function onUserHasSession() {
     const user = supabase.auth.user();
     console.log(
       '🚀 ~ file: __layout.svelte ~ line 48 ~ supabase.auth.onAuthStateChange ~ user',
