@@ -44,6 +44,7 @@
                   class="block h-full w-full rounded-lg object-cover object-center"
                   src="https://i.imgur.com/0uL1zb2.mp4"
                   autoplay
+                  playsinline
                   loop
                   muted
                 />
