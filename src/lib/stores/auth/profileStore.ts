@@ -71,5 +71,5 @@ export async function setUserLocation(place_id: string | undefined | null) {
     console.error(error);
   }
   refreshPlacesAndTheirPeopleStore();
-  return refreshProfileStore();
+  return await refreshProfileStore();
 }

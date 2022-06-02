@@ -115,8 +115,8 @@
     await supabase
       .from<definitionsJSON['user_responses']>('user_responses')
       .upsert({ user_response_id: payload?.user_response_id });
-    uploadProfileDataToSupabase(payload);
-    refreshProfileStore(payload?.id);
+    await uploadProfileDataToSupabase(payload);
+    await refreshProfileStore(payload?.id);
   });
 
   onMount(() => {
