@@ -898,9 +898,7 @@
         <a sveltekit:prefetch href="/profile">Profile</a>
       </li>
       <li>
-        <a sveltekit:prefetch href="/landing">
-          Landing
-        </a>
+        <a sveltekit:prefetch href="/landing"> Landing </a>
       </li>
       <!-- <li>
         <a sveltekit:prefetch href="">Ride Share</a>

@@ -60,14 +60,14 @@
               </div>
               <div class="w-1/2 p-1 md:p-2">
                 <img
-                  alt="gallery"
+                  alt="Gallery"
                   class="block h-full w-full rounded-lg object-cover object-center"
                   src={photoURLs[1]}
                 />
               </div>
               <div class="w-full p-1 md:p-2">
                 <img
-                  alt="gallery"
+                  alt="Gallery"
                   class="block h-full w-full rounded-lg object-cover object-center"
                   src={photoURLs[2]}
                 />
@@ -76,21 +76,21 @@
             <div class="flex w-1/2 flex-wrap">
               <div class="w-full p-1 md:p-2">
                 <img
-                  alt="gallery"
+                  alt="Gallery"
                   class="block h-full w-full rounded-lg object-cover object-center"
                   src={photoURLs[3]}
                 />
               </div>
               <div class="w-1/2 p-1 md:p-2">
                 <img
-                  alt="gallery"
+                  alt="Gallery"
                   class="block h-full w-full rounded-lg object-cover object-center"
                   src={photoURLs[4]}
                 />
               </div>
               <div class="w-1/2 p-1 md:p-2">
                 <img
-                  alt="gallery"
+                  alt="Gallery"
                   class="block h-full w-full rounded-lg object-cover object-center"
                   src={photoURLs[5]}
                 />
