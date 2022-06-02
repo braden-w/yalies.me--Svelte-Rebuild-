@@ -15,10 +15,7 @@
 
   import ListOfLocations from '$lib/components/ListOfLocations.svelte';
   import LocationsPage from '$lib/components/pages/LocationsPage.svelte';
-  import {
-    placesAndTheirPeopleStore,
-    refreshPlacesAndTheirPeopleStore,
-  } from '$lib/stores/placesAndTheirPeopleStore';
+  import { placesAndTheirPeopleStore, refreshPlacesAndTheirPeopleStore } from '$lib/stores/placesAndTheirPeopleStore';
 
   export const prerender = true;
 </script>

@@ -86,10 +86,7 @@
       await uploadPlaceToSupabase(payload);
 
       await setUserLocation(place_id);
-      console.log(
-        '🚀 ~ file: LocationAutoComplete.svelte ~ line 110 ~ $profileStore',
-        $profileStore
-      );
+      console.log('🚀 ~ file: LocationAutoComplete.svelte ~ line 110 ~ $profileStore', $profileStore);
     } catch (error: any) {
       alert(error.message);
     } finally {
@@ -127,10 +124,7 @@
 
   <!-- For each result in results, display  -->
   {#if results.length > 0}
-    <ul
-      class="text-md dropdown-content menu rounded-box menu-compact  w-full bg-base-100 shadow"
-      tabindex="0"
-    >
+    <ul class="text-md dropdown-content menu rounded-box menu-compact  w-full bg-base-100 shadow" tabindex="0">
       {#each results as result}
         <li on:click={() => handleClick(result)}>
           <button>

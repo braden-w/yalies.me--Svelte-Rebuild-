@@ -44,9 +44,9 @@
           {/if}
           <span class="badge badge-sm badge-ghost">{user?.major}</span>
         </td>
-        <td> <UserSocials userProfileInformation={user} /></td>
+        <td><UserSocials userProfileInformation={user} /></td>
         <th>
-          <a href={`/users/${user.id}`} class="btn btn-primary btn-md"> Go to Profile </a>
+          <a href={`/users/${user.id}`} class="btn btn-primary btn-md">Go to Profile</a>
         </th>
       </tr>
     {/each}

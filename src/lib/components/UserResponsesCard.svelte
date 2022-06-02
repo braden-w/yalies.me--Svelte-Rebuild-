@@ -107,9 +107,7 @@
     {/each}
     <div class="divider" />
     <div class="text-xl font-extrabold">Social Media</div>
-    <div class="my-4 text-xs text-base-content/70">
-      Instagram Handle, LinkedIn URL, and Spotify URL go here
-    </div>
+    <div class="my-4 text-xs text-base-content/70">Instagram Handle, LinkedIn URL, and Spotify URL go here</div>
     {#each userIntegrations as { name, label, icon, value }}
       <div class="form-control">
         <label class="label" for={name}>
@@ -136,12 +134,7 @@
         class:loading={isApplySettingsLoading}
         on:click={() => applySettings([...inputsList, ...userIntegrations])}
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          class="h-6 w-6 stroke-current"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="h-6 w-6 stroke-current">
           <path
             stroke-linecap="round"
             stroke-linejoin="round"

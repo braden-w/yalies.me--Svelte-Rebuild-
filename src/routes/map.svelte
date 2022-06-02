@@ -21,10 +21,7 @@
 
   import { onMount } from 'svelte';
   import { generateInnerHTML } from '$lib/utils/map/generateInnerHTML';
-  import {
-    placesAndTheirPeopleStore,
-    refreshPlacesAndTheirPeopleStore,
-  } from '$lib/stores/placesAndTheirPeopleStore';
+  import { placesAndTheirPeopleStore, refreshPlacesAndTheirPeopleStore } from '$lib/stores/placesAndTheirPeopleStore';
 
   mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_KEY;
 

@@ -16,10 +16,7 @@
   import SpotifyPlayer from '$lib/components/SpotifyPlayer.svelte';
   import { profileStore } from '$lib/stores/auth/profileStore';
   import ListOfLocations from '$lib/components/ListOfLocations.svelte';
-  import {
-    placesAndTheirPeopleStore,
-    refreshPlacesAndTheirPeopleStore,
-  } from '$lib/stores/placesAndTheirPeopleStore';
+  import { placesAndTheirPeopleStore, refreshPlacesAndTheirPeopleStore } from '$lib/stores/placesAndTheirPeopleStore';
 </script>
 
 <svelte:head>

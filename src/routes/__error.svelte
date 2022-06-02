@@ -14,10 +14,7 @@
   import MapIcon from '$lib/components/icons/MapIcon.svelte';
 
   import ListOfLocations from '$lib/components/ListOfLocations.svelte';
-  import {
-    placesAndTheirPeopleStore,
-    refreshPlacesAndTheirPeopleStore,
-  } from '$lib/stores/placesAndTheirPeopleStore';
+  import { placesAndTheirPeopleStore, refreshPlacesAndTheirPeopleStore } from '$lib/stores/placesAndTheirPeopleStore';
 
   export const prerender = true;
 </script>

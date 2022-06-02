@@ -19,13 +19,8 @@
   async function uploadProfileDataToSupabase(payload: definitionsJSON['users'] | null) {
     if (!payload) return;
     try {
-      const { data, error } = await supabase
-        .from<definitionsJSON['users']>('users')
-        .upsert(payload);
-      console.log(
-        '🚀 ~ file: __layout.svelte ~ line 58 ~ const{data,error}=awaitsupabase.from ~ data',
-        data
-      );
+      const { data, error } = await supabase.from<definitionsJSON['users']>('users').upsert(payload);
+      console.log('🚀 ~ file: __layout.svelte ~ line 58 ~ const{data,error}=awaitsupabase.from ~ data', data);
       if (error) throw error;
     } catch (error) {
       if ((error as ApiError).message) {
@@ -103,16 +98,10 @@
 
   async function onUserHasSession() {
     const user = supabase.auth.user();
-    console.log(
-      '🚀 ~ file: __layout.svelte ~ line 48 ~ supabase.auth.onAuthStateChange ~ user',
-      user
-    );
+    console.log('🚀 ~ file: __layout.svelte ~ line 48 ~ supabase.auth.onAuthStateChange ~ user', user);
     if (user) $authLoadingStore = false;
     const payload: definitionsJSON['users'] | null = processAuthState(user);
-    console.log(
-      '🚀 ~ file: __layout.svelte ~ line 60 ~ supabase.auth.onAuthStateChange ~ payload',
-      payload
-    );
+    console.log('🚀 ~ file: __layout.svelte ~ line 60 ~ supabase.auth.onAuthStateChange ~ payload', payload);
     // Create a new row in user_responses, if not already
     const { data, error } = await supabase
       .from<definitionsJSON['user_responses']>('user_responses')
@@ -141,11 +130,10 @@
   <footer>
     <div class="flex flex-col justify-center">
       <p class="text-center">
-        Made with <span>❤️</span> by Braden.
+        Made with <span>❤️</span>
+        by Braden.
       </p>
-      <a class="btn btn-xs" href="mailto:braden.wong@yale.edu">
-        Request a feature or report a bug
-      </a>
+      <a class="btn btn-xs" href="mailto:braden.wong@yale.edu">Request a feature or report a bug</a>
     </div>
   </footer>
 </TheNavBar>

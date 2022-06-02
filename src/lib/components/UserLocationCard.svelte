@@ -17,8 +17,7 @@
   <div class="px-6 pt-6">
     <div class="text-xl font-extrabold">Where are you now?</div>
     <div class="my-4 text-xs text-base-content/70">
-      Enter your current city. For privacy, feel free to use a city that is in proximity rather than
-      exact location.
+      Enter your current city. For privacy, feel free to use a city that is in proximity rather than exact location.
     </div>
     <LocationAutoComplete {isCurrentUser} query={userProfileInformation?.description ?? ''} />
   </div>
