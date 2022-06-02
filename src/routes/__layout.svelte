@@ -56,6 +56,7 @@
 
     // Create payload for auth information
     const payload = { id, user_response_id, ...userMetaData };
+    console.log('🚀 ~ file: __layout.svelte ~ line 59 ~ payload', payload);
     return payload;
   }
 </script>
@@ -87,7 +88,7 @@
   }
 
   // Handle login state once supabase changes kick in
-  supabase.auth.onAuthStateChange((_, loggedIn) => {
+  supabase.auth.onAuthStateChange(async (_, loggedIn) => {
     // If logout
     if (!loggedIn) {
       $profileStore = null;
@@ -110,6 +111,9 @@
       '🚀 ~ file: __layout.svelte ~ line 60 ~ supabase.auth.onAuthStateChange ~ payload',
       payload
     );
+    await supabase
+      .from<definitionsJSON['user_responses']>('user_responses')
+      .upsert({ user_response_id: payload?.user_response_id });
     uploadProfileDataToSupabase(payload);
     refreshProfileStore(payload?.id);
   });
