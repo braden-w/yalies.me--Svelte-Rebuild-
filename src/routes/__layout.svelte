@@ -106,14 +106,12 @@
 
   async function onLogin() {
     const user = supabase.auth.user();
-    alert(user);
     console.log(
       '🚀 ~ file: __layout.svelte ~ line 48 ~ supabase.auth.onAuthStateChange ~ user',
       user
     );
     if (user) $authLoadingStore = false;
     const payload: definitionsJSON['users'] | null = processAuthState(user);
-    alert(payload);
     console.log(
       '🚀 ~ file: __layout.svelte ~ line 60 ~ supabase.auth.onAuthStateChange ~ payload',
       payload
@@ -122,7 +120,6 @@
     const { data, error } = await supabase
       .from<definitionsJSON['user_responses']>('user_responses')
       .upsert({ user_response_id: payload?.user_response_id });
-    alert(data);
     if (data) console.log(data);
     if (error) console.error(error);
     await uploadProfileDataToSupabase(payload);
