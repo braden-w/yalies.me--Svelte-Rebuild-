@@ -111,6 +111,7 @@
       '🚀 ~ file: __layout.svelte ~ line 60 ~ supabase.auth.onAuthStateChange ~ payload',
       payload
     );
+    // Create a new row in user_responses, if not already
     await supabase
       .from<definitionsJSON['user_responses']>('user_responses')
       .upsert({ user_response_id: payload?.user_response_id });
