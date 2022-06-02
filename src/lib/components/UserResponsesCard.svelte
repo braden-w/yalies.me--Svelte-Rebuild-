@@ -8,20 +8,14 @@
   import SpotifyIcon from '$lib/components/icons/SpotifyIcon.svelte';
   import UniversityIcon from '$lib/components/icons/UniversityIcon.svelte';
 
-  import {
-    profileStore,
-    uploadUserResponses
-  } from '$lib/stores/auth/profileStore';
+  import { profileStore, uploadUserResponses } from '$lib/stores/auth/profileStore';
   import { get } from 'svelte/store';
   import type { definitionsJSON } from '$lib/types/definitionsJSON';
 
-  export let userProfileInformation:
-    | definitionsJSON['users_facebook_places']
-    | null;
+  export let userProfileInformation: definitionsJSON['users_facebook_places'] | null;
 
   /** Set this to true if this userCard refers to the currrent logged in user */
-  export let isCurrentUser =
-    userProfileInformation?.id === get(profileStore)?.id;
+  export let isCurrentUser = userProfileInformation?.id === get(profileStore)?.id;
   const inputsList = [
     // {
     //   name: 'university',
@@ -33,53 +27,48 @@
       name: 'major',
       label: 'Major',
       icon: MajorIcon,
-      value: userProfileInformation?.major ?? ''
+      value: userProfileInformation?.major ?? '',
     },
     {
       name: 'interests',
       label: 'Interests',
       icon: InterestsIcon,
-      value: userProfileInformation?.interests ?? ''
+      value: userProfileInformation?.interests ?? '',
     },
     {
       name: 'phone',
       label: 'Phone',
       icon: PhoneIcon,
-      value: userProfileInformation?.phone ?? ''
-    }
+      value: userProfileInformation?.phone ?? '',
+    },
   ];
   const userIntegrations = [
     {
       name: 'instagram',
       label: 'Instagram Handle',
       icon: InstagramIcon,
-      value: userProfileInformation?.instagram ?? ''
+      value: userProfileInformation?.instagram ?? '',
     },
     {
       name: 'linkedin',
       label: 'LinkedIn',
       icon: LinkedInIcon,
-      value: userProfileInformation?.linkedin ?? ''
+      value: userProfileInformation?.linkedin ?? '',
     },
     {
       name: 'expression',
       label: 'Spotify',
       icon: SpotifyIcon,
-      value: userProfileInformation?.expression ?? ''
-    }
+      value: userProfileInformation?.expression ?? '',
+    },
   ];
 
   let isApplySettingsLoading = false;
-  async function applySettings(
-    responsesList = [...inputsList, ...userIntegrations]
-  ) {
+  async function applySettings(responsesList = [...inputsList, ...userIntegrations]) {
     isApplySettingsLoading = true;
-    console.log(
-      '🚀 ~ file: UserResponsesCard.svelte ~ line 76 ~ responsesList',
-      responsesList
-    );
+    console.log('🚀 ~ file: UserResponsesCard.svelte ~ line 76 ~ responsesList', responsesList);
     let accumulator: { [key: string]: string; user_response_id: string } = {
-      user_response_id: $profileStore?.user_response_id ?? ''
+      user_response_id: $profileStore?.user_response_id ?? '',
     };
     let payload: definitionsJSON['user_responses'] = responsesList.reduce(
       (obj, item) => ((obj[item.name] = item.value), obj),
@@ -111,9 +100,7 @@
           id={name}
           class="input input-bordered"
           disabled={!isCurrentUser}
-          placeholder={isCurrentUser
-            ? 'Start typing your response here...'
-            : 'n/a'}
+          placeholder={isCurrentUser ? 'Start typing your response here...' : 'n/a'}
           bind:value
         />
       </div>
@@ -135,9 +122,7 @@
           id={name}
           class="input input-bordered"
           disabled={!isCurrentUser}
-          placeholder={isCurrentUser
-            ? 'Start typing your response here...'
-            : 'n/a'}
+          placeholder={isCurrentUser ? 'Start typing your response here...' : 'n/a'}
           bind:value
         />
       </div>

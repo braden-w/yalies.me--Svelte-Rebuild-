@@ -16,7 +16,7 @@
   /** Old location, which the user will reset to */
   const oldPlace = {
     place_id: $profileStore?.place_id,
-    description: $profileStore?.description
+    description: $profileStore?.description,
   };
 
   $: handleToggleUserLocation(checked);
@@ -30,8 +30,7 @@
         placeInformation.place_id
       );
     } else {
-      if (oldPlace.place_id === placeInformation.place_id)
-        await setUserLocation(null);
+      if (oldPlace.place_id === placeInformation.place_id) await setUserLocation(null);
       else await setUserLocation(oldPlace.place_id as string);
     }
     dispatch('toggled');

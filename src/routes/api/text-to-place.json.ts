@@ -10,13 +10,11 @@ export async function get() {
   const textToPlaceResponse = await textAddressToPlaceLatLng('Boston, MA, USA');
   return {
     status: 200,
-    body: { textToPlaceResponse }
+    body: { textToPlaceResponse },
   };
 }
 
-async function textAddressToPlaceLatLng(
-  address: string
-): Promise<TextToPlaceResponse> {
+async function textAddressToPlaceLatLng(address: string): Promise<TextToPlaceResponse> {
   // Use Google Autocomplete API to get place_id, lat, and lng from the address
   const { data, error } = await geocodeAddress(address);
   if (error) return { place_id: null, lat: null, lng: null };
@@ -25,7 +23,7 @@ async function textAddressToPlaceLatLng(
   return {
     place_id: results[0].place_id,
     lat: results[0].geometry.location.lat,
-    lng: results[0].geometry.location.lng
+    lng: results[0].geometry.location.lng,
   };
 }
 
@@ -44,7 +42,7 @@ async function geocodeAddress(address: string) {
 
 export async function uploadPlaceToSupabase(payload: Payload) {
   const { error: errorPlaces } = await supabase.from('places').upsert(payload, {
-    returning: 'minimal' // Don't return the value after inserting
+    returning: 'minimal', // Don't return the value after inserting
   });
   if (errorPlaces) throw errorPlaces;
 }

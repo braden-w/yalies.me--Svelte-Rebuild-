@@ -4,8 +4,8 @@ export const defaultResults = [
     matched_substrings: [
       {
         length: 9,
-        offset: 0
-      }
+        offset: 0,
+      },
     ],
     place_id: 'ChIJ5XCAOkTY54kR7WSyWcZUo_Y',
     structured_formatting: {
@@ -13,34 +13,34 @@ export const defaultResults = [
       main_text_matched_substrings: [
         {
           length: 9,
-          offset: 0
-        }
+          offset: 0,
+        },
       ],
-      secondary_text: 'CT, USA'
+      secondary_text: 'CT, USA',
     },
     terms: [
       {
         offset: 0,
-        value: 'New Haven'
+        value: 'New Haven',
       },
       {
         offset: 11,
-        value: 'CT'
+        value: 'CT',
       },
       {
         offset: 15,
-        value: 'USA'
-      }
+        value: 'USA',
+      },
     ],
-    types: ['locality', 'political', 'geocode']
+    types: ['locality', 'political', 'geocode'],
   },
   {
     description: 'New York, NY, USA',
     matched_substrings: [
       {
         length: 8,
-        offset: 0
-      }
+        offset: 0,
+      },
     ],
     place_id: 'ChIJOwg_06VPwokRYv534QaPC8g',
     structured_formatting: {
@@ -48,34 +48,34 @@ export const defaultResults = [
       main_text_matched_substrings: [
         {
           length: 8,
-          offset: 0
-        }
+          offset: 0,
+        },
       ],
-      secondary_text: 'NY, USA'
+      secondary_text: 'NY, USA',
     },
     terms: [
       {
         offset: 0,
-        value: 'New York'
+        value: 'New York',
       },
       {
         offset: 10,
-        value: 'NY'
+        value: 'NY',
       },
       {
         offset: 14,
-        value: 'USA'
-      }
+        value: 'USA',
+      },
     ],
-    types: ['locality', 'political', 'geocode']
+    types: ['locality', 'political', 'geocode'],
   },
   {
     description: 'Los Angeles, CA, USA',
     matched_substrings: [
       {
         length: 8,
-        offset: 0
-      }
+        offset: 0,
+      },
     ],
     place_id: 'ChIJE9on3F3HwoAR9AhGJW_fL-I',
     structured_formatting: {
@@ -83,34 +83,34 @@ export const defaultResults = [
       main_text_matched_substrings: [
         {
           length: 8,
-          offset: 0
-        }
+          offset: 0,
+        },
       ],
-      secondary_text: 'CA, USA'
+      secondary_text: 'CA, USA',
     },
     terms: [
       {
         offset: 0,
-        value: 'Los Angeles'
+        value: 'Los Angeles',
       },
       {
         offset: 13,
-        value: 'CA'
+        value: 'CA',
       },
       {
         offset: 17,
-        value: 'USA'
-      }
+        value: 'USA',
+      },
     ],
-    types: ['locality', 'political', 'geocode']
+    types: ['locality', 'political', 'geocode'],
   },
   {
     description: 'San Francisco, CA, USA',
     matched_substrings: [
       {
         length: 8,
-        offset: 0
-      }
+        offset: 0,
+      },
     ],
     place_id: 'ChIJIQBpAG2ahYAR_6128GcTUEo',
     structured_formatting: {
@@ -118,34 +118,34 @@ export const defaultResults = [
       main_text_matched_substrings: [
         {
           length: 8,
-          offset: 0
-        }
+          offset: 0,
+        },
       ],
-      secondary_text: 'CA, USA'
+      secondary_text: 'CA, USA',
     },
     terms: [
       {
         offset: 0,
-        value: 'San Francisco'
+        value: 'San Francisco',
       },
       {
         offset: 15,
-        value: 'CA'
+        value: 'CA',
       },
       {
         offset: 19,
-        value: 'USA'
-      }
+        value: 'USA',
+      },
     ],
-    types: ['locality', 'political', 'geocode']
+    types: ['locality', 'political', 'geocode'],
   },
   {
     description: 'Boston, MA, USA',
     matched_substrings: [
       {
         length: 6,
-        offset: 0
-      }
+        offset: 0,
+      },
     ],
     place_id: 'ChIJGzE9DS1l44kRoOhiASS_fHg',
     structured_formatting: {
@@ -153,34 +153,34 @@ export const defaultResults = [
       main_text_matched_substrings: [
         {
           length: 6,
-          offset: 0
-        }
+          offset: 0,
+        },
       ],
-      secondary_text: 'MA, USA'
+      secondary_text: 'MA, USA',
     },
     terms: [
       {
         offset: 0,
-        value: 'Boston'
+        value: 'Boston',
       },
       {
         offset: 8,
-        value: 'MA'
+        value: 'MA',
       },
       {
         offset: 12,
-        value: 'USA'
-      }
+        value: 'USA',
+      },
     ],
-    types: ['locality', 'political', 'geocode']
+    types: ['locality', 'political', 'geocode'],
   },
   {
     description: 'Washington D.C., DC, USA',
     matched_substrings: [
       {
         length: 10,
-        offset: 0
-      }
+        offset: 0,
+      },
     ],
     place_id: 'ChIJW-T2Wt7Gt4kRKl2I1CJFUsI',
     reference: 'ChIJW-T2Wt7Gt4kRKl2I1CJFUsI',
@@ -189,25 +189,25 @@ export const defaultResults = [
       main_text_matched_substrings: [
         {
           length: 10,
-          offset: 0
-        }
+          offset: 0,
+        },
       ],
-      secondary_text: 'DC, USA'
+      secondary_text: 'DC, USA',
     },
     terms: [
       {
         offset: 0,
-        value: 'Washington D.C.'
+        value: 'Washington D.C.',
       },
       {
         offset: 17,
-        value: 'DC'
+        value: 'DC',
       },
       {
         offset: 21,
-        value: 'USA'
-      }
+        value: 'USA',
+      },
     ],
-    types: ['locality', 'political', 'geocode']
-  }
+    types: ['locality', 'political', 'geocode'],
+  },
 ];

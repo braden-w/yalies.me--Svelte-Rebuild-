@@ -7,17 +7,12 @@
 
   import type { definitionsJSON } from '$lib/types/definitionsJSON';
 
-  export let userProfileInformation:
-    | definitionsJSON['users_facebook_places']
-    | null;
+  export let userProfileInformation: definitionsJSON['users_facebook_places'] | null;
 </script>
 
 <div class="mt-2 text-center">
   {#if userProfileInformation?.email}
-    <a
-      class="btn btn-circle btn-sm"
-      href={`mailto:${userProfileInformation?.email}`}
-    >
+    <a class="btn btn-circle btn-sm" href={`mailto:${userProfileInformation?.email}`}>
       <!-- Make an svg email icon -->
       <svg
         class="h-6 w-6"
@@ -36,10 +31,7 @@
     </a>
   {/if}
   {#if userProfileInformation?.phone}
-    <a
-      class="btn btn-circle btn-sm"
-      href={`sms:${userProfileInformation?.phone}`}
-    >
+    <a class="btn btn-circle btn-sm" href={`sms:${userProfileInformation?.phone}`}>
       <!-- Make a svg phone icon -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -59,11 +51,7 @@
   {/if}
 
   {#if userProfileInformation?.expression}
-    <a
-      class="btn btn-circle btn-sm"
-      target="_blank"
-      href={userProfileInformation?.expression}
-    >
+    <a class="btn btn-circle btn-sm" target="_blank" href={userProfileInformation?.expression}>
       <!-- Make a Green Spotify Icon -->
       <SpotifyIcon />
     </a>
@@ -79,11 +67,7 @@
     </a>
   {/if}
   {#if userProfileInformation?.linkedin}
-    <a
-      class="btn btn-circle btn-sm"
-      target="_blank"
-      href={userProfileInformation?.linkedin}
-    >
+    <a class="btn btn-circle btn-sm" target="_blank" href={userProfileInformation?.linkedin}>
       <!-- Make an LinkedIn SVG Icon -->
       <LinkedInIcon />
     </a>

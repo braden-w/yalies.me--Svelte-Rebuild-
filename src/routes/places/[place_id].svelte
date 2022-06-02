@@ -13,7 +13,7 @@
     'name',
     'avatar_url',
     'place_id',
-    'description'
+    'description',
   ];
   const selectQuery = '*';
   /** Function that matches query by place_id, description, and finally fuzzy description */
@@ -33,14 +33,10 @@
       .select(selectQuery)
       .eq('place_id', query);
     if (errorMatchPlaceID) console.log(errorMatchPlaceID);
-    if (dataMatchPlaceID?.length !== 0)
-      return { data: dataMatchPlaceID, redirect: null };
+    if (dataMatchPlaceID?.length !== 0) return { data: dataMatchPlaceID, redirect: null };
 
     // Attempt to match the query by place description
-    const {
-      data: dataMatchPlaceDescription,
-      error: errorMatchPlaceDescription
-    } = await supabase
+    const { data: dataMatchPlaceDescription, error: errorMatchPlaceDescription } = await supabase
       .from<definitionsJSON['users_facebook_places']>('users_facebook_places')
       .select(selectQuery)
       .eq('description', query);
@@ -54,26 +50,19 @@
       .select(selectQuery)
       .eq('place_id', query);
     if (errorJustPlace) console.log(errorJustPlace);
-    if (dataJustPlace?.length !== 0)
-      return { data: dataJustPlace, redirect: null };
+    if (dataJustPlace?.length !== 0) return { data: dataJustPlace, redirect: null };
 
     // As a last resort, attempt to fuzzy match the query by place_description
-    const {
-      data: dataFuzzyMatchPlaceDescription,
-      error: errorFuzzyMatchPlaceDescription
-    } = await supabase
-      .from<definitionsJSON['users_facebook_places']>('users_facebook_places')
-      .select(selectQuery)
-      .ilike('description', `%${query}%`);
-    if (errorFuzzyMatchPlaceDescription)
-      console.log(errorFuzzyMatchPlaceDescription);
-    if (
-      dataFuzzyMatchPlaceDescription &&
-      dataFuzzyMatchPlaceDescription?.length !== 0
-    ) {
+    const { data: dataFuzzyMatchPlaceDescription, error: errorFuzzyMatchPlaceDescription } =
+      await supabase
+        .from<definitionsJSON['users_facebook_places']>('users_facebook_places')
+        .select(selectQuery)
+        .ilike('description', `%${query}%`);
+    if (errorFuzzyMatchPlaceDescription) console.log(errorFuzzyMatchPlaceDescription);
+    if (dataFuzzyMatchPlaceDescription && dataFuzzyMatchPlaceDescription?.length !== 0) {
       const redirect = {
         status: 302,
-        redirect: `${dataFuzzyMatchPlaceDescription[0].description}`
+        redirect: `${dataFuzzyMatchPlaceDescription[0].description}`,
       };
       return { data: null, redirect };
     }
@@ -84,25 +73,19 @@
   }
 
   export async function load({ params }: { params: { place_id: string } }) {
-    const { data: users_in_place, redirect } = await getUsersInPlace(
-      params.place_id
-    );
+    const { data: users_in_place, redirect } = await getUsersInPlace(params.place_id);
     if (redirect) return redirect;
-    const place_id = users_in_place?.length
-      ? users_in_place[0].place_id
-      : params.place_id;
-    const description = users_in_place?.length
-      ? users_in_place[0].description
-      : '';
+    const place_id = users_in_place?.length ? users_in_place[0].place_id : params.place_id;
+    const description = users_in_place?.length ? users_in_place[0].description : '';
     return {
       status: 200,
       props: {
         placeInformation: {
           place_id,
           description,
-          users_in_place
-        }
-      }
+          users_in_place,
+        },
+      },
     };
   }
 </script>
@@ -133,10 +116,7 @@
 
 <svelte:head>
   <title>{placeInformation.description}</title>
-  <meta
-    name="description"
-    content={`Users currently in ${placeInformation.description}`}
-  />
+  <meta name="description" content={`Users currently in ${placeInformation.description}`} />
 </svelte:head>
 
 <div class="h-screen-nav-buttons hero bg-base-200 text-base-content">
@@ -161,19 +141,11 @@
   </div>
 </div>
 <div class="my-2 flex flex-row justify-between">
-  <a
-    href="/map"
-    sveltekit:prefetch
-    class="btn btn-ghost btn-md shrink grow basis-0"
-  >
+  <a href="/map" sveltekit:prefetch class="btn btn-ghost btn-md shrink grow basis-0">
     <MapIcon /> Go To Map
   </a>
   <div class="divider divider-horizontal" />
-  <a
-    href="/locations"
-    sveltekit:prefetch
-    class="btn btn-ghost btn-md shrink grow basis-0"
-  >
+  <a href="/locations" sveltekit:prefetch class="btn btn-ghost btn-md shrink grow basis-0">
     <LocationsListIcon /> See All Locations
   </a>
 </div>

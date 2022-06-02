@@ -11,7 +11,7 @@
     if (error) return { status: error.code, props: { error } };
     return {
       status: 200,
-      props: { userProfileInformation: { id: params.id, ...data } }
+      props: { userProfileInformation: { id: params.id, ...data } },
     };
   }
 </script>

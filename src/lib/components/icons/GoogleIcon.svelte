@@ -19,11 +19,7 @@
       id="filter-1"
     >
       <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1" />
-      <feGaussianBlur
-        stdDeviation="0.5"
-        in="shadowOffsetOuter1"
-        result="shadowBlurOuter1"
-      />
+      <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
       <feColorMatrix
         values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.168 0"
         in="shadowBlurOuter1"
@@ -31,11 +27,7 @@
         result="shadowMatrixOuter1"
       />
       <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter2" />
-      <feGaussianBlur
-        stdDeviation="0.5"
-        in="shadowOffsetOuter2"
-        result="shadowBlurOuter2"
-      />
+      <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter2" result="shadowBlurOuter2" />
       <feColorMatrix
         values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.084 0"
         in="shadowBlurOuter2"
@@ -50,13 +42,7 @@
     </filter>
     <rect id="path-2" x="0" y="0" width="40" height="40" rx="2" />
   </defs>
-  <g
-    id="Google-Button"
-    stroke="none"
-    stroke-width="1"
-    fill="none"
-    fill-rule="evenodd"
-  >
+  <g id="Google-Button" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
     <g id="9-PATCH" transform="translate(-608.000000, -160.000000)" />
     <g id="btn_google_light_normal" transform="translate(-1.000000, -1.000000)">
       <g id="logo_googleg_48dp" transform="translate(15.000000, 15.000000)">

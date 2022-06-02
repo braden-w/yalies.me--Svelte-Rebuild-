@@ -28,11 +28,7 @@
           <div class="flex items-center space-x-3">
             <div class="avatar">
               <div class="mask mask-squircle h-12 w-12">
-                <img
-                  src={user.avatar_url}
-                  alt="User Profile"
-                  referrerpolicy="no-referrer"
-                />
+                <img src={user.avatar_url} alt="User Profile" referrerpolicy="no-referrer" />
               </div>
             </div>
             <div>
@@ -50,9 +46,7 @@
         </td>
         <td> <UserSocials userProfileInformation={user} /></td>
         <th>
-          <a href={`/users/${user.id}`} class="btn btn-primary btn-md">
-            Go to Profile
-          </a>
+          <a href={`/users/${user.id}`} class="btn btn-primary btn-md"> Go to Profile </a>
         </th>
       </tr>
     {/each}

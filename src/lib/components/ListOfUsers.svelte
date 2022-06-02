@@ -5,9 +5,7 @@
   export let users: PlaceInformation['users_in_place'];
 </script>
 
-<div
-  class="rounded-box max-h-96 overflow-y-auto bg-neutral text-neutral-content shadow-xl"
->
+<div class="rounded-box max-h-96 overflow-y-auto bg-neutral text-neutral-content shadow-xl">
   <ul class="menu overflow-visible p-3">
     <li class="menu-title">
       <span>Users</span>
@@ -38,8 +36,7 @@
                     </div>
                   {/if}
                   {#if user?.major}
-                    <span class="badge badge-xs badge-ghost">{user?.major}</span
-                    >
+                    <span class="badge badge-xs badge-ghost">{user?.major}</span>
                   {/if}
                 </div>
               </div>

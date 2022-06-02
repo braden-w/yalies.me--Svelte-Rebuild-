@@ -11,7 +11,7 @@
     if (error) return { status: error.code, props: { error } };
     return {
       status: 200,
-      props: { userProfileInformation: { id: params.id, ...data } }
+      props: { userProfileInformation: { id: params.id, ...data } },
     };
   }
 </script>
@@ -37,9 +37,7 @@
         <div class="dropdown">
           <div tabindex="0">
             <div class="avatar online">
-              <div
-                class="mask mask-squircle h-24 w-24 bg-base-content bg-opacity-10 p-px"
-              >
+              <div class="mask mask-squircle h-24 w-24 bg-base-content bg-opacity-10 p-px">
                 <img
                   src={userProfileInformation.avatar_url}
                   alt="Avatar Tailwind CSS Component"
@@ -56,16 +54,13 @@
               class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
-                <h2 class="card-title font-extrabold capitalize">
-                  avatar component
-                </h2>
+                <h2 class="card-title font-extrabold capitalize">avatar component</h2>
                 <p class="text-sm text-neutral-content text-opacity-80">
                   Use avatar component with any size
                 </p>
                 <div class="mt-4 flex justify-end">
-                  <a
-                    href="/components/avatar"
-                    class="btn btn-primary btn-sm xl:btn-md">See component</a
+                  <a href="/components/avatar" class="btn btn-primary btn-sm xl:btn-md"
+                    >See component</a
                   >
                 </div>
               </div>
@@ -93,16 +88,13 @@
                 class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="card-title font-extrabold capitalize">
-                    card component
-                  </h2>
+                  <h2 class="card-title font-extrabold capitalize">card component</h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Card component is used to show products, features and more.
                   </p>
                   <div class="mt-4 flex justify-end">
-                    <a
-                      href="/components/card"
-                      class="btn btn-primary btn-sm xl:btn-md">See component</a
+                    <a href="/components/card" class="btn btn-primary btn-sm xl:btn-md"
+                      >See component</a
                     >
                   </div>
                 </div>
@@ -122,16 +114,13 @@
                 class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="card-title font-extrabold capitalize">
-                    badge component
-                  </h2>
+                  <h2 class="card-title font-extrabold capitalize">badge component</h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Use badge component to highlight small inline items
                   </p>
                   <div class="mt-4 flex justify-end">
-                    <a
-                      href="/components/badge"
-                      class="btn btn-primary btn-sm xl:btn-md">See component</a
+                    <a href="/components/badge" class="btn btn-primary btn-sm xl:btn-md"
+                      >See component</a
                     >
                   </div>
                 </div>
@@ -143,10 +132,7 @@
           <div tabindex="0">
             <div class="btn-group">
               <button class="btn btn-accent btn-sm">Follow</button>
-              <button
-                aria-label="button component"
-                class="btn btn-square btn-accent btn-sm"
-              >
+              <button aria-label="button component" class="btn btn-square btn-accent btn-sm">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -168,16 +154,13 @@
               class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
-                <h2 class="card-title font-extrabold capitalize">
-                  button group component
-                </h2>
+                <h2 class="card-title font-extrabold capitalize">button group component</h2>
                 <p class="text-sm text-neutral-content text-opacity-80">
                   Use it to group multiple buttons together
                 </p>
                 <div class="mt-4 flex justify-end">
-                  <a
-                    href="/components/button-group"
-                    class="btn btn-primary btn-sm xl:btn-md">See component</a
+                  <a href="/components/button-group" class="btn btn-primary btn-sm xl:btn-md"
+                    >See component</a
                   >
                 </div>
               </div>
@@ -225,16 +208,13 @@
                 class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="card-title font-extrabold capitalize">
-                    toggle component
-                  </h2>
+                  <h2 class="card-title font-extrabold capitalize">toggle component</h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Use toggle to switch between two states
                   </p>
                   <div class="mt-4 flex justify-end">
-                    <a
-                      href="/components/toggle"
-                      class="btn btn-primary btn-sm xl:btn-md">See component</a
+                    <a href="/components/toggle" class="btn btn-primary btn-sm xl:btn-md"
+                      >See component</a
                     >
                   </div>
                 </div>
@@ -266,16 +246,13 @@
                 class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="card-title font-extrabold capitalize">
-                    button component
-                  </h2>
+                  <h2 class="card-title font-extrabold capitalize">button component</h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Buttons come in various shapes, colors and sizes
                   </p>
                   <div class="mt-4 flex justify-end">
-                    <a
-                      href="/components/button"
-                      class="btn btn-primary btn-sm xl:btn-md">See component</a
+                    <a href="/components/button" class="btn btn-primary btn-sm xl:btn-md"
+                      >See component</a
                     >
                   </div>
                 </div>
@@ -305,16 +282,13 @@
               class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
-                <h2 class="card-title font-extrabold capitalize">
-                  card component
-                </h2>
+                <h2 class="card-title font-extrabold capitalize">card component</h2>
                 <p class="text-sm text-neutral-content text-opacity-80">
                   Card component is used to show products, features and more.
                 </p>
                 <div class="mt-4 flex justify-end">
-                  <a
-                    href="/components/card"
-                    class="btn btn-primary btn-sm xl:btn-md">See component</a
+                  <a href="/components/card" class="btn btn-primary btn-sm xl:btn-md"
+                    >See component</a
                   >
                 </div>
               </div>
@@ -352,16 +326,12 @@
                   class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
                 >
                   <div class="card-body">
-                    <h2 class="card-title font-extrabold capitalize">
-                      dropdown component
-                    </h2>
+                    <h2 class="card-title font-extrabold capitalize">dropdown component</h2>
                     <p class="text-sm text-neutral-content text-opacity-80">
                       helper dropdown can show an element when focused.
                     </p>
                     <div class="mt-4 flex justify-end">
-                      <a
-                        href="/components/dropdown"
-                        class="btn btn-primary btn-sm xl:btn-md"
+                      <a href="/components/dropdown" class="btn btn-primary btn-sm xl:btn-md"
                         >See component</a
                       >
                     </div>
@@ -381,16 +351,13 @@
                 class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="card-title font-extrabold capitalize">
-                    badge component
-                  </h2>
+                  <h2 class="card-title font-extrabold capitalize">badge component</h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Use badge component to highlight small inline items
                   </p>
                   <div class="mt-4 flex justify-end">
-                    <a
-                      href="/components/badge"
-                      class="btn btn-primary btn-sm xl:btn-md">See component</a
+                    <a href="/components/badge" class="btn btn-primary btn-sm xl:btn-md"
+                      >See component</a
                     >
                   </div>
                 </div>
@@ -398,8 +365,7 @@
             </div>
           </div>
           <p class="text-sm text-base-content text-opacity-80">
-            Use card component to easily show blog posts, products, features,
-            items and more.
+            Use card component to easily show blog posts, products, features, items and more.
           </p>
           <div class="card-actions justify-end">
             <div class="dropdown-top dropdown dropdown-end">
@@ -411,16 +377,12 @@
                   class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
                 >
                   <div class="card-body">
-                    <h2 class="card-title font-extrabold capitalize">
-                      button component
-                    </h2>
+                    <h2 class="card-title font-extrabold capitalize">button component</h2>
                     <p class="text-sm text-neutral-content text-opacity-80">
                       Buttons come in various shapes, colors and sizes
                     </p>
                     <div class="mt-4 flex justify-end">
-                      <a
-                        href="/components/button"
-                        class="btn btn-primary btn-sm xl:btn-md"
+                      <a href="/components/button" class="btn btn-primary btn-sm xl:btn-md"
                         >See component</a
                       >
                     </div>
@@ -431,22 +393,13 @@
           </div>
         </div>
       </div>
-      <div
-        class="col-span-3 row-span-3 mx-2 flex w-72 flex-shrink-0 flex-col xl:mx-0 xl:w-full"
-      >
+      <div class="col-span-3 row-span-3 mx-2 flex w-72 flex-shrink-0 flex-col xl:mx-0 xl:w-full">
         <div class="dropdown">
           <div tabindex="0" class="bg-opacity-100">
             <div class="tabs w-full flex-grow-0">
-              <button
-                class="tab tab-active tab-lifted tab-border-none tab-lg flex-1"
-                >Stats</button
-              >
-              <button class="tab tab-lifted tab-border-none tab-lg flex-1"
-                >Info</button
-              >
-              <button class="tab tab-lifted tab-border-none tab-lg flex-1"
-                >Options</button
-              >
+              <button class="tab tab-active tab-lifted tab-border-none tab-lg flex-1">Stats</button>
+              <button class="tab tab-lifted tab-border-none tab-lg flex-1">Info</button>
+              <button class="tab tab-lifted tab-border-none tab-lg flex-1">Options</button>
             </div>
           </div>
           <div tabindex="0" class="dropdown-content py-2">
@@ -454,16 +407,13 @@
               class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
-                <h2 class="card-title font-extrabold capitalize">
-                  tab component
-                </h2>
+                <h2 class="card-title font-extrabold capitalize">tab component</h2>
                 <p class="text-sm text-neutral-content text-opacity-80">
                   Beautiful tabs to switch between sections
                 </p>
                 <div class="mt-4 flex justify-end">
-                  <a
-                    href="/components/tab"
-                    class="btn btn-primary btn-sm xl:btn-md">See component</a
+                  <a href="/components/tab" class="btn btn-primary btn-sm xl:btn-md"
+                    >See component</a
                   >
                 </div>
               </div>
@@ -477,9 +427,7 @@
             <div class="dropdown">
               <div tabindex="0">
                 <div class="avatar online">
-                  <div
-                    class="mask mask-hexagon h-16 w-16 bg-base-content bg-opacity-10 p-px"
-                  >
+                  <div class="mask mask-hexagon h-16 w-16 bg-base-content bg-opacity-10 p-px">
                     <img
                       src={userProfileInformation.avatar_url}
                       alt="Avatar Tailwind CSS Component"
@@ -494,16 +442,12 @@
                   class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
                 >
                   <div class="card-body">
-                    <h2 class="card-title font-extrabold capitalize">
-                      avatar component
-                    </h2>
+                    <h2 class="card-title font-extrabold capitalize">avatar component</h2>
                     <p class="text-sm text-neutral-content text-opacity-80">
                       Use avatar component with any size
                     </p>
                     <div class="mt-4 flex justify-end">
-                      <a
-                        href="/components/avatar"
-                        class="btn btn-primary btn-sm xl:btn-md"
+                      <a href="/components/avatar" class="btn btn-primary btn-sm xl:btn-md"
                         >See component</a
                       >
                     </div>
@@ -525,16 +469,13 @@
                 class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="card-title font-extrabold capitalize">
-                    divider component
-                  </h2>
+                  <h2 class="card-title font-extrabold capitalize">divider component</h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     User divider component to visually separate items
                   </p>
                   <div class="mt-4 flex justify-end">
-                    <a
-                      href="/components/divider"
-                      class="btn btn-primary btn-sm xl:btn-md">See component</a
+                    <a href="/components/divider" class="btn btn-primary btn-sm xl:btn-md"
+                      >See component</a
                     >
                   </div>
                 </div>
@@ -546,50 +487,24 @@
             <div class="dropdown-top dropdown">
               <div tabindex="0">
                 <div class="flex items-center p-1">
-                  <span class="w-48 text-xs text-base-content/70"
-                    >Search Engines</span
-                  >
-                  <progress
-                    max="100"
-                    class="progress progress-success"
-                    value="50"
-                  />
+                  <span class="w-48 text-xs text-base-content/70">Search Engines</span>
+                  <progress max="100" class="progress progress-success" value="50" />
                 </div>
                 <div class="flex items-center p-1">
                   <span class="w-48 text-xs text-base-content/70">Direct</span>
-                  <progress
-                    max="100"
-                    class="progress progress-primary"
-                    value="30"
-                  />
+                  <progress max="100" class="progress progress-primary" value="30" />
                 </div>
                 <div class="flex items-center p-1">
-                  <span class="w-48 text-xs text-base-content/70"
-                    >Social Media</span
-                  >
-                  <progress
-                    max="100"
-                    class="progress progress-secondary"
-                    value="70"
-                  />
+                  <span class="w-48 text-xs text-base-content/70">Social Media</span>
+                  <progress max="100" class="progress progress-secondary" value="70" />
                 </div>
                 <div class="flex items-center p-1">
                   <span class="w-48 text-xs text-base-content/70">Emails</span>
-                  <progress
-                    max="100"
-                    class="progress progress-accent"
-                    value="90"
-                  />
+                  <progress max="100" class="progress progress-accent" value="90" />
                 </div>
                 <div class="flex items-center p-1">
-                  <span class="w-48 text-xs text-base-content/70"
-                    >Ad campaigns</span
-                  >
-                  <progress
-                    max="100"
-                    class="progress progress-warning"
-                    value="65"
-                  />
+                  <span class="w-48 text-xs text-base-content/70">Ad campaigns</span>
+                  <progress max="100" class="progress progress-warning" value="65" />
                 </div>
               </div>
               <div tabindex="0" class="dropdown-content py-2">
@@ -597,17 +512,12 @@
                   class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
                 >
                   <div class="card-body">
-                    <h2 class="card-title font-extrabold capitalize">
-                      progress component
-                    </h2>
+                    <h2 class="card-title font-extrabold capitalize">progress component</h2>
                     <p class="text-sm text-neutral-content text-opacity-80">
-                      Show progressbar, loadings or simple bar charts using
-                      progress component
+                      Show progressbar, loadings or simple bar charts using progress component
                     </p>
                     <div class="mt-4 flex justify-end">
-                      <a
-                        href="/components/progress"
-                        class="btn btn-primary btn-sm xl:btn-md"
+                      <a href="/components/progress" class="btn btn-primary btn-sm xl:btn-md"
                         >See component</a
                       >
                     </div>
@@ -671,16 +581,13 @@
               class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
-                <h2 class="card-title font-extrabold capitalize">
-                  avatar component
-                </h2>
+                <h2 class="card-title font-extrabold capitalize">avatar component</h2>
                 <p class="text-sm text-neutral-content text-opacity-80">
                   Use avatar component with any size
                 </p>
                 <div class="mt-4 flex justify-end">
-                  <a
-                    href="/components/avatar"
-                    class="btn btn-primary btn-sm xl:btn-md">See component</a
+                  <a href="/components/avatar" class="btn btn-primary btn-sm xl:btn-md"
+                    >See component</a
                   >
                 </div>
               </div>
@@ -708,16 +615,13 @@
                 class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="card-title font-extrabold capitalize">
-                    button component
-                  </h2>
+                  <h2 class="card-title font-extrabold capitalize">button component</h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Buttons come in various shapes, colors and sizes
                   </p>
                   <div class="mt-4 flex justify-end">
-                    <a
-                      href="/components/button"
-                      class="btn btn-primary btn-sm xl:btn-md">See component</a
+                    <a href="/components/button" class="btn btn-primary btn-sm xl:btn-md"
+                      >See component</a
                     >
                   </div>
                 </div>
@@ -730,15 +634,10 @@
                 <button class="btn btn-warning btn-block">warning</button>
                 <button class="btn btn-error btn-block">error</button>
                 <button class="btn btn-outline btn-block">outline</button>
-                <button class="btn btn-outline btn-primary btn-block"
-                  >primary</button
-                >
-                <button class="btn btn-outline btn-secondary btn-block"
-                  >secondary</button
-                >
-                <button class="btn btn-outline btn-accent btn-block"
-                  >accent</button
-                > <button class="btn btn-ghost btn-block">ghost</button>
+                <button class="btn btn-outline btn-primary btn-block">primary</button>
+                <button class="btn btn-outline btn-secondary btn-block">secondary</button>
+                <button class="btn btn-outline btn-accent btn-block">accent</button>
+                <button class="btn btn-ghost btn-block">ghost</button>
                 <button class="btn btn-link btn-block">link</button>
               </div>
             </div>
@@ -747,16 +646,13 @@
                 class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="card-title font-extrabold capitalize">
-                    button component
-                  </h2>
+                  <h2 class="card-title font-extrabold capitalize">button component</h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Buttons come in various shapes, colors and sizes
                   </p>
                   <div class="mt-4 flex justify-end">
-                    <a
-                      href="/components/button"
-                      class="btn btn-primary btn-sm xl:btn-md">See component</a
+                    <a href="/components/button" class="btn btn-primary btn-sm xl:btn-md"
+                      >See component</a
                     >
                   </div>
                 </div>
@@ -765,9 +661,7 @@
           </div>
         </div>
       </div>
-      <div
-        class="col-span-3 row-span-2 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-auto"
-      >
+      <div class="col-span-3 row-span-2 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-auto">
         <div class="dropdown-top dropdown dropdown-end">
           <div tabindex="0">
             <div class="grid gap-4">
@@ -792,16 +686,13 @@
               class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
-                <h2 class="card-title font-extrabold capitalize">
-                  pagination component
-                </h2>
+                <h2 class="card-title font-extrabold capitalize">pagination component</h2>
                 <p class="text-sm text-neutral-content text-opacity-80">
                   Pagination buttons in many colors and sizes!
                 </p>
                 <div class="mt-4 flex justify-end">
-                  <a
-                    href="/components/pagination"
-                    class="btn btn-primary btn-sm xl:btn-md">See component</a
+                  <a href="/components/pagination" class="btn btn-primary btn-sm xl:btn-md"
+                    >See component</a
                   >
                 </div>
               </div>
@@ -821,16 +712,13 @@
               class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
             >
               <div class="card-body">
-                <h2 class="card-title font-extrabold capitalize">
-                  tab component
-                </h2>
+                <h2 class="card-title font-extrabold capitalize">tab component</h2>
                 <p class="text-sm text-neutral-content text-opacity-80">
                   Tab component with several sizes and styles
                 </p>
                 <div class="mt-4 flex justify-end">
-                  <a
-                    href="/components/tab"
-                    class="btn btn-primary btn-sm xl:btn-md">See component</a
+                  <a href="/components/tab" class="btn btn-primary btn-sm xl:btn-md"
+                    >See component</a
                   >
                 </div>
               </div>
@@ -846,14 +734,11 @@
             <div tabindex="0">
               <div class="alert flex-col space-y-2">
                 <div class="flex-1">
-                  <span class="mx-3 text-sm"
-                    >Lorem ipsum dolor sit amet, consectetur adip!</span
-                  >
+                  <span class="mx-3 text-sm">Lorem ipsum dolor sit amet, consectetur adip!</span>
                 </div>
                 <div class="flex-none">
-                  <button class="btn btn-outline btn-primary btn-sm mr-2"
-                    >Cancel</button
-                  > <button class="btn btn-primary btn-sm">Apply</button>
+                  <button class="btn btn-outline btn-primary btn-sm mr-2">Cancel</button>
+                  <button class="btn btn-primary btn-sm">Apply</button>
                 </div>
               </div>
             </div>
@@ -862,16 +747,13 @@
                 class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="card-title font-extrabold capitalize">
-                    alert component
-                  </h2>
+                  <h2 class="card-title font-extrabold capitalize">alert component</h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Show alerts, warnings, notification or other info
                   </p>
                   <div class="mt-4 flex justify-end">
-                    <a
-                      href="/components/alert"
-                      class="btn btn-primary btn-sm xl:btn-md">See component</a
+                    <a href="/components/alert" class="btn btn-primary btn-sm xl:btn-md"
+                      >See component</a
                     >
                   </div>
                 </div>
@@ -897,9 +779,7 @@
                       d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <span class="text-sm"
-                    >Lorem ipsum dolor sit amet, consectetur adip!</span
-                  >
+                  <span class="text-sm">Lorem ipsum dolor sit amet, consectetur adip!</span>
                 </div>
               </div>
             </div>
@@ -908,16 +788,13 @@
                 class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="card-title font-extrabold capitalize">
-                    alert component
-                  </h2>
+                  <h2 class="card-title font-extrabold capitalize">alert component</h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Show alerts, warnings, notification or other info
                   </p>
                   <div class="mt-4 flex justify-end">
-                    <a
-                      href="/components/alert"
-                      class="btn btn-primary btn-sm xl:btn-md">See component</a
+                    <a href="/components/alert" class="btn btn-primary btn-sm xl:btn-md"
+                      >See component</a
                     >
                   </div>
                 </div>
@@ -943,9 +820,7 @@
                       d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
                     />
                   </svg>
-                  <span class="text-sm"
-                    >Lorem ipsum dolor sit amet, consectetur adip!</span
-                  >
+                  <span class="text-sm">Lorem ipsum dolor sit amet, consectetur adip!</span>
                 </div>
               </div>
             </div>
@@ -954,16 +829,13 @@
                 class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="card-title font-extrabold capitalize">
-                    alert component
-                  </h2>
+                  <h2 class="card-title font-extrabold capitalize">alert component</h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Show alerts, warnings, notification or other info
                   </p>
                   <div class="mt-4 flex justify-end">
-                    <a
-                      href="/components/alert"
-                      class="btn btn-primary btn-sm xl:btn-md">See component</a
+                    <a href="/components/alert" class="btn btn-primary btn-sm xl:btn-md"
+                      >See component</a
                     >
                   </div>
                 </div>
@@ -1050,16 +922,13 @@
                 class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="card-title font-extrabold capitalize">
-                    menu component
-                  </h2>
+                  <h2 class="card-title font-extrabold capitalize">menu component</h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Use it for sidebar or any other list of items
                   </p>
                   <div class="mt-4 flex justify-end">
-                    <a
-                      href="/components/menu"
-                      class="btn btn-primary btn-sm xl:btn-md">See component</a
+                    <a href="/components/menu" class="btn btn-primary btn-sm xl:btn-md"
+                      >See component</a
                     >
                   </div>
                 </div>
@@ -1068,9 +937,7 @@
           </div>
         </div>
       </div>
-      <div
-        class="col-span-3 row-span-1 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-auto"
-      >
+      <div class="col-span-3 row-span-1 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-auto">
         <div class="rounded-box bg-base-100 text-base-content shadow-xl">
           <div class="dropdown-top dropdown dropdown-end w-full">
             <div tabindex="0">
@@ -1094,16 +961,13 @@
                 class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="card-title font-extrabold capitalize">
-                    checkbox component
-                  </h2>
+                  <h2 class="card-title font-extrabold capitalize">checkbox component</h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Colorful, animated and accessible
                   </p>
                   <div class="mt-4 flex justify-end">
-                    <a
-                      href="/components/checkbox"
-                      class="btn btn-primary btn-sm xl:btn-md">See component</a
+                    <a href="/components/checkbox" class="btn btn-primary btn-sm xl:btn-md"
+                      >See component</a
                     >
                   </div>
                 </div>
@@ -1112,9 +976,7 @@
           </div>
           <div class="dropdown dropdown-end w-full">
             <div tabindex="0">
-              <div
-                class="rating rating-lg rating-half w-full justify-center px-4 pb-4"
-              >
+              <div class="rating rating-lg rating-half w-full justify-center px-4 pb-4">
                 <input
                   type="radio"
                   aria-label="Rating reset"
@@ -1192,16 +1054,11 @@
                 class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="card-title font-extrabold capitalize">
-                    Rating component
-                  </h2>
-                  <p class="text-sm text-neutral-content text-opacity-80">
-                    Styled radio buttons
-                  </p>
+                  <h2 class="card-title font-extrabold capitalize">Rating component</h2>
+                  <p class="text-sm text-neutral-content text-opacity-80">Styled radio buttons</p>
                   <div class="mt-4 flex justify-end">
-                    <a
-                      href="/components/rating"
-                      class="btn btn-primary btn-sm xl:btn-md">See component</a
+                    <a href="/components/rating" class="btn btn-primary btn-sm xl:btn-md"
+                      >See component</a
                     >
                   </div>
                 </div>
@@ -1210,12 +1067,8 @@
           </div>
         </div>
       </div>
-      <div
-        class="col-span-3 row-span-1 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-auto"
-      >
-        <div
-          class="rounded-box flex items-center bg-neutral text-neutral-content shadow-xl"
-        >
+      <div class="col-span-3 row-span-1 mx-2 grid w-72 flex-shrink-0 gap-4 xl:mx-0 xl:w-auto">
+        <div class="rounded-box flex items-center bg-neutral text-neutral-content shadow-xl">
           <div class="dropdown-top dropdown">
             <div tabindex="0">
               <div class="breadcrumbs px-4 text-sm">
@@ -1268,16 +1121,13 @@
                 class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
               >
                 <div class="card-body">
-                  <h2 class="card-title font-extrabold capitalize">
-                    breadcrumbs component
-                  </h2>
+                  <h2 class="card-title font-extrabold capitalize">breadcrumbs component</h2>
                   <p class="text-sm text-neutral-content text-opacity-80">
                     Make a better navigation with breadcrumbs!
                   </p>
                   <div class="mt-4 flex justify-end">
-                    <a
-                      href="/components/breadcrumbs"
-                      class="btn btn-primary btn-sm xl:btn-md">See component</a
+                    <a href="/components/breadcrumbs" class="btn btn-primary btn-sm xl:btn-md"
+                      >See component</a
                     >
                   </div>
                 </div>
@@ -1285,9 +1135,7 @@
             </div>
           </div>
         </div>
-        <div
-          class="rounded-box flex items-center bg-accent p-4 text-accent-content shadow-xl"
-        >
+        <div class="rounded-box flex items-center bg-accent p-4 text-accent-content shadow-xl">
           <div class="flex-1 px-2">
             <h2 class="text-3xl font-extrabold">4,600</h2>
             <p class="text-sm text-opacity-80">Page views</p>
@@ -1296,10 +1144,7 @@
             <div class="dropdown-top dropdown dropdown-end">
               <div tabindex="0">
                 <div class="flex space-x-1">
-                  <button
-                    aria-label="button component"
-                    class="btn btn-square btn-ghost"
-                  >
+                  <button aria-label="button component" class="btn btn-square btn-ghost">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -1320,10 +1165,7 @@
                       />
                     </svg>
                   </button>
-                  <button
-                    aria-label="button component"
-                    class="btn btn-square btn-ghost"
-                  >
+                  <button aria-label="button component" class="btn btn-square btn-ghost">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -1345,16 +1187,12 @@
                   class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
                 >
                   <div class="card-body">
-                    <h2 class="card-title font-extrabold capitalize">
-                      button component
-                    </h2>
+                    <h2 class="card-title font-extrabold capitalize">button component</h2>
                     <p class="text-sm text-neutral-content text-opacity-80">
                       Buttons come in various shapes, colors and sizes
                     </p>
                     <div class="mt-4 flex justify-end">
-                      <a
-                        href="/components/button"
-                        class="btn btn-primary btn-sm xl:btn-md"
+                      <a href="/components/button" class="btn btn-primary btn-sm xl:btn-md"
                         >See component</a
                       >
                     </div>
@@ -1383,16 +1221,12 @@
                     class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
                   >
                     <div class="card-body">
-                      <h2 class="card-title font-extrabold capitalize">
-                        loading button component
-                      </h2>
+                      <h2 class="card-title font-extrabold capitalize">loading button component</h2>
                       <p class="text-sm text-neutral-content text-opacity-80">
                         Buttons can get loadings state using a simple class
                       </p>
                       <div class="mt-4 flex justify-end">
-                        <a
-                          href="/components/button"
-                          class="btn btn-primary btn-sm xl:btn-md"
+                        <a href="/components/button" class="btn btn-primary btn-sm xl:btn-md"
                           >See component</a
                         >
                       </div>
@@ -1404,28 +1238,19 @@
             </h2>
             <div class="dropdown-top dropdown w-full">
               <div tabindex="0">
-                <progress
-                  max="100"
-                  class="progress progress-secondary"
-                  value="70"
-                />
+                <progress max="100" class="progress progress-secondary" value="70" />
               </div>
               <div tabindex="0" class="dropdown-content py-2">
                 <div
                   class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
                 >
                   <div class="card-body">
-                    <h2 class="card-title font-extrabold capitalize">
-                      progress component
-                    </h2>
+                    <h2 class="card-title font-extrabold capitalize">progress component</h2>
                     <p class="text-sm text-neutral-content text-opacity-80">
-                      Show progressbar, loadings or simple bar charts using
-                      progress component
+                      Show progressbar, loadings or simple bar charts using progress component
                     </p>
                     <div class="mt-4 flex justify-end">
-                      <a
-                        href="/components/progress"
-                        class="btn btn-primary btn-sm xl:btn-md"
+                      <a href="/components/progress" class="btn btn-primary btn-sm xl:btn-md"
                         >See component</a
                       >
                     </div>
@@ -1437,10 +1262,7 @@
           <div class="flex-0">
             <div class="dropdown-top dropdown dropdown-end">
               <div tabindex="0">
-                <button
-                  aria-label="circle button component"
-                  class="btn btn-circle"
-                >
+                <button aria-label="circle button component" class="btn btn-circle">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -1461,16 +1283,12 @@
                   class="card compact rounded-box w-72 bg-neutral-focus text-neutral-content shadow-xl"
                 >
                   <div class="card-body">
-                    <h2 class="card-title font-extrabold capitalize">
-                      button component
-                    </h2>
+                    <h2 class="card-title font-extrabold capitalize">button component</h2>
                     <p class="text-sm text-neutral-content text-opacity-80">
                       Buttons come in various shapes, colors and sizes
                     </p>
                     <div class="mt-4 flex justify-end">
-                      <a
-                        href="/components/button"
-                        class="btn btn-primary btn-sm xl:btn-md"
+                      <a href="/components/button" class="btn btn-primary btn-sm xl:btn-md"
                         >See component</a
                       >
                     </div>

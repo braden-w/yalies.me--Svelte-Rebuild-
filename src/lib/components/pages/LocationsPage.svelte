@@ -8,9 +8,7 @@
   import type { definitionsJSON } from '$lib/types/definitionsJSON';
   import QuickLinksBar from '$lib/components/QuickLinksBar.svelte';
 
-  function getNumberOfUniquePlaces(
-    placesArray: definitionsJSON['places_with_people'][] | null
-  ) {
+  function getNumberOfUniquePlaces(placesArray: definitionsJSON['places_with_people'][] | null) {
     // Array of place_ids
     const placeIds = placesArray?.map((place) => place.place_id) ?? [];
 
@@ -30,8 +28,8 @@
     <div class="text-center lg:text-left">
       <h1 class="text-5xl font-bold">Where are you now?</h1>
       <p class="py-6">
-        Enter your current city. For privacy, feel free to use a city that is in
-        proximity rather than exact location.
+        Enter your current city. For privacy, feel free to use a city that is in proximity rather
+        than exact location.
       </p>
     </div>
     <div class="card w-full max-w-sm flex-shrink-0 bg-base-100 shadow-2xl">
@@ -51,10 +49,7 @@
           <h1 class="text-2xl font-bold">{$profileStore?.name}</h1>
           <p class="text-lg">Yale University</p>
         </div>
-        <LocationAutoComplete
-          query={$profileStore?.description ?? ''}
-          isCurrentUser={true}
-        />
+        <LocationAutoComplete query={$profileStore?.description ?? ''} isCurrentUser={true} />
 
         <div class="form-control mt-6">
           <a href="/profile" class="btn btn-primary" sveltekit:prefetch>
@@ -74,9 +69,8 @@
         <div class="w-full">
           <h1 class="text-5xl font-bold">Locations</h1>
           <p class="py-6">
-            There are currently {getNumberOfUniquePlaces(
-              $placesAndTheirPeopleStore
-            )} locations with Yalies!
+            There are currently {getNumberOfUniquePlaces($placesAndTheirPeopleStore)} locations with
+            Yalies!
           </p>
         </div>
         <div class="tabs mb-2 w-full flex-grow-0">

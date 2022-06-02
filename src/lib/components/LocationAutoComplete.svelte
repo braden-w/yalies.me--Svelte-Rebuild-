@@ -6,11 +6,9 @@
   }
 
   async function uploadPlaceToSupabase(payload: Payload) {
-    const { error: errorPlaces } = await supabase
-      .from('places')
-      .upsert(payload, {
-        returning: 'minimal' // Don't return the value after inserting
-      });
+    const { error: errorPlaces } = await supabase.from('places').upsert(payload, {
+      returning: 'minimal', // Don't return the value after inserting
+    });
     if (errorPlaces) throw errorPlaces;
   }
 </script>
@@ -22,10 +20,7 @@
 
   export let isCurrentUser: boolean;
   export let query: string;
-  console.log(
-    '🚀 ~ file: LocationAutoComplete.svelte ~ line 29 ~ query',
-    query
-  );
+  console.log('🚀 ~ file: LocationAutoComplete.svelte ~ line 29 ~ query', query);
 
   $: isQueryLongEnough = query.length >= 2;
 
@@ -52,21 +47,17 @@
     const request: google.maps.places.AutocompletionRequest = {
       input: query,
       sessionToken,
-      types: ['(cities)']
+      types: ['(cities)'],
     };
     service.getPlacePredictions(request, (response, status) => {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
-        isQueryLongEnough
-          ? (results = response ?? defaultResults)
-          : resetResults();
+        isQueryLongEnough ? (results = response ?? defaultResults) : resetResults();
         console.log(results);
       }
     });
   }
 
-  async function handleClick(
-    clicked: google.maps.places.AutocompletePrediction
-  ) {
+  async function handleClick(clicked: google.maps.places.AutocompletePrediction) {
     try {
       query = clicked.description;
       // Upload the place_id and description props to supabase
@@ -88,12 +79,9 @@
       const payload: Payload = {
         place_id,
         description,
-        geog: `SRID=4326;POINT(${lng} ${lat})`
+        geog: `SRID=4326;POINT(${lng} ${lat})`,
       };
-      console.log(
-        '🚀 ~ file: LocationAutoComplete.svelte ~ line 91 ~ payload',
-        payload
-      );
+      console.log('🚀 ~ file: LocationAutoComplete.svelte ~ line 91 ~ payload', payload);
       // Make sure the place exists on the places table
       uploadPlaceToSupabase(payload);
 

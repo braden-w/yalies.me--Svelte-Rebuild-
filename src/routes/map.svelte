@@ -7,7 +7,7 @@
   export async function load() {
     await refreshPlacesAndTheirPeopleStore();
     return {
-      status: 200
+      status: 200,
     };
   }
 </script>
@@ -23,7 +23,7 @@
   import { generateInnerHTML } from '$lib/utils/map/generateInnerHTML';
   import {
     placesAndTheirPeopleStore,
-    refreshPlacesAndTheirPeopleStore
+    refreshPlacesAndTheirPeopleStore,
   } from '$lib/stores/placesAndTheirPeopleStore';
 
   mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_KEY;
@@ -41,7 +41,7 @@
       center: [CenterUS.longitude, CenterUS.latitude],
       doubleClickZoom: false,
       zoom: CenterUS.zoom,
-      maxZoom: 10
+      maxZoom: 10,
     });
 
     /** Add a search bar to the map */
@@ -53,7 +53,7 @@
       // 	longitude: longitude,
       // 	latitude: latitude
       // },
-      marker: false
+      marker: false,
       /*     mapboxgl: mapboxgl, */
     });
     map.addControl(geocoder);
@@ -62,7 +62,7 @@
       map.flyTo({
         center: [CenterUS.longitude, CenterUS.latitude],
         speed: 2.5,
-        essential: true
+        essential: true,
       });
       // loadFacebook(map!, queryYear)
     });
@@ -71,10 +71,7 @@
   });
 
   /** Add a marker to the map for each place */
-  function generateMarkers(
-    map: mapboxgl.Map,
-    places: typeof $placesAndTheirPeopleStore
-  ) {
+  function generateMarkers(map: mapboxgl.Map, places: typeof $placesAndTheirPeopleStore) {
     if (!places) return;
     places.forEach((place) => {
       const el = document.createElement('div');
@@ -90,20 +87,14 @@
       });
 
       // On click out, add a shadow around it
-      document
-        .getElementsByClassName('mapboxgl-canvas')[0]
-        .addEventListener('click', () => {
-          // For every element in el with a class "outline-on-click", remove the class "ring" to it if it exists
-          el.querySelectorAll('.outline-on-click').forEach((el) => {
-            el.classList.remove('ring');
-          });
+      document.getElementsByClassName('mapboxgl-canvas')[0].addEventListener('click', () => {
+        // For every element in el with a class "outline-on-click", remove the class "ring" to it if it exists
+        el.querySelectorAll('.outline-on-click').forEach((el) => {
+          el.classList.remove('ring');
         });
+      });
 
-      const scalePercent = (
-        defaultPxSize = 32,
-        defaultZoom = 2,
-        scaleFactor = 0.1
-      ) => {
+      const scalePercent = (defaultPxSize = 32, defaultZoom = 2, scaleFactor = 0.1) => {
         const scalePercent = 1 + (map.getZoom() - defaultZoom) * scaleFactor;
         return defaultPxSize * scalePercent;
       };
@@ -112,13 +103,11 @@
       map.on('zoom', () => {
         const newPx = scalePercent();
         console.log('🚀 ~ file: map.svelte ~ line 135 ~ map.on ~ newPx', newPx);
-        el.querySelectorAll<HTMLElement>('.outline-on-click').forEach(
-          (innerEl) => {
-            // Set the height and width innerEl to newPx
-            innerEl.style.width = `${newPx}px`;
-            innerEl.style.height = `${newPx}px`;
-          }
-        );
+        el.querySelectorAll<HTMLElement>('.outline-on-click').forEach((innerEl) => {
+          // Set the height and width innerEl to newPx
+          innerEl.style.width = `${newPx}px`;
+          innerEl.style.height = `${newPx}px`;
+        });
         el.style.transformOrigin = 'bottom';
       });
 
@@ -131,10 +120,7 @@
 
 <svelte:head>
   <title>Map</title>
-  <meta
-    name="description"
-    content="Find Yale Students in the area to meet up!"
-  />
+  <meta name="description" content="Find Yale Students in the area to meet up!" />
 </svelte:head>
 
 <!-- Init mapbox -->

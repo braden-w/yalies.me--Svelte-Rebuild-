@@ -16,9 +16,7 @@
   }
 
   /** Upload profile data from profileStore to 'users' database */
-  async function uploadProfileDataToSupabase(
-    payload: definitionsJSON['users'] | null
-  ) {
+  async function uploadProfileDataToSupabase(payload: definitionsJSON['users'] | null) {
     if (!payload) return;
     try {
       const { data, error } = await supabase
@@ -42,9 +40,7 @@
     return emailUser;
   }
 
-  function processAuthState(
-    user: User | null
-  ): definitionsJSON['users'] | null {
+  function processAuthState(user: User | null): definitionsJSON['users'] | null {
     if (!user) return null;
     // Get the variables "id" from $profileStore
     const id = user.id;
@@ -68,10 +64,7 @@
   import { onMount } from 'svelte';
   import { themeChange } from 'theme-change';
   import { supabase } from '$lib/utils/supabaseClient';
-  import {
-    refreshProfileStore,
-    profileStore
-  } from '$lib/stores/auth/profileStore';
+  import { refreshProfileStore, profileStore } from '$lib/stores/auth/profileStore';
   import { authLoadingStore, signOut } from '$lib/stores/auth/authLoadingStore';
   import type { ApiError, User } from '@supabase/supabase-js';
   import type { UserMetadata } from '$lib/types/UserMetaData';

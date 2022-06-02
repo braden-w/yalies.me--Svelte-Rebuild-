@@ -1,18 +1,14 @@
 <script lang="ts">
   import type { definitionsJSON } from '$lib/types/definitionsJSON';
 
-  export let userProfileInformation:
-    | definitionsJSON['users_facebook_places']
-    | null;
+  export let userProfileInformation: definitionsJSON['users_facebook_places'] | null;
 </script>
 
 <div
   class="rounded-box grid place-items-center items-center gap-4 bg-base-100 p-4 py-8 shadow-xl xl:mx-0 xl:w-full"
 >
   <div class="avatar online">
-    <div
-      class="mask mask-squircle h-24 w-24 bg-base-content bg-opacity-10 p-px"
-    >
+    <div class="mask mask-squircle h-24 w-24 bg-base-content bg-opacity-10 p-px">
       <img
         src={userProfileInformation?.avatar_url}
         alt="Avatar Tailwind CSS Component"
@@ -52,10 +48,7 @@
     <div tabindex="0">
       <div class="btn-group">
         <button class="btn btn-accent btn-sm">Add Friend</button>
-        <button
-          aria-label="button component"
-          class="btn btn-accent btn-square btn-sm"
-        >
+        <button aria-label="button component" class="btn btn-accent btn-square btn-sm">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -73,21 +66,12 @@
       </div>
     </div>
     <div tabindex="0" class="dropdown-content py-2">
-      <div
-        class="card compact rounded-box w-52 bg-neutral-focus text-neutral-content shadow-xl"
-      >
+      <div class="card compact rounded-box w-52 bg-neutral-focus text-neutral-content shadow-xl">
         <div class="card-body">
-          <h2 class="card-title font-extrabold capitalize">
-            Keep Track of People I Met
-          </h2>
-          <p class="text-sm text-neutral-content text-opacity-80">
-            Coming Soon!
-          </p>
+          <h2 class="card-title font-extrabold capitalize">Keep Track of People I Met</h2>
+          <p class="text-sm text-neutral-content text-opacity-80">Coming Soon!</p>
           <div class="mt-4 flex">
-            <a
-              href="mailto:braden.wong@yale.edu"
-              class="btn btn-primary btn-sm"
-            >
+            <a href="mailto:braden.wong@yale.edu" class="btn btn-primary btn-sm">
               Request Feature
             </a>
           </div>
