@@ -83,9 +83,9 @@
       };
       console.log('🚀 ~ file: LocationAutoComplete.svelte ~ line 91 ~ payload', payload);
       // Make sure the place exists on the places table
-      uploadPlaceToSupabase(payload);
+      await uploadPlaceToSupabase(payload);
 
-      setUserLocation(place_id);
+      await setUserLocation(place_id);
       console.log(
         '🚀 ~ file: LocationAutoComplete.svelte ~ line 110 ~ $profileStore',
         $profileStore
