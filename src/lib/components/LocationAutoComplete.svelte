@@ -19,6 +19,7 @@
   import { defaultResults } from '$lib/components/LocationAutoComplete/DefaultResults';
   import { profileStore, setUserLocation } from '$lib/stores/auth/profileStore';
   import { supabase } from '$lib/utils/supabaseClient';
+  const scriptSrc = `https://maps.googleapis.com/maps/api/js?key=${import.meta.env.VITE_GOOGLE_MAP_KEY}&libraries=places`
 
   export let isCurrentUser: boolean;
   export let query: string;
@@ -107,7 +108,7 @@
     async
     defer
     type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZFzojqVe47aB3f_QwnU9IKaCZEbeuG0A&libraries=places">
+    src={scriptSrc}>
   </script>
 </svelte:head>
 
