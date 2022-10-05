@@ -4,6 +4,8 @@
 
 An app that solves a single question: who is in my area?
 
+![0](/static/photos/map%20with%20facebook/Facebook%20World.png)
+![0](/static/photos/map%20with%20facebook/Facebook%20World%202.png)
 ![1](/static/photos/LocationsList.png)
 ![2](/static/photos/LocationsTable.png)
 ![3](/static/photos/Map.png)
